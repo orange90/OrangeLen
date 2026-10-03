@@ -1,0 +1,9 @@
+/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/OrangeLen.debug.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/__preview.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/__preview.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview.debug.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app: replacing existing signature
+qlmanage: resetting quicklookd
++    local.OrangeLen.Preview(0.1.0)	316CA513-4DC6-4E45-BF6E-07DB8D53766A	2026-10-03 06:55:22 +0000	/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex
+ (1 plug-in)

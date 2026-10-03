@@ -1,0 +1,55 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 tickbox 专注, Value: 0
+	6 button 上一句
+	7 button 下一句
+	8 pop-up button 3 行尺
+	9 button A−
+	10 button A+
+	11 pop-up button 显示设置
+	12 button 重载
+	13 search text field (settable) 查找已加载内容（点击输入）
+		14 button Search
+	15 tickbox Aa, Value: 0
+	16 button ↑
+	17 button ↓
+	18 text 已加载内容
+	19 text field (settable) 行号
+	20 button 定位
+	21 button 复制选择
+	22 button 取消加载
+	23 split group
+		24 splitter (disabled, settable, float) 0
+		25 scroll area Secondary Actions: Scroll Left, Scroll Right
+			26 text entry area Description: OrangeLen 只读正文, Value: name = "OrangeLen"
+[preview]
+read_only = true
+
+			27 scroll bar (settable, float) 1
+				28 value indicator (settable, float) 1
+				29 increment arrow button
+				30 decrement arrow button
+				31 increment page button
+				32 decrement page button
+			33 ruler
+	34 text config.toml · UTF-8 · 46 bytes · code · 完整文件
+
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 button Open with Devin, Description: Open file, ID: QLControlOpen
+	39 text config.toml
+40 menu bar
+	41 Finder
+	42 File
+	43 Edit
+	44 View
+	45 Go
+	46 Window
+	47 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

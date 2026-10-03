@@ -1,0 +1,16 @@
+{
+  "name": "markdownrenderer",
+  "version": "1.0.0",
+  "description": "Pinned offline math and diagram renderer for OrangeLen",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "katex": "0.19.0",
+    "mermaid": "12.1.0"
+  },
+  "private": true
+}

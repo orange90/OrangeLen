@@ -1,0 +1,96 @@
+name: OrangeLen
+options:
+  deploymentTarget:
+    macOS: '14.0'
+packages:
+  OrangeLen:
+    path: Packages/OrangeLen
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: '-'
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_DEBUG_DYLIB: NO
+    MACOSX_DEPLOYMENT_TARGET: '14.0'
+    CURRENT_PROJECT_VERSION: '1'
+    MARKETING_VERSION: '0.1.0'
+targets:
+  OrangeLen:
+    type: application
+    platform: macOS
+    sources: [App]
+    resources:
+      - path: docs/licenses
+        type: folder
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSApplicationCategoryType: public.app-category.developer-tools
+        NSHumanReadableCopyright: Copyright © 2026 OrangeLen contributors
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen
+        CODE_SIGN_ENTITLEMENTS: App/OrangeLen.entitlements
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenPreview
+        embed: true
+  OrangeLenPreview:
+    type: app-extension
+    platform: macOS
+    sources: [PreviewExtension]
+    info:
+      path: PreviewExtension/Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen Preview
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, net.daringfireball.markdown, public.json, public.xml, public.yaml, public.toml, public.make-source, com.unknown.md, public.comma-separated-values-text, public.tab-separated-values-text, public.folder]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenImageBroker:
+    type: xpc-service
+    platform: macOS
+    sources:
+      - ImageBroker
+      - Packages/OrangeLen/Sources/OrangeLenUI/RemoteImageLoader.swift
+    info:
+      path: ImageBroker/Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen Image Broker
+        XPCService:
+          ServiceType: Application
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.ImageBroker
+        CODE_SIGN_ENTITLEMENTS: ImageBroker/ImageBroker.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenCore
+
+schemes:
+  OrangeLen:
+    build:
+      targets:
+        OrangeLen: all

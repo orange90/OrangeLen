@@ -1,0 +1,14 @@
+probe.txt	public.plain-text	public.content,public.data,public.item,public.text
+demo-project	public.folder	public.directory,public.item
+config.toml	public.toml	public.content,public.data,public.item,public.text
+config.yaml	public.yaml	public.content,public.data,public.item,public.text
+data.csv	public.comma-separated-values-text	public.content,public.data,public.delimited-values-text,public.item,public.plain-text,public.text
+data.json	public.json	public.content,public.data,public.item,public.text
+data.tsv	public.tab-separated-values-text	public.content,public.data,public.delimited-values-text,public.item,public.plain-text,public.text
+Makefile	public.make-source	public.content,public.data,public.item,public.plain-text,public.script,public.source-code,public.text
+README.md	com.unknown.md	public.content,public.data,public.item,public.plain-text,public.text
+sample.xml	public.xml	public.content,public.data,public.item,public.text
+src	public.folder	public.directory,public.item
+helpers.py	public.python-script	public.content,public.data,public.item,public.plain-text,public.script,public.shell-script,public.source-code,public.text
+main.swift	public.swift-source	public.content,public.data,public.item,public.plain-text,public.source-code,public.text
+main.ts	public.mpeg-2-transport-stream	public.audiovisual-content,public.content,public.data,public.item,public.movie

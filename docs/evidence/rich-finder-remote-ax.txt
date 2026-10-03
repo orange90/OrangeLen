@@ -1,0 +1,82 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 tickbox 专注, Value: 1
+	5 button 上一句
+	6 button 下一句
+	7 pop-up button 5 行尺
+	8 button A−
+	9 button A+
+	10 pop-up button 显示设置
+	11 button 重载
+	12 button 查找
+	13 search text field (settable) 查找已加载内容（点击输入）
+		14 button Search
+	15 tickbox Aa, Value: 0
+	16 button ↑
+	17 button ↓
+	18 text 已加载内容
+	19 text field (settable) 行号
+	20 button 定位
+	21 button 全选
+	22 button 复制选择
+	23 button 取消加载
+	24 button 加载远程图片
+	25 text 已加载 1 张 · 1 张未加载（安全限制、网络或预算）
+	26 split group
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Up, Scroll Down
+			29 text entry area Description: OrangeLen 只读正文, Value: **公式、图表与图片**
+普通正文仍可选择复制：中文、English、emoji 👩🏽‍💻。行内公式 [attached image] 与 [attached image] 应与文字一起排版。
+**块级公式**
+[attached image]
+[attached image]
+**Mermaid 流程图**
+[attached image]
+**Mermaid 时序图**
+[attached image]
+**本地图片**
+[attached image: 本地图片不可读或超出预算] 本地棋盘
+**远程图片（不会自动联网）**
+[attached image] W3C 标志，点击加载
+**安全回归**
+原始 HTML 只显示，不执行：<script>alert(‘never execute’)</script>。
+这张图片必须阻止访问：[attached image: [￼](orangelen-remote:215)] 私有地址
+下面图表包含交互指令，应拒绝渲染，源码仍可查看和复制：
+[attached image: 图表未渲染 · 查看源码]
+
+				30 attached image
+				31 attached image
+				32 attached image
+				33 attached image
+				34 attached image
+				35 attached image
+				36 attached image 本地图片不可读或超出预算
+				37 attached image
+				38 attached image 格式损坏：格式损坏：已阻止访问本机、局域网或保留地址
+				39 attached image 图表未渲染 · 查看源码
+				40 link ￼, Value: orangelen-remote:215
+			41 scroll bar (settable, float) 0.88
+				42 value indicator (settable, float) 0.88
+				43 increment arrow button
+				44 decrement arrow button
+				45 increment page button
+				46 decrement page button
+	47 text rich-content.md · UTF-8 · 1274 bytes · markdown · 完整文件
+	48 close button close panel button
+	49 full screen button full screen window button
+	50 button Description: Share file, ID: QLControlShare
+	51 button Open with MacDown, Description: Open file, ID: QLControlOpen
+	52 text rich-content.md
+53 menu bar
+	54 Finder
+	55 File
+	56 Edit
+	57 View
+	58 Go
+	59 Window
+	60 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

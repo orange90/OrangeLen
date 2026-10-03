@@ -1,0 +1,7 @@
+Timestamp               Ty Process[PID:TID]
+2026-10-03 11:50:19.238 Df OrangeLenPreview[72360:beefef] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=swift
+2026-10-03 11:50:19.240 Df OrangeLenPreview[72360:beefef] [local.OrangeLen:QuickLook] prepare completed success=true
+Timestamp               Ty Process[PID:TID]
+2026-10-03 11:52:03.768 Df OrangeLenPreview[72360:beefef] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 11:52:18.364 Df OrangeLenPreview[72360:beefef] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-03 11:52:18.367 Df OrangeLenPreview[72360:beefef] [local.OrangeLen:QuickLook] prepare completed success=false

@@ -1,0 +1,58 @@
+Window: "OrangeLen — Quick Look for Developers", App: OrangeLen.
+0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop up button (disabled) 目录
+	5 checkbox 专注, Value: 1
+	6 button 上一句
+	7 button 下一句
+	8 pop up button 3 行尺
+	9 button A−
+	10 button A+
+	11 pop up button 显示设置
+	12 button 重载
+	13 button 查找
+	14 search text field (settable) 查找已加载内容 ⌘F
+		15 button Search
+	16 checkbox Aa, Value: 0
+	17 button ↑
+	18 button ↓
+	19 text field (settable) 行号
+	20 button 定位
+	21 button 全选
+	22 button 复制选择
+	23 button 取消加载
+	24 split group
+		25 search text field (settable) 文件名筛选（已加载项）
+			26 button Search
+		27 checkbox 显示忽略项, Value: 0
+		28 scroll area Secondary Actions: Scroll Up, Scroll Down
+			29 outline 项目目录树
+				30 row (selectable, expanded) Value: ▸ demo-project, Secondary Actions: Collapse
+					31 disclosure triangle 1
+				32 row (selectable, collapsed) Value: ▸ src, Secondary Actions: Expand
+					33 disclosure triangle 0
+				34 row (selectable) config.toml, Description: 预览 config.toml
+				35 row (selectable) config.yaml, Description: 预览 config.yaml
+				36 row (selectable) data.csv, Description: 预览 data.csv
+				37 row (selectable) data.json, Description: 预览 data.json
+				38 row (selectable) data.tsv, Description: 预览 data.tsv
+				39 row (selectable) Makefile, Description: 预览 Makefile
+				40 row (selectable) README.md, Description: 预览 README.md
+				41 row (selected) sample.png, Description: 预览 sample.png
+				42 row (selectable) sample.xml, Description: 预览 sample.xml
+			43 scroll bar (disabled, settable, float) 0
+		44 text 当前目录已扫描 11 项（完成）
+		45 splitter (disabled, settable, float) 250
+		46 image 图片预览：sample.png，640 × 360 像素
+	47 text 文件夹：demo-project · 总大小 13 KB · 13 个文件 · 1 个文件夹 · 含隐藏项，递归统计完成 sample.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	48 close button
+	49 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	50 minimize button
+	51 text OrangeLen — Quick Look for Developers
+52 menu bar
+	53 OrangeLen
+	54 Edit
+
+The focused UI element is 14 search text field (settable) 查找已加载内容 ⌘F

@@ -1,0 +1,78 @@
+Window: "OrangeLen — Quick Look for Developers", App: OrangeLen.
+0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop up button (disabled) 目录
+	5 checkbox 专注, Value: 1
+	6 button 上一句
+	7 button 下一句
+	8 pop up button 3 行尺
+	9 button A−
+	10 button A+
+	11 pop up button 显示设置
+	12 button 重载
+	13 button 查找
+	14 search text field (settable) 查找已加载内容 ⌘F
+		15 button Search
+	16 checkbox Aa, Value: 0
+	17 button ↑
+	18 button ↓
+	19 text 已加载内容
+	20 text field (settable) 行号
+	21 button 定位
+	22 button 全选
+	23 button 复制选择
+	24 button 取消加载
+	25 split group
+		26 search text field (settable) 文件名筛选（已加载项）
+			27 button Search
+		28 checkbox 显示忽略项, Value: 0
+		29 scroll area Secondary Actions: Scroll Up, Scroll Down
+			30 outline 项目目录树
+				31 row (selectable, expanded) Value: ▸ demo-project, Secondary Actions: Collapse
+					32 disclosure triangle 1
+				33 row (selectable, collapsed) Value: ▸ src, Secondary Actions: Expand
+					34 disclosure triangle 0
+				35 row (selectable) config.toml, Description: 预览 config.toml
+				36 row (selectable) config.yaml, Description: 预览 config.yaml
+				37 row (selectable) data.csv, Description: 预览 data.csv
+				38 row (selectable) data.json, Description: 预览 data.json
+				39 row (selectable) data.tsv, Description: 预览 data.tsv
+				40 row (selected) Makefile, Description: 预览 Makefile
+				41 row (selectable) README.md, Description: 预览 README.md
+				42 row (selectable) sample.png, Description: 预览 sample.png
+				43 row (selectable) sample.xml, Description: 预览 sample.xml
+			44 scroll bar (disabled, settable, float) 0
+		45 text 当前目录已扫描 11 项（完成）
+		46 splitter (disabled, settable, float) 250
+		47 scroll area Secondary Actions: Scroll Left, Scroll Right
+			48 text entry area Description: OrangeLen 只读正文, Value: # Fixture only. A previewer must never execute this file.
+all:
+	@echo 'This is source text only.'
+
+			49 scroll bar (settable, float) 1
+				50 value indicator (settable, float) 1
+				51 increment arrow button
+				52 decrement arrow button
+				53 increment page button
+				54 decrement page button
+			55 ruler
+	56 text 文件夹：demo-project · 总大小 13 KB · 13 个文件 · 1 个文件夹 · 含隐藏项，递归统计完成 Makefile · UTF-8 · 98 bytes · code · 完整文件
+ 已复制
+	57 close button
+	58 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	59 minimize button
+	60 text OrangeLen — Quick Look for Developers
+61 menu bar
+	62 OrangeLen
+	63 Edit
+
+Selected text: ```
+# Fixture only. A previewer must never execute this file.
+all:
+	@echo 'This is source text only.'
+
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

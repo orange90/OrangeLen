@@ -1,0 +1,15 @@
+{
+  "Tests/Fixtures/demo-project/Makefile": "af91e998be3786f26408658fdf4eb288a3f8c89a727b267f1399ef17dde3e901",
+  "Tests/Fixtures/demo-project/README.md": "150076c5e0b73e2b857777ea4d0ba87220c31c6897a0a37d959c5bacbe600721",
+  "Tests/Fixtures/demo-project/config.toml": "9217a3a90ffb30cb5f226ac68d4ae1038fd434872c96f68c5bda74290bbabf31",
+  "Tests/Fixtures/demo-project/config.yaml": "3ab71e75c509840c326cd13cc7baee4b09d222da9325471f89458001fae4d7e6",
+  "Tests/Fixtures/demo-project/data.csv": "fefdc2ce6f86785516db7fdc1d1c78a952413e0805c9c0aa07fa8e34bb29086e",
+  "Tests/Fixtures/demo-project/data.json": "42fd29acd8254baad91d45d301985682f625c11affa9fcab3fb4c8f3253fc60b",
+  "Tests/Fixtures/demo-project/data.tsv": "aa1d0004b6a4e7863db59e0322367305268cc0b06d9efe13b3fd9bac574c0153",
+  "Tests/Fixtures/demo-project/sample.png": "9b8d9edcfa029fd37f7600b4e229904d91acc9122c4bff8fc703ada984a6174c",
+  "Tests/Fixtures/demo-project/sample.xml": "eee874aed0d0fb7d9023b11b68693c39c87afaf130ccda22dbc9a2d2300c0234",
+  "Tests/Fixtures/demo-project/src/helpers.py": "afe942f3aabc29c1c20d85a2f36e7e4b5e806d91802c42d492a429104415ba92",
+  "Tests/Fixtures/demo-project/src/main.swift": "75820eb1e99cf140567bac6f2e695795e3adf7353a5780cfb28af1eea3662ce8",
+  "Tests/Fixtures/demo-project/src/main.ts": "ded3b6efe1b7c08b554af7d3acd1fb5d5d89289908bcf433c0df31b77ca29597",
+  "Tests/Fixtures/probe.txt": "2ee3e2ebfc4ff435af23e78e1a3e5c91e5b23ece874f6423a259618550f7e202"
+}

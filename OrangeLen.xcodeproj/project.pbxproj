@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C38BFEF2B1D7A5FEAD57B3E /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 30D1B581E05B8E0516C61C8D /* OrangeLenUI */; };
+		1A3F0BE9CE913CA59E44FF97 /* OrangeLenCore in Frameworks */ = {isa = PBXBuildFile; productRef = 72A62C92F98ADD9FC9E6A66A /* OrangeLenCore */; };
+		28A1AF05720B32F6864B2E96 /* OrangeLenPreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BC9FA5C4EB4E5336C5DD1B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C80D93133D02E9E0D26EA /* SettingsView.swift */; };
+		2F20B7C9942AE2A85D15E69D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A7F21DE09B1A311246A83 /* main.swift */; };
+		4268976FE62529925996941D /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44AFA5C73E7CF5D3227A86E7 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61C00F684C7EE5F46DB43F64 /* OrangeLenUI */; };
+		BB3CC9128971381E4835A911 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
+		C215C10E9849437A05B1ABD7 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */; };
+		F19578AED0388D7F8AC8A294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0B5EC560B315CB477FDD2 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F997CCC6169A38C80A79443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9856266766C125F99F0291C0;
+			remoteInfo = OrangeLenImageBroker;
+		};
+		EAD06E0BD016D68A9A53F78F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCBFE1A27B3880238A5E19E5;
+			remoteInfo = OrangeLenPreview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		98F7B9B8C8764E92D63E48DC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				4268976FE62529925996941D /* OrangeLenImageBroker.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F2C7CAEA38C95C550A9578 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				28A1AF05720B32F6864B2E96 /* OrangeLenPreview.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1462345BBF84F2085AE5662C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		254021F3F5748BAB03EB3611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2B518C079605C18EC15BBF1E /* OrangeLen */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OrangeLen; path = Packages/OrangeLen; sourceTree = SOURCE_ROOT; };
+		3C6C80D93133D02E9E0D26EA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		46850D4CAFD9853701455F26 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		59C0B5EC560B315CB477FDD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		667209996F981C6955ACFB57 /* ImageBroker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageBroker.entitlements; sourceTree = "<group>"; };
+		6AAEC95058178BE7091F2712 /* OrangeLen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeLen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C12C74DAC81FE80513F65F9 /* OrangeLenPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrangeLenPreview.entitlements; sourceTree = "<group>"; };
+		6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OrangeLenImageBroker.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
+		79B2A6052B4399CD829B2B61 /* OrangeLen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrangeLen.entitlements; sourceTree = "<group>"; };
+		7E4A7F21DE09B1A311246A83 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B20FCB7C331241A7EACA9600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F96A92BE9E5C0F4E4CC29C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A3F0BE9CE913CA59E44FF97 /* OrangeLenCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F8DEC43B8C83A198B0303A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44AFA5C73E7CF5D3227A86E7 /* OrangeLenUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6CD7B800287B728B5A37A1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C38BFEF2B1D7A5FEAD57B3E /* OrangeLenUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		002088EB76A274B9D40B8F1B /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				2B518C079605C18EC15BBF1E /* OrangeLen */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		165C9948477B5A12CED0DD86 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				59C0B5EC560B315CB477FDD2 /* AppDelegate.swift */,
+				1462345BBF84F2085AE5662C /* Info.plist */,
+				79B2A6052B4399CD829B2B61 /* OrangeLen.entitlements */,
+				3C6C80D93133D02E9E0D26EA /* SettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		54EF8AC4F19016681FE6D494 /* PreviewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				254021F3F5748BAB03EB3611 /* Info.plist */,
+				6C12C74DAC81FE80513F65F9 /* OrangeLenPreview.entitlements */,
+				46850D4CAFD9853701455F26 /* PreviewViewController.swift */,
+			);
+			path = PreviewExtension;
+			sourceTree = "<group>";
+		};
+		55FF2F50F69D0DBC0890213D /* OrangeLenUI */ = {
+			isa = PBXGroup;
+			children = (
+				70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */,
+			);
+			name = OrangeLenUI;
+			path = Packages/OrangeLen/Sources/OrangeLenUI;
+			sourceTree = "<group>";
+		};
+		698B04F06E147C5279F1DF06 = {
+			isa = PBXGroup;
+			children = (
+				165C9948477B5A12CED0DD86 /* App */,
+				8F70B89C574AF0AD5A106C12 /* ImageBroker */,
+				55FF2F50F69D0DBC0890213D /* OrangeLenUI */,
+				002088EB76A274B9D40B8F1B /* Packages */,
+				54EF8AC4F19016681FE6D494 /* PreviewExtension */,
+				7A2E9D2B52DA92C50938D2CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A2E9D2B52DA92C50938D2CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AAEC95058178BE7091F2712 /* OrangeLen.app */,
+				6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */,
+				631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F70B89C574AF0AD5A106C12 /* ImageBroker */ = {
+			isa = PBXGroup;
+			children = (
+				667209996F981C6955ACFB57 /* ImageBroker.entitlements */,
+				B20FCB7C331241A7EACA9600 /* Info.plist */,
+				7E4A7F21DE09B1A311246A83 /* main.swift */,
+			);
+			path = ImageBroker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9856266766C125F99F0291C0 /* OrangeLenImageBroker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EDB6F8745FAC20303A133E8 /* Build configuration list for PBXNativeTarget "OrangeLenImageBroker" */;
+			buildPhases = (
+				F237409E0FCA5BA5129F663F /* Sources */,
+				0F96A92BE9E5C0F4E4CC29C4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrangeLenImageBroker;
+			packageProductDependencies = (
+				72A62C92F98ADD9FC9E6A66A /* OrangeLenCore */,
+			);
+			productName = OrangeLenImageBroker;
+			productReference = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
+		AC812D73CE8048F05E373042 /* OrangeLen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABDF0277DAFB225301E77802 /* Build configuration list for PBXNativeTarget "OrangeLen" */;
+			buildPhases = (
+				6DD2C0148DF7120DB34A5882 /* Sources */,
+				2F8DEC43B8C83A198B0303A5 /* Frameworks */,
+				D9F2C7CAEA38C95C550A9578 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7564D6A850D6535892B99F45 /* PBXTargetDependency */,
+			);
+			name = OrangeLen;
+			packageProductDependencies = (
+				61C00F684C7EE5F46DB43F64 /* OrangeLenUI */,
+			);
+			productName = OrangeLen;
+			productReference = 6AAEC95058178BE7091F2712 /* OrangeLen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6C0F6A5F6E9329C00826A5 /* Build configuration list for PBXNativeTarget "OrangeLenPreview" */;
+			buildPhases = (
+				0D75E99B07AF0350A9937694 /* Sources */,
+				98F7B9B8C8764E92D63E48DC /* CopyFiles */,
+				E6CD7B800287B728B5A37A1B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D85CE3D0E849A8A9D7F209CA /* PBXTargetDependency */,
+			);
+			name = OrangeLenPreview;
+			packageProductDependencies = (
+				30D1B581E05B8E0516C61C8D /* OrangeLenUI */,
+			);
+			productName = OrangeLenPreview;
+			productReference = 631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53FBB2D914FB24BEDE6AD2DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9856266766C125F99F0291C0 = {
+						ProvisioningStyle = Manual;
+					};
+					AC812D73CE8048F05E373042 = {
+						ProvisioningStyle = Manual;
+					};
+					CCBFE1A27B3880238A5E19E5 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = AAACD04F2CA2AEC1EA2A1441 /* Build configuration list for PBXProject "OrangeLen" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 698B04F06E147C5279F1DF06;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9E4743E201A963E85F77E24C /* XCLocalSwiftPackageReference "Packages/OrangeLen" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7A2E9D2B52DA92C50938D2CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC812D73CE8048F05E373042 /* OrangeLen */,
+				9856266766C125F99F0291C0 /* OrangeLenImageBroker */,
+				CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D75E99B07AF0350A9937694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3CC9128971381E4835A911 /* PreviewViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DD2C0148DF7120DB34A5882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19578AED0388D7F8AC8A294 /* AppDelegate.swift in Sources */,
+				2BC9FA5C4EB4E5336C5DD1B3 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F237409E0FCA5BA5129F663F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C215C10E9849437A05B1ABD7 /* RemoteImageLoader.swift in Sources */,
+				2F20B7C9942AE2A85D15E69D /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7564D6A850D6535892B99F45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */;
+			targetProxy = EAD06E0BD016D68A9A53F78F /* PBXContainerItemProxy */;
+		};
+		D85CE3D0E849A8A9D7F209CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9856266766C125F99F0291C0 /* OrangeLenImageBroker */;
+			targetProxy = 9F997CCC6169A38C80A79443 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D5B448F7EB8D4D268A3A1D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3EE220CADF47810D28B85709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		413D57763EE572768334F65B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PreviewExtension/OrangeLenPreview.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PreviewExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.Preview;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		50B121496D6E2F5D9DFF791A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImageBroker/ImageBroker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageBroker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.ImageBroker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6DC04A5B30BB0E9550B352B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PreviewExtension/OrangeLenPreview.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PreviewExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.Preview;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9ADA0ADCBDB7656CEF79FF73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/OrangeLen.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C782C5DC17C79E8B307EE392 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/OrangeLen.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CD6D20C0BF22B59147701C08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ImageBroker/ImageBroker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageBroker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.ImageBroker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D6C0F6A5F6E9329C00826A5 /* Build configuration list for PBXNativeTarget "OrangeLenPreview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DC04A5B30BB0E9550B352B6 /* Debug */,
+				413D57763EE572768334F65B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5EDB6F8745FAC20303A133E8 /* Build configuration list for PBXNativeTarget "OrangeLenImageBroker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B121496D6E2F5D9DFF791A /* Debug */,
+				CD6D20C0BF22B59147701C08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AAACD04F2CA2AEC1EA2A1441 /* Build configuration list for PBXProject "OrangeLen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE220CADF47810D28B85709 /* Debug */,
+				1D5B448F7EB8D4D268A3A1D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ABDF0277DAFB225301E77802 /* Build configuration list for PBXNativeTarget "OrangeLen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C782C5DC17C79E8B307EE392 /* Debug */,
+				9ADA0ADCBDB7656CEF79FF73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9E4743E201A963E85F77E24C /* XCLocalSwiftPackageReference "Packages/OrangeLen" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/OrangeLen;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30D1B581E05B8E0516C61C8D /* OrangeLenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenUI;
+		};
+		61C00F684C7EE5F46DB43F64 /* OrangeLenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenUI;
+		};
+		72A62C92F98ADD9FC9E6A66A /* OrangeLenCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+}

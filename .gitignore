@@ -1,0 +1,9 @@
+.DS_Store
+.build/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+node_modules/
+Vendor/MarkdownRenderer/install.log

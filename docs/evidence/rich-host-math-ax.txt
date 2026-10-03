@@ -1,0 +1,116 @@
+Window: "OrangeLen — Quick Look for Developers", App: OrangeLen.
+0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop up button 目录
+	4 checkbox 专注, Value: 1
+	5 button 上一句
+	6 button 下一句
+	7 pop up button 5 行尺
+	8 button A−
+	9 button A+
+	10 pop up button 显示设置
+	11 button 重载
+	12 button 查找
+	13 search text field (settable) 查找已加载内容 ⌘F
+		14 button Search
+	15 checkbox Aa, Value: 0
+	16 button ↑
+	17 button ↓
+	18 text 已加载内容
+	19 text field (settable) 行号
+	20 button 定位
+	21 button 全选
+	22 button 复制选择
+	23 button 取消加载
+	24 button 加载远程图片
+	25 text 远程图片尚未加载（点击后仅下载图片）
+	26 split group
+		27 search text field (settable) 文件名筛选（已加载项）
+			28 button Search
+		29 checkbox 显示忽略项, Value: 0
+		30 scroll area Secondary Actions: Scroll Up, Scroll Down
+			31 outline 项目目录树
+				32 row (selectable, expanded) Value: ▸ demo-project, Secondary Actions: Collapse
+					33 disclosure triangle 1
+				34 row (selectable, collapsed) Value: ▸ src, Secondary Actions: Expand
+					35 disclosure triangle 0
+				36 row (selectable) config.toml, Description: 预览 config.toml
+				37 row (selectable) config.yaml, Description: 预览 config.yaml
+				38 row (selectable) data.csv, Description: 预览 data.csv
+				39 row (selectable) data.json, Description: 预览 data.json
+				40 row (selectable) data.tsv, Description: 预览 data.tsv
+				41 row (selectable) Makefile, Description: 预览 Makefile
+				42 row (selectable) README.md, Description: 预览 README.md
+				43 row (selectable) render-lab.md, Description: 预览 render-lab.md
+				44 row (selected) rich-content.md, Description: 预览 rich-content.md
+				45 row (selectable) sample.png, Description: 预览 sample.png
+				46 row (selectable) sample.xml, Description: 预览 sample.xml
+			47 scroll bar (disabled, settable, float) 0
+		48 text 当前目录已扫描 13 项（完成）
+		49 splitter (disabled, settable, float) 250
+		50 scroll area Secondary Actions: Scroll Up, Scroll Down
+			51 text entry area Description: OrangeLen 只读正文, Value: **公式、图表与图片**
+普通正文仍可选择复制：中文、English、emoji 👩🏽‍💻。行内公式 [attached image] 与 [attached image] 应与文字一起排版。
+**块级公式**
+[attached image]
+[attached image]
+**Mermaid 流程图**
+[attached image]
+**Mermaid 时序图**
+[attached image]
+**本地图片**
+[attached image] 本地棋盘
+**远程图片（不会自动联网）**
+[attached text: [￼](orangelen-remote:128)] W3C 标志，点击加载
+**安全回归**
+原始 HTML 只显示，不执行：<script>alert(‘never execute’)</script>。
+这张图片必须阻止访问：[attached text: [￼](orangelen-remote:215)] 私有地址
+下面图表包含交互指令，应拒绝渲染，源码仍可查看和复制：
+[attached text]
+
+				52 attached image
+				53 attached image
+				54 attached image
+				55 attached image
+				56 attached image
+				57 attached image
+				58 attached image
+				59 attached text [加载远程图片]
+				60 attached text [加载远程图片]
+				61 attached text 图表未渲染 · 查看源码
+				62 link ￼, Value: orangelen-remote:128
+				63 link ￼, Value: orangelen-remote:215
+			64 scroll bar (settable, float) 0
+				65 value indicator (settable, float) 0
+				66 increment arrow button
+				67 decrement arrow button
+				68 increment page button
+				69 decrement page button
+	70 text 文件夹：demo-project · 总大小 16 KB · 15 个文件 · 1 个文件夹 · 含隐藏项，递归统计完成 rich-content.md · UTF-8 · 1274 bytes · markdown · 完整文件
+	71 close button
+	72 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	73 minimize button
+	74 text OrangeLen — Quick Look for Developers
+75 menu bar
+	76 OrangeLen
+	77 Edit
+
+The focused UI element is 51 text entry area Description: OrangeLen 只读正文, Value: **公式、图表与图片**
+普通正文仍可选择复制：中文、English、emoji 👩🏽‍💻。行内公式 [attached image] 与 [attached image] 应与文字一起排版。
+**块级公式**
+[attached image]
+[attached image]
+**Mermaid 流程图**
+[attached image]
+**Mermaid 时序图**
+[attached image]
+**本地图片**
+[attached image] 本地棋盘
+**远程图片（不会自动联网）**
+[attached text: [￼](orangelen-remote:128)] W3C 标志，点击加载
+**安全回归**
+原始 HTML 只显示，不执行：<script>alert(‘never execute’)</script>。
+这张图片必须阻止访问：[attached text: [￼](orangelen-remote:215)] 私有地址
+下面图表包含交互指令，应拒绝渲染，源码仍可查看和复制：
+[attached text]

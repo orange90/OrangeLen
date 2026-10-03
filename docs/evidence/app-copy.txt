@@ -1,0 +1,1 @@
+Swift Cmd+A/C exact UTF-8 text match: True

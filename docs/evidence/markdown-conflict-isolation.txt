@@ -1,0 +1,2 @@
+-    org.sbarex.QLMarkdown.QLExtension(1.5.7)	1677690D-8DEE-45DA-BACD-911AB55BEABE	2026-10-03 02:33:10 +0000	/Applications/QLMarkdown.app/Contents/PlugIns/Markdown QL Extension.appex
+ (1 plug-in)

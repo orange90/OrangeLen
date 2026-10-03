@@ -1,0 +1,106 @@
+Window: "OrangeLen — Quick Look for Developers", App: OrangeLen.
+0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop up button   代码与图片
+	4 checkbox 专注, Value: 1
+	5 button 上一句
+	6 button 下一句
+	7 pop up button 5 行尺
+	8 button A−
+	9 button A+
+	10 pop up button 显示设置
+	11 button 重载
+	12 button 查找
+	13 search text field (settable) 查找已加载内容 ⌘F
+		14 button Search
+	15 checkbox Aa, Value: 0
+	16 button ↑
+	17 button ↓
+	18 text 已加载内容
+	19 text field (settable) 行号
+	20 button 定位
+	21 button 全选
+	22 button 复制选择
+	23 button 取消加载
+	24 split group
+		25 search text field (settable) 文件名筛选（已加载项）
+			26 button Search
+		27 checkbox 显示忽略项, Value: 0
+		28 scroll area Secondary Actions: Scroll Up, Scroll Down
+			29 outline 项目目录树
+				30 row (selectable, expanded) Value: ▸ demo-project, Secondary Actions: Collapse
+					31 disclosure triangle 1
+				32 row (selectable, collapsed) Value: ▸ src, Secondary Actions: Expand
+					33 disclosure triangle 0
+				34 row (selectable) config.toml, Description: 预览 config.toml
+				35 row (selectable) config.yaml, Description: 预览 config.yaml
+				36 row (selectable) data.csv, Description: 预览 data.csv
+				37 row (selectable) data.json, Description: 预览 data.json
+				38 row (selectable) data.tsv, Description: 预览 data.tsv
+				39 row (selectable) Makefile, Description: 预览 Makefile
+				40 row (selectable) README.md, Description: 预览 README.md
+				41 row (selected) render-lab.md, Description: 预览 render-lab.md
+				42 row (selectable) sample.png, Description: 预览 sample.png
+				43 row (selectable) sample.xml, Description: 预览 sample.xml
+			44 scroll bar (disabled, settable, float) 0
+		45 text 当前目录已扫描 12 项（完成）
+		46 splitter (disabled, settable, float) 250
+		47 scroll area Secondary Actions: Scroll Up, Scroll Down
+			48 text entry area Description: OrangeLen 只读正文, Value: **Markdown 阅读验收**
+这份文档用于检查 **粗体**、斜体、**粗斜体**、~~删除线~~ 和 inline code。中文、English、emoji 👩🏽‍💻 都需要保持可选择。 这里是同一段落的软换行，不应强制另起一行。
+**表格与对齐**
+**功能**
+**状态**
+**数量**
+**目录树**：中文长内容应该在单元格内自动换行，而不是挤进旁边一列。
+已实现
+128
+包含 inline code 与 <u>文内链接</u>
+测试中
+3.14
+空单元格
+​
+0
+
+**列表与引用**
+3.	从三开始的有序列表。
+4.	第二项带有嵌套内容：
+•	内层条目一。
+•	内层条目二，包含 **重点**。
+5.	第三项继续编号。
+☑	只读任务列表
+☐	验证复制与阅读尺
+引用应有明显的左边线和缩进。
+第二段引用，包含 **强调** 和 <u>[外部链接](example.com)</u>。
+**代码与图片**
+// 这里只显示，永远不执行。
+let greeting = "你好 👋"
+print(greeting)
+[attached image] 本地棋盘图片
+[attached text] 远程图片示例
+────────────
+**长句专注**
+这是一个用来检查阅读尺与句子高亮的较长句子，它含有中文和 English，还有 emoji 👩🏽‍💻，当窗口变窄或者字号变大时会换成多行，阅读尺应按真实视觉行数变化，而整句高亮应覆盖完整句子，不能在第三行突然截断。下一句用来检查导航。
+<script>neverExecute()</script>
+
+				49 attached image
+				50 attached text [远程图片不自动加载]
+				51 hyperlink 文内链接
+				52 link 外部链接, Value: example.com
+			53 scroll bar (settable, float) 0.5124399825403754
+				54 value indicator (settable, float) 0.5124399825403754
+				55 increment arrow button
+				56 decrement arrow button
+				57 increment page button
+				58 decrement page button
+	59 text 文件夹：demo-project · 总大小 15 KB · 14 个文件 · 1 个文件夹 · 含隐藏项，递归统计完成 render-lab.md · UTF-8 · 1527 bytes · markdown · 完整文件
+	60 close button
+	61 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	62 minimize button
+	63 text OrangeLen — Quick Look for Developers
+64 menu bar
+	65 OrangeLen
+	66 Edit
+
+The focused UI element is 13 search text field (settable) 查找已加载内容 ⌘F

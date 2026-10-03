@@ -1,0 +1,61 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 tickbox 专注, Value: 0
+	5 button 上一句
+	6 button 下一句
+	7 pop-up button 3 行尺
+	8 button A−
+	9 button A+
+	10 pop-up button 显示设置
+	11 button 重载
+	12 search text field (settable) 查找已加载内容（点击输入）
+		13 button Search
+	14 tickbox Aa, Value: 0
+	15 button ↑
+	16 button ↓
+	17 text 已加载内容
+	18 text field (settable) 行号
+	19 button 定位
+	20 button 复制选择
+	21 button 取消加载
+	22 split group
+		23 splitter (disabled, settable, float) 0
+		24 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			25 table
+				26 row (selectable)
+					27 cell
+						28 text 中文
+					29 cell
+						30 text 👋
+				31 row (selectable)
+					32 cell
+						33 text OrangeLen
+					34 cell
+						35 text 42
+				36 column (selectable) 0
+				37 column (selectable) 1
+				38 container
+					39 sort button name
+					40 sort button value
+			41 scroll bar (disabled, settable, float) 0
+			42 scroll bar (disabled, settable, float) 0
+	43 text data.tsv · UTF-8 · 36 bytes · tsv · 完整文件
+
+	44 close button close panel button
+	45 full screen button full screen window button
+	46 button Description: Share file, ID: QLControlShare
+	47 button Open with Numbers, Description: Open file, ID: QLControlOpen
+	48 text data.tsv
+49 menu bar
+	50 Finder
+	51 File
+	52 Edit
+	53 View
+	54 Go
+	55 Window
+	56 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

@@ -1,0 +1,64 @@
+Timestamp               Ty Process[PID:TID]
+2026-10-03 12:00:56.693 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=md
+2026-10-03 12:00:56.693 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:00:56.739 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] loaded format=markdown bytes=346 folderChild=false
+2026-10-03 12:00:56.739 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:01:17.553 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-03 12:01:17.554 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:01:17.563 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:01:21.316 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:01:21.316 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:01:21.839 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:01:21.839 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:01:28.000 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=md
+2026-10-03 12:01:28.000 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:01:28.009 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] loaded format=markdown bytes=346 folderChild=false
+2026-10-03 12:01:28.009 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:01:59.443 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-03 12:01:59.443 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:01:59.467 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:Reader] loaded format=text bytes=98 folderChild=false
+2026-10-03 12:01:59.467 Df OrangeLenPreview[73850:bf3178] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:06:45.317 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-03 12:06:45.317 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:06:45.351 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:06:45.351 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=text bytes=98 folderChild=false
+2026-10-03 12:06:45.351 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:07:05.443 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:07:17.306 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=7
+2026-10-03 12:08:04.931 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:04.931 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:08:05.664 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=toml
+2026-10-03 12:08:05.664 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:05.696 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:08:05.696 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=code bytes=46 folderChild=false
+2026-10-03 12:08:05.696 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:08:08.120 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:08.120 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:08:09.076 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=yaml
+2026-10-03 12:08:09.076 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:09.084 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:08:09.084 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=code bytes=74 folderChild=false
+2026-10-03 12:08:09.084 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:08:11.282 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:11.282 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:08:16.111 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=json
+2026-10-03 12:08:16.111 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:16.119 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:08:16.119 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=json bytes=120 folderChild=false
+2026-10-03 12:08:16.119 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:08:18.608 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:18.608 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:08:19.627 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=tsv
+2026-10-03 12:08:19.627 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:19.634 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:08:19.634 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=tsv bytes=36 folderChild=false
+2026-10-03 12:08:19.634 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:08:22.050 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:22.050 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared
+2026-10-03 12:08:22.829 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=xml
+2026-10-03 12:08:22.829 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:22.834 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-03 12:08:22.834 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] loaded format=code bytes=186 folderChild=false
+2026-10-03 12:08:22.834 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] prepare completed success=true
+2026-10-03 12:08:25.289 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-03 12:08:25.289 Df OrangeLenPreview[76368:bf6812] [local.OrangeLen:QuickLook] preview disappeared

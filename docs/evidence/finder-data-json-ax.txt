@@ -1,0 +1,55 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 tickbox 专注, Value: 0
+	5 button 上一句
+	6 button 下一句
+	7 pop-up button 3 行尺
+	8 button A−
+	9 button A+
+	10 pop-up button 显示设置
+	11 button 重载
+	12 search text field (settable) 查找已加载内容（点击输入）
+		13 button Search
+	14 tickbox Aa, Value: 0
+	15 button ↑
+	16 button ↓
+	17 text 已加载内容
+	18 text field (settable) 行号
+	19 button 定位
+	20 button 复制选择
+	21 button 取消加载
+	22 split group
+		23 splitter (disabled, settable, float) 0
+		24 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			25 outline
+				26 row (selectable, expanded) Value: $: object · 5 项, Secondary Actions: Collapse
+					27 disclosure triangle 1
+				28 row (selectable) name: "OrangeLen"
+				29 row (selectable) precise: 90071992547409931234567890
+				30 row (selectable) duplicate: 1
+				31 row (selectable) duplicate: 2
+				32 row (selectable, collapsed) Value: items: array · 3 项, Secondary Actions: Expand
+					33 disclosure triangle 0
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text data.json · UTF-8 · 120 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 button Open with Devin, Description: Open file, ID: QLControlOpen
+	42 text data.json
+43 menu bar
+	44 Finder
+	45 File
+	46 Edit
+	47 View
+	48 Go
+	49 Window
+	50 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

@@ -1,0 +1,79 @@
+The following is a diff from the previous accessibility tree for Window: "" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 211
++	215 radio button Description: 阅读, Value: 1
++	216 radio button Description: 源码, Value: 0
++	217 pop-up button 目录
++	218 tickbox 专注, Value: 1
++	219 button 上一句
++	220 button 下一句
++	221 pop-up button 5 行尺
++	222 button A−
++	223 button A+
++	224 pop-up button 显示设置
++	225 button 重载
++	226 button 查找
++	227 search text field (settable) 查找已加载内容（点击输入）
++		228 button Search
++	229 tickbox Aa, Value: 0
++	230 button ↑
++	231 button ↓
++	232 text 已加载内容
++	233 text field (settable) 行号
++	234 button 定位
++	235 button 全选
++	236 button 复制选择
++	237 button 取消加载
++	238 split group
++		239 splitter (disabled, settable, float) 0
++		240 scroll area Secondary Actions: Scroll Up, Scroll Down
++			241 text entry area Description: OrangeLen 只读正文, Value: **Markdown 阅读验收**
+这份文档用于检查 **粗体**、斜体、**粗斜体**、~~删除线~~ 和 inline code。中文、English、emoji 👩🏽‍💻 都需要保持可选择。 这里是同一段落的软换行，不应强制另起一行。
+**表格与对齐**
+**功能**
+**状态**
+**数量**
+**目录树**：中文长内容应该在单元格内自动换行，而不是挤进旁边一列。
+已实现
+128
+包含 inline code 与 <u>文内链接</u>
+测试中
+3.14
+空单元格
+​
+0
+
+**列表与引用**
+3.	从三开始的有序列表。
+4.	第二项带有嵌套内容：
+•	内层条目一。
+•	内层条目二，包含 **重点**。
+5.	第三项继续编号。
+☑	只读任务列表
+☐	验证复制与阅读尺
+引用应有明显的左边线和缩进。
+第二段引用，包含 **强调** 和 <u>[外部链接](example.com)</u>。
+**代码与图片**
+// 这里只显示，永远不执行。
+let greeting = "你好 👋"
+print(greeting)
+[attached text] 本地棋盘图片
+[attached text] 远程图片示例
+────────────
+**长句专注**
+这是一个用来检查阅读尺与句子高亮的较长句子，它含有中文和 English，还有 emoji 👩🏽‍💻，当窗口变窄或者字号变大时会换成多行，阅读尺应按真实视觉行数变化，而整句高亮应覆盖完整句子，不能在第三行突然截断。下一句用来检查导航。
+<script>neverExecute()</script>
+
++				242 attached text [本地图片不可读或超出预算]
++				243 attached text [远程图片不自动加载]
++				244 hyperlink 文内链接
++				245 link 外部链接, Value: example.com
++			246 scroll bar (settable, float) 0
++				247 value indicator (settable, float) 0
++				248 increment arrow button
++				249 decrement arrow button
++				250 increment page button
++				251 decrement page button
++	252 text render-lab.md · UTF-8 · 1527 bytes · markdown · 完整文件
++	253 button Description: Share file, ID: QLControlShare
++	254 button Open with MacDown, Description: Open file, ID: QLControlOpen
+The focused UI element is 210 window Quick Look, Secondary Actions: Raise

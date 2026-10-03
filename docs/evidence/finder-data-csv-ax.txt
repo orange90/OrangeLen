@@ -1,0 +1,32 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: data, URL: x-apple-ql-id2://1CB669FF-7992-4805-85FF-F3431DD2A37B/x-apple-ql-magic/
+			3 table
+				4 row (selectable)
+					5 cell (selectable) name
+					6 cell (selectable) description
+					7 cell (selectable) value
+				8 row (selectable)
+					9 cell (selectable) 中文,名称
+					10 cell (selectable) line one line two "quoted"
+					11 cell (selectable) 42
+				12 row (selectable)
+					13 cell (selectable) emoji
+					14 cell (selectable) 👩🏽‍💻
+					15 cell (selectable) 9007199254740993
+	16 close button close panel button
+	17 full screen button full screen window button
+	18 button Description: Share file, ID: QLControlShare
+	19 button Open with Numbers, Description: Open file, ID: QLControlOpen
+	20 text data.csv
+21 menu bar
+	22 Finder
+	23 File
+	24 Edit
+	25 View
+	26 Go
+	27 Window
+	28 Help
+
+The focused UI element is 2 HTML content Description: data, URL: x-apple-ql-id2://1CB669FF-7992-4805-85FF-F3431DD2A37B/x-apple-ql-magic/

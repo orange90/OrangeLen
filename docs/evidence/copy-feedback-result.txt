@@ -1,0 +1,1 @@
+Installed host: copy notice observed in AX; dismissed afterward; clipboard equals original Makefile: True.

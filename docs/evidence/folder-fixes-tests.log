@@ -1,0 +1,1090 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Emitting module OrangeLenUI
+[4/5] Compiling OrangeLenUI ReaderController.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (2.79s)
+Test Suite 'All tests' started at 2026-10-03 14:05:15.358.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-03 14:05:15.359.
+Test Suite 'CoreTests' started at 2026-10-03 14:05:15.359.
+Test Case '-[OrangeLenCoreTests.CoreTests testCancellationAllParsers]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCancellationAllParsers]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testCommonMarkStructureAndMapping]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCommonMarkStructureAndMapping]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testCSVQuotedMultilineAndEscapedFields]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCSVQuotedMultilineAndEscapedFields]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderPaginationIgnoreAndCycle]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderPaginationIgnoreAndCycle]' passed (0.015 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderSummaryIncludesHiddenItemsAndNeverFollowsLinks]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderSummaryIncludesHiddenItemsAndNeverFollowsLinks]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONPreservesDuplicateKeysLargeNumbersAndPaths]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONPreservesDuplicateKeysLargeNumbersAndPaths]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONStrictSyntaxAndDepthBudget]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONStrictSyntaxAndDepthBudget]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testMalformedCSVAndBudget]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testMalformedCSVAndBudget]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownEntitiesEscapesAndUnsafeHTMLRemainText]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownEntitiesEscapesAndUnsafeHTMLRemainText]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testReadOnlyBoundedFilesAndSymlinks]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testReadOnlyBoundedFilesAndSymlinks]' passed (0.007 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testSentencesDoNotCrossBlocksOrSplitDecimals]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testSentencesDoNotCrossBlocksOrSplitDecimals]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testStrictEncodingsAndBOM]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testStrictEncodingsAndBOM]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testUTF16MappingSearchAndCopy]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testUTF16MappingSearchAndCopy]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testXMLIsNeverParsedOrResolved]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testXMLIsNeverParsedOrResolved]' passed (0.000 seconds).
+Test Suite 'CoreTests' passed at 2026-10-03 14:05:15.392.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.032 (0.033) seconds
+Test Suite 'LayoutTests' started at 2026-10-03 14:05:15.392.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' passed (0.811 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' passed (0.005 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' started.
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.209 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.210 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.211 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.212 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unrecognized colorspace number -1
+2026-10-03 14:05:16.213 xctest[90844:12700880] Unknown number of components for colorspace model -1
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' passed (0.043 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' passed (0.032 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' passed (0.065 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' passed (6.383 seconds).
+Test Suite 'LayoutTests' passed at 2026-10-03 14:05:22.733.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 7.340 (7.340) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-03 14:05:22.733.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 7.372 (7.374) seconds
+Test Suite 'All tests' passed at 2026-10-03 14:05:22.733.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 7.372 (7.375) seconds
+VIEWPORT text=(0.0, 0.0, 999.0, 575.0) bounds=(0.0, 0.0, 999.0, 575.0) visible=(0.0, 0.0, 999.0, 575.0) glyphs=(74.0, 18.0, 846.0, 56.0) ruler=(0.0, 0.0, 52.0, 575.0)
+BENCHMARK app-in-process, bytes=1048646, initialMs=411.1759662628174, warm20Ms=[362.265944480896, 238.37590217590332, 236.16600036621094, 371.7379570007324, 246.36304378509521, 245.11206150054932, 333.98306369781494, 246.54710292816162, 240.07093906402588, 237.5929355621338, 544.3769693374634, 247.41709232330322, 239.05503749847412, 333.5089683532715, 240.25309085845947, 236.00590229034424, 322.0639228820801, 341.1980867385864, 258.50892066955566, 260.3189945220947], warmP95Ms=371.7379570007324, OS file cache not controlled; NOT Finder timing
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

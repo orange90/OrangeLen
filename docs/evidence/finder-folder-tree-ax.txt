@@ -1,0 +1,72 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 tickbox 专注, Value: 1
+	5 button 上一句
+	6 button 下一句
+	7 pop-up button 3 行尺
+	8 button A−
+	9 button A+
+	10 pop-up button 显示设置
+	11 button 重载
+	12 button 查找
+	13 search text field (settable) 查找已加载内容（点击输入）
+		14 button Search
+	15 tickbox Aa, Value: 0
+	16 button ↑
+	17 button ↓
+	18 text field (settable) 行号
+	19 button 定位
+	20 button 全选
+	21 button 复制选择
+	22 button 取消加载
+	23 split group
+		24 search text field (settable) 文件名筛选（已加载项）
+			25 button Search
+		26 tickbox 显示忽略项, Value: 0
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 outline 项目目录树
+				29 row (selectable, expanded) Value: ▸ demo-project, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable, collapsed) Value: ▸ src, Secondary Actions: Expand
+					32 disclosure triangle 0
+				33 row (selectable) config.toml
+				34 row (selectable) config.yaml
+				35 row (selectable) data.csv
+				36 row (selectable) data.json
+				37 row (selectable) data.tsv
+				38 row (selectable) Makefile
+				39 row (selectable) README.md
+				40 row (selectable) sample.xml
+			41 scroll bar (disabled, settable, float) 0
+		42 text 当前目录已扫描 10 项（完成）
+		43 splitter (disabled, settable, float) 250
+		44 scroll area Secondary Actions: Scroll Left, Scroll Right
+			45 text entry area Description: OrangeLen 只读正文, Value: demo-project
+
+选择左侧文件，在同一窗口阅读。
+目录按需枚举；脚本与项目依赖不会执行。
+README、package.json、pyproject.toml 等可作为项目线索点开阅读。
+			46 scroll bar (settable, float) 0
+				47 value indicator (settable, float) 0
+				48 increment arrow button
+				49 decrement arrow button
+				50 increment page button
+				51 decrement page button
+	52 text 文件夹 · 仅已展开目录 · 子项权限以实际读取结果为准
+	53 close button close panel button
+	54 full screen button full screen window button
+	55 button Description: Share file, ID: QLControlShare
+	56 text demo-project
+57 menu bar
+	58 Finder
+	59 File
+	60 Edit
+	61 View
+	62 Go
+	63 Window
+	64 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
