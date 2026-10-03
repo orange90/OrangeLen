@@ -28,9 +28,9 @@ Settings use shared UserDefaults, with active-preview refresh. Reading positions
 - One shared package contains separate Core/UI products rather than two sibling packages; this keeps dependency resolution consistent for app, extension and tests.
 - Source highlighting is a bounded lexical highlighter, not a language-complete compiler grammar. M1 rendering fidelity limitations are listed separately.
 - Markdown local inline images use AccessBroker and ImageIO: up to 8 attempts, 5 MiB each, 20 MiB total input, 8 million decoded pixels, 1200-pixel maximum edge. Paths stay inside the selected root (or document parent), symlinks/cloud placeholders are refused, and cancellation propagates. Adjacent-file sandbox permission is not assumed. Remote images start as placeholders and require an explicit click to download through the narrow image-only HTTPS/XPC path. Inaccessible/budget-exceeded images retain visible placeholders. Standalone folder images retain their separate 25 MiB/2048-pixel limits.
-- Directory scanning is per expanded directory with continuation, not a recursive whole-project index. Packages and symlinks are represented without following them. Project summary is basic, not parsed manifest analysis.
+- Directory scanning is per expanded directory with continuation, not a recursive whole-project index. Packages and symlinks are represented without following them. Project summary reads bounded manifest declarations without executing them.
 - System CSV preview is accepted under the user’s updated scope. Folder invocation/enumeration and selected Makefile reading have now been observed; broader remote-view input remains under verification. The host fallback is not counted as satisfying those Finder goals.
-- No EPUB/archives/Notebook/SQLite parser has been introduced before closing M1 gaps.
+- M2 containers use a shared native CollectionController and lazy section snapshots. ZIP/TAR never extract to disk; EPUB XHTML is converted to safe Markdown; SQLite deserializes bounded bytes into a read-only memory database. Generation and cancellation guards apply to section changes. See m2-formats.md.
 
 ## Primary references checked
 

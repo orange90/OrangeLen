@@ -1,3 +1,12 @@
+# M1 补强与 M2 开发验证（2026-10-03，当前）
+
+- **应用内渲染**：43 项 XCTest 全部通过；新增 ZIP/TAR/gzip/路径/CRC/取消、EPUB 章节/内图/保护资源/UTF-16 DTD、SQLite 内存只读/WAL/大整数、JSONL 坏记录、Notebook 输出隔离、HAR/OpenAPI、章节状态修订失效、连续选择与窄窗测试。真实 Finder Notebook 长正文切短输出曾触发 TextKit 装饰 NSRange 越界；已清除旧装饰并约束绘制范围，回归及 Finder 再测通过。日志 m2-tests.log。
+- **Finder 调用**：EPUB 正文、内图与第二章切换；JSONL 好/坏记录；Notebook 文本输出与 HTML 拒绝提示；SQLite 表格；ZIP 代码/Markdown/内图；TAR 正文；OpenAPI JSON paths/JSON 正文已观察。各 m2-finder-* AX/PNG 位于 evidence。diff 由系统处理器接管（用户接受）；HAR 初测系统元数据处理，OrangeLen Finder 未通过。TGZ、PDF、受保护 EPUB Finder 未测试。
+- **Finder 文件夹**：新版目录摘要和总计已显示。自动化目录行点击未稳定命中，无法据此判定普通鼠标失败，也不能标为完整点选回归通过；早期 Makefile 同窗正文证据仍有效。两种代码/Markdown/PNG 连续切换、“已复制”与任意拖选/阅读尺组合保持待验收。
+- **签名构建**：Xcode Debug 构建和 Apple Development 安装完成；最终 deep/strict 验签和开发包见 evidence/package 日志。Developer ID、公证、staple 未执行；其他 macOS 与 Intel 未测试。
+
+此前记录是历史证据；当前范围同时参见 m2-formats.md 与 format-support.md，不将宿主测试算作 Finder 支持。
+
 # 公式、Mermaid 与显式图片加载（2026-10-03，最新）
 
 用户本轮要求实际实现公式/Mermaid、本地图片直接渲染、远程图片点击后加载并防注入。已完成实现、开发构建、安装与测试；详见 [功能与安全边界](markdown-rich-content.md)。

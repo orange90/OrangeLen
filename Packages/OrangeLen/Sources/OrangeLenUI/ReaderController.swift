@@ -1,8 +1,25 @@
 import AppKit
 import OrangeLenCore
 import os
+import PDFKit
+
+private final class ResponsiveReaderView: NSView {
+    var resized: ((CGFloat) -> Void)?
+    override func setFrameSize(_ newSize: NSSize) { super.setFrameSize(newSize); resized?(newSize.width) }
+}
 
 public final class ReaderController: NSViewController, NSSearchFieldDelegate, NSTextViewDelegate {
+    var compactPreferred = false
+    var toolbarViews: [NSView] = []
+    var toolbarHeights: [NSLayoutConstraint] = []
+    var collection: CollectionController?
+    var virtualDocument = false
+    var virtualTitle = ""
+    let pdf = PDFView()
+    var mainControls: [NSView] = []
+    var findControls: [NSView] = []
+    let overflow = NSPopUpButton()
+    let sidebarButton = NSButton(checkboxWithTitle: "目录树", target: nil, action: nil)
     let copyNotice = NSStackView()
     let copyNoticeLabel = NSTextField(labelWithString: "")
     var hideCopyNotice: DispatchWorkItem?
@@ -58,7 +75,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     let logger = Logger(subsystem: "local.OrangeLen", category: "Reader")
     var optionsMenu = NSPopUpButton()
     public override func loadView() {
-        let root = NSView(frame: NSRect(x: 0, y: 0, width: 1000, height: 720))
+        let root = ResponsiveReaderView(frame: NSRect(x: 0, y: 0, width: 1000, height: 720))
         root.autoresizingMask = [.width, .height]
         let bar = NSStackView(); bar.orientation = .horizontal; bar.spacing = 6
         mode.selectedSegment = 0; mode.target = self; mode.action = #selector(toggleSource)
@@ -67,17 +84,24 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         ruler.addItems(withTitles: ["无阅读尺", "1 行尺", "3 行尺", "5 行尺"]); ruler.target = self; ruler.action = #selector(changeRuler)
         optionsMenu.addItems(withTitles: ["显示设置", "切换行号", "切换代码换行", "切换当前句高亮", "切换正文变淡", "切换表头", "表格再加载 500 行", "跟随系统", "浅色", "深色"])
         optionsMenu.target = self; optionsMenu.action = #selector(optionChanged)
-        for control in [mode, headings, focus, button("上一句", #selector(previousSentence)), button("下一句", #selector(nextSentence)), ruler, button("A−", #selector(smaller)), button("A+", #selector(larger)), optionsMenu, button("重载", #selector(reload))] { bar.addArrangedSubview(control) }
+        for control in [mode, headings, focus, button("上一句", #selector(previousSentence)), button("下一句", #selector(nextSentence)), ruler, button("A−", #selector(smaller)), button("A+", #selector(larger)), optionsMenu, button("重载", #selector(reload))] { bar.addArrangedSubview(control); mainControls.append(control) }
         let findbar = NSStackView(); findbar.orientation = .horizontal; findbar.spacing = 6
-        search.placeholderString = Bundle.main.bundleURL.pathExtension == "appex" ? "查找已加载内容（点击输入）" : "查找已加载内容 ⌘F"; search.delegate = self; search.widthAnchor.constraint(greaterThanOrEqualToConstant: 180).isActive = true
+        search.placeholderString = Bundle.main.bundleURL.pathExtension == "appex" ? "查找已加载内容（点击输入）" : "查找已加载内容 ⌘F"; search.delegate = self; search.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         caseButton.target = self; caseButton.action = #selector(searchChanged)
         lineField.placeholderString = "行号"; lineField.widthAnchor.constraint(equalToConstant: 65).isActive = true
         lineField.target = self; lineField.action = #selector(jumpLine)
         resultLabel.font = .systemFont(ofSize: 11)
-        for control in [button("查找", #selector(focusSearch)), search, caseButton, button("↑", #selector(previousMatch)), button("↓", #selector(nextMatch)), resultLabel, lineField, button("定位", #selector(jumpLine)), button("全选", #selector(selectBody)), button("复制选择", #selector(copySelection)), button("取消加载", #selector(cancelLoad))] { findbar.addArrangedSubview(control) }
+        for control in [button("查找", #selector(focusSearch)), search, caseButton, button("↑", #selector(previousMatch)), button("↓", #selector(nextMatch)), resultLabel, lineField, button("定位", #selector(jumpLine)), button("全选", #selector(selectBody)), button("复制选择", #selector(copySelection)), button("取消加载", #selector(cancelLoad))] { findbar.addArrangedSubview(control); findControls.append(control) }
+        overflow.addItems(withTitles: ["更多操作", "上一句", "下一句", "无阅读尺", "1 行尺", "3 行尺", "5 行尺", "减小字号", "增大字号", "重载", "定位到行", "取消加载", "在 Finder 中显示", "默认应用打开", "阅读/源码切换"])
+        overflow.target = self; overflow.action = #selector(overflowChanged); bar.addArrangedSubview(overflow)
+        sidebarButton.target = self; sidebarButton.action = #selector(toggleSidebar); bar.addArrangedSubview(sidebarButton); sidebarButton.isHidden = true
+        pdf.autoScales = true
         addChild(folder); addChild(json); addChild(table)
         split.isVertical = true; split.dividerStyle = .thin
         split.addArrangedSubview(folder.view); split.addArrangedSubview(body)
+        let folderWidth = folder.view.widthAnchor.constraint(equalToConstant:250); folderWidth.priority = .defaultHigh; folderWidth.isActive = true
+        folder.view.widthAnchor.constraint(greaterThanOrEqualToConstant:180).isActive = true
+        split.setHoldingPriority(.defaultHigh,forSubviewAt:0)
         folder.view.isHidden = true
         folderInfo.font = .systemFont(ofSize: 12); folderInfo.textColor = .secondaryLabelColor
         folder.onSummary = { [weak self] in self?.folderInfo.stringValue = $0 }
@@ -108,8 +132,10 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         remoteHeight = remoteBar.heightAnchor.constraint(equalToConstant: 0); remoteHeight.isActive = true
         remoteBar.isHidden = true
         for child in [bar, findbar, remoteBar, split, folderInfo, status] { child.translatesAutoresizingMaskIntoConstraints = false; root.addSubview(child) }
+        toolbarViews = [bar,findbar]
+        toolbarHeights = [bar.heightAnchor.constraint(equalToConstant:30),findbar.heightAnchor.constraint(equalToConstant:28)]
+        NSLayoutConstraint.activate(toolbarHeights)
         NSLayoutConstraint.activate([
-            bar.heightAnchor.constraint(equalToConstant: 30), findbar.heightAnchor.constraint(equalToConstant: 28),
             bar.topAnchor.constraint(equalTo: root.topAnchor, constant: 8), bar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), bar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10),
             findbar.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: 8), findbar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), findbar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10),
             remoteBar.topAnchor.constraint(equalTo: findbar.bottomAnchor, constant: 4), remoteBar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), remoteBar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10),
@@ -126,7 +152,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         copyNotice.isHidden = true
         let copied: (String) -> Void = { [weak self] in self?.showCopyNotice($0) }
         text.copyFeedback = copied; json.copyFeedback = copied; table.copyFeedback = copied
-        view = root; showContent(scroll); applySettings()
+        view = root; root.resized = { [weak self] width in self?.updateToolbars(width) }; showContent(scroll); applySettings(); updateToolbars(root.bounds.width)
     }
     func showCopyNotice(_ message: String) {
         hideCopyNotice?.cancel()
@@ -140,6 +166,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     }
     public override func viewDidLayout() {
         super.viewDidLayout()
+        updateToolbars(view.bounds.width)
         guard currentContent === scroll else { return }
         scroll.tile()
         let wrap = (format == .markdown && mode.selectedSegment == 0) || settings.wrapCode
@@ -157,12 +184,21 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
         text.needsDisplay = true; lineRuler.needsDisplay = true
     }
+    func updateToolbars(_ width: CGFloat) {
+        let container = collection != nil && currentContent === collection?.view
+        for toolbar in toolbarViews { toolbar.isHidden = container }
+        for (i,height) in toolbarHeights.enumerated() { height.constant = container ? 0 : (i == 0 ? 30 : 28) }
+        let compact = compactPreferred || width < 1280
+        for (index,control) in mainControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![2,8].contains(index) : compact && ![0,1,2,8].contains(index) }
+        for (index,control) in findControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![0,1,9].contains(index) : compact && ![0,1,8,9,10].contains(index) }
+        sidebarButton.isHidden = rootURL == nil
+    }
     func button(_ title: String, _ action: Selector) -> NSButton { let b = NSButton(title: title, target: self, action: action); b.bezelStyle = .rounded; return b }
     func showContent(_ child: NSView) {
         if currentContent === child { return }
         currentContent?.removeFromSuperview(); child.translatesAutoresizingMaskIntoConstraints = false; body.addSubview(child)
         NSLayoutConstraint.activate([child.leadingAnchor.constraint(equalTo: body.leadingAnchor), child.trailingAnchor.constraint(equalTo: body.trailingAnchor), child.topAnchor.constraint(equalTo: body.topAnchor), child.bottomAnchor.constraint(equalTo: body.bottomAnchor)])
-        currentContent = child
+        currentContent = child; updateToolbars(view.bounds.width)
     }
     public func open(_ url: URL, completion: @escaping (Error?) -> Void) {
         loadViewIfNeeded(); close(); rootURL = nil; folderInfo.stringValue = ""; picture.image = nil
@@ -174,9 +210,10 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         rootScope = url.startAccessingSecurityScopedResource()
         let directory = (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true
         if directory {
-            rootURL = url; folder.view.isHidden = false; split.setPosition(250, ofDividerAt: 0); folder.open(url)
+            rootURL = url; sidebarButton.state = .on; folder.view.isHidden = false; split.setPosition(250, ofDividerAt: 0); folder.open(url)
             currentURL = nil; source = nil; rendered = nil; jsonTree = nil; tableData = nil; matches = []; text.sentences = []; text.focusEnabled = false; scroll.rulersVisible = false; text.model = .plain(""); text.string = "\(url.lastPathComponent)\n\n选择左侧文件，在同一窗口阅读。\n目录按需枚举；脚本与项目依赖不会执行。\nREADME、package.json、pyproject.toml 等可作为项目线索点开阅读。"; showContent(scroll)
             status.stringValue = "文件夹 · 仅已展开目录 · 子项权限以实际读取结果为准"
+            loadProjectOverview(url)
             completion(nil)
         } else {
             if rootScope { url.stopAccessingSecurityScopedResource(); rootScope = false }
@@ -184,13 +221,35 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
     }
     func loadFile(_ url: URL, completion handler: @escaping (Error?) -> Void) {
-        clearCopyNotice(); savePosition(); cancelPending()
+        clearCopyNotice(); savePosition(); cancelPending(); collection?.cancel(); virtualDocument = false
         let id = UUID(); generation = id; let token = Cancellation(); cancellation = token; completion = handler
         remoteAttempts = 0; remoteBytes = 0; remoteStatus.stringValue = "远程图片尚未加载（点击后仅下载图片）"; remoteBar.isHidden = true; remoteHeight.constant = 0
         currentURL = url; source = nil; rendered = nil; markdownAssets = .init(); jsonTree = nil; tableData = nil; parseWarning = ""
-        text.model = .plain(""); text.sentences = []; matches = []; text.anchor = 0; table.loaded = 500
+        text.clearDecoration(); text.focusEnabled = false; text.model = .plain(""); text.sentences = []; matches = []; text.anchor = 0; table.loaded = 500
         text.string = "正在读取…"; status.stringValue = "OrangeLen · 本地、只读 · 正在载入 \(url.lastPathComponent)"; showContent(scroll)
         let root = rootURL; let detected = PreviewFormat.detect(url); format = detected
+        if ReadableFormat.isCollection(url) {
+            if collection == nil { let child = CollectionController(); addChild(child); collection = child }
+            showContent(collection!.view)
+            collection!.open(url, root: root) { [weak self] error in guard let self, self.generation == id else { return }; self.status.stringValue = "容器预览 · 本地、只读 · 子项按需读取"; self.finish(error) }
+            return
+        }
+        if url.pathExtension.lowercased() == "pdf" {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let result = Result { () -> Data in var limits = PreviewLimits(); limits.fileBytes = 25 * 1024 * 1024; return try AccessBroker.readBytes(url,root:root,limits:limits,cancellation:token).data }
+                DispatchQueue.main.async {
+                    guard let self, self.generation == id else { return }
+                    do { let data = try result.get(); guard let document = PDFDocument(data:data), document.pageCount <= 2000 else { throw PreviewError.malformed("PDF 损坏或页数超过 2,000") }; self.pdf.document = document; self.showContent(self.pdf); self.status.stringValue = "PDF · \(document.pageCount) 页 · 原生只读预览"; self.finish(nil) }
+                    catch { self.showMessage(error.localizedDescription); self.finish(error) }
+                }
+            }
+            return
+        }
+        if !ImagePreview.supports(url) && !ReadableFormat.isText(url) {
+            let size = (try? url.resourceValues(forKeys:[.fileSizeKey]).fileSize) ?? 0
+            showMessage("暂不支持此格式：\(url.pathExtension.isEmpty ? "无后缀" : url.pathExtension)\n\(ByteCountFormatter.string(fromByteCount:Int64(size),countStyle:.file))\n可在“更多操作”中用默认应用打开或在 Finder 中显示。\n预览不会执行此文件或强制二进制解码。")
+            status.stringValue = "不支持的格式 · 明确降级"; finish(nil); return
+        }
         if ImagePreview.supports(url) {
             picture.image = nil; mode.isEnabled = false; headings.isEnabled = false
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -257,13 +316,13 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
     }
     public func textView(_ textView: NSTextView, clickedOn cell: NSTextAttachmentCellProtocol, in cellFrame: NSRect, at charIndex: Int) {
-        guard let image = rendered?.images.first(where: { $0.range.location == charIndex }), markdownAssets.images[charIndex] == nil,
+        guard !virtualDocument, let image = rendered?.images.first(where: { $0.range.location == charIndex }), markdownAssets.images[charIndex] == nil,
               ["http", "https"].contains(URL(string: image.destination)?.scheme?.lowercased() ?? "") else { return }
         beginRemoteImages([image])
     }
     public func textView(_ textView: NSTextView, clickedOnLink link: Any, at charIndex: Int) -> Bool {
         let target = (link as? String) ?? (link as? URL)?.absoluteString ?? ""
-        if target.hasPrefix("orangelen-remote:"), let offset = Int(target.dropFirst("orangelen-remote:".count)), offset == charIndex,
+        if !virtualDocument, target.hasPrefix("orangelen-remote:"), let offset = Int(target.dropFirst("orangelen-remote:".count)), offset == charIndex,
            let image = rendered?.images.first(where: { $0.range.location == offset }) {
             beginRemoteImages([image]); return true
         }
@@ -281,7 +340,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             if !NSWorkspace.shared.open(url) { showCopyNotice("无法打开链接") }
             return true
         }
-        if let document = currentURL, let url = MarkdownNavigation.localURL(target, document: document, root: rootURL ?? document.deletingLastPathComponent()) {
+        if !virtualDocument, let document = currentURL ?? rootURL?.appendingPathComponent("overview.md"), let url = MarkdownNavigation.localURL(target, document: document, root: rootURL ?? document.deletingLastPathComponent()) {
             loadFile(url) { _ in }
         } else { showCopyNotice("此链接不可在预览中打开") }
         return true // Block scripts, custom schemes and arbitrary app launching.
@@ -289,7 +348,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     func finish(_ error: Error?) { let handler = completion; completion = nil; handler?(error) }
     func cancelPending() { richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
     public func close() {
-        clearCopyNotice(); savePosition(); cancelPending(); folder.cancel(); settingsTimer?.invalidate(); settingsTimer = nil
+        clearCopyNotice(); savePosition(); cancelPending(); collection?.cancel(); pdf.document = nil; folder.cancel(); settingsTimer?.invalidate(); settingsTimer = nil
         if rootScope { rootURL?.stopAccessingSecurityScopedResource(); rootScope = false }
         logger.notice("closed / pending work cancelled")
     }
@@ -300,12 +359,13 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let renderedMode = mode.selectedSegment == 0
         let markdown = format == .markdown && renderedMode && rendered != nil
         let model = markdown ? rendered! : (renderedMode && tableData != nil ? tableData!.textModel(source: source.text) : TextModel.plain(source.text, code: format != .text))
-        let hasRemote = markdown && model.images.contains { ["http", "https"].contains(URL(string: $0.destination)?.scheme?.lowercased() ?? "") }
+        let hasRemote = !virtualDocument && markdown && model.images.contains { ["http", "https"].contains(URL(string: $0.destination)?.scheme?.lowercased() ?? "") }
         remoteBar.isHidden = !hasRemote; remoteHeight.constant = hasRemote ? 28 : 0
         text.isRichText = markdown
         text.clearDecoration(); text.model = model; text.sentences = model.sentences()
         renderedWidth = max(100, scroll.contentSize.width - 44)
         text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: markdown, settings: settings, focus: settings.focus, assets: markdownAssets, width: renderedWidth))
+        if format == .diff, let storage = text.textStorage { TextStyler.colorDiff(storage) }
         text.sentence(at: min(text.anchor, model.display.utf16.count))
         scroll.rulersVisible = !markdown && settings.lineNumbers
         text.textContainerInset = NSSize(width: scroll.rulersVisible ? 74 : 22, height: 18)
@@ -323,11 +383,13 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             }
         }
         headings.isEnabled = !headingOffsets.isEmpty
+        while overflow.numberOfItems > 15 { overflow.removeItem(at:15) }
+        for item in headings.itemTitles.dropFirst() { overflow.addItem(withTitle:"标题："+item) }
         if renderedMode, let jsonTree { json.show(jsonTree, source: source.text); showContent(json.view) }
         else if renderedMode, let tableData { table.show(tableData); showContent(table.view) }
         else { showContent(scroll) }
         mode.isEnabled = rendered != nil || jsonTree != nil || tableData != nil
-        status.stringValue = "\(currentURL?.lastPathComponent ?? "") · \(source.encoding) · \(source.byteCount) bytes · \(format.rawValue) · \(tableData?.partial == true ? "前 5,000 行，部分内容" : "完整文件")"
+        status.stringValue = "\(virtualDocument ? virtualTitle : currentURL?.lastPathComponent ?? "") · \(source.encoding) · \(source.byteCount) bytes · \(format.rawValue) · \(virtualDocument ? "已加载条目（有界）" : tableData?.partial == true ? "前 5,000 行，部分内容" : "完整文件")"
         let notices = [
             parseWarning,
             jsonTree?.duplicateKeys == true ? "重复键已保留为独立节点。" : "",
@@ -380,7 +442,25 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         else if currentContent === json.view { json.copyValue() }
         else { text.copy(nil) }
     }
-    @objc func reload() { if let currentURL { loadFile(currentURL, completion: { _ in }) } else if let rootURL { open(rootURL) { _ in } } }
+    @objc func reload() { guard !virtualDocument else { showCopyNotice("请在左侧重新选择条目"); return }; if let currentURL { loadFile(currentURL, completion: { _ in }) } else if let rootURL { open(rootURL) { _ in } } }
+    @objc func toggleSidebar() { folder.view.isHidden = sidebarButton.state != .on; if !folder.view.isHidden { split.setPosition(min(250,view.bounds.width * 0.35),ofDividerAt:0) } }
+    @objc func overflowChanged() {
+        switch overflow.indexOfSelectedItem {
+        case 1: previousSentence()
+        case 2: nextSentence()
+        case 3...6: settings.rulerLines = [0,1,3,5][overflow.indexOfSelectedItem - 3]; saveSettings()
+        case 7: smaller()
+        case 8: larger()
+        case 9: reload()
+        case 10: let alert = NSAlert(); alert.messageText = "定位到源码行"; let field = NSTextField(frame:NSRect(x:0,y:0,width:200,height:24)); alert.accessoryView = field; alert.addButton(withTitle:"定位"); alert.addButton(withTitle:"取消"); if alert.runModal() == .alertFirstButtonReturn { lineField.stringValue = field.stringValue; jumpLine() }
+        case 11: cancelLoad()
+        case 12: if let currentURL, !virtualDocument { NSWorkspace.shared.activateFileViewerSelecting([currentURL]) }
+        case 13: if let currentURL, !virtualDocument { NSWorkspace.shared.open(currentURL) }
+        case 14: if mode.isEnabled { mode.selectedSegment = mode.selectedSegment == 0 ? 1 : 0; toggleSource() }
+        default: let index = overflow.indexOfSelectedItem - 15; if index >= 0 && index < headingOffsets.count { jump(NSRange(location:headingOffsets[index],length:1)) }
+        }
+        overflow.selectItem(at:0)
+    }
     @objc func optionChanged() {
         switch optionsMenu.indexOfSelectedItem {
         case 1: settings.lineNumbers.toggle()

@@ -1,0 +1,58 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 3 项 · 单条目有界预览，不解压到磁盘
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selectable)
+					7 cell
+						8 button src/demo.swift
+				9 row (selected)
+					10 cell (selected)
+						11 button README.md
+				12 row (selectable)
+					13 cell
+						14 button assets/sample.png
+				15 sort button 章节 / 条目 / 表 / Cell
+			16 scroll bar (disabled, settable, float) 0
+		17 splitter (disabled, settable, float) 240
+		18 tickbox 专注, Value: 1
+		19 pop-up button 显示设置
+		20 pop-up button 更多操作
+		21 button 查找
+		22 search text field (settable) 查找已加载内容（点击输入）
+			23 button Search
+		24 button 复制选择
+		25 split group
+			26 splitter (disabled, settable, float) 0
+			27 scroll area Secondary Actions: Scroll Up, Scroll Down
+				28 text entry area Description: OrangeLen 只读正文, Value: **Archive**
+Local picture below.
+[attached image] 棋盘
+
+					29 attached image
+				30 scroll bar (settable, float) 0
+					31 value indicator (settable, float) 0
+					32 increment arrow button
+					33 decrement arrow button
+					34 increment page button
+					35 decrement page button
+		36 text README.md · 容器内存 · 62 bytes · markdown · 完整文件
+单条目有界预览，不解压到磁盘
+	37 text 容器预览 · 本地、只读 · 子项按需读取
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 button Uncompress, Description: Open file, ID: QLControlOpen
+	42 text sample.zip
+43 menu bar
+	44 Finder
+	45 File
+	46 Edit
+	47 View
+	48 Go
+	49 Window
+	50 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

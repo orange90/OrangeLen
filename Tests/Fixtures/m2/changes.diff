@@ -1,0 +1,6 @@
+diff --git a/demo.swift b/demo.swift
+--- a/demo.swift
++++ b/demo.swift
+@@ -1 +1 @@
+-let value = 1
++let value = 2 // 中文 👩🏽‍💻

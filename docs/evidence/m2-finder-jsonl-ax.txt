@@ -1,0 +1,58 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 4 项 · 格式损坏：JSON 值非法（UTF-16 偏移 0）
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selectable)
+					7 cell
+						8 button 记录 1
+				9 row (selected)
+					10 cell (selected)
+						11 button 记录 2 · 损坏行
+				12 row (selectable)
+					13 cell
+						14 button 记录 3
+				15 row (selectable)
+					16 cell
+						17 button 完整原始源文
+				18 sort button 章节 / 条目 / 表 / Cell
+			19 scroll bar (disabled, settable, float) 0
+		20 splitter (disabled, settable, float) 240
+		21 tickbox 专注, Value: 1
+		22 pop-up button 显示设置
+		23 pop-up button 更多操作
+		24 button 查找
+		25 search text field (settable) 查找已加载内容（点击输入）
+			26 button Search
+		27 button 复制选择
+		28 split group
+			29 splitter (disabled, settable, float) 0
+			30 scroll area Secondary Actions: Scroll Left, Scroll Right
+				31 text entry area Description: OrangeLen 只读正文, Value: not-json
+				32 scroll bar (settable, float) 0
+					33 value indicator (settable, float) 0
+					34 increment arrow button
+					35 decrement arrow button
+					36 increment page button
+					37 decrement page button
+				38 ruler
+		39 text 47 · 容器内存 · 8 bytes · json · 完整文件
+格式损坏：JSON 值非法（UTF-16 偏移 0） · 格式损坏：JSON 值非法（UTF-16 偏移 0）
+	40 text 容器预览 · 本地、只读 · 子项按需读取
+	41 close button close panel button
+	42 full screen button full screen window button
+	43 button Description: Share file, ID: QLControlShare
+	44 button Open with TextEdit, Description: Open file, ID: QLControlOpen
+	45 text records.jsonl
+46 menu bar
+	47 Finder
+	48 File
+	49 Edit
+	50 View
+	51 Go
+	52 Window
+	53 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

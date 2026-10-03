@@ -64,7 +64,7 @@ public final class ReadingTextView: NSTextView {
     /// Group actual line fragments by screen Y, not by logical paragraph/cell order.
     func visualRulerRects() -> [NSRect] {
         guard rulerLines > 0, !string.isEmpty, let layout = layoutManager, let container = textContainer else { return [] }
-        let safe = min(anchor, (string as NSString).length - 1)
+        let safe = min(max(0,anchor), (string as NSString).length - 1)
         let glyph = layout.glyphIndexForCharacter(at: safe)
         guard glyph < layout.numberOfGlyphs else { return [] }
         let current = layout.lineFragmentRect(forGlyphAt: glyph, effectiveRange: nil)
@@ -90,7 +90,8 @@ public final class ReadingTextView: NSTextView {
     public override func drawBackground(in rect: NSRect) {
         super.drawBackground(in: rect)
         guard focusEnabled, let layout = layoutManager, let container = textContainer, !sentences.isEmpty else { return }
-        let sentence = sentences[min(activeSentence, sentences.count - 1)]
+        let sentence = NSIntersectionRange(sentences[min(max(0,activeSentence), sentences.count - 1)], NSRange(location:0,length:(string as NSString).length))
+        guard sentence.length > 0 else { return }
         let origin = textContainerOrigin
         for band in visualRulerRects() {
             let band = band.offsetBy(dx: origin.x, dy: origin.y)
@@ -108,15 +109,15 @@ public final class ReadingTextView: NSTextView {
     public override func draw(_ dirtyRect: NSRect) {
         // Only the prior and current sentence colors change; the attributed document is not rebuilt on navigation.
         if focusEnabled && dimEnabled, let layout = layoutManager, !sentences.isEmpty {
-            if let previous = previousBright { layout.removeTemporaryAttribute(.foregroundColor, forCharacterRange: previous) }
-            let current = sentences[min(activeSentence, sentences.count - 1)]
+            if let previous = previousBright { layout.removeTemporaryAttribute(.foregroundColor, forCharacterRange: NSIntersectionRange(previous,NSRange(location:0,length:textStorage?.length ?? 0))) }
+            let current = NSIntersectionRange(sentences[min(max(0,activeSentence), sentences.count - 1)],NSRange(location:0,length:textStorage?.length ?? 0))
             textStorage?.enumerateAttribute(.foregroundColor, in: current) { value, range, _ in
                 let original = value as? NSColor ?? .textColor
                 let color = original == NSColor.secondaryLabelColor ? NSColor.textColor : original
                 layout.addTemporaryAttribute(.foregroundColor, value: color, forCharacterRange: range)
             }
             previousBright = current
-        } else if let previous = previousBright { layoutManager?.removeTemporaryAttribute(.foregroundColor, forCharacterRange: previous); previousBright = nil }
+        } else if let previous = previousBright { layoutManager?.removeTemporaryAttribute(.foregroundColor, forCharacterRange: NSIntersectionRange(previous,NSRange(location:0,length:textStorage?.length ?? 0))); previousBright = nil }
         super.draw(dirtyRect)
     }
     private var previousBright: NSRange?

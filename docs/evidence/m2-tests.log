@@ -1,0 +1,134 @@
+Building for debugging...
+[0/5] Write sources
+[3/5] Write swift-version--58304C5D6DBC2206.txt
+[5/8] Compiling OrangeLenCore DatabaseDocument.swift
+[6/8] Compiling OrangeLenCore Settings.swift
+[7/8] Emitting module OrangeLenCore
+[8/17] Compiling OrangeLenCoreTests M2Tests.swift
+[9/17] Emitting module OrangeLenCoreTests
+[10/17] Compiling OrangeLenUI ReaderRichContent.swift
+[11/17] Compiling OrangeLenUI ReaderMemory.swift
+[12/17] Compiling OrangeLenUI FolderController.swift
+[13/17] Compiling OrangeLenUI ReaderController.swift
+[14/17] Emitting module OrangeLenUI
+[15/17] Compiling OrangeLenUI CollectionController.swift
+[16/21] Compiling OrangeLenUITests RichContentTests.swift
+[17/21] Emitting module OrangeLenUITests
+[18/21] Compiling OrangeLenUITests M2IntegrationTests.swift
+[19/21] Compiling OrangeLenUITests LayoutTests.swift
+[19/21] Write Objects.LinkFileList
+[20/21] Linking OrangeLenPackageTests
+Build complete! (4.97s)
+Test Suite 'All tests' started at 2026-10-03 16:34:01.671.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-03 16:34:01.674.
+Test Suite 'CoreTests' started at 2026-10-03 16:34:01.674.
+Test Case '-[OrangeLenCoreTests.CoreTests testCancellationAllParsers]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCancellationAllParsers]' passed (0.005 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testCommonMarkStructureAndMapping]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCommonMarkStructureAndMapping]' passed (0.006 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testCSVQuotedMultilineAndEscapedFields]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testCSVQuotedMultilineAndEscapedFields]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderPaginationIgnoreAndCycle]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderPaginationIgnoreAndCycle]' passed (0.018 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderSummaryIncludesHiddenItemsAndNeverFollowsLinks]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testFolderSummaryIncludesHiddenItemsAndNeverFollowsLinks]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONPreservesDuplicateKeysLargeNumbersAndPaths]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONPreservesDuplicateKeysLargeNumbersAndPaths]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONStrictSyntaxAndDepthBudget]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testJSONStrictSyntaxAndDepthBudget]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testMalformedCSVAndBudget]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testMalformedCSVAndBudget]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownEntitiesEscapesAndUnsafeHTMLRemainText]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownEntitiesEscapesAndUnsafeHTMLRemainText]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownStructureRetainsNumberingTablesLinksAndImageMapping]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testMarkdownStructureRetainsNumberingTablesLinksAndImageMapping]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testReadOnlyBoundedFilesAndSymlinks]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testReadOnlyBoundedFilesAndSymlinks]' passed (0.008 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testSentencesDoNotCrossBlocksOrSplitDecimals]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testSentencesDoNotCrossBlocksOrSplitDecimals]' passed (0.003 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testStrictEncodingsAndBOM]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testStrictEncodingsAndBOM]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testUTF16MappingSearchAndCopy]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testUTF16MappingSearchAndCopy]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.CoreTests testXMLIsNeverParsedOrResolved]' started.
+Test Case '-[OrangeLenCoreTests.CoreTests testXMLIsNeverParsedOrResolved]' passed (0.000 seconds).
+Test Suite 'CoreTests' passed at 2026-10-03 16:34:01.720.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.045 (0.047) seconds
+Test Suite 'LayoutTests' started at 2026-10-03 16:34:01.720.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' passed (0.772 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' passed (0.005 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownCodeAndQuotesDoNotCollapseToSingleGlyphColumns]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownCodeAndQuotesDoNotCollapseToSingleGlyphColumns]' passed (0.002 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownLocalImageBudgetAndAttachmentPreserveText]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownLocalImageBudgetAndAttachmentPreserveText]' passed (0.005 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownTablesHaveRealCellGeometryAndSafeLinks]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownTablesHaveRealCellGeometryAndSafeLinks]' passed (0.033 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' passed (0.043 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' passed (0.042 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' passed (0.037 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' passed (6.561 seconds).
+Test Suite 'LayoutTests' passed at 2026-10-03 16:34:09.222.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 7.500 (7.502) seconds
+Test Suite 'M2IntegrationTests' started at 2026-10-03 16:34:09.222.
+Test Case '-[OrangeLenUITests.M2IntegrationTests testContainerLateSelectionCannotReplaceLatestText]' started.
+Test Case '-[OrangeLenUITests.M2IntegrationTests testContainerLateSelectionCannotReplaceLatestText]' passed (0.112 seconds).
+Test Case '-[OrangeLenUITests.M2IntegrationTests testEPUBAndArchiveUseSharedReaderAndRealImages]' started.
+Test Case '-[OrangeLenUITests.M2IntegrationTests testEPUBAndArchiveUseSharedReaderAndRealImages]' passed (0.140 seconds).
+Test Case '-[OrangeLenUITests.M2IntegrationTests testFocusDecorationSurvivesShorterLoadingText]' started.
+Test Case '-[OrangeLenUITests.M2IntegrationTests testFocusDecorationSurvivesShorterLoadingText]' passed (0.003 seconds).
+Test Case '-[OrangeLenUITests.M2IntegrationTests testUnsupportedBinaryAndNarrowControlsRemainReachable]' started.
+Test Case '-[OrangeLenUITests.M2IntegrationTests testUnsupportedBinaryAndNarrowControlsRemainReachable]' passed (0.095 seconds).
+Test Suite 'M2IntegrationTests' passed at 2026-10-03 16:34:09.571.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.349 (0.349) seconds
+Test Suite 'M2Tests' started at 2026-10-03 16:34:09.571.
+Test Case '-[OrangeLenCoreTests.M2Tests testArchiveLazyReadCRCAndPathBudgets]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testArchiveLazyReadCRCAndPathBudgets]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testContainerChapterAndAnchorRestoreInvalidatesOnRevision]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testContainerChapterAndAnchorRestoreInvalidatesOnRevision]' passed (0.007 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testEPUBEncryptionIsNotConfusedWithFontObfuscationAndDTDIsRefused]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testEPUBEncryptionIsNotConfusedWithFontObfuscationAndDTDIsRefused]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testEPUBSpineNavigationImagesAndScriptIsolation]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testEPUBSpineNavigationImagesAndScriptIsolation]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testHARAndOpenAPINeverResolveExternalResources]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testHARAndOpenAPINeverResolveExternalResources]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testJSONLBadLineDoesNotDiscardGoodRecords]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testJSONLBadLineDoesNotDiscardGoodRecords]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testNotebookAndDiffDoNotExecuteOrApply]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testNotebookAndDiffDoNotExecuteOrApply]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testSQLiteMemorySnapshotDoesNotModifySourceAndRefusesWAL]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testSQLiteMemorySnapshotDoesNotModifySourceAndRefusesWAL]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.M2Tests testTARAndGzipReadWithoutExtraction]' started.
+Test Case '-[OrangeLenCoreTests.M2Tests testTARAndGzipReadWithoutExtraction]' passed (0.001 seconds).
+Test Suite 'M2Tests' passed at 2026-10-03 16:34:09.586.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.014 (0.015) seconds
+Test Suite 'RichContentTests' started at 2026-10-03 16:34:09.586.
+Test Case '-[OrangeLenUITests.RichContentTests testImageHTTPBoundaries]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testImageHTTPBoundaries]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.RichContentTests testMathAndMermaidKeepSourceMapping]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testMathAndMermaidKeepSourceMapping]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.RichContentTests testOfflineRendererAndInjectionRefusal]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testOfflineRendererAndInjectionRefusal]' passed (1.478 seconds).
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteCancellationAndOptionalPublicFetch]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteCancellationAndOptionalPublicFetch]' passed (0.004 seconds).
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteImagePolicy]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteImagePolicy]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteImagesStayIdleUntilUserAction]' started.
+Test Case '-[OrangeLenUITests.RichContentTests testRemoteImagesStayIdleUntilUserAction]' passed (0.081 seconds).
+Test Suite 'RichContentTests' passed at 2026-10-03 16:34:11.154.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 1.566 (1.567) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-03 16:34:11.154.
+	 Executed 43 tests, with 0 failures (0 unexpected) in 9.475 (9.480) seconds
+Test Suite 'All tests' passed at 2026-10-03 16:34:11.154.
+	 Executed 43 tests, with 0 failures (0 unexpected) in 9.475 (9.483) seconds
+VIEWPORT text=(0.0, 0.0, 999.0, 575.0) bounds=(0.0, 0.0, 999.0, 575.0) visible=(0.0, 0.0, 999.0, 575.0) glyphs=(74.0, 18.0, 846.0, 56.0) ruler=(0.0, 0.0, 52.0, 575.0)
+BENCHMARK app-in-process, bytes=1048646, initialMs=515.5529975891113, warm20Ms=[222.23901748657227, 237.72799968719482, 456.4319849014282, 253.72803211212158, 233.58404636383057, 311.9640350341797, 345.2630043029785, 245.1329231262207, 237.33997344970703, 372.78199195861816, 244.07804012298584, 234.72297191619873, 305.90498447418213, 317.5870180130005, 244.25196647644043, 243.59500408172607, 380.1429271697998, 253.8590431213379, 250.6260871887207, 457.34500885009766], warmP95Ms=456.4319849014282, OS file cache not controlled; NOT Finder timing
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

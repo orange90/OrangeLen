@@ -1,0 +1,47 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 2 项 · 不执行脚本/CSS，不请求外链。
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selectable)
+					7 cell
+						8 button 第一章
+				9 row (selected)
+					10 cell (selected)
+						11 button 第二章
+				12 sort button 章节 / 条目 / 表 / Cell
+			13 scroll bar (disabled, settable, float) 0
+		14 splitter (disabled, settable, float) 240
+		15 tickbox 专注, Value: 1
+		16 pop-up button 显示设置
+		17 pop-up button 更多操作
+		18 button 查找
+		19 search text field (settable) 查找已加载内容（点击输入）
+			20 button Search
+		21 button 复制选择
+		22 split group
+			23 splitter (disabled, settable, float) 0
+			24 scroll area
+				25 text entry area Description: OrangeLen 只读正文, Value: **第二章**
+另一章节。前一章节不会覆盖这次选择。
+
+		26 text two · 容器内存 · 73 bytes · markdown · 完整文件
+不执行脚本/CSS，不请求外链。
+	27 text 容器预览 · 本地、只读 · 子项按需读取
+	28 close button close panel button
+	29 full screen button full screen window button
+	30 button Description: Share file, ID: QLControlShare
+	31 button Open with Books, Description: Open file, ID: QLControlOpen
+	32 text sample.epub
+33 menu bar
+	34 Finder
+	35 File
+	36 Edit
+	37 View
+	38 Go
+	39 Window
+	40 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

@@ -1,0 +1,1 @@
+{"openapi":"3.0.0","info":{"title":"Synthetic API","version":"1"},"paths":{"/read":{"get":{"responses":{"200":{"description":"Never requested"}}}}}}

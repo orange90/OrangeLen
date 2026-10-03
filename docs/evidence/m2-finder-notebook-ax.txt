@@ -1,0 +1,61 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 5 项 · 未执行/未渲染 MIME：text/html
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selectable)
+					7 cell
+						8 button 1 · markdown
+				9 row (selectable)
+					10 cell
+						11 button 2 · code
+				12 row (selectable)
+					13 cell
+						14 button 2 · 已有输出 1
+				15 row (selected)
+					16 cell (selected)
+						17 button 2 · 已有输出 2
+				18 row (selectable)
+					19 cell
+						20 button 完整原始源文
+				21 sort button 章节 / 条目 / 表 / Cell
+			22 scroll bar (disabled, settable, float) 0
+		23 splitter (disabled, settable, float) 240
+		24 tickbox 专注, Value: 1
+		25 pop-up button 显示设置
+		26 pop-up button 更多操作
+		27 button 查找
+		28 search text field (settable) 查找已加载内容（点击输入）
+			29 button Search
+		30 button 复制选择
+		31 split group
+			32 splitter (disabled, settable, float) 0
+			33 scroll area Secondary Actions: Scroll Left, Scroll Right
+				34 text entry area Description: OrangeLen 只读正文, Value: HTML output blocked
+				35 scroll bar (settable, float) 1
+					36 value indicator (settable, float) 1
+					37 increment arrow button
+					38 decrement arrow button
+					39 increment page button
+					40 decrement page button
+				41 ruler
+		42 text cell-1-output-1 · 容器内存 · 19 bytes · code · 完整文件
+未执行/未渲染 MIME：text/html
+	43 text 容器预览 · 本地、只读 · 子项按需读取
+	44 close button close panel button
+	45 full screen button full screen window button
+	46 button Description: Share file, ID: QLControlShare
+	47 button Open with Devin, Description: Open file, ID: QLControlOpen
+	48 text sample.ipynb
+49 menu bar
+	50 Finder
+	51 File
+	52 Edit
+	53 View
+	54 Go
+	55 Window
+	56 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

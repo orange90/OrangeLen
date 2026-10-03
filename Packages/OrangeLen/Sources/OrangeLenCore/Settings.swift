@@ -19,18 +19,18 @@ public final class SettingsStore {
     public let defaults: UserDefaults
     public let sharedAvailable: Bool
     public let directory: URL
-    public init(group: String? = Bundle.main.object(forInfoDictionaryKey: "OrangeLenAppGroup") as? String) {
+    public init(group: String? = Bundle.main.object(forInfoDictionaryKey: "OrangeLenAppGroup") as? String, defaults overrideDefaults: UserDefaults? = nil, directory overrideDirectory: URL? = nil) {
         let groupURL = group.flatMap { $0.isEmpty ? nil : FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: $0) }
         sharedAvailable = groupURL != nil
-        defaults = groupURL == nil ? .standard : (UserDefaults(suiteName: group!) ?? .standard)
-        directory = (groupURL ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]).appendingPathComponent("OrangeLenReading", isDirectory: true)
+        defaults = overrideDefaults ?? (groupURL == nil ? .standard : (UserDefaults(suiteName: group!) ?? .standard))
+        directory = overrideDirectory ?? (groupURL ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]).appendingPathComponent("OrangeLenReading", isDirectory: true)
     }
     public func load() -> ReaderSettings {
         guard let data = defaults.data(forKey: "readerSettings"), let settings = try? JSONDecoder().decode(ReaderSettings.self, from: data) else { return .init() }
         return settings
     }
     public func save(_ settings: ReaderSettings) { if let data = try? JSONEncoder().encode(settings) { defaults.set(data, forKey: "readerSettings") } }
-    struct State: Codable { let revision: String; let offset: Int; let date: Date }
+    struct State: Codable { let revision: String; let offset: Int; let date: Date; var section: String? = nil }
     private func file(_ url: URL) -> URL {
         // Salt is local metadata, never source content or a credential. Shared state remains disabled without a configured group.
         let salt = defaults.string(forKey: "readingSalt") ?? UUID().uuidString
@@ -42,11 +42,15 @@ public final class SettingsStore {
         guard load().remember, let data = try? Data(contentsOf: file(url)), let state = try? JSONDecoder().decode(State.self, from: data), state.revision == revision, Date().timeIntervalSince(state.date) < 30 * 86400 else { return nil }
         return state.offset
     }
-    public func remember(_ url: URL, revision: String, offset: Int) {
+    public func restoreSection(_ url: URL, revision: String) -> String? {
+        guard load().remember, let data = try? Data(contentsOf:file(url)), let state = try? JSONDecoder().decode(State.self,from:data), state.revision == revision, Date().timeIntervalSince(state.date) < 30 * 86400 else { return nil }
+        return state.section
+    }
+    public func remember(_ url: URL, revision: String, offset: Int, section: String? = nil) {
         guard load().remember else { return }
         do {
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
-            let data = try JSONEncoder().encode(State(revision: revision, offset: max(0, offset), date: Date()))
+            let data = try JSONEncoder().encode(State(revision: revision, offset: max(0, offset), date: Date(), section:section))
             var error: NSError?
             NSFileCoordinator().coordinate(writingItemAt: file(url), options: .forReplacing, error: &error) { target in try? data.write(to: target, options: .atomic) }
             let files = try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: [.contentModificationDateKey]).sorted { a, b in

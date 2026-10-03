@@ -14,3 +14,5 @@ Runtime is native Swift / AppKit / SwiftUI / Foundation / NaturalLanguage / Cryp
 Exact revisions are pinned in `Packages/OrangeLen/Package.resolved` and the Xcode workspace's `Package.resolved`. Dependency license files are copied into the app Resources during packaging. The lexical source highlighter is local code, not a compiler or syntax-execution engine.
 
 Renderer dependency integrity is pinned in `Vendor/MarkdownRenderer/package-lock.json`; normal Xcode builds use the committed resource. `npm audit` on 2026-10-03 reported 0 known vulnerabilities (not a guarantee of absence), see `Vendor/MarkdownRenderer/audit.json`.
+
+M2 also links SDK-provided SQLite (public domain) and zlib (zlib license), via CSQLite/CZlib system modules. No new copied third-party parser or command-line extraction tool is bundled. PDFKit and Foundation XMLParser are Apple system frameworks. SQLite/zlib versions follow the installed OS, rather than a separately bundled pinned version.

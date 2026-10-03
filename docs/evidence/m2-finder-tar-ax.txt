@@ -1,0 +1,44 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 1 项 · 单条目有界预览，不解压到磁盘
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selected)
+					7 cell (selected)
+						8 button README.md
+				9 sort button 章节 / 条目 / 表 / Cell
+			10 scroll bar (disabled, settable, float) 0
+		11 splitter (disabled, settable, float) 240
+		12 tickbox 专注, Value: 1
+		13 pop-up button 显示设置
+		14 pop-up button 更多操作
+		15 button 查找
+		16 search text field (settable) 查找已加载内容（点击输入）
+			17 button Search
+		18 button 复制选择
+		19 split group
+			20 splitter (disabled, settable, float) 0
+			21 scroll area
+				22 text entry area Description: OrangeLen 只读正文, Value: **TAR**
+Read only.
+
+		23 text README.md · 容器内存 · 18 bytes · markdown · 完整文件
+单条目有界预览，不解压到磁盘
+	24 text 容器预览 · 本地、只读 · 子项按需读取
+	25 close button close panel button
+	26 full screen button full screen window button
+	27 button Description: Share file, ID: QLControlShare
+	28 button Uncompress, Description: Open file, ID: QLControlOpen
+	29 text sample.tar
+30 menu bar
+	31 Finder
+	32 File
+	33 Edit
+	34 View
+	35 Go
+	36 Window
+	37 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

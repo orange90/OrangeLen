@@ -1,0 +1,52 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 2 项 · 只读路径定义；不请求 API，不解析外部 $ref
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selected)
+					7 cell (selected)
+						8 button /read
+				9 row (selectable)
+					10 cell
+						11 button 完整原始源文
+				12 sort button 章节 / 条目 / 表 / Cell
+			13 scroll bar (disabled, settable, float) 0
+		14 splitter (disabled, settable, float) 240
+		15 tickbox 专注, Value: 1
+		16 pop-up button 显示设置
+		17 pop-up button 更多操作
+		18 button 查找
+		19 search text field (settable) 查找已加载内容（点击输入）
+			20 button Search
+		21 button 复制选择
+		22 split group
+			23 splitter (disabled, settable, float) 0
+			24 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+				25 outline
+					26 row (selectable, expanded) Value: $: object · 1 项, Secondary Actions: Collapse
+						27 disclosure triangle 1
+					28 row (selectable, collapsed) Value: get: object · 1 项, Secondary Actions: Expand
+						29 disclosure triangle 0
+					30 sort button JSON · 原始值（不转换浮点数）
+				31 scroll bar (disabled, settable, float) 0
+				32 scroll bar (disabled, settable, float) 0
+		33 text path-0.json · 容器内存 · 111 bytes · json · 完整文件
+只读路径定义；不请求 API，不解析外部 $ref
+	34 text 容器预览 · 本地、只读 · 子项按需读取
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 button Open with Devin, Description: Open file, ID: QLControlOpen
+	39 text openapi.json
+40 menu bar
+	41 Finder
+	42 File
+	43 Edit
+	44 View
+	45 Go
+	46 Window
+	47 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

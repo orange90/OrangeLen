@@ -10,5 +10,13 @@ public struct PreviewLimits: Sendable {
     public var tableColumns = 256
     public var structureDepth = 64
     public var structureNodes = 20000
+    public var containerBytes = 64 * 1024 * 1024
+    public var archiveEntries = 5000
+    public var archiveEntryBytes = 5 * 1024 * 1024
+    public var archiveExpandedBytes = 64 * 1024 * 1024
+    public var archiveRatio = 100
+    public var databaseRows = 500
+    public var databaseSeconds: Double = 2
+    public var notebookCells = 1000
     public init() {}
 }

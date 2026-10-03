@@ -45,15 +45,20 @@ final class FolderController: NSViewController, NSOutlineViewDataSource, NSOutli
         filter.placeholderString = "文件名筛选（已加载项）"; filter.delegate = self
         ignored.target = self; ignored.action = #selector(resetIgnored)
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true
-        let column = NSTableColumn(identifier: .init("name")); column.title = "目录"; column.width = 235
+        let column = NSTableColumn(identifier: .init("name")); column.title = "目录"; column.width = 235; column.minWidth = 60
         outline.addTableColumn(column); outline.outlineTableColumn = column; outline.headerView = nil
         outline.dataSource = self; outline.delegate = self; outline.rowHeight = 25
+        outline.columnAutoresizingStyle = .lastColumnOnlyAutoresizingStyle; outline.autoresizingMask = [.width]
         outline.selectionHighlightStyle = .regular
         outline.setAccessibilityLabel("项目目录树")
         scroll.documentView = outline
         status.font = .systemFont(ofSize: 11); status.textColor = .secondaryLabelColor
         for child in [filter, ignored, scroll, status] { stack.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: stack.widthAnchor, constant: -16).isActive = true }
         view = stack
+    }
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        if let width = outline.enclosingScrollView?.contentSize.width, width > 0 { outline.tableColumns.first?.width = width; outline.sizeLastColumnToFit() }
     }
     func open(_ url: URL) {
         loadViewIfNeeded(); cancel(); selectedURL = nil; root = Node(url, directory: true)
@@ -104,12 +109,9 @@ final class FolderController: NSViewController, NSOutlineViewDataSource, NSOutli
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         guard let node = item as? Node else { return nil }
         if !node.directory && !node.more {
-            let cell = NSTableCellView()
             let button = FileEntryButton(title: node.url.lastPathComponent + node.detail) { [weak self] in self?.activate(node) }
             button.setAccessibilityLabel("预览 " + node.url.lastPathComponent)
-            button.translatesAutoresizingMaskIntoConstraints = false; cell.addSubview(button)
-            NSLayoutConstraint.activate([button.leadingAnchor.constraint(equalTo: cell.leadingAnchor), button.trailingAnchor.constraint(equalTo: cell.trailingAnchor), button.topAnchor.constraint(equalTo: cell.topAnchor), button.bottomAnchor.constraint(equalTo: cell.bottomAnchor)])
-            return cell
+            return button
         }
         let label = NSTextField(labelWithString: node.more ? "继续加载 500 项…" : (node.directory ? "▸ " : "") + node.url.lastPathComponent + node.detail)
         label.lineBreakMode = .byTruncatingMiddle; return label
@@ -143,7 +145,7 @@ final class FolderController: NSViewController, NSOutlineViewDataSource, NSOutli
     }
     func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
         guard let node = item as? Node, !node.directory, !node.more else { return nil }
-        let row = FileEntryRow()
+        let row = FileEntryRow(); row.setAccessibilityRole(.button); row.setAccessibilityLabel("预览 " + node.url.lastPathComponent)
         row.activate = { [weak self] in self?.activate(node) }
         return row
     }

@@ -31,6 +31,33 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: Copyright © 2026 OrangeLen contributors
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: local.orangelen.har
+            UTTypeDescription: HTTP Archive
+            UTTypeConformsTo: [public.json]
+            UTTypeTagSpecification:
+              public.filename-extension: [har]
+          - UTTypeIdentifier: local.orangelen.jsonl
+            UTTypeDescription: JSON Lines
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [jsonl, ndjson]
+          - UTTypeIdentifier: local.orangelen.diff
+            UTTypeDescription: Unified Diff
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [diff, patch]
+          - UTTypeIdentifier: local.orangelen.notebook
+            UTTypeDescription: Jupyter Notebook
+            UTTypeConformsTo: [public.json]
+            UTTypeTagSpecification:
+              public.filename-extension: [ipynb]
+          - UTTypeIdentifier: local.orangelen.sqlite
+            UTTypeDescription: SQLite Database
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: [sqlite, sqlite3, db]
+
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen
@@ -54,7 +81,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, net.daringfireball.markdown, public.json, public.xml, public.yaml, public.toml, public.make-source, com.unknown.md, public.comma-separated-values-text, public.tab-separated-values-text, public.folder]
+            QLSupportedContentTypes: [public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, net.daringfireball.markdown, public.json, public.xml, public.yaml, public.toml, public.make-source, com.unknown.md, public.comma-separated-values-text, public.tab-separated-values-text, public.folder, org.idpf.epub-container, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.notebook, local.orangelen.sqlite, local.orangelen.har]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:

@@ -18,6 +18,16 @@
 | Python | 高亮源码 | 宿主读写隔离/复制验证；Finder 未测试 | 不执行 |
 | TypeScript `.ts` | 按扩展名识别源码 | 实测 UTType 为 MPEG-2 视频，未验收 | 不抢占视频 UTType；可用宿主 |
 | JS/C/C++/Shell 等 | 有通用词法渲染与类型声明 | 未逐格式测试 | 不能宣称语言完整语法高亮 |
-| EPUB/归档/Notebook/SQLite/MOBI/AZW3 | 未实现 | 未测试 | 后续阶段，保持未完成 |
+| EPUB | 有界 ZIP/XML、章节列表、原生阅读、内嵌图片、位置记录 | 章节正文、图片与章节切换通过 | 不完整 CSS/固定版式；DRM 拒绝；见 M2 边界 |
+| JSONL / NDJSON | 逐记录解析、坏记录隔离、原文 | JSONL 好/坏记录通过；NDJSON 未单独测试 | 5,000 记录 |
+| IPYNB | 已存储 Markdown/代码/文本与 PNG 输出 | Markdown 与短文本输出切换通过 | 不启动 kernel；HTML/JS/SVG 输出拒绝 |
+| SQLite | 只读内存快照、表列表、500 行 | 本机表格、大整数与 BLOB 提示通过 | WAL 拒绝；不读视图/虚表；不执行用户 SQL |
+| ZIP | 索引、按需读取、共享正文/图片 | 代码与 README/内部图片通过 | 无 ZIP64、加密、多卷；路径/CRC/解压预算 |
+| TAR / TGZ | USTAR、gzip、有界内存读取 | TAR 正文通过；TGZ 自动测试通过，Finder 未测 | PAX/GNU 特殊项不展开 |
+| diff / patch | 原文、文件分段、增删行色彩 | diff 系统处理器接管，按用户取舍接受 | OrangeLen 渲染自动测试；patch Finder 未测 |
+| HAR | 本地请求记录列表与 JSON | 本机系统元数据接管，未验收 OrangeLen Finder 渲染 | 不发送请求 |
+| OpenAPI JSON | paths 列表与 JSON | openapi.json Finder 正文通过 | YAML 仍源码；无外部引用/请求 |
+| PDF（目录/宿主） | PDFKit 有界只读 | 未实机测试 | 单文件 Finder 保留系统；25 MiB、2,000 页 |
+| MOBI/AZW3、7z/RAR | 未实现候选 | 未测试 | 需要独立解析器与安全/许可评估 |
 
 所有文件为合成夹具。UTF-8/UTF-16、中文、emoji、CRLF、引号多行字段、Markdown 实体/转义和源位置由自动测试覆盖。公共 HTTPS 图片已测；真实云占位符、外置盘、其他系统与 Intel 未测试。

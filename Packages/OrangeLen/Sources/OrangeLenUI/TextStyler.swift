@@ -144,3 +144,16 @@ enum TextStyler {
         }
     }
 }
+
+
+extension TextStyler {
+    static func colorDiff(_ text: NSMutableAttributedString) {
+        let source = text.string as NSString; var offset = 0
+        while offset < source.length {
+            let range = source.lineRange(for:NSRange(location:offset,length:0)), line = source.substring(with:range)
+            let color: NSColor? = line.hasPrefix("@@") ? .systemBlue : line.hasPrefix("+") && !line.hasPrefix("+++") ? .systemGreen : line.hasPrefix("-") && !line.hasPrefix("---") ? .systemRed : nil
+            if let color { text.addAttributes([.foregroundColor:color,.backgroundColor:color.withAlphaComponent(0.08)],range:range) }
+            offset = NSMaxRange(range)
+        }
+    }
+}

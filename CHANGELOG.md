@@ -1,5 +1,13 @@
 # 变更日志
 
+## 2026-10-03 — M1 补强与 M2 基础格式
+
+- 新增 EPUB 章节/内图/位置记忆、JSONL、diff、Notebook 已存储输出、SQLite 内存只读表格、ZIP/TAR/TGZ；HAR/OpenAPI JSON 本地结构预览。
+- 共享原生容器阅读器、紧凑工具栏、明确二进制提示、目录声明概览、PDFKit 基础入口。
+- 修复真实 Finder Notebook 长短正文切换时旧高亮范围越界崩溃，增加绘制回归。
+- 43 项测试通过；EPUB、JSONL、Notebook、SQLite、ZIP、TAR、OpenAPI JSON Finder 正文有证据。diff 系统接管，HAR 调用/PDF/TGZ 实机和完整目录交互尚未通过；MOBI/AZW3、7z/RAR 未实现。
+- 更新 README、格式矩阵、安全预算与未测试状态；保留未完整验收及未公证状态。
+
 ## 2026-10-03 — 首次 M1 开发快照
 
 工作名称 OrangeLen，副标题 Quick Look for Developers。M0 原生可行性验证完成，M1 已实施但尚未完整验收；不是正式发布版。

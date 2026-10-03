@@ -27,6 +27,7 @@ public struct SourceSnapshot: Sendable {
     public let encoding: String
     public let byteCount: Int
     public let revision: String
+    public init(text: String, encoding: String, byteCount: Int, revision: String) { self.text = text; self.encoding = encoding; self.byteCount = byteCount; self.revision = revision }
 }
 public struct FileSnapshot: Sendable {
     public let data: Data
@@ -120,7 +121,7 @@ public enum AccessBroker {
 }
 
 public enum PreviewFormat: String, Sendable {
-    case markdown, json, csv, tsv, code, text
+    case markdown, json, csv, tsv, code, text, diff
     public static func detect(_ url: URL) -> Self {
         if ["Makefile", "Dockerfile", "Gemfile"].contains(url.lastPathComponent) { return .code }
         switch url.pathExtension.lowercased() {
@@ -128,6 +129,7 @@ public enum PreviewFormat: String, Sendable {
         case "json": return .json
         case "csv": return .csv
         case "tsv": return .tsv
+        case "diff", "patch": return .diff
         case "txt", "": return .text
         default: return .code
         }

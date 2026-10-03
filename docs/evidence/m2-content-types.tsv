@@ -1,0 +1,9 @@
+changes.diff	public.patch-file	public.content,public.data,public.item,public.plain-text,public.text
+records.jsonl	local.orangelen.jsonl	public.content,public.data,public.item,public.plain-text,public.text
+sample.epub	org.idpf.epub-container	public.composite-content,public.content,public.data,public.item
+sample.ipynb	local.orangelen.notebook	public.content,public.data,public.item,public.json,public.text
+sample.sqlite	local.orangelen.sqlite	public.data,public.item
+sample.tar	public.tar-archive	org.gnu.gnu-tar-archive,public.archive,public.data,public.item
+sample.tgz	org.gnu.gnu-zip-tar-archive	org.gnu.gnu-zip-archive,public.archive,public.data,public.item
+sample.zip	public.zip-archive	com.pkware.zip-archive,public.archive,public.data,public.item
+unsafe-path.zip	public.zip-archive	com.pkware.zip-archive,public.archive,public.data,public.item

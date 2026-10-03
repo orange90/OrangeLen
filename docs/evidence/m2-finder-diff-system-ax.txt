@@ -1,0 +1,31 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Up, Scroll Down
+		2 text entry area diff --git a/demo.swift b/demo.swift
+--- a/demo.swift
++++ b/demo.swift
+@@ -1 +1 @@
+-let value = 1
++let value = 2 // 中文 👩🏽‍💻
+
+		3 scroll bar (disabled, settable, float) 0
+	4 close button close panel button
+	5 full screen button full screen window button
+	6 button Description: Share file, ID: QLControlShare
+	7 button Open with Devin, Description: Open file, ID: QLControlOpen
+	8 text changes.diff
+9 menu bar
+	10 Finder
+	11 File
+	12 Edit
+	13 View
+	14 Go
+	15 Window
+	16 Help
+
+The focused UI element is 2 text entry area diff --git a/demo.swift b/demo.swift
+--- a/demo.swift
++++ b/demo.swift
+@@ -1 +1 @@
+-let value = 1
++let value = 2 // 中文 👩🏽‍💻

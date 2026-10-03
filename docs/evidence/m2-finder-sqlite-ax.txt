@@ -1,0 +1,57 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) 0
+		3 text 1 项 · 只读内存快照 · 最多 500 行 · BLOB 仅字节数 · 不提供 SQL 执行
+		4 scroll area Secondary Actions: Scroll Up, Scroll Down
+			5 table 容器条目列表
+				6 row (selected)
+					7 cell (selected)
+						8 button demo table
+				9 sort button 章节 / 条目 / 表 / Cell
+			10 scroll bar (disabled, settable, float) 0
+		11 splitter (disabled, settable, float) 240
+		12 tickbox 专注, Value: 1
+		13 pop-up button 显示设置
+		14 pop-up button 更多操作
+		15 button 查找
+		16 search text field (settable) 查找已加载内容（点击输入）
+			17 button Search
+		18 button 复制选择
+		19 split group
+			20 splitter (disabled, settable, float) 0
+			21 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+				22 table
+					23 row (selectable)
+						24 cell
+							25 text 中文 👩🏽‍💻
+						26 cell
+							27 text 9007199254740993
+						28 cell
+							29 text [BLOB 3 bytes]
+					30 column (selectable) 0
+					31 column (selectable) 1
+					32 column (selectable) 2
+					33 container
+						34 sort button name
+						35 sort button value
+						36 sort button payload
+				37 scroll bar (disabled, settable, float) 0
+				38 scroll bar (disabled, settable, float) 0
+		39 text demo table · 容器内存 · 85 bytes · csv · 完整文件
+只读内存快照 · 最多 500 行 · BLOB 仅字节数 · 不提供 SQL 执行 表格已解析 2 行；每批显示 500 行，可在显示设置继续加载。
+	40 text 容器预览 · 本地、只读 · 子项按需读取
+	41 close button close panel button
+	42 full screen button full screen window button
+	43 button Description: Share file, ID: QLControlShare
+	44 text sample.sqlite
+45 menu bar
+	46 Finder
+	47 File
+	48 Edit
+	49 View
+	50 Go
+	51 Window
+	52 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

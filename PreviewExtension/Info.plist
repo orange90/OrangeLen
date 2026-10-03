@@ -46,6 +46,16 @@
 				<string>public.comma-separated-values-text</string>
 				<string>public.tab-separated-values-text</string>
 				<string>public.folder</string>
+				<string>org.idpf.epub-container</string>
+				<string>public.zip-archive</string>
+				<string>public.tar-archive</string>
+				<string>org.gnu.gnu-zip-archive</string>
+				<string>public.database</string>
+				<string>local.orangelen.jsonl</string>
+				<string>local.orangelen.diff</string>
+				<string>local.orangelen.notebook</string>
+				<string>local.orangelen.sqlite</string>
+				<string>local.orangelen.har</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>
