@@ -4,6 +4,28 @@ import AppKit
 import OrangeLenCore
 
 @MainActor final class LayoutTests: XCTestCase {
+    func testFolderSummaryIgnoresCancelledGeneration() async throws {
+        _ = NSApplication.shared
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        try Data([1, 2, 3]).write(to: root.appendingPathComponent("file"))
+        let folder = FolderController()
+        var messages: [String] = []
+        let finished = expectation(description: "new summary completes")
+        folder.onSummary = { message in
+            messages.append(message)
+            if message.contains("递归统计完成") { finished.fulfill() }
+        }
+        folder.summarize(root)
+        folder.cancel()
+        folder.summarize(root)
+        await fulfillment(of: [finished], timeout: 5)
+        XCTAssertEqual(messages.filter { $0.contains("递归统计完成") }.count, 1)
+        XCTAssertFalse(messages.contains { $0.contains("统计未完成") })
+        XCTAssertTrue(messages.last?.contains("1 个文件") == true)
+        folder.cancel()
+    }
     func testFileButtonKeepsSelectionAndActivatesOnce() throws {
         _ = NSApplication.shared
         let folder = FolderController(); folder.loadViewIfNeeded()

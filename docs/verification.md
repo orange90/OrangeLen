@@ -1,3 +1,5 @@
+> 当前实现请先看 [入口与边界契约](current-contract.md) 和 [修复验收状态](boundary-fix-status.md)。以下保留原日期的功能/现场证据；旧数字、旧导入路径及旧限制不自动代表最新版。
+
 # 2026-10-05 竞品补强验收
 
 85 项 XCTest / 0 失败，日志 [tests-81.log](evidence/improvements/tests-85.log)。覆盖语言高亮原文重建、Markdown 扩展、UTF 分页无损重组、SQLite 分页/原生类型排序、归档目录树/筛选、原子替换自动刷新、容器导航恢复、20 次快速取消切换、2101 项目录五批无重复、窄窗及真实 NSEvent 附件命中。本轮复制、授权共享与阅读位置保持调整后全套 85 项测试通过（2026-10-05 00:55:48；其后仅补无共享 group 时的授权说明，编译验证），Debug/通用 Release 编译通过。
@@ -10,7 +12,7 @@ Finder 实测 Markdown 大纲/元数据/提示块/高亮，Mermaid 放大；SQLi
 
 具体状态、截图和限制见 [清单](improvement-plan.md)、[交付说明](improvement-report.md)、[运行与发布验收](runtime-acceptance.md)。以下是按日期保留的历史验收，已被新实现替代的“无分页/无目录树”等不代表当前状态。
 
-# M1 补强与 M2 开发验证（2026-10-03，当前）
+# M1 补强与 M2 开发验证（2026-10-03，历史）
 
 - **应用内渲染**：43 项 XCTest 全部通过；新增 ZIP/TAR/gzip/路径/CRC/取消、EPUB 章节/内图/保护资源/UTF-16 DTD、SQLite 内存只读/WAL/大整数、JSONL 坏记录、Notebook 输出隔离、HAR/OpenAPI、章节状态修订失效、连续选择与窄窗测试。真实 Finder Notebook 长正文切短输出曾触发 TextKit 装饰 NSRange 越界；已清除旧装饰并约束绘制范围，回归及 Finder 再测通过。日志 m2-tests.log。
 - **Finder 调用**：EPUB 正文、内图与第二章切换；JSONL 好/坏记录；Notebook 文本输出与 HTML 拒绝提示；SQLite 表格；ZIP 代码/Markdown/内图；TAR 正文；OpenAPI JSON paths/JSON 正文已观察。各 m2-finder-* AX/PNG 位于 evidence。diff 由系统处理器接管（用户接受）；HAR 初测系统元数据处理，OrangeLen Finder 未通过。TGZ、PDF、受保护 EPUB Finder 未测试。
@@ -67,7 +69,7 @@ Finder 实测 Markdown 大纲/元数据/提示块/高亮，Mermaid 放大；SQLi
 
 PNG 使用 Apple ImageIO 有界解码 + NSImageView，复用只读 AccessBroker；25 MiB 输入、1 亿源像素、最长边 2048 像素缩略解码，动图首帧。不使用递归嵌入 Quick Look，也不抢占 Finder 的 PNG 类型。`folder-fixes-app-png.png` / AX 记录验证安装后的共享阅读器：sample.png 被选中、640×360 图像正确显示、底部目录信息保持。PNG 在真实 Finder 中的自动化点击复测未取得稳定结果，因此图片画面证据只记为宿主通过，不将其改写为 Finder PNG 验收通过。
 
-底部独立信息栏显示根目录名、逻辑文件字节总和、递归文件/目录数，包含隐藏项；符号链接单列不跟随，未下载目录不进入。统计只读元数据，最多 20,000 项/3 秒；预算、权限或未下载子目录导致“部分统计”，不伪称完整大小。目录内容后续变化需重新打开根目录统计，当前值是本次扫描快照而非实时监控。
+底部独立信息栏显示根目录名、逻辑文件字节总和、递归文件/目录数，包含隐藏项；符号链接单列不跟随，未下载目录不进入。统计只读元数据，在后台持续到结束，约每 0.2 秒回传进度，不再受目录树的 20,000 项/3 秒单轮预算截断；权限或未下载子目录导致“统计结束，部分结果”，不伪称完整大小。目录内容后续变化需重新打开根目录统计，当前值是本次扫描快照而非实时监控。
 
 新增测试涵盖按钮选中与单次激活、辅助功能激活、PNG 解码/取消/损坏、图文切换保留总计、隐藏文件/递归/符号链接/预算。当前共 **20 项测试通过**，日志 `evidence/folder-fixes-tests.log`。以下为此前 M0/M1 历史记录，后续状态以上述补充为准。
 

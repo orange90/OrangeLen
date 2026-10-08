@@ -11,7 +11,8 @@ extension ReaderController {
             let values = try url.resourceValues(forKeys: [.isRegularFileKey, .isPackageKey])
             guard values.isRegularFile == true || values.isPackage == true else { throw PreviewError.unsafePath }
             if SystemPreviewFormat.isMedia(url) {
-                let player = AVPlayer(url: url)
+                let resource = try LocalMediaResource(url, root: root); mediaResource = resource
+                let player = AVPlayer(playerItem: AVPlayerItem(asset: resource.asset))
                 let preview = AVPlayerView(frame: documentBody.bounds)
                 preview.controlsStyle = .floating
                 preview.player = player
@@ -72,6 +73,7 @@ extension ReaderController {
     }
 
     func closeSystemPreview() {
+        mediaResource?.cancel(); mediaResource = nil
         mediaObservation = nil
         mediaPreview?.player?.pause()
         mediaPreview?.player?.replaceCurrentItem(with: nil)
@@ -90,8 +92,9 @@ extension ReaderController {
 
     func loadNativeDocument(_ url: URL, root: URL?, type: NSAttributedString.DocumentType?) {
         let id = generation, token = cancellation ?? Cancellation()
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let result = Result { () -> NSAttributedString in
+        showMessage("正在加载 " + url.lastPathComponent + "…")
+        status.stringValue = url.lastPathComponent + " · 正在启动文档预览；首次启动可能需要约 30 秒，可取消"
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> NSAttributedString in
                 var limits = PreviewLimits(); limits.fileBytes = 25 * 1024 * 1024
                 let data = try AccessBroker.readBytes(url, root: root, limits: limits, cancellation: token).data
                 guard let type else {
@@ -99,26 +102,29 @@ extension ReaderController {
                 }
                 // Bound ZIP expansion before handing Office XML to the system importer.
                 if type == .officeOpenXML || type == .openDocument {
-                    _ = try ArchiveDocument.parse(data, name: "document.zip", cancellation: token)
+                    try ArchiveDocument.parse(data, name: "document.zip", cancellation: token).validateForNativeImport(cancellation: token)
                 }
-                let document = try NSAttributedString(data: data, options: [.documentType: type], documentAttributes: nil)
+                let document = try NativeDocumentClient.load(data, type: type, cancellation: token) {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self, self.generation == id else { return }
+                        self.status.stringValue = url.lastPathComponent + " · 正在隔离导入（最多 6 秒）…"
+                    }
+                }
                 try token.check()
                 return document
-            }
-            DispatchQueue.main.async {
+        }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 do {
                     let document = try result.get()
                     self.showNativeDocument(document)
-                    self.status.stringValue = type == nil ? "\(url.lastPathComponent) · Office 内容预览 · 不含原始版式/图表" : "\(url.lastPathComponent) · 原生文档预览 · 复杂版式可能简化"
+                    self.status.stringValue = type == nil ? "\(url.lastPathComponent) · Office 内容预览 · 不含原始版式/图表" : "\(url.lastPathComponent) · 隔离文档预览 · 保留文字/基本字体；版式、链接与附件已简化（□）"
                     self.finish(nil)
                 } catch {
                     self.closeSystemPreview(); self.showMessage(error.localizedDescription)
                     self.status.stringValue = "文档预览未完成 · 可在“更多操作”中用默认应用打开"
                     self.finish(error)
                 }
-            }
-        }
+        })
     }
 
     func showNativeDocument(_ document: NSAttributedString) {

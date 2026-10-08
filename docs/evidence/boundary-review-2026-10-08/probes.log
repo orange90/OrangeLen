@@ -1,0 +1,58 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Compiling OrangeLenUITests BoundaryAuditTests.swift
+[4/5] Emitting module OrangeLenUITests
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (3.70s)
+Test Suite 'Selected tests' started at 2026-10-08 11:06:53.374.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-08 11:06:53.375.
+Test Suite 'BoundaryAuditTests' started at 2026-10-08 11:06:53.375.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedArchiveMetadataSuccessDoesNotEnforceEntryLimit]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedArchiveMetadataSuccessDoesNotEnforceEntryLimit]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedArchivePathAliasesOverwriteVisibleMember]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedArchivePathAliasesOverwriteVisibleMember]' passed (0.000 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedCancelDoesNotReachContainerToken]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedCancelDoesNotReachContainerToken]' passed (0.190 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedCloseLosesSavedPageHistory]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedCloseLosesSavedPageHistory]' passed (0.179 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedDatabaseFailureLeavesPreviousTableData]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedDatabaseFailureLeavesPreviousTableData]' passed (0.053 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedFailedNotebookKeepsOldBody]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedFailedNotebookKeepsOldBody]' passed (0.185 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedFolderCancelLeavesLoadingLatch]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedFolderCancelLeavesLoadingLatch]' passed (0.205 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedGeneratedColumnMisalignment]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedGeneratedColumnMisalignment]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedInteriorBOMIsLostAcrossPages]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedInteriorBOMIsLostAcrossPages]' passed (0.008 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedJSONPathMaterializationAmplifiesInput]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedJSONPathMaterializationAmplifiesInput]' passed (0.004 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedOfficeSharedStringsAmplifyDisplay]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedOfficeSharedStringsAmplifyDisplay]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedTruncateLeavesNoReadablePage]' started.
+Test Case '-[OrangeLenUITests.BoundaryAuditTests testObservedTruncateLeavesNoReadablePage]' passed (0.155 seconds).
+Test Suite 'BoundaryAuditTests' passed at 2026-10-08 11:06:54.360.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.983 (0.985) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-08 11:06:54.360.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.983 (0.985) seconds
+Test Suite 'Selected tests' passed at 2026-10-08 11:06:54.360.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.983 (0.986) seconds
+AUDIT native-import preflight returns success with blocked entry: 6000000 条目大小或压缩比超过预算
+AUDIT two archive paths collapse into one visible member
+AUDIT parent cancel leaves container token active
+AUDIT reopen page 2: previous page disabled
+AUDIT failed table switch keeps previous rows enabled under new table selector
+AUDIT failed notebook retains previous body; error sidebar hidden
+AUDIT cancelled directory remains loading and cannot retry
+AUDIT generated columns: ["a", "label"] values: [["7", "14", "orange"]]
+AUDIT page-start U+FEFF silently removed
+AUDIT JSON input bytes 32974 leaf path bytes 3277690
+AUDIT Office input bytes 4236 output bytes 100682
+AUDIT truncation: old byte offset prevents reload 超过安全预算：分页位置
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

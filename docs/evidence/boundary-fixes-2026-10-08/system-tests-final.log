@@ -1,0 +1,33 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Compiling OrangeLenUITests SystemPreviewTests.swift
+[4/5] Emitting module OrangeLenUITests
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (2.06s)
+Test Suite 'Selected tests' started at 2026-10-08 12:26:09.020.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-08 12:26:09.021.
+Test Suite 'SystemPreviewTests' started at 2026-10-08 12:26:09.021.
+Test Case '-[OrangeLenUITests.SystemPreviewTests testFolderHandoffSwitchAndClose]' started.
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift:18: -[OrangeLenUITests.SystemPreviewTests testFolderHandoffSwitchAndClose] : Test skipped - Run scripts/test-native.sh for real sandboxed XPC + media integration
+Test Case '-[OrangeLenUITests.SystemPreviewTests testFolderHandoffSwitchAndClose]' skipped (0.002 seconds).
+Test Case '-[OrangeLenUITests.SystemPreviewTests testOfficeContentAndImageFamilies]' started.
+Test Case '-[OrangeLenUITests.SystemPreviewTests testOfficeContentAndImageFamilies]' passed (0.006 seconds).
+Test Case '-[OrangeLenUITests.SystemPreviewTests testSystemFormatFamiliesAndExistingFormats]' started.
+Test Case '-[OrangeLenUITests.SystemPreviewTests testSystemFormatFamiliesAndExistingFormats]' passed (0.001 seconds).
+Test Case '-[OrangeLenUITests.SystemPreviewTests testSystemPreviewRejectsEscapingSymlink]' started.
+Test Case '-[OrangeLenUITests.SystemPreviewTests testSystemPreviewRejectsEscapingSymlink]' passed (0.211 seconds).
+Test Case '-[OrangeLenUITests.SystemPreviewTests testWordAndMediaContentsAndCleanup]' started.
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift:18: -[OrangeLenUITests.SystemPreviewTests testWordAndMediaContentsAndCleanup] : Test skipped - Run scripts/test-native.sh for real sandboxed XPC + media integration
+Test Case '-[OrangeLenUITests.SystemPreviewTests testWordAndMediaContentsAndCleanup]' skipped (0.053 seconds).
+Test Suite 'SystemPreviewTests' passed at 2026-10-08 12:26:09.294.
+	 Executed 5 tests, with 2 tests skipped and 0 failures (0 unexpected) in 0.273 (0.274) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-08 12:26:09.294.
+	 Executed 5 tests, with 2 tests skipped and 0 failures (0 unexpected) in 0.273 (0.274) seconds
+Test Suite 'Selected tests' passed at 2026-10-08 12:26:09.294.
+	 Executed 5 tests, with 2 tests skipped and 0 failures (0 unexpected) in 0.273 (0.274) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

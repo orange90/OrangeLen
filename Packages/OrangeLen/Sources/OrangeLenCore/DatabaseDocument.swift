@@ -6,11 +6,12 @@ public final class DatabaseDocument: @unchecked Sendable {
     private let lock = NSLock()
     private let limits: PreviewLimits
     private final class Budget {
-        let token: Cancellation; let deadline: Date
-        init(_ token: Cancellation, _ seconds: Double) { self.token = token; deadline = Date().addingTimeInterval(seconds) }
+        let token: Cancellation; let deadline: TimeInterval
+        init(_ token: Cancellation, _ seconds: Double) { self.token = token; deadline = ProcessInfo.processInfo.systemUptime + seconds }
     }
     public init(data: Data, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws {
         self.limits = limits
+        try cancellation.check()
         guard data.count >= 100, data.count <= limits.containerBytes, data.starts(with: Data("SQLite format 3\0".utf8)) else { throw PreviewError.malformed("SQLite 头或大小") }
         guard data[18] == 1, data[19] == 1 else { throw PreviewError.malformed("WAL 数据库不能作为独立一致快照；请预览完整的已关闭数据库副本") }
         var db: OpaquePointer?
@@ -26,7 +27,7 @@ public final class DatabaseDocument: @unchecked Sendable {
         let budget = Budget(cancellation,limits.databaseSeconds)
         sqlite3_progress_handler(db,1000,{ context in
             guard let context else { return 1 }; let value = Unmanaged<Budget>.fromOpaque(context).takeUnretainedValue()
-            return ((try? value.token.check()) == nil || Date() > value.deadline) ? 1 : 0
+            return ((try? value.token.check()) == nil || ProcessInfo.processInfo.systemUptime > value.deadline) ? 1 : 0
         },Unmanaged.passUnretained(budget).toOpaque())
         defer { sqlite3_progress_handler(db,0,nil,nil) }
         var statement: OpaquePointer?
@@ -50,9 +51,38 @@ public final class DatabaseDocument: @unchecked Sendable {
         public let notNull: Bool
         public let primaryKey: Int
     }
+    public enum Cell: Sendable, Equatable {
+        case null, number(String), text(String), blob(Data), invalidText(Data)
+        public var display: String {
+            switch self {
+            case .null: return "NULL"
+            case .number(let value), .text(let value): return value
+            case .blob(let data): return "[BLOB \(data.count) bytes]"
+            case .invalidText(let data): return "[非 UTF-8 TEXT \(data.count) bytes]"
+            }
+        }
+        public var kind: String {
+            switch self { case .null: return "NULL"; case .number: return "数值"; case .text: return "TEXT"; case .blob: return "BLOB"; case .invalidText: return "TEXT（非 UTF-8）" }
+        }
+        /// Lossless SQLite literal, including NULL, arbitrary blobs, and text NULs.
+        public var sqlLiteral: String {
+            func hex(_ data: Data) -> String { "X'" + data.map { String(format: "%02X", $0) }.joined() + "'" }
+            switch self {
+            case .null: return "NULL"
+            case .number(let value): return value
+            case .text(let value): return value.contains("\0") ? "CAST(" + hex(Data(value.utf8)) + " AS TEXT)" : "'" + value.replacingOccurrences(of: "'", with: "''") + "'"
+            case .blob(let data): return hex(data)
+            case .invalidText(let data): return "CAST(" + hex(data) + " AS TEXT)"
+            }
+        }
+    }
+    public static func tsvField(_ value: String) -> String {
+        value.contains(where: { "\t\r\n\"".contains($0) }) ? "\"" + value.replacingOccurrences(of: "\"", with: "\"\"") + "\"" : value
+    }
     public struct Page: Sendable {
         public let columns: [Column]
-        public let rows: [[String]]
+        public let cells: [[Cell]]
+        public var rows: [[String]] { cells.map { $0.map(\.display) } }
         public let offset: Int
         public let hasNext: Bool
     }
@@ -71,18 +101,20 @@ public final class DatabaseDocument: @unchecked Sendable {
         sqlite3_progress_handler(db, 1000, { context in
             guard let context else { return 1 }
             let value = Unmanaged<Budget>.fromOpaque(context).takeUnretainedValue()
-            return ((try? value.token.check()) == nil || Date() > value.deadline) ? 1 : 0
+            return ((try? value.token.check()) == nil || ProcessInfo.processInfo.systemUptime > value.deadline) ? 1 : 0
         }, Unmanaged.passUnretained(budget).toOpaque())
         defer { sqlite3_progress_handler(db, 0, nil, nil) }
         func quote(_ value: String) -> String { "\"" + value.replacingOccurrences(of: "\"", with: "\"\"") + "\"" }
         let quoted = quote(table)
         var info: OpaquePointer?
-        guard sqlite3_prepare_v2(db, "PRAGMA table_info(\(quoted))", -1, &info, nil) == SQLITE_OK else { throw PreviewError.malformed("数据库列结构") }
+        guard sqlite3_prepare_v2(db, "PRAGMA table_xinfo(\(quoted))", -1, &info, nil) == SQLITE_OK else { throw PreviewError.malformed("数据库列结构") }
         defer { sqlite3_finalize(info) }
         var columns: [Column] = []
         var state = sqlite3_step(info)
         while state == SQLITE_ROW {
             try cancellation.check()
+            // Hidden virtual-table fields are not part of SELECT; generated columns (2/3) are.
+            if sqlite3_column_int(info, 6) == 1 { state = sqlite3_step(info); continue }
             guard columns.count < limits.tableColumns else { throw PreviewError.limit("数据库列数") }
             columns.append(.init(name: String(cString: sqlite3_column_text(info, 1)), declaredType: String(cString: sqlite3_column_text(info, 2)), notNull: sqlite3_column_int(info, 3) != 0, primaryKey: Int(sqlite3_column_int(info, 5))))
             state = sqlite3_step(info)
@@ -100,24 +132,37 @@ public final class DatabaseDocument: @unchecked Sendable {
         }
         let order = ordering.isEmpty ? "" : " ORDER BY " + ordering.joined(separator: ", ")
         var statement: OpaquePointer?
-        let sql = "SELECT * FROM \(quoted)\(order) LIMIT \(pageSize + 1) OFFSET \(offset)"
+        let selectedColumns = columns.map { quote($0.name) }.joined(separator: ", ")
+        let sql = "SELECT \(selectedColumns) FROM \(quoted)\(order) LIMIT \(pageSize + 1) OFFSET \(offset)"
         guard sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK else { throw PreviewError.malformed("表不可安全读取") }
         defer { sqlite3_finalize(statement) }
+        guard Int(sqlite3_column_count(statement)) == columns.count else { throw PreviewError.malformed("数据库列与结果不一致") }
         guard sqlite3_stmt_readonly(statement) != 0 else { throw PreviewError.unsafePath }
-        var rows: [[String]] = [], bytes = 0
+        var rows: [[Cell]] = [], bytes = 0
         var step = sqlite3_step(statement)
         while step == SQLITE_ROW {
             try cancellation.check()
-            var row: [String] = []
+            var row: [Cell] = []
             for i in 0..<sqlite3_column_count(statement) {
                 let type = sqlite3_column_type(statement, i)
-                let value: String
-                if type == SQLITE_NULL { value = "NULL" }
-                else if type == SQLITE_BLOB { value = "[BLOB \(sqlite3_column_bytes(statement, i)) bytes]" }
-                else if let text = sqlite3_column_text(statement, i) { value = String(decoding: UnsafeBufferPointer(start: text, count: Int(sqlite3_column_bytes(statement, i))), as: UTF8.self) }
-                else { value = "" }
-                bytes += value.utf8.count
+                let count = Int(sqlite3_column_bytes(statement, i))
+                bytes += count + 32
                 guard bytes <= limits.archiveEntryBytes else { throw PreviewError.limit("表显示字节") }
+                let value: Cell
+                if type == SQLITE_NULL { value = .null }
+                else if type == SQLITE_INTEGER { value = .number(String(sqlite3_column_int64(statement, i))) }
+                else if type == SQLITE_FLOAT {
+                    let number = sqlite3_column_double(statement, i)
+                    value = .number(number.isInfinite ? (number.sign == .minus ? "-9e999" : "9e999") : String(number))
+                }
+                else if type == SQLITE_BLOB {
+                    value = .blob(sqlite3_column_blob(statement, i).map { Data(bytes: $0, count: count) } ?? Data())
+                } else if let text = sqlite3_column_text(statement, i) {
+                    let data = Data(bytes: text, count: Int(sqlite3_column_bytes(statement, i)))
+                    if type == SQLITE_TEXT {
+                        value = String(data: data, encoding: .utf8) == nil ? .invalidText(data) : .text(String(decoding: data, as: UTF8.self))
+                    } else { value = .number(String(decoding: data, as: UTF8.self)) }
+                } else { value = .text("") }
                 row.append(value)
             }
             rows.append(row); step = sqlite3_step(statement)
@@ -125,6 +170,6 @@ public final class DatabaseDocument: @unchecked Sendable {
         guard step == SQLITE_DONE else { throw PreviewError.malformed("SQLite 读取取消、超时或损坏") }
         let hasNext = rows.count > pageSize
         if hasNext { rows.removeLast() }
-        return Page(columns: columns, rows: rows, offset: offset, hasNext: hasNext)
+        return Page(columns: columns, cells: rows, offset: offset, hasNext: hasNext)
     }
 }

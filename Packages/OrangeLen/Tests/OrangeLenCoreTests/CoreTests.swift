@@ -12,10 +12,36 @@ final class CoreTests: XCTestCase {
         let result = try FolderSummary.scan(root)
         XCTAssertTrue(result.complete); XCTAssertEqual(result.bytes, 5)
         XCTAssertEqual(result.files, 2); XCTAssertEqual(result.folders, 1); XCTAssertEqual(result.links, 1)
-        var limits = PreviewLimits(); limits.directoryScanItems = 1
-        XCTAssertFalse(try FolderSummary.scan(root, limits: limits).complete)
+        var snapshots: [FolderSummary] = []
+        let final = try FolderSummary.scan(root, progressInterval: 0) { snapshots.append($0) }
+        XCTAssertGreaterThan(snapshots.count, 1)
+        XCTAssertTrue(snapshots.allSatisfy { !$0.complete })
+        XCTAssertEqual(snapshots.last?.bytes, final.bytes)
+        XCTAssertEqual(snapshots.last?.files, final.files)
+        for (previous, next) in zip(snapshots, snapshots.dropFirst()) {
+            XCTAssertLessThanOrEqual(previous.bytes, next.bytes)
+            XCTAssertLessThanOrEqual(previous.files, next.files)
+            XCTAssertLessThanOrEqual(previous.folders, next.folders)
+        }
+        XCTAssertTrue(final.complete)
+        let midScan = Cancellation()
+        XCTAssertThrowsError(try FolderSummary.scan(root, cancellation: midScan, progressInterval: 0) { _ in midScan.cancel() })
         let token = Cancellation(); token.cancel()
         XCTAssertThrowsError(try FolderSummary.scan(root, cancellation: token))
+    }
+    func testFolderSummaryContinuesBeyondFormerItemBudget() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        for index in 0..<20_010 {
+            try Data([1]).write(to: root.appendingPathComponent("file-\(index)"))
+        }
+        var updates = 0
+        let result = try FolderSummary.scan(root, progressInterval: 0.01) { _ in updates += 1 }
+        XCTAssertTrue(result.complete)
+        XCTAssertEqual(result.files, 20_010)
+        XCTAssertEqual(result.bytes, 20_010)
+        XCTAssertGreaterThan(updates, 1)
     }
     func testMarkdownStructureRetainsNumberingTablesLinksAndImageMapping() throws {
         let source = "3. One\n4. Two\n   - nested\n\n| 名称 | 数量 |\n| :--- | ---: |\n| 中文 **👋** | 123 |\n\n[go](#heading) ![alt](image.png)\n\nsoft\nbreak"

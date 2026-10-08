@@ -18,8 +18,15 @@ public enum PreviewError: Error, LocalizedError {
 public final class Cancellation: @unchecked Sendable {
     private let lock = NSLock()
     private var cancelled = false
+    private var observers: [UUID: () -> Void] = [:]
     public init() {}
-    public func cancel() { lock.lock(); cancelled = true; lock.unlock() }
+    public func cancel() { lock.lock(); cancelled = true; let callbacks = Array(observers.values); observers.removeAll(); lock.unlock(); callbacks.forEach { $0() } }
+    @discardableResult public func onCancel(_ callback: @escaping () -> Void) -> UUID {
+        let id = UUID(); lock.lock(); let immediate = cancelled
+        if !immediate { observers[id] = callback }; lock.unlock()
+        if immediate { callback() }; return id
+    }
+    public func removeObserver(_ id: UUID) { lock.lock(); observers[id] = nil; lock.unlock() }
     public func check() throws { lock.lock(); let value = cancelled; lock.unlock(); if value { throw CancellationError() } }
 }
 public struct SourceSnapshot: Sendable {
@@ -118,15 +125,15 @@ public enum AccessBroker {
             guard raw.data.count > trim else { continue }
             let data = Data(raw.data.prefix(raw.data.count - trim))
             let input = byteOffset > 0 ? bom + data : data
-            if let decoded = try? decode(input) {
-                return SourceSnapshot(text: decoded.0, encoding: decoded.1, byteCount: data.count, revision: raw.revision, totalBytes: raw.totalBytes, byteOffset: byteOffset)
+            if let decoded = try? decode(input, recognizeBOM: byteOffset == 0 || !bom.isEmpty) {
+                return SourceSnapshot(text: decoded.0, encoding: raw.header.starts(with: [0xEF, 0xBB, 0xBF]) ? "UTF-8 BOM" : decoded.1, byteCount: data.count, revision: raw.revision, totalBytes: raw.totalBytes, byteOffset: byteOffset)
             }
         }
         // Re-run to preserve the meaningful binary/encoding error.
-        _ = try decode(byteOffset > 0 ? bom + raw.data : raw.data)
+        _ = try decode(byteOffset > 0 ? bom + raw.data : raw.data, recognizeBOM: byteOffset == 0 || !bom.isEmpty)
         throw PreviewError.encoding
     }
-    private static func openWithoutSymlinks(_ url: URL) throws -> Int32 {
+    static func openWithoutSymlinks(_ url: URL) throws -> Int32 {
         var parent = Darwin.open("/", O_SEARCH)
         guard parent >= 0 else { throw PreviewError.unsafePath }
         // Foundation deliberately preserves macOS's protected /var, /tmp and /etc aliases.
@@ -144,13 +151,13 @@ public enum AccessBroker {
         }
         return parent
     }
-    public static func decode(_ input: Data) throws -> (String, String) {
+    public static func decode(_ input: Data, recognizeBOM: Bool = true) throws -> (String, String) {
         var data = input
         var encoding = String.Encoding.utf8
         var label = "UTF-8"
-        if data.starts(with: [0xEF, 0xBB, 0xBF]) { data.removeFirst(3); label = "UTF-8 BOM" }
-        else if data.starts(with: [0xFF, 0xFE]) { data.removeFirst(2); encoding = .utf16LittleEndian; label = "UTF-16 LE" }
-        else if data.starts(with: [0xFE, 0xFF]) { data.removeFirst(2); encoding = .utf16BigEndian; label = "UTF-16 BE" }
+        if recognizeBOM && data.starts(with: [0xEF, 0xBB, 0xBF]) { data.removeFirst(3); label = "UTF-8 BOM" }
+        else if recognizeBOM && data.starts(with: [0xFF, 0xFE]) { data.removeFirst(2); encoding = .utf16LittleEndian; label = "UTF-16 LE" }
+        else if recognizeBOM && data.starts(with: [0xFE, 0xFF]) { data.removeFirst(2); encoding = .utf16BigEndian; label = "UTF-16 BE" }
         if encoding == .utf16LittleEndian || encoding == .utf16BigEndian {
             // Foundation may repair or drop a dangling UTF-16 unit. Validate before
             // decoding so paging never loses bytes or inserts replacement characters.
@@ -171,7 +178,18 @@ public enum AccessBroker {
                 }
             }
         }
-        guard let text = String(data: data, encoding: encoding) else { throw PreviewError.encoding }
+        guard String(data: data, encoding: encoding) != nil else { throw PreviewError.encoding }
+        // Foundation's String(data:encoding:) also consumes a leading U+FEFF.
+        // Validate with it, then decode explicit units to preserve content BOMs.
+        let text: String
+        if encoding == .utf8 { text = String(decoding: data, as: UTF8.self) }
+        else {
+            let bytes = [UInt8](data)
+            let units: [UInt16] = stride(from: 0, to: bytes.count, by: 2).map { i in
+                encoding == .utf16LittleEndian ? UInt16(bytes[i]) | (UInt16(bytes[i + 1]) << 8) : (UInt16(bytes[i]) << 8) | UInt16(bytes[i + 1])
+            }
+            text = String(decoding: units, as: UTF16.self)
+        }
         guard !text.utf16.contains(0) else { throw PreviewError.binary }
         return (text, label)
     }

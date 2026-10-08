@@ -6,7 +6,7 @@ extension ReaderController {
         guard format == .markdown, mode.selectedSegment == 0, rendered != nil else { return }
         let selection = text.selectedRange(), position = scroll.contentView.bounds.origin
         text.textStorage?.setAttributedString(TextStyler.attributed(text.model, markdown: true, settings: settings, assets: markdownAssets, width: renderedWidth))
-        text.setSelectedRange(selection); scroll.contentView.scroll(to: position)
+        applyPreparedHighlights(); text.setSelectedRange(selection); scroll.contentView.scroll(to: position)
         text.needsDisplay = true
     }
     func startRichRendering() {

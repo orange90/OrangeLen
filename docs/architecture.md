@@ -1,5 +1,7 @@
 # Architecture and implementation decisions
 
+Current contracts and budgets: [2026-10-08 boundary contracts](current-contract.md). Dated runtime evidence is separate from implementation guarantees.
+
 Source of requirements: user request dated 2026-10-03 and supplied `OrangeLen-开发设计文档.md` v1.0. The worktree was empty, with no on-disk AGENTS.md in it or its inspected ancestors. Current chat instructions were applied. The design's implementation defaults were treated as defaults, not as permission to execute previewed content.
 
 - `App/`: programmatic AppKit application lifecycle, native open panel; SwiftUI settings.
@@ -9,19 +11,19 @@ Source of requirements: user request dated 2026-10-03 and supplied `OrangeLen-�
 
 ## Data and lifetime
 
-Each `loadFile` cancels the previous token, completes any old preparation with cancellation, and generates a new UUID. Background results must match that UUID before touching the main thread UI. File descriptors and coordinated reads end before the preview is ready. Closing a preview cancels outstanding directory/file work and settings polling, then releases the root security scope. Completion-count/latest-selection behavior has a native integration test.
+Each `loadFile` cancels the previous token, completes any old preparation with cancellation, and generates a new UUID. Background results must match that UUID before touching the main thread UI. Text descriptors and coordinated reads end before the preview is ready; media retains a verified descriptor until its session ends. Closing a preview cancels outstanding directory/file work and settings polling, then releases the root security scope. Completion-count/latest-selection behavior has a native integration test.
 
 `AccessBroker` validates root boundaries and symlink policy, opens paths component-by-component with `openat + O_NOFOLLOW` (including parents), and reads bounded chunks. Only the protected macOS `/var`, `/tmp`, `/etc` aliases are expanded to `/private/...`; arbitrary project links are refused. Cloud downloading state and `SF_DATALESS` are checked before bytes. Identity/size/nanosecond revision checks catch replacement or changes during a read. This is not a cryptographic unchanged-content proof against adversarial same-metadata rewrites. Provider stalls and cmark's synchronous C parse cannot be preempted mid-call; cancelled results are discarded.
 
 Markdown positions from cmark are UTF-8 byte columns. A bounded byte→UTF-16 index converts them; display spans carry exact or transformed source ranges. Escapes/entities use individual mapping spans. Search and selection-copy consume this one model. Unknown transformations fall back to a whole AST-node range with a warning; arbitrary exact selection remains available in source mode. Raw document HTML is never reparsed or executed. Bundled, isolated KaTeX/Mermaid renderers accept source as data and return images. Link activation handles heading anchors and bounded local paths; explicit HTTP(S) clicks open the system browser, and other schemes are rejected. Native NSTextTable cells and NSTextBlock quote/code containers preserve display offsets. Inline image attachments occupy mapped U+FFFC characters; captions remain selectable.
 
-Decorations are drawn behind glyphs, never inserted into content. Long sentence highlighting and visual-line ruler are separate operations. Theme/size changes rebuild attributes while preserving the source anchor. Navigation redraws the previous/current sentence, not the whole parsed document. An actual defect found during screenshot inspection (ruler painting outside its view) was fixed with clipping plus reserved text inset; a regression asserts glyphs cannot lie under the ruler.
+Line-number gutters and source/display mapping use actual TextKit glyph geometry. Sentence focus/ruler decorations are no longer part of the product. Theme and size changes preserve the reading anchor; syntax coloring is generated on a separate bounded lane and applied without running JavaScript on the main thread.
 
 ## Settings / signing
 
 Default ad-hoc builds have independent app/extension settings, reported in the footer. The optional installer builds a macOS team-prefixed group identifier from an explicitly supplied team ID and signs all nested code consistently. Current-machine Apple Development group-container access and host→extension setting transfer were observed; Developer ID distribution remains untested.
 
-Settings use shared UserDefaults, with active-preview refresh. Reading positions are optional, atomic JSON per salted file identity, with NSFileCoordinator around writes, revision checks and expiry/cap. First-run salt creation / cross-process stress and crash recovery require further tests. No source-body cache or project sidecar is written.
+Settings use independent CFPrefs keys for field-level merging, plus an atomic JSON snapshot and stable flock inode when filesystem access is available. Quick Look can return an app-group URL yet deny creating files there; settings remain usable through CFPrefs and reading records fall back to the process container. A stable file lock serializes first identity/salt creation in each available record store. A shared clear-generation preference invalidates old sessions and records even across isolated stores. Clearing records rotates a generation, preventing open sessions from writing them back. Records are opt-in, revision-bound, expire after 30 days, and cap at 200. Source bodies are never stored.
 
 ## Deliberate deviations and gaps
 
@@ -41,3 +43,7 @@ Settings use shared UserDefaults, with active-preview refresh. Reading positions
 ## Rich content and explicit image network access
 
 See [Markdown rich content](markdown-rich-content.md) for parsing syntax, shared source mapping, offline renderer isolation, budgets, DNS/IP/TLS rules and evidence. `ImageBroker/` is embedded inside the Quick Look extension; it remains sandboxed with network-client permission only. The extension cannot directly resolve DNS on this tested OS. Native NSXPC transfers bounded image bytes back into the same Finder preview; it never launches a supplementary host window.
+
+## System import and scheduling
+
+`DocumentBroker/` is embedded into the host and all seven extensions. It has App Sandbox only, no network/client or user-selected file entitlement, bounded Data input and text/font JSON output. Import timeout, memory watchdog and connection cancellation terminate the worker; complex attachments never cross back. `PreviewWorkQueue` bounds active and pending closures; `PreviewResourceLease` adds per-process RSS admission and shared-group kernel leases. Media uses `ScopedMediaFile` and `AVAssetResourceLoader` with all external-reference restrictions. See the current contract for exact limits and remaining OS-call constraints.

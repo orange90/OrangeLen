@@ -25,8 +25,8 @@ final class DatabaseController: NSViewController, NSTableViewDataSource, NSTable
         table.dataSource = self; table.delegate = self; table.rowHeight = 27; table.columnAutoresizingStyle = .noColumnAutoresizing
         table.setAccessibilityLabel("SQLite 分页数据表")
         let menu = NSMenu()
-        menu.addItem(withTitle: "复制单元格", action: #selector(copyCell), keyEquivalent: "").target = self
-        menu.addItem(withTitle: "复制选中行（TSV）", action: #selector(copyRows), keyEquivalent: "").target = self
+        menu.addItem(withTitle: "复制单元格（SQL 字面量）", action: #selector(copyCell), keyEquivalent: "").target = self
+        menu.addItem(withTitle: "复制选中行（TSV，SQL 字面量）", action: #selector(copyRows), keyEquivalent: "").target = self
         table.menu = menu
         metadata.font = .systemFont(ofSize: 11); metadata.textColor = .secondaryLabelColor
         for child in [controls, scroll, metadata] { root.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -24).isActive = true }
@@ -46,23 +46,26 @@ final class DatabaseController: NSViewController, NSTableViewDataSource, NSTable
     @objc func previousPage() { offset = max(0, offset - 500); loadPage() }
     @objc func nextPage() { guard page?.hasNext == true else { return }; offset += 500; loadPage() }
     func loadPage() {
-        guard let database, let name = selector.titleOfSelectedItem else { return }
+        page = nil; metadata.stringValue = ""; table.deselectAll(nil); table.reloadData()
+        guard let database, let name = selector.titleOfSelectedItem else {
+            status.stringValue = "数据库没有可读取的数据表"; previous.isEnabled = false; next.isEnabled = false; table.isEnabled = false; return
+        }
         token?.cancel(); let token = Cancellation(); self.token = token
         let id = UUID(); generation = id
         let offset = offset, sort = sortColumn, ascending = ascending
         previous.isEnabled = false; next.isEnabled = false; table.isEnabled = false
         status.stringValue = "读取中…"
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let result = Result {
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: {
+            return try {
                 let columns = try database.page(name, pageSize: 1, cancellation: token).columns
                 let validSort = sort.flatMap { columns.indices.contains($0) ? $0 : nil }
                 return try database.page(name, offset: offset, sortColumn: validSort, ascending: ascending, cancellation: token)
-            }
-            DispatchQueue.main.async {
+            }()
+        }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
-                self.table.isEnabled = true
                 switch result {
                 case .success(let page):
+                    self.table.isEnabled = true
                     if page.rows.isEmpty && offset > 0 { self.offset = 0; self.loadPage(); return }
                     self.page = page
                     if let index = self.sortColumn, !page.columns.indices.contains(index) { self.sortColumn = nil; self.table.sortDescriptors = [] }
@@ -79,17 +82,18 @@ final class DatabaseController: NSViewController, NSTableViewDataSource, NSTable
                     self.status.stringValue = page.rows.isEmpty ? "此页无记录" : "第 \(offset + 1)–\(offset + page.rows.count) 行" + (page.hasNext ? " · 后面还有数据" : " · 已到末尾")
                     self.metadata.stringValue = page.columns.map { $0.name + ": " + ($0.declaredType.isEmpty ? "未声明类型" : $0.declaredType) + ($0.primaryKey > 0 ? " · 主键" : "") + ($0.notNull ? " · NOT NULL" : "") }.joined(separator: "   |   ")
                 case .failure(let error):
-                    self.status.stringValue = error.localizedDescription
+                    self.page = nil; self.table.reloadData(); self.table.isEnabled = false
+                    self.status.stringValue = name + " · " + error.localizedDescription + " · 可重新选择表重试"
                     self.previous.isEnabled = offset > 0
                 }
-            }
-        }
+        })
     }
-    func numberOfRows(in tableView: NSTableView) -> Int { page?.rows.count ?? 0 }
+    func numberOfRows(in tableView: NSTableView) -> Int { page?.cells.count ?? 0 }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let page, page.rows.indices.contains(row), let column = Int(tableColumn?.identifier.rawValue ?? ""), page.rows[row].indices.contains(column) else { return nil }
-        let value = page.rows[row][column]
-        let field = NSTextField(labelWithString: value); field.lineBreakMode = .byTruncatingTail; field.toolTip = value
+        guard let page, page.cells.indices.contains(row), let column = Int(tableColumn?.identifier.rawValue ?? ""), page.cells[row].indices.contains(column) else { return nil }
+        let cell = page.cells[row][column], value = cell.display
+        let field = NSTextField(labelWithString: value); field.lineBreakMode = .byTruncatingTail; field.toolTip = cell.kind + "：" + value
+        field.setAccessibilityValue(cell.kind + "：" + value)
         return field
     }
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
@@ -98,14 +102,14 @@ final class DatabaseController: NSViewController, NSTableViewDataSource, NSTable
     }
     @objc func copyCell() {
         let row = table.clickedRow >= 0 ? table.clickedRow : table.selectedRow, column = table.clickedColumn
-        guard let page, page.rows.indices.contains(row), page.rows[row].indices.contains(column) else { return }
-        Clipboard.write(page.rows[row][column], feedback: copyFeedback)
+        guard let page, page.cells.indices.contains(row), page.cells[row].indices.contains(column) else { return }
+        Clipboard.write(page.cells[row][column].sqlLiteral, feedback: copyFeedback)
     }
     @objc func copyRows() {
         guard let page else { return }
         let selected = table.selectedRowIndexes.isEmpty && table.clickedRow >= 0 ? IndexSet(integer: table.clickedRow) : table.selectedRowIndexes
-        let rows = selected.filter { page.rows.indices.contains($0) }.map { page.rows[$0].joined(separator: "\t") }
+        let rows = selected.filter { page.cells.indices.contains($0) }.map { page.cells[$0].map { DatabaseDocument.tsvField($0.sqlLiteral) }.joined(separator: "\t") }
         if !rows.isEmpty { Clipboard.write(rows.joined(separator: "\n"), feedback: copyFeedback) }
     }
-    func cancel() { token?.cancel(); generation = UUID(); database = nil; page = nil }
+    func cancel() { token?.cancel(); token = nil; generation = UUID(); database = nil; page = nil; table.reloadData(); table.isEnabled = false; previous.isEnabled = false; next.isEnabled = false; status.stringValue = "已取消读取 · 可重载" }
 }

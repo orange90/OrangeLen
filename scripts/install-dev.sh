@@ -25,7 +25,9 @@ if [[ -n "${ORANGELEN_SIGN_IDENTITY:-}" ]]; then
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime "$library"
   done < <(find "$destination/Contents" -name '*.dylib' -print0)
   while IFS= read -r -d '' service; do
-    codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements ImageBroker/ImageBroker.entitlements "$service"
+    service_entitlements=ImageBroker/ImageBroker.entitlements
+    if [[ "$service" == *OrangeLenDocumentBroker.xpc ]]; then service_entitlements=DocumentBroker/DocumentBroker.entitlements; fi
+    codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements "$service_entitlements" "$service"
   done < <(find "$destination/Contents" -name '*.xpc' -print0)
   while IFS= read -r -d "" preview; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements build/signing/preview.plist "$preview"

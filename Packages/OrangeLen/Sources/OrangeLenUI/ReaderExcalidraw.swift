@@ -4,14 +4,12 @@ import OrangeLenCore
 extension ReaderController {
     func loadExcalidraw(_ url: URL, root: URL?, id: UUID, token: Cancellation) {
         mode.isEnabled = false; headings.isEnabled = false
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let result = Result { () -> (SourceSnapshot, Result<ExcalidrawPreview, Error>) in
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (SourceSnapshot, Result<ExcalidrawPreview, Error>) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
                 let source = try AccessBroker.read(url, root: root, cancellation: token)
                 return (source, Result { try ExcalidrawPreview.parse(source.text, cancellation: token) })
-            }
-            DispatchQueue.main.async {
+        }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 do {
                     let (source, sceneResult) = try result.get()
@@ -41,7 +39,6 @@ extension ReaderController {
                     if self.source != nil { self.present(); self.finish(nil) }
                     else { self.showMessage(error.localizedDescription); self.finish(error) }
                 }
-            }
-        }
+        })
     }
 }

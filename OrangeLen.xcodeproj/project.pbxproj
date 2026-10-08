@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05C8BDE23199A429DED676F8 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C38BFEF2B1D7A5FEAD57B3E /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 30D1B581E05B8E0516C61C8D /* OrangeLenUI */; };
+		0FB153AE8BBC5EAD24C99574 /* SystemPreviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */; };
 		1A3F0BE9CE913CA59E44FF97 /* OrangeLenCore in Frameworks */ = {isa = PBXBuildFile; productRef = 72A62C92F98ADD9FC9E6A66A /* OrangeLenCore */; };
+		1F6075BD796B19EBF0906791 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = FC4D73868231FF7143F14A2D /* OrangeLenUI */; };
 		21E9094206A9554948B8CC69 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		28A1AF05720B32F6864B2E96 /* OrangeLenPreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2BC9FA5C4EB4E5336C5DD1B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C80D93133D02E9E0D26EA /* SettingsView.swift */; };
@@ -16,9 +19,12 @@
 		2F21B6268BBC6B7BE61ABB03 /* DiagnosticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFE2CE31C8A844C064A360 /* DiagnosticsController.swift */; };
 		30F198EC319C2AA0BAEB5B80 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3462E61D4BE3F99EC4DA0F79 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CDB69EA4068751110275771 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FB37B3DDA4DEFF9F1EB39D1 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = CDECED808730D628044615F7 /* OrangeLenUI */; };
+		3FC658D6CC7D1C644A120A23 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4268976FE62529925996941D /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44AFA5C73E7CF5D3227A86E7 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61C00F684C7EE5F46DB43F64 /* OrangeLenUI */; };
+		4777E9A5085648C95743833E /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		493029742D73EFEA9E5DEDDD /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2241A87AFA321FA146A5A54A /* OrangeLenUI */; };
 		4F7755F6E3F2D690C35CFE65 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 98A78709DAF88A62C1BBE8CC /* OrangeLenUI */; };
 		5415C7D7B4A889495DF3D1D4 /* OrangeLenPreviewBooks.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 24B3496B829824C1D185E6DC /* OrangeLenPreviewBooks.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -26,6 +32,7 @@
 		5DC2FEE7BD7A19D773F8DEC5 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E72C8535DF0A1668A4B76B0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		68DE08474737FF3A1635F83A /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
+		6F2D055D1BDBB73AFFE80162 /* OrangeLenCore in Frameworks */ = {isa = PBXBuildFile; productRef = F73635A29527A436FE4E7D8E /* OrangeLenCore */; };
 		725011E5452FA98438BAF813 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 42C5F839A6EC25E572872E32 /* OrangeLenUI */; };
 		7988D6BBAF6C52D9D30DC664 /* OrangeLenPreviewDrawings.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 34C12098DA5CCF0139297252 /* OrangeLenPreviewDrawings.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7BB541DF9B481FC8EDE53914 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
@@ -34,23 +41,60 @@
 		92EE5F047E3C53FA021FAD49 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		95915DA21E2F720D0C1EDDFD /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 769FE336D3C1796ABA6EFD1C /* OrangeLenUI */; };
 		99331880947BB0F09D046706 /* OrangeLenPreviewFolders.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8AB48C5DA4CFEF654C8AC3A2 /* OrangeLenPreviewFolders.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B1624824B2C0A1449D3B7D79 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8D882EBD2F839BB2332B306 /* system-preview in Resources */ = {isa = PBXBuildFile; fileRef = 4A280EAD091BC0C5F998AE97 /* system-preview */; };
 		BB3CC9128971381E4835A911 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		BE8A75D4B9AF4B737AB23C38 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C215C10E9849437A05B1ABD7 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */; };
 		C6C851933732575121AB67BF /* OrangeLenPreviewMarkdown.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9981EDC498A386CD75DC631F /* OrangeLenPreviewMarkdown.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7492083004FCD317FC48759 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 45EBDEFE651FB624FE12337A /* OrangeLenUI */; };
 		CA2FD75B4350EB7DFE285B35 /* OrangeLenPreviewData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E49AD9795C8113A4D5A8F91A /* OrangeLenPreviewData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB8B8FA8B981A59C5639BA77 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCDC21152EC8048F9058EF19 /* OrangeLenCore in Frameworks */ = {isa = PBXBuildFile; productRef = BFFB72289C463838E6D70059 /* OrangeLenCore */; };
+		D5724D6BD530518BD0C5BA9A /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D69A91A43BF19BB59115BC9A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558F04181657A40F83299DE /* main.swift */; };
+		DFA8156682C32102EF54B039 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE61DCE5940BA3A412D774E6 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE8BE7DE3DAEBF699448BC20 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F19578AED0388D7F8AC8A294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0B5EC560B315CB477FDD2 /* AppDelegate.swift */; };
+		F2766B2ACBA0B7F0E0D49BC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD50AEE4082E38C47243334 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		068E3BD7F44E9101D3CBC523 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
 		130BAC92C49E6F7714898B3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9856266766C125F99F0291C0;
 			remoteInfo = OrangeLenImageBroker;
+		};
+		1D4043EB67919636A0F30DE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
+		200EBC12FB5A4ADFC515118D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
+		2514BA4F7728BE2FE27F0B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
 		};
 		2877629340DD4F524BD0810A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -94,6 +138,27 @@
 			remoteGlobalIDString = 9856266766C125F99F0291C0;
 			remoteInfo = OrangeLenImageBroker;
 		};
+		79353196AEF3E01E0296C2F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
+		82C99F0B56DCDA05412051FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
+		8BF8F523F1B59D7042796778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
 		913C2360109D59649E874CFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
@@ -108,6 +173,13 @@
 			remoteGlobalIDString = 9856266766C125F99F0291C0;
 			remoteInfo = OrangeLenImageBroker;
 		};
+		A2FE0ACCACA8F3FE386601C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
+		};
 		D8E773D42D55E246AE8A0CA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
@@ -121,6 +193,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EBDB13C30C11E9804E5D1473;
 			remoteInfo = OrangeLenPreviewArchives;
+		};
+		E620A5421EE8B5B8509351F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEA597A955A6DF9C1DFC434;
+			remoteInfo = OrangeLenDocumentBroker;
 		};
 		EAD06E0BD016D68A9A53F78F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -143,6 +222,13 @@
 			remoteGlobalIDString = 8EA67BA226288D09E62B3FA3;
 			remoteInfo = OrangeLenPreviewFolders;
 		};
+		FBAA4204BB24EC7D02F9A610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FBB2D914FB24BEDE6AD2DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C57D6DE6883A2A0C1DB7AD92;
+			remoteInfo = OrangeLenTestHost;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -153,6 +239,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				30F198EC319C2AA0BAEB5B80 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				05C8BDE23199A429DED676F8 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +250,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				8F4D5DCB9809FF86617C10D0 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				CB8B8FA8B981A59C5639BA77 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +261,17 @@
 			dstSubfolderSpec = 16;
 			files = (
 				3462E61D4BE3F99EC4DA0F79 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				3CDB69EA4068751110275771 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		603152C3996BE30B5B6A096B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				B1624824B2C0A1449D3B7D79 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +282,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				EE61DCE5940BA3A412D774E6 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				D5724D6BD530518BD0C5BA9A /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +293,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				4268976FE62529925996941D /* OrangeLenImageBroker.xpc in CopyFiles */,
+				3FC658D6CC7D1C644A120A23 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +304,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				5DC2FEE7BD7A19D773F8DEC5 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				4777E9A5085648C95743833E /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +315,17 @@
 			dstSubfolderSpec = 16;
 			files = (
 				BE8A75D4B9AF4B737AB23C38 /* OrangeLenImageBroker.xpc in CopyFiles */,
+				EE8BE7DE3DAEBF699448BC20 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D658AF5B27A103B3AF6891FF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				DFA8156682C32102EF54B039 /* OrangeLenDocumentBroker.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,25 +350,34 @@
 
 /* Begin PBXFileReference section */
 		1462345BBF84F2085AE5662C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPreviewTests.swift; sourceTree = "<group>"; };
+		19290C1F8F29087FFA669D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		24B3496B829824C1D185E6DC /* OrangeLenPreviewBooks.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewBooks.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B518C079605C18EC15BBF1E /* OrangeLen */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OrangeLen; path = Packages/OrangeLen; sourceTree = SOURCE_ROOT; };
+		2D66AC049642D13D2BBE6956 /* OrangeLenTestHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeLenTestHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C12098DA5CCF0139297252 /* OrangeLenPreviewDrawings.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewDrawings.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C14600F3387DA81267A4CD5 /* DocumentBroker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentBroker.entitlements; sourceTree = "<group>"; };
 		3C6C80D93133D02E9E0D26EA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		46850D4CAFD9853701455F26 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		4A280EAD091BC0C5F998AE97 /* system-preview */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "system-preview"; path = "Tests/Fixtures/system-preview"; sourceTree = SOURCE_ROOT; };
 		59C0B5EC560B315CB477FDD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		667209996F981C6955ACFB57 /* ImageBroker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageBroker.entitlements; sourceTree = "<group>"; };
 		6AAEC95058178BE7091F2712 /* OrangeLen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeLen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OrangeLenImageBroker.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageLoader.swift; sourceTree = "<group>"; };
+		7558F04181657A40F83299DE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		79B2A6052B4399CD829B2B61 /* OrangeLen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrangeLen.entitlements; sourceTree = "<group>"; };
 		7E4A7F21DE09B1A311246A83 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8AB48C5DA4CFEF654C8AC3A2 /* OrangeLenPreviewFolders.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewFolders.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OrangeLenDocumentBroker.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		9981EDC498A386CD75DC631F /* OrangeLenPreviewMarkdown.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewMarkdown.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CFE2CE31C8A844C064A360 /* DiagnosticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsController.swift; sourceTree = "<group>"; };
 		AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewArchives.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20FCB7C331241A7EACA9600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E49AD9795C8113A4D5A8F91A /* OrangeLenPreviewData.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewData.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB3DC20DD0B2326CF247CEA7 /* OrangeLenNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeLenNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD50AEE4082E38C47243334 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,11 +421,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99C0B7EAEF799AD9A457D1B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6075BD796B19EBF0906791 /* OrangeLenUI in Frameworks */,
+				6F2D055D1BDBB73AFFE80162 /* OrangeLenCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC702F4E7610EB5CCF891E75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				493029742D73EFEA9E5DEDDD /* OrangeLenUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C764F3D4E7D8598539871FF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCDC21152EC8048F9058EF19 /* OrangeLenCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +493,25 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		2C24A6A6CA8ABA8892A68318 /* DocumentBroker */ = {
+			isa = PBXGroup;
+			children = (
+				3C14600F3387DA81267A4CD5 /* DocumentBroker.entitlements */,
+				19290C1F8F29087FFA669D76 /* Info.plist */,
+				7558F04181657A40F83299DE /* main.swift */,
+			);
+			path = DocumentBroker;
+			sourceTree = "<group>";
+		};
+		37AB77B4B6CBA62A9D442C9C /* OrangeLenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */,
+			);
+			name = OrangeLenUITests;
+			path = Packages/OrangeLen/Tests/OrangeLenUITests;
+			sourceTree = "<group>";
+		};
 		54EF8AC4F19016681FE6D494 /* PreviewExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,20 +532,35 @@
 		698B04F06E147C5279F1DF06 = {
 			isa = PBXGroup;
 			children = (
+				4A280EAD091BC0C5F998AE97 /* system-preview */,
 				165C9948477B5A12CED0DD86 /* App */,
+				2C24A6A6CA8ABA8892A68318 /* DocumentBroker */,
+				738232B7D85638A6389BD538 /* Host */,
 				8F70B89C574AF0AD5A106C12 /* ImageBroker */,
 				55FF2F50F69D0DBC0890213D /* OrangeLenUI */,
+				37AB77B4B6CBA62A9D442C9C /* OrangeLenUITests */,
 				002088EB76A274B9D40B8F1B /* Packages */,
 				54EF8AC4F19016681FE6D494 /* PreviewExtension */,
 				7A2E9D2B52DA92C50938D2CC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		738232B7D85638A6389BD538 /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				FFD50AEE4082E38C47243334 /* main.swift */,
+			);
+			name = Host;
+			path = Tests/Host;
+			sourceTree = "<group>";
+		};
 		7A2E9D2B52DA92C50938D2CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				6AAEC95058178BE7091F2712 /* OrangeLen.app */,
+				917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */,
 				6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */,
+				EB3DC20DD0B2326CF247CEA7 /* OrangeLenNativeTests.xctest */,
 				631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */,
 				AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */,
 				24B3496B829824C1D185E6DC /* OrangeLenPreviewBooks.appex */,
@@ -395,6 +568,7 @@
 				34C12098DA5CCF0139297252 /* OrangeLenPreviewDrawings.appex */,
 				8AB48C5DA4CFEF654C8AC3A2 /* OrangeLenPreviewFolders.appex */,
 				9981EDC498A386CD75DC631F /* OrangeLenPreviewMarkdown.appex */,
+				2D66AC049642D13D2BBE6956 /* OrangeLenTestHost.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +598,7 @@
 			);
 			dependencies = (
 				FA5191825C66805D68463342 /* PBXTargetDependency */,
+				328CE499B5A71CDF52EB2A4E /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewDrawings;
 			packageProductDependencies = (
@@ -432,6 +607,28 @@
 			productName = OrangeLenPreviewDrawings;
 			productReference = 34C12098DA5CCF0139297252 /* OrangeLenPreviewDrawings.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		3C7E755ED62EBF411AD68F63 /* OrangeLenNativeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF9842A2AC7E738A6AC23DF3 /* Build configuration list for PBXNativeTarget "OrangeLenNativeTests" */;
+			buildPhases = (
+				C36691EC1FFCC96708E660C8 /* Sources */,
+				956E55DBBC1D2F8499D57F00 /* Resources */,
+				99C0B7EAEF799AD9A457D1B4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F67E16BD5F0ABFAD745B189 /* PBXTargetDependency */,
+			);
+			name = OrangeLenNativeTests;
+			packageProductDependencies = (
+				FC4D73868231FF7143F14A2D /* OrangeLenUI */,
+				F73635A29527A436FE4E7D8E /* OrangeLenCore */,
+			);
+			productName = OrangeLenNativeTests;
+			productReference = EB3DC20DD0B2326CF247CEA7 /* OrangeLenNativeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		461FFEF11BEC5FCA48857D2A /* OrangeLenPreviewBooks */ = {
 			isa = PBXNativeTarget;
@@ -445,6 +642,7 @@
 			);
 			dependencies = (
 				C3732D13D0805CDD1E4D143C /* PBXTargetDependency */,
+				72136F55B0327BF62005959A /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewBooks;
 			packageProductDependencies = (
@@ -466,6 +664,7 @@
 			);
 			dependencies = (
 				5814980FFD878AF78BBB0659 /* PBXTargetDependency */,
+				BA7C86D7E4746A71F38ECAC6 /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewMarkdown;
 			packageProductDependencies = (
@@ -487,6 +686,7 @@
 			);
 			dependencies = (
 				081DD8CA7AAC965ABA400878 /* PBXTargetDependency */,
+				AD872D50E48708325E645C51 /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewFolders;
 			packageProductDependencies = (
@@ -527,6 +727,7 @@
 			);
 			dependencies = (
 				5E19E759E5ADB2738A0CA9C1 /* PBXTargetDependency */,
+				9ABFE37CA81E40290DB4F522 /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewData;
 			packageProductDependencies = (
@@ -541,6 +742,7 @@
 			buildConfigurationList = ABDF0277DAFB225301E77802 /* Build configuration list for PBXNativeTarget "OrangeLen" */;
 			buildPhases = (
 				6DD2C0148DF7120DB34A5882 /* Sources */,
+				603152C3996BE30B5B6A096B /* CopyFiles */,
 				2F8DEC43B8C83A198B0303A5 /* Frameworks */,
 				D9F2C7CAEA38C95C550A9578 /* Embed Foundation Extensions */,
 			);
@@ -554,6 +756,7 @@
 				A967579EA3AB6BC0FF0D0B93 /* PBXTargetDependency */,
 				8D8C7B74BDFEB2E5162F0535 /* PBXTargetDependency */,
 				CA1BF09C55407A463227D087 /* PBXTargetDependency */,
+				5084FCEDBFA9302C64FC0109 /* PBXTargetDependency */,
 			);
 			name = OrangeLen;
 			packageProductDependencies = (
@@ -561,6 +764,25 @@
 			);
 			productName = OrangeLen;
 			productReference = 6AAEC95058178BE7091F2712 /* OrangeLen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C57D6DE6883A2A0C1DB7AD92 /* OrangeLenTestHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 190450DE0B3D14A600643768 /* Build configuration list for PBXNativeTarget "OrangeLenTestHost" */;
+			buildPhases = (
+				502EA13EC0855D4ACA727DBF /* Sources */,
+				D658AF5B27A103B3AF6891FF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B340C43F9D530EC2D998C23 /* PBXTargetDependency */,
+			);
+			name = OrangeLenTestHost;
+			packageProductDependencies = (
+			);
+			productName = OrangeLenTestHost;
+			productReference = 2D66AC049642D13D2BBE6956 /* OrangeLenTestHost.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */ = {
@@ -575,6 +797,7 @@
 			);
 			dependencies = (
 				D85CE3D0E849A8A9D7F209CA /* PBXTargetDependency */,
+				2CEE2230DFA93F09BB707DB6 /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreview;
 			packageProductDependencies = (
@@ -583,6 +806,25 @@
 			productName = OrangeLenPreview;
 			productReference = 631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B33886CA2B7251EF14B5960 /* Build configuration list for PBXNativeTarget "OrangeLenDocumentBroker" */;
+			buildPhases = (
+				442194F844B8EE12AA4ADF5A /* Sources */,
+				C764F3D4E7D8598539871FF1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrangeLenDocumentBroker;
+			packageProductDependencies = (
+				BFFB72289C463838E6D70059 /* OrangeLenCore */,
+			);
+			productName = OrangeLenDocumentBroker;
+			productReference = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 		EBDB13C30C11E9804E5D1473 /* OrangeLenPreviewArchives */ = {
 			isa = PBXNativeTarget;
@@ -596,6 +838,7 @@
 			);
 			dependencies = (
 				F7586149804917D764CABE7B /* PBXTargetDependency */,
+				E01121E0E98F8B23394DFA76 /* PBXTargetDependency */,
 			);
 			name = OrangeLenPreviewArchives;
 			packageProductDependencies = (
@@ -617,6 +860,9 @@
 					24FE1FE444A6A0F331DE0B7E = {
 						ProvisioningStyle = Manual;
 					};
+					3C7E755ED62EBF411AD68F63 = {
+						ProvisioningStyle = Manual;
+					};
 					461FFEF11BEC5FCA48857D2A = {
 						ProvisioningStyle = Manual;
 					};
@@ -635,7 +881,13 @@
 					AC812D73CE8048F05E373042 = {
 						ProvisioningStyle = Manual;
 					};
+					C57D6DE6883A2A0C1DB7AD92 = {
+						ProvisioningStyle = Manual;
+					};
 					CCBFE1A27B3880238A5E19E5 = {
+						ProvisioningStyle = Manual;
+					};
+					DEEA597A955A6DF9C1DFC434 = {
 						ProvisioningStyle = Manual;
 					};
 					EBDB13C30C11E9804E5D1473 = {
@@ -661,7 +913,9 @@
 			projectRoot = "";
 			targets = (
 				AC812D73CE8048F05E373042 /* OrangeLen */,
+				DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */,
 				9856266766C125F99F0291C0 /* OrangeLenImageBroker */,
+				3C7E755ED62EBF411AD68F63 /* OrangeLenNativeTests */,
 				CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */,
 				EBDB13C30C11E9804E5D1473 /* OrangeLenPreviewArchives */,
 				461FFEF11BEC5FCA48857D2A /* OrangeLenPreviewBooks */,
@@ -669,9 +923,21 @@
 				24FE1FE444A6A0F331DE0B7E /* OrangeLenPreviewDrawings */,
 				8EA67BA226288D09E62B3FA3 /* OrangeLenPreviewFolders */,
 				550F461B164C68E4CC2E8503 /* OrangeLenPreviewMarkdown */,
+				C57D6DE6883A2A0C1DB7AD92 /* OrangeLenTestHost */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		956E55DBBC1D2F8499D57F00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D882EBD2F839BB2332B306 /* system-preview in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B21C54D9CCA2A600069BF7E /* Sources */ = {
@@ -706,6 +972,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		442194F844B8EE12AA4ADF5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69A91A43BF19BB59115BC9A /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		502EA13EC0855D4ACA727DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2766B2ACBA0B7F0E0D49BC1 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54FBA2F5D0FDF9864EA3A1EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -729,6 +1011,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EE5F047E3C53FA021FAD49 /* PreviewViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36691EC1FFCC96708E660C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FB153AE8BBC5EAD24C99574 /* SystemPreviewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,15 +1047,40 @@
 			target = 9856266766C125F99F0291C0 /* OrangeLenImageBroker */;
 			targetProxy = 4B1EEB68F72744F11E93CF98 /* PBXContainerItemProxy */;
 		};
+		0B340C43F9D530EC2D998C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 2514BA4F7728BE2FE27F0B2C /* PBXContainerItemProxy */;
+		};
 		15B06FD670BDB7C20EE9F732 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 550F461B164C68E4CC2E8503 /* OrangeLenPreviewMarkdown */;
 			targetProxy = F24F9F1B615AE9F878D93468 /* PBXContainerItemProxy */;
 		};
+		1F67E16BD5F0ABFAD745B189 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C57D6DE6883A2A0C1DB7AD92 /* OrangeLenTestHost */;
+			targetProxy = FBAA4204BB24EC7D02F9A610 /* PBXContainerItemProxy */;
+		};
+		2CEE2230DFA93F09BB707DB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 068E3BD7F44E9101D3CBC523 /* PBXContainerItemProxy */;
+		};
 		3258846B04B20F92BE5C780B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8EA67BA226288D09E62B3FA3 /* OrangeLenPreviewFolders */;
 			targetProxy = F8FE81083431BE372D2F3712 /* PBXContainerItemProxy */;
+		};
+		328CE499B5A71CDF52EB2A4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 82C99F0B56DCDA05412051FE /* PBXContainerItemProxy */;
+		};
+		5084FCEDBFA9302C64FC0109 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 8BF8F523F1B59D7042796778 /* PBXContainerItemProxy */;
 		};
 		5814980FFD878AF78BBB0659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -782,6 +1097,11 @@
 			target = 9856266766C125F99F0291C0 /* OrangeLenImageBroker */;
 			targetProxy = 677AF7C2529A0B77E51108AA /* PBXContainerItemProxy */;
 		};
+		72136F55B0327BF62005959A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 79353196AEF3E01E0296C2F3 /* PBXContainerItemProxy */;
+		};
 		7564D6A850D6535892B99F45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CCBFE1A27B3880238A5E19E5 /* OrangeLenPreview */;
@@ -792,10 +1112,25 @@
 			target = 461FFEF11BEC5FCA48857D2A /* OrangeLenPreviewBooks */;
 			targetProxy = 913C2360109D59649E874CFE /* PBXContainerItemProxy */;
 		};
+		9ABFE37CA81E40290DB4F522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 1D4043EB67919636A0F30DE8 /* PBXContainerItemProxy */;
+		};
 		A967579EA3AB6BC0FF0D0B93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EBDB13C30C11E9804E5D1473 /* OrangeLenPreviewArchives */;
 			targetProxy = E2E383878AD00D7BB6615F9F /* PBXContainerItemProxy */;
+		};
+		AD872D50E48708325E645C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = A2FE0ACCACA8F3FE386601C1 /* PBXContainerItemProxy */;
+		};
+		BA7C86D7E4746A71F38ECAC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = 200EBC12FB5A4ADFC515118D /* PBXContainerItemProxy */;
 		};
 		C3732D13D0805CDD1E4D143C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -812,6 +1147,11 @@
 			target = 9856266766C125F99F0291C0 /* OrangeLenImageBroker */;
 			targetProxy = 9F997CCC6169A38C80A79443 /* PBXContainerItemProxy */;
 		};
+		E01121E0E98F8B23394DFA76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEA597A955A6DF9C1DFC434 /* OrangeLenDocumentBroker */;
+			targetProxy = E620A5421EE8B5B8509351F4 /* PBXContainerItemProxy */;
+		};
 		F7586149804917D764CABE7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9856266766C125F99F0291C0 /* OrangeLenImageBroker */;
@@ -825,6 +1165,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		15F2746C15B0012FBFC59783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.NativeTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrangeLenTestHost.app/Contents/MacOS/OrangeLenTestHost";
+			};
+			name = Release;
+		};
 		1D5B448F7EB8D4D268A3A1D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -921,6 +1278,22 @@
 			};
 			name = Debug;
 		};
+		3E87308B4A3D07E335FC747B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DocumentBroker/DocumentBroker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DocumentBroker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.DocumentBroker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		3EE220CADF47810D28B85709 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1007,6 +1380,23 @@
 			};
 			name = Release;
 		};
+		4BE05D7471FD0434955F549A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.NativeTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrangeLenTestHost.app/Contents/MacOS/OrangeLenTestHost";
+			};
+			name = Debug;
+		};
 		50B121496D6E2F5D9DFF791A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1057,6 +1447,21 @@
 			};
 			name = Debug;
 		};
+		70BF381F6309881C37B55810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.TestHost;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		9ADA0ADCBDB7656CEF79FF73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1070,6 +1475,22 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen;
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9DFDDE4FCF45076A59EF7544 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DocumentBroker/DocumentBroker.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DocumentBroker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.DocumentBroker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1224,6 +1645,21 @@
 			};
 			name = Release;
 		};
+		E8A582469C8E6230E7E38599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.OrangeLen.TestHost;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
 		EDC50137845A7666491593FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1266,6 +1702,24 @@
 			buildConfigurations = (
 				BF78AEA7808626CE867ACA26 /* Debug */,
 				280FF6DF60224896161F1632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		190450DE0B3D14A600643768 /* Build configuration list for PBXNativeTarget "OrangeLenTestHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A582469C8E6230E7E38599 /* Debug */,
+				70BF381F6309881C37B55810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1B33886CA2B7251EF14B5960 /* Build configuration list for PBXNativeTarget "OrangeLenDocumentBroker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E87308B4A3D07E335FC747B /* Debug */,
+				9DFDDE4FCF45076A59EF7544 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1351,6 +1805,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		BF9842A2AC7E738A6AC23DF3 /* Build configuration list for PBXNativeTarget "OrangeLenNativeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE05D7471FD0434955F549A /* Debug */,
+				15F2746C15B0012FBFC59783 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -1393,7 +1856,19 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OrangeLenUI;
 		};
+		BFFB72289C463838E6D70059 /* OrangeLenCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenCore;
+		};
 		CDECED808730D628044615F7 /* OrangeLenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenUI;
+		};
+		F73635A29527A436FE4E7D8E /* OrangeLenCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrangeLenCore;
+		};
+		FC4D73868231FF7143F14A2D /* OrangeLenUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OrangeLenUI;
 		};

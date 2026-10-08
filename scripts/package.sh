@@ -41,7 +41,7 @@ if [[ "$mode" == release ]]; then
     /usr/libexec/PlistBuddy -c "Add :OrangeLenAppGroup string $group" "$info"
   done < <(find "$app/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -print0)
   while IFS= read -r -d '' library; do codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp "$library"; done < <(find "$app/Contents" -name '*.dylib' -print0)
-  while IFS= read -r -d '' service; do codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements ImageBroker/ImageBroker.entitlements "$service"; done < <(find "$app/Contents" -name '*.xpc' -print0)
+  while IFS= read -r -d '' service; do service_entitlements=ImageBroker/ImageBroker.entitlements; if [[ "$service" == *OrangeLenDocumentBroker.xpc ]]; then service_entitlements=DocumentBroker/DocumentBroker.entitlements; fi; codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements "$service_entitlements" "$service"; done < <(find "$app/Contents" -name '*.xpc' -print0)
   while IFS= read -r -d "" preview; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements "$stage/preview.plist" "$preview"
   done < <(find "$app/Contents/PlugIns" -name "*.appex" -print0)

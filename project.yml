@@ -99,6 +99,9 @@ targets:
         embed: true
       - target: OrangeLenPreviewDrawings
         embed: true
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
   OrangeLenPreview:
     type: app-extension
     platform: macOS
@@ -128,6 +131,9 @@ targets:
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+      - target: OrangeLenDocumentBroker
         embed: true
         codeSign: true
   OrangeLenPreviewMarkdown:
@@ -161,6 +167,9 @@ targets:
       - target: OrangeLenImageBroker
         embed: true
         codeSign: true
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
   OrangeLenPreviewData:
     type: app-extension
     platform: macOS
@@ -190,6 +199,9 @@ targets:
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+      - target: OrangeLenDocumentBroker
         embed: true
         codeSign: true
   OrangeLenPreviewFolders:
@@ -223,6 +235,9 @@ targets:
       - target: OrangeLenImageBroker
         embed: true
         codeSign: true
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
   OrangeLenPreviewArchives:
     type: app-extension
     platform: macOS
@@ -252,6 +267,9 @@ targets:
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+      - target: OrangeLenDocumentBroker
         embed: true
         codeSign: true
   OrangeLenPreviewBooks:
@@ -285,6 +303,9 @@ targets:
       - target: OrangeLenImageBroker
         embed: true
         codeSign: true
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
   OrangeLenPreviewDrawings:
     type: app-extension
     platform: macOS
@@ -316,6 +337,9 @@ targets:
       - target: OrangeLenImageBroker
         embed: true
         codeSign: true
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
   OrangeLenImageBroker:
     type: xpc-service
     platform: macOS
@@ -337,7 +361,66 @@ targets:
       - package: OrangeLen
         product: OrangeLenCore
 
+  OrangeLenDocumentBroker:
+    type: xpc-service
+    platform: macOS
+    sources: [DocumentBroker]
+    info:
+      path: DocumentBroker/Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen Document Broker
+        XPCService:
+          ServiceType: Application
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.DocumentBroker
+        CODE_SIGN_ENTITLEMENTS: DocumentBroker/DocumentBroker.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenCore
+
+  OrangeLenTestHost:
+    type: application
+    platform: macOS
+    sources: [Tests/Host]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.TestHost
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: OrangeLenDocumentBroker
+        embed: true
+        codeSign: true
+  OrangeLenNativeTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift
+      - path: Tests/Fixtures/system-preview
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.NativeTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/OrangeLenTestHost.app/Contents/MacOS/OrangeLenTestHost
+        BUNDLE_LOADER: $(TEST_HOST)
+    dependencies:
+      - target: OrangeLenTestHost
+      - package: OrangeLen
+        product: OrangeLenUI
+      - package: OrangeLen
+        product: OrangeLenCore
+
 schemes:
+  OrangeLenNativeTests:
+    build:
+      targets:
+        OrangeLenTestHost: all
+        OrangeLenNativeTests: [test]
+    test:
+      targets: [OrangeLenNativeTests]
   OrangeLen:
     build:
       targets:

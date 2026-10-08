@@ -6,6 +6,10 @@ Native macOS host app + modern view-controller Quick Look Preview Extension, wit
 
 On the tested M3 Pro / macOS 26.6.2 machine, Finder invokes OrangeLen for Swift, Markdown (with a competing extension isolated), JSON, YAML, TOML, XML, TSV and Makefile fixtures. **M0 native feasibility exit criteria are met; M1 is not fully accepted yet. Folder invocation, enumeration and selected Makefile reading have been observed. By the user’s updated scope, Finder keyboard search is optional and existing system previews may handle their formats.** Folder browsing in the host is a supplementary entry point, not fulfillment of Finder folder preview. See [support matrix](docs/format-support.md) and [verification](docs/verification.md) before relying on a format.
 
+## 当前边界契约（2026-10-08）
+
+本轮修复审查中 12 项 P1/P2，并收紧队列、系统文档导入、媒体访问、目录续页、设置与授权生命周期。当前支持与限制统一见 [入口和状态契约](docs/current-contract.md)，实际验证结果见 [修复验收状态](docs/boundary-fix-status.md)；下面的历史阶段描述不替代当前验收。
+
 ## 竞品补强（2026-10-04）
 
 本轮新增离线语言高亮、Markdown 大纲/元数据/提示块/脚注、图像画布缩放、大文本分页、压缩包目录树/排序/筛选、SQLite 原生排序/分页/列信息、保存后自动刷新，以及七类独立 Quick Look 扩展。代码、Markdown、数据、目录、归档、电子书、绘图可分别在系统扩展设置启停；开发安装保留用户明确停用的选项。代码类的纯文本声明仍可能提供其他停用类别的基础源码预览。
@@ -19,6 +23,7 @@ Requirements: Xcode 26.5 was used (macOS 26.5 SDK, Swift); deployment target mac
 ```sh
 ./scripts/build.sh
 ./scripts/test.sh
+./scripts/test-native.sh # real sandboxed document XPC + media integration
 ./scripts/install-dev.sh
 ```
 
@@ -111,7 +116,7 @@ Reading records are opt-in, local, revision-checked, salted identifiers, capped 
 - **Finder 直接 DNS 曾被沙盒拒绝，但该链路已解决**：内嵌、独立沙盒的窄接口 XPC 图片服务已在真实 Finder 验证成功；此历史问题不再列为当前远程加载阻塞。服务没有用户文件权限。
 - **本地独立图片不是无损全功能看图器**：输入 25 MiB、源图 1 亿像素、最长边 2048，动图只显示首帧。PNG 已测，其余列举格式未逐一实测；不自动读取越界路径、符号链接或未下载的云内容。
 - **文本与结构有界**：普通文件阅读入口的文本 ≤1 MiB 完整读取，更大文本以 64 KiB 页读取（核心读取器及容器仍保留各自安全预算），仅接受严格 UTF-8 或带 BOM 的 UTF-16；其他编码拒绝。页边界保留完整 Unicode 标量，查找与复制限当前页，超大结构文档降级分页源码。完整文本高亮仅前 250,000 UTF-16 单元；分页正文先显示，后台高亮限每页前 16,384 UTF-16 单元。当前仍需按钮翻页，尚未实现连续滚动与按视口高亮；结构深度 64、节点 20,000；CSV/TSV 前 5,000 行、256 列。极长正文的全部焦点导航未覆盖，表格可切源码查看大小界限内完整文本。
-- **目录统计不是磁盘占用或实时监控**：每批 500 项、扫描最多 20,000 项/每轮 3 秒；显示逻辑文件大小，包含隐藏项，遇预算、权限、云占位会标为部分统计。符号链接单列不跟随，包不自动展开；内容变化后需重新打开根目录。过滤只针对已加载文件名，没有全项目内容搜索；项目摘要已读取 README 与 package.json/pyproject.toml/Cargo.toml/go.mod 的有界声明线索，不能判断项目可运行性。
+- **目录统计不是磁盘占用或实时监控**：目录树每批 500 项、单轮扫描最多 20,000 项/3 秒；递归总量统计独立在后台持续到结束，约每 0.2 秒更新数量和大小，关闭或切换目录会取消。显示逻辑文件大小，包含隐藏项，遇权限、云占位等跳过项会标为部分结果。符号链接单列不跟随，包不自动展开；内容变化后需重新打开根目录。过滤只针对已加载文件名，没有全项目内容搜索；项目摘要已读取 README 与 package.json/pyproject.toml/Cargo.toml/go.mod 的有界声明线索，不能判断项目可运行性。
 - **取消不是所有底层调用都能瞬时中断**：协调读取、cmark C 调用及系统 DNS 等同步操作可能先完成，再丢弃已取消结果；WebKit 进程回收和瞬时内存也没有硬实时保证。当前预算和取消测试不能代替恶意输入压力测试。
 - **安全措施不是无漏洞保证**：有注入、循环宏、私网地址、HTTP 解析和预算测试；坏证书测试站点在本机超时，证书错误分支尚未实测。未来仍需跟踪第三方库安全更新并扩充边界测试。
 

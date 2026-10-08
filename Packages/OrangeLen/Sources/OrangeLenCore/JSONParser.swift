@@ -1,12 +1,30 @@
 import Foundation
+/// Immutable parent-linked path; ancestors are shared, never copied per descendant.
+private final class JSONPath: @unchecked Sendable {
+    let parent: JSONPath?
+    let segment: String
+    let byteCount: Int
+    init(_ segment: String, parent: JSONPath? = nil) {
+        self.segment = segment; self.parent = parent
+        byteCount = (parent?.byteCount ?? 0) + segment.utf8.count
+    }
+    var string: String {
+        var segments: [String] = [], current: JSONPath? = self
+        while let value = current { segments.append(value.segment); current = value.parent }
+        return segments.reversed().joined()
+    }
+}
 public final class JSONNode: @unchecked Sendable {
     public let name: String
-    public let path: String
+    private let location: JSONPath
+    public var path: String { location.string }
+    /// Only this node’s segment is stored; useful for model budget accounting.
+    public var storedPathBytes: Int { location.segment.utf8.count }
     public let range: NSRange
     public let children: [JSONNode]
     public let kind: String
-    init(name: String, path: String, range: NSRange, children: [JSONNode], kind: String) {
-        self.name = name; self.path = path; self.range = range; self.children = children; self.kind = kind
+    fileprivate init(name: String, path: JSONPath, range: NSRange, children: [JSONNode], kind: String) {
+        self.name = name; self.location = path; self.range = range; self.children = children; self.kind = kind
     }
 }
 public struct JSONTree: Sendable {
@@ -29,14 +47,14 @@ public enum JSONParser {
     public static func parse(_ source: String, dialect: JSONDialect = .strict, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> JSONTree {
         guard source.utf8.count <= limits.fileBytes else { throw PreviewError.limit("JSON 输入字节预算") }
         let parser = Parser(source, dialect, limits, cancellation)
-        let node = try parser.value(name: "$", path: "$", depth: 0)
+        let node = try parser.value(name: "$", path: JSONPath("$"), depth: 0)
         try parser.whitespace()
         guard parser.i == parser.chars.count else { throw PreviewError.malformed("JSON 尾部存在多余内容") }
         return JSONTree(root: node, duplicateKeys: parser.duplicates)
     }
     private final class Parser {
         let source: NSString; let chars: [UInt16]; let limits: PreviewLimits; let cancellation: Cancellation; let dialect: JSONDialect
-        var i = 0; var nodes = 0; var duplicates = false
+        var i = 0; var nodes = 0; var duplicates = false; var modelBytes = 0
         init(_ source: String, _ dialect: JSONDialect, _ limits: PreviewLimits, _ cancellation: Cancellation) { self.source = source as NSString; chars = Array(source.utf16); self.dialect = dialect; self.limits = limits; self.cancellation = cancellation }
         func check() throws { if i % 4096 == 0 { try cancellation.check() } }
         func isSpace(_ c: UInt16) -> Bool {
@@ -127,8 +145,11 @@ public enum JSONParser {
             guard name.range(of:#"\A[\p{L}\p{Nl}$_][\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}$\u200C\u200D]*\z"#,options:.regularExpression) != nil else { throw PreviewError.malformed("JSON5 标识符无效") }
             return name
         }
-        func value(name: String, path: String, depth: Int) throws -> JSONNode {
+        func value(name: String, path: JSONPath, depth: Int) throws -> JSONNode {
             try cancellation.check(); nodes += 1
+            let storage = name.utf8.count + path.segment.utf8.count + 256
+            guard path.byteCount <= limits.jsonPathBytes, storage <= limits.modelBytes - modelBytes else { throw PreviewError.limit("JSON 路径或模型字节预算") }
+            modelBytes += storage
             guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { throw PreviewError.limit("JSON 最大深度 \(limits.structureDepth)、节点 \(limits.structureNodes)") }
             try whitespace(); let start = i; var children: [JSONNode] = []; var kind = "value"
             if try consume(123) {
@@ -138,7 +159,7 @@ public enum JSONParser {
                         let key = try key(); if !keys.insert(key).inserted { duplicates = true }
                         guard try consume(58) else { throw PreviewError.malformed("JSON 缺少冒号") }
                         let keyJSON = String(data: try JSONEncoder().encode(key), encoding: .utf8)!
-                        children.append(try value(name: key, path: path + "[" + keyJSON + "]", depth: depth + 1))
+                        children.append(try value(name: key, path: JSONPath("[" + keyJSON + "]", parent: path), depth: depth + 1))
                         if try consume(125) { break }
                         guard try consume(44) else { throw PreviewError.malformed("JSON 对象缺少逗号或未闭合") }
                         if dialect != .strict, try consume(125) { break }
@@ -148,7 +169,7 @@ public enum JSONParser {
                 kind = "array"
                 if try !consume(93) {
                     while true {
-                        children.append(try value(name: "[\(children.count)]", path: path + "[\(children.count)]", depth: depth + 1))
+                        children.append(try value(name: "[\(children.count)]", path: JSONPath("[\(children.count)]", parent: path), depth: depth + 1))
                         if try consume(93) { break }
                         guard try consume(44) else { throw PreviewError.malformed("JSON 数组缺少逗号或未闭合") }
                         if dialect != .strict, try consume(93) { break }

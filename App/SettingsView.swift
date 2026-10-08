@@ -2,6 +2,8 @@ import SwiftUI
 import OrangeLenCore
 struct SettingsView: View {
     @State var settings = SettingsStore.shared.load()
+    @State private var baseline = SettingsStore.shared.load()
+    private let refresh = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         Form {
             Text("OrangeLen").font(.largeTitle.bold())
@@ -18,7 +20,8 @@ struct SettingsView: View {
             }
             Section("本机阅读记录") {
                 Toggle("记住位置（最多 200 项、30 天）", isOn: $settings.remember)
-                Button("清除阅读记录") { SettingsStore.shared.clear() }
+                Button("清除阅读记录（含当前会话）") { SettingsStore.shared.clear() }
+                Text("清除后，已打开文档不会重新写入记录；重新打开文档后恢复记忆。").font(.caption)
             }
             Text(SettingsStore.shared.sharedAvailable ? "阅读设置用于应用与 Finder 预览。" : "此构建的应用与 Finder 设置分别保存。")
                 .font(.caption).foregroundStyle(.secondary)
@@ -26,6 +29,13 @@ struct SettingsView: View {
                 .font(.caption)
         }
         .formStyle(.grouped).frame(width: 600, height: 720)
-        .onChange(of: settings) { _, value in SettingsStore.shared.save(value) }
+        .onChange(of: settings) { _, value in
+            guard value != baseline else { return }
+            let merged = SettingsStore.shared.update(from: baseline, to: value)
+            baseline = merged; settings = merged
+        }
+        .onReceive(refresh) { _ in
+            let latest = SettingsStore.shared.load(); baseline = latest; settings = latest
+        }
     }
 }

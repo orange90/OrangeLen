@@ -1,0 +1,153 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project OrangeLen.xcodeproj -scheme OrangeLenNativeTests -configuration Debug -derivedDataPath build/DerivedData -destination platform=macOS -test-timeouts-enabled YES -default-test-execution-time-allowance 90 -maximum-test-execution-time-allowance 90 test
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  cmark-gfm: https://github.com/swiftlang/swift-cmark.git @ 0.9.0
+  OrangeLen: /Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen
+  swift-markdown: https://github.com/swiftlang/swift-markdown.git @ 0.8.0
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006030-000E18D22188001C, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006030-000E18D22188001C, name:My Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (17 targets)
+    Target 'OrangeLenNativeTests' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenTestHost' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenCore' in project 'OrangeLen'
+    Target 'OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLen_OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenCore' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'Markdown' in project 'swift-markdown'
+    Target 'OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLen_OrangeLenUI' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'CSQLite' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'CZlib' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenCore' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'Markdown' in project 'swift-markdown'
+    Target 'OrangeLen_OrangeLenUI' in project 'OrangeLen' (no dependencies)
+    Target 'OrangeLenTestHost' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenDocumentBroker' in project 'OrangeLen'
+    Target 'OrangeLenDocumentBroker' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenCore' in project 'OrangeLen'
+    Target 'OrangeLenCore' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'OrangeLenCore' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'Markdown' in project 'swift-markdown'
+    Target 'OrangeLenCore' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'CSQLite' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'CZlib' in project 'OrangeLen'
+        ➜ Explicit dependency on target 'Markdown' in project 'swift-markdown'
+    Target 'Markdown' in project 'swift-markdown'
+        ➜ Explicit dependency on target 'Markdown' in project 'swift-markdown'
+        ➜ Explicit dependency on target 'CAtomic' in project 'swift-markdown'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+    Target 'Markdown' in project 'swift-markdown'
+        ➜ Explicit dependency on target 'CAtomic' in project 'swift-markdown'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+    Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm' in project 'cmark-gfm'
+        ➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+    Target 'cmark-gfm' in project 'cmark-gfm' (no dependencies)
+    Target 'CAtomic' in project 'swift-markdown' (no dependencies)
+    Target 'CZlib' in project 'OrangeLen' (no dependencies)
+    Target 'CSQLite' in project 'OrangeLen' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/SDKStatCaches.noindex/macosx26.5-25F70-e082c4a02f00227109f4ed75e425c832.sdkstatcache
+    cd /Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk -o /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/SDKStatCaches.noindex/macosx26.5-25F70-e082c4a02f00227109f4ed75e425c832.sdkstatcache
+
+note: Disabling hardened runtime with ad-hoc codesigning. (in target 'OrangeLenTestHost' from project 'OrangeLen' at path '/Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj')
+CodeSign /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app (in target 'OrangeLenTestHost' from project 'OrangeLen' at path '/Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj')
+    cd /Users/huangzhe/Documents/GitHub/OrangeLen
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Intermediates.noindex/OrangeLen.build/Debug/OrangeLenTestHost.build/OrangeLenTestHost.app.xcent --timestamp\=none --generate-entitlement-der /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app
+/Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app: replacing existing signature
+
+Validate /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app (in target 'OrangeLenTestHost' from project 'OrangeLen' at path '/Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj')
+    cd /Users/huangzhe/Documents/GitHub/OrangeLen
+    builtin-validationUtility /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app -no-validate-extension -infoplist-subpath Contents/Info.plist
+
+RegisterWithLaunchServices /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app (in target 'OrangeLenTestHost' from project 'OrangeLen' at path '/Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj')
+    cd /Users/huangzhe/Documents/GitHub/OrangeLen
+    /System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -f -R -trusted /Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Build/Products/Debug/OrangeLenTestHost.app
+
+note: Disabling hardened runtime with ad-hoc codesigning. (in target 'OrangeLenDocumentBroker' from project 'OrangeLen' at path '/Users/huangzhe/Documents/GitHub/OrangeLen/OrangeLen.xcodeproj')
+2026-10-08 12:26:08.900732+0800 OrangeLenTestHost[20925:23279177] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.901091+0800 OrangeLenTestHost[20925:23279177] [Application] Error registering app with intents framework: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.901515+0800 OrangeLenTestHost[20925:23279180] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.901537+0800 OrangeLenTestHost[20925:23279180] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.902064+0800 OrangeLenTestHost[20925:23279178] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.902080+0800 OrangeLenTestHost[20925:23279178] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.902672+0800 OrangeLenTestHost[20925:23279178] [Connection] Will NOT re-try to establish the connection
+2026-10-08 12:26:08.902730+0800 OrangeLenTestHost[20925:23279177] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-10-08 12:26:08.902754+0800 OrangeLenTestHost[20925:23279177] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+Test Suite 'All tests' started at 2026-10-08 12:26:08.973.
+Test Suite 'OrangeLenNativeTests.xctest' started at 2026-10-08 12:26:08.973.
+Test Suite 'SystemPreviewTests' started at 2026-10-08 12:26:08.974.
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testFolderHandoffSwitchAndClose]' started.
+2026-10-08 12:26:09.068986+0800 OrangeLenTestHost[20925:23279164] [Reader] closed / pending work cancelled
+2026-10-08 12:26:09.199080+0800 OrangeLenTestHost[20925:23279198] [Reader] preview read_ms=2.518083 bytes=12
+2026-10-08 12:26:09.210040+0800 OrangeLenTestHost[20925:23279164] [Reader] search event queryLength=0
+2026-10-08 12:26:09.210477+0800 OrangeLenTestHost[20925:23279164] [Reader] loaded format=markdown bytes=12 folderChild=true
+2026-10-08 12:26:09.210488+0800 OrangeLenTestHost[20925:23279164] [Reader] preview ready_ms=13.929125
+2026-10-08 12:26:09.213188+0800 OrangeLenTestHost[20925:23279164] [Reader] preview highlight_ms=3.491625
+2026-10-08 12:26:09.249033+0800 OrangeLenTestHost[20925:23279164] [Reader] closed / pending work cancelled
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testFolderHandoffSwitchAndClose]' passed (0.289 seconds).
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testOfficeContentAndImageFamilies]' started.
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testOfficeContentAndImageFamilies]' passed (0.004 seconds).
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testSystemFormatFamiliesAndExistingFormats]' started.
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testSystemFormatFamiliesAndExistingFormats]' passed (0.001 seconds).
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testSystemPreviewRejectsEscapingSymlink]' started.
+2026-10-08 12:26:09.313070+0800 OrangeLenTestHost[20925:23279164] [Reader] closed / pending work cancelled
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testSystemPreviewRejectsEscapingSymlink]' passed (0.050 seconds).
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testWordAndMediaContentsAndCleanup]' started.
+2026-10-08 12:26:09.352706+0800 OrangeLenTestHost[20925:23279164] [Reader] closed / pending work cancelled
+2026-10-08 12:26:09.411389+0800 OrangeLenTestHost[20925:23279198] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0xa34bdc180> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-10-08 12:26:09.442660+0800 OrangeLenTestHost[20925:23279198] *** -[AVAssetResourceLoadingRequest finishLoadingWithError:] was sent to an instance of AVAssetResourceLoadingRequest that was already finished. Ignoring.
+2026-10-08 12:26:09.453549+0800 OrangeLenTestHost[20925:23279164] [Reader] closed / pending work cancelled
+2026-10-08 12:26:09.474937+0800 OrangeLenTestHost[20925:23279164] [player] <<<< FigAirPlay_Route >>>> signalled err=-12860 at <>:605
+Test Case '-[OrangeLenNativeTests.SystemPreviewTests testWordAndMediaContentsAndCleanup]' passed (0.157 seconds).
+Test Suite 'SystemPreviewTests' passed at 2026-10-08 12:26:09.476.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.500 (0.502) seconds
+Test Suite 'OrangeLenNativeTests.xctest' passed at 2026-10-08 12:26:09.476.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.500 (0.502) seconds
+Test Suite 'All tests' passed at 2026-10-08 12:26:09.476.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.500 (0.503) seconds
+2026-10-08 12:26:09.477507+0800 OrangeLenTestHost[20925:23279178] [player] <<<< FigAirPlay_Route >>>> signalled err=-12860 at <>:605
+2026-10-08 12:26:09.754 xcodebuild[20887:23278685] [MT] IDETestOperationsObserverDebug: 1.932 elapsed -- Testing started completed.
+2026-10-08 12:26:09.754 xcodebuild[20887:23278685] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-08 12:26:09.754 xcodebuild[20887:23278685] [MT] IDETestOperationsObserverDebug: 1.932 sec, +1.932 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/huangzhe/Documents/GitHub/OrangeLen/build/DerivedData/Logs/Test/Test-OrangeLenNativeTests-2026.10.08_12-26-06-+0800.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

@@ -43,13 +43,13 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
         split.setPosition(240,ofDividerAt:0); view = split
     }
     func open(_ url: URL, root: URL?, restoring state: ReadingState? = nil, completion: @escaping (Error?) -> Void) {
-        loadViewIfNeeded(); cancel(); self.url = url
+        loadViewIfNeeded(); cancel(); self.url = url; reader.readingGeneration = SettingsStore.shared.readingGeneration
+        reader.showMessage("正在读取 \(url.lastPathComponent)…"); list.reloadData()
         let continuousNotebook = url.pathExtension.lowercased() == "ipynb" || (GzipDocument.isPlainStream(url) && !["jsonl","ndjson"].contains(url.deletingPathExtension().pathExtension.lowercased()))
         (view as? NSSplitView)?.arrangedSubviews.first?.isHidden = continuousNotebook
         let current = id; let cancellation = Cancellation(); token = cancellation
         message.stringValue = "本地、只读；按条目加载，不执行内容"
-        DispatchQueue.global(qos:.userInitiated).async { [weak self] in
-            let result = Result { () -> (String, [Descriptor], (Int,Cancellation) throws -> (DocumentSection,MarkdownAssets)) in
+        PreviewWorkQueue.parsing.submit(cancellation: cancellation, work: { () -> (String, [Descriptor], (Int,Cancellation) throws -> (DocumentSection,MarkdownAssets)) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
                 var limits = PreviewLimits(); limits.fileBytes = limits.containerBytes
@@ -132,8 +132,7 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                     if let data = immutable[index].image { assets.images[0] = try ImagePreview.decode(data,cancellation:token,maxPixelSize:1200,maxSourcePixels:25_000_000).image }
                     return (immutable[index],assets)
                 })
-            }
-            DispatchQueue.main.async {
+        }, completion: { [weak self] result in
                 guard let self, self.id == current else { completion(CancellationError()); return }
                 switch result {
                 case .success(let loaded):
@@ -149,12 +148,14 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                         self.restoredPosition = state?.section == self.entryIDs[selected] ? state?.position : nil
                         self.list.selectRowIndexes(IndexSet(integer:selected),byExtendingSelection:false)
                     }
-                    else { self.message.stringValue = "没有可预览条目" }
+                    else { self.message.stringValue = "没有可预览条目"; self.reader.showMessage(url.lastPathComponent + " · 没有可预览条目") }
                     completion(nil)
-                case .failure(let error): self.message.stringValue = error.localizedDescription; completion(error)
+                case .failure(let error):
+                    self.message.stringValue = error.localizedDescription
+                    self.reader.showMessage(url.lastPathComponent + " · " + error.localizedDescription + "\n可使用上方重载重试，或选择其他文件。")
+                    completion(error)
                 }
-            }
-        }
+        })
     }
     /// One scrollable document keeps each stored output beside its input cell.
     static func continuousNotebook(_ source: String, title: String, token: Cancellation) throws -> (DocumentSection, MarkdownAssets) {
@@ -225,20 +226,19 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
         guard index >= 0, index < titles.count, let select, let url else { return }
         token?.cancel(); let token = Cancellation(); self.token = token; let current = UUID(); id = current
         let position = restoredPosition; restoredPosition = nil
-        reader.savePosition(); reader.cancelPending(); message.stringValue = "加载选中条目…"
-        DispatchQueue.global(qos:.userInitiated).async { [weak self] in
-            let result = Result { try select(index,token) }
-            DispatchQueue.main.async {
+        reader.savePosition(); reader.cancelPending(); reader.showMessage("正在读取 \(titles[index])…"); message.stringValue = "加载选中条目…"
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: {
+            return try { try select(index,token) }()
+        }, completion: { [weak self] result in
                 guard let self, self.id == current else { return }
                 switch result {
                 case .success(let content):
                     self.reader.openMemory(content.0,origin:url,revision:self.revision,assets:content.1,restoring:position)
-                    SettingsStore.shared.remember(url,revision:self.revision,offset:0,section:content.0.id)
+                    SettingsStore.shared.remember(url,revision:self.revision,offset:0,section:content.0.id, generation: self.reader.readingGeneration)
                     self.message.stringValue = "\(self.titles.count) 项 · \(content.0.warning)"
                 case .failure(let error): self.reader.showMessage(error.localizedDescription); self.message.stringValue = "选中条目未完成；可选择其他条目"
                 }
-            }
-        }
+        })
     }
     func cancel() { token?.cancel(); token = nil; id = UUID(); reader.close(); titles = []; entryIDs = []; select = nil }
 }

@@ -6,7 +6,7 @@ import QuickLookUI
 import AVKit
 import Darwin
 
-private final class ResponsiveReaderView: NSView {
+private final class ResponsiveReaderView: ReaderBackgroundView {
     var resized: ((CGFloat) -> Void)?
     override func setFrameSize(_ newSize: NSSize) { super.setFrameSize(newSize); resized?(newSize.width) }
 }
@@ -24,6 +24,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     let pdf = PDFView()
     var systemPreview: QLPreviewView?
     var systemPreviewScope: URL?
+    var mediaResource: LocalMediaResource?
     var mediaPreview: AVPlayerView?
     var mediaObservation: NSKeyValueObservation?
     var nativeDocumentPreview: NSScrollView?
@@ -38,6 +39,10 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     let scroll = NSScrollView()
     let picture = ZoomCanvasView(frame: .zero)
     let folderInfo = NSTextField(wrappingLabelWithString: "")
+    let folderOverview = FolderOverviewView()
+    let overviewToolbarTitle = NSTextField(labelWithString: "文件夹概览")
+    let overviewToolbarSpacer = NSView()
+    let overviewRefresh = NSButton(title: "", target: nil, action: nil)
     let search = FocusSearchField()
     let caseButton = NSButton(checkboxWithTitle: "Aa", target: nil, action: nil)
     let resultLabel = NSTextField(labelWithString: "")
@@ -56,6 +61,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     let table = TableController()
     var lineRuler: LineRuler!
     var settings = SettingsStore.shared.load()
+    var settingsBaseline = SettingsStore.shared.load()
+    var readingGeneration = SettingsStore.shared.readingGeneration
     var source: SourceSnapshot?
     var markdownAssets = MarkdownAssets()
     var canvasImage: NSImage?
@@ -77,6 +84,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     var parseWarning = ""
     var pageHistory: [Int] = []
     let pageBar = NSStackView()
+    let firstPageButton = NSButton(title: "回到开头", target: nil, action: nil)
     let previousPageButton = NSButton(title: "上一页", target: nil, action: nil)
     let nextPageButton = NSButton(title: "下一页", target: nil, action: nil)
     let pageLabel = NSTextField(labelWithString: "")
@@ -90,6 +98,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     var imageGrantOwner: UUID?
     var imageGrantPublished = Date.distantPast
     let localImagesButton = NSButton(title: "允许本地图片…", target: nil, action: nil)
+    var highlightToken: Cancellation?
+    var preparedHighlights: (text: String, tokens: [SyntaxHighlighter.Token])?
     var highlightGeneration = UUID()
     var generation = UUID()
     var cancellation: Cancellation?
@@ -123,6 +133,9 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         for control in [button("查找", #selector(focusSearch)), search, caseButton, button("↑", #selector(previousMatch)), button("↓", #selector(nextMatch)), resultLabel, lineField, button("定位", #selector(jumpLine)), button("全选", #selector(selectBody)), button("复制选择", #selector(copySelection)), button("取消加载", #selector(cancelLoad))] { findbar.addArrangedSubview(control); findControls.append(control) }
         overflow.addItems(withTitles: ["更多操作", "减小字号", "增大字号", "重载", "定位到行", "取消加载", "在 Finder 中显示", "默认应用打开", "阅读/源码切换"])
         overflow.target = self; overflow.action = #selector(overflowChanged); bar.addArrangedSubview(overflow)
+        sidebarButton.setButtonType(.pushOnPushOff); sidebarButton.title = ""; sidebarButton.isBordered = false
+        sidebarButton.image = NSImage(systemSymbolName: "sidebar.left", accessibilityDescription: "显示或隐藏目录树")
+        sidebarButton.toolTip = "显示或隐藏目录树"
         sidebarButton.target = self; sidebarButton.action = #selector(toggleSidebar); bar.addArrangedSubview(sidebarButton); sidebarButton.isHidden = true
         outlineToggle.target = self; outlineToggle.action = #selector(toggleOutline); outlineToggle.isHidden = true; bar.addArrangedSubview(outlineToggle)
         pdf.autoScales = true
@@ -136,12 +149,25 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         outlineSidebar.onSelect = { [weak self] in self?.jump($0) }
         documentSplit.translatesAutoresizingMaskIntoConstraints = false; body.addSubview(documentSplit)
         NSLayoutConstraint.activate([documentSplit.leadingAnchor.constraint(equalTo: body.leadingAnchor), documentSplit.trailingAnchor.constraint(equalTo: body.trailingAnchor), documentSplit.topAnchor.constraint(equalTo: body.topAnchor), documentSplit.bottomAnchor.constraint(equalTo: body.bottomAnchor)])
+        overviewToolbarTitle.font = .systemFont(ofSize: 13, weight: .semibold)
+        overviewRefresh.image = NSImage(systemSymbolName: "arrow.clockwise", accessibilityDescription: "刷新文件夹")
+        overviewRefresh.isBordered = false; overviewRefresh.target = self; overviewRefresh.action = #selector(reload)
+        bar.addArrangedSubview(overviewToolbarTitle); bar.addArrangedSubview(overviewToolbarSpacer); bar.addArrangedSubview(overviewRefresh)
+        folderOverview.onScan = { [weak self] in self?.folder.toggleSummary() }
+        folderOverview.onReadme = { [weak self] url in self?.loadFile(url, completion: { _ in }) }
+        folder.onOverview = { [weak self] in self?.returnToFolderOverview() }
         let folderWidth = folder.view.widthAnchor.constraint(equalToConstant:250); folderWidth.priority = .defaultHigh; folderWidth.isActive = true
-        folder.view.widthAnchor.constraint(greaterThanOrEqualToConstant:180).isActive = true
+        folder.view.widthAnchor.constraint(greaterThanOrEqualToConstant:220).isActive = true
         split.setHoldingPriority(.defaultHigh,forSubviewAt:0)
         folder.view.isHidden = true
         folderInfo.font = .systemFont(ofSize: 12); folderInfo.textColor = .secondaryLabelColor
-        folder.onSummary = { [weak self] in self?.folderInfo.stringValue = $0 }
+        folder.onSummary = { [weak self] summary in
+            guard let self else { return }
+            self.folderInfo.stringValue = self.currentContent === self.folderOverview ? "" : summary
+        }
+        folder.onStatistics = { [weak self] summary, scanning, message in
+            self?.folderOverview.update(summary, scanning: scanning, message: message)
+        }
         picture.setContentHuggingPriority(.defaultLow, for: .vertical); picture.setContentHuggingPriority(.defaultLow, for: .horizontal)
         picture.setContentCompressionResistancePriority(.defaultLow, for: .vertical); picture.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         picture.imageScaling = .scaleProportionallyUpOrDown; picture.setAccessibilityLabel("图片预览")
@@ -172,9 +198,11 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         remoteBar.addArrangedSubview(localImagesButton); remoteBar.addArrangedSubview(remoteButton); remoteBar.addArrangedSubview(remoteStatus)
         remoteHeight = remoteBar.heightAnchor.constraint(equalToConstant: 0); remoteHeight.isActive = true
         remoteBar.isHidden = true
+        firstPageButton.target = self; firstPageButton.action = #selector(firstTextPage)
         previousPageButton.target = self; previousPageButton.action = #selector(previousTextPage)
         nextPageButton.target = self; nextPageButton.action = #selector(nextTextPage)
-        pageBar.spacing = 8; pageBar.addArrangedSubview(previousPageButton); pageBar.addArrangedSubview(nextPageButton); pageBar.addArrangedSubview(pageLabel)
+        pageBar.spacing = 8; pageBar.addArrangedSubview(firstPageButton); pageBar.addArrangedSubview(previousPageButton); pageBar.addArrangedSubview(nextPageButton); pageBar.addArrangedSubview(pageLabel)
+        pageLabel.lineBreakMode = .byTruncatingMiddle; pageLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         pageLabel.font = .systemFont(ofSize: 11); pageBar.isHidden = true
         pageHeight = pageBar.heightAnchor.constraint(equalToConstant: 0); pageHeight.isActive = true
         for child in [bar, findbar, remoteBar, pageBar, split, folderInfo, status] { child.translatesAutoresizingMaskIntoConstraints = false; root.addSubview(child) }
@@ -182,7 +210,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         toolbarHeights = [bar.heightAnchor.constraint(equalToConstant:30),findbar.heightAnchor.constraint(equalToConstant:28)]
         NSLayoutConstraint.activate(toolbarHeights)
         NSLayoutConstraint.activate([
-            bar.topAnchor.constraint(equalTo: root.topAnchor, constant: 8), bar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), bar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10),
+            bar.topAnchor.constraint(equalTo: root.topAnchor, constant: 8), bar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), bar.trailingAnchor.constraint(equalTo: root.trailingAnchor, constant: -10),
             findbar.topAnchor.constraint(equalTo: bar.bottomAnchor, constant: 8), findbar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), findbar.trailingAnchor.constraint(equalTo: root.trailingAnchor, constant: -10),
             remoteBar.topAnchor.constraint(equalTo: findbar.bottomAnchor, constant: 4), remoteBar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), remoteBar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10),
             pageBar.topAnchor.constraint(equalTo: remoteBar.bottomAnchor, constant: 4), pageBar.leadingAnchor.constraint(equalTo: root.leadingAnchor, constant: 10), pageBar.trailingAnchor.constraint(lessThanOrEqualTo: root.trailingAnchor, constant: -10), split.topAnchor.constraint(equalTo: pageBar.bottomAnchor, constant: 4), split.leadingAnchor.constraint(equalTo: root.leadingAnchor), split.trailingAnchor.constraint(equalTo: root.trailingAnchor),
@@ -225,15 +253,19 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 renderedWidth = available
                 let selection = text.selectedRange()
                 text.textStorage?.setAttributedString(TextStyler.attributed(text.model, markdown: true, settings: settings, assets: markdownAssets, width: available))
-                text.setSelectedRange(selection)
+                applyPreparedHighlights(); text.setSelectedRange(selection)
             }
         }
         text.needsDisplay = true; lineRuler.needsDisplay = true
     }
     func updateToolbars(_ width: CGFloat) {
+        let overview = currentContent === folderOverview
+        folder.overviewButton.state = overview ? .on : .off
+        overviewToolbarSpacer.isHidden = !overview; overviewToolbarTitle.isHidden = !overview; overviewRefresh.isHidden = !overview
+        overflow.isHidden = overview
         let container = (archiveController != nil && currentContent === archiveController?.view) || (collection != nil && currentContent === collection?.view) || (databaseController != nil && currentContent === databaseController?.view)
-        for toolbar in toolbarViews { toolbar.isHidden = container }
-        for (i,height) in toolbarHeights.enumerated() { height.constant = container ? 0 : (i == 0 ? 30 : 28) }
+        for (i, toolbar) in toolbarViews.enumerated() { toolbar.isHidden = container && i != 0 }
+        for (i,height) in toolbarHeights.enumerated() { height.constant = container && i != 0 ? 0 : (i == 0 ? 30 : 28) }
         let compact = compactPreferred || width < 1280
         for (index,control) in mainControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![4].contains(index) : compact && ![0,1,4].contains(index) }
         for (index,control) in findControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![0,1,9].contains(index) : compact && ![0,1,8,9,10].contains(index) }
@@ -241,6 +273,11 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             for control in mainControls { control.isHidden = true }
             for (index, control) in findControls.enumerated() { control.isHidden = nativeDocumentPreview == nil || ![8,9].contains(index) }
             toolbarHeights.last?.constant = nativeDocumentPreview == nil ? 0 : 28
+        }
+        if container { for control in mainControls { control.isHidden = true }; overflow.isHidden = false }
+        if overview {
+            for control in mainControls + findControls { control.isHidden = true }
+            toolbarViews.last?.isHidden = true; toolbarHeights.last?.constant = 0
         }
         sidebarButton.isHidden = rootURL == nil
         let hasOutline = currentContent === scroll && format == .markdown && mode.selectedSegment == 0 && !headingOffsets.isEmpty && !(rootURL != nil && currentURL == nil)
@@ -256,21 +293,32 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         if child !== scroll { outlineSidebar.view.isHidden = true; outlineToggle.isHidden = true }
         updateToolbars(view.bounds.width)
     }
+    func returnToFolderOverview() {
+        guard let rootURL else { return }
+        savePosition(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel()
+        currentURL = nil; source = nil; rendered = nil; virtualDocument = false
+        remoteBar.isHidden = true; remoteHeight.constant = 0; pageBar.isHidden = true; pageHeight.constant = 0
+        folderInfo.stringValue = ""; status.stringValue = ""
+        showContent(folderOverview); loadProjectOverview(rootURL)
+    }
     public func open(_ url: URL, completion: @escaping (Error?) -> Void) {
         loadViewIfNeeded(); close(); rootURL = nil; folderInfo.stringValue = ""; picture.image = nil
         settingsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self else { return }
             let value = SettingsStore.shared.load()
-            if value != self.settings { self.settings = value; self.present() }
+            if value != self.settings { self.settings = value; self.settingsBaseline = value; self.applySettings(); self.present() }
             self.checkForFileChanges()
             self.syncImageDirectory()
         }
         rootScope = url.startAccessingSecurityScopedResource()
-        let directory = (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true && !SystemPreviewFormat.supports(url)
+        let values = try? url.resourceValues(forKeys: [.isDirectoryKey, .isPackageKey])
+        let directory = values?.isDirectory == true && values?.isPackage != true
         if directory {
-            rootURL = url; sidebarButton.state = .on; folder.view.isHidden = false; split.setPosition(250, ofDividerAt: 0); folder.open(url)
-            currentURL = nil; source = nil; rendered = nil; jsonTree = nil; tableData = nil; matches = []; scroll.rulersVisible = false; text.model = .plain(""); text.string = "\(url.lastPathComponent)\n\n选择左侧文件，在同一窗口阅读。\n目录按需枚举；脚本与项目依赖不会执行。\nREADME、package.json、pyproject.toml 等可作为项目线索点开阅读。"; showContent(scroll)
-            status.stringValue = "文件夹 · 仅已展开目录 · 子项权限以实际读取结果为准"
+            rootURL = url; sidebarButton.state = .on; folder.view.isHidden = false; split.setPosition(240, ofDividerAt: 0)
+            currentURL = nil; source = nil; rendered = nil; jsonTree = nil; tableData = nil; matches = []
+            remoteBar.isHidden = true; remoteHeight.constant = 0
+            folderOverview.configure(url); folder.open(url); showContent(folderOverview)
+            folderInfo.stringValue = ""; status.stringValue = ""
             loadProjectOverview(url)
             completion(nil)
         } else {
@@ -278,7 +326,10 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             folder.view.isHidden = true; loadFile(url, completion: completion)
         }
     }
-    func loadFile(_ url: URL, byteOffset requestedByteOffset: Int? = nil, completion handler: @escaping (Error?) -> Void) {
+    func loadFile(_ url: URL, byteOffset requestedByteOffset: Int? = nil, pageOffsets: [Int]? = nil, completion handler: @escaping (Error?) -> Void) {
+        savePosition()
+        if currentURL != url { readingGeneration = SettingsStore.shared.readingGeneration }
+        let previousEncoding = currentURL == url ? source?.encoding : nil
         let savedPage = requestedByteOffset == nil ? Self.fileRevision(url).flatMap { SettingsStore.shared.restorePage(url, revision: $0) } : nil
         let byteOffset = requestedByteOffset ?? savedPage?.byteOffset ?? 0
         let databaseState = autoReload ? databaseController?.readingState : nil
@@ -290,10 +341,11 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         pageBar.isHidden = true; pageHeight.constant = 0
         if byteOffset == 0 { pageHistory = [] }
         if let savedPage { pageHistory = savedPage.history }
-        clearCopyNotice(); savePosition(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel(); virtualDocument = false
+        if let pageOffsets { pageHistory = pageOffsets }
+        clearCopyNotice(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel(); virtualDocument = false
         let id = UUID(); generation = id; let token = Cancellation(); cancellation = token; completion = handler
         remoteAttempts = 0; remoteBytes = 0; remoteStatus.stringValue = "远程图片尚未加载（点击后仅下载图片）"; remoteBar.isHidden = true; remoteHeight.constant = 0
-        canvasImage = nil; picture.onDismiss = nil; currentURL = url; observedURL = url; observedRevision = Self.fileRevision(url); source = nil; rendered = nil; markdownAssets = .init(); jsonTree = nil; tableData = nil; parseWarning = ""
+        preparedHighlights = nil; canvasImage = nil; picture.onDismiss = nil; currentURL = url; observedURL = url; observedRevision = Self.fileRevision(url); source = nil; rendered = nil; markdownAssets = .init(); jsonTree = nil; tableData = nil; parseWarning = ""
         text.model = .plain(""); matches = []; text.anchor = 0; table.resetNavigation()
         text.string = "正在读取…"; status.stringValue = "OrangeLen · 本地、只读 · 正在载入 \(url.lastPathComponent)"; showContent(scroll)
         let loadStarted = ProcessInfo.processInfo.systemUptime
@@ -313,31 +365,26 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             if databaseController == nil { let child = DatabaseController(); addChild(child); databaseController = child }
             showContent(databaseController!.view)
             databaseController?.copyFeedback = { [weak self] in self?.showCopyNotice($0) }
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                let result = Result { () -> DatabaseDocument in
+            PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> DatabaseDocument in
                     var limits = PreviewLimits(); limits.fileBytes = limits.containerBytes
                     return try DatabaseDocument(data: AccessBroker.readBytes(url, root: root, limits: limits, cancellation: token).data, cancellation: token)
-                }
-                DispatchQueue.main.async {
+            }, completion: { [weak self] result in
                     guard let self, self.generation == id else { return }
                     switch result {
                     case .success(let database): self.databaseController?.open(database, restoring: databaseState); self.status.stringValue = "SQLite · 只读快照 · 点击列标题排序 · 每页 500 行"; self.finish(nil)
                     case .failure(let error): self.showMessage(error.localizedDescription); self.finish(error)
                     }
-                }
-            }
+            })
             return
         }
         if enhanced && ["zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
             if archiveController == nil { let child = ArchiveController(); addChild(child); archiveController = child }
             showContent(archiveController!.view)
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                let result = Result { () -> (ArchiveDocument, String) in
+            PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (ArchiveDocument, String) in
                     var limits = PreviewLimits(); limits.fileBytes = limits.containerBytes
                     let snapshot = try AccessBroker.readBytes(url, root: root, limits: limits, cancellation: token)
                     return (try ArchiveDocument.parse(snapshot.data, name: url.lastPathComponent, cancellation: token), snapshot.revision)
-                }
-                DispatchQueue.main.async {
+            }, completion: { [weak self] result in
                     guard let self, self.generation == id else { return }
                     switch result {
                     case .success(let value):
@@ -345,25 +392,22 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                         catch { self.showMessage(error.localizedDescription); self.finish(error) }
                     case .failure(let error): self.showMessage(error.localizedDescription); self.finish(error)
                     }
-                }
-            }
+            })
             return
         }
         if enhanced && ReadableFormat.isCollection(url) {
             if collection == nil { let child = CollectionController(); addChild(child); collection = child }
             showContent(collection!.view)
-            collection!.open(url, root: root, restoring: collectionState) { [weak self] error in guard let self, self.generation == id else { return }; self.status.stringValue = "容器预览 · 本地、只读 · 子项按需读取"; self.finish(error) }
+            collection!.open(url, root: root, restoring: collectionState) { [weak self] error in guard let self, self.generation == id else { return }; self.status.stringValue = url.lastPathComponent + (error == nil ? " · 容器预览 · 本地、只读" : " · 读取失败 · 可重载或选择其他文件"); self.finish(error) }
             return
         }
         if url.pathExtension.lowercased() == "pdf" {
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                let result = Result { () -> Data in var limits = PreviewLimits(); limits.fileBytes = 25 * 1024 * 1024; return try AccessBroker.readBytes(url,root:root,limits:limits,cancellation:token).data }
-                DispatchQueue.main.async {
+            PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> Data in var limits = PreviewLimits(); limits.fileBytes = 25 * 1024 * 1024; return try AccessBroker.readBytes(url,root:root,limits:limits,cancellation:token).data
+            }, completion: { [weak self] result in
                     guard let self, self.generation == id else { return }
                     do { let data = try result.get(); guard let document = PDFDocument(data:data), document.pageCount <= 2000 else { throw PreviewError.malformed("PDF 损坏或页数超过 2,000") }; self.pdf.document = document; self.showContent(self.pdf); self.status.stringValue = "PDF · \(document.pageCount) 页 · 原生只读预览"; self.finish(nil) }
                     catch { self.showMessage(error.localizedDescription); self.finish(error) }
-                }
-            }
+            })
             return
         }
         // Rich text must reach Quick Look before the broad UTType.text check.
@@ -379,11 +423,11 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
         if ImagePreview.supports(url) {
             picture.image = nil; mode.isEnabled = false; headings.isEnabled = false
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            PreviewWorkQueue.parsing.submit(cancellation: token, work: {
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
-                let result = Result { try ImagePreview.load(url, root: root, cancellation: token) }
-                DispatchQueue.main.async {
+                return try ImagePreview.load(url, root: root, cancellation: token)
+            }, completion: { [weak self] result in
                     guard let self, self.generation == id else { return }
                     switch result {
                     case .success(let image):
@@ -396,18 +440,28 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                         self.text.string = error.localizedDescription
                         self.status.stringValue = "图片预览未完成 · 可重载或选择其他文件"; self.finish(error)
                     }
-                }
-            }
+            })
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let result = Result { () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets) in
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
-                let snapshot = try AccessBroker.readPreview(url, root: root, byteOffset: byteOffset, pageBytes: 64 * 1024, fullReadThreshold: 1024 * 1024, cancellation: token)
+                var snapshot: SourceSnapshot
+                var pagingNotice = ""
+                do {
+                    snapshot = try AccessBroker.readPreview(url, root: root, byteOffset: byteOffset, pageBytes: 64 * 1024, fullReadThreshold: 1024 * 1024, cancellation: token)
+                    if byteOffset > 0, let previousEncoding, snapshot.encoding != previousEncoding { throw PreviewError.changed }
+                } catch let error as PreviewError where byteOffset > 0 {
+                    switch error {
+                    case .encoding, .binary, .changed, .limit:
+                        snapshot = try AccessBroker.readPreview(url, root: root, pageBytes: 64 * 1024, fullReadThreshold: 1024 * 1024, cancellation: token)
+                        pagingNotice = "文件已变化，旧分页位置失效，已返回开头。"
+                    default: throw error
+                    }
+                }
                 self?.logger.notice("preview read_ms=\((ProcessInfo.processInfo.systemUptime - loadStarted) * 1000, privacy: .public) bytes=\(snapshot.byteCount, privacy: .public)")
                 var assets = MarkdownAssets()
-                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = ""
+                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice
                 do {
                     switch (snapshot.partial || !enhanced) ? PreviewFormat.code : detected {
                     case .markdown:
@@ -420,21 +474,13 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 } catch is CancellationError { throw CancellationError() }
                 catch { warning = error.localizedDescription + " · 已降级源码" }
                 try token.check()
-                if let markdown {
-                    for span in markdown.codeLanguages {
-                        _ = SyntaxHighlighter.shared.tokens((markdown.display as NSString).substring(with: span.range), language: span.language)
-                    }
-                } else if !snapshot.partial {
-                    let bounded = (snapshot.text as NSString).substring(to: min(snapshot.text.utf16.count, PreviewLimits().highlightUTF16))
-                    _ = SyntaxHighlighter.shared.tokens(bounded, language: SyntaxHighlighter.language(url: url, source: snapshot.text))
-                }
                 try token.check()
                 return (snapshot, markdown, tree, table, warning, assets)
-            }
-            DispatchQueue.main.async {
+        }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 switch result {
                 case .success(let loaded):
+                    if loaded.0.byteOffset == 0 { self.pageHistory = [] }
                     self.source = loaded.0; self.rendered = loaded.1; self.jsonTree = loaded.2; self.tableData = loaded.3; self.parseWarning = loaded.4; self.markdownAssets = loaded.5
                     self.mode.selectedSegment = 0; self.present(); self.startRichRendering()
                     self.scroll.contentView.scroll(to: .zero); self.scroll.reflectScrolledClipView(self.scroll.contentView)
@@ -450,8 +496,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                     self.status.stringValue = "预览未完成 · 可重载或选择其他文件"
                     self.logger.notice("load failed code=\((error as NSError).code, privacy: .public)"); self.finish(error)
                 }
-            }
-        }
+        })
     }
     public func textView(_ textView: NSTextView, clickedOn cell: NSTextAttachmentCellProtocol, in cellFrame: NSRect, at charIndex: Int) {
         _ = activateAttachment(charIndex)
@@ -494,44 +539,83 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         } else { showCopyNotice("此链接不可在预览中打开") }
         return true // Block scripts, custom schemes and arbitrary app launching.
     }
-    func finish(_ error: Error?) { let handler = completion; completion = nil; handler?(error) }
-    func cancelPending() { closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
+    func finish(_ error: Error?) {
+        let handler = completion; completion = nil; handler?(error)
+        let id = generation
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.generation == id, self.isViewLoaded else { return }
+            let message = (self.currentURL?.lastPathComponent ?? "预览") + " · " + self.status.stringValue
+            self.view.setAccessibilityLabel(message)
+            NSAccessibility.post(element: self.view, notification: .announcementRequested, userInfo: [.announcement: message, .priority: NSAccessibilityPriorityLevel.medium.rawValue])
+        }
+    }
+    func cancelPending() { highlightToken?.cancel(); highlightToken = nil; closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
     public func close() {
         pageBar.isHidden = true; pageHeight?.constant = 0
-        pageHistory = []; releaseImageDirectory()
-        clearCopyNotice(); savePosition(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel(); pdf.document = nil; folder.cancel(); settingsTimer?.invalidate(); settingsTimer = nil
+        savePosition(); pageHistory = []; releaseImageDirectory()
+        clearCopyNotice(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel(); pdf.document = nil; folder.cancel(); settingsTimer?.invalidate(); settingsTimer = nil
         if rootScope { rootURL?.stopAccessingSecurityScopedResource(); rootScope = false }
+        source = nil; rendered = nil; jsonTree = nil; tableData = nil; currentURL = nil
+        json.tree = nil; json.source = ""; json.outline.reloadData()
+        table.data = .init(rows: [], partial: false); table.rowOrder = []; table.table.reloadData()
+        preparedHighlights = nil; markdownAssets = .init(); canvasImage = nil; picture.image = nil; matches = []
+        text.model = .plain(""); text.string = ""
         logger.notice("closed / pending work cancelled")
     }
-    @objc func cancelLoad() { cancelPending(); folder.cancel(); status.stringValue = "已取消后台读取" }
+    @objc func cancelLoad() {
+        savePosition(); cancelPending(); collection?.cancel(); databaseController?.cancel(); archiveController?.cancel(); folder.cancel()
+        if source == nil { showMessage("已取消读取 · 可点击重载或选择其他文件") }
+        else if currentContent !== scroll && currentContent !== json.view && currentContent !== table.view && currentContent !== picture { showMessage("已取消读取 · 可点击重载") }
+        status.stringValue = "已取消后台读取 · 可重载；已加载正文为取消前快照"
+    }
     /// Paint only foreground attributes after the first presentation; never replace
     /// the text storage, selection, search highlights or scroll position.
+    func applyPreparedHighlights() {
+        guard let preparedHighlights, let storage = text.textStorage, storage.string == preparedHighlights.text else { return }
+        SyntaxHighlighter.shared.apply(preparedHighlights.tokens, to: storage)
+    }
     func schedulePageHighlight(_ snapshot: SourceSnapshot) {
+        scheduleHighlight(model: .plain(snapshot.text), partial: true, markdown: false)
+    }
+    func scheduleHighlight(model: TextModel, partial: Bool, markdown: Bool) {
+        if preparedHighlights?.text == model.display { applyPreparedHighlights(); return }
         let request = UUID(); highlightGeneration = request
-        let id = generation, token = cancellation
-        let language = SyntaxHighlighter.language(url: currentURL, source: snapshot.text)
-        let utf16 = snapshot.text as NSString
-        var count = min(16_384, utf16.length)
-        if count < utf16.length, count > 0, (0xD800...0xDBFF).contains(utf16.character(at: count - 1)) { count -= 1 }
-        let prefix = utf16.substring(to: count)
+        highlightToken?.cancel(); let token = Cancellation(); highlightToken = token
+        let id = generation
+        let language = SyntaxHighlighter.language(url: currentURL, source: model.source)
+        let display = model.display
+        // One document-wide budget, even when it contains thousands of fenced blocks.
+        let budget = partial ? 16_384 : PreviewLimits().highlightUTF16
+        let spans: [(range: NSRange, language: String)] = markdown ? model.codeLanguages.map { ($0.range, $0.language) } : [(NSRange(location: 0, length: display.utf16.count), language ?? "")]
         let started = ProcessInfo.processInfo.systemUptime
-        DispatchQueue.global(qos: .utility).async { [weak self] in
-            guard let token, (try? token.check()) != nil else { return }
-            let tokens = SyntaxHighlighter.shared.tokens(prefix, language: language, cancellation: token)
+        PreviewWorkQueue.highlight.async(cancellation: token) { [weak self] in
+            guard (try? token.check()) != nil else { return }
+            let utf16 = display as NSString
+            var remaining = budget, result: [SyntaxHighlighter.Token] = []
+            for span in spans {
+                guard remaining > 0, (try? token.check()) != nil else { break }
+                var count = min(span.range.length, remaining)
+                let end = span.range.location + count
+                if end < utf16.length, count > 0, (0xD800...0xDBFF).contains(utf16.character(at: end - 1)) { count -= 1 }
+                guard count > 0 else { continue }
+                let part = utf16.substring(with: NSRange(location: span.range.location, length: count))
+                let tokens = SyntaxHighlighter.shared.tokens(part, language: span.language, cancellation: token)
+                result += tokens.map { .init(range: NSRange(location: $0.range.location + span.range.location, length: $0.range.length), scope: $0.scope) }
+                remaining -= count
+            }
             guard (try? token.check()) != nil else { return }
             DispatchQueue.main.async { [weak self] in
                 guard let self, self.generation == id, self.highlightGeneration == request,
-                      let storage = self.text.textStorage, storage.string == snapshot.text else { return }
-                storage.beginEditing()
-                SyntaxHighlighter.shared.apply(tokens, to: storage)
-                storage.endEditing()
+                      let storage = self.text.textStorage, storage.string == display else { return }
+                self.preparedHighlights = (display, result)
+                storage.beginEditing(); self.applyPreparedHighlights(); storage.endEditing()
                 self.logger.notice("preview highlight_ms=\((ProcessInfo.processInfo.systemUptime - started) * 1000, privacy: .public)")
             }
         }
     }
     func present() {
         guard let source else { return }
-        settings = SettingsStore.shared.load()
+        settings = SettingsStore.shared.load(); settingsBaseline = settings
         let renderedMode = mode.selectedSegment == 0
         let markdown = format == .markdown && renderedMode && rendered != nil
         let model = markdown ? rendered! : (renderedMode && tableData != nil ? tableData!.textModel(source: source.text) : TextModel.plain(source.text, code: format != .text))
@@ -548,7 +632,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         renderedWidth = max(100, scroll.contentSize.width - 44)
         text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: markdown, settings: settings, assets: markdownAssets, width: renderedWidth, language: SyntaxHighlighter.language(url: currentURL, source: source.text), highlight: !source.partial))
         if format == .diff, let storage = text.textStorage { TextStyler.colorDiff(storage) }
-        if source.partial { schedulePageHighlight(source) }
+        scheduleHighlight(model: model, partial: source.partial, markdown: markdown)
         text.setAnchor(at: min(text.anchor, model.display.utf16.count))
         scroll.rulersVisible = !markdown && settings.lineNumbers
         text.textContainerInset = NSSize(width: scroll.rulersVisible ? 74 : 22, height: 18)
@@ -597,16 +681,17 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
         pageBar.isHidden = !source.partial; pageHeight.constant = source.partial ? 28 : 0
         if source.partial {
+            firstPageButton.isEnabled = source.byteOffset > 0
             previousPageButton.isEnabled = !pageHistory.isEmpty; nextPageButton.isEnabled = source.nextByteOffset != nil
-            pageLabel.stringValue = "字节 \(source.byteOffset + 1)–\(source.byteOffset + source.byteCount) / \(source.totalBytes) · 查找、行号与复制针对本页"
+            pageLabel.stringValue = "字节 \(source.byteOffset + 1)–\(source.byteOffset + source.byteCount) / \(source.totalBytes) · 查找、行号与复制针对本页" + (source.byteOffset > 0 && pageHistory.isEmpty ? " · 更早历史已清理，可回到开头" : "")
         }
         applySettings(); searchChanged()
     }
     func applySettings() {
         view.appearance = settings.theme == "Dark" ? NSAppearance(named: .darkAqua) : settings.theme == "Light" ? NSAppearance(named: .aqua) : nil
-        text.needsDisplay = true
+        view.needsDisplay = true; text.needsDisplay = true
     }
-    func saveSettings() { SettingsStore.shared.save(settings); present() }
+    func saveSettings() { settings = SettingsStore.shared.update(from: settingsBaseline, to: settings); settingsBaseline = settings; applySettings(); present() }
     func savePosition() {
         guard let currentURL, let source else { return }
         var displayOffset = text.anchor
@@ -616,19 +701,17 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             if glyph.location < layout.numberOfGlyphs { displayOffset = layout.characterIndexForGlyph(at: glyph.location) }
         }
         let offset = text.model.sourceRange(for: NSRange(location: displayOffset, length: 1))?.location ?? 0
-        SettingsStore.shared.remember(currentURL, revision: source.revision, offset: offset, byteOffset: source.byteOffset, pageHistory: pageHistory)
+        SettingsStore.shared.remember(currentURL, revision: source.revision, offset: offset, byteOffset: source.byteOffset, pageHistory: pageHistory, generation: readingGeneration)
     }
     @objc func nextTextPage() {
         guard let currentURL, let source, let next = source.nextByteOffset else { return }
-        pageHistory.append(source.byteOffset)
-        loadFile(currentURL, byteOffset: next) { _ in }
+        loadFile(currentURL, byteOffset: next, pageOffsets: Array((pageHistory + [source.byteOffset]).suffix(128))) { _ in }
     }
     @objc func previousTextPage() {
-        guard let currentURL, let previous = pageHistory.popLast() else { return }
-        let history = pageHistory
-        loadFile(currentURL, byteOffset: previous) { _ in }
-        pageHistory = history
+        guard let currentURL, let previous = pageHistory.last else { return }
+        loadFile(currentURL, byteOffset: previous, pageOffsets: Array(pageHistory.dropLast())) { _ in }
     }
+    @objc func firstTextPage() { if let currentURL { loadFile(currentURL, byteOffset: 0, pageOffsets: []) { _ in } } }
     static func fileRevision(_ url: URL) -> String? {
         var value = stat()
         guard lstat(url.path, &value) == 0 else { return nil }
@@ -653,10 +736,12 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let mode = mode.selectedSegment, byteOffset = source?.byteOffset ?? 0, history = pageHistory
         autoReload = true
         loadFile(url, byteOffset: byteOffset) { [weak self] error in
-            guard let self else { return }; self.autoReload = false; self.pageHistory = history
+            guard let self else { return }; self.autoReload = false
+            let restoredSamePage = self.source?.byteOffset == byteOffset
+            self.pageHistory = restoredSamePage ? history : []
             if error == nil, self.source != nil {
                 if self.mode.isEnabled { self.mode.selectedSegment = mode; self.present() }
-                let display = self.text.model.displayOffset(forSource: sourceOffset)
+                let display = self.text.model.displayOffset(forSource: restoredSamePage ? sourceOffset : 0)
                 self.text.setAnchor(at: display); self.text.scrollRangeToVisible(.init(location: min(display, self.text.string.utf16.count), length: 0))
                 self.showCopyNotice(notice)
             }

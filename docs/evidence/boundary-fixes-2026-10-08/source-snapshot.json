@@ -1,0 +1,401 @@
+{
+  "date": "2026-10-08T12:27:01.973209+08:00",
+  "baseCommit": "24a145d15c4a1fcd173378adfbaf8ed0ebdba5fb",
+  "state": "Uncommitted workspace; includes preserved concurrent folder statistics work. No commit or push performed. Final test-harness-only fixture/resource changes postdate installed production build.",
+  "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+  "architecture": "arm64",
+  "sources": [
+    {
+      "path": "DocumentBroker/DocumentBroker.entitlements",
+      "sha256": "1c69c838ef92ae82faa4b7ce854628f435f9ffb7e834ab5b7d0a6dd49219602f"
+    },
+    {
+      "path": "DocumentBroker/main.swift",
+      "sha256": "ad85be85c437bad449922878e213c993824be2d44372b2c2bec6d162f2a464b7"
+    },
+    {
+      "path": "OrangeLen.xcodeproj/xcshareddata/xcschemes/OrangeLenNativeTests.xcscheme",
+      "sha256": "1a41aa18c4adf01b102526549dd93d92feda00e4c9f95f7f02cf1fed9549322e"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/DocumentBrokerProtocol.swift",
+      "sha256": "3786d88b69ce23272ca5fae4d970e357f245f29122e9eefd5f1f292596404f99"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/LatestDelivery.swift",
+      "sha256": "4a0dd13e0da17b370524c1996105b6cd6559fe9caaaffac3147c2ddb1b4e3470"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/PreviewResourceLease.swift",
+      "sha256": "62ea4c0aae7bb73df34d6d5034cd96ec38500373948f43c2c105809aaaaa14c0"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/PreviewWorkQueue.swift",
+      "sha256": "f4b3c249d160509653851384f9714f827ecfd774a1dbfa19f9265f180483b52d"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ScopedMediaFile.swift",
+      "sha256": "85eed6c4d7784c3572a363b280aa80ad15336cefc65258c12a3b36172bef6966"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/LocalMediaResource.swift",
+      "sha256": "1b91883e00fa9f010159c9fe3fbe87e2892217a2b0c97c40539bcf15808e40f0"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/NativeDocumentClient.swift",
+      "sha256": "d81a8a1514adbf6593bb3777e0a01715da70812bffcf260d2d0b17f445d71961"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderBackgroundView.swift",
+      "sha256": "4905aafe888bc09ce8e115dbf1259ca4786e1805c0449d848681f5bc1e05f52c"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/BoundaryArchitectureTests.swift",
+      "sha256": "221bbadef3d026397c5d4dbcd346aed20709040be2777b3cbb2f631ddf835302"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/BoundaryRegressionTests.swift",
+      "sha256": "1bb29c778d6bde7bf7d6cb67649726ee17a42fa68ec323097d0a7bea0e3bc611"
+    },
+    {
+      "path": "Tests/Host/main.swift",
+      "sha256": "9cdd66f66106c0695b4af0bc9aeef876bd268761b917f0fe68a148ca9a5ec7a9"
+    },
+    {
+      "path": "scripts/test-native.sh",
+      "sha256": "3951d1eb6eb107606938413783875da38ab08b5b4d57a29ee925100ee261686f"
+    },
+    {
+      "path": ".github/workflows/compatibility.yml",
+      "sha256": "4f187aa9d75bd8ffc85ba9e6fa26f0a8da4439d5646bcb0baf698e2299c8ad2f"
+    },
+    {
+      "path": "App/AppDelegate.swift",
+      "sha256": "b73d639c55327d9832fea1a1e47114b8f28e0bac87b7d0c7d586c6fa6896bb3a"
+    },
+    {
+      "path": "App/DiagnosticsController.swift",
+      "sha256": "20791de3666ea141e3d859e64c4cd94c7d2efbc05017e44883138b7e8a596534"
+    },
+    {
+      "path": "App/OrangeLen.entitlements",
+      "sha256": "ac37bec6f7c706d28f6aa4feffde207acb4ea8e0af0a90a58c2b9d43a7a2c0c6"
+    },
+    {
+      "path": "App/SettingsView.swift",
+      "sha256": "62ee73c2944917682ebc09ce286efbe43a6b73100a2427d8deeceb2623c8c976"
+    },
+    {
+      "path": "ImageBroker/ImageBroker.entitlements",
+      "sha256": "016d3be3b45f87cc527934f360d6e5f9c9b64974354c1170b355a35ed2fbfcb1"
+    },
+    {
+      "path": "ImageBroker/main.swift",
+      "sha256": "9ac440347e0f0f3a046c8d50bb1c26e540a90a59f990c33a96f87cacf8ebf863"
+    },
+    {
+      "path": "OrangeLen.xcodeproj/project.pbxproj",
+      "sha256": "453c7605ca37e3fe83080fd2b81d5f91b76560c0e02b71a131d2a2d41c032b6b"
+    },
+    {
+      "path": "OrangeLen.xcodeproj/xcshareddata/xcschemes/OrangeLen.xcscheme",
+      "sha256": "ee7011cf2f861c17b8467cef9073b06285f98b28db1ceae0aaa49db9b12e7887"
+    },
+    {
+      "path": "Packages/OrangeLen/Package.swift",
+      "sha256": "cf97415249e9976f76d017ead134e64f5286db4bd170f30470258cbbc2b8eeae"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/AccessBroker.swift",
+      "sha256": "3d10d67632eeb45de12fc8250cd39a53682d23fcb4362c9ffd83aa68e3b73e1d"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ArchiveDocument.swift",
+      "sha256": "94fbb2379b5c0aa1d622472d6db33eca73c4b01f064728bef126ad1b1deffcec"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/CSVParser.swift",
+      "sha256": "fcd211628cfd21731be0f8409933f80ce3c9c9a413b998e96e97591211a7f8db"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/DatabaseDocument.swift",
+      "sha256": "e2d5cb1af3475edff738ad1df956bd713007306a31fc74c4c91b61552dfd2eb3"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/EPUBDocument.swift",
+      "sha256": "809a0f689ce13efd2f1339bd59931b99407106fb880b818d3b0618359829e55e"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/EnhancedDocuments.swift",
+      "sha256": "85c16d2fa17f6cf27e6e7d1ae457798a11b45daecf6cc45309020370c9dafe36"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/FolderLoader.swift",
+      "sha256": "529cda069bbd588cd35aa23de037141338bca6f05ecd6a693eaa616c1db087d6"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/FolderSummary.swift",
+      "sha256": "b5b099d9425d892ac36215e7c598d31e60651e2595f28f8e6161a1c31cd4f009"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/GzipDocument.swift",
+      "sha256": "f1193fba250067a897ff725a08f3c6926c0e4f7297d1cfa0cc277711c370f839"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ImageBrokerProtocol.swift",
+      "sha256": "80c75b08aa27a4f23b24a75cd821f4ff047d6b2a1526240e6c79145142211805"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ImageDirectoryGrant.swift",
+      "sha256": "1ef1bf5360dddb0d0f8f6e997bd7c1622db83d29d7f54b72b81910783dc869f5"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/JSONParser.swift",
+      "sha256": "4b028ef5e105ce0c926aad73dc61e0cb92b58be558fd356b5b721bc6e8458cfa"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/Limits.swift",
+      "sha256": "66741f5807cd3b059da03d0f10213379c28010f486b16a1d4fb477f9537154e4"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/MarkdownExtras.swift",
+      "sha256": "d989b3b59ee49287a98aabeaaddc6aa0919f0c765b4e136dcb3e194e18f908a1"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/MarkdownModel.swift",
+      "sha256": "28c48ed937b3b4d9d48dd03d3dbbc19ea19c36b3ce2712b33f5f70c1942f4d41"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/MarkdownRichContent.swift",
+      "sha256": "9dc776ef758356b40d3b83100234a53b8bc0d34ee347710bdf82c2b5a0279d84"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/OfficeContentPreview.swift",
+      "sha256": "008da319a8f309e17fb8d6e696a45b589dba43feca95fde794d97d843d121bb0"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/PreviewCategory.swift",
+      "sha256": "89aab7caf85f2a5459c9f72a02453ff1a6a63c2afff1331cb96cbe0649520deb"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ProjectOverview.swift",
+      "sha256": "ae9ce9604207cb0edb1c7a00d774f9574c28acaf0d590909f4497815f0033057"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/ReadableFormat.swift",
+      "sha256": "d9ff9d5ecb42076550e598346d1419592fc5351343e487c250fd4aa88405dbed"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/SVGDocument.swift",
+      "sha256": "01e64c9ea34b7c96bc828bbefdbf3b3389f799a0f035e448a3fa6c0e108f5129"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/Settings.swift",
+      "sha256": "263b0de140d832fd637e4708cbe67033f7ce4500683711f548081ba379c1c149"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/SystemPreviewFormat.swift",
+      "sha256": "430b7fcb38723263a0ba2f471286837491ce88e256935d053cedac5cc91ed549"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenCore/TextModel.swift",
+      "sha256": "05de306ce78626b635894636a545ea3398690f398c0855fd102c23f5116dced3"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ArchiveController.swift",
+      "sha256": "788a603697982e974ea93831f38893777e344b4aabc74cbd1bd35db13a72e91e"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/Clipboard.swift",
+      "sha256": "c872236a01589d35ba938db0f59b9a5e23eacb4de96e947ccc43a3d4167c434c"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/CollectionController.swift",
+      "sha256": "d7ab0be22058b46dcfce57f4d8de0537e878a7471b5b7daab8f517ab6bdb39d9"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/DataControllers.swift",
+      "sha256": "01f22e2972427be63a7238216975b3095d998a39b3b703bf6d681cb559835490"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/DatabaseController.swift",
+      "sha256": "1ab552a5a50b9191ec0137bc977ee9c2713b1edec23606ffb5ca4ef6802151ef"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ExcalidrawPreview.swift",
+      "sha256": "6665ea0f4564b266925e6ff0f119472686d88babdab5b0b9c6c72bb7d634dfe7"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/FolderController.swift",
+      "sha256": "b6ae6cef314fac0c76f6ba9afdb0aef1505095f1d58858511d01d24bb7b3c7e6"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ImagePreview.swift",
+      "sha256": "03ceba39c70c80ec5166f0b34b607e033a533e729aa483a527f20b7871b32e38"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/MarkdownAssets.swift",
+      "sha256": "d30674ced227687629057e2459e8a45954522a65e2d4876f86e73ded501ee9a8"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/MarkdownOutlineController.swift",
+      "sha256": "a7a2935932cb9d1ffa7cc4d9fe58aedff3d76590a474628b2c01c0fd29e59401"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderController.swift",
+      "sha256": "f60198221b5bbbfc4e2222c24bcae7b25dddea729ce6f93a177ab384e4a047b6"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderExcalidraw.swift",
+      "sha256": "5b955ffcc423991c1309349ff8c2757c8b25d38a31d61aaf2fe63a8d0e128541"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderLocalImages.swift",
+      "sha256": "c98c53ad6ef0e25ce6ea1593ad80250b0dba6c2d8fd7f981be8bfb7aec477373"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderMemory.swift",
+      "sha256": "ba3841734265e17419a30c5403bd3107a2dce90f62f32f946d31a424dde581c0"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderRichContent.swift",
+      "sha256": "285f91aa7af31383aa400fa9a00f98e526039553002c6be99cfab38a108b642b"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderSVG.swift",
+      "sha256": "d820f9564f265f180b2914543b5a32c51e14350cd89630abd4a0f958c5a53895"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReaderSystemPreview.swift",
+      "sha256": "a5b1abd7ae5d06fa9d38612635f607216730200ac4e8edf1027d1e00c00f5b4b"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ReadingTextView.swift",
+      "sha256": "ccf60de295d5c6d6a0a4034d56b89b4257429c89f836875afc1e428ca5b2e0f3"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/RemoteImageLoader.swift",
+      "sha256": "a2115648a629a68ea7bda3829d6df8fefaa0990e694c4ff747b747a49e2bc4e7"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/RemoteImageRequest.swift",
+      "sha256": "ee82a591b9fab2101de8330c2feb04670fab3a12017e69d63616cd82cc399f70"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/RichContentRenderer.swift",
+      "sha256": "4b3b1dd316fb7b91c29c455f080882ef783a82f518f9500f694e0f5188902bef"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/SyntaxHighlighter.swift",
+      "sha256": "c4bf1fbf331bbef6da1f1a06458f3039a2e425e890c49030c5602553928da153"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/TextStyler.swift",
+      "sha256": "9477a1235679ff1b7446580fb2b87f12de51cc8342837c19f032747c9e04dca6"
+    },
+    {
+      "path": "Packages/OrangeLen/Sources/OrangeLenUI/ZoomCanvasView.swift",
+      "sha256": "8130e27588d97c4c15b192a9923f934ab481244b5451bcb965ecb575f2ab9169"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/CoreTests.swift",
+      "sha256": "76975f1a71f9c03721f30bb3e7929db575ed500cacf616db8c74cd6f933860a0"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/DatabasePagingTests.swift",
+      "sha256": "59ac88635cf408291c12fa568424e874e52b29bd0609a71dddff8175e998c642"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/DeveloperFormatsTests.swift",
+      "sha256": "060b689a51650306b66be23385ab57630daea67b4eb63afc5a1ba2d9f4f9ee12"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/ImageDirectoryGrantTests.swift",
+      "sha256": "9b70aaf3f8538ef9e71d04dab0103393d8be4175ea906c28a75129bb16b73f0a"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/M2Tests.swift",
+      "sha256": "5d6979b83b49674ede812aa369d978ee75783047b83b32f00b8bc822842606ef"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/MarkdownExtrasTests.swift",
+      "sha256": "77d4ff27a7e6abacd29aeefdfeaa3c42c1ce242337e8fddb404ee9c6a54852bf"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenCoreTests/TextPagingTests.swift",
+      "sha256": "309e451ea39475e2f394f46317d6a6a1d87d89cb385690bf8b1c3048bd813e55"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/DeveloperFormatsIntegrationTests.swift",
+      "sha256": "d6464f89dd944bb6bd5845d7ecbb15a78ab62fff905d59c0ca72f4afb4da5782"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/ExcalidrawTests.swift",
+      "sha256": "ec36f57981b26fcde86b2eaf12cca98792a01c37095654ce961b4cf9149db0a5"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/ImprovementIntegrationTests.swift",
+      "sha256": "ed1ecd2aff73585778da439d82396f46a9191ef1ca00f424555a54dbd7c53b81"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/LayoutTests.swift",
+      "sha256": "58a21e2ac6ec86438f9b6ecf3d63e4803940936fd2aa5129bec1c5a5997f6798"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/M2IntegrationTests.swift",
+      "sha256": "1f97a01c79142a90476f282a6ab2e9edf833f2d0124dce9829ce4cd005d174ec"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/RichContentTests.swift",
+      "sha256": "6a5075c971a3cf866328615e7dfcadaedf62e1acbce5c8adf03fb8da2e3952bd"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/SyntaxHighlighterTests.swift",
+      "sha256": "8951a1c4a8df108972bb66c187444612fb86169380fe059dd51429d5e5f54b29"
+    },
+    {
+      "path": "Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift",
+      "sha256": "508867218ab9ef1b4f0fc27ffeb42879917ed2425782edd491f1e8e83c40d9ce"
+    },
+    {
+      "path": "PreviewExtension/OrangeLenPreview.entitlements",
+      "sha256": "ac37bec6f7c706d28f6aa4feffde207acb4ea8e0af0a90a58c2b9d43a7a2c0c6"
+    },
+    {
+      "path": "PreviewExtension/PreviewViewController.swift",
+      "sha256": "0891806bc3a9711fe5561baabf89e8da83ce2ac094aea84ee8127a6e03c5db0f"
+    },
+    {
+      "path": "Tests/Fixtures/demo-project/src/main.swift",
+      "sha256": "75820eb1e99cf140567bac6f2e695795e3adf7353a5780cfb28af1eea3662ce8"
+    },
+    {
+      "path": "Tests/Fixtures/docker/docker-compose.yml",
+      "sha256": "821b57f128d4bb35b03131a0c3c60f1989ddcdf1e5f2fdd4d67cb100a9c528b8"
+    },
+    {
+      "path": "project.yml",
+      "sha256": "c39bda3aae5b3426f826c495c60aff38bf0f30f945d1712eea1083096d3e90a8"
+    },
+    {
+      "path": "scripts/build.sh",
+      "sha256": "e46791f36c78b42028440a9448f61ca695f25dee31a97b856d3a0915f555320c"
+    },
+    {
+      "path": "scripts/install-dev.sh",
+      "sha256": "874a817db9365f04bd2c95a42a00cace1ab5869d5fddfdc0c9df3673381d511d"
+    },
+    {
+      "path": "scripts/package.sh",
+      "sha256": "cf930eb119209e8107ad044def9e1e6e416740322baea76de06b60d1b557a00d"
+    },
+    {
+      "path": "scripts/test.sh",
+      "sha256": "7694661ad067931464fa4067acdf7bfa3c46331286bf4ffd1ca581e3eccb74c6"
+    },
+    {
+      "path": "scripts/types.swift",
+      "sha256": "291eb59b717034e809bde3b08bea80f05d9177a6384e998daaf8f1ce405ab2bd"
+    }
+  ]
+}

@@ -117,7 +117,7 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
     }
     @objc func copyRow() {
         let row = table.clickedRow >= 0 ? table.clickedRow : table.selectedRow; guard rowOrder.indices.contains(row), data.rows.indices.contains(rowOrder[row]) else { return }
-        copy(data.rows[rowOrder[row]].map(\.value).joined(separator: "\t"))
+        copy(data.rows[rowOrder[row]].map { DatabaseDocument.tsvField($0.value) }.joined(separator: "\t"))
     }
     func copy(_ value: String) { Clipboard.write(value, feedback: copyFeedback) }
 }

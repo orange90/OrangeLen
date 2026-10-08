@@ -14,6 +14,7 @@ extension ReaderController {
             if let window = view.window { alert.beginSheetModal(for: window) }
             return
         }
+        let authorizationRequest = generation
         let panel = NSOpenPanel(); panel.canChooseDirectories = true; panel.canChooseFiles = false; panel.allowsMultipleSelection = false
         panel.title = "允许读取文档中的本地图片"
         panel.message = ImageDirectoryGrant.shared.available
@@ -21,7 +22,7 @@ extension ReaderController {
             : "选择文档目录或图片子目录，仅用于当前宿主文档。此构建没有可用的 Finder 授权共享；不保存长期授权。"
         panel.prompt = "允许本次读取"; panel.directoryURL = document.deletingLastPathComponent()
         panel.begin { [weak self] result in
-            guard result == .OK, let directory = panel.url, let self, self.currentURL == document else { return }
+            guard result == .OK, let directory = panel.url, let self, self.currentURL == document, self.generation == authorizationRequest else { return }
             let base = document.deletingLastPathComponent().standardizedFileURL.pathComponents
             guard directory.standardizedFileURL.pathComponents.starts(with: base) else { self.showCopyNotice("请选择文档目录或它的图片子目录"); return }
             self.useImageDirectory(directory, for: document)
@@ -31,7 +32,7 @@ extension ReaderController {
         guard currentURL == document else { return }
         if imageRootScope { imageRootURL?.stopAccessingSecurityScopedResource() }
         imageRootURL = directory; imageDocumentURL = document; imageRootScope = directory.startAccessingSecurityScopedResource()
-        if Bundle.main.bundleURL.pathExtension != "appex" { imageGrantOwner = UUID(); publishImageDirectory() }
+        if Bundle.main.bundleURL.pathExtension != "appex" { imageGrantOwner = UUID(); imageGrantPublished = .distantPast; publishImageDirectory() }
         reloadPreservingPosition(document, notice: "本地图片已重新读取")
     }
     func releaseImageDirectory() {
@@ -40,7 +41,7 @@ extension ReaderController {
         imageRootScope = false; imageRootURL = nil; imageDocumentURL = nil; imageGrantOwner = nil; imageGrantPublished = .distantPast
     }
     func publishImageDirectory() {
-        guard ImageDirectoryGrant.shared.available, Date().timeIntervalSince(imageGrantPublished) > 5, let directory = imageRootURL, let document = imageDocumentURL, let owner = imageGrantOwner, let revision = Self.fileRevision(document) else { return }
+        guard ImageDirectoryGrant.shared.available, abs(Date().timeIntervalSince(imageGrantPublished)) > 5, let directory = imageRootURL, let document = imageDocumentURL, let owner = imageGrantOwner, let revision = Self.fileRevision(document) else { return }
         do { try ImageDirectoryGrant.shared.publish(directory, document: document, revision: revision, owner: owner); imageGrantPublished = Date() }
         catch { showCopyNotice("宿主图片可读；Finder 授权共享未成功") }
     }

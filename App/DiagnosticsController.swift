@@ -4,6 +4,7 @@ import UniformTypeIdentifiers
 
 final class DiagnosticsController: NSViewController {
     let report = NSTextView(), fileLabel = NSTextField(labelWithString: "选择一个文件，检查 Finder 类型匹配与可用入口。")
+    var generation = UUID()
     var selectedURL: URL?
     var systemListing: String?
     var openFile: ((URL) -> Void)?
@@ -50,6 +51,7 @@ final class DiagnosticsController: NSViewController {
     @objc func refresh() {
         fileLabel.stringValue = selectedURL?.path ?? "选择一个文件，检查 Finder 类型匹配与可用入口。"
         report.string = "正在读取本机扩展登记…"
+        let id = UUID(); generation = id
         let url = selectedURL, knownListing = systemListing
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             let listing = knownListing ?? "尚未读取系统登记。点击“复制系统查询”，在终端运行后，通过“导入登记结果…”读取结果。"
@@ -79,7 +81,7 @@ final class DiagnosticsController: NSViewController {
             }
             lines += ["扩展登记原始结果：", listing, "", "+ 表示用户选择启用，- 表示用户选择停用；空白表示未显式选择。", "同一标识有多条路径可能来自开发构建登记。诊断不会更改其他工具。", "关闭当前 Quick Look 再打开，才能检查新版本实际效果。"]
             let output = lines.joined(separator: "\n")
-            DispatchQueue.main.async { self?.report.string = output }
+            DispatchQueue.main.async { guard let self, self.generation == id else { return }; self.report.string = output }
         }
     }
     private static func types(_ url: URL) -> [String] {

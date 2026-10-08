@@ -61,7 +61,7 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         }
     }
     func open(_ archive: ArchiveDocument, origin: URL, revision: String, restoring state: ReadingState? = nil) throws {
-        loadViewIfNeeded(); cancel(); self.archive = archive; self.origin = origin; self.revision = revision
+        loadViewIfNeeded(); cancel(); reader.readingGeneration = SettingsStore.shared.readingGeneration; self.archive = archive; self.origin = origin; self.revision = revision
         roots = try Self.tree(archive.entries); filter.stringValue = state?.filter ?? ""; sort.selectItem(at: state?.sort ?? 0); sortChanged()
         let size = archive.entries.filter { !$0.directory }.reduce(0) { $0 + $1.size }
         info.stringValue = "\(archive.entries.count) 项 · \(ByteCountFormatter.string(fromByteCount: Int64(size), countStyle: .file)) · 不解压到磁盘"
@@ -75,15 +75,17 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
     static func tree(_ entries: [ArchiveEntry]) throws -> [Node] {
         let root = Node(""); var paths: [String: Node] = ["": root]
         for entry in entries {
-            guard entry.path.split(separator: "/").count <= 64 else { throw PreviewError.limit("归档目录深度") }
+            guard let canonical = ArchiveDocument.canonicalPath(entry.path) else { throw PreviewError.unsafePath }
+            guard canonical.split(separator: "/").count <= 64 else { throw PreviewError.limit("归档目录深度") }
             var prefix = "", parent = root
-            for component in entry.path.split(separator: "/") {
+            for component in canonical.split(separator: "/") {
                 prefix = prefix.isEmpty ? String(component) : prefix + "/" + component
                 let node: Node
                 if let existing = paths[prefix] { node = existing }
                 else { guard paths.count < 20_000 else { throw PreviewError.limit("归档目录节点数") }; node = Node(prefix); parent.children.append(node); paths[prefix] = node }
                 parent = node
             }
+            guard parent.entry == nil else { throw PreviewError.malformed("归档路径冲突") }
             parent.entry = entry
         }
         func total(_ node: Node) -> Int {
@@ -144,8 +146,7 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         token?.cancel(); let token = Cancellation(); self.token = token; let id = UUID(); generation = id
         let position = restoredPosition; restoredPosition = nil
         reader.cancelPending(); reader.showMessage("加载 \(entry.path)…")
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let result = Result { () -> (DocumentSection, MarkdownAssets) in
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (DocumentSection, MarkdownAssets) in
                 let data = try archive.read(entry, cancellation: token), fake = URL(fileURLWithPath: entry.path)
                 if ImagePreview.supports(fake) {
                     var assets = MarkdownAssets(); assets.images[0] = try ImagePreview.decode(data, cancellation: token).image
@@ -155,15 +156,13 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
                 let source = try AccessBroker.decode(data).0, markdown = PreviewFormat.detect(fake) == .markdown
                 let assets = markdown ? try CollectionController.archiveAssets(MarkdownModel.parse(source, cancellation: token), archive: archive, base: entry.path, encrypted: [], token: token) : .init()
                 return (.init(id: entry.path, title: entry.path, text: source, markdown: markdown, warning: "归档成员 · 只读内存"), assets)
-            }
-            DispatchQueue.main.async {
+        }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 switch result {
                 case .success(let content): self.reader.openMemory(content.0, origin: origin, revision: self.revision, assets: content.1, restoring: position)
                 case .failure(let error): self.reader.showMessage(error.localizedDescription)
                 }
-            }
-        }
+        })
     }
     func cancel() { token?.cancel(); generation = UUID(); reader.close(); archive = nil; roots = [] }
 }

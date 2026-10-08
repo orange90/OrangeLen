@@ -7,16 +7,22 @@ import OrangeLenCore
 final class SyntaxHighlighter {
     struct Token { let range: NSRange; let scope: String }
     static let shared = SyntaxHighlighter()
-    private let lock = NSLock()
-    private let context: JSContext?
+    private let lock = NSLock() // Protects only the small cache, never JS execution.
+    private let engineLock = NSLock()
+    private var context: JSContext?
+    private var initialized = false
+    private var cacheCosts: [String: Int] = [:]
+    private var cacheBytes = 0
     private var cache: [String: [Token]] = [:]
     private var order: [String] = []
-    private init() {
+    private init() {}
+    private func prepareEngine() {
+        guard !initialized else { return }; initialized = true
         context = JSContext()
         if let url = Bundle.module.url(forResource: "Highlight", withExtension: "js"), let script = try? String(contentsOf: url, encoding: .utf8) { context?.evaluateScript(script) }
     }
     var languageCount: Int {
-        lock.lock(); defer { lock.unlock() }
+        engineLock.lock(); defer { engineLock.unlock() }; prepareEngine()
         return context?.objectForKeyedSubscript("OrangeHighlight")?.invokeMethod("languages", withArguments: [])?.toArray()?.count ?? 0
     }
     static func language(url: URL?, source: String) -> String? {
@@ -41,24 +47,39 @@ final class SyntaxHighlighter {
     }
     func tokens(_ source: String, language: String?, cancellation: Cancellation? = nil) -> [Token] {
         guard let language, !source.isEmpty, source.utf16.count <= PreviewLimits().highlightUTF16 else { return [] }
-        lock.lock(); defer { lock.unlock() }
         if let cancellation, (try? cancellation.check()) == nil { return [] }
         let key = language + "\0" + source
-        if let value = cache[key] { return value }
+        lock.lock(); let cached = cache[key]; lock.unlock()
+        if let cached { return cached }
+        engineLock.lock(); defer { engineLock.unlock() }
+        if let cancellation, (try? cancellation.check()) == nil { return [] }
+        prepareEngine()
         guard let html = context?.objectForKeyedSubscript("OrangeHighlight")?.invokeMethod("render", withArguments: [source, language])?.toString(), html != "null", html != "undefined" else { return [] }
         let decoder = HighlightDecoder()
         let parser = XMLParser(data: Data(("<root>" + html.replacingOccurrences(of: "&#x27;", with: "&apos;") + "</root>").utf8))
         parser.shouldResolveExternalEntities = false; parser.delegate = decoder
         guard parser.parse(), decoder.text == source else { return [] }
-        cache[key] = decoder.tokens; order.append(key)
-        while order.count > 12 { cache.removeValue(forKey: order.removeFirst()) }
+        if let cancellation, (try? cancellation.check()) == nil { return [] }
+        let cost = key.utf8.count + decoder.tokens.reduce(0) { $0 + 32 + $1.scope.utf8.count }
+        lock.lock()
+        if cache[key] == nil, cost <= 8 * 1024 * 1024 {
+            cache[key] = decoder.tokens; cacheCosts[key] = cost; cacheBytes += cost; order.append(key)
+            while order.count > 12 || cacheBytes > 8 * 1024 * 1024 {
+                let removed = order.removeFirst(); cache.removeValue(forKey: removed); cacheBytes -= cacheCosts.removeValue(forKey: removed) ?? 0
+            }
+        }
+        lock.unlock()
         return decoder.tokens
     }
     func apply(_ text: NSMutableAttributedString, range: NSRange, language: String?) {
         let bounded = NSIntersectionRange(range, NSRange(location: 0, length: min(text.length, PreviewLimits().highlightUTF16)))
         guard bounded.length > 0 else { return }
         let content = (text.string as NSString).substring(with: bounded)
-        apply(tokens(content, language: language), to: text, offset: bounded.location)
+        guard let language else { return }
+        let key = language + "\0" + content
+        lock.lock(); let cached = cache[key]; lock.unlock()
+        // Painting is cache-only. A Reader schedules misses off the main thread.
+        if let cached { apply(cached, to: text, offset: bounded.location) }
     }
     func apply(_ tokens: [Token], to text: NSMutableAttributedString, offset: Int = 0) {
         for token in tokens {
@@ -81,6 +102,7 @@ private final class HighlightDecoder: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) { scopes.append(attributeDict["class"] ?? "") }
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) { if !scopes.isEmpty { scopes.removeLast() } }
     func parser(_ parser: XMLParser, foundCharacters string: String) {
+        guard tokens.count < 20_000 else { parser.abortParsing(); return }
         if let scope = scopes.last(where: { !$0.isEmpty }) { tokens.append(.init(range: .init(location: offset, length: string.utf16.count), scope: scope)) }
         text += string; offset += string.utf16.count
     }

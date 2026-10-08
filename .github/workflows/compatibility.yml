@@ -23,6 +23,8 @@ jobs:
           xcrun swift --version
       - name: Native tests
         run: ./scripts/test.sh
+      - name: Isolated document and media integration
+        run: ./scripts/test-native.sh
       - name: Host and seven extension builds
         run: ./scripts/build.sh CODE_SIGNING_ALLOWED=NO
       - name: Save evidence, including failures
@@ -33,4 +35,5 @@ jobs:
           path: |
             build/tests.log
             build/build.log
+            build/native-tests.log
           if-no-files-found: warn

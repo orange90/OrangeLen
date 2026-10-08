@@ -1,0 +1,54 @@
+{
+  "installedApp": "/Users/huangzhe/Applications/OrangeLen.app",
+  "verification": "--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/__preview.dylib\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/__preview.dylib\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/OrangeLen.debug.dylib\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/OrangeLen.debug.dylib\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/__preview.dylib\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/__preview.dylib\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview.debug.dylib\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview.debug.dylib\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex\n--prepared:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc\n--validated:/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex\n/Users/huangzhe/Applications/OrangeLen.app: valid on disk\n/Users/huangzhe/Applications/OrangeLen.app: satisfies its Designated Requirement\n",
+  "documentServices": [
+    {
+      "path": "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    },
+    {
+      "path": "Contents/XPCServices/OrangeLenDocumentBroker.xpc",
+      "entitlements": {
+        "com.apple.security.app-sandbox": true
+      }
+    }
+  ]
+}

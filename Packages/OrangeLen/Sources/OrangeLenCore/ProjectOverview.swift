@@ -1,5 +1,27 @@
 import Foundation
+public struct FolderReadme: Sendable {
+    public let url: URL
+    public let excerpt: String
+}
 public enum ProjectOverview {
+    /// A bounded, local-only excerpt. No image resolution or rich-content rendering.
+    public static func readme(_ root: URL, cancellation: Cancellation = .init()) throws -> FolderReadme? {
+        let scope = root.startAccessingSecurityScopedResource()
+        defer { if scope { root.stopAccessingSecurityScopedResource() } }
+        try AccessBroker.validate(root)
+        for name in ["README.md", "readme.md", "Readme.md", "README.markdown", "README.txt", "README"] {
+            try cancellation.check()
+            let url = root.appendingPathComponent(name)
+            guard FileManager.default.fileExists(atPath: url.path) else { continue }
+            let raw = try AccessBroker.readPreview(url, root: root, pageBytes: 32 * 1024, fullReadThreshold: 0, cancellation: cancellation)
+            let decoded = raw.text
+            let model = try MarkdownModel.parse(decoded, cancellation: cancellation)
+            let excerpt = model.display.trimmingCharacters(in: .whitespacesAndNewlines)
+            return FolderReadme(url: url, excerpt: String(excerpt.prefix(500)) + (excerpt.count > 500 || raw.partial ? "…" : ""))
+        }
+        return nil
+    }
+
     public static func read(_ root: URL, cancellation: Cancellation = .init()) throws -> String {
         try AccessBroker.validate(root)
         var text = "# \(root.lastPathComponent)\n\n选择左侧文件，在同一窗口阅读。项目线索来自声明文件，不表示依赖已安装或项目可以运行。\n\n"
@@ -29,7 +51,7 @@ public enum ProjectOverview {
             } catch is CancellationError { throw CancellationError() }
             catch { text += " · 未能读取：" + safe(error.localizedDescription) + "\n" }
         }
-        return text + "\n不会执行脚本、安装依赖或扫描依赖目录。目录计数是有界元数据快照。"
+        return text + "\n不会执行脚本或安装依赖。大小为文件逻辑大小之和；包含隐藏项及子文件夹，不跟随符号链接。统计期间数字持续更新，无法读取的项目会标记为部分结果。"
     }
     private static func safe(_ value: String) -> String {
         String(value.prefix(200)).replacingOccurrences(of:"\n",with:" ").replacingOccurrences(of:"[",with:"\\[").replacingOccurrences(of:"*",with:"\\*").replacingOccurrences(of:"<",with:"\\<")

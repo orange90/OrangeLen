@@ -21,6 +21,35 @@ public struct ArchiveDocument: Sendable {
         !path.unicodeScalars.contains(where: { $0.value < 32 }) &&
         !path.split(separator: "/", omittingEmptySubsequences: false).contains("..") && path.utf8.count <= 1024
     }
+    /// UI and container readers use the same identity for slash and dot aliases.
+    public static func canonicalPath(_ path: String) -> String? {
+        guard safePath(path) else { return nil }
+        return path.split(separator: "/").filter { $0 != "." }.joined(separator: "/")
+    }
+    private static func validateIdentities(_ entries: [ArchiveEntry]) throws {
+        var kinds: [String: Bool] = [:]
+        var ancestors = Set<String>()
+        for entry in entries {
+            guard let path = canonicalPath(entry.path) else { throw PreviewError.unsafePath }
+            if path.isEmpty { guard entry.directory else { throw PreviewError.unsafePath }; continue }
+            guard kinds[path] == nil, entry.directory || !ancestors.contains(path) else { throw PreviewError.malformed("归档路径冲突：" + path) }
+            var components = path.split(separator: "/"); components.removeLast()
+            while !components.isEmpty {
+                let parent = components.joined(separator: "/")
+                guard kinds[parent] != false else { throw PreviewError.malformed("归档文件不能同时作为目录：" + parent) }
+                ancestors.insert(parent); components.removeLast()
+            }
+            kinds[path] = entry.directory
+        }
+    }
+    /// Fully verify every member before handing raw ZIP bytes to an OS importer.
+    public func validateForNativeImport(cancellation: Cancellation = .init()) throws {
+        for entry in entries {
+            try cancellation.check()
+            guard entry.blocked == nil else { throw PreviewError.limit(entry.path + "：" + entry.blocked!) }
+            if !entry.directory { _ = try read(entry, cancellation: cancellation) }
+        }
+    }
     public static func parse(_ data: Data, name: String, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> Self {
         guard data.count <= limits.containerBytes else { throw PreviewError.limit("容器输入 64 MiB") }
         let lower = name.lowercased()
@@ -42,7 +71,7 @@ public struct ArchiveDocument: Sendable {
         }
         try cancellation.check(); return output
     }
-    public func entry(_ path: String) -> ArchiveEntry? { entries.first { $0.path == path } }
+    public func entry(_ path: String) -> ArchiveEntry? { entries.first { Self.canonicalPath($0.path) == Self.canonicalPath(path) } }
     static func inflate(_ data: Data, window: Int32, maximum: Int, token: Cancellation) throws -> Data {
         var stream = z_stream()
         guard inflateInit2_(&stream, window, ZLIB_VERSION, Int32(MemoryLayout<z_stream>.size)) == Z_OK else { throw PreviewError.malformed("压缩初始化失败") }
@@ -101,6 +130,7 @@ public struct ArchiveDocument: Sendable {
             cursor += 46 + length + extra + comment
         }
         guard cursor == end else { throw PreviewError.malformed("ZIP 中央目录数量不一致") }
+        try validateIdentities(entries)
         return .init(entries: entries, kind: "ZIP", bytes: data, limits: limits)
     }
     private static func tar(_ data: Data, limits: PreviewLimits, token: Cancellation) throws -> Self {
@@ -122,6 +152,7 @@ public struct ArchiveDocument: Sendable {
             cursor = offset + ((size + 511) / 512) * 512
         }
         guard !entries.isEmpty || b.count >= 1024 else { throw PreviewError.malformed("TAR 不完整") }
+        try validateIdentities(entries)
         return .init(entries: entries, kind:"TAR",bytes:data,limits:limits)
     }
 }

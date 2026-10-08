@@ -1,0 +1,30 @@
+/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/OrangeLen.debug.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/MacOS/__preview.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/__preview.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview.debug.dylib: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/XPCServices/OrangeLenDocumentBroker.xpc: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewFolders.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewBooks.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewMarkdown.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewData.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewDrawings.appex: replacing existing signature
+/Users/huangzhe/Applications/OrangeLen.app: replacing existing signature
+qlmanage: resetting quicklookd
++    local.OrangeLen.Preview(0.1.0)	3ECFAAED-A5F5-464C-98EB-097C6E948063	2026-10-08 04:16:45 +0000	/Users/huangzhe/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex
+ (1 plug-in)
