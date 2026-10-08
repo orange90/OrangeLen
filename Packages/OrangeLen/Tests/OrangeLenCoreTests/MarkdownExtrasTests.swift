@@ -18,7 +18,7 @@ final class MarkdownExtrasTests: XCTestCase {
     func testFrontMatterDoesNotBecomeRulesOrHeadingsAndKeepsUnicodeCopy() throws {
         let source = "---\ntitle: 中文🍊\ntags: [preview, code]\n---\n# 正文\n\n普通内容"
         let model = try MarkdownModel.parse(source)
-        XCTAssertTrue(model.display.hasPrefix("文档信息\ntitle: 中文🍊"))
+        XCTAssertTrue(model.display.hasPrefix(L10n.text("文档信息\n") + "title: 中文🍊"))
         XCTAssertTrue(model.display.contains("正文")); XCTAssertFalse(model.display.contains("────────"))
         let body = (model.display as NSString).range(of: "普通内容")
         XCTAssertEqual(model.copiedSource(body), "普通内容")
@@ -41,16 +41,16 @@ final class MarkdownExtrasTests: XCTestCase {
     func testCodeAndEscapedFootnoteSyntaxRemainLiteralAndCalloutsAreStyled() throws {
         let source = "> [!WARNING]\n> 不会运行脚本。\n\n```python\n# [^x]\n```\n\n\\[^x] 与真正引用[^x]\n\n[^x]: 注释 $x$\n"
         let model = try MarkdownModel.parse(source)
-        XCTAssertTrue(model.display.contains("警告")); XCTAssertTrue(model.styles.contains { $0.style.contains(.callout) })
+        XCTAssertTrue(model.display.contains(L10n.text("警告"))); XCTAssertTrue(model.styles.contains { $0.style.contains(.callout) })
         XCTAssertTrue(model.display.contains("# [^x]")); XCTAssertEqual(model.codeLanguages.first?.language, "python")
         XCTAssertTrue(model.richContent.contains { $0.content == "x" })
-        XCTAssertEqual(model.copiedSource((model.display as NSString).range(of: "警告")), "[!WARNING]")
+        XCTAssertEqual(model.copiedSource((model.display as NSString).range(of: L10n.text("警告"))), "[!WARNING]")
         XCTAssertEqual(model.source, source)
     }
     func testDefinitionsInsideFencesAreNotMovedAndUnclosedFrontMatterStaysSource() throws {
         let source = "```\n[^fake]: still code\n```\n\n正文"
         let model = try MarkdownModel.parse(source)
         XCTAssertTrue(model.anchors.isEmpty); XCTAssertTrue(model.display.contains("[^fake]: still code"))
-        XCTAssertFalse(try MarkdownModel.parse("---\ntitle: no closing").display.contains("文档信息"))
+        XCTAssertFalse(try MarkdownModel.parse("---\ntitle: no closing").display.contains(L10n.text("文档信息")))
     }
 }

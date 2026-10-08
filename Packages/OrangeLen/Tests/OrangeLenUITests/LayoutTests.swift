@@ -4,6 +4,53 @@ import AppKit
 import OrangeLenCore
 
 @MainActor final class LayoutTests: XCTestCase {
+    func testFolderMarkdownWrapsInsideViewportAfterOutlineAndResize() async throws {
+        _ = NSApplication.shared
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let subfolder = root.appendingPathComponent("nested")
+        try FileManager.default.createDirectory(at: subfolder, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let file = subfolder.appendingPathComponent("long.md")
+        let source = "# 标题\n\n工作目录： \u{0060}/Users/" + String(repeating: "long-directory/", count: 20) + "\u{0060}\n\n"
+            + "### " + String(repeating: "这是一段很长的文档标题，需要在窄窗口中完整换行。", count: 12) + "\n\n"
+            + String(repeating: "直播策划：中文与 English 内容应该自动换行。", count: 30)
+        try Data(source.utf8).write(to: file)
+        let reader = ReaderController()
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1120, height: 720),
+                              styleMask: [.titled, .resizable], backing: .buffered, defer: false)
+        // Match Quick Look, which exposes the reader's view as its host view.
+        let host = NSViewController()
+        host.addChild(reader); host.view = reader.view
+        window.contentViewController = host; window.orderFront(nil)
+        defer { reader.close(); window.orderOut(nil) }
+        let opened = expectation(description: "folder")
+        reader.open(root) { error in XCTAssertNil(error); opened.fulfill() }
+        await fulfillment(of: [opened], timeout: 10)
+        let loaded = expectation(description: "nested markdown")
+        reader.loadFile(file) { error in XCTAssertNil(error); loaded.fulfill() }
+        await fulfillment(of: [loaded], timeout: 10)
+        reader.settings.markdownOutline = true
+        for width in [1120.0, 900.0, 760.0, 1200.0] {
+            window.setContentSize(NSSize(width: width, height: 720))
+            reader.view.layoutSubtreeIfNeeded()
+            // Split dividers can resize the clip view without another root layout pass.
+            reader.documentSplit.setPosition(280, ofDividerAt: 0)
+            reader.documentSplit.layoutSubtreeIfNeeded()
+            let layout = try XCTUnwrap(reader.text.layoutManager)
+            let container = try XCTUnwrap(reader.text.textContainer)
+            layout.ensureLayout(for: container)
+            XCTAssertEqual(reader.view.bounds.width, width, accuracy: 1)
+            XCTAssertLessThanOrEqual(reader.scroll.convert(reader.scroll.bounds, to: host.view).maxX, host.view.bounds.maxX + 1)
+            let available = reader.scroll.contentSize.width
+            print("WRAP window=\(width) viewport=\(available) text=\(reader.text.frame.width) container=\(container.containerSize.width)")
+            XCTAssertEqual(reader.text.frame.width, available, accuracy: 1)
+            XCTAssertLessThanOrEqual(container.containerSize.width, available - 2 * reader.text.textContainerInset.width + 1)
+            layout.enumerateLineFragments(forGlyphRange: NSRange(location: 0, length: layout.numberOfGlyphs)) { _, used, _, _, _ in
+                XCTAssertLessThanOrEqual(used.maxX + reader.text.textContainerOrigin.x, available + 1)
+            }
+            XCTAssertEqual(reader.text.model.source, source)
+        }
+    }
     func testFolderSummaryIgnoresCancelledGeneration() async throws {
         _ = NSApplication.shared
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
@@ -15,15 +62,15 @@ import OrangeLenCore
         let finished = expectation(description: "new summary completes")
         folder.onSummary = { message in
             messages.append(message)
-            if message.contains("递归统计完成") { finished.fulfill() }
+            if message.contains(L10n.text("含隐藏项，递归统计完成")) { finished.fulfill() }
         }
         folder.summarize(root)
         folder.cancel()
         folder.summarize(root)
         await fulfillment(of: [finished], timeout: 5)
-        XCTAssertEqual(messages.filter { $0.contains("递归统计完成") }.count, 1)
-        XCTAssertFalse(messages.contains { $0.contains("统计未完成") })
-        XCTAssertTrue(messages.last?.contains("1 个文件") == true)
+        XCTAssertEqual(messages.filter { $0.contains(L10n.text("含隐藏项，递归统计完成")) }.count, 1)
+        XCTAssertFalse(messages.contains { $0.contains(L10n.text("统计未完成：")) })
+        XCTAssertTrue(messages.last?.contains((L10n.currentLanguage == "en" ? "1 files" : "1 个文件")) == true)
         folder.cancel()
     }
     func testFileButtonKeepsSelectionAndActivatesOnce() throws {

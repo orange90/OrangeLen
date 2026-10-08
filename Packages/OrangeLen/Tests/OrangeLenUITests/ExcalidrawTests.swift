@@ -18,9 +18,9 @@ import OrangeLenCore
         func encoded() throws -> String { String(decoding: try JSONSerialization.data(withJSONObject: object), as: UTF8.self) }
         let safe = try ExcalidrawPreview.parse(encoded())
         XCTAssertFalse(safe.json.contains("javascript:")); XCTAssertFalse(safe.json.contains("https://"))
-        XCTAssertTrue(safe.warning.contains("图片缺失"))
+        XCTAssertTrue(safe.warning.contains(L10n.text("\(1) 张图片缺失或不支持（仅内嵌栅格图片）")))
         object["elements"] = [["id": "web", "type": "embeddable"]]
-        XCTAssertTrue(try ExcalidrawPreview.parse(encoded()).warning.contains("未渲染"))
+        XCTAssertTrue(try ExcalidrawPreview.parse(encoded()).warning.contains(L10n.text("\(1) 个网页嵌入或未知元素未渲染")))
         object["elements"] = [elements[0], elements[0]]
         XCTAssertThrowsError(try ExcalidrawPreview.parse(encoded()))
         elements[0]["x"] = 1e100; object["elements"] = [elements[0]]
@@ -69,7 +69,7 @@ import OrangeLenCore
         reader.open(file) { error in XCTAssertNil(error); loaded.fulfill() }
         await fulfillment(of:[loaded],timeout:10)
         XCTAssertEqual(reader.text.string,"{bad json")
-        XCTAssertTrue(reader.parseWarning.contains("已降级源码"))
+        XCTAssertTrue(reader.parseWarning.contains(L10n.text(" · 已降级源码")))
         let scene = try ExcalidrawPreview.parse("{\"type\":\"excalidraw\",\"elements\":[]}")
         let renderer = RichContentRenderer(resourceName:"ExcalidrawRenderer")
         defer { renderer.cancel() }

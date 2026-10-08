@@ -6,14 +6,14 @@ public struct SVGDocument: Sendable {
     public let xml: String
     public let omitted: Int
     public static func parse(_ source: String, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> Self {
-        guard source.utf8.count <= limits.fileBytes else { throw PreviewError.limit("SVG 输入字节预算") }
+        guard source.utf8.count <= limits.fileBytes else { throw PreviewError.limit(L10n.text("SVG 输入字节预算")) }
         // Source is already decoded (including UTF-16); reject declarations before XMLParser can expand them.
         guard source.range(of:"<!DOCTYPE",options:.caseInsensitive) == nil,
-              source.range(of:"<!ENTITY",options:.caseInsensitive) == nil else { throw PreviewError.malformed("SVG 不接受 DTD 或实体声明") }
+              source.range(of:"<!ENTITY",options:.caseInsensitive) == nil else { throw PreviewError.malformed(L10n.text("SVG 不接受 DTD 或实体声明")) }
         try cancellation.check()
         let builder = Builder(limits:limits,token:cancellation)
         let parser = XMLParser(data:Data(source.utf8)); parser.shouldProcessNamespaces = true; parser.shouldResolveExternalEntities = false; parser.delegate = builder
-        guard parser.parse(), builder.error == nil, builder.rootSeen else { throw builder.error ?? PreviewError.malformed("SVG XML 无效") }
+        guard parser.parse(), builder.error == nil, builder.rootSeen else { throw builder.error ?? PreviewError.malformed(L10n.text("SVG XML 无效")) }
         try cancellation.check()
         return Self(xml:builder.output,omitted:builder.omitted)
     }
@@ -39,10 +39,10 @@ public struct SVGDocument: Sendable {
         func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String:String]) {
             do { try token.check() } catch { fail(parser,error); return }
             depth += 1; nodes += 1
-            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { fail(parser,PreviewError.limit("SVG 深度或元素预算")); return }
+            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { fail(parser,PreviewError.limit(L10n.text("SVG 深度或元素预算"))); return }
             let svgNamespace = namespaceURI == nil || namespaceURI == "" || namespaceURI == "http://www.w3.org/2000/svg"
             if depth == 1 {
-                guard elementName == "svg", svgNamespace else { fail(parser,PreviewError.malformed("SVG 根元素无效")); return }; rootSeen = true
+                guard elementName == "svg", svgNamespace else { fail(parser,PreviewError.malformed(L10n.text("SVG 根元素无效"))); return }; rootSeen = true
             }
             if skippedDepth > 0 { return }
             guard svgNamespace, elements.contains(elementName), depth == 1 || elementName != "svg" else { skippedDepth = depth; omitted += 1; return }

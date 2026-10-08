@@ -49,10 +49,11 @@ import OrangeLenCore
         let ready = expectation(description:"unsupported")
         reader.open(binary) { error in XCTAssertNil(error); ready.fulfill() }
         await fulfillment(of:[ready],timeout:10)
-        XCTAssertTrue(reader.text.string.contains("暂不支持此格式")); XCTAssertNil(reader.source)
+        XCTAssertTrue(reader.text.string.contains(L10n.text("暂不支持此格式：\(binary.pathExtension)\n\(ByteCountFormatter.string(fromByteCount: 4, countStyle: .file))\n可在“更多操作”中用默认应用打开或在 Finder 中显示。\n预览不会执行此文件或强制二进制解码。"))); XCTAssertNil(reader.source)
         reader.view.setFrameSize(NSSize(width:360,height:500)); reader.view.layoutSubtreeIfNeeded(); reader.viewDidLayout()
+        XCTAssertEqual(reader.view.bounds.width, 360, accuracy: 1)
         XCTAssertTrue(reader.headings.isHidden); XCTAssertFalse(reader.overflow.isHidden); XCTAssertFalse(reader.search.isHidden)
-        XCTAssertTrue(reader.overflow.itemTitles.contains("阅读/源码切换"))
+        XCTAssertTrue(reader.overflow.itemTitles.contains(L10n.text("阅读/源码切换")))
         reader.close()
     }
     func testNotebookDisplaysAllCellsAndOutputsWithoutSidebar() async throws {

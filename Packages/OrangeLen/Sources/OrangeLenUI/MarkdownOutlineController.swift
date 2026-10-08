@@ -12,9 +12,9 @@ final class MarkdownOutlineController: NSViewController, NSTableViewDataSource, 
     private var updating = false
     override func loadView() {
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.documentView = table
-        let column = NSTableColumn(identifier: .init("heading")); column.title = "文档大纲"; column.width = 210
+        let column = NSTableColumn(identifier: .init("heading")); column.title = L10n.text("文档大纲"); column.width = 210
         table.addTableColumn(column); table.dataSource = self; table.delegate = self; table.rowHeight = 28
-        table.setAccessibilityLabel("Markdown 文档大纲")
+        table.setAccessibilityLabel(L10n.text("Markdown 文档大纲"))
         view = scroll
     }
     func show(_ model: TextModel) {

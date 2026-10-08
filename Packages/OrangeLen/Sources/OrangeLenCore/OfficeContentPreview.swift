@@ -10,7 +10,7 @@ public enum OfficeContentPreview {
         var bytes = 0, nodes = 0
         init(_ limits: PreviewLimits) { self.limits = limits }
         func charge(_ count: Int) throws {
-            guard count >= 0, count <= limits.officeTextBytes - bytes else { throw PreviewError.limit("Office 正文/共享字符串字节预算") }
+            guard count >= 0, count <= limits.officeTextBytes - bytes else { throw PreviewError.limit(L10n.text("Office 正文/共享字符串字节预算")) }
             bytes += count
         }
     }
@@ -24,9 +24,9 @@ public enum OfficeContentPreview {
         let sheets = archive.entries.filter { $0.path.hasPrefix("xl/worksheets/sheet") && $0.path.hasSuffix(".xml") && !$0.directory }
         let slides = archive.entries.filter { $0.path.hasPrefix("ppt/slides/slide") && $0.path.hasSuffix(".xml") && !$0.directory }
         let entries = (sheets.isEmpty ? slides : sheets).sorted { $0.path.localizedStandardCompare($1.path) == .orderedAscending }
-        guard !entries.isEmpty else { throw PreviewError.malformed("没有可读取的工作表或幻灯片") }
-        guard entries.count <= 200 else { throw PreviewError.limit("Office 内容预览最多 200 个工作表/幻灯片") }
-        var result = "内容预览（按内部文件名排列，可能包含隐藏工作表/幻灯片）\n单元格为未格式化的已保存值：日期可能是序列数，公式缓存可能过期；不计算公式，不还原图表、图片、显示名、样式或自定义顺序。\n"
+        guard !entries.isEmpty else { throw PreviewError.malformed(L10n.text("没有可读取的工作表或幻灯片")) }
+        guard entries.count <= 200 else { throw PreviewError.limit(L10n.text("Office 内容预览最多 200 个工作表/幻灯片")) }
+        var result = L10n.text("内容预览（按内部文件名排列，可能包含隐藏工作表/幻灯片）\n单元格为未格式化的已保存值：日期可能是序列数，公式缓存可能过期；不计算公式，不还原图表、图片、显示名、样式或自定义顺序。\n")
         try output.charge(result.utf8.count)
         for entry in entries {
             try cancellation.check()
@@ -45,7 +45,7 @@ public enum OfficeContentPreview {
         parser.shouldProcessNamespaces = true; parser.shouldResolveExternalEntities = false; parser.delegate = delegate
         guard parser.parse(), delegate.failure == nil else {
             try token.check()
-            throw delegate.failure ?? PreviewError.malformed("Office XML 损坏或包含不支持的实体声明")
+            throw delegate.failure ?? PreviewError.malformed(L10n.text("Office XML 损坏或包含不支持的实体声明"))
         }
         return delegate
     }
@@ -62,17 +62,17 @@ public enum OfficeContentPreview {
         func appendPart(_ pieces: [String]) throws {
             let count = pieces.reduce(1) { $0 + $1.utf8.count }
             try budget.charge(count)
-            guard parts.count < budget.limits.structureNodes else { throw PreviewError.limit("Office 单元格/段落数") }
+            guard parts.count < budget.limits.structureNodes else { throw PreviewError.limit(L10n.text("Office 单元格/段落数")) }
             parts.append(pieces.joined())
         }
         func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes: [String: String]) {
             checked(parser) {
                 depth += 1; budget.nodes += 1
-                guard depth <= budget.limits.structureDepth, budget.nodes <= budget.limits.structureNodes else { throw PreviewError.limit("Office XML 深度/节点数") }
+                guard depth <= budget.limits.structureDepth, budget.nodes <= budget.limits.structureNodes else { throw PreviewError.limit(L10n.text("Office XML 深度/节点数")) }
                 if elementName == "si" || (kind == .slide && elementName == "p") { buffer = ""; scratchBytes = 0 }
                 if elementName == "c" {
                     cellType = attributes["t"] ?? ""; address = attributes["r"] ?? "?"; value = ""; formula = ""; scratchBytes = address.utf8.count
-                    guard scratchBytes <= budget.limits.officeTextBytes else { throw PreviewError.limit("Office 单元格地址") }
+                    guard scratchBytes <= budget.limits.officeTextBytes else { throw PreviewError.limit(L10n.text("Office 单元格地址")) }
                 }
                 if ["t", "v", "f"].contains(elementName) { capture = elementName }
             }
@@ -81,7 +81,7 @@ public enum OfficeContentPreview {
             guard let capture else { return }
             checked(parser) {
                 let count = string.utf8.count
-                guard count <= budget.limits.officeTextBytes - scratchBytes else { throw PreviewError.limit("Office 单个文本缓冲区") }
+                guard count <= budget.limits.officeTextBytes - scratchBytes else { throw PreviewError.limit(L10n.text("Office 单个文本缓冲区")) }
                 scratchBytes += count
                 switch kind {
                 case .shared, .slide: if capture == "t" { buffer += string }
@@ -96,18 +96,18 @@ public enum OfficeContentPreview {
                 if kind == .slide && elementName == "p" { if !buffer.isEmpty { try appendPart([buffer]) }; buffer = ""; scratchBytes = 0 }
                 if kind == .sheet && elementName == "c" {
                     if cellType == "s" {
-                        guard let index = Int(value), shared.indices.contains(index) else { throw PreviewError.malformed("Office 共享字符串索引无效") }
+                        guard let index = Int(value), shared.indices.contains(index) else { throw PreviewError.malformed(L10n.text("Office 共享字符串索引无效")) }
                         value = shared[index]
                     }
                     if cellType == "b" { value = value == "1" ? "TRUE" : "FALSE" }
                     var pieces = [address, "\t", value]
-                    if !formula.isEmpty { pieces += ["  [公式：", formula, "；仅已保存结果]"] }
+                    if !formula.isEmpty { pieces += [L10n.text("  [公式："), formula, L10n.text("；仅已保存结果]")] }
                     try appendPart(pieces); value = ""; formula = ""; scratchBytes = 0
                 }
                 depth -= 1
             }
         }
-        func reject(_ parser: XMLParser) { failure = PreviewError.malformed("Office XML 不支持实体声明"); parser.abortParsing() }
+        func reject(_ parser: XMLParser) { failure = PreviewError.malformed(L10n.text("Office XML 不支持实体声明")); parser.abortParsing() }
         func parser(_ parser: XMLParser, foundInternalEntityDeclarationWithName name: String, value: String?) { reject(parser) }
         func parser(_ parser: XMLParser, foundExternalEntityDeclarationWithName name: String, publicID: String?, systemID: String?) { reject(parser) }
         func parser(_ parser: XMLParser, resolveExternalEntityName name: String, systemID: String?) -> Data? { reject(parser); return nil }

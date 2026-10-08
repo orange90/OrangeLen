@@ -20,10 +20,10 @@ public struct NativeDocumentPayload: Codable, Sendable {
     public init(text: String, spans: [Span]) { self.text = text; self.spans = spans }
     public func validate() throws {
         let length = text.utf16.count
-        guard text.utf8.count <= 5 * 1024 * 1024, length <= 1_000_000, spans.count <= 20_000 else { throw PreviewError.limit("原生文档输出") }
+        guard text.utf8.count <= 5 * 1024 * 1024, length <= 1_000_000, spans.count <= 20_000 else { throw PreviewError.limit(L10n.text("原生文档输出")) }
         for span in spans {
             guard span.location >= 0, span.length >= 0, span.location <= length,
-                  span.length <= length - span.location, span.size.isFinite, (6...72).contains(span.size) else { throw PreviewError.malformed("原生文档格式范围") }
+                  span.length <= length - span.location, span.size.isFinite, (6...72).contains(span.size) else { throw PreviewError.malformed(L10n.text("原生文档格式范围")) }
         }
     }
 }

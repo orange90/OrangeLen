@@ -36,13 +36,13 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         let split = NSSplitView(frame: NSRect(x: 0, y: 0, width: 1000, height: 720)); split.isVertical = true; split.dividerStyle = .thin
         let left = NSStackView(); left.orientation = .vertical; left.alignment = .leading; left.spacing = 8
         left.edgeInsets = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        filter.placeholderString = "筛选归档完整路径"; filter.delegate = self
-        sort.addItems(withTitles: ["名称 A–Z", "名称 Z–A", "大小从大到小", "大小从小到大"]); sort.target = self; sort.action = #selector(sortChanged)
+        filter.placeholderString = L10n.text("筛选归档完整路径"); filter.delegate = self
+        sort.addItems(withTitles: [L10n.text("名称 A–Z"), L10n.text("名称 Z–A"), L10n.text("大小从大到小"), L10n.text("大小从小到大")]); sort.target = self; sort.action = #selector(sortChanged)
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.hasHorizontalScroller = true; scroll.documentView = outline
-        let name = NSTableColumn(identifier: .init("name")); name.title = "归档目录"; name.width = 235; name.minWidth = 140
-        let size = NSTableColumn(identifier: .init("size")); size.title = "展开大小"; size.width = 85; size.minWidth = 85; size.maxWidth = 85
+        let name = NSTableColumn(identifier: .init("name")); name.title = L10n.text("归档目录"); name.width = 235; name.minWidth = 140
+        let size = NSTableColumn(identifier: .init("size")); size.title = L10n.text("展开大小"); size.width = 85; size.minWidth = 85; size.maxWidth = 85
         outline.addTableColumn(name); outline.addTableColumn(size); outline.outlineTableColumn = name
-        outline.dataSource = self; outline.delegate = self; outline.rowHeight = 27; outline.setAccessibilityLabel("归档目录树")
+        outline.dataSource = self; outline.delegate = self; outline.rowHeight = 27; outline.setAccessibilityLabel(L10n.text("归档目录树"))
         outline.columnAutoresizingStyle = .firstColumnOnlyAutoresizingStyle; outline.autoresizingMask = [.width]
         outline.autoresizesOutlineColumn = false
         info.font = .systemFont(ofSize: 11); info.textColor = .secondaryLabelColor
@@ -64,8 +64,8 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         loadViewIfNeeded(); cancel(); reader.readingGeneration = SettingsStore.shared.readingGeneration; self.archive = archive; self.origin = origin; self.revision = revision
         roots = try Self.tree(archive.entries); filter.stringValue = state?.filter ?? ""; sort.selectItem(at: state?.sort ?? 0); sortChanged()
         let size = archive.entries.filter { !$0.directory }.reduce(0) { $0 + $1.size }
-        info.stringValue = "\(archive.entries.count) 项 · \(ByteCountFormatter.string(fromByteCount: Int64(size), countStyle: .file)) · 不解压到磁盘"
-        reader.showMessage("选择左侧文件，在此阅读归档内容。\n可筛选完整路径或按大小排序。")
+        info.stringValue = L10n.text("\(archive.entries.count) 项 · \(ByteCountFormatter.string(fromByteCount: Int64(size), countStyle: .file)) · 不解压到磁盘")
+        reader.showMessage(L10n.text("选择左侧文件，在此阅读归档内容。\n可筛选完整路径或按大小排序。"))
         outline.expandItem(nil, expandChildren: true)
         restoredPosition = state?.position
         if let path = state?.path, let row = (0..<outline.numberOfRows).first(where: { (outline.item(atRow: $0) as? Node)?.path == path }) {
@@ -76,16 +76,16 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         let root = Node(""); var paths: [String: Node] = ["": root]
         for entry in entries {
             guard let canonical = ArchiveDocument.canonicalPath(entry.path) else { throw PreviewError.unsafePath }
-            guard canonical.split(separator: "/").count <= 64 else { throw PreviewError.limit("归档目录深度") }
+            guard canonical.split(separator: "/").count <= 64 else { throw PreviewError.limit(L10n.text("归档目录深度")) }
             var prefix = "", parent = root
             for component in canonical.split(separator: "/") {
                 prefix = prefix.isEmpty ? String(component) : prefix + "/" + component
                 let node: Node
                 if let existing = paths[prefix] { node = existing }
-                else { guard paths.count < 20_000 else { throw PreviewError.limit("归档目录节点数") }; node = Node(prefix); parent.children.append(node); paths[prefix] = node }
+                else { guard paths.count < 20_000 else { throw PreviewError.limit(L10n.text("归档目录节点数")) }; node = Node(prefix); parent.children.append(node); paths[prefix] = node }
                 parent = node
             }
-            guard parent.entry == nil else { throw PreviewError.malformed("归档路径冲突") }
+            guard parent.entry == nil else { throw PreviewError.malformed(L10n.text("归档路径冲突")) }
             parent.entry = entry
         }
         func total(_ node: Node) -> Int {
@@ -120,11 +120,11 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         let node = item as! Node
         if tableColumn?.identifier.rawValue == "name", node.entry?.directory == false {
-            let button = ArchiveEntryButton(node.name + (node.entry?.blocked == nil ? "" : " · 受限")) { [weak self] in self?.activate(node) }
-            button.setAccessibilityLabel("预览归档成员 " + node.path); return button
+            let button = ArchiveEntryButton(node.name + (node.entry?.blocked == nil ? "" : L10n.text(" · 受限"))) { [weak self] in self?.activate(node) }
+            button.setAccessibilityLabel(L10n.text("预览归档成员 ") + node.path); return button
         }
         let cell = NSTableCellView()
-        let field = NSTextField(labelWithString: tableColumn?.identifier.rawValue == "size" ? ByteCountFormatter.string(fromByteCount: Int64(node.size), countStyle: .file) : node.name + (node.entry?.blocked == nil ? "" : " · 受限"))
+        let field = NSTextField(labelWithString: tableColumn?.identifier.rawValue == "size" ? ByteCountFormatter.string(fromByteCount: Int64(node.size), countStyle: .file) : node.name + (node.entry?.blocked == nil ? "" : L10n.text(" · 受限")))
         field.lineBreakMode = .byTruncatingMiddle; field.toolTip = node.path
         field.translatesAutoresizingMaskIntoConstraints = false; cell.addSubview(field); cell.textField = field
         NSLayoutConstraint.activate([field.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 3), field.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -3), field.centerYAnchor.constraint(equalTo: cell.centerYAnchor)])
@@ -132,7 +132,7 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
     }
     func outlineView(_ outlineView: NSOutlineView, rowViewForItem item: Any) -> NSTableRowView? {
         guard let node = item as? Node, node.entry?.directory == false else { return nil }
-        let row = ArchiveEntryRow(); row.setAccessibilityRole(.button); row.setAccessibilityLabel("预览归档成员 " + node.path)
+        let row = ArchiveEntryRow(); row.setAccessibilityRole(.button); row.setAccessibilityLabel(L10n.text("预览归档成员 ") + node.path)
         row.activate = { [weak self] in self?.activate(node) }; return row
     }
     func activate(_ node: Node) {
@@ -145,17 +145,17 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         guard let node = outline.item(atRow: outline.selectedRow) as? Node, let entry = node.entry, !entry.directory, let archive, let origin else { return }
         token?.cancel(); let token = Cancellation(); self.token = token; let id = UUID(); generation = id
         let position = restoredPosition; restoredPosition = nil
-        reader.cancelPending(); reader.showMessage("加载 \(entry.path)…")
+        reader.cancelPending(); reader.showMessage(L10n.text("加载 \(entry.path)…"))
         PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (DocumentSection, MarkdownAssets) in
                 let data = try archive.read(entry, cancellation: token), fake = URL(fileURLWithPath: entry.path)
                 if ImagePreview.supports(fake) {
                     var assets = MarkdownAssets(); assets.images[0] = try ImagePreview.decode(data, cancellation: token).image
-                    return (.init(id: entry.path, title: entry.path, text: "![归档图片](image.png)", markdown: true), assets)
+                    return (.init(id: entry.path, title: entry.path, text: L10n.text("![归档图片](image.png)"), markdown: true), assets)
                 }
-                guard ReadableFormat.isText(fake) else { return (.init(id: entry.path, title: entry.path, text: "此格式尚不支持正文预览 · \(entry.size) bytes"), .init()) }
+                guard ReadableFormat.isText(fake) else { return (.init(id: entry.path, title: entry.path, text: L10n.text("此格式尚不支持正文预览 · \(entry.size) bytes")), .init()) }
                 let source = try AccessBroker.decode(data).0, markdown = PreviewFormat.detect(fake) == .markdown
                 let assets = markdown ? try CollectionController.archiveAssets(MarkdownModel.parse(source, cancellation: token), archive: archive, base: entry.path, encrypted: [], token: token) : .init()
-                return (.init(id: entry.path, title: entry.path, text: source, markdown: markdown, warning: "归档成员 · 只读内存"), assets)
+                return (.init(id: entry.path, title: entry.path, text: source, markdown: markdown, warning: L10n.text("归档成员 · 只读内存")), assets)
         }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 switch result {

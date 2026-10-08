@@ -13,18 +13,18 @@ struct MarkdownAssets {
         for (index, image) in model.images.enumerated() {
             try cancellation.check()
             do {
-                guard index < 8, bytes < 20 * 1024 * 1024, pixels < 8_000_000 else { throw PreviewError.limit("文档图片预算") }
+                guard index < 8, bytes < 20 * 1024 * 1024, pixels < 8_000_000 else { throw PreviewError.limit(L10n.text("文档图片预算")) }
                 guard let url = MarkdownNavigation.localURL(image.destination, document: document, root: boundary) else {
-                    result.failures[image.range.location] = image.destination.hasPrefix("http") ? "加载远程图片" : "图片路径不可访问"; continue
+                    result.failures[image.range.location] = image.destination.hasPrefix("http") ? L10n.text("加载远程图片") : L10n.text("图片路径不可访问"); continue
                 }
-                guard ImagePreview.supports(url) else { result.failures[image.range.location] = "暂不支持此图片格式"; continue }
+                guard ImagePreview.supports(url) else { result.failures[image.range.location] = L10n.text("暂不支持此图片格式"); continue }
                 let loaded = try ImagePreview.load(url, root: boundary, cancellation: cancellation, maxBytes: min(5 * 1024 * 1024, 20 * 1024 * 1024 - bytes), maxPixelSize: 1200)
                 bytes += loaded.bytes
-                guard pixels + loaded.image.width * loaded.image.height <= 8_000_000 else { throw PreviewError.limit("文档图片像素预算") }
+                guard pixels + loaded.image.width * loaded.image.height <= 8_000_000 else { throw PreviewError.limit(L10n.text("文档图片像素预算")) }
                 pixels += loaded.image.width * loaded.image.height
                 result.images[image.range.location] = loaded.image
             } catch is CancellationError { throw CancellationError() }
-            catch { result.failures[image.range.location] = "本地图片不可读或超出预算" }
+            catch { result.failures[image.range.location] = L10n.text("本地图片不可读或超出预算") }
         }
         return result
     }

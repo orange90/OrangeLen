@@ -8,11 +8,11 @@ final class JSONController: NSViewController, NSOutlineViewDataSource, NSOutline
     var source = "" as NSString
     override func loadView() {
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.hasHorizontalScroller = true
-        let column = NSTableColumn(identifier: .init("json")); column.title = "JSON · 原始值（不转换浮点数）"; column.width = 700
+        let column = NSTableColumn(identifier: .init("json")); column.title = L10n.text("JSON · 原始值（不转换浮点数）"); column.width = 700
         outline.addTableColumn(column); outline.outlineTableColumn = column
         outline.dataSource = self; outline.delegate = self; outline.rowHeight = 25
-        let menu = NSMenu(); menu.addItem(withTitle: "复制路径", action: #selector(copyPath), keyEquivalent: "").target = self
-        menu.addItem(withTitle: "复制原始值", action: #selector(copyValue), keyEquivalent: "").target = self
+        let menu = NSMenu(); menu.addItem(withTitle: L10n.text("复制路径"), action: #selector(copyPath), keyEquivalent: "").target = self
+        menu.addItem(withTitle: L10n.text("复制原始值"), action: #selector(copyValue), keyEquivalent: "").target = self
         outline.menu = menu
         scroll.documentView = outline; view = scroll
     }
@@ -22,7 +22,7 @@ final class JSONController: NSViewController, NSOutlineViewDataSource, NSOutline
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool { !(item as! JSONNode).children.isEmpty }
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         let node = item as! JSONNode
-        let value = node.children.isEmpty ? String(source.substring(with: node.range).prefix(500)) : "\(node.kind) · \(node.children.count) 项"
+        let value = node.children.isEmpty ? String(source.substring(with: node.range).prefix(500)) : L10n.text("\(node.kind) · \(node.children.count) 项")
         return NSTextField(labelWithString: node.name + ": " + value)
     }
     func current() -> JSONNode? { outline.item(atRow: outline.clickedRow >= 0 ? outline.clickedRow : outline.selectedRow) as? JSONNode }
@@ -43,10 +43,10 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
         table.dataSource = self; table.delegate = self; table.rowHeight = 27; table.allowsColumnSelection = true
         table.columnAutoresizingStyle = .noColumnAutoresizing
         let menu = NSMenu()
-        menu.addItem(withTitle: "复制单元格", action: #selector(copyCell), keyEquivalent: "").target = self
-        menu.addItem(withTitle: "复制行（TSV）", action: #selector(copyRow), keyEquivalent: "").target = self
+        menu.addItem(withTitle: L10n.text("复制单元格"), action: #selector(copyCell), keyEquivalent: "").target = self
+        menu.addItem(withTitle: L10n.text("复制行（TSV）"), action: #selector(copyRow), keyEquivalent: "").target = self
         table.menu = menu; scroll.documentView = table
-        filter.placeholderString = "筛选已解析单元格"; filter.delegate = self
+        filter.placeholderString = L10n.text("筛选已解析单元格"); filter.delegate = self
         countLabel.font = .systemFont(ofSize: 11); countLabel.textColor = .secondaryLabelColor
         let controls = NSStackView(views: [filter, countLabel]); controls.spacing = 8
         let root = NSStackView(views: [controls, scroll]); root.orientation = .vertical; root.alignment = .leading; root.spacing = 8
@@ -80,7 +80,7 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
             }
         }
         table.reloadData()
-        countLabel.stringValue = "显示 \(min(loaded, rowOrder.count)) / \(rowOrder.count) 行" + (data.partial ? " · 部分文件" : "")
+        countLabel.stringValue = L10n.text("显示 \(min(loaded, rowOrder.count)) / \(rowOrder.count) 行") + (data.partial ? L10n.text(" · 部分文件") : "")
     }
     func controlTextDidChange(_ obj: Notification) { loaded = 500; rebuildOrder() }
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) { rebuildOrder() }

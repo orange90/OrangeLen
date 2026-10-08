@@ -16,7 +16,7 @@ public final class ScopedMediaFile: @unchecked Sendable {
             var info = stat()
             guard fstat(fd, &info) == 0, info.st_mode & S_IFMT == S_IFREG else { Darwin.close(fd); throw PreviewError.unsafePath }
             guard info.st_flags & UInt32(SF_DATALESS) == 0 else { Darwin.close(fd); throw PreviewError.unavailable }
-            guard info.st_size >= 0, info.st_size <= 64 * 1024 * 1024 * 1024 else { Darwin.close(fd); throw PreviewError.limit("媒体文件最多 64 GiB") }
+            guard info.st_size >= 0, info.st_size <= 64 * 1024 * 1024 * 1024 else { Darwin.close(fd); throw PreviewError.limit(L10n.text("媒体文件最多 64 GiB")) }
             self.fd = fd; self.initial = info; self.url = url; self.scoped = scope; self.length = info.st_size
         } catch { if scope { url.stopAccessingSecurityScopedResource() }; throw error }
     }
@@ -24,9 +24,9 @@ public final class ScopedMediaFile: @unchecked Sendable {
     public func read(offset: Int64, count: Int, cancellation: Cancellation) throws -> Data {
         lock.lock(); defer { lock.unlock() }
         try cancellation.check()
-        guard offset >= 0, offset <= length, count >= 0, count <= 64 * 1024 else { throw PreviewError.limit("媒体读取范围") }
+        guard offset >= 0, offset <= length, count >= 0, count <= 64 * 1024 else { throw PreviewError.limit(L10n.text("媒体读取范围")) }
         let size = min(Int64(count), length - offset)
-        guard bytesRead + size <= 4 * 1024 * 1024 * 1024 else { throw PreviewError.limit("本次媒体预览读取已达 4 GiB，请重载") }
+        guard bytesRead + size <= 4 * 1024 * 1024 * 1024 else { throw PreviewError.limit(L10n.text("本次媒体预览读取已达 4 GiB，请重载")) }
         func checkIdentity() throws {
             var current = stat(), path = stat()
             guard fstat(fd, &current) == 0, lstat(url.path, &path) == 0,

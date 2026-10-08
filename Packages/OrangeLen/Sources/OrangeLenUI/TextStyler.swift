@@ -23,7 +23,7 @@ enum TextStyler {
                 let box = NSTextBlock(); box.setContentWidth(100, type: .percentageValueType); box.backgroundColor = NSColor.quaternaryLabelColor.withAlphaComponent(0.08)
                 box.setWidth(12, type: .absoluteValueType, for: .padding); p.textBlocks = [box]
                 result.addAttributes([.font: NSFont.systemFont(ofSize: min(14, max(11, size * 0.75))), .paragraphStyle: p, .foregroundColor: NSColor.labelColor], range: span.range)
-                let title = (model.display as NSString).range(of: "文档信息", range: span.range)
+                let title = (model.display as NSString).range(of: L10n.text("文档信息"), range: span.range)
                 if title.location != NSNotFound { result.addAttribute(.font, value: NSFont.systemFont(ofSize: min(14, max(11, size * 0.75)), weight: .semibold), range: title) }
             }
             if span.style.contains(.callout) { result.addAttribute(.foregroundColor, value: NSColor.controlAccentColor, range: span.range) }
@@ -94,9 +94,9 @@ enum TextStyler {
                     let scale = min(1, available / CGFloat(loaded.width))
                     let rendered = NSImage(cgImage: loaded, size: NSSize(width: CGFloat(loaded.width) * scale, height: CGFloat(loaded.height) * scale))
                     attachment.attachmentCell = NSTextAttachmentCell(imageCell: rendered)
-                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel(image.alt.isEmpty ? "文档图片" : image.alt)
+                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel(image.alt.isEmpty ? L10n.text("文档图片") : image.alt)
                 } else {
-                    attachment.attachmentCell = placeholderCell(assets.failures[image.range.location] ?? "图片未加载", width: width)
+                    attachment.attachmentCell = placeholderCell(assets.failures[image.range.location] ?? L10n.text("图片未加载"), width: width)
                 }
                 result.addAttributes([.attachment: attachment, .toolTip: image.alt], range: image.range)
                 if assets.images[image.range.location] == nil, ["http", "https"].contains(URL(string: image.destination)?.scheme?.lowercased() ?? "") {
@@ -114,9 +114,9 @@ enum TextStyler {
                     let copy = image.copy() as! NSImage
                     copy.size = NSSize(width: image.size.width * scale, height: image.size.height * scale)
                     attachment.attachmentCell = NSTextAttachmentCell(imageCell: copy)
-                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel((item.kind == .mermaid ? "Mermaid 图表：" : "公式：") + String(item.content.prefix(512)))
+                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel((item.kind == .mermaid ? L10n.text("Mermaid 图表：") : L10n.text("公式：")) + String(item.content.prefix(512)))
                 } else {
-                    attachment.attachmentCell = placeholderCell(assets.richFailures[item.range.location] ?? "正在渲染\(item.kind == .mermaid ? "图表" : "公式")…", width: width)
+                    attachment.attachmentCell = placeholderCell(assets.richFailures[item.range.location] ?? L10n.text("正在渲染\(item.kind == .mermaid ? L10n.text("图表") : L10n.text("公式"))…"), width: width)
                 }
                 result.addAttributes([.attachment: attachment, .toolTip: item.content], range: item.range)
             }

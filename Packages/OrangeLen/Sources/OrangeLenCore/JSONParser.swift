@@ -45,11 +45,11 @@ public enum JSONDialect: Sendable {
 public enum JSONParser {
     /// Node ranges always refer to the untouched source, including nondecimal numbers and duplicate keys.
     public static func parse(_ source: String, dialect: JSONDialect = .strict, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> JSONTree {
-        guard source.utf8.count <= limits.fileBytes else { throw PreviewError.limit("JSON 输入字节预算") }
+        guard source.utf8.count <= limits.fileBytes else { throw PreviewError.limit(L10n.text("JSON 输入字节预算")) }
         let parser = Parser(source, dialect, limits, cancellation)
         let node = try parser.value(name: "$", path: JSONPath("$"), depth: 0)
         try parser.whitespace()
-        guard parser.i == parser.chars.count else { throw PreviewError.malformed("JSON 尾部存在多余内容") }
+        guard parser.i == parser.chars.count else { throw PreviewError.malformed(L10n.text("JSON 尾部存在多余内容")) }
         return JSONTree(root: node, duplicateKeys: parser.duplicates)
     }
     private final class Parser {
@@ -71,44 +71,44 @@ public enum JSONParser {
                 } else if chars[i + 1] == 42 {
                     i += 2
                     while i + 1 < chars.count && !(chars[i] == 42 && chars[i+1] == 47) { try check(); i += 1 }
-                    guard i + 1 < chars.count else { throw PreviewError.malformed("JSON 注释未闭合") }
+                    guard i + 1 < chars.count else { throw PreviewError.malformed(L10n.text("JSON 注释未闭合")) }
                     i += 2
                 } else { return }
             }
         }
         func consume(_ c: UInt16) throws -> Bool { try whitespace(); if i < chars.count && chars[i] == c { i += 1; return true }; return false }
         func hex(_ count: Int) throws -> UInt16 {
-            guard i + count <= chars.count else { throw PreviewError.malformed("JSON 转义字符不完整") }
+            guard i + count <= chars.count else { throw PreviewError.malformed(L10n.text("JSON 转义字符不完整")) }
             var result: UInt16 = 0
             for _ in 0..<count {
                 let c = chars[i]; i += 1; let digit: UInt16
-                switch c { case 48...57: digit = c - 48; case 65...70: digit = c - 55; case 97...102: digit = c - 87; default: throw PreviewError.malformed("JSON 十六进制转义无效") }
+                switch c { case 48...57: digit = c - 48; case 65...70: digit = c - 55; case 97...102: digit = c - 87; default: throw PreviewError.malformed(L10n.text("JSON 十六进制转义无效")) }
                 result = result * 16 + digit
             }
             return result
         }
         func string() throws -> String {
             try whitespace(); let start = i
-            guard i < chars.count, chars[i] == 34 || (dialect == .json5 && chars[i] == 39) else { throw PreviewError.malformed("JSON 字符串缺少引号") }
+            guard i < chars.count, chars[i] == 34 || (dialect == .json5 && chars[i] == 39) else { throw PreviewError.malformed(L10n.text("JSON 字符串缺少引号")) }
             let quote = chars[i]; i += 1; var decoded: [UInt16] = []
             while i < chars.count {
                 try check(); let c = chars[i]; i += 1
                 if c == quote {
                     if dialect == .json5 { return String(decoding: decoded, as: UTF16.self) }
                     let literal = source.substring(with: NSRange(location: start, length: i - start))
-                    guard let value = try? JSONDecoder().decode(String.self, from: Data(literal.utf8)) else { throw PreviewError.malformed("JSON 转义字符") }
+                    guard let value = try? JSONDecoder().decode(String.self, from: Data(literal.utf8)) else { throw PreviewError.malformed(L10n.text("JSON 转义字符")) }
                     return value
                 }
                 if dialect != .json5 {
-                    guard c >= 32 else { throw PreviewError.malformed("JSON 字符串含控制字符") }
+                    guard c >= 32 else { throw PreviewError.malformed(L10n.text("JSON 字符串含控制字符")) }
                     if c == 92 {
-                        guard i < chars.count, chars[i] >= 32 else { throw PreviewError.malformed("JSON 转义字符不完整") }; i += 1
+                        guard i < chars.count, chars[i] >= 32 else { throw PreviewError.malformed(L10n.text("JSON 转义字符不完整")) }; i += 1
                     }
                     continue
                 }
-                guard c != 10 && c != 13 else { throw PreviewError.malformed("JSON5 字符串含未转义换行") }
+                guard c != 10 && c != 13 else { throw PreviewError.malformed(L10n.text("JSON5 字符串含未转义换行")) }
                 if c != 92 { decoded.append(c); continue }
-                guard i < chars.count else { throw PreviewError.malformed("JSON5 转义字符不完整") }
+                guard i < chars.count else { throw PreviewError.malformed(L10n.text("JSON5 转义字符不完整")) }
                 let e = chars[i]; i += 1
                 switch e {
                 case 10,0x2028,0x2029: break
@@ -120,48 +120,48 @@ public enum JSONParser {
                 case 116: decoded.append(9)
                 case 118: decoded.append(11)
                 case 48:
-                    guard i == chars.count || !(48...57).contains(chars[i]) else { throw PreviewError.malformed("JSON5 不支持八进制转义") }; decoded.append(0)
-                case 49...57: throw PreviewError.malformed("JSON5 不支持数字转义")
+                    guard i == chars.count || !(48...57).contains(chars[i]) else { throw PreviewError.malformed(L10n.text("JSON5 不支持八进制转义")) }; decoded.append(0)
+                case 49...57: throw PreviewError.malformed(L10n.text("JSON5 不支持数字转义"))
                 case 120: decoded.append(try hex(2))
                 case 117: decoded.append(try hex(4))
                 default: decoded.append(e)
                 }
             }
-            throw PreviewError.malformed("JSON 字符串未闭合")
+            throw PreviewError.malformed(L10n.text("JSON 字符串未闭合"))
         }
         func key() throws -> String {
             try whitespace()
             if i < chars.count && (chars[i] == 34 || chars[i] == 39) { return try string() }
-            guard dialect == .json5 else { throw PreviewError.malformed("JSON 键必须使用双引号") }
+            guard dialect == .json5 else { throw PreviewError.malformed(L10n.text("JSON 键必须使用双引号")) }
             var units: [UInt16] = []
             while i < chars.count {
                 try check(); let c = chars[i]
                 if c == 92 {
-                    i += 1; guard i < chars.count && chars[i] == 117 else { throw PreviewError.malformed("JSON5 标识符转义无效") }; i += 1; units.append(try hex(4))
+                    i += 1; guard i < chars.count && chars[i] == 117 else { throw PreviewError.malformed(L10n.text("JSON5 标识符转义无效")) }; i += 1; units.append(try hex(4))
                 } else if isSpace(c) || [58,44,123,125,91,93,47].contains(c) { break }
                 else { units.append(c); i += 1 }
             }
             let name = String(decoding: units, as: UTF16.self)
-            guard name.range(of:#"\A[\p{L}\p{Nl}$_][\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}$\u200C\u200D]*\z"#,options:.regularExpression) != nil else { throw PreviewError.malformed("JSON5 标识符无效") }
+            guard name.range(of:#"\A[\p{L}\p{Nl}$_][\p{L}\p{Nl}\p{Mn}\p{Mc}\p{Nd}\p{Pc}$\u200C\u200D]*\z"#,options:.regularExpression) != nil else { throw PreviewError.malformed(L10n.text("JSON5 标识符无效")) }
             return name
         }
         func value(name: String, path: JSONPath, depth: Int) throws -> JSONNode {
             try cancellation.check(); nodes += 1
             let storage = name.utf8.count + path.segment.utf8.count + 256
-            guard path.byteCount <= limits.jsonPathBytes, storage <= limits.modelBytes - modelBytes else { throw PreviewError.limit("JSON 路径或模型字节预算") }
+            guard path.byteCount <= limits.jsonPathBytes, storage <= limits.modelBytes - modelBytes else { throw PreviewError.limit(L10n.text("JSON 路径或模型字节预算")) }
             modelBytes += storage
-            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { throw PreviewError.limit("JSON 最大深度 \(limits.structureDepth)、节点 \(limits.structureNodes)") }
+            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { throw PreviewError.limit(L10n.text("JSON 最大深度 \(limits.structureDepth)、节点 \(limits.structureNodes)")) }
             try whitespace(); let start = i; var children: [JSONNode] = []; var kind = "value"
             if try consume(123) {
                 kind = "object"; var keys: Set<String> = []
                 if try !consume(125) {
                     while true {
                         let key = try key(); if !keys.insert(key).inserted { duplicates = true }
-                        guard try consume(58) else { throw PreviewError.malformed("JSON 缺少冒号") }
+                        guard try consume(58) else { throw PreviewError.malformed(L10n.text("JSON 缺少冒号")) }
                         let keyJSON = String(data: try JSONEncoder().encode(key), encoding: .utf8)!
                         children.append(try value(name: key, path: JSONPath("[" + keyJSON + "]", parent: path), depth: depth + 1))
                         if try consume(125) { break }
-                        guard try consume(44) else { throw PreviewError.malformed("JSON 对象缺少逗号或未闭合") }
+                        guard try consume(44) else { throw PreviewError.malformed(L10n.text("JSON 对象缺少逗号或未闭合")) }
                         if dialect != .strict, try consume(125) { break }
                     }
                 }
@@ -171,7 +171,7 @@ public enum JSONParser {
                     while true {
                         children.append(try value(name: "[\(children.count)]", path: JSONPath("[\(children.count)]", parent: path), depth: depth + 1))
                         if try consume(93) { break }
-                        guard try consume(44) else { throw PreviewError.malformed("JSON 数组缺少逗号或未闭合") }
+                        guard try consume(44) else { throw PreviewError.malformed(L10n.text("JSON 数组缺少逗号或未闭合")) }
                         if dialect != .strict, try consume(93) { break }
                     }
                 }
@@ -183,7 +183,7 @@ public enum JSONParser {
                 }
                 let token = source.substring(with: NSRange(location: start, length: i - start))
                 let pattern = dialect == .json5 ? #"^[+-]?(?:Infinity|NaN|0[xX][0-9a-fA-F]+|(?:(?:0|[1-9][0-9]*)(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?)$"# : #"^-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?$"#
-                guard ["true", "false", "null"].contains(token) || token.range(of: pattern, options: .regularExpression) != nil else { throw PreviewError.malformed("JSON 值非法（UTF-16 偏移 \(start)）") }
+                guard ["true", "false", "null"].contains(token) || token.range(of: pattern, options: .regularExpression) != nil else { throw PreviewError.malformed(L10n.text("JSON 值非法（UTF-16 偏移 \(start)）")) }
             }
             return JSONNode(name: name, path: path, range: NSRange(location: start, length: i - start), children: children, kind: kind)
         }

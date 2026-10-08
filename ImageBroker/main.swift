@@ -7,7 +7,7 @@ final class ImageBroker: NSObject, ImageBrokerProtocol, @unchecked Sendable {
     private var started = false
     func fetchImage(_ destination: String, reply: @escaping (Data?, String?) -> Void) {
         lock.lock(); let alreadyStarted = started; started = true; lock.unlock()
-        guard !alreadyStarted else { reply(nil, "每个图片连接仅接受一次请求"); return }
+        guard !alreadyStarted else { reply(nil, L10n.text("每个图片连接仅接受一次请求")); return }
         Task {
             do { reply(try await loader.load(destination), nil) }
             catch { reply(nil, error.localizedDescription) }

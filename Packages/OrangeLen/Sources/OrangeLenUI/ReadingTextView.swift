@@ -12,7 +12,7 @@ public final class ReadingTextView: NSTextView {
     public override func copy(_ sender: Any?) {
         Logger(subsystem: "local.OrangeLen", category: "Input").notice("copy requested selectionLength=\(self.selectedRange().length)")
         let value = model.copiedSource(selectedRange())
-        guard !value.isEmpty else { copyFeedback?("请先选择要复制的内容"); return }
+        guard !value.isEmpty else { copyFeedback?(L10n.text("请先选择要复制的内容")); return }
         Clipboard.write(value, feedback: copyFeedback)
     }
     private var contextCode: NSRange?
@@ -25,7 +25,7 @@ public final class ReadingTextView: NSTextView {
             return NSLocationInRange(index, block.range)
         }?.range
         if contextCode != nil {
-            let item = NSMenuItem(title: "复制代码块原文", action: #selector(copyCodeBlock), keyEquivalent: ""); item.target = self
+            let item = NSMenuItem(title: L10n.text("复制代码块原文"), action: #selector(copyCodeBlock), keyEquivalent: ""); item.target = self
             menu.insertItem(item, at: 0)
         }
         return menu

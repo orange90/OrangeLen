@@ -67,7 +67,7 @@ import OrangeLenCore
         reader.settings.liveReload = true; reader.checkForFileChanges()
         try await settle { !reader.autoReload }
         XCTAssertEqual(reader.source?.text, "short replacement"); XCTAssertEqual(reader.source?.byteOffset, 0)
-        XCTAssertTrue(reader.status.stringValue.contains("已返回开头"))
+        XCTAssertTrue(reader.status.stringValue.contains(L10n.text("文件已变化，旧分页位置失效，已返回开头。")))
         XCTAssertTrue(reader.pageBar.isHidden)
     }
     func testCancelReachesContainerToken() throws {
@@ -139,7 +139,7 @@ import OrangeLenCore
         controller.open(db, selected: "sample")
         try await settle { controller.page?.rows.first?.first == "7" }
         controller.selector.selectItem(withTitle: "oversized"); controller.selectTable()
-        try await settle { controller.status.stringValue != "读取中…" }
+        try await settle { controller.status.stringValue != L10n.text("读取中…") }
         XCTAssertTrue(controller.status.stringValue.contains("SQLite"))
         XCTAssertEqual(controller.selector.titleOfSelectedItem, "oversized")
         XCTAssertNil(controller.page)

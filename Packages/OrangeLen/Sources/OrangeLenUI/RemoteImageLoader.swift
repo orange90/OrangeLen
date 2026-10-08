@@ -16,7 +16,7 @@ enum RemoteImagePolicy {
               parts.port == nil || parts.port == 443, let host = parts.host?.lowercased(),
               !host.isEmpty, !host.hasSuffix("."), !host.contains("%"),
               !["localhost", "local", "internal", "home", "lan", "test", "invalid"].contains(where: { host == $0 || host.hasSuffix("." + $0) }),
-              let url = parts.url else { throw PreviewError.malformed("远程图片仅允许公共 HTTPS 地址（443，无账号）") }
+              let url = parts.url else { throw PreviewError.malformed(L10n.text("远程图片仅允许公共 HTTPS 地址（443，无账号）")) }
         return url
     }
     static func isPublic(_ ip: String) -> Bool {
@@ -37,18 +37,18 @@ enum RemoteImagePolicy {
     static func resolve(_ host: String) throws -> String {
         var hints = addrinfo(); hints.ai_family = AF_UNSPEC; hints.ai_socktype = SOCK_STREAM; hints.ai_protocol = IPPROTO_TCP
         var result: UnsafeMutablePointer<addrinfo>?
-        guard getaddrinfo(host, "443", &hints, &result) == 0, let first = result else { throw PreviewError.malformed("图片域名解析失败") }
+        guard getaddrinfo(host, "443", &hints, &result) == 0, let first = result else { throw PreviewError.malformed(L10n.text("图片域名解析失败")) }
         defer { freeaddrinfo(first) }
         var cursor: UnsafeMutablePointer<addrinfo>? = first; var addresses: [String] = []
         while let item = cursor {
             var buffer = [CChar](repeating: 0, count: Int(NI_MAXHOST))
-            guard getnameinfo(item.pointee.ai_addr, item.pointee.ai_addrlen, &buffer, socklen_t(buffer.count), nil, 0, NI_NUMERICHOST) == 0 else { throw PreviewError.malformed("图片地址无效") }
+            guard getnameinfo(item.pointee.ai_addr, item.pointee.ai_addrlen, &buffer, socklen_t(buffer.count), nil, 0, NI_NUMERICHOST) == 0 else { throw PreviewError.malformed(L10n.text("图片地址无效")) }
             let ip = String(cString: buffer)
-            guard isPublic(ip) else { throw PreviewError.malformed("已阻止访问本机、局域网或保留地址") }
-            addresses.append(ip); guard addresses.count <= 32 else { throw PreviewError.limit("图片 DNS 地址过多") }
+            guard isPublic(ip) else { throw PreviewError.malformed(L10n.text("已阻止访问本机、局域网或保留地址")) }
+            addresses.append(ip); guard addresses.count <= 32 else { throw PreviewError.limit(L10n.text("图片 DNS 地址过多")) }
             cursor = item.pointee.ai_next
         }
-        guard let ip = addresses.first else { throw PreviewError.malformed("无可用图片地址") }
+        guard let ip = addresses.first else { throw PreviewError.malformed(L10n.text("无可用图片地址")) }
         return ip
     }
 }
@@ -57,48 +57,48 @@ struct ImageHTTPResponse {
     // nil means more bytes are needed. No body is decoded before header validation.
     static func body(_ data: Data, eof: Bool = false) throws -> Data? {
         guard let end = data.range(of: Data("\r\n\r\n".utf8)) else {
-            guard data.count <= 16384, !eof else { throw PreviewError.malformed("图片响应头无效或过大") }; return nil
+            guard data.count <= 16384, !eof else { throw PreviewError.malformed(L10n.text("图片响应头无效或过大")) }; return nil
         }
-        guard end.lowerBound <= 16384, let header = String(data: data[..<end.lowerBound], encoding: .utf8) else { throw PreviewError.malformed("图片响应头无效") }
+        guard end.lowerBound <= 16384, let header = String(data: data[..<end.lowerBound], encoding: .utf8) else { throw PreviewError.malformed(L10n.text("图片响应头无效")) }
         let lines = header.components(separatedBy: "\r\n")
         let status = lines[0].split(separator: " ")
-        guard status.count >= 2, ["HTTP/1.1", "HTTP/1.0"].contains(String(status[0])), status[1] == "200" else { throw PreviewError.malformed("图片服务器未返回 200；不跟随重定向") }
+        guard status.count >= 2, ["HTTP/1.1", "HTTP/1.0"].contains(String(status[0])), status[1] == "200" else { throw PreviewError.malformed(L10n.text("图片服务器未返回 200；不跟随重定向")) }
         var headers: [String: String] = [:]
         for line in lines.dropFirst() {
-            guard let colon = line.firstIndex(of: ":"), !line.hasPrefix(" "), !line.hasPrefix("\t") else { throw PreviewError.malformed("图片响应头无效") }
+            guard let colon = line.firstIndex(of: ":"), !line.hasPrefix(" "), !line.hasPrefix("\t") else { throw PreviewError.malformed(L10n.text("图片响应头无效")) }
             let key = line[..<colon].lowercased(), value = line[line.index(after: colon)...].trimmingCharacters(in: .whitespaces)
-            guard headers[key] == nil else { throw PreviewError.malformed("图片响应头重复") }; headers[key] = value
+            guard headers[key] == nil else { throw PreviewError.malformed(L10n.text("图片响应头重复")) }; headers[key] = value
         }
         let mime = headers["content-type"]?.split(separator: ";").first?.lowercased() ?? ""
         guard ["image/png", "image/jpeg", "image/gif", "image/webp", "image/tiff", "image/heic", "image/heif", "image/bmp", "image/x-icon", "image/vnd.microsoft.icon"].contains(mime),
-              headers["content-encoding"] == nil || headers["content-encoding"]?.lowercased() == "identity" else { throw PreviewError.malformed("仅接受栅格图片；拒绝 SVG、HTML 和压缩响应") }
+              headers["content-encoding"] == nil || headers["content-encoding"]?.lowercased() == "identity" else { throw PreviewError.malformed(L10n.text("仅接受栅格图片；拒绝 SVG、HTML 和压缩响应")) }
         let raw = Data(data[end.upperBound...])
         if let transfer = headers["transfer-encoding"] {
-            guard transfer.lowercased() == "chunked", headers["content-length"] == nil else { throw PreviewError.malformed("图片传输编码无效") }
+            guard transfer.lowercased() == "chunked", headers["content-length"] == nil else { throw PreviewError.malformed(L10n.text("图片传输编码无效")) }
             var offset = 0; var body = Data()
             while offset < raw.count {
-                guard let line = raw.range(of: Data("\r\n".utf8), in: offset..<raw.count) else { if eof { throw PreviewError.malformed("图片分块不完整") }; return nil }
+                guard let line = raw.range(of: Data("\r\n".utf8), in: offset..<raw.count) else { if eof { throw PreviewError.malformed(L10n.text("图片分块不完整")) }; return nil }
                 guard line.lowerBound - offset <= 128,
                       let sizeText = String(data: raw[offset..<line.lowerBound], encoding: .ascii)?.split(separator: ";").first,
-                      let size = Int(sizeText, radix: 16), size >= 0, size <= RemoteImagePolicy.byteLimit - body.count else { throw PreviewError.limit("远程图片最多 5 MiB") }
+                      let size = Int(sizeText, radix: 16), size >= 0, size <= RemoteImagePolicy.byteLimit - body.count else { throw PreviewError.limit(L10n.text("远程图片最多 5 MiB")) }
                 offset = line.upperBound
                 if size == 0 {
-                    guard raw.count >= offset + 2 else { if eof { throw PreviewError.malformed("图片分块不完整") }; return nil }
-                    guard raw[offset..<offset+2] == Data("\r\n".utf8) else { throw PreviewError.malformed("不接受图片响应尾部字段") }
+                    guard raw.count >= offset + 2 else { if eof { throw PreviewError.malformed(L10n.text("图片分块不完整")) }; return nil }
+                    guard raw[offset..<offset+2] == Data("\r\n".utf8) else { throw PreviewError.malformed(L10n.text("不接受图片响应尾部字段")) }
                     return body
                 }
-                guard raw.count >= offset + size + 2 else { if eof { throw PreviewError.malformed("图片分块不完整") }; return nil }
+                guard raw.count >= offset + size + 2 else { if eof { throw PreviewError.malformed(L10n.text("图片分块不完整")) }; return nil }
                 body.append(raw[offset..<offset+size]); offset += size
-                guard raw[offset..<offset+2] == Data("\r\n".utf8) else { throw PreviewError.malformed("图片分块格式无效") }; offset += 2
+                guard raw[offset..<offset+2] == Data("\r\n".utf8) else { throw PreviewError.malformed(L10n.text("图片分块格式无效")) }; offset += 2
             }
-            if eof { throw PreviewError.malformed("图片分块不完整") }; return nil
+            if eof { throw PreviewError.malformed(L10n.text("图片分块不完整")) }; return nil
         }
         if let length = headers["content-length"] {
-            guard let count = Int(length), count >= 0, count <= RemoteImagePolicy.byteLimit else { throw PreviewError.limit("远程图片最多 5 MiB") }
-            if raw.count < count { if eof { throw PreviewError.malformed("图片响应不完整") }; return nil }
+            guard let count = Int(length), count >= 0, count <= RemoteImagePolicy.byteLimit else { throw PreviewError.limit(L10n.text("远程图片最多 5 MiB")) }
+            if raw.count < count { if eof { throw PreviewError.malformed(L10n.text("图片响应不完整")) }; return nil }
             return Data(raw.prefix(count))
         }
-        guard raw.count <= RemoteImagePolicy.byteLimit else { throw PreviewError.limit("远程图片最多 5 MiB") }
+        guard raw.count <= RemoteImagePolicy.byteLimit else { throw PreviewError.limit(L10n.text("远程图片最多 5 MiB")) }
         return eof ? raw : nil
     }
 }
@@ -121,7 +121,7 @@ final class RemoteImageLoader: @unchecked Sendable {
                     self.handler = { continuation.resume(with: $0) }
                     self.queue.asyncAfter(deadline: .now() + 15) { [weak self] in
                         guard let self, self.handler != nil else { return }; self.stopped = true
-                        self.finish(.failure(PreviewError.limit("远程图片加载超时")))
+                        self.finish(.failure(PreviewError.limit(L10n.text("远程图片加载超时"))))
                     }
                     do {
                         let url = try RemoteImagePolicy.url(value)
@@ -176,7 +176,7 @@ final class RemoteImageLoader: @unchecked Sendable {
             if let error { self.finish(.failure(error)); return }
             if let data { self.received.append(data) }
             do {
-                guard self.received.count <= RemoteImagePolicy.byteLimit + 65536 else { throw PreviewError.limit("远程图片传输预算") }
+                guard self.received.count <= RemoteImagePolicy.byteLimit + 65536 else { throw PreviewError.limit(L10n.text("远程图片传输预算")) }
                 if let body = try ImageHTTPResponse.body(self.received, eof: complete) { self.finish(.success(body)) }
                 else { self.receive() }
             } catch { self.finish(.failure(error)) }

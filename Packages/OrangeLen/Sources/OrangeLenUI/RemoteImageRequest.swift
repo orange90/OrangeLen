@@ -27,20 +27,20 @@ import OrangeLenCore
                 let connection = NSXPCConnection(serviceName: "local.OrangeLen.ImageBroker")
                 self.connection = connection
                 connection.remoteObjectInterface = NSXPCInterface(with: ImageBrokerProtocol.self)
-                connection.invalidationHandler = { [weak self] in Task { @MainActor in self?.finish(.failure(PreviewError.malformed("图片下载服务连接已关闭"))) } }
-                connection.interruptionHandler = { [weak self] in Task { @MainActor in self?.finish(.failure(PreviewError.malformed("图片下载服务中断"))) } }
+                connection.invalidationHandler = { [weak self] in Task { @MainActor in self?.finish(.failure(PreviewError.malformed(L10n.text("图片下载服务连接已关闭")))) } }
+                connection.interruptionHandler = { [weak self] in Task { @MainActor in self?.finish(.failure(PreviewError.malformed(L10n.text("图片下载服务中断")))) } }
                 connection.resume()
                 deadline = Task { [weak self] in
                     try? await Task.sleep(nanoseconds: 20_000_000_000)
-                    guard !Task.isCancelled else { return }; self?.finish(.failure(PreviewError.limit("图片下载服务超时")))
+                    guard !Task.isCancelled else { return }; self?.finish(.failure(PreviewError.limit(L10n.text("图片下载服务超时"))))
                 }
                 guard let proxy = connection.remoteObjectProxyWithErrorHandler({ [weak self] error in
                     Task { @MainActor in self?.finish(.failure(error)) }
-                }) as? ImageBrokerProtocol else { finish(.failure(PreviewError.malformed("图片下载服务不可用"))); return }
+                }) as? ImageBrokerProtocol else { finish(.failure(PreviewError.malformed(L10n.text("图片下载服务不可用")))); return }
                 proxy.fetchImage(destination) { [weak self] data, message in
                     Task { @MainActor in
                         if let data, data.count <= RemoteImagePolicy.byteLimit { self?.finish(.success(data)) }
-                        else { self?.finish(.failure(PreviewError.malformed(message ?? "图片数据无效"))) }
+                        else { self?.finish(.failure(PreviewError.malformed(message ?? L10n.text("图片数据无效")))) }
                     }
                 }
             }

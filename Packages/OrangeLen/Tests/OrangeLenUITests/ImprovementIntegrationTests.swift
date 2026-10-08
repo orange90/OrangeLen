@@ -51,10 +51,10 @@ import OrangeLenCore
         let point = text.convert(NSPoint(x: rect.minX + 2 + text.textContainerOrigin.x, y: rect.midY + text.textContainerOrigin.y), to: nil)
         let event = try XCTUnwrap(NSEvent.mouseEvent(with: .rightMouseDown, location: point, modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 1, clickCount: 1, pressure: 1))
         let menu = try XCTUnwrap(text.menu(for: event))
-        let item = try XCTUnwrap(menu.items.first { $0.title == "复制代码块原文" })
+        let item = try XCTUnwrap(menu.items.first { $0.title == L10n.text("复制代码块原文") })
         var feedback: String?; text.copyFeedback = { feedback = $0 }
         XCTAssertTrue(NSApplication.shared.sendAction(try XCTUnwrap(item.action), to: item.target, from: item))
-        XCTAssertEqual(feedback, "已复制")
+        XCTAssertEqual(feedback, L10n.text("已复制"))
         XCTAssertEqual(NSPasteboard.general.string(forType: .string), "\nlet orange = \"中文🍊\"\n\n")
     }
     func fixture(_ name: String) -> URL {

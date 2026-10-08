@@ -41,13 +41,13 @@ public enum CSVParser {
                 start = index + 1
                 if rows.count >= limits.tableRows { return .init(rows: rows, partial: index + 1 < chars.count) }
             } else {
-                if closed || c == 34 { throw PreviewError.malformed("CSV 第 \(rows.count + 1) 行引号不合法") }
+                if closed || c == 34 { throw PreviewError.malformed(L10n.text("CSV 第 \(rows.count + 1) 行引号不合法")) }
                 value.append(c)
             }
-            guard row.count < limits.tableColumns else { throw PreviewError.limit("表格最大 256 列") }
+            guard row.count < limits.tableColumns else { throw PreviewError.limit(L10n.text("表格最大 256 列")) }
             index += 1
         }
-        guard !quoted else { throw PreviewError.malformed("CSV 引号未闭合") }
+        guard !quoted else { throw PreviewError.malformed(L10n.text("CSV 引号未闭合")) }
         if start < chars.count || !row.isEmpty { cell(); rows.append(row) }
         return .init(rows: rows, partial: false)
     }

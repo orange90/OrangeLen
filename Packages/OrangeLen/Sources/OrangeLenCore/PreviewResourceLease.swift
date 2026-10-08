@@ -8,7 +8,7 @@ final class PreviewResourceLease {
     init(lane: String, sharedDirectory: URL? = nil) throws {
         var info = mach_task_basic_info(), count = mach_msg_type_number_t(MemoryLayout<mach_task_basic_info>.size / MemoryLayout<natural_t>.size)
         let result = withUnsafeMutablePointer(to: &info) { pointer in pointer.withMemoryRebound(to: integer_t.self, capacity: Int(count)) { task_info(mach_task_self_, task_flavor_t(MACH_TASK_BASIC_INFO), $0, &count) } }
-        guard result != KERN_SUCCESS || info.resident_size < 512 * 1024 * 1024 else { throw PreviewError.limit("预览内存水位已达 512 MiB，请关闭其他预览后重载") }
+        guard result != KERN_SUCCESS || info.resident_size < 512 * 1024 * 1024 else { throw PreviewError.limit(L10n.text("预览内存水位已达 512 MiB，请关闭其他预览后重载")) }
         let directory: URL
         if let sharedDirectory { directory = sharedDirectory }
         else {
@@ -28,7 +28,7 @@ final class PreviewResourceLease {
             Darwin.close(descriptor)
         }
         if !usable { fd = -1; return }
-        throw PreviewError.limit("其他窗口正在处理预览，请稍后重载")
+        throw PreviewError.limit(L10n.text("其他窗口正在处理预览，请稍后重载"))
     }
     deinit { if fd >= 0 { flock(fd, LOCK_UN); Darwin.close(fd) } }
 }

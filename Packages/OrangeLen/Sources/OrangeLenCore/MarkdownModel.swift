@@ -66,7 +66,7 @@ public enum MarkdownModel {
             var pieces: [(String, NSRange)] = []; var i = 0
             while i < rawNS.length {
                 try cancellation.check()
-                guard pieces.count + model.mapping.count < limits.structureNodes else { throw PreviewError.limit("Markdown 映射片段数") }
+                guard pieces.count + model.mapping.count < limits.structureNodes else { throw PreviewError.limit(L10n.text("Markdown 映射片段数")) }
                 if rawNS.character(at: i) == 92 && i + 1 < rawNS.length {
                     let next = rawNS.substring(with: NSRange(location: i + 1, length: 1))
                     if next.rangeOfCharacter(from: .punctuationCharacters) != nil || next.rangeOfCharacter(from: .symbols) != nil {
@@ -93,12 +93,12 @@ public enum MarkdownModel {
             }
             if pieces.map({ $0.0 }).joined() == value {
                 for piece in pieces { append(piece.0, source: piece.1, style: style) }
-            } else { append(value, source: range, style: style); model.warnings.append("部分规范化文本按完整解析节点映射；源码视图可精确选择。") }
+            } else { append(value, source: range, style: style); model.warnings.append(L10n.text("部分规范化文本按完整解析节点映射；源码视图可精确选择。")) }
         }
         func newline() { if !model.display.isEmpty && !model.display.hasSuffix("\n") { append("\n", source: nil) } }
         func visit(_ node: any Markup, style inherited: TextStyle, depth: Int) throws {
             try cancellation.check(); nodes += 1
-            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { throw PreviewError.limit("Markdown 结构深度/节点数") }
+            guard depth <= limits.structureDepth, nodes <= limits.structureNodes else { throw PreviewError.limit(L10n.text("Markdown 结构深度/节点数")) }
             let range = sourceRange(node)
             var style = inherited
             if node is Strong { style.insert(.strong) }
@@ -112,23 +112,23 @@ public enum MarkdownModel {
             if let code = node as? InlineCode { append(code.code, source: range, style: style.union(.code)); return }
             if let image = node as? Image {
                 let start = model.display.utf16.count
-                let alt = image.plainText.isEmpty ? "图片" : image.plainText
+                let alt = image.plainText.isEmpty ? L10n.text("图片") : image.plainText
                 append("\u{FFFC}", source: range)
                 model.images.append(.init(range: NSRange(location: start, length: 1), destination: image.source ?? "", alt: alt))
                 // Keep alt text searchable and source-copyable without changing attachment offsets.
                 append(" " + alt, source: range, style: .quote)
-                if (image.source ?? "").hasPrefix("http") { model.warnings.append("远程图片不自动加载") }
+                if (image.source ?? "").hasPrefix("http") { model.warnings.append(L10n.text("远程图片不自动加载")) }
                 return
             }
             if let table = node as? Table {
                 newline(); tableID += 1; let id = tableID
                 let columns = table.maxColumnCount
-                guard columns <= 32 else { throw PreviewError.limit("Markdown 表格最多 32 列") }
+                guard columns <= 32 else { throw PreviewError.limit(L10n.text("Markdown 表格最多 32 列")) }
                 let rows: [any Markup] = [table.head] + table.body.children.map { $0 }
                 for (rowIndex, row) in rows.enumerated() {
                     for (columnIndex, cell) in row.children.enumerated() {
                         try cancellation.check(); nodes += 1
-                        guard nodes <= limits.structureNodes else { throw PreviewError.limit("Markdown 表格节点数") }
+                        guard nodes <= limits.structureNodes else { throw PreviewError.limit(L10n.text("Markdown 表格节点数")) }
                         let start = model.display.utf16.count
                         for child in cell.children { try visit(child, style: rowIndex == 0 ? style.union(.strong) : style, depth: depth + 2) }
                         if model.display.utf16.count == start { append("\u{200B}", source: nil) }

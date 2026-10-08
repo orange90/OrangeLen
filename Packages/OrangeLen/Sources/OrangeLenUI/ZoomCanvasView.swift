@@ -1,16 +1,17 @@
+import OrangeLenCore
 import AppKit
 
 /// Native zoom/pan surface shared by drawings, SVG and enlarged Markdown attachments.
 final class ZoomCanvasView: NSImageView {
     var zoom: CGFloat = 1, pan = NSPoint.zero
     var onDismiss: (() -> Void)? { didSet { back.isHidden = onDismiss == nil } }
-    private let label = NSTextField(labelWithString: "适合窗口"), back = NSButton(title: "返回正文", target: nil, action: nil)
+    private let label = NSTextField(labelWithString: L10n.text("适合窗口")), back = NSButton(title: L10n.text("返回正文"), target: nil, action: nil)
     private var lastPoint: NSPoint?
     override var image: NSImage? { didSet { fit(); needsDisplay = true } }
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         let controls = NSStackView(); controls.spacing = 6
-        for (title, action) in [("−", #selector(smaller)), ("+", #selector(larger)), ("适合窗口", #selector(fit)), ("100%", #selector(actual))] {
+        for (title, action) in [("−", #selector(smaller)), ("+", #selector(larger)), (L10n.text("适合窗口"), #selector(fit)), ("100%", #selector(actual))] {
             let button = NSButton(title: title, target: self, action: action); button.bezelStyle = .rounded
             controls.addArrangedSubview(button)
         }
@@ -19,7 +20,7 @@ final class ZoomCanvasView: NSImageView {
         label.font = .systemFont(ofSize: 11); label.textColor = .secondaryLabelColor
         controls.translatesAutoresizingMaskIntoConstraints = false; addSubview(controls)
         NSLayoutConstraint.activate([controls.topAnchor.constraint(equalTo: topAnchor, constant: 10), controls.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12)])
-        setAccessibilityLabel("可缩放画布；拖动平移，捏合缩放")
+        setAccessibilityLabel(L10n.text("可缩放画布；拖动平移，捏合缩放"))
         setAccessibilityRole(.group)
         setAccessibilityChildren(controls.arrangedSubviews)
     }
@@ -35,7 +36,7 @@ final class ZoomCanvasView: NSImageView {
     @objc func larger() { setZoom(zoom * 1.25) }
     @objc func dismiss() { onDismiss?() }
     func setZoom(_ value: CGFloat) { zoom = min(32, max(0.05, value)); updateLabel() }
-    private func updateLabel() { label.stringValue = "\(Int((fitScale * zoom * 100).rounded()))% · 拖动平移"; needsDisplay = true }
+    private func updateLabel() { label.stringValue = L10n.text("\(Int((fitScale * zoom * 100).rounded()))% · 拖动平移"); needsDisplay = true }
     override func layout() {
         super.layout(); label.isHidden = bounds.width < 520
         if let controls = subviews.first as? NSStackView {

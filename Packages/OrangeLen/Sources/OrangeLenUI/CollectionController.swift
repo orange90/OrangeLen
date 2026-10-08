@@ -12,7 +12,7 @@ private final class ContainerEntryButton: NSButton {
 final class CollectionController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     let list = NSTableView()
     let reader = ReaderController()
-    let message = NSTextField(wrappingLabelWithString:"正在读取容器…")
+    let message = NSTextField(wrappingLabelWithString:L10n.text("正在读取容器…"))
     struct Descriptor { let id: String; let title: String }
     var titles: [String] = []
     var entryIDs: [String] = []
@@ -28,9 +28,9 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
         let split = NSSplitView(); split.isVertical = true; split.dividerStyle = .thin
         let left = NSStackView(); left.orientation = .vertical; left.alignment = .leading
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.documentView = list
-        let column = NSTableColumn(identifier:.init("entry")); column.title = "章节 / 条目 / 表 / Cell"; column.width = 230
+        let column = NSTableColumn(identifier:.init("entry")); column.title = L10n.text("章节 / 条目 / 表 / Cell"); column.width = 230
         list.addTableColumn(column); list.dataSource = self; list.delegate = self; list.rowHeight = 28
-        list.setAccessibilityLabel("容器条目列表")
+        list.setAccessibilityLabel(L10n.text("容器条目列表"))
         message.font = .systemFont(ofSize:11)
         left.addArrangedSubview(message); left.addArrangedSubview(scroll)
         message.widthAnchor.constraint(equalTo:left.widthAnchor).isActive = true; scroll.widthAnchor.constraint(equalTo:left.widthAnchor).isActive = true
@@ -44,11 +44,11 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
     }
     func open(_ url: URL, root: URL?, restoring state: ReadingState? = nil, completion: @escaping (Error?) -> Void) {
         loadViewIfNeeded(); cancel(); self.url = url; reader.readingGeneration = SettingsStore.shared.readingGeneration
-        reader.showMessage("正在读取 \(url.lastPathComponent)…"); list.reloadData()
+        reader.showMessage(L10n.text("正在读取 \(url.lastPathComponent)…")); list.reloadData()
         let continuousNotebook = url.pathExtension.lowercased() == "ipynb" || (GzipDocument.isPlainStream(url) && !["jsonl","ndjson"].contains(url.deletingPathExtension().pathExtension.lowercased()))
         (view as? NSSplitView)?.arrangedSubviews.first?.isHidden = continuousNotebook
         let current = id; let cancellation = Cancellation(); token = cancellation
-        message.stringValue = "本地、只读；按条目加载，不执行内容"
+        message.stringValue = L10n.text("本地、只读；按条目加载，不执行内容")
         PreviewWorkQueue.parsing.submit(cancellation: cancellation, work: { () -> (String, [Descriptor], (Int,Cancellation) throws -> (DocumentSection,MarkdownAssets)) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
@@ -63,7 +63,7 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                         sections = try EnhancedDocuments.jsonLines(stream.text,cancellation:cancellation).map {
                             DocumentSection(id:$0.id+".json",title:$0.title,text:$0.text,warning:$0.warning)
                         }
-                        sections.append(.init(id:"__source__.txt",title:"完整解压源文",text:stream.text))
+                        sections.append(.init(id:"__source__.txt",title:L10n.text("完整解压源文"),text:stream.text))
                     } else {
                         sections = [.init(id:stream.name,title:stream.name,text:stream.text,markdown:PreviewFormat.detect(inner) == .markdown)]
                     }
@@ -83,25 +83,25 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                 }
                 if ["zip","tar","tgz","gz"].contains(ext) {
                     let archive = try ArchiveDocument.parse(snapshot.data,name:url.lastPathComponent,cancellation:cancellation)
-                    return (snapshot.revision,archive.entries.map { Descriptor(id:$0.path,title:$0.path + ($0.blocked == nil ? "" : " · 受限")) },{ index, token in
+                    return (snapshot.revision,archive.entries.map { Descriptor(id:$0.path,title:$0.path + ($0.blocked == nil ? "" : L10n.text(" · 受限"))) },{ index, token in
                         let entry = archive.entries[index]
                         if entry.directory || entry.blocked != nil {
-                            return (.init(id:entry.path,title:entry.path,text:entry.blocked ?? "目录条目；在列表中选择子文件",warning:"不解压到磁盘"),.init())
+                            return (.init(id:entry.path,title:entry.path,text:entry.blocked ?? L10n.text("目录条目；在列表中选择子文件"),warning:L10n.text("不解压到磁盘")),.init())
                         }
                         let data = try archive.read(entry,cancellation:token)
                         let fake = URL(fileURLWithPath:entry.path)
                         if ImagePreview.supports(fake) {
                             let image = try ImagePreview.decode(data,cancellation:token)
                             var assets = MarkdownAssets(); assets.images[0] = image.image
-                            return (.init(id:entry.path,title:entry.path,text:"![归档图片](image.png)",markdown:true),assets)
+                            return (.init(id:entry.path,title:entry.path,text:L10n.text("![归档图片](image.png)"),markdown:true),assets)
                         }
                         guard ReadableFormat.isText(fake) else {
-                            return (.init(id:entry.path,title:entry.path,text:"此条目类型尚不支持。\n\(entry.size) bytes\n不会尝试执行或强制文本解码。"),.init())
+                            return (.init(id:entry.path,title:entry.path,text:L10n.text("此条目类型尚不支持。\n\(entry.size) bytes\n不会尝试执行或强制文本解码。")),.init())
                         }
                         let source = try AccessBroker.decode(data).0
                         let markdown = PreviewFormat.detect(fake) == .markdown
                         let assets = markdown ? try Self.archiveAssets(MarkdownModel.parse(source,cancellation:token),archive:archive,base:entry.path,encrypted:[],token:token) : MarkdownAssets()
-                        return (.init(id:entry.path,title:entry.path,text:source,markdown:markdown,warning:"单条目有界预览，不解压到磁盘"),assets)
+                        return (.init(id:entry.path,title:entry.path,text:source,markdown:markdown,warning:L10n.text("单条目有界预览，不解压到磁盘")),assets)
                     })
                 }
                 if ["sqlite","sqlite3","db"].contains(ext) {
@@ -109,10 +109,10 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                     return (snapshot.revision,database.tableNames.map { Descriptor(id:$0,title:$0) },{ index, token in
                         let name = database.tableNames[index], rows = try database.rows(name,cancellation:token)
                         let source = rows.map { $0.map { "\"" + $0.replacingOccurrences(of:"\"",with:"\"\"") + "\"" }.joined(separator:",") }.joined(separator:"\n")
-                        return (.init(id:name,title:name,text:source,warning:"只读内存快照 · 最多 500 行 · BLOB 仅字节数 · 不提供 SQL 执行"),.init())
+                        return (.init(id:name,title:name,text:source,warning:L10n.text("只读内存快照 · 最多 500 行 · BLOB 仅字节数 · 不提供 SQL 执行")),.init())
                     })
                 }
-                guard snapshot.data.count <= PreviewLimits().fileBytes else { throw PreviewError.limit("文档最大 5 MiB") }
+                guard snapshot.data.count <= PreviewLimits().fileBytes else { throw PreviewError.limit(L10n.text("文档最大 5 MiB")) }
                 let source = try AccessBroker.decode(snapshot.data).0
                 var sections: [DocumentSection]
                 if ext == "har" { sections = try EnhancedDocuments.har(source,cancellation:cancellation) }
@@ -125,7 +125,7 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                     })
                 }
                 else { sections = try EnhancedDocuments.diff(source,cancellation:cancellation) }
-                sections.append(.init(id:"__source__",title:"完整原始源文",text:source,warning:"容器/记录解析不改变此原始源文"))
+                sections.append(.init(id:"__source__",title:L10n.text("完整原始源文"),text:source,warning:L10n.text("容器/记录解析不改变此原始源文")))
                 let immutable = sections
                 return (snapshot.revision,immutable.map { Descriptor(id:$0.id,title:$0.title) },{ index, token in
                     var assets = MarkdownAssets()
@@ -137,7 +137,7 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                 switch result {
                 case .success(let loaded):
                     self.revision = loaded.0; self.titles = loaded.1.map(\.title); self.entryIDs = loaded.1.map(\.id); self.select = loaded.2; self.list.reloadData()
-                    self.message.stringValue = "\(loaded.1.count) 个条目 · 仅选择项加载"
+                    self.message.stringValue = L10n.text("\(loaded.1.count) 个条目 · 仅选择项加载")
                     if continuousNotebook {
                         do {
                             let content = try loaded.2(0,cancellation)
@@ -148,11 +148,11 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                         self.restoredPosition = state?.section == self.entryIDs[selected] ? state?.position : nil
                         self.list.selectRowIndexes(IndexSet(integer:selected),byExtendingSelection:false)
                     }
-                    else { self.message.stringValue = "没有可预览条目"; self.reader.showMessage(url.lastPathComponent + " · 没有可预览条目") }
+                    else { self.message.stringValue = L10n.text("没有可预览条目"); self.reader.showMessage(url.lastPathComponent + L10n.text(" · 没有可预览条目")) }
                     completion(nil)
                 case .failure(let error):
                     self.message.stringValue = error.localizedDescription
-                    self.reader.showMessage(url.lastPathComponent + " · " + error.localizedDescription + "\n可使用上方重载重试，或选择其他文件。")
+                    self.reader.showMessage(url.lastPathComponent + " · " + error.localizedDescription + L10n.text("\n可使用上方重载重试，或选择其他文件。"))
                     completion(error)
                 }
         })
@@ -173,8 +173,8 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                 if let image = section.image {
                     let path = "orangelen-notebook-" + section.id + ".png"
                     images[path] = image
-                    let detail = String(section.text.dropFirst("![已有 PNG 输出](output.png)\n\n".count))
-                    chunks.append("![已有输出](" + path + ")\n\n" + fenced(detail))
+                    let detail = String(section.text.dropFirst(L10n.text("![已有 PNG 输出](output.png)\n\n").count))
+                    chunks.append(L10n.text("![已有输出](") + path + ")\n\n" + fenced(detail))
                 } else { chunks.append(fenced(section.text)) }
             } else if section.markdown { chunks.append(section.text) }
             else { chunks.append("---\n\n" + fenced(section.text)) }
@@ -186,13 +186,13 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
             try token.check()
             guard let data = images[image.destination] else { continue }
             do {
-                guard pixels < 8_000_000 else { throw PreviewError.limit("Notebook 总图片像素") }
+                guard pixels < 8_000_000 else { throw PreviewError.limit(L10n.text("Notebook 总图片像素")) }
                 let decoded = try ImagePreview.decode(data,cancellation:token,maxPixelSize:1200,maxSourcePixels:25_000_000)
                 let count = decoded.image.width * decoded.image.height
-                guard pixels + count <= 8_000_000 else { throw PreviewError.limit("Notebook 总图片像素") }
+                guard pixels + count <= 8_000_000 else { throw PreviewError.limit(L10n.text("Notebook 总图片像素")) }
                 pixels += count; assets.images[image.range.location] = decoded.image
             } catch is CancellationError { throw CancellationError() }
-            catch { assets.failures[image.range.location] = "输出图片不可显示或超过预览预算" }
+            catch { assets.failures[image.range.location] = L10n.text("输出图片不可显示或超过预览预算") }
         }
         return (.init(id:"notebook-continuous",title:title,text:body,markdown:true),assets)
     }
@@ -200,15 +200,15 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
         var assets = MarkdownAssets(); var bytes = 0; var pixels = 0
         for (index,image) in model.images.enumerated() {
             try token.check()
-            guard index < 8, let path = EPUBDocument.resolve(image.destination,base:base), !encrypted.contains(path), let entry = archive.entry(path), bytes <= 15*1024*1024 else { assets.failures[image.range.location] = "容器图片受限或缺失"; continue }
+            guard index < 8, let path = EPUBDocument.resolve(image.destination,base:base), !encrypted.contains(path), let entry = archive.entry(path), bytes <= 15*1024*1024 else { assets.failures[image.range.location] = L10n.text("容器图片受限或缺失"); continue }
             do {
                 let data = try archive.read(entry,cancellation:token); bytes += data.count
                 let decoded = try ImagePreview.decode(data,cancellation:token,maxPixelSize:1200,maxSourcePixels:25_000_000)
                 pixels += decoded.image.width * decoded.image.height
-                guard pixels <= 8_000_000 else { throw PreviewError.limit("容器图片像素") }
+                guard pixels <= 8_000_000 else { throw PreviewError.limit(L10n.text("容器图片像素")) }
                 assets.images[image.range.location] = decoded.image
             } catch is CancellationError { throw CancellationError() }
-            catch { assets.failures[image.range.location] = "容器图片不可安全显示" }
+            catch { assets.failures[image.range.location] = L10n.text("容器图片不可安全显示") }
         }
         return assets
     }
@@ -226,7 +226,7 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
         guard index >= 0, index < titles.count, let select, let url else { return }
         token?.cancel(); let token = Cancellation(); self.token = token; let current = UUID(); id = current
         let position = restoredPosition; restoredPosition = nil
-        reader.savePosition(); reader.cancelPending(); reader.showMessage("正在读取 \(titles[index])…"); message.stringValue = "加载选中条目…"
+        reader.savePosition(); reader.cancelPending(); reader.showMessage(L10n.text("正在读取 \(titles[index])…")); message.stringValue = L10n.text("加载选中条目…")
         PreviewWorkQueue.parsing.submit(cancellation: token, work: {
             return try { try select(index,token) }()
         }, completion: { [weak self] result in
@@ -235,8 +235,8 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                 case .success(let content):
                     self.reader.openMemory(content.0,origin:url,revision:self.revision,assets:content.1,restoring:position)
                     SettingsStore.shared.remember(url,revision:self.revision,offset:0,section:content.0.id, generation: self.reader.readingGeneration)
-                    self.message.stringValue = "\(self.titles.count) 项 · \(content.0.warning)"
-                case .failure(let error): self.reader.showMessage(error.localizedDescription); self.message.stringValue = "选中条目未完成；可选择其他条目"
+                    self.message.stringValue = L10n.text("\(self.titles.count) 项 · \(content.0.warning)")
+                case .failure(let error): self.reader.showMessage(error.localizedDescription); self.message.stringValue = L10n.text("选中条目未完成；可选择其他条目")
                 }
         })
     }

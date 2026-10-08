@@ -33,7 +33,7 @@ public final class PreviewWorkQueue: @unchecked Sendable {
         lock.lock()
         if active < concurrency { active += 1; lock.unlock(); workers.async(execute: job.run) }
         else if pending.count < pendingLimit { pending.append(job); lock.unlock() }
-        else { lock.unlock(); job.reject(PreviewError.limit("后台任务繁忙，请稍后重载")); return }
+        else { lock.unlock(); job.reject(PreviewError.limit(L10n.text("后台任务繁忙，请稍后重载"))); return }
         // The callback captures only a weak queue + ID, never the work or document.
         // It is harmless if the job has already started or completed.
         observation.install(cancellation.onCancel { [weak self] in self?.cancelPending(id) })

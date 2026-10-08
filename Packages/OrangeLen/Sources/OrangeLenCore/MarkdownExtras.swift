@@ -10,7 +10,7 @@ enum MarkdownExtras {
         var lines: [NSRange] = [], offset = 0
         while offset < ns.length {
             if lines.count % 1024 == 0 { try cancellation.check() }
-            guard lines.count < 200_000 else { throw PreviewError.limit("Markdown 行数") }
+            guard lines.count < 200_000 else { throw PreviewError.limit(L10n.text("Markdown 行数")) }
             let range = ns.lineRange(for: .init(location: offset, length: 0)); lines.append(range); offset = NSMaxRange(range)
         }
         var front: NSRange?, frontBody: NSRange?, definitions: [Definition] = [], masks: [NSRange] = []
@@ -65,20 +65,22 @@ enum MarkdownExtras {
     static func apply(_ input: TextModel, prepared: Prepared, cancellation: Cancellation, limits: PreviewLimits) throws -> TextModel {
         var model = input
         if let front = prepared.front, let body = prepared.frontBody {
-            let value = "文档信息\n" + (input.source as NSString).substring(with: body)
+            let heading = L10n.text("文档信息")
+            let headingLength = heading.utf16.count
+            let value = heading + "\n" + (input.source as NSString).substring(with: body)
             var prefix = TextModel.plain(""); prefix.source = input.source; prefix.display = value
-            prefix.mapping = [.init(display: .init(location: 0, length: 4), source: front, exact: false), .init(display: .init(location: 5, length: body.length), source: body, exact: true)]
-            prefix.styles = [.init(range: .init(location: 0, length: 4), style: .strong), .init(range: .init(location: 0, length: value.utf16.count), style: .metadata)]
+            prefix.mapping = [.init(display: .init(location: 0, length: headingLength), source: front, exact: false), .init(display: .init(location: headingLength + 1, length: body.length), source: body, exact: true)]
+            prefix.styles = [.init(range: .init(location: 0, length: headingLength), style: .strong), .init(range: .init(location: 0, length: value.utf16.count), style: .metadata)]
             prefix.blocks = [.init(range: .init(location: 0, length: value.utf16.count), source: front, kind: .paragraph)]
             prefix.append(model); model = prefix
         }
         let callouts = try NSRegularExpression(pattern: #"\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]"#)
-        let labels = ["NOTE": "说明", "TIP": "提示", "IMPORTANT": "重要", "WARNING": "警告", "CAUTION": "注意"]
+        let labels = ["NOTE": L10n.text("说明"), "TIP": L10n.text("提示"), "IMPORTANT": L10n.text("重要"), "WARNING": L10n.text("警告"), "CAUTION": L10n.text("注意")]
         let display = model.display as NSString
         for match in callouts.matches(in: model.display, range: .init(location: 0, length: display.length)).reversed() {
             guard model.paragraphs.contains(where: { $0.quoteDepth > 0 && NSLocationInRange(match.range.location, $0.range) && (model.display as NSString).substring(with: .init(location: $0.range.location, length: match.range.location - $0.range.location)).trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }), !model.styles.contains(where: { $0.style.contains(.code) && NSIntersectionRange($0.range, match.range).length > 0 }) else { continue }
             let original = model.sourceRange(for: match.range)
-            let title = labels[display.substring(with: match.range(at: 1))] ?? "说明"
+            let title = labels[display.substring(with: match.range(at: 1))] ?? L10n.text("说明")
             model.replaceDisplay(match.range, value: title, source: original)
             model.styles.append(.init(range: .init(location: match.range.location, length: title.utf16.count), style: [.strong, .callout]))
         }
@@ -98,7 +100,7 @@ enum MarkdownExtras {
             model.links.append(.init(range: .init(location: match.range.location, length: value.utf16.count), destination: "orangelen-footnote:" + name))
         }
         let definitions = ordered.compactMap { name in prepared.definitions.first { $0.id == name } } + prepared.definitions.filter { !ordered.contains($0.id) }
-        if !definitions.isEmpty { model.display += "\n脚注\n" }
+        if !definitions.isEmpty { model.display += L10n.text("\n脚注\n") }
         for (index, definition) in definitions.enumerated() {
             try cancellation.check()
             let start = model.display.utf16.count

@@ -30,10 +30,10 @@ extension ReaderController {
         else if ["diff","patch"].contains(ext) || ["diff","patch"].contains(URL(fileURLWithPath:section.id).pathExtension) { format = .diff }
         else { format = PreviewFormat.detect(URL(fileURLWithPath: section.id)) }
 
-        let snapshot = SourceSnapshot(text:section.text,encoding:"容器内存",byteCount:section.text.utf8.count,revision:revision+":"+section.id)
+        let snapshot = SourceSnapshot(text:section.text,encoding:L10n.text("容器内存"),byteCount:section.text.utf8.count,revision:revision+":"+section.id)
         source = nil; rendered = nil
         let token = Cancellation(); cancellation = token; let current = generation; let detected = format
-        text.string = "正在解析选中内容…"; showContent(scroll)
+        text.string = L10n.text("正在解析选中内容…"); showContent(scroll)
         PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (TextModel?, JSONTree?, TableData?, String) in
             var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = section.warning
             do {

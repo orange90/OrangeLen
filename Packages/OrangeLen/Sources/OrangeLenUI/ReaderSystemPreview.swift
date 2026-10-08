@@ -19,13 +19,13 @@ extension ReaderController {
                 mediaPreview = preview
                 mode.isEnabled = false; headings.isEnabled = false
                 showContent(preview)
-                status.stringValue = "\(url.lastPathComponent) · 音视频预览 · 点击播放"
+                status.stringValue = L10n.text("\(url.lastPathComponent) · 音视频预览 · 点击播放")
                 let id = generation
                 mediaObservation = player.currentItem?.observe(\.status, options: [.new]) { [weak self] item, _ in
                     let failure = item.status == .failed
                     DispatchQueue.main.async {
                         guard let self, self.generation == id, failure else { return }
-                        self.status.stringValue = "音视频无法解码 · 可在“更多操作”中用默认应用打开"
+                        self.status.stringValue = L10n.text("音视频无法解码 · 可在“更多操作”中用默认应用打开")
                     }
                 }
                 finish(nil)
@@ -47,13 +47,13 @@ extension ReaderController {
             // extension's sandbox. Do not pretend its generic icon is a preview.
             if Bundle.main.bundleURL.pathExtension == "appex" {
                 closeSystemPreview()
-                showMessage("此格式需要系统单文件预览。\n请在“更多操作”中选择“在 Finder 中显示”，再按空格预览文件。")
-                status.stringValue = "Finder 扩展内无法嵌套系统预览 · 可单独预览此文件"
+                showMessage(L10n.text("此格式需要系统单文件预览。\n请在“更多操作”中选择“在 Finder 中显示”，再按空格预览文件。"))
+                status.stringValue = L10n.text("Finder 扩展内无法嵌套系统预览 · 可单独预览此文件")
                 finish(nil)
                 return
             }
             guard let preview = QLPreviewView(frame: documentBody.bounds, style: .normal) else {
-                throw PreviewError.malformed("无法创建系统预览")
+                throw PreviewError.malformed(L10n.text("无法创建系统预览"))
             }
             preview.shouldCloseWithWindow = false
             preview.autostarts = false
@@ -61,13 +61,13 @@ extension ReaderController {
             mode.isEnabled = false; headings.isEnabled = false
             showContent(preview)
             preview.previewItem = url as NSURL
-            status.stringValue = "\(url.lastPathComponent) · 系统 Quick Look · 若系统仅显示图标，可在“更多操作”中用默认应用打开"
+            status.stringValue = L10n.text("\(url.lastPathComponent) · 系统 Quick Look · 若系统仅显示图标，可在“更多操作”中用默认应用打开")
             // Quick Look loads asynchronously; this callback only acknowledges handoff.
             finish(nil)
         } catch {
             closeSystemPreview()
             showMessage(error.localizedDescription)
-            status.stringValue = "系统预览未能打开 · 可重载或选择其他文件"
+            status.stringValue = L10n.text("系统预览未能打开 · 可重载或选择其他文件")
             finish(error)
         }
     }
@@ -92,8 +92,8 @@ extension ReaderController {
 
     func loadNativeDocument(_ url: URL, root: URL?, type: NSAttributedString.DocumentType?) {
         let id = generation, token = cancellation ?? Cancellation()
-        showMessage("正在加载 " + url.lastPathComponent + "…")
-        status.stringValue = url.lastPathComponent + " · 正在启动文档预览；首次启动可能需要约 30 秒，可取消"
+        showMessage(L10n.text("正在加载 ") + url.lastPathComponent + "…")
+        status.stringValue = url.lastPathComponent + L10n.text(" · 正在启动文档预览；首次启动可能需要约 30 秒，可取消")
         PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> NSAttributedString in
                 var limits = PreviewLimits(); limits.fileBytes = 25 * 1024 * 1024
                 let data = try AccessBroker.readBytes(url, root: root, limits: limits, cancellation: token).data
@@ -107,7 +107,7 @@ extension ReaderController {
                 let document = try NativeDocumentClient.load(data, type: type, cancellation: token) {
                     DispatchQueue.main.async { [weak self] in
                         guard let self, self.generation == id else { return }
-                        self.status.stringValue = url.lastPathComponent + " · 正在隔离导入（最多 6 秒）…"
+                        self.status.stringValue = url.lastPathComponent + L10n.text(" · 正在隔离导入（最多 6 秒）…")
                     }
                 }
                 try token.check()
@@ -117,11 +117,11 @@ extension ReaderController {
                 do {
                     let document = try result.get()
                     self.showNativeDocument(document)
-                    self.status.stringValue = type == nil ? "\(url.lastPathComponent) · Office 内容预览 · 不含原始版式/图表" : "\(url.lastPathComponent) · 隔离文档预览 · 保留文字/基本字体；版式、链接与附件已简化（□）"
+                    self.status.stringValue = type == nil ? L10n.text("\(url.lastPathComponent) · Office 内容预览 · 不含原始版式/图表") : L10n.text("\(url.lastPathComponent) · 隔离文档预览 · 保留文字/基本字体；版式、链接与附件已简化（□）")
                     self.finish(nil)
                 } catch {
                     self.closeSystemPreview(); self.showMessage(error.localizedDescription)
-                    self.status.stringValue = "文档预览未完成 · 可在“更多操作”中用默认应用打开"
+                    self.status.stringValue = L10n.text("文档预览未完成 · 可在“更多操作”中用默认应用打开")
                     self.finish(error)
                 }
         })
@@ -143,7 +143,7 @@ extension ReaderController {
             content.backgroundColor = .white
             content.appearance = NSAppearance(named: .aqua)
         }
-        content.setAccessibilityLabel("文档预览正文")
+        content.setAccessibilityLabel(L10n.text("文档预览正文"))
         preview.documentView = content
         nativeDocumentPreview = preview
         mode.isEnabled = false; headings.isEnabled = false

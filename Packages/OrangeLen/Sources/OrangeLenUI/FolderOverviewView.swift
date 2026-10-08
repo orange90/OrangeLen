@@ -48,20 +48,20 @@ final class FolderOverviewView: NSView {
     let scroll = NSScrollView()
     let title = NSTextField(labelWithString: "")
     let path = NSTextField(labelWithString: "")
-    let sizeLabel = NSTextField(labelWithString: "已统计大小")
-    let countLabel = NSTextField(labelWithString: "已发现项目")
+    let sizeLabel = NSTextField(labelWithString: L10n.text("已统计大小"))
+    let countLabel = NSTextField(labelWithString: L10n.text("已发现项目"))
     let size = NSTextField(labelWithString: "—")
     let count = NSTextField(labelWithString: "—")
     let breakdown = NSTextField(labelWithString: "—")
-    let progress = NSTextField(wrappingLabelWithString: "正在统计…")
-    let scanButton = NSButton(title: "停止统计", target: nil, action: nil)
-    let readmeTitle = NSTextField(labelWithString: "README 预览")
+    let progress = NSTextField(wrappingLabelWithString: L10n.text("正在统计…"))
+    let scanButton = NSButton(title: L10n.text("停止统计"), target: nil, action: nil)
+    let readmeTitle = NSTextField(labelWithString: L10n.text("README 预览"))
     let readmeHeadingText = NSTextField(labelWithString: "")
     let readmeText = NSTextField(wrappingLabelWithString: "")
     let readmeName = NSTextField(labelWithString: "")
-    let openReadme = NSButton(title: "打开完整文件 ↗", target: nil, action: nil)
+    let openReadme = NSButton(title: L10n.text("打开完整文件 ↗"), target: nil, action: nil)
     let location = NSTextField(wrappingLabelWithString: "")
-    let scope = NSTextField(wrappingLabelWithString: "当前文件夹及全部子文件夹")
+    let scope = NSTextField(wrappingLabelWithString: L10n.text("当前文件夹及全部子文件夹"))
     let readmeSection = NSStackView()
     private let content = NSStackView()
     private let metrics = NSStackView()
@@ -85,7 +85,7 @@ final class FolderOverviewView: NSView {
 
         title.font = .systemFont(ofSize: 26, weight: .semibold); title.lineBreakMode = .byTruncatingMiddle; title.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         path.font = .systemFont(ofSize: 12); path.textColor = .secondaryLabelColor; path.lineBreakMode = .byTruncatingMiddle; path.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        let icon = NSImageView(image: NSImage(systemSymbolName: "folder.fill", accessibilityDescription: "文件夹")!)
+        let icon = NSImageView(image: NSImage(systemSymbolName: "folder.fill", accessibilityDescription: L10n.text("文件夹"))!)
         icon.contentTintColor = .systemBlue; icon.symbolConfiguration = .init(pointSize: 42, weight: .regular)
         icon.widthAnchor.constraint(equalToConstant: 52).isActive = true
         let heading = NSStackView(views: [title, path]); heading.orientation = .vertical; heading.alignment = .leading; heading.spacing = 5
@@ -94,7 +94,7 @@ final class FolderOverviewView: NSView {
         add(header)
 
         metrics.orientation = .horizontal; metrics.distribution = .fillEqually; metrics.spacing = 14
-        for (label, value) in [(sizeLabel, size), (countLabel, count), (NSTextField(labelWithString: "文件 / 文件夹"), breakdown)] {
+        for (label, value) in [(sizeLabel, size), (countLabel, count), (NSTextField(labelWithString: L10n.text("文件 / 文件夹")), breakdown)] {
             label.font = .systemFont(ofSize: 12); label.textColor = .secondaryLabelColor
             value.font = .monospacedDigitSystemFont(ofSize: 27, weight: .semibold)
             value.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -110,8 +110,8 @@ final class FolderOverviewView: NSView {
         add(stateRow); content.setCustomSpacing(10, after: metricCard)
 
         let categories = NSStackView(); categories.orientation = .vertical; categories.alignment = .leading; categories.spacing = 14
-        let categoryHeading = NSTextField(labelWithString: "内容分类"); categoryHeading.font = .systemFont(ofSize: 15, weight: .semibold)
-        let hint = NSTextField(labelWithString: "按文件数量"); hint.font = .systemFont(ofSize: 12); hint.textColor = .secondaryLabelColor
+        let categoryHeading = NSTextField(labelWithString: L10n.text("内容分类")); categoryHeading.font = .systemFont(ofSize: 15, weight: .semibold)
+        let hint = NSTextField(labelWithString: L10n.text("按文件数量")); hint.font = .systemFont(ofSize: 12); hint.textColor = .secondaryLabelColor
         let headingRow = NSStackView(views: [categoryHeading, NSView(), hint]); headingRow.distribution = .fill
         for v in [headingRow, categoryBar, legend] { categories.addArrangedSubview(v); v.widthAnchor.constraint(equalTo: categories.widthAnchor).isActive = true }
         categoryBar.heightAnchor.constraint(equalToConstant: 12).isActive = true
@@ -134,9 +134,9 @@ final class FolderOverviewView: NSView {
         add(readmeSection); readmeSection.isHidden = true
 
         let info = NSStackView(); info.orientation = .vertical; info.alignment = .leading; info.spacing = 12
-        let infoTitle = NSTextField(labelWithString: "文件夹信息"); infoTitle.font = .systemFont(ofSize: 15, weight: .semibold)
+        let infoTitle = NSTextField(labelWithString: L10n.text("文件夹信息")); infoTitle.font = .systemFont(ofSize: 15, weight: .semibold)
         info.addArrangedSubview(infoTitle)
-        for (name, value) in [("位置", location), ("统计范围", scope)] {
+        for (name, value) in [(L10n.text("位置"), location), (L10n.text("统计范围"), scope)] {
             let separator = NSBox(); separator.boxType = .separator; info.addArrangedSubview(separator); separator.widthAnchor.constraint(equalTo: info.widthAnchor).isActive = true
             let key = NSTextField(labelWithString: name); key.font = .systemFont(ofSize: 12); key.textColor = .secondaryLabelColor; key.widthAnchor.constraint(equalToConstant: 72).isActive = true
             value.font = .systemFont(ofSize: 12); value.isSelectable = true; value.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -144,7 +144,7 @@ final class FolderOverviewView: NSView {
             info.addArrangedSubview(row); row.widthAnchor.constraint(equalTo: info.widthAnchor).isActive = true
         }
         add(info)
-        let footnote = NSTextField(wrappingLabelWithString: "ⓘ  大小为逻辑文件大小，不跟随符号链接")
+        let footnote = NSTextField(wrappingLabelWithString: L10n.text("ⓘ  大小为逻辑文件大小，不跟随符号链接"))
         footnote.font = .systemFont(ofSize: 11); footnote.textColor = .secondaryLabelColor; add(footnote)
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -165,10 +165,10 @@ final class FolderOverviewView: NSView {
     func configure(_ root: URL) {
         title.stringValue = root.lastPathComponent; path.stringValue = root.deletingLastPathComponent().path; path.toolTip = root.path
         location.stringValue = root.deletingLastPathComponent().path
-        scope.stringValue = "当前文件夹及全部子文件夹"
+        scope.stringValue = L10n.text("当前文件夹及全部子文件夹")
         size.stringValue = "—"; count.stringValue = "—"; breakdown.stringValue = "—"
         readmeURL = nil; readmeSection.isHidden = true; openReadme.isHidden = false
-        update(nil, scanning: true, message: "正在统计…")
+        update(nil, scanning: true, message: L10n.text("正在统计…"))
         scroll.contentView.scroll(to: .zero)
     }
     func showReadme(_ readme: FolderReadme?) {
@@ -182,19 +182,19 @@ final class FolderOverviewView: NSView {
     }
     func readmeFailed() {
         readmeSection.isHidden = false; openReadme.isHidden = true; readmeHeadingText.isHidden = true
-        readmeText.stringValue = "暂时无法读取 README，可从左侧文件列表重试。"; readmeName.stringValue = ""
+        readmeText.stringValue = L10n.text("暂时无法读取 README，可从左侧文件列表重试。"); readmeName.stringValue = ""
     }
     func update(_ summary: FolderSummary?, scanning: Bool, message: String) {
-        scanButton.title = scanning ? "停止统计" : "重新统计"
-        sizeLabel.stringValue = summary?.complete == true && !scanning ? "总大小" : "已统计大小"
-        countLabel.stringValue = summary?.complete == true && !scanning ? "包含项目" : "已发现项目"
+        scanButton.title = scanning ? L10n.text("停止统计") : L10n.text("重新统计")
+        sizeLabel.stringValue = summary?.complete == true && !scanning ? L10n.text("总大小") : L10n.text("已统计大小")
+        countLabel.stringValue = summary?.complete == true && !scanning ? L10n.text("包含项目") : L10n.text("已发现项目")
         progress.stringValue = message
         progress.textColor = summary?.complete == false && !scanning ? .systemOrange : .secondaryLabelColor
         if let summary {
             size.stringValue = ByteCountFormatter.string(fromByteCount: summary.bytes, countStyle: .file)
             count.stringValue = (summary.files + summary.folders + summary.links).formatted()
             breakdown.stringValue = "\(summary.files.formatted()) / \(summary.folders.formatted())"
-            scope.stringValue = "当前文件夹及全部子文件夹" + (summary.links > 0 ? " · \(summary.links) 个符号链接（不跟随）" : "")
+            scope.stringValue = L10n.text("当前文件夹及全部子文件夹") + (summary.links > 0 ? L10n.text(" · \(summary.links) 个符号链接（不跟随）") : "")
         }
         let values = FolderFileKind.allCases.compactMap { kind -> (FolderFileKind, Int)? in
             let n = summary?.categories[kind] ?? 0; return n > 0 ? (kind, n) : nil
@@ -202,13 +202,13 @@ final class FolderOverviewView: NSView {
         categoryBar.values = values
         for child in legend.arrangedSubviews { legend.removeArrangedSubview(child); child.removeFromSuperview() }
         if values.isEmpty {
-            let empty = NSTextField(labelWithString: scanning ? "正在识别文件类型…" : "没有可统计的文件")
+            let empty = NSTextField(labelWithString: scanning ? L10n.text("正在识别文件类型…") : L10n.text("没有可统计的文件"))
             empty.font = .systemFont(ofSize: 12); empty.textColor = .secondaryLabelColor; legend.addArrangedSubview(empty)
         }
         for (kind, number) in values {
-            let label = NSTextField(labelWithString: "●  " + kind.rawValue)
+            let label = NSTextField(labelWithString: "●  " + kind.localizedName)
             label.font = .systemFont(ofSize: 12)
-            let legendText = NSMutableAttributedString(string: "●  " + kind.rawValue, attributes: [.font: NSFont.systemFont(ofSize: 12), .foregroundColor: NSColor.secondaryLabelColor])
+            let legendText = NSMutableAttributedString(string: "●  " + kind.localizedName, attributes: [.font: NSFont.systemFont(ofSize: 12), .foregroundColor: NSColor.secondaryLabelColor])
             legendText.addAttribute(.foregroundColor, value: FolderCategoryBar.color(kind), range: NSRange(location: 0, length: 1))
             label.attributedStringValue = legendText
             let value = NSTextField(labelWithString: number.formatted()); value.font = .monospacedDigitSystemFont(ofSize: 14, weight: .medium)

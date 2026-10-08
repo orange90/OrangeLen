@@ -16,6 +16,12 @@ On the tested M3 Pro / macOS 26.6.2 machine, Finder invokes OrangeLen for Swift,
 
 宿主的 **Quick Look 诊断…（⌘D）** 检查真实 UTType、声明匹配、可用宿主入口。系统登记受沙盒限制，提供固定查询命令复制与结果导入；类型候选不等于 Finder 已选中。完整交付与未验收项目见 [补强清单](docs/improvement-plan.md)。通用 Release 编译通过只证明构建，不能证明 Intel 或其他 macOS 已运行。
 
+## 界面语言 / Interface language
+
+主应用、七类 Finder Quick Look 扩展和辅助服务支持简体中文与英文，按 macOS 首选语言顺序选择可用翻译，没有匹配时回退英文。更改系统语言后，请退出并重新打开 OrangeLen，并关闭后重新打开 Finder 预览；不实时替换已经显示的界面。文件正文、文件名、路径与代码不会被翻译。
+
+The app, seven Quick Look extensions, and helper services support Simplified Chinese and English, selected from the macOS preferred language list with English as fallback. Quit and reopen OrangeLen and close/reopen Finder previews after changing language. Document contents, file names, paths, and code are preserved. See [localization implementation and checks](docs/localization.md).
+
 ## Build and run
 
 Requirements: Xcode 26.5 was used (macOS 26.5 SDK, Swift); deployment target macOS 14. Other versions are untested. The build selects Xcode through `DEVELOPER_DIR` without changing global `xcode-select`.

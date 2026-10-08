@@ -61,9 +61,9 @@ final class M2Tests: XCTestCase {
     }
     func testHARAndOpenAPINeverResolveExternalResources() throws {
         let har = try EnhancedDocuments.har(AccessBroker.decode(fixture("sample.har")).0)
-        XCTAssertEqual(har.count,1); XCTAssertTrue(har[0].title.contains("example.invalid")); XCTAssertTrue(har[0].warning.contains("不重放"))
+        XCTAssertEqual(har.count,1); XCTAssertTrue(har[0].title.contains("example.invalid")); XCTAssertTrue(har[0].warning.contains(L10n.text("HAR 记录仅浏览；不重放请求，不获取 response 外链")))
         let api = try EnhancedDocuments.openAPI(AccessBroker.decode(fixture("openapi.json")).0)
-        XCTAssertEqual(api[0].title,"/read"); XCTAssertTrue(api[0].warning.contains("外部 $ref"))
+        XCTAssertEqual(api[0].title,"/read"); XCTAssertTrue(api[0].warning.contains(L10n.text("只读路径定义；不请求 API，不解析外部 $ref")))
     }
 
     func testEPUBEncryptionIsNotConfusedWithFontObfuscationAndDTDIsRefused() throws {
@@ -71,7 +71,7 @@ final class M2Tests: XCTestCase {
         XCTAssertThrowsError(try protected.chapter(protected.chapters[0]))
         XCTAssertTrue(try protected.chapter(protected.chapters[1]).text.contains("另一章节"))
         let fonts = try EPUBDocument.parse(fixture("font-obfuscation.epub"))
-        XCTAssertTrue(fonts.warning.contains("字体混淆")); XCTAssertTrue(try fonts.chapter(fonts.chapters[0]).text.contains("中文阅读"))
+        XCTAssertTrue(fonts.warning.contains(L10n.text("字体混淆资源不加载，采用系统字体。 "))); XCTAssertTrue(try fonts.chapter(fonts.chapters[0]).text.contains("中文阅读"))
         let entities = try EPUBDocument.parse(fixture("entity.epub"))
         XCTAssertThrowsError(try entities.chapter(entities.chapters[0]))
     }

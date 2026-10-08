@@ -1,0 +1,80 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Write swift-version--58304C5D6DBC2206.txt
+[3/8] Emitting module OrangeLenUI
+[4/8] Compiling OrangeLenUI GlassSurface.swift
+[5/8] Compiling OrangeLenUI ReaderController.swift
+[6/8] Compiling OrangeLenUI FolderController.swift
+[7/16] Compiling OrangeLenUI ReaderLocalImages.swift
+[8/16] Compiling OrangeLenUI ReaderExcalidraw.swift
+[9/16] Compiling OrangeLenUI ReaderMemory.swift
+[10/16] Compiling OrangeLenUI CollectionController.swift
+[11/16] Compiling OrangeLenUI ReaderRichContent.swift
+[12/16] Compiling OrangeLenUI ReaderSVG.swift
+[13/16] Compiling OrangeLenUI ReaderSystemPreview.swift
+[14/16] Compiling OrangeLenUI ArchiveController.swift
+[15/27] Compiling OrangeLenUITests SyntaxHighlighterTests.swift
+[16/27] Compiling OrangeLenUITests RichContentTests.swift
+[17/27] Compiling OrangeLenUITests ExcalidrawTests.swift
+[18/27] Compiling OrangeLenUITests LayoutTests.swift
+[19/27] Compiling OrangeLenUITests M2IntegrationTests.swift
+[20/27] Emitting module OrangeLenUITests
+[21/27] Compiling OrangeLenUITests FolderOverviewTests.swift
+[22/27] Compiling OrangeLenUITests DeveloperFormatsIntegrationTests.swift
+[23/27] Compiling OrangeLenUITests BoundaryRegressionTests.swift
+[24/27] Compiling OrangeLenUITests SystemPreviewTests.swift
+[25/27] Compiling OrangeLenUITests ImprovementIntegrationTests.swift
+[25/27] Write Objects.LinkFileList
+[26/27] Linking OrangeLenPackageTests
+Build complete! (5.97s)
+Test Suite 'Selected tests' started at 2026-10-08 16:25:46.373.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-08 16:25:46.374.
+Test Suite 'FolderOverviewDataTests' started at 2026-10-08 16:25:46.374.
+Test Case '-[OrangeLenCoreTests.FolderOverviewDataTests testCategoriesAndReadmeUseRealLocalFiles]' started.
+Test Case '-[OrangeLenCoreTests.FolderOverviewDataTests testCategoriesAndReadmeUseRealLocalFiles]' passed (0.027 seconds).
+Test Case '-[OrangeLenCoreTests.FolderOverviewDataTests testNameEnumerationPreservesPackagesUnicodeAndDanglingLinks]' started.
+Test Case '-[OrangeLenCoreTests.FolderOverviewDataTests testNameEnumerationPreservesPackagesUnicodeAndDanglingLinks]' passed (0.004 seconds).
+Test Suite 'FolderOverviewDataTests' passed at 2026-10-08 16:25:46.406.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.031 (0.032) seconds
+Test Suite 'FolderOverviewTests' started at 2026-10-08 16:25:46.406.
+Test Case '-[OrangeLenUITests.FolderOverviewTests testDirectoryChildrenLoadWhileParsingAndStatisticsAreOccupied]' started.
+Test Case '-[OrangeLenUITests.FolderOverviewTests testDirectoryChildrenLoadWhileParsingAndStatisticsAreOccupied]' passed (0.126 seconds).
+Test Case '-[OrangeLenUITests.FolderOverviewTests testOverviewNavigationKeepsLiveSummaryOutOfFileContent]' started.
+Test Case '-[OrangeLenUITests.FolderOverviewTests testOverviewNavigationKeepsLiveSummaryOutOfFileContent]' passed (0.427 seconds).
+Test Suite 'FolderOverviewTests' passed at 2026-10-08 16:25:46.959.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.553 (0.553) seconds
+Test Suite 'LayoutTests' started at 2026-10-08 16:25:46.959.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' started.
+2026-10-08 16:25:47.194 xctest[65803:23840201] This NSLayoutConstraint is being configured with a constant that exceeds internal limits.  A smaller value will be substituted, but this problem should be fixed. Break on BOOL _NSLayoutConstraintNumberExceedsLimit(void) to debug.  This will be logged only once.  This may break in the future.
+Test Case '-[OrangeLenUITests.LayoutTests testCodeViewportWithRulerHasVisibleGlyphs]' passed (0.471 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testFileButtonKeepsSelectionAndActivatesOnce]' passed (0.011 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testFolderSummaryIgnoresCancelledGeneration]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testFolderSummaryIgnoresCancelledGeneration]' passed (0.012 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownCodeAndQuotesDoNotCollapseToSingleGlyphColumns]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownCodeAndQuotesDoNotCollapseToSingleGlyphColumns]' passed (0.002 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownLocalImageBudgetAndAttachmentPreserveText]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownLocalImageBudgetAndAttachmentPreserveText]' passed (0.005 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownTablesHaveRealCellGeometryAndSafeLinks]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testMarkdownTablesHaveRealCellGeometryAndSafeLinks]' passed (0.054 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testPNGPreviewAndReturnToTextKeepFolderSummary]' passed (0.060 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testRealTextKitReflowsWithoutChangingSourceMapping]' passed (0.012 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testSupersededPreparationCompletesExactlyOnceAndLatestWins]' passed (0.050 seconds).
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' started.
+Test Case '-[OrangeLenUITests.LayoutTests testTwentyOneMiBPreviewsRecordWarmPreparation]' passed (0.854 seconds).
+Test Suite 'LayoutTests' passed at 2026-10-08 16:25:48.492.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 1.532 (1.533) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-08 16:25:48.492.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 2.116 (2.118) seconds
+Test Suite 'Selected tests' passed at 2026-10-08 16:25:48.492.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 2.116 (2.119) seconds
+VIEWPORT text=(0.0, 0.0, 998.0, 571.0) bounds=(0.0, 0.0, 998.0, 571.0) visible=(0.0, 0.0, 998.0, 571.0) glyphs=(74.0, 18.0, 845.0, 56.0) ruler=(0.0, 0.0, 52.0, 571.0)
+BENCHMARK app-in-process, bytes=1048646, initialMs=88.44399452209473, warm20Ms=[47.706007957458496, 39.58702087402344, 35.112977027893066, 35.00509262084961, 34.74700450897217, 35.450100898742676, 34.22188758850098, 35.48097610473633, 34.60192680358887, 41.293978691101074, 34.63399410247803, 35.19797325134277, 37.12809085845947, 35.58003902435303, 35.137057304382324, 38.450002670288086, 36.799073219299316, 34.00301933288574, 35.553932189941406, 34.92295742034912], warmP95Ms=41.293978691101074, OS file cache not controlled; NOT Finder timing
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

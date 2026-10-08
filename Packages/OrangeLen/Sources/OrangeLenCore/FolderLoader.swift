@@ -27,7 +27,7 @@ public enum FolderLoader {
         }
         let before = try revision()
         guard expectedRevision == nil || expectedRevision == before else { throw PreviewError.changed }
-        guard offset >= 0, offset <= limits.directoryScanItems else { throw PreviewError.limit("目录分页范围") }
+        guard offset >= 0, offset <= limits.directoryScanItems else { throw PreviewError.limit(L10n.text("目录分页范围")) }
         // Enumerate names only. Foundation resource prefetch can query metadata for
         // an entire directory before returning its first child (and again per page).
         try cancellation.check()
@@ -54,7 +54,7 @@ public enum FolderLoader {
             }
             if name == "." || name == ".." { continue }
             if scanned >= offset + limits.directoryBatch { more = true; break }
-            guard scanned < limits.directoryScanItems, ProcessInfo.processInfo.systemUptime - start < limits.directorySeconds else { throw PreviewError.limit("目录扫描 20,000 项 / 3 秒；已加载项仍可阅读") }
+            guard scanned < limits.directoryScanItems, ProcessInfo.processInfo.systemUptime - start < limits.directorySeconds else { throw PreviewError.limit(L10n.text("目录扫描 20,000 项 / 3 秒；已加载项仍可阅读")) }
             scanned += 1
             if scanned <= offset { continue }
             if !showIgnored && (ignored.contains(name) || name.hasPrefix(".")) { continue }

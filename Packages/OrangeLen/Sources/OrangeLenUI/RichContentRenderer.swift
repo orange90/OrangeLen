@@ -36,7 +36,7 @@ import OrangeLenCore
         self.web = web; web.navigationDelegate = self
         // Keep attached for reliable macOS layout/snapshots, outside the visible clip.
         parent.addSubview(web)
-        guard let url = Bundle.module.url(forResource: resourceName, withExtension: "html") else { throw PreviewError.malformed("缺少离线渲染资源") }
+        guard let url = Bundle.module.url(forResource: resourceName, withExtension: "html") else { throw PreviewError.malformed(L10n.text("缺少离线渲染资源")) }
         let html = try String(contentsOf: url, encoding: .utf8)
         try await withCheckedThrowingContinuation { continuation in
             ready = continuation
@@ -48,7 +48,7 @@ import OrangeLenCore
         }
     }
     func render(_ item: MarkdownRichContent, in parent: NSView) async throws -> NSImage {
-        guard item.content.utf8.count <= 16_384 else { throw PreviewError.limit("公式/图表最多 16 KiB") }
+        guard item.content.utf8.count <= 16_384 else { throw PreviewError.limit(L10n.text("公式/图表最多 16 KiB")) }
         return try await renderSource(item.content, kind: item.kind.rawValue, in: parent)
     }
     func renderExcalidraw(_ scene: ExcalidrawPreview, in parent: NSView) async throws -> NSImage {
@@ -75,7 +75,7 @@ import OrangeLenCore
         }
         try Task.checkCancellation(); guard !stopped else { throw CancellationError() }
         guard let size = value as? [String: NSNumber], let width = size["width"]?.doubleValue, let height = size["height"]?.doubleValue,
-              width > 0, width <= 800, height > 0, height <= 1500 else { throw PreviewError.limit("公式/图表尺寸") }
+              width > 0, width <= 800, height > 0, height <= 1500 else { throw PreviewError.limit(L10n.text("公式/图表尺寸")) }
         let snapshot = WKSnapshotConfiguration()
         snapshot.rect = NSRect(x: size["x"]?.doubleValue ?? 0, y: size["y"]?.doubleValue ?? 0, width: width, height: height)
         snapshot.snapshotWidth = NSNumber(value: width * 2)
@@ -84,7 +84,7 @@ import OrangeLenCore
             web.takeSnapshot(with: snapshot) { [weak self] image, error in
                 guard let self else { return }
                 if let image { self.snapshotResult?.resume(returning: image) }
-                else { self.snapshotResult?.resume(throwing: error ?? PreviewError.malformed("无法生成图像")) }
+                else { self.snapshotResult?.resume(throwing: error ?? PreviewError.malformed(L10n.text("无法生成图像"))) }
                 self.snapshotResult = nil
             }
         }

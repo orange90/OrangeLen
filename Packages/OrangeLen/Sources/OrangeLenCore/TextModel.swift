@@ -131,6 +131,8 @@ public struct TextModel: Sendable {
             default:
                 let part = ns.substring(with: block.range)
                 let tokenizer = NLTokenizer(unit: .sentence); tokenizer.string = part
+                // Segment the document's language, independent of the interface locale.
+                if let language = NLLanguageRecognizer.dominantLanguage(for: part) { tokenizer.setLanguage(language) }
                 tokenizer.enumerateTokens(in: part.startIndex..<part.endIndex) { range, _ in
                     let local = NSRange(range, in: part)
                     result.append(NSRange(location: block.range.location + local.location, length: local.length)); return result.count < PreviewLimits().structureNodes

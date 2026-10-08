@@ -5,13 +5,13 @@ public enum PreviewError: Error, LocalizedError {
     case limit(String), encoding, binary, unavailable, changed, unsafePath, malformed(String)
     public var errorDescription: String? {
         switch self {
-        case .limit(let reason): return "超过安全预算：\(reason)"
-        case .encoding: return "无法识别编码。支持严格 UTF-8、带 BOM 的 UTF-16。"
-        case .binary: return "这是二进制或含空字符的文件，不能作为文本预览。"
-        case .unavailable: return "文件尚未下载到本机；预览不会自动下载。"
-        case .changed: return "读取期间文件已变化，请重新载入。"
-        case .unsafePath: return "符号链接、特殊文件或根目录之外的路径不在本次读取范围。"
-        case .malformed(let reason): return "格式损坏：\(reason)"
+        case .limit(let reason): return L10n.text("超过安全预算：\(reason)")
+        case .encoding: return L10n.text("无法识别编码。支持严格 UTF-8、带 BOM 的 UTF-16。")
+        case .binary: return L10n.text("这是二进制或含空字符的文件，不能作为文本预览。")
+        case .unavailable: return L10n.text("文件尚未下载到本机；预览不会自动下载。")
+        case .changed: return L10n.text("读取期间文件已变化，请重新载入。")
+        case .unsafePath: return L10n.text("符号链接、特殊文件或根目录之外的路径不在本次读取范围。")
+        case .malformed(let reason): return L10n.text("格式损坏：\(reason)")
         }
     }
 }
@@ -80,8 +80,8 @@ public enum AccessBroker {
                 var before = stat()
                 guard fstat(fd, &before) == 0, before.st_mode & S_IFMT == S_IFREG else { throw PreviewError.unsafePath }
                 guard before.st_flags & UInt32(SF_DATALESS) == 0 else { throw PreviewError.unavailable }
-                guard allowPartial || before.st_size <= limits.fileBytes else { throw PreviewError.limit("文件最大 \(limits.fileBytes / 1024 / 1024) MiB") }
-                guard byteOffset >= 0, byteOffset <= before.st_size else { throw PreviewError.limit("分页位置") }
+                guard allowPartial || before.st_size <= limits.fileBytes else { throw PreviewError.limit(L10n.text("文件最大 \(limits.fileBytes / 1024 / 1024) MiB")) }
+                guard byteOffset >= 0, byteOffset <= before.st_size else { throw PreviewError.limit(L10n.text("分页位置")) }
                 var headerBytes = [UInt8](repeating: 0, count: 3)
                 let headerCount = pread(fd, &headerBytes, 3, 0)
                 guard headerCount >= 0, lseek(fd, off_t(byteOffset), SEEK_SET) >= 0 else { throw PreviewError.changed }
@@ -94,7 +94,7 @@ public enum AccessBroker {
                     if count < 0 { throw NSError(domain: NSPOSIXErrorDomain, code: Int(errno)) }
                     if count == 0 { break }
                     data.append(contentsOf: buffer.prefix(count))
-                    if data.count > limits.fileBytes { throw PreviewError.limit("读取字节上限") }
+                    if data.count > limits.fileBytes { throw PreviewError.limit(L10n.text("读取字节上限")) }
                 }
                 var after = stat(); guard fstat(fd, &after) == 0 else { throw PreviewError.changed }
                 guard before.st_size == after.st_size, before.st_mtimespec.tv_sec == after.st_mtimespec.tv_sec, before.st_mtimespec.tv_nsec == after.st_mtimespec.tv_nsec else { throw PreviewError.changed }
@@ -113,7 +113,7 @@ public enum AccessBroker {
     public static func readPreview(_ url: URL, root: URL? = nil, byteOffset: Int = 0, pageBytes: Int = 512 * 1024, fullReadThreshold: Int = PreviewLimits().fileBytes, cancellation: Cancellation = .init()) throws -> SourceSnapshot {
         let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
         if size <= min(fullReadThreshold, PreviewLimits().fileBytes) && byteOffset == 0 { return try read(url, root: root, cancellation: cancellation) }
-        guard pageBytes >= 16, pageBytes <= PreviewLimits().fileBytes else { throw PreviewError.limit("文本分页大小") }
+        guard pageBytes >= 16, pageBytes <= PreviewLimits().fileBytes else { throw PreviewError.limit(L10n.text("文本分页大小")) }
         var limits = PreviewLimits(); limits.fileBytes = pageBytes
         let raw = try readBytes(url, root: root, limits: limits, cancellation: cancellation, byteOffset: byteOffset, allowPartial: true)
         let bom: Data

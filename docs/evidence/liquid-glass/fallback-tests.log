@@ -1,0 +1,24 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Write swift-version--58304C5D6DBC2206.txt
+[3/6] Emitting module OrangeLenUITests
+[4/6] Compiling OrangeLenUITests GlassSurfaceTests.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (1.59s)
+Test Suite 'Selected tests' started at 2026-10-08 16:26:22.311.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-08 16:26:22.312.
+Test Suite 'GlassSurfaceTests' started at 2026-10-08 16:26:22.312.
+Test Case '-[OrangeLenUITests.GlassSurfaceTests testAccessibilityFallbackPreservesContentAndLayout]' started.
+Test Case '-[OrangeLenUITests.GlassSurfaceTests testAccessibilityFallbackPreservesContentAndLayout]' passed (0.073 seconds).
+Test Suite 'GlassSurfaceTests' passed at 2026-10-08 16:26:22.386.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.073 (0.074) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-08 16:26:22.386.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.073 (0.074) seconds
+Test Suite 'Selected tests' passed at 2026-10-08 16:26:22.386.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.073 (0.075) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

@@ -55,7 +55,7 @@ public final class SettingsStore {
         defer { Darwin.close(fd) }
         let deadline = ProcessInfo.processInfo.systemUptime + 0.25
         while flock(fd, LOCK_EX | LOCK_NB) != 0 {
-            guard errno == EWOULDBLOCK, ProcessInfo.processInfo.systemUptime < deadline else { throw PreviewError.limit("设置正在由其他进程更新，请重试") }
+            guard errno == EWOULDBLOCK, ProcessInfo.processInfo.systemUptime < deadline else { throw PreviewError.limit(L10n.text("设置正在由其他进程更新，请重试")) }
             usleep(2_000)
         }
         defer { flock(fd, LOCK_UN) }
@@ -86,7 +86,7 @@ public final class SettingsStore {
     }
     private func write(_ settings: ReaderSettings) throws {
         let data = try JSONEncoder().encode(settings)
-        guard data.count <= 64 * 1024 else { throw PreviewError.limit("设置大小") }
+        guard data.count <= 64 * 1024 else { throw PreviewError.limit(L10n.text("设置大小")) }
         try data.write(to: preferencesFile, options: .atomic)
         defaults.set(data, forKey: "readerSettings") // Migration compatibility, not the cross-process authority.
     }

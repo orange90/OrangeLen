@@ -1,5 +1,7 @@
 name: OrangeLen
 options:
+  developmentLanguage: en
+  knownRegions: [en, zh-Hans, Base]
   deploymentTarget:
     macOS: '14.0'
 packages:
@@ -26,6 +28,7 @@ targets:
     info:
       path: App/Info.plist
       properties:
+        CFBundleLocalizations: [en, zh-Hans]
         CFBundleDisplayName: OrangeLen
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -108,10 +111,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Code
     info:
       path: PreviewExtension/Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · 代码
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · Code
         OrangeLenPreviewCategory: Code
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -142,10 +147,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Markdown
     info:
       path: PreviewExtension/Generated/Markdown-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · Markdown 文档与 Notebook
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · Markdown & Notebooks
         OrangeLenPreviewCategory: Markdown
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -176,10 +183,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Data
     info:
       path: PreviewExtension/Generated/Data-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · 结构化数据
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · Structured Data
         OrangeLenPreviewCategory: Data
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -210,10 +219,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Folders
     info:
       path: PreviewExtension/Generated/Folders-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · 文件夹
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · Folders
         OrangeLenPreviewCategory: Folders
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -244,10 +255,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Archives
     info:
       path: PreviewExtension/Generated/Archives-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · 归档与压缩文本
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · Archives & Compressed Text
         OrangeLenPreviewCategory: Archives
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -278,10 +291,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Books
     info:
       path: PreviewExtension/Generated/Books-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · EPUB 图书
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · EPUB Books
         OrangeLenPreviewCategory: Books
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -312,10 +327,12 @@ targets:
     sources:
       - path: PreviewExtension
         includes: [PreviewViewController.swift]
+      - path: PreviewExtension/Localization/Drawings
     info:
       path: PreviewExtension/Generated/Drawings-Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen · SVG 与 Excalidraw
+        CFBundleLocalizations: [en, zh-Hans]
+        CFBundleDisplayName: OrangeLen · SVG & Excalidraw
         OrangeLenPreviewCategory: Drawings
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -349,6 +366,7 @@ targets:
     info:
       path: ImageBroker/Info.plist
       properties:
+        CFBundleLocalizations: [en, zh-Hans]
         CFBundleDisplayName: OrangeLen Image Broker
         XPCService:
           ServiceType: Application
@@ -368,6 +386,7 @@ targets:
     info:
       path: DocumentBroker/Info.plist
       properties:
+        CFBundleLocalizations: [en, zh-Hans]
         CFBundleDisplayName: OrangeLen Document Broker
         XPCService:
           ServiceType: Application

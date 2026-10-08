@@ -50,11 +50,11 @@ import OrangeLenCore
         try await settled { collection.reader.jsonTree?.root.children.first?.name == "name" }
         await open(reader,"records.jsonl.gz")
         try await settled { collection.reader.jsonTree?.root.children.first?.name == "id" }
-        XCTAssertEqual(collection.titles.count,4); XCTAssertTrue(collection.titles[1].contains("损坏行"))
+        XCTAssertEqual(collection.titles.count,4); XCTAssertTrue(collection.titles[1].contains(L10n.text(" · 损坏行")))
         collection.list.selectRowIndexes(IndexSet(integer:1),byExtendingSelection:false)
         try await settled { collection.reader.source?.text == "{bad}" }
         XCTAssertNil(collection.reader.jsonTree)
-        XCTAssertEqual(collection.reader.parseWarning.components(separatedBy:"格式损坏").count,2)
+        XCTAssertEqual(collection.reader.parseWarning.components(separatedBy:L10n.text("格式损坏：\(String())")).count,2)
         collection.list.selectRowIndexes(IndexSet(integer:3),byExtendingSelection:false)
         try await settled { collection.reader.source?.text.contains("9007199254740993") == true }
         XCTAssertEqual(collection.reader.format,.text)
@@ -75,7 +75,7 @@ import OrangeLenCore
         reader.mode.selectedSegment = 1; reader.present()
         XCTAssertTrue(reader.text.string.contains("linearGradient"))
         await open(reader,"unsafe.svg")
-        XCTAssertNotNil(reader.canvasImage); XCTAssertTrue(reader.parseWarning.contains("已省略"))
+        XCTAssertNotNil(reader.canvasImage); XCTAssertTrue(reader.parseWarning.contains(L10n.text("已省略 \(try SVGDocument.parse(String(contentsOf: fixture("unsafe.svg"))).omitted) 项脚本、样式、外部资源或不支持内容；源码保留")))
         reader.open(fixture("icon.svg")) { _ in }
         await open(reader,"Component.vue")
         XCTAssertNil(reader.canvasImage); XCTAssertTrue(reader.text.string.contains("中文 Vue"))
@@ -86,6 +86,6 @@ import OrangeLenCore
         reader.open(bad) { error in XCTAssertNil(error); fallback.fulfill() }
         await fulfillment(of:[fallback],timeout:10)
         XCTAssertNil(reader.canvasImage); XCTAssertEqual(reader.text.string,"<!DOCTYPE svg><svg/>")
-        XCTAssertTrue(reader.parseWarning.contains("已降级源码"))
+        XCTAssertTrue(reader.parseWarning.contains(L10n.text(" · 已降级源码")))
     }
 }

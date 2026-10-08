@@ -43,7 +43,7 @@ public final class ImageDirectoryGrant {
         // Issuer keeps the selected directory open. No .withSecurityScope: this
         // is Apple's process-to-process transfer, and expires without a heartbeat.
         let bookmark = try imageDirectory.bookmarkData(options: [], includingResourceValuesForKeys: nil, relativeTo: nil)
-        guard bookmark.count <= 48 * 1024 else { throw PreviewError.limit("图片目录授权信息") }
+        guard bookmark.count <= 48 * 1024 else { throw PreviewError.limit(L10n.text("图片目录授权信息")) }
         let record = Record(owner: owner, revision: revision, expires: now.addingTimeInterval(30), issued: now, continuous: continuous, boot: boot, bookmark: bookmark)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         try transaction {
@@ -74,7 +74,7 @@ public final class ImageDirectoryGrant {
         guard fd >= 0 else { throw PreviewError.unavailable }; defer { Darwin.close(fd) }
         let deadline = Self.continuousTime() + 0.1
         while flock(fd, LOCK_EX | LOCK_NB) != 0 {
-            guard errno == EWOULDBLOCK, Self.continuousTime() < deadline else { throw PreviewError.limit("图片授权忙，请重试") }
+            guard errno == EWOULDBLOCK, Self.continuousTime() < deadline else { throw PreviewError.limit(L10n.text("图片授权忙，请重试")) }
             usleep(1000)
         }
         defer { flock(fd, LOCK_UN) }; try work()

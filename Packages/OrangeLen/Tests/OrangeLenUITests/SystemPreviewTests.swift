@@ -83,7 +83,7 @@ import OrangeLenCore
         let sheet = try OfficeContentPreview.text(Data(contentsOf: fixture("sample.xlsx")))
         XCTAssertTrue(sheet.contains("A1\tOrangeLens"))
         XCTAssertTrue(sheet.contains("C3\t42"))
-        XCTAssertTrue(sheet.contains("公式：40+2"))
+        XCTAssertTrue(sheet.contains(L10n.text("  [公式：") + "40+2"))
         let slides = try OfficeContentPreview.text(Data(contentsOf: fixture("sample.pptx")))
         XCTAssertTrue(slides.contains("Slide preview works"))
         for ext in ["png", "jpg", "heic", "tiff", "psd", "avif"] {
