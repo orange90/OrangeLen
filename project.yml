@@ -32,6 +32,26 @@ targets:
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: Copyright © 2026 OrangeLen contributors
         UTImportedTypeDeclarations:
+          - UTTypeIdentifier: local.orangelen.jsonc
+            UTTypeDescription: JSON with Comments
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [jsonc]
+          - UTTypeIdentifier: local.orangelen.json5
+            UTTypeDescription: JSON5 Document
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [json5]
+          - UTTypeIdentifier: local.orangelen.developer-source
+            UTTypeDescription: Developer Source and Configuration
+            UTTypeConformsTo: [public.source-code]
+            UTTypeTagSpecification:
+              public.filename-extension: [vue, svelte, astro, mjs, cjs, mts, cts, scss, sass, less, cs, php, dart, lua, r, scala, ps1, proto, graphql, gql, tf, tfvars, hcl]
+          - UTTypeIdentifier: com.excalidraw.excalidraw
+            UTTypeDescription: Excalidraw Drawing
+            UTTypeConformsTo: [public.json]
+            UTTypeTagSpecification:
+              public.filename-extension: [excalidraw]
           - UTTypeIdentifier: local.orangelen.har
             UTTypeDescription: HTTP Archive
             UTTypeConformsTo: [public.json]
@@ -67,26 +87,227 @@ targets:
         product: OrangeLenUI
       - target: OrangeLenPreview
         embed: true
+      - target: OrangeLenPreviewMarkdown
+        embed: true
+      - target: OrangeLenPreviewData
+        embed: true
+      - target: OrangeLenPreviewFolders
+        embed: true
+      - target: OrangeLenPreviewArchives
+        embed: true
+      - target: OrangeLenPreviewBooks
+        embed: true
+      - target: OrangeLenPreviewDrawings
+        embed: true
   OrangeLenPreview:
     type: app-extension
     platform: macOS
-    sources: [PreviewExtension]
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
     info:
       path: PreviewExtension/Info.plist
       properties:
-        CFBundleDisplayName: OrangeLen Preview
+        CFBundleDisplayName: OrangeLen · 代码
+        OrangeLenPreviewCategory: Code
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, net.daringfireball.markdown, public.json, public.xml, public.yaml, public.toml, public.make-source, com.unknown.md, public.comma-separated-values-text, public.tab-separated-values-text, public.folder, org.idpf.epub-container, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.notebook, local.orangelen.sqlite, local.orangelen.har]
+            QLSupportedContentTypes: [public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, public.make-source, local.orangelen.developer-source]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewMarkdown:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Markdown-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · Markdown 文档与 Notebook
+        OrangeLenPreviewCategory: Markdown
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [net.daringfireball.markdown, com.unknown.md, local.orangelen.notebook]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Markdown
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewData:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Data-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · 结构化数据
+        OrangeLenPreviewCategory: Data
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Data
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewFolders:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Folders-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · 文件夹
+        OrangeLenPreviewCategory: Folders
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [public.folder]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Folders
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewArchives:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Archives-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · 归档与压缩文本
+        OrangeLenPreviewCategory: Archives
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Archives
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewBooks:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Books-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · EPUB 图书
+        OrangeLenPreviewCategory: Books
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [org.idpf.epub-container]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Books
+        CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+      - target: OrangeLenImageBroker
+        embed: true
+        codeSign: true
+  OrangeLenPreviewDrawings:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: PreviewExtension
+        includes: [PreviewViewController.swift]
+    info:
+      path: PreviewExtension/Generated/Drawings-Info.plist
+      properties:
+        CFBundleDisplayName: OrangeLen · SVG 与 Excalidraw
+        OrangeLenPreviewCategory: Drawings
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
+          NSExtensionAttributes:
+            QLSupportedContentTypes: [com.excalidraw.excalidraw, public.svg-image]
+            QLSupportsSearchableItems: false
+            QLIsDataBasedPreview: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Preview.Drawings
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:

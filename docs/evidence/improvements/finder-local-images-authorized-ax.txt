@@ -1,0 +1,112 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 大纲, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 splitter (disabled, settable, float) 0
+		15 scroll area Secondary Actions: Scroll Up, Scroll Down
+			16 table Markdown 文档大纲
+				17 row (selectable)
+					18 cell
+						19 text OrangeLen · 项目阅读
+				20 row (selectable)
+					21 cell
+						22 text Help: 语言高亮, Value:   语言高亮
+				23 row (selectable)
+					24 cell
+						25 text Help: 数据保真, Value:   数据保真
+				26 row (selectable)
+					27 cell
+						28 text Help: 图表, Value:   图表
+				29 row (selected)
+					30 cell (selected)
+						31 text Help: 本地图片, Value:   本地图片
+				32 row (selectable)
+					33 cell
+						34 text Help: 阅读记录, Value:   阅读记录
+				35 sort button 文档大纲
+			36 scroll bar (disabled, settable, float) 0
+		37 splitter (disabled, settable, float) 220
+		38 scroll area Secondary Actions: Scroll Up, Scroll Down
+			39 text entry area Description: OrangeLen 只读正文, Value: **文档信息**
+title: OrangeLen 阅读体验
+version: 0.2
+language: 中文 / English
+**OrangeLen · 项目阅读**
+从 Finder 打开文档，沿着大纲读代码、数据和图表。原文保持完整，可随时切换源码。
+**提示** 目录侧栏会跟随阅读位置。点击图表可以放大，拖动即可平移。
+**语言高亮**
+def greet(name: str) -> str:
+    # 字符串中的 return 不会被误认为关键字
+    return f"你好，{name} 🍊"
+interface Preview {
+  source: string;
+  readonly: boolean;
+}
+const preview: Preview = { source: "class return 42", readonly: true };
+**数据保真**
+JSON 原始大整数和重复键可以直接核对，数据库排序会使用原始类型[[1]](orangelen-footnote:data)。
+**文件**
+**阅读方式**
+项目目录
+左侧选文件，右侧连续阅读
+SQLite
+每页 500 行，列标题排序
+压缩包
+目录树、完整路径筛选、大小排序
+
+**图表**
+[attached image: Mermaid 图表：flowchart LR
+  A[Finder 选中文件] --> B[按空格预览]
+  B --> C[目录 / 数据 / 图表]
+  C --> D[核对并复制原文]
+]
+公式：[attached image: 公式：E=mc^2]。
+**本地图片**
+[attached image: 本地示例] 本地示例
+**阅读记录**
+保存文档后会自动更新。阅读位置和源码模式尽量保留，远程图片仍需主动点击才加载。
+
+脚注
+1. 数据库在**只读内存快照**中读取，不执行文件里的 SQL。BLOB 显示字节数。
+
+				40 attached image Mermaid 图表：flowchart LR
+  A[Finder 选中文件] --> B[按空格预览]
+  B --> C[目录 / 数据 / 图表]
+  C --> D[核对并复制原文]
+
+				41 attached image 公式：E=mc^2
+				42 attached image 本地示例
+				43 link [1], Value: orangelen-footnote:data
+			44 scroll bar (settable, float) 0.7034131031777168
+				45 value indicator (settable, float) 0.7034131031777168
+				46 increment arrow button
+				47 decrement arrow button
+				48 increment page button
+				49 decrement page button
+	50 text reading.md · UTF-8 · 1416 bytes · markdown · 完整文件
+	51 close button close panel button
+	52 full screen button full screen window button
+	53 button Description: Share file, ID: QLControlShare
+	54 button Open with MacDown, Description: Open file, ID: QLControlOpen
+	55 text reading.md
+56 menu bar
+	57 Finder
+	58 File
+	59 Edit
+	60 View
+	61 Go
+	62 Window
+	63 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

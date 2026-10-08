@@ -1,0 +1,16 @@
+2026-10-05 latest source build, unsigned universal Release; architecture check only, not Intel runtime evidence
+Contents/MacOS/OrangeLen: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/MacOS/OrangeLenPreviewBooks: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewData.appex/Contents/MacOS/OrangeLenPreviewData: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/MacOS/OrangeLenPreviewDrawings: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/MacOS/OrangeLenPreviewFolders: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/MacOS/OrangeLenPreviewMarkdown: arm64 x86_64 verified
+Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker: arm64 x86_64 verified

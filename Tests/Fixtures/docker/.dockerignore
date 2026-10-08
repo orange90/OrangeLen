@@ -1,0 +1,8 @@
+# 隐藏文件；目录树中需要开启“显示忽略项”
+.git
+node_modules
+build
+*.log
+.env
+.env.*
+!app/.env.example

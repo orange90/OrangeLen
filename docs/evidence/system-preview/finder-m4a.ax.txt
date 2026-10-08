@@ -1,0 +1,67 @@
+Window: "", App: Finder.
+0 window Secondary Actions: Raise
+	1 pop-up button 更多操作
+	2 tickbox 目录树, Value: 1
+	3 split group
+		4 search text field (settable) 文件名筛选（已加载项）
+			5 button Search
+		6 tickbox 显示忽略项, Value: 0
+		7 scroll area Secondary Actions: Scroll Up, Scroll Down
+			8 outline 项目目录树
+				9 row (selectable, expanded) Value: ▸ system-preview, Secondary Actions: Collapse
+					10 disclosure triangle 1
+				11 row (selectable) sample.docx, Description: 预览 sample.docx
+预览 sample.docx
+				12 row (selected) sample.m4a, Description: 预览 sample.m4a
+预览 sample.m4a
+				13 row (selectable) sample.md, Description: 预览 sample.md
+预览 sample.md
+				14 row (selectable) sample.mp4, Description: 预览 sample.mp4
+预览 sample.mp4
+				15 row (selectable) sample.pptx, Description: 预览 sample.pptx
+预览 sample.pptx
+				16 row (selectable) sample.rtf, Description: 预览 sample.rtf
+预览 sample.rtf
+				17 row (selectable) sample.xlsx, Description: 预览 sample.xlsx
+预览 sample.xlsx
+			18 scroll bar (disabled, settable, float) 0
+		19 text 当前目录已扫描 7 项（完成）
+		20 splitter (disabled, settable, float) 180
+		21 splitter (disabled, settable, float) 0
+		22 image
+		23 button rewind
+		24 toggle button Description: play/pause, Value: off
+		25 button fast forward
+		26 button mute
+		27 slider (settable, float) Description: volume, Value: 1
+			28 value indicator (settable, float) 1
+		29 button More Controls
+		30 toggle button Description: toggle full screen, Value: off
+		31 button show external playback menu
+			32 button show external playback menu
+		33 button show legible media selection menu
+		34 button show audible media selection menu
+		35 button toggle picture-in-picture playback
+		36 button show action menu
+		37 button share
+		38 button show chapter menu
+		39 toggle button Description: zoom, Value: off
+		40 button playback speed
+		41 toggle button Description: Show Live Text, Value: off
+		42 text Description: elapsed time, Value: 00:00
+		43 toggle button Description: toggle elapsed time, timecode and framecount, Value: off
+		44 slider (settable, float) Description: timeline, Value: 0, Details: zero seconds
+			45 value indicator (settable, float) 0
+		46 text Description: duration, Value: 00:02
+		47 toggle button Description: toggle duration and remaining time, Value: on
+	48 text 文件夹：system-preview · 总大小 338 KB · 7 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 sample.m4a · 音视频预览 · 点击播放
+49 menu bar
+	50 Finder
+	51 File
+	52 Edit
+	53 View
+	54 Go
+	55 Window
+	56 Help
+
+The focused UI element is 0 window Secondary Actions: Raise

@@ -1,6 +1,7 @@
 import AppKit
 import ImageIO
 import OrangeLenCore
+import UniformTypeIdentifiers
 
 struct ImagePreview {
     let image: CGImage
@@ -8,7 +9,8 @@ struct ImagePreview {
     let height: Int
     let bytes: Int
     static func supports(_ url: URL) -> Bool {
-        ["png", "jpg", "jpeg", "gif", "tif", "tiff", "heic", "heif", "webp", "bmp", "ico"].contains(url.pathExtension.lowercased())
+        guard let type = UTType(filenameExtension: url.pathExtension.lowercased()), type.conforms(to: .image) else { return false }
+        return (CGImageSourceCopyTypeIdentifiers() as! [String]).contains(type.identifier)
     }
     static func load(_ url: URL, root: URL?, cancellation: Cancellation, maxBytes: Int = 25 * 1024 * 1024, maxPixelSize: Int = 2048) throws -> Self {
         var limits = PreviewLimits(); limits.fileBytes = maxBytes
@@ -20,7 +22,7 @@ struct ImagePreview {
         guard data.count <= 25 * 1024 * 1024 else { throw PreviewError.limit("图片字节预算") }
         guard let source = CGImageSourceCreateWithData(data as CFData, [kCGImageSourceShouldCache: false] as CFDictionary),
               let type = CGImageSourceGetType(source) as String?,
-              ["public.png", "public.jpeg", "com.compuserve.gif", "public.tiff", "public.heic", "public.heif", "org.webmproject.webp", "com.microsoft.bmp", "com.microsoft.ico", "public.avif"].contains(type),
+              (CGImageSourceCopyTypeIdentifiers() as! [String]).contains(type),
               let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any],
               let width = properties[kCGImagePropertyPixelWidth] as? Int,
               let height = properties[kCGImagePropertyPixelHeight] as? Int,

@@ -53,7 +53,7 @@ import OrangeLenCore
     func testMarkdownTablesHaveRealCellGeometryAndSafeLinks() throws {
         _ = NSApplication.shared
         let model = try MarkdownModel.parse("# 标题\n\n| Left | Right |\n| :--- | ---: |\n| 中文长内容以及 emoji 👩🏽‍💻 多次换行的文字内容 | 123 |\n\n***bold italic*** [safe](https://example.com)")
-        let attributed = TextStyler.attributed(model, markdown: true, settings: ReaderSettings(), focus: false)
+        let attributed = TextStyler.attributed(model, markdown: true, settings: ReaderSettings())
         XCTAssertEqual(attributed.string, model.display)
         let text = ReadingTextView(frame: NSRect(x: 0, y: 0, width: 640, height: 900))
         text.textContainer?.widthTracksTextView = false
@@ -93,7 +93,7 @@ import OrangeLenCore
         let assets = try MarkdownAssets.load(model, document: root.appendingPathComponent("README.md"), root: root, cancellation: Cancellation())
         XCTAssertEqual(assets.images.count, 1); XCTAssertEqual(assets.failures.count, 3)
         for width in [600.0, 200.0] {
-            let result = TextStyler.attributed(model, markdown: true, settings: ReaderSettings(), focus: true, assets: assets, width: width)
+            let result = TextStyler.attributed(model, markdown: true, settings: ReaderSettings(), assets: assets, width: width)
             XCTAssertEqual(result.string, model.display)
             let attachment = try XCTUnwrap(result.attribute(.attachment, at: model.images[0].range.location, effectiveRange: nil) as? NSTextAttachment)
             XCTAssertNotNil(attachment.attachmentCell)
@@ -111,41 +111,36 @@ import OrangeLenCore
         ```
         """)
         let text = ReadingTextView(frame: NSRect(x: 0, y: 0, width: 700, height: 900))
-        text.model = model; text.sentences = model.sentences()
+        text.model = model
         text.textContainer?.widthTracksTextView = false
         text.textContainer?.containerSize = NSSize(width: 640, height: 100000)
-        text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: true, settings: ReaderSettings(), focus: false))
+        text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: true, settings: ReaderSettings()))
         let layout = try XCTUnwrap(text.layoutManager), container = try XCTUnwrap(text.textContainer)
         layout.ensureLayout(for: container)
         var lines = 0
         layout.enumerateLineFragments(forGlyphRange: NSRange(location: 0, length: layout.numberOfGlyphs)) { _, _, _, _, _ in lines += 1 }
         XCTAssertLessThan(lines, 10)
-        for count in [1,3,5] {
-            text.rulerLines = count; text.sentence(at: 0)
-            let bands = text.visualRulerRects()
-            XCTAssertLessThanOrEqual(bands.count, count)
-            XCTAssertEqual(Set(bands.map { Int($0.minY) }).count, bands.count)
-        }
+
     }
     func testRealTextKitReflowsWithoutChangingSourceMapping() throws {
         _ = NSApplication.shared
         let source = "# 你好 👩🏽‍💻\n\n" + String(repeating: "中英文 emoji 👋 e\u{301} and a long sentence，", count: 18) + "结束。下一句。"
         let model = try MarkdownModel.parse(source)
         let text = ReadingTextView(frame: NSRect(x: 0, y: 0, width: 340, height: 900))
-        text.model = model; text.sentences = model.sentences(); text.focusEnabled = true
+        text.model = model
         text.textContainer?.widthTracksTextView = false
         let layout = try XCTUnwrap(text.layoutManager); let container = try XCTUnwrap(text.textContainer)
         var lineCounts: [Int] = []
         for (width, size) in [(300.0,18.0),(300.0,26.0),(700.0,18.0)] {
             var settings = ReaderSettings(); settings.documentSize = size
-            text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: true, settings: settings, focus: true))
+            text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: true, settings: settings))
             container.containerSize = NSSize(width: width, height: 100000)
             layout.ensureLayout(for: container)
             var count = 0
             layout.enumerateLineFragments(forGlyphRange: NSRange(location: 0, length: layout.numberOfGlyphs)) { rect, _, _, _, _ in XCTAssertGreaterThan(rect.height, 0); count += 1 }
             lineCounts.append(count)
-            for lines in [1,3,5] {
-                text.rulerLines = lines; text.sentence(at: 12)
+            do {
+                text.setAnchor(at: 12)
                 let bitmap = try XCTUnwrap(text.bitmapImageRepForCachingDisplay(in: text.bounds))
                 text.cacheDisplay(in: text.bounds, to: bitmap)
                 XCTAssertEqual(text.string, model.display)
@@ -195,7 +190,10 @@ import OrangeLenCore
         }
         let warm = Array(times.dropFirst()).sorted(); let p95 = warm[18]
         print("BENCHMARK app-in-process, bytes=\(data.count), initialMs=\(times[0]), warm20Ms=\(Array(times.dropFirst())), warmP95Ms=\(p95), OS file cache not controlled; NOT Finder timing")
-        XCTAssertEqual(reader.source?.byteCount, data.count)
+        XCTAssertEqual(reader.source?.totalBytes, data.count)
+        XCTAssertTrue(reader.source?.partial == true)
+        XCTAssertLessThanOrEqual(reader.source?.byteCount ?? Int.max, 65536)
+        XCTAssertEqual(reader.source?.text, String(data: data.prefix(reader.source?.byteCount ?? 0), encoding: .utf8))
         reader.close()
     }
     func testSupersededPreparationCompletesExactlyOnceAndLatestWins() async throws {

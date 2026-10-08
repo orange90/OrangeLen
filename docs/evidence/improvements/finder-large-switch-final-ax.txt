@@ -1,0 +1,77 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 button (disabled) 上一页
+	14 button 下一页
+	15 text 字节 1–524287 / 6475019 · 查找、行号与复制针对本页
+	16 split group
+		17 splitter (disabled, settable, float) 0
+		18 splitter (disabled, settable, float) 0
+		19 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			20 text entry area Description: OrangeLen 只读正文, Value: # CURRENT_FILE_19
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+中文🍊 reader stress fixture.
+
+
+			21 scroll bar (settable, float) 0.5
+				22 value indicator (settable, float) 0.5
+				23 increment arrow button
+				24 decrement arrow button
+				25 increment page button
+				26 decrement page button
+			27 scroll bar (settable, float) 1.431591404725206e-05
+				28 value indicator (settable, float) 1.431591404725206e-05
+				29 increment arrow button
+				30 decrement arrow button
+				31 increment page button
+				32 decrement page button
+			33 ruler
+	34 text 19-large.md · UTF-8 · 524287 bytes · markdown · 分页源码片段 高亮限本页前 250,000 UTF-16 单元；本页源码完整。
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 button Open with MacDown, Description: Open file, ID: QLControlOpen
+	39 text 19-large.md
+40 menu bar
+	41 Finder
+	42 File
+	43 Edit
+	44 View
+	45 Go
+	46 Window
+	47 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

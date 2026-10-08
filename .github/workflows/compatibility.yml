@@ -1,0 +1,36 @@
+name: macOS compatibility
+on:
+  workflow_dispatch:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, macos-15-intel, macos-26, macos-26-intel]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify selected Xcode and native runtime
+        run: |
+          printf 'DEVELOPER_DIR=%s\n' "$(xcode-select -p)" >> "$GITHUB_ENV"
+          sw_vers
+          uname -m
+          xcodebuild -version
+          xcrun swift --version
+      - name: Native tests
+        run: ./scripts/test.sh
+      - name: Host and seven extension builds
+        run: ./scripts/build.sh CODE_SIGNING_ALLOWED=NO
+      - name: Save evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compatibility-${{ matrix.runner }}
+          path: |
+            build/tests.log
+            build/build.log
+          if-no-files-found: warn

@@ -1,0 +1,9 @@
+Before:
++    local.OrangeLen.Preview.Data(0.1.0)
+
+Explicitly disabled Data, then installed current app.
+After upgrade:
+-    local.OrangeLen.Preview.Data(0.1.0)
+
+Restored original selection:
++    local.OrangeLen.Preview.Data(0.1.0)

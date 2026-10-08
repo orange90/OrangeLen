@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 app="${1:-build/DerivedData/Build/Products/Debug/OrangeLen.app}"
+if [[ $# == 0 && "${ORANGELEN_SKIP_BUILD:-0}" != 1 ]]; then ./scripts/build.sh; fi
 destination="$HOME/Applications/OrangeLen.app"
 mkdir -p "$HOME/Applications"
 ditto "$app" "$destination"
@@ -16,9 +17,9 @@ if [[ -n "${ORANGELEN_SIGN_IDENTITY:-}" ]]; then
       /usr/libexec/PlistBuddy -c 'Add :com.apple.security.application-groups array' "$ent"
       /usr/libexec/PlistBuddy -c "Add :com.apple.security.application-groups:0 string $group" "$ent"
     done
-    for info in "$destination/Contents/Info.plist" "$destination/Contents/PlugIns/OrangeLenPreview.appex/Contents/Info.plist"; do
+    while IFS= read -r -d "" info; do
       /usr/libexec/PlistBuddy -c "Add :OrangeLenAppGroup string $group" "$info"
-    done
+    done < <(find "$destination/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -print0)
   fi
   while IFS= read -r -d '' library; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime "$library"
@@ -26,12 +27,20 @@ if [[ -n "${ORANGELEN_SIGN_IDENTITY:-}" ]]; then
   while IFS= read -r -d '' service; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements ImageBroker/ImageBroker.entitlements "$service"
   done < <(find "$destination/Contents" -name '*.xpc' -print0)
-  codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements build/signing/preview.plist "$destination/Contents/PlugIns/OrangeLenPreview.appex"
+  while IFS= read -r -d "" preview; do
+    codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements build/signing/preview.plist "$preview"
+  done < <(find "$destination/Contents/PlugIns" -name "*.appex" -print0)
   codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements build/signing/app.plist "$destination"
 fi
 codesign --verify --deep --strict "$destination"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$destination"
-pluginkit -a "$destination/Contents/PlugIns/OrangeLenPreview.appex"
-pluginkit -e use -i local.OrangeLen.Preview
+while IFS= read -r -d '' preview; do
+  pluginkit -a "$preview"
+  identifier=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$preview/Contents/Info.plist")
+  selection=$(pluginkit -m -i "$identifier" 2>/dev/null || true)
+  if ! printf '%s\n' "$selection" | rg -q '^-' ; then
+    pluginkit -e use -i "$identifier"
+  fi
+done < <(find "$destination/Contents/PlugIns" -name '*.appex' -print0)
 qlmanage -r
 pluginkit -m -v -i local.OrangeLen.Preview

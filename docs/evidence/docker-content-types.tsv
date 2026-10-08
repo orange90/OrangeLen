@@ -1,0 +1,5 @@
+Dockerfile	public.data	public.item
+Dockerfile.dev	dyn.ah62d4rv4ge80k3p0	public.data,public.item
+Containerfile	public.data	public.item
+.dockerignore	public.data	public.item
+compose.yaml	public.yaml	public.content,public.data,public.item,public.text

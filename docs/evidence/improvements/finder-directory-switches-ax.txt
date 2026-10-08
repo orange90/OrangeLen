@@ -1,0 +1,1114 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 tickbox 大纲, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 000-document.md, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 000-document.md, Description: 预览 000-document.md
+预览 000-document.md
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 table Markdown 文档大纲
+				29 row (selectable)
+					30 cell
+						31 text 压力验收
+				32 sort button 文档大纲
+			33 scroll bar (disabled, settable, float) 0
+		34 splitter (disabled, settable, float) 220
+		35 scroll area
+			36 text entry area Description: OrangeLen 只读正文, Value: **压力验收**
+中文 🍊 Markdown
+let number = 42
+
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 001-code.swift, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 001-code.swift, Description: 预览 001-code.swift
+预览 001-code.swift
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Left, Scroll Right
+			29 text entry area Description: OrangeLen 只读正文, Value: let greeting = "中文 🍊"
+// directory stress
+
+			30 scroll bar (settable, float) 1
+				31 value indicator (settable, float) 1
+				32 increment arrow button
+				33 decrement arrow button
+				34 increment page button
+				35 decrement page button
+			36 ruler
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 search text field (settable) Value: 002-data.json, Placeholder: 文件名筛选（已加载项）
+			15 button Search
+			16 button cancel
+		17 tickbox 显示忽略项, Value: 0
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline 项目目录树
+				20 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selected) 002-data.json, Description: 预览 002-data.json
+预览 002-data.json
+			23 scroll bar (disabled, settable, float) 0
+		24 text 当前目录已扫描 2101 项（完成）
+		25 splitter (disabled, settable, float) 180
+		26 splitter (disabled, settable, float) 0
+		27 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			28 outline
+				29 row (selectable, expanded) Value: $: object · 3 项, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable) value: 9007199254740993
+				32 row (selectable) duplicate: 1
+				33 row (selectable) duplicate: 2
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 003-image.png, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 003-image.png, Description: 预览 003-image.png
+预览 003-image.png
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 button −
+		29 button +
+		30 button 适合窗口
+		31 button 100%
+		32 button 返回正文
+		33 text 129% · 拖动平移
+	34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 text OrangeLen-directory-stress
+39 menu bar
+	40 Finder
+	41 File
+	42 Edit
+	43 View
+	44 Go
+	45 Window
+	46 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 tickbox 大纲, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 000-document.md, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 000-document.md, Description: 预览 000-document.md
+预览 000-document.md
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 table Markdown 文档大纲
+				29 row (selectable)
+					30 cell
+						31 text 压力验收
+				32 sort button 文档大纲
+			33 scroll bar (disabled, settable, float) 0
+		34 splitter (disabled, settable, float) 220
+		35 scroll area
+			36 text entry area Description: OrangeLen 只读正文, Value: **压力验收**
+中文 🍊 Markdown
+let number = 42
+
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 001-code.swift, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 001-code.swift, Description: 预览 001-code.swift
+预览 001-code.swift
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Left, Scroll Right
+			29 text entry area Description: OrangeLen 只读正文, Value: let greeting = "中文 🍊"
+// directory stress
+
+			30 scroll bar (settable, float) 1
+				31 value indicator (settable, float) 1
+				32 increment arrow button
+				33 decrement arrow button
+				34 increment page button
+				35 decrement page button
+			36 ruler
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 search text field (settable) Value: 002-data.json, Placeholder: 文件名筛选（已加载项）
+			15 button Search
+			16 button cancel
+		17 tickbox 显示忽略项, Value: 0
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline 项目目录树
+				20 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selected) 002-data.json, Description: 预览 002-data.json
+预览 002-data.json
+			23 scroll bar (disabled, settable, float) 0
+		24 text 当前目录已扫描 2101 项（完成）
+		25 splitter (disabled, settable, float) 180
+		26 splitter (disabled, settable, float) 0
+		27 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			28 outline
+				29 row (selectable, expanded) Value: $: object · 3 项, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable) value: 9007199254740993
+				32 row (selectable) duplicate: 1
+				33 row (selectable) duplicate: 2
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 003-image.png, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 003-image.png, Description: 预览 003-image.png
+预览 003-image.png
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 button −
+		29 button +
+		30 button 适合窗口
+		31 button 100%
+		32 button 返回正文
+		33 text 129% · 拖动平移
+	34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 text OrangeLen-directory-stress
+39 menu bar
+	40 Finder
+	41 File
+	42 Edit
+	43 View
+	44 Go
+	45 Window
+	46 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 tickbox 大纲, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 000-document.md, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 000-document.md, Description: 预览 000-document.md
+预览 000-document.md
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 table Markdown 文档大纲
+				29 row (selectable)
+					30 cell
+						31 text 压力验收
+				32 sort button 文档大纲
+			33 scroll bar (disabled, settable, float) 0
+		34 splitter (disabled, settable, float) 220
+		35 scroll area
+			36 text entry area Description: OrangeLen 只读正文, Value: **压力验收**
+中文 🍊 Markdown
+let number = 42
+
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 001-code.swift, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 001-code.swift, Description: 预览 001-code.swift
+预览 001-code.swift
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Left, Scroll Right
+			29 text entry area Description: OrangeLen 只读正文, Value: let greeting = "中文 🍊"
+// directory stress
+
+			30 scroll bar (settable, float) 1
+				31 value indicator (settable, float) 1
+				32 increment arrow button
+				33 decrement arrow button
+				34 increment page button
+				35 decrement page button
+			36 ruler
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 search text field (settable) Value: 002-data.json, Placeholder: 文件名筛选（已加载项）
+			15 button Search
+			16 button cancel
+		17 tickbox 显示忽略项, Value: 0
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline 项目目录树
+				20 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selected) 002-data.json, Description: 预览 002-data.json
+预览 002-data.json
+			23 scroll bar (disabled, settable, float) 0
+		24 text 当前目录已扫描 2101 项（完成）
+		25 splitter (disabled, settable, float) 180
+		26 splitter (disabled, settable, float) 0
+		27 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			28 outline
+				29 row (selectable, expanded) Value: $: object · 3 项, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable) value: 9007199254740993
+				32 row (selectable) duplicate: 1
+				33 row (selectable) duplicate: 2
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 003-image.png, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 003-image.png, Description: 预览 003-image.png
+预览 003-image.png
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 button −
+		29 button +
+		30 button 适合窗口
+		31 button 100%
+		32 button 返回正文
+		33 text 129% · 拖动平移
+	34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 text OrangeLen-directory-stress
+39 menu bar
+	40 Finder
+	41 File
+	42 Edit
+	43 View
+	44 Go
+	45 Window
+	46 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 tickbox 大纲, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 000-document.md, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 000-document.md, Description: 预览 000-document.md
+预览 000-document.md
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 table Markdown 文档大纲
+				29 row (selectable)
+					30 cell
+						31 text 压力验收
+				32 sort button 文档大纲
+			33 scroll bar (disabled, settable, float) 0
+		34 splitter (disabled, settable, float) 220
+		35 scroll area
+			36 text entry area Description: OrangeLen 只读正文, Value: **压力验收**
+中文 🍊 Markdown
+let number = 42
+
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 001-code.swift, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 001-code.swift, Description: 预览 001-code.swift
+预览 001-code.swift
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Left, Scroll Right
+			29 text entry area Description: OrangeLen 只读正文, Value: let greeting = "中文 🍊"
+// directory stress
+
+			30 scroll bar (settable, float) 1
+				31 value indicator (settable, float) 1
+				32 increment arrow button
+				33 decrement arrow button
+				34 increment page button
+				35 decrement page button
+			36 ruler
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 search text field (settable) Value: 002-data.json, Placeholder: 文件名筛选（已加载项）
+			15 button Search
+			16 button cancel
+		17 tickbox 显示忽略项, Value: 0
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline 项目目录树
+				20 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selected) 002-data.json, Description: 预览 002-data.json
+预览 002-data.json
+			23 scroll bar (disabled, settable, float) 0
+		24 text 当前目录已扫描 2101 项（完成）
+		25 splitter (disabled, settable, float) 180
+		26 splitter (disabled, settable, float) 0
+		27 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			28 outline
+				29 row (selectable, expanded) Value: $: object · 3 项, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable) value: 9007199254740993
+				32 row (selectable) duplicate: 1
+				33 row (selectable) duplicate: 2
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 003-image.png, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 003-image.png, Description: 预览 003-image.png
+预览 003-image.png
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 button −
+		29 button +
+		30 button 适合窗口
+		31 button 100%
+		32 button 返回正文
+		33 text 129% · 拖动平移
+	34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 text OrangeLen-directory-stress
+39 menu bar
+	40 Finder
+	41 File
+	42 Edit
+	43 View
+	44 Go
+	45 Window
+	46 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 tickbox 大纲, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 000-document.md, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 000-document.md, Description: 预览 000-document.md
+预览 000-document.md
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 scroll area Secondary Actions: Scroll Up, Scroll Down
+			28 table Markdown 文档大纲
+				29 row (selectable)
+					30 cell
+						31 text 压力验收
+				32 sort button 文档大纲
+			33 scroll bar (disabled, settable, float) 0
+		34 splitter (disabled, settable, float) 220
+		35 scroll area
+			36 text entry area Description: OrangeLen 只读正文, Value: **压力验收**
+中文 🍊 Markdown
+let number = 42
+
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 001-code.swift, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 001-code.swift, Description: 预览 001-code.swift
+预览 001-code.swift
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 scroll area Secondary Actions: Scroll Left, Scroll Right
+			29 text entry area Description: OrangeLen 只读正文, Value: let greeting = "中文 🍊"
+// directory stress
+
+			30 scroll bar (settable, float) 1
+				31 value indicator (settable, float) 1
+				32 increment arrow button
+				33 decrement arrow button
+				34 increment page button
+				35 decrement page button
+			36 ruler
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: 阅读, Value: 1
+	2 radio button Description: 源码, Value: 0
+	3 pop-up button (disabled) 目录
+	4 pop-up button 显示设置
+	5 pop-up button 更多操作
+	6 tickbox 目录树, Value: 1
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 split group
+		14 search text field (settable) Value: 002-data.json, Placeholder: 文件名筛选（已加载项）
+			15 button Search
+			16 button cancel
+		17 tickbox 显示忽略项, Value: 0
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline 项目目录树
+				20 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selected) 002-data.json, Description: 预览 002-data.json
+预览 002-data.json
+			23 scroll bar (disabled, settable, float) 0
+		24 text 当前目录已扫描 2101 项（完成）
+		25 splitter (disabled, settable, float) 180
+		26 splitter (disabled, settable, float) 0
+		27 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			28 outline
+				29 row (selectable, expanded) Value: $: object · 3 项, Secondary Actions: Collapse
+					30 disclosure triangle 1
+				31 row (selectable) value: 9007199254740993
+				32 row (selectable) duplicate: 1
+				33 row (selectable) duplicate: 2
+				34 sort button JSON · 原始值（不转换浮点数）
+			35 scroll bar (disabled, settable, float) 0
+			36 scroll bar (disabled, settable, float) 0
+	37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件
+重复键已保留为独立节点。
+	38 close button close panel button
+	39 full screen button full screen window button
+	40 button Description: Share file, ID: QLControlShare
+	41 text OrangeLen-directory-stress
+42 menu bar
+	43 Finder
+	44 File
+	45 Edit
+	46 View
+	47 Go
+	48 Window
+	49 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
+
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 tickbox 目录树, Value: 1
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) Value: 003-image.png, Placeholder: 文件名筛选（已加载项）
+			16 button Search
+			17 button cancel
+		18 tickbox 显示忽略项, Value: 0
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: ▸ OrangeLen-directory-stress, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selected) 003-image.png, Description: 预览 003-image.png
+预览 003-image.png
+			24 scroll bar (disabled, settable, float) 0
+		25 text 当前目录已扫描 2101 项（完成）
+		26 splitter (disabled, settable, float) 180
+		27 splitter (disabled, settable, float) 0
+		28 button −
+		29 button +
+		30 button 适合窗口
+		31 button 100%
+		32 button 返回正文
+		33 text 129% · 拖动平移
+	34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 text OrangeLen-directory-stress
+39 menu bar
+	40 Finder
+	41 File
+	42 Edit
+	43 View
+	44 Go
+	45 Window
+	46 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

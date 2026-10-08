@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><style>html,body{margin:0;background:#fff}#stage{display:inline-block;line-height:0}svg{display:block}</style></head><body><div id="stage"></div><script>
+window.orangeRender = async function(kind, source) {
+  if (kind !== 'svg') throw Error('Unsupported image');
+  const documentSVG = new DOMParser().parseFromString(source, 'image/svg+xml');
+  if (documentSVG.querySelector('parsererror')) throw Error('Invalid SVG');
+  const svg = documentSVG.documentElement;
+  const box = svg.viewBox.baseVal;
+  let width = box.width, height = box.height;
+  if (!(width > 0 && height > 0)) {
+    width = svg.width.baseVal.value || 300; height = svg.height.baseVal.value || 150;
+  }
+  if (![width,height].every(n => Number.isFinite(n) && n > 0 && n <= 1000000)) throw Error('SVG size budget');
+  const scale = Math.min(1, 780 / width, 1400 / height);
+  width = Math.max(1, Math.ceil(width * scale)); height = Math.max(1, Math.ceil(height * scale));
+  // Documents with fixed dimensions also need a viewBox for bounded proportional rendering.
+  if (!svg.hasAttribute('viewBox')) svg.setAttribute('viewBox', `0 0 ${svg.width.baseVal.value || 300} ${svg.height.baseVal.value || 150}`);
+  svg.setAttribute('width', String(width)); svg.setAttribute('height', String(height));
+  svg.setAttribute('style', 'background:white;color:black');
+  const stage = document.getElementById('stage'); stage.replaceChildren(document.importNode(svg,true));
+  stage.getBoundingClientRect();
+  // Offscreen Quick Look renderers can throttle animation frames indefinitely.
+  await new Promise(resolve => setTimeout(resolve, 40));
+  return {x:0,y:0,width,height};
+};
+</script></body></html>

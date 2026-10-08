@@ -33,7 +33,7 @@ import OrangeLenCore
         XCTAssertTrue(model.display.contains("$notMath$"))
         XCTAssertEqual(model.copiedSource((model.display as NSString).range(of: "后文")), "后文")
         XCTAssertEqual(model.copiedSource((model.display as NSString).range(of: "👩🏽‍💻")), "👩🏽‍💻")
-        let styled = TextStyler.attributed(model, markdown: true, settings: .init(), focus: false)
+        let styled = TextStyler.attributed(model, markdown: true, settings: .init())
         XCTAssertEqual(styled.length, (model.display as NSString).length)
     }
     func testRemoteImagesStayIdleUntilUserAction() async throws {

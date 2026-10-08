@@ -1,0 +1,1 @@
+{"private":true,"scripts":{"build":"esbuild entry.js --bundle --minify --format=iife --global-name=OrangeHighlight --outfile=../../Packages/OrangeLen/Sources/OrangeLenUI/Resources/Highlight.js"},"dependencies":{"highlight.js":"11.12.0"},"devDependencies":{"esbuild":"0.28.2"}}

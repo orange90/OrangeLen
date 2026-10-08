@@ -1,0 +1,3 @@
+# Offline native syntax highlighting
+
+Pinned highlight.js 11.12.0 (BSD-3-Clause) bundled by esbuild 0.28.2. `npm ci --ignore-scripts && npm run build` regenerates the checked-in JavaScript resource. Only build time uses npm; previews do not invoke npm, a shell, or a browser. JavaScriptCore runs the trusted library, with document text passed as a function argument. The returned escaped spans are parsed into native attributed-text ranges only after exact source equality verification. No document HTML or JavaScript is executed. Highlighting is bounded to 250,000 UTF-16 units and cache holds 12 inputs. This is language grammar coloring, not a compiler or semantic validator.

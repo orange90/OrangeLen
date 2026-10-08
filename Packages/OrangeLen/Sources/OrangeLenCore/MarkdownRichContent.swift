@@ -18,7 +18,7 @@ extension MarkdownModel {
         var model = input
         let source = input.source as NSString
         let protected = input.blocks.filter { if case .code = $0.kind { return true }; if case .html = $0.kind { return true }; return false }.map(\.source)
-          + input.styles.filter { $0.style.contains(.code) }.compactMap { input.sourceRange(for: $0.range) }
+          + input.styles.filter { ($0.style.contains(.code) || $0.style.contains(.metadata)) }.compactMap { input.sourceRange(for: $0.range) }
           + input.images.compactMap { input.sourceRange(for: $0.range) }
           + input.richContent.map(\.source)
         let pattern = #"(?<!\\)\$\$([\s\S]+?)(?<!\\)\$\$|(?<!\\)\\\[([\s\S]+?)(?<!\\)\\\]|(?<![\\$])\$(?![\s$])([^\r\n]+?)(?<![\\\s])\$(?![\d$])|(?<!\\)\\\(([^\r\n]+?)(?<!\\)\\\)"#
@@ -66,6 +66,8 @@ extension MarkdownModel {
             mappings.append(.init(display: NSRange(location: range.location, length: 1), source: original, exact: false))
             model.mapping = mappings.sorted { $0.display.location < $1.display.location }
             model.styles = model.styles.map { .init(range: shifted($0.range), style: $0.style) }.filter { $0.range.length > 0 }
+            model.anchors = model.anchors.map { .init(name: $0.name, range: shifted($0.range)) }
+            model.codeLanguages = model.codeLanguages.map { .init(range: shifted($0.range), language: $0.language) }
             model.blocks = model.blocks.map { .init(range: shifted($0.range), source: $0.source, kind: $0.kind) }
             model.links = model.links.map { .init(range: shifted($0.range), destination: $0.destination) }
             model.images = model.images.map { .init(range: shifted($0.range), destination: $0.destination, alt: $0.alt) }

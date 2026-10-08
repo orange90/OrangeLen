@@ -2,23 +2,32 @@ import AppKit
 import OrangeLenCore
 
 enum TextStyler {
-    static func attributed(_ model: TextModel, markdown: Bool, settings: ReaderSettings, focus: Bool, assets: MarkdownAssets = .init(), width: CGFloat = 760) -> NSAttributedString {
+    static func attributed(_ model: TextModel, markdown: Bool, settings: ReaderSettings, assets: MarkdownAssets = .init(), width: CGFloat = 760, language: String? = nil, highlight: Bool = true) -> NSAttributedString {
         let size = markdown ? settings.documentSize : settings.codeSize
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineSpacing = markdown ? size * 0.30 : 3
         paragraph.paragraphSpacing = markdown ? size * 0.7 : 0
         paragraph.defaultTabInterval = size * 9
-        let color = focus && settings.dim ? NSColor.secondaryLabelColor : NSColor.textColor
+        let color = NSColor.textColor
         let result = NSMutableAttributedString(string: model.display, attributes: [.font: markdown ? NSFont.systemFont(ofSize: size) : NSFont.monospacedSystemFont(ofSize: size, weight: .regular), .foregroundColor: color, .paragraphStyle: paragraph])
         for span in model.styles {
             var font = span.style.contains(.code) ? NSFont.monospacedSystemFont(ofSize: size * 0.9, weight: .regular) : NSFont.systemFont(ofSize: size)
             if span.style.contains(.strong) { font = NSFontManager.shared.convert(font, toHaveTrait: .boldFontMask) }
             if span.style.contains(.emphasis) { font = NSFontManager.shared.convert(font, toHaveTrait: .italicFontMask) }
             result.addAttribute(.font, value: font, range: span.range)
-            if span.style.contains(.code) { result.addAttribute(.backgroundColor, value: NSColor.quaternaryLabelColor.withAlphaComponent(0.08), range: span.range) }
+            if span.style.contains(.code), !model.blocks.contains(where: { block in if case .code = block.kind { return NSIntersectionRange(block.range, span.range).length > 0 }; return false }) { result.addAttribute(.backgroundColor, value: NSColor.quaternaryLabelColor.withAlphaComponent(0.08), range: span.range) }
             if span.style.contains(.strike) { result.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: span.range) }
             if span.style.contains(.link) { result.addAttributes([.foregroundColor: NSColor.linkColor, .underlineStyle: NSUnderlineStyle.single.rawValue], range: span.range) }
-            if span.style.contains(.quote) { result.addAttribute(.foregroundColor, value: NSColor.secondaryLabelColor, range: span.range) }
+            if span.style.contains(.metadata) {
+                let p = paragraph.mutableCopy() as! NSMutableParagraphStyle; p.lineSpacing = 2; p.paragraphSpacing = 3
+                let box = NSTextBlock(); box.setContentWidth(100, type: .percentageValueType); box.backgroundColor = NSColor.quaternaryLabelColor.withAlphaComponent(0.08)
+                box.setWidth(12, type: .absoluteValueType, for: .padding); p.textBlocks = [box]
+                result.addAttributes([.font: NSFont.systemFont(ofSize: min(14, max(11, size * 0.75))), .paragraphStyle: p, .foregroundColor: NSColor.labelColor], range: span.range)
+                let title = (model.display as NSString).range(of: "文档信息", range: span.range)
+                if title.location != NSNotFound { result.addAttribute(.font, value: NSFont.systemFont(ofSize: min(14, max(11, size * 0.75)), weight: .semibold), range: title) }
+            }
+            if span.style.contains(.callout) { result.addAttribute(.foregroundColor, value: NSColor.controlAccentColor, range: span.range) }
+            if span.style.contains(.quote) { result.addAttribute(.foregroundColor, value: NSColor.labelColor, range: span.range) }
         }
         for block in model.blocks {
             if case .heading(let level) = block.kind {
@@ -34,7 +43,7 @@ enum TextStyler {
                 box.setWidth(6, type: .absoluteValueType, for: .margin)
                 p.textBlocks = [box]
                 result.addAttribute(.paragraphStyle, value: p, range: (model.display as NSString).paragraphRange(for: block.range))
-                highlight(result, range: block.range)
+                SyntaxHighlighter.shared.apply(result, range: block.range, language: model.codeLanguages.first { $0.range == block.range }?.language)
             }
         }
         if markdown {
@@ -85,6 +94,7 @@ enum TextStyler {
                     let scale = min(1, available / CGFloat(loaded.width))
                     let rendered = NSImage(cgImage: loaded, size: NSSize(width: CGFloat(loaded.width) * scale, height: CGFloat(loaded.height) * scale))
                     attachment.attachmentCell = NSTextAttachmentCell(imageCell: rendered)
+                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel(image.alt.isEmpty ? "文档图片" : image.alt)
                 } else {
                     attachment.attachmentCell = placeholderCell(assets.failures[image.range.location] ?? "图片未加载", width: width)
                 }
@@ -104,13 +114,14 @@ enum TextStyler {
                     let copy = image.copy() as! NSImage
                     copy.size = NSSize(width: image.size.width * scale, height: image.size.height * scale)
                     attachment.attachmentCell = NSTextAttachmentCell(imageCell: copy)
+                    (attachment.attachmentCell as? NSTextAttachmentCell)?.setAccessibilityLabel((item.kind == .mermaid ? "Mermaid 图表：" : "公式：") + String(item.content.prefix(512)))
                 } else {
                     attachment.attachmentCell = placeholderCell(assets.richFailures[item.range.location] ?? "正在渲染\(item.kind == .mermaid ? "图表" : "公式")…", width: width)
                 }
                 result.addAttributes([.attachment: attachment, .toolTip: item.content], range: item.range)
             }
         }
-        if !markdown { highlight(result, range: NSRange(location: 0, length: result.length)) }
+        if !markdown && highlight { SyntaxHighlighter.shared.apply(result, range: NSRange(location: 0, length: result.length), language: language) }
         return result
     }
     static func placeholderCell(_ title: String, width: CGFloat) -> NSTextAttachmentCell {
@@ -125,24 +136,7 @@ enum TextStyler {
         let cell = NSTextAttachmentCell(imageCell: image); cell.setAccessibilityLabel(title)
         return cell
     }
-    static func highlight(_ text: NSMutableAttributedString, range: NSRange) {
-        let range = NSIntersectionRange(range, NSRange(location: 0, length: min(text.length, PreviewLimits().highlightUTF16)))
-        guard range.length > 0 else { return }
-        let sourceString = text.string
-        // Lexical styling only; never invokes a compiler, interpreter or project tool.
-        let patterns: [(String, NSColor)] = [
-            (#"\b(?:let|var|func|class|struct|enum|import|from|def|return|if|else|for|while|const|function|async|await|true|false|null|nil|SELECT|FROM|WHERE)\b"#, .systemPurple),
-            (#"\b[0-9]+(?:\.[0-9]+)?\b"#, .systemOrange),
-            (#"\"(?:[^\"\\]|\\.)*\"|'(?:[^'\\]|\\.)*'"#, .systemRed),
-            (#"(?m)//[^\r\n]*|^\s*#[^\r\n]*|/\*[\s\S]*?\*/"#, .systemGreen)
-        ]
-        for (pattern, color) in patterns {
-            guard let regex = try? NSRegularExpression(pattern: pattern) else { continue }
-            regex.enumerateMatches(in: sourceString, range: range) { match, _, _ in
-                if let match { text.addAttribute(.foregroundColor, value: color, range: match.range) }
-            }
-        }
-    }
+
 }
 
 

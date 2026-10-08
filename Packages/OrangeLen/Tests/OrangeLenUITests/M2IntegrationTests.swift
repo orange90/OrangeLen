@@ -55,14 +55,32 @@ import OrangeLenCore
         XCTAssertTrue(reader.overflow.itemTitles.contains("阅读/源码切换"))
         reader.close()
     }
-    func testFocusDecorationSurvivesShorterLoadingText() throws {
+    func testNotebookDisplaysAllCellsAndOutputsWithoutSidebar() async throws {
+        _ = NSApplication.shared
+        let reader = ReaderController(); reader.loadViewIfNeeded()
+        let ready = expectation(description:"Notebook")
+        reader.open(fixture("sample.ipynb")) { error in XCTAssertNil(error); ready.fulfill() }
+        await fulfillment(of:[ready],timeout:10)
+        let collection = try XCTUnwrap(reader.collection)
+        try await waitUntil { collection.reader.text.string.contains("HTML output blocked") }
+        let content = collection.reader.text.string
+        XCTAssertTrue(content.contains("Notebook 中文"))
+        XCTAssertTrue(content.contains("print(\"do not execute\")"))
+        XCTAssertTrue(content.contains("Already recorded output"))
+        XCTAssertFalse(content.contains("<script>"))
+        XCTAssertEqual(collection.list.selectedRow,-1)
+        XCTAssertEqual((collection.view as? NSSplitView)?.arrangedSubviews.first?.isHidden,true)
+        reader.close()
+    }
+
+    func testDrawingSurvivesShorterLoadingText() throws {
         _ = NSApplication.shared
         let bitmap = try XCTUnwrap(NSBitmapImageRep(bitmapDataPlanes:nil,pixelsWide:400,pixelsHigh:200,bitsPerSample:8,samplesPerPixel:4,hasAlpha:true,isPlanar:false,colorSpaceName:.deviceRGB,bytesPerRow:0,bitsPerPixel:0))
         NSGraphicsContext.saveGraphicsState(); NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep:bitmap)
         defer { NSGraphicsContext.restoreGraphicsState() }
         let text = ReadingTextView(frame:NSRect(x:0,y:0,width:400,height:200))
-        text.model = .plain(String(repeating:"中文句子。",count:100)); text.string = text.model.display; text.sentences = text.model.sentences(); text.focusEnabled = true; text.dimEnabled = true
-        text.sentence(at:200)
+        text.model = .plain(String(repeating:"中文句子。",count:100)); text.string = text.model.display
+        text.setAnchor(at:200)
         text.drawBackground(in:text.bounds); text.draw(text.bounds)
         // Loading can shorten storage before a replacement model is ready.
         text.string = "读取中"

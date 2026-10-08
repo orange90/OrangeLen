@@ -1,0 +1,19 @@
+# Compose 标准文件名：服务、数组、变量与中文注释
+name: orangelen-preview-demo
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${DEMO_PORT:-8080}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+    labels:
+      demo.description: "OrangeLen 中文预览"
+    networks:
+      - demo
+networks:
+  demo:
+    driver: bridge

@@ -1,0 +1,10 @@
+# .prod 后缀变体
+FROM node:22-alpine
+LABEL org.opencontainers.image.title="OrangeLen 示例"
+WORKDIR /app
+COPY --chown=node:node app/ ./
+ENV NODE_ENV=production \
+    PORT=3000
+USER node
+EXPOSE 3000
+CMD ["node", "server.js"]

@@ -44,39 +44,87 @@ public final class DatabaseDocument: @unchecked Sendable {
     private var tableStorage: [String] = []
     public var tableNames: [String] { tableStorage }
     deinit { if let database { sqlite3_close(database) } }
+    public struct Column: Sendable, Equatable {
+        public let name: String
+        public let declaredType: String
+        public let notNull: Bool
+        public let primaryKey: Int
+    }
+    public struct Page: Sendable {
+        public let columns: [Column]
+        public let rows: [[String]]
+        public let offset: Int
+        public let hasNext: Bool
+    }
     public func rows(_ table: String, cancellation: Cancellation = .init()) throws -> [[String]] {
+        let result = try page(table, cancellation: cancellation)
+        return [result.columns.map(\.name)] + result.rows
+    }
+    /// Only validated table/column names enter generated read-only queries. Values in
+    /// the database never become SQL. Each page has its own time and byte budget.
+    public func page(_ table: String, offset: Int = 0, pageSize: Int = 500, sortColumn: Int? = nil, ascending: Bool = true, cancellation: Cancellation = .init()) throws -> Page {
         lock.lock(); defer { lock.unlock() }
         guard tableStorage.contains(table), let db = database else { throw PreviewError.unsafePath }
+        guard offset >= 0, offset <= Int(Int32.max), pageSize > 0, pageSize <= 1000 else { throw PreviewError.limit("数据库分页范围") }
         try cancellation.check()
-        let budget = Budget(cancellation,limits.databaseSeconds)
-        sqlite3_progress_handler(db,1000,{ context in
-            guard let context else { return 1 }; let value = Unmanaged<Budget>.fromOpaque(context).takeUnretainedValue()
+        let budget = Budget(cancellation, limits.databaseSeconds)
+        sqlite3_progress_handler(db, 1000, { context in
+            guard let context else { return 1 }
+            let value = Unmanaged<Budget>.fromOpaque(context).takeUnretainedValue()
             return ((try? value.token.check()) == nil || Date() > value.deadline) ? 1 : 0
-        },Unmanaged.passUnretained(budget).toOpaque())
-        defer { sqlite3_progress_handler(db,0,nil,nil) }
-        let quoted = "\"" + table.replacingOccurrences(of:"\"",with:"\"\"") + "\""
+        }, Unmanaged.passUnretained(budget).toOpaque())
+        defer { sqlite3_progress_handler(db, 0, nil, nil) }
+        func quote(_ value: String) -> String { "\"" + value.replacingOccurrences(of: "\"", with: "\"\"") + "\"" }
+        let quoted = quote(table)
+        var info: OpaquePointer?
+        guard sqlite3_prepare_v2(db, "PRAGMA table_info(\(quoted))", -1, &info, nil) == SQLITE_OK else { throw PreviewError.malformed("数据库列结构") }
+        defer { sqlite3_finalize(info) }
+        var columns: [Column] = []
+        var state = sqlite3_step(info)
+        while state == SQLITE_ROW {
+            try cancellation.check()
+            guard columns.count < limits.tableColumns else { throw PreviewError.limit("数据库列数") }
+            columns.append(.init(name: String(cString: sqlite3_column_text(info, 1)), declaredType: String(cString: sqlite3_column_text(info, 2)), notNull: sqlite3_column_int(info, 3) != 0, primaryKey: Int(sqlite3_column_int(info, 5))))
+            state = sqlite3_step(info)
+        }
+        guard state == SQLITE_DONE, !columns.isEmpty else { throw PreviewError.malformed("数据库列结构不可读") }
+        if let sortColumn, !columns.indices.contains(sortColumn) { throw PreviewError.unsafePath }
+        var ordering: [String] = []
+        if let sortColumn { ordering.append(quote(columns[sortColumn].name) + (ascending ? " ASC" : " DESC")) }
+        // Stable ties make moving between pages predictable. Use PK where present,
+        // otherwise the unshadowed rowid alias of a regular table.
+        let primary = columns.filter { $0.primaryKey > 0 }.sorted { $0.primaryKey < $1.primaryKey }
+        ordering += primary.map { quote($0.name) + " ASC" }
+        if primary.isEmpty, let rowID = ["_rowid_", "rowid", "oid"].first(where: { alias in !columns.contains { $0.name.lowercased() == alias } }) {
+            ordering.append(quote(rowID) + " ASC")
+        }
+        let order = ordering.isEmpty ? "" : " ORDER BY " + ordering.joined(separator: ", ")
         var statement: OpaquePointer?
-        guard sqlite3_prepare_v2(db,"SELECT * FROM \(quoted) LIMIT \(limits.databaseRows)",-1,&statement,nil) == SQLITE_OK else { throw PreviewError.malformed("表不可安全读取（可能为虚拟表或不可信 schema）") }
+        let sql = "SELECT * FROM \(quoted)\(order) LIMIT \(pageSize + 1) OFFSET \(offset)"
+        guard sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK else { throw PreviewError.malformed("表不可安全读取") }
         defer { sqlite3_finalize(statement) }
-        var rows: [[String]] = []; let count = sqlite3_column_count(statement); var bytes = 0
-        rows.append((0..<count).map { String(cString:sqlite3_column_name(statement,$0)) })
+        guard sqlite3_stmt_readonly(statement) != 0 else { throw PreviewError.unsafePath }
+        var rows: [[String]] = [], bytes = 0
         var step = sqlite3_step(statement)
         while step == SQLITE_ROW {
             try cancellation.check()
             var row: [String] = []
-            for i in 0..<count {
-                let type = sqlite3_column_type(statement,i)
+            for i in 0..<sqlite3_column_count(statement) {
+                let type = sqlite3_column_type(statement, i)
                 let value: String
                 if type == SQLITE_NULL { value = "NULL" }
-                else if type == SQLITE_BLOB { value = "[BLOB \(sqlite3_column_bytes(statement,i)) bytes]" }
-                else if let text = sqlite3_column_text(statement,i) { value = String(decoding:UnsafeBufferPointer(start:text,count:Int(sqlite3_column_bytes(statement,i))),as:UTF8.self) }
+                else if type == SQLITE_BLOB { value = "[BLOB \(sqlite3_column_bytes(statement, i)) bytes]" }
+                else if let text = sqlite3_column_text(statement, i) { value = String(decoding: UnsafeBufferPointer(start: text, count: Int(sqlite3_column_bytes(statement, i))), as: UTF8.self) }
                 else { value = "" }
-                bytes += value.utf8.count; guard bytes <= limits.archiveEntryBytes else { throw PreviewError.limit("表显示字节") }
+                bytes += value.utf8.count
+                guard bytes <= limits.archiveEntryBytes else { throw PreviewError.limit("表显示字节") }
                 row.append(value)
             }
             rows.append(row); step = sqlite3_step(statement)
         }
         guard step == SQLITE_DONE else { throw PreviewError.malformed("SQLite 读取取消、超时或损坏") }
-        return rows
+        let hasNext = rows.count > pageSize
+        if hasNext { rows.removeLast() }
+        return Page(columns: columns, rows: rows, offset: offset, hasNext: hasNext)
     }
 }

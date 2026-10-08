@@ -1,0 +1,36 @@
+{
+  "test": "Synthetic 20 large files; forward groups 5/5/5/4, reverse one burst of 19 Up keys. Only listed checkpoints verified; CUA dispatch time is not load latency; OS cache uncontrolled.",
+  "checks": [
+    {
+      "file": "00-large.swift",
+      "matched": true,
+      "at": 1791133420018
+    },
+    {
+      "file": "05-large.json",
+      "matched": true,
+      "at": 1791133461054
+    },
+    {
+      "file": "10-large.md",
+      "matched": true,
+      "at": 1791133485411
+    },
+    {
+      "file": "15-large.swift",
+      "matched": true,
+      "at": 1791133498347
+    },
+    {
+      "file": "19-large.md",
+      "matched": true,
+      "at": 1791133514043
+    },
+    {
+      "file": "00-large.swift",
+      "matched": true,
+      "keyDispatchMs": 1250,
+      "at": 1791133564956
+    }
+  ]
+}

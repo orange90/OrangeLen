@@ -5,8 +5,7 @@ extension ReaderController {
     func refreshAttachments() {
         guard format == .markdown, mode.selectedSegment == 0, rendered != nil else { return }
         let selection = text.selectedRange(), position = scroll.contentView.bounds.origin
-        text.clearDecoration()
-        text.textStorage?.setAttributedString(TextStyler.attributed(text.model, markdown: true, settings: settings, focus: settings.focus, assets: markdownAssets, width: renderedWidth))
+        text.textStorage?.setAttributedString(TextStyler.attributed(text.model, markdown: true, settings: settings, assets: markdownAssets, width: renderedWidth))
         text.setSelectedRange(selection); scroll.contentView.scroll(to: position)
         text.needsDisplay = true
     }

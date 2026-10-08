@@ -1,0 +1,11 @@
+# 另一种常见文件名；含 YAML 锚点、别名和合并键
+x-defaults: &defaults
+  restart: "no"
+  environment:
+    PORT: "3000"
+services:
+  web:
+    <<: *defaults
+    build: .
+    ports:
+      - "8082:3000"

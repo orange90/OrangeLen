@@ -3,13 +3,19 @@ import Markdown
 
 public enum MarkdownModel {
     public static func parse(_ source: String, cancellation: Cancellation = .init(), limits: PreviewLimits = .init()) throws -> TextModel {
+        let extras = try MarkdownExtras.prepare(source, cancellation: cancellation)
+        var model = try base(extras.masked, cancellation: cancellation, limits: limits)
+        model.source = source
+        model = try MarkdownExtras.apply(model, prepared: extras, cancellation: cancellation, limits: limits)
+        return try projectMath(model, cancellation: cancellation)
+    }
+    static func base(_ source: String, cancellation: Cancellation, limits: PreviewLimits) throws -> TextModel {
         try cancellation.check()
-        // cmark is bounded by fileBytes; its synchronous parse cannot be interrupted mid-call.
         let document = Document(parsing: source, options: [.parseSymbolLinks])
         try cancellation.check()
         let builder = Builder(source: source, cancellation: cancellation, limits: limits)
         try builder.visit(document, style: [], depth: 0)
-        return try projectMath(builder.model, cancellation: cancellation)
+        return builder.model
     }
     private final class Builder {
         var model: TextModel
@@ -146,10 +152,11 @@ public enum MarkdownModel {
                 }
                 // Preserve exact source for fenced code when cmark's literal occurs verbatim.
                 let raw = (model.source as NSString).substring(with: range) as NSString
-                let match = raw.range(of: code.code.trimmingCharacters(in: .newlines))
+                let match = Self.fencedContents(raw) ?? raw.range(of: code.code)
                 let mapped = match.location == NSNotFound ? range : NSRange(location: range.location + match.location, length: match.length)
                 let content = match.location == NSNotFound ? code.code : (model.source as NSString).substring(with: mapped)
                 append(content, source: mapped, style: .code)
+                if let language = code.language?.split(separator: " ").first { model.codeLanguages.append(.init(range: NSRange(location: start, length: content.utf16.count), language: String(language))) }
                 model.blocks.append(.init(range: NSRange(location: start, length: model.display.utf16.count - start), source: range, kind: .code))
                 newline(); return
             }
@@ -193,6 +200,26 @@ public enum MarkdownModel {
                 model.paragraphs.append(.init(range: line, listDepth: listDepth, quoteDepth: quoteDepth, firstInItem: node.parent is ListItem && node.indexInParent == 0))
             }
             if node is Table.Row || node is Table.Head { newline() }
+        }
+        // Search inside the fences, never in the language label. Preserve blank
+        // lines and CRLF in the source instead of trimming cmark's normalized text.
+        static func fencedContents(_ raw: NSString) -> NSRange? {
+            guard let opening = try? NSRegularExpression(pattern: "^[ \\t]*(`{3,}|~{3,})[^\\r\\n]*(?:\\r\\n|\\n|\\r)"),
+                  let match = opening.firstMatch(in: raw as String, range: NSRange(location: 0, length: raw.length)) else { return nil }
+            let fence = raw.substring(with: match.range(at: 1))
+            let marker = fence.first!
+            let start = NSMaxRange(match.range)
+            var cursor = start
+            while cursor < raw.length {
+                let line = raw.lineRange(for: NSRange(location: cursor, length: 0))
+                let value = raw.substring(with: line).trimmingCharacters(in: .whitespacesAndNewlines)
+                let count = value.prefix { $0 == marker }.count
+                if count >= fence.count && value.dropFirst(count).allSatisfy({ $0 == " " || $0 == "\t" }) {
+                    return NSRange(location: start, length: cursor - start)
+                }
+                cursor = NSMaxRange(line)
+            }
+            return NSRange(location: start, length: raw.length - start)
         }
     }
 }

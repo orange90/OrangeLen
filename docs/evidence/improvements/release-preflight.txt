@@ -1,0 +1,4 @@
+Release preflight with local Apple Development identity.
+Exit: 1
+Release requires an available Developer ID Application identity; Apple Development is not a release identity.
+No new release ZIP created or existing ZIP changed. No notarization request made.

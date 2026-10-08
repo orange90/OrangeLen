@@ -1,0 +1,12 @@
+# 独立开发配置，使用小写 dockerfile.dev
+services:
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "8081:3000"
+    volumes:
+      - ./app:/app:ro
+    environment:
+      NODE_ENV: development

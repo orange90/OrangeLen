@@ -1,0 +1,716 @@
+Timestamp               Ty Process[PID:TID]
+2026-10-07 22:42:39.866 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:39.929 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.070 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.074 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.075 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.075 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.077 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.343 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.344 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.344 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.344 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.346 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.404 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.404 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.404 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.405 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.415 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.446 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.475 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.475 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.476 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.478 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.496 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.525 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.547 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:40.572 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:40.572 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:41.257 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.074 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.218 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.218 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.465 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.483 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.487 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.491 Df xctest[96847:14db9d6] [local.OrangeLen:Reader] preview read_ms=4.428917 bytes=160
+2026-10-07 22:42:42.502 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.502 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=160 folderChild=false
+2026-10-07 22:42:42.502 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=15.521292
+2026-10-07 22:42:42.515 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.520 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.525 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.623 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.627 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=2.856708 bytes=56
+2026-10-07 22:42:42.660 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.660 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=56 folderChild=false
+2026-10-07 22:42:42.660 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=36.270417
+2026-10-07 22:42:42.674 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.678 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=3.623958 bytes=39
+2026-10-07 22:42:42.680 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.680 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=39 folderChild=false
+2026-10-07 22:42:42.680 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=5.848083
+2026-10-07 22:42:42.681 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.684 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=2.551083 bytes=160
+2026-10-07 22:42:42.707 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.707 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=160 folderChild=false
+2026-10-07 22:42:42.707 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=25.671333
+2026-10-07 22:42:42.709 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.713 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=3.168750 bytes=84
+2026-10-07 22:42:42.715 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.715 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=84 folderChild=false
+2026-10-07 22:42:42.715 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=5.117042
+2026-10-07 22:42:42.766 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.770 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=3.665750 bytes=52
+2026-10-07 22:42:42.800 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.801 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=52 folderChild=false
+2026-10-07 22:42:42.801 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=34.058375
+2026-10-07 22:42:42.842 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:42.849 Df xctest[96847:14db917] [local.OrangeLen:Reader] preview read_ms=6.083792 bytes=152
+2026-10-07 22:42:42.917 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.917 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=json bytes=152 folderChild=false
+2026-10-07 22:42:42.917 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=74.521208
+2026-10-07 22:42:42.988 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:42.989 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:43.000 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=10.615708 bytes=161
+2026-10-07 22:42:43.043 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:43.043 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=json bytes=161 folderChild=false
+2026-10-07 22:42:43.043 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=54.177500
+2026-10-07 22:42:43.049 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:43.244 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:43.254 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:43.637 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:44.013 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:44.499 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:45.177 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:45.181 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:45.181 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:45.183 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:45.230 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:45.635 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:45.635 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:45.915 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:46.039 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:46.231 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:46.248 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:46.248 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:46.417 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:46.421 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=3.901625 bytes=1416
+2026-10-07 22:42:46.786 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:46.793 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:42:46.793 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=375.572792
+2026-10-07 22:42:46.879 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:46.924 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:46.925 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:47.039 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:47.043 Df xctest[96847:14db98d] [local.OrangeLen:Reader] preview read_ms=3.241667 bytes=1416
+2026-10-07 22:42:47.084 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:47.084 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:42:47.084 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=44.153208
+2026-10-07 22:42:47.113 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:47.117 Df xctest[96847:14db98d] [local.OrangeLen:Reader] preview read_ms=3.566042 bytes=1416
+2026-10-07 22:42:47.152 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:47.152 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:42:47.152 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=38.718083
+2026-10-07 22:42:47.173 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:47.457 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:47.906 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:47.916 Df xctest[96847:14dbb5f] [local.OrangeLen:Reader] preview read_ms=8.875625 bytes=65534
+2026-10-07 22:42:47.942 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:47.960 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65534 folderChild=false
+2026-10-07 22:42:47.960 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=52.743708
+2026-10-07 22:42:48.090 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=152.102542
+2026-10-07 22:42:48.155 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=64.700792
+2026-10-07 22:42:48.259 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:48.262 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=2.573667 bytes=12
+2026-10-07 22:42:48.282 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:48.283 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=text bytes=12 folderChild=false
+2026-10-07 22:42:48.283 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.243375
+2026-10-07 22:42:48.425 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:48.558 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:48.563 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=4.271167 bytes=65535
+2026-10-07 22:42:48.593 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:48.635 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:42:48.635 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=76.443708
+2026-10-07 22:42:48.639 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=53.785708
+2026-10-07 22:42:48.748 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=4.287500 bytes=65535
+2026-10-07 22:42:48.806 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:48.806 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:42:48.806 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=62.314000
+2026-10-07 22:42:48.819 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=3.271917 bytes=65535
+2026-10-07 22:42:48.863 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:48.864 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:42:48.864 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=47.779833
+2026-10-07 22:42:48.905 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.021 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.028 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=5.038625 bytes=18
+2026-10-07 22:42:49.037 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.037 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=18 folderChild=false
+2026-10-07 22:42:49.037 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=14.403833
+2026-10-07 22:42:49.043 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.048 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=3.096875 bytes=16
+2026-10-07 22:42:49.068 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.068 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=16 folderChild=false
+2026-10-07 22:42:49.068 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.641167
+2026-10-07 22:42:49.069 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.086 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.090 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=4.312042 bytes=187
+2026-10-07 22:42:49.099 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.099 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=187 folderChild=false
+2026-10-07 22:42:49.099 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=12.808667
+2026-10-07 22:42:49.107 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.220 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.336 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.487 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.539 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.577 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.582 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.585 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:49.604 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.604 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.736 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.876 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:49.991 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=3.693583 bytes=1416
+2026-10-07 22:42:50.019 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:50.024 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:42:50.024 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=36.614542
+2026-10-07 22:42:50.025 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:50.568 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:50.575 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=6.438792 bytes=45
+2026-10-07 22:42:50.722 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:50.724 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=45 folderChild=false
+2026-10-07 22:42:50.724 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=154.848542
+2026-10-07 22:42:50.982 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.487 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=3.639625 bytes=5
+2026-10-07 22:42:51.524 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:51.525 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=text bytes=5 folderChild=true
+2026-10-07 22:42:51.525 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=41.747208
+2026-10-07 22:42:51.612 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.705 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.705 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.708 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=3.220708 bytes=18
+2026-10-07 22:42:51.745 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:51.746 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=text bytes=18 folderChild=false
+2026-10-07 22:42:51.746 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=40.349167
+2026-10-07 22:42:51.750 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.932 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:51.941 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=8.119125 bytes=65533
+2026-10-07 22:42:51.975 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:51.983 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:51.983 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=49.767167
+2026-10-07 22:42:52.143 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.150 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=6.434208 bytes=65533
+2026-10-07 22:42:52.177 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.177 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.177 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=33.002875
+2026-10-07 22:42:52.196 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=26.910750
+2026-10-07 22:42:52.206 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.210 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=3.504000 bytes=65533
+2026-10-07 22:42:52.226 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.226 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.226 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=19.634083
+2026-10-07 22:42:52.240 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=21.981333
+2026-10-07 22:42:52.247 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.251 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=3.680583 bytes=65533
+2026-10-07 22:42:52.266 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.266 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.266 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=18.456417
+2026-10-07 22:42:52.279 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=20.757583
+2026-10-07 22:42:52.286 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.290 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=3.823000 bytes=65533
+2026-10-07 22:42:52.307 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.307 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.307 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=20.969042
+2026-10-07 22:42:52.319 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=19.955750
+2026-10-07 22:42:52.329 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.337 Df xctest[96847:14db9d6] [local.OrangeLen:Reader] preview read_ms=6.237375 bytes=65533
+2026-10-07 22:42:52.357 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.357 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.357 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=26.720500
+2026-10-07 22:42:52.373 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=23.992667
+2026-10-07 22:42:52.385 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.391 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=5.004792 bytes=65533
+2026-10-07 22:42:52.410 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.410 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.410 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.891208
+2026-10-07 22:42:52.424 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=24.147750
+2026-10-07 22:42:52.433 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.437 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=3.993750 bytes=65533
+2026-10-07 22:42:52.456 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.456 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.456 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=22.580833
+2026-10-07 22:42:52.468 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=19.414458
+2026-10-07 22:42:52.481 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.487 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=5.074667 bytes=65533
+2026-10-07 22:42:52.508 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.509 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.509 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=26.509042
+2026-10-07 22:42:52.524 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=23.763583
+2026-10-07 22:42:52.532 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.541 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=7.334958 bytes=65533
+2026-10-07 22:42:52.556 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.556 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.556 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=22.845875
+2026-10-07 22:42:52.571 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=20.391750
+2026-10-07 22:42:52.586 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.594 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=7.244875 bytes=65533
+2026-10-07 22:42:52.610 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.610 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.610 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.805458
+2026-10-07 22:42:52.629 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=25.912000
+2026-10-07 22:42:52.644 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.650 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=5.128042 bytes=65533
+2026-10-07 22:42:52.670 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.670 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.670 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=25.244208
+2026-10-07 22:42:52.685 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=24.869500
+2026-10-07 22:42:52.696 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.704 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=6.370833 bytes=65533
+2026-10-07 22:42:52.722 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.722 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.722 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=24.910000
+2026-10-07 22:42:52.737 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=22.297083
+2026-10-07 22:42:52.746 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.752 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=4.993542 bytes=65533
+2026-10-07 22:42:52.771 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.771 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.771 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.566417
+2026-10-07 22:42:52.793 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=29.521625
+2026-10-07 22:42:52.810 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.817 Df xctest[96847:14db986] [local.OrangeLen:Reader] preview read_ms=5.839875 bytes=65533
+2026-10-07 22:42:52.844 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.844 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.844 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=33.493542
+2026-10-07 22:42:52.862 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=32.256375
+2026-10-07 22:42:52.879 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.887 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=5.970042 bytes=65533
+2026-10-07 22:42:52.901 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.901 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.901 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=20.561750
+2026-10-07 22:42:52.921 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=26.012125
+2026-10-07 22:42:52.930 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.935 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=4.464625 bytes=65533
+2026-10-07 22:42:52.955 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:52.955 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:52.955 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=24.302292
+2026-10-07 22:42:52.974 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=27.082667
+2026-10-07 22:42:52.987 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:52.991 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=4.078417 bytes=65533
+2026-10-07 22:42:53.009 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:53.009 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:53.009 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=21.987333
+2026-10-07 22:42:53.022 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=19.416417
+2026-10-07 22:42:53.032 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.040 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=6.488542 bytes=65533
+2026-10-07 22:42:53.060 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:53.060 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:53.060 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=27.114458
+2026-10-07 22:42:53.077 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=23.354125
+2026-10-07 22:42:53.088 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.095 Df xctest[96847:14db98e] [local.OrangeLen:Reader] preview read_ms=5.937042 bytes=65533
+2026-10-07 22:42:53.114 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:53.114 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:53.114 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=25.519042
+2026-10-07 22:42:53.131 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=25.447167
+2026-10-07 22:42:53.141 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.148 Df xctest[96847:14db834] [local.OrangeLen:Reader] preview read_ms=6.385292 bytes=65533
+2026-10-07 22:42:53.169 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:53.170 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:42:53.170 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=27.928333
+2026-10-07 22:42:53.188 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview highlight_ms=28.678958
+2026-10-07 22:42:53.202 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.312 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.397 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.529 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:53.577 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.577 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.724 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.844 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:53.943 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:54.061 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:54.084 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.084 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.287 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.424 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.466 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:54.486 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.486 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.623 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:54.809 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:56.453 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:42:56.456 Df xctest[96847:14db835] [local.OrangeLen:Reader] preview read_ms=2.804583 bytes=39
+2026-10-07 22:42:56.477 Df xctest[96847:14db828] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:42:56.477 Df xctest[96847:14db828] [local.OrangeLen:Reader] loaded format=markdown bytes=39 folderChild=false
+2026-10-07 22:42:56.477 Df xctest[96847:14db828] [local.OrangeLen:Reader] preview ready_ms=23.765417
+2026-10-07 22:42:56.507 Df xctest[96847:14db828] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.511 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.571 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.679 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:41.686 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.686 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.686 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.688 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.889 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:41.889 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.889 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.889 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.891 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.906 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:41.907 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.907 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.907 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.909 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.938 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:41.952 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.952 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.952 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.954 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:41.977 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:41.999 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:42.024 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:42.047 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:42.047 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:42.567 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.161 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.269 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.269 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.464 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.478 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.482 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.485 Df xctest[97123:14dc628] [local.OrangeLen:Reader] preview read_ms=3.484250 bytes=160
+2026-10-07 22:43:43.494 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.494 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=160 folderChild=false
+2026-10-07 22:43:43.494 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=12.063792
+2026-10-07 22:43:43.505 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.527 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.543 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.610 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.613 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=2.449917 bytes=56
+2026-10-07 22:43:43.629 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.629 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=56 folderChild=false
+2026-10-07 22:43:43.629 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=18.817417
+2026-10-07 22:43:43.631 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.635 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=3.284042 bytes=39
+2026-10-07 22:43:43.647 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.647 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=39 folderChild=false
+2026-10-07 22:43:43.647 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.064667
+2026-10-07 22:43:43.647 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.651 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=2.770542 bytes=160
+2026-10-07 22:43:43.671 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.671 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=160 folderChild=false
+2026-10-07 22:43:43.671 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=23.366833
+2026-10-07 22:43:43.694 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.698 Df xctest[97123:14dc62d] [local.OrangeLen:Reader] preview read_ms=2.976000 bytes=84
+2026-10-07 22:43:43.718 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.718 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=84 folderChild=false
+2026-10-07 22:43:43.718 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=23.381750
+2026-10-07 22:43:43.719 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.723 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=3.353750 bytes=52
+2026-10-07 22:43:43.724 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.724 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=52 folderChild=false
+2026-10-07 22:43:43.724 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=4.333958
+2026-10-07 22:43:43.725 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.728 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=2.894250 bytes=152
+2026-10-07 22:43:43.733 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.733 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=json bytes=152 folderChild=false
+2026-10-07 22:43:43.733 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=7.959792
+2026-10-07 22:43:43.745 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.745 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.749 Df xctest[97123:14dc604] [local.OrangeLen:Reader] preview read_ms=3.135500 bytes=161
+2026-10-07 22:43:43.768 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:43.768 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=json bytes=161 folderChild=false
+2026-10-07 22:43:43.768 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=22.633833
+2026-10-07 22:43:43.793 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:43.990 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:44.002 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:44.307 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:44.574 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.035 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:45.158 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:45.164 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:45.164 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.166 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.233 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.463 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.463 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.562 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.656 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.740 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:45.758 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.758 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.939 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:45.942 Df xctest[97123:14dc660] [local.OrangeLen:Reader] preview read_ms=2.481583 bytes=1416
+2026-10-07 22:43:46.197 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.202 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:43:46.202 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=262.218458
+2026-10-07 22:43:46.247 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.288 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.289 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:46.385 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:46.388 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=2.660333 bytes=1416
+2026-10-07 22:43:46.412 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.413 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:43:46.413 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=27.390667
+2026-10-07 22:43:46.430 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:46.433 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=3.026208 bytes=1416
+2026-10-07 22:43:46.444 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.444 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:43:46.444 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=13.311292
+2026-10-07 22:43:46.459 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:46.615 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:46.987 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:46.993 Df xctest[97123:14dc62d] [local.OrangeLen:Reader] preview read_ms=5.140375 bytes=65534
+2026-10-07 22:43:47.030 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:47.050 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65534 folderChild=false
+2026-10-07 22:43:47.050 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=62.393500
+2026-10-07 22:43:47.119 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=93.508083
+2026-10-07 22:43:47.160 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=19.866750
+2026-10-07 22:43:47.263 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:47.266 Df xctest[97123:14dc628] [local.OrangeLen:Reader] preview read_ms=2.797958 bytes=12
+2026-10-07 22:43:47.281 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:47.281 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=text bytes=12 folderChild=false
+2026-10-07 22:43:47.281 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=17.686833
+2026-10-07 22:43:47.403 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:47.629 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:47.648 Df xctest[97123:14dc628] [local.OrangeLen:Reader] preview read_ms=12.949292 bytes=65535
+2026-10-07 22:43:47.994 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.093 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:43:48.093 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=457.928625
+2026-10-07 22:43:48.096 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=111.702375
+2026-10-07 22:43:48.143 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=6.891042 bytes=65535
+2026-10-07 22:43:48.202 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.202 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:43:48.202 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=66.300708
+2026-10-07 22:43:48.228 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=9.976917 bytes=65535
+2026-10-07 22:43:48.288 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.288 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65535 folderChild=false
+2026-10-07 22:43:48.288 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=70.358542
+2026-10-07 22:43:48.319 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.445 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.449 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=4.233833 bytes=18
+2026-10-07 22:43:48.467 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.467 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=18 folderChild=false
+2026-10-07 22:43:48.467 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=22.170167
+2026-10-07 22:43:48.472 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.481 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=3.652500 bytes=16
+2026-10-07 22:43:48.484 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.484 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=16 folderChild=false
+2026-10-07 22:43:48.484 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=7.379958
+2026-10-07 22:43:48.485 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.506 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.513 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=6.164500 bytes=187
+2026-10-07 22:43:48.522 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.522 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=187 folderChild=false
+2026-10-07 22:43:48.522 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.485750
+2026-10-07 22:43:48.531 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.643 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.747 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.873 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.883 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.904 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.908 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.910 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:48.930 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:48.930 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:49.022 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:49.138 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:49.223 Df xctest[97123:14dc62d] [local.OrangeLen:Reader] preview read_ms=2.524875 bytes=1416
+2026-10-07 22:43:49.247 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:49.249 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=1416 folderChild=false
+2026-10-07 22:43:49.250 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=29.446917
+2026-10-07 22:43:49.251 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:49.637 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:49.644 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=5.552667 bytes=45
+2026-10-07 22:43:49.684 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:49.685 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=45 folderChild=false
+2026-10-07 22:43:49.685 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=47.168875
+2026-10-07 22:43:49.893 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.306 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=4.430917 bytes=5
+2026-10-07 22:43:50.340 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:50.340 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=text bytes=5 folderChild=true
+2026-10-07 22:43:50.340 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=39.070125
+2026-10-07 22:43:50.341 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.477 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.478 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.481 Df xctest[97123:14dc660] [local.OrangeLen:Reader] preview read_ms=2.947833 bytes=18
+2026-10-07 22:43:50.493 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:50.494 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=text bytes=18 folderChild=false
+2026-10-07 22:43:50.494 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.740167
+2026-10-07 22:43:50.498 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.599 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.605 Df xctest[97123:14dc660] [local.OrangeLen:Reader] preview read_ms=5.047375 bytes=65533
+2026-10-07 22:43:50.624 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:50.637 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:50.637 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=37.108042
+2026-10-07 22:43:50.921 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:50.928 Df xctest[97123:14dc660] [local.OrangeLen:Reader] preview read_ms=5.962042 bytes=65533
+2026-10-07 22:43:50.980 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:50.980 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:50.980 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=58.004917
+2026-10-07 22:43:51.003 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=33.361333
+2026-10-07 22:43:51.021 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.029 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=6.335708 bytes=65533
+2026-10-07 22:43:51.055 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.055 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.055 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=33.170542
+2026-10-07 22:43:51.076 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=30.941250
+2026-10-07 22:43:51.090 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.097 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=5.425792 bytes=65533
+2026-10-07 22:43:51.121 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.121 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.121 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=30.291292
+2026-10-07 22:43:51.142 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=30.884000
+2026-10-07 22:43:51.157 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.164 Df xctest[97123:14dc660] [local.OrangeLen:Reader] preview read_ms=5.919375 bytes=65533
+2026-10-07 22:43:51.188 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.188 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.188 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=30.717917
+2026-10-07 22:43:51.207 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=28.486833
+2026-10-07 22:43:51.222 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.227 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=4.213792 bytes=65533
+2026-10-07 22:43:51.250 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.250 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.250 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=27.572208
+2026-10-07 22:43:51.262 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=19.882542
+2026-10-07 22:43:51.270 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.275 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=4.376292 bytes=65533
+2026-10-07 22:43:51.292 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.292 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.292 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=21.516625
+2026-10-07 22:43:51.305 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=19.931125
+2026-10-07 22:43:51.313 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.318 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=4.098917 bytes=65533
+2026-10-07 22:43:51.331 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.331 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.331 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=17.601792
+2026-10-07 22:43:51.342 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=16.391792
+2026-10-07 22:43:51.349 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.353 Df xctest[97123:14dc6d7] [local.OrangeLen:Reader] preview read_ms=3.515458 bytes=65533
+2026-10-07 22:43:51.366 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.367 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.367 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.731333
+2026-10-07 22:43:51.377 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=15.818583
+2026-10-07 22:43:51.384 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.388 Df xctest[97123:14dc6d7] [local.OrangeLen:Reader] preview read_ms=3.514750 bytes=65533
+2026-10-07 22:43:51.400 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.400 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.400 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.372833
+2026-10-07 22:43:51.410 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=15.168083
+2026-10-07 22:43:51.417 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.422 Df xctest[97123:14dc6d7] [local.OrangeLen:Reader] preview read_ms=4.112750 bytes=65533
+2026-10-07 22:43:51.434 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.434 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.434 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.958542
+2026-10-07 22:43:51.444 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.664125
+2026-10-07 22:43:51.451 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.456 Df xctest[97123:14dc62d] [local.OrangeLen:Reader] preview read_ms=4.458250 bytes=65533
+2026-10-07 22:43:51.467 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.468 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.468 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.192417
+2026-10-07 22:43:51.479 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=15.894375
+2026-10-07 22:43:51.487 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.491 Df xctest[97123:14dc628] [local.OrangeLen:Reader] preview read_ms=3.853917 bytes=65533
+2026-10-07 22:43:51.504 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.504 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.504 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.203250
+2026-10-07 22:43:51.514 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.921833
+2026-10-07 22:43:51.521 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.525 Df xctest[97123:14dc6d7] [local.OrangeLen:Reader] preview read_ms=3.572083 bytes=65533
+2026-10-07 22:43:51.537 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.537 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.537 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.450833
+2026-10-07 22:43:51.548 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=16.020500
+2026-10-07 22:43:51.556 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.560 Df xctest[97123:14dc628] [local.OrangeLen:Reader] preview read_ms=3.691333 bytes=65533
+2026-10-07 22:43:51.572 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.572 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.572 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.896458
+2026-10-07 22:43:51.582 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.972208
+2026-10-07 22:43:51.591 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.595 Df xctest[97123:14dc6d7] [local.OrangeLen:Reader] preview read_ms=3.703875 bytes=65533
+2026-10-07 22:43:51.607 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.608 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.608 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.812792
+2026-10-07 22:43:51.618 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.882250
+2026-10-07 22:43:51.624 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.630 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=4.475708 bytes=65533
+2026-10-07 22:43:51.642 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.642 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.642 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=17.128792
+2026-10-07 22:43:51.653 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=16.058542
+2026-10-07 22:43:51.660 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.664 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=3.943417 bytes=65533
+2026-10-07 22:43:51.677 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.677 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.677 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.393417
+2026-10-07 22:43:51.687 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.856917
+2026-10-07 22:43:51.694 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.698 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=3.572958 bytes=65533
+2026-10-07 22:43:51.709 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.709 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.709 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=15.170000
+2026-10-07 22:43:51.719 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=14.987750
+2026-10-07 22:43:51.727 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.732 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=4.170750 bytes=65533
+2026-10-07 22:43:51.744 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.744 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.744 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.656208
+2026-10-07 22:43:51.755 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=16.133833
+2026-10-07 22:43:51.762 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.767 Df xctest[97123:14dc6d6] [local.OrangeLen:Reader] preview read_ms=3.687750 bytes=65533
+2026-10-07 22:43:51.780 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.780 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=code bytes=65533 folderChild=false
+2026-10-07 22:43:51.780 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=16.600042
+2026-10-07 22:43:51.790 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview highlight_ms=15.627708
+2026-10-07 22:43:51.798 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.856 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.911 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.946 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:51.968 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:51.968 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.032 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.080 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.103 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:52.128 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:52.149 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.149 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.208 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.248 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.275 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:52.295 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.295 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.354 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:52.442 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:53.271 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:43:53.276 Df xctest[97123:14dc65c] [local.OrangeLen:Reader] preview read_ms=3.609833 bytes=39
+2026-10-07 22:43:53.315 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:43:53.315 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] loaded format=markdown bytes=39 folderChild=false
+2026-10-07 22:43:53.315 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] preview ready_ms=42.629292
+2026-10-07 22:43:53.315 Df xctest[97123:14dc5fb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:44:45.075 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:44:45.092 Df OrangeLenPreview[97410:14dd94d] [local.OrangeLen:Reader] preview read_ms=15.896500 bytes=65536
+2026-10-07 22:44:45.100 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:44:45.115 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] loaded format=code bytes=65536 folderChild=false
+2026-10-07 22:44:45.115 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] preview ready_ms=38.986167
+2026-10-07 22:44:45.374 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] preview highlight_ms=277.501667
+2026-10-07 22:45:15.395 Df OrangeLenPreview[97410:14dd94d] [local.OrangeLen:Reader] preview read_ms=7.179917 bytes=65536
+2026-10-07 22:45:15.438 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:45:15.439 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] loaded format=code bytes=65536 folderChild=false
+2026-10-07 22:45:15.439 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] preview ready_ms=50.633875
+2026-10-07 22:45:15.484 Df OrangeLenPreview[97410:14dd944] [local.OrangeLen:Reader] preview highlight_ms=51.213833
+2026-10-07 22:45:36.540 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:45:36.555 Df OrangeLenPreviewData[97535:14de454] [local.OrangeLen:Reader] preview read_ms=13.216417 bytes=65534
+2026-10-07 22:45:36.555 Df OrangeLenPreviewMarkdown[97534:14de3b2] [local.OrangeLen:Reader] closed / pending work cancelled
+2026-10-07 22:45:36.565 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:45:36.565 Df OrangeLenPreviewMarkdown[97534:14de42d] [local.OrangeLen:Reader] preview read_ms=7.580083 bytes=65536
+2026-10-07 22:45:36.573 Df OrangeLenPreviewMarkdown[97534:14de3b2] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:45:36.588 Df OrangeLenPreviewMarkdown[97534:14de3b2] [local.OrangeLen:Reader] loaded format=markdown bytes=65536 folderChild=false
+2026-10-07 22:45:36.588 Df OrangeLenPreviewMarkdown[97534:14de3b2] [local.OrangeLen:Reader] preview ready_ms=30.644083
+2026-10-07 22:45:36.669 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] loaded format=json bytes=65534 folderChild=false
+2026-10-07 22:45:36.669 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] preview ready_ms=128.096625
+2026-10-07 22:45:36.939 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] preview highlight_ms=376.794292
+2026-10-07 22:46:51.209 Df OrangeLenPreviewData[97535:14de454] [local.OrangeLen:Reader] preview read_ms=4.817833 bytes=65536
+2026-10-07 22:46:51.331 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] search event queryLength=0
+2026-10-07 22:46:51.332 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] loaded format=json bytes=65536 folderChild=false
+2026-10-07 22:46:51.332 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] preview ready_ms=127.019458
+2026-10-07 22:46:51.375 Df OrangeLenPreviewData[97535:14de3cb] [local.OrangeLen:Reader] preview highlight_ms=119.139333

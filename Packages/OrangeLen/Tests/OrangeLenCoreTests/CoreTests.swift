@@ -158,4 +158,21 @@ final class CoreTests: XCTestCase {
         XCTAssertEqual(TextModel.plain(text).display, text)
         XCTAssertEqual(PreviewFormat.detect(URL(fileURLWithPath: "a.xml")), .code)
     }
+    func testLargeDirectoryBatchesKeepEveryEntryAndCancellation() throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        for i in 0..<2101 { try Data().write(to: root.appendingPathComponent("item-\(i).swift")) }
+        var offset = 0, all = Set<String>(), pages = 0
+        repeat {
+            let page = try FolderLoader.page(root, root: root, offset: offset)
+            XCTAssertLessThanOrEqual(page.entries.count, 500)
+            for entry in page.entries { XCTAssertTrue(all.insert(entry.url.lastPathComponent).inserted) }
+            pages += 1
+            guard let next = page.nextOffset else { break }; offset = next
+        } while true
+        XCTAssertEqual(all.count, 2101); XCTAssertEqual(pages, 5)
+        let cancelled = Cancellation(); cancelled.cancel()
+        XCTAssertThrowsError(try FolderLoader.page(root, root: root, cancellation: cancelled))
+    }
 }

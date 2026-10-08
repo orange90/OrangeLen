@@ -6,6 +6,8 @@ import OrangeLenCore
 // data is passed as a structured argument, never interpolated into executable HTML.
 // The user reads native TextKit attachments; this view is never the preview UI.
 @MainActor final class RichContentRenderer: NSObject, WKNavigationDelegate {
+    private let resourceName: String
+    init(resourceName: String = "RichRenderer") { self.resourceName = resourceName; super.init() }
     private var web: WKWebView?
     private var ready: CheckedContinuation<Void, Error>?
     private var evaluation: CheckedContinuation<Any?, Error>?
@@ -34,7 +36,7 @@ import OrangeLenCore
         self.web = web; web.navigationDelegate = self
         // Keep attached for reliable macOS layout/snapshots, outside the visible clip.
         parent.addSubview(web)
-        guard let url = Bundle.module.url(forResource: "RichRenderer", withExtension: "html") else { throw PreviewError.malformed("缺少离线渲染资源") }
+        guard let url = Bundle.module.url(forResource: resourceName, withExtension: "html") else { throw PreviewError.malformed("缺少离线渲染资源") }
         let html = try String(contentsOf: url, encoding: .utf8)
         try await withCheckedThrowingContinuation { continuation in
             ready = continuation
@@ -47,6 +49,15 @@ import OrangeLenCore
     }
     func render(_ item: MarkdownRichContent, in parent: NSView) async throws -> NSImage {
         guard item.content.utf8.count <= 16_384 else { throw PreviewError.limit("公式/图表最多 16 KiB") }
+        return try await renderSource(item.content, kind: item.kind.rawValue, in: parent)
+    }
+    func renderExcalidraw(_ scene: ExcalidrawPreview, in parent: NSView) async throws -> NSImage {
+        try await renderSource(scene.json, kind: "excalidraw", in: parent)
+    }
+    func renderSVG(_ document: SVGDocument, in parent: NSView) async throws -> NSImage {
+        try await renderSource(document.xml, kind: "svg", in: parent)
+    }
+    private func renderSource(_ source: String, kind: String, in parent: NSView) async throws -> NSImage {
         try await boot(in: parent)
         try Task.checkCancellation()
         guard let web, !stopped else { throw CancellationError() }
@@ -57,7 +68,7 @@ import OrangeLenCore
         defer { budget?.cancel() }
         let value: Any? = try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Any?, Error>) in
             evaluation = continuation
-            web.callAsyncJavaScript("return await window.orangeRender(kind, source)", arguments: ["kind": item.kind.rawValue, "source": item.content], in: nil, in: .page) { [weak self] result in
+            web.callAsyncJavaScript("return await window.orangeRender(kind, source)", arguments: ["kind": kind, "source": source], in: nil, in: .page) { [weak self] result in
                 guard let self else { return }
                 self.evaluation?.resume(with: result.map { Optional($0) }); self.evaluation = nil
             }

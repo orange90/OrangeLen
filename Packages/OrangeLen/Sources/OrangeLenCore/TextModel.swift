@@ -14,16 +14,26 @@ public struct TextStyle: OptionSet, Sendable {
     public static let strike = Self(rawValue: 8)
     public static let link = Self(rawValue: 16)
     public static let quote = Self(rawValue: 32)
+    public static let metadata = Self(rawValue: 64)
+    public static let callout = Self(rawValue: 128)
 }
 public struct StyledSpan: Sendable {
     public let range: NSRange
     public let style: TextStyle
+}
+public struct CodeLanguageSpan: Sendable {
+    public let range: NSRange
+    public let language: String
 }
 public struct ReadingBlock: Sendable {
     public enum Kind: Sendable { case paragraph, heading(Int), code, cell, html }
     public let range: NSRange
     public let source: NSRange
     public let kind: Kind
+}
+public struct MarkdownAnchor: Sendable {
+    public let name: String
+    public let range: NSRange
 }
 public struct MarkdownLink: Sendable {
     public let range: NSRange
@@ -49,6 +59,8 @@ public struct MarkdownParagraph: Sendable {
     public let firstInItem: Bool
 }
 public struct TextModel: Sendable {
+    public var anchors: [MarkdownAnchor] = []
+    public var codeLanguages: [CodeLanguageSpan] = []
     public var richContent: [MarkdownRichContent] = []
     public var links: [MarkdownLink] = []
     public var images: [MarkdownImage] = []
@@ -71,17 +83,22 @@ public struct TextModel: Sendable {
     }
     public func sourceRange(for displayRange: NSRange) -> NSRange? {
         let spans = mapping.filter { NSIntersectionRange($0.display, displayRange).length > 0 }
-        guard let first = spans.first, let last = spans.last else { return nil }
-        let start = first.source.location + (first.exact ? max(0, displayRange.location - first.display.location) : 0)
-        let end = last.exact ? min(NSMaxRange(last.source), last.source.location + NSMaxRange(displayRange) - last.display.location) : NSMaxRange(last.source)
+        guard !spans.isEmpty else { return nil }
+        let ranges = spans.map { span -> NSRange in
+            guard span.exact else { return span.source }
+            let clipped = NSIntersectionRange(span.display, displayRange)
+            return NSRange(location: span.source.location + clipped.location - span.display.location, length: clipped.length)
+        }
+        let start = ranges.map(\.location).min()!, end = ranges.map { NSMaxRange($0) }.max()!
         guard start >= 0, end >= start, end <= (source as NSString).length else { return nil }
         return NSRange(location: start, length: end - start)
     }
     public func displayOffset(forSource offset: Int) -> Int {
-        guard let span = mapping.first(where: { NSMaxRange($0.source) > offset }) ?? mapping.last else { return 0 }
+        guard let span = mapping.first(where: { $0.exact && NSLocationInRange(offset, $0.source) }) ?? mapping.first(where: { NSLocationInRange(offset, $0.source) }) ?? mapping.last else { return 0 }
         return span.display.location + (span.exact ? min(max(0, offset - span.source.location), span.display.length) : 0)
     }
     public func copiedSource(_ range: NSRange) -> String {
+        if !display.isEmpty, range.location == 0, range.length >= display.utf16.count { return source }
         guard let sourceRange = sourceRange(for: range) else { return "" }
         return (source as NSString).substring(with: sourceRange)
     }

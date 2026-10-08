@@ -30,12 +30,14 @@ final class JSONController: NSViewController, NSOutlineViewDataSource, NSOutline
     @objc func copyValue() { if let node = current() { copy(source.substring(with: node.range)) } }
     func copy(_ value: String) { Clipboard.write(value, feedback: copyFeedback) }
 }
-final class TableController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+final class TableController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, NSSearchFieldDelegate {
     var copyFeedback: ((String) -> Void)?
     let table = NSTableView()
     var data = TableData(rows: [], partial: false)
     var header = true
     var loaded = 500
+    let filter = NSSearchField(), countLabel = NSTextField(labelWithString: "")
+    var rowOrder: [Int] = []
     override func loadView() {
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.hasHorizontalScroller = true
         table.dataSource = self; table.delegate = self; table.rowHeight = 27; table.allowsColumnSelection = true
@@ -43,7 +45,15 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
         let menu = NSMenu()
         menu.addItem(withTitle: "复制单元格", action: #selector(copyCell), keyEquivalent: "").target = self
         menu.addItem(withTitle: "复制行（TSV）", action: #selector(copyRow), keyEquivalent: "").target = self
-        table.menu = menu; scroll.documentView = table; view = scroll
+        table.menu = menu; scroll.documentView = table
+        filter.placeholderString = "筛选已解析单元格"; filter.delegate = self
+        countLabel.font = .systemFont(ofSize: 11); countLabel.textColor = .secondaryLabelColor
+        let controls = NSStackView(views: [filter, countLabel]); controls.spacing = 8
+        let root = NSStackView(views: [controls, scroll]); root.orientation = .vertical; root.alignment = .leading; root.spacing = 8
+        root.edgeInsets = NSEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        controls.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -16).isActive = true
+        scroll.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -16).isActive = true
+        view = root
     }
     func show(_ data: TableData) {
         loadViewIfNeeded(); self.data = data
@@ -52,36 +62,62 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
         for index in 0..<count {
             let column = NSTableColumn(identifier: .init("\(index)")); column.width = 180
             column.title = header && (data.rows.first?.count ?? 0) > index ? data.rows[0][index].value : "\(index + 1)"
+            column.sortDescriptorPrototype = NSSortDescriptor(key: String(index), ascending: true)
             table.addTableColumn(column)
         }
-        table.reloadData()
+        rebuildOrder()
     }
-    func numberOfRows(in tableView: NSTableView) -> Int { min(loaded, max(0, data.rows.count - (header ? 1 : 0))) }
+    func resetNavigation() { filter.stringValue = ""; table.sortDescriptors = []; loaded = 500 }
+    func rebuildOrder() {
+        let start = header ? 1 : 0, query = filter.stringValue
+        rowOrder = Array(min(start, data.rows.count)..<data.rows.count).filter { row in query.isEmpty || data.rows[row].contains { $0.value.localizedCaseInsensitiveContains(query) } }
+        if let descriptor = table.sortDescriptors.first, let column = Int(descriptor.key ?? "") {
+            rowOrder.sort { a, b in
+                let left = data.rows[a].indices.contains(column) ? data.rows[a][column].value : "", right = data.rows[b].indices.contains(column) ? data.rows[b][column].value : ""
+                let order = left.compare(right, options: [.numeric, .caseInsensitive], locale: Locale(identifier: "en_US_POSIX"))
+                if order == .orderedSame { return a < b }
+                return descriptor.ascending ? order == .orderedAscending : order == .orderedDescending
+            }
+        }
+        table.reloadData()
+        countLabel.stringValue = "显示 \(min(loaded, rowOrder.count)) / \(rowOrder.count) 行" + (data.partial ? " · 部分文件" : "")
+    }
+    func controlTextDidChange(_ obj: Notification) { loaded = 500; rebuildOrder() }
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) { rebuildOrder() }
+    func numberOfRows(in tableView: NSTableView) -> Int { min(loaded, rowOrder.count) }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let column = Int(tableColumn?.identifier.rawValue ?? "0") ?? 0; let record = data.rows[row + (header ? 1 : 0)]
+        guard rowOrder.indices.contains(row) else { return nil }
+        let index = rowOrder[row]
+        guard data.rows.indices.contains(index) else { return nil }
+        let column = Int(tableColumn?.identifier.rawValue ?? "0") ?? 0; let record = data.rows[index]
         let field = NSTextField(labelWithString: column < record.count ? record[column].value : "")
         field.lineBreakMode = .byWordWrapping; field.maximumNumberOfLines = 5; field.toolTip = field.stringValue; return field
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        let record = data.rows[row + (header ? 1 : 0)]
+        // AppKit may ask about rows from the previous table while columns are being replaced.
+        guard rowOrder.indices.contains(row) else { return 27 }
+        let index = rowOrder[row]
+        guard data.rows.indices.contains(index) else { return 27 }
+        let record = data.rows[index]
         let lines = record.map { min(5, $0.value.components(separatedBy: "\n").count) }.max() ?? 1
         return CGFloat(lines) * 18 + 9
     }
     func reveal(sourceRange: NSRange) {
         guard let row = data.rows.firstIndex(where: { $0.contains { NSIntersectionRange($0.sourceRange, sourceRange).length > 0 } }) else { return }
-        loaded = max(loaded, row + 1); table.reloadData()
-        let index = row - (header ? 1 : 0)
-        if index >= 0 { table.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false); table.scrollRowToVisible(index) }
+        if !rowOrder.contains(row) { filter.stringValue = ""; rebuildOrder() }
+        guard let index = rowOrder.firstIndex(of: row) else { return }
+        loaded = max(loaded, index + 1); rebuildOrder()
+        table.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false); table.scrollRowToVisible(index)
     }
     @objc func copyCell() {
         let row = table.clickedRow >= 0 ? table.clickedRow : table.selectedRow
         let column = table.clickedColumn >= 0 ? table.clickedColumn : table.selectedColumn
-        guard row >= 0, column >= 0 else { return }
-        let record = data.rows[row + (header ? 1 : 0)]; if column < record.count { copy(record[column].value) }
+        guard rowOrder.indices.contains(row), column >= 0, data.rows.indices.contains(rowOrder[row]) else { return }
+        let record = data.rows[rowOrder[row]]; if column < record.count { copy(record[column].value) }
     }
     @objc func copyRow() {
-        let row = table.clickedRow >= 0 ? table.clickedRow : table.selectedRow; guard row >= 0 else { return }
-        copy(data.rows[row + (header ? 1 : 0)].map(\.value).joined(separator: "\t"))
+        let row = table.clickedRow >= 0 ? table.clickedRow : table.selectedRow; guard rowOrder.indices.contains(row), data.rows.indices.contains(rowOrder[row]) else { return }
+        copy(data.rows[rowOrder[row]].map(\.value).joined(separator: "\t"))
     }
     func copy(_ value: String) { Clipboard.write(value, feedback: copyFeedback) }
 }

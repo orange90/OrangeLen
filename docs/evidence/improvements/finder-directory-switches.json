@@ -1,0 +1,122 @@
+[
+  {
+    "iteration": 1,
+    "file": "000-document.md",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 2,
+    "file": "001-code.swift",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 3,
+    "file": "002-data.json",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 4,
+    "file": "003-image.png",
+    "status": "\t34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）",
+    "matched": true
+  },
+  {
+    "iteration": 5,
+    "file": "000-document.md",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 6,
+    "file": "001-code.swift",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 7,
+    "file": "002-data.json",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 8,
+    "file": "003-image.png",
+    "status": "\t34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）",
+    "matched": true
+  },
+  {
+    "iteration": 9,
+    "file": "000-document.md",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 10,
+    "file": "001-code.swift",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 11,
+    "file": "002-data.json",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 12,
+    "file": "003-image.png",
+    "status": "\t34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）",
+    "matched": true
+  },
+  {
+    "iteration": 13,
+    "file": "000-document.md",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 14,
+    "file": "001-code.swift",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 15,
+    "file": "002-data.json",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 16,
+    "file": "003-image.png",
+    "status": "\t34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）",
+    "matched": true
+  },
+  {
+    "iteration": 17,
+    "file": "000-document.md",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 000-document.md · UTF-8 · 67 bytes · markdown · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 18,
+    "file": "001-code.swift",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 001-code.swift · UTF-8 · 49 bytes · code · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 19,
+    "file": "002-data.json",
+    "status": "\t37 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 002-data.json · UTF-8 · 54 bytes · json · 完整文件",
+    "matched": true
+  },
+  {
+    "iteration": 20,
+    "file": "003-image.png",
+    "status": "\t34 text 文件夹：OrangeLen-directory-stress · 总大小 38 KB · 2101 个文件 · 0 个文件夹 · 含隐藏项，递归统计完成 003-image.png · 640 × 360 像素 · 6 KB · 适合窗口（最长边解码至 2048 像素，动图显示首帧）",
+    "matched": true
+  }
+]

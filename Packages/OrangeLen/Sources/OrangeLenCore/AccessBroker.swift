@@ -27,11 +27,17 @@ public struct SourceSnapshot: Sendable {
     public let encoding: String
     public let byteCount: Int
     public let revision: String
-    public init(text: String, encoding: String, byteCount: Int, revision: String) { self.text = text; self.encoding = encoding; self.byteCount = byteCount; self.revision = revision }
+    public let totalBytes: Int
+    public let byteOffset: Int
+    public var partial: Bool { byteOffset > 0 || byteCount < totalBytes }
+    public var nextByteOffset: Int? { byteOffset + byteCount < totalBytes ? byteOffset + byteCount : nil }
+    public init(text: String, encoding: String, byteCount: Int, revision: String, totalBytes: Int? = nil, byteOffset: Int = 0) { self.text = text; self.encoding = encoding; self.byteCount = byteCount; self.revision = revision; self.totalBytes = totalBytes ?? byteCount; self.byteOffset = byteOffset }
 }
 public struct FileSnapshot: Sendable {
     public let data: Data
     public let revision: String
+    public let totalBytes: Int
+    public let header: Data
 }
 public enum AccessBroker {
     public static func validate(_ url: URL, root: URL? = nil) throws {
@@ -51,7 +57,7 @@ public enum AccessBroker {
         let decoded = try decode(raw.data)
         return SourceSnapshot(text: decoded.0, encoding: decoded.1, byteCount: raw.data.count, revision: raw.revision)
     }
-    public static func readBytes(_ url: URL, root: URL? = nil, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> FileSnapshot {
+    public static func readBytes(_ url: URL, root: URL? = nil, limits: PreviewLimits = .init(), cancellation: Cancellation = .init(), byteOffset: Int = 0, allowPartial: Bool = false) throws -> FileSnapshot {
         let scoped = url.startAccessingSecurityScopedResource()
         defer { if scoped { url.stopAccessingSecurityScopedResource() } }
         try validate(url, root: root); try cancellation.check()
@@ -67,11 +73,17 @@ public enum AccessBroker {
                 var before = stat()
                 guard fstat(fd, &before) == 0, before.st_mode & S_IFMT == S_IFREG else { throw PreviewError.unsafePath }
                 guard before.st_flags & UInt32(SF_DATALESS) == 0 else { throw PreviewError.unavailable }
-                guard before.st_size <= limits.fileBytes else { throw PreviewError.limit("文件最大 \(limits.fileBytes / 1024 / 1024) MiB") }
+                guard allowPartial || before.st_size <= limits.fileBytes else { throw PreviewError.limit("文件最大 \(limits.fileBytes / 1024 / 1024) MiB") }
+                guard byteOffset >= 0, byteOffset <= before.st_size else { throw PreviewError.limit("分页位置") }
+                var headerBytes = [UInt8](repeating: 0, count: 3)
+                let headerCount = pread(fd, &headerBytes, 3, 0)
+                guard headerCount >= 0, lseek(fd, off_t(byteOffset), SEEK_SET) >= 0 else { throw PreviewError.changed }
+                let header = Data(headerBytes.prefix(headerCount))
                 var data = Data(); var buffer = [UInt8](repeating: 0, count: 65536)
                 while true {
                     try cancellation.check()
-                    let count = Darwin.read(fd, &buffer, min(buffer.count, limits.fileBytes + 1 - data.count))
+                    if allowPartial && data.count >= limits.fileBytes { break }
+                    let count = Darwin.read(fd, &buffer, min(buffer.count, limits.fileBytes + (allowPartial ? 0 : 1) - data.count))
                     if count < 0 { throw NSError(domain: NSPOSIXErrorDomain, code: Int(errno)) }
                     if count == 0 { break }
                     data.append(contentsOf: buffer.prefix(count))
@@ -82,12 +94,37 @@ public enum AccessBroker {
                 var pathStat = stat()
                 guard lstat(coordinated.path, &pathStat) == 0, pathStat.st_ino == before.st_ino, pathStat.st_dev == before.st_dev else { throw PreviewError.changed }
                 try cancellation.check()
-                return FileSnapshot(data: data, revision: "\(before.st_dev):\(before.st_ino):\(before.st_size):\(before.st_mtimespec.tv_sec):\(before.st_mtimespec.tv_nsec)")
+                return FileSnapshot(data: data, revision: "\(before.st_dev):\(before.st_ino):\(before.st_size):\(before.st_mtimespec.tv_sec):\(before.st_mtimespec.tv_nsec)", totalBytes: Int(before.st_size), header: header)
             }
         }
         if let coordinationError { throw coordinationError }
         guard let result else { throw PreviewError.changed }
         return try result.get()
+    }
+    /// Large files are read a page at a time without loading their remaining bytes.
+    /// Pages stop at a valid scalar boundary; malformed input is never replaced.
+    public static func readPreview(_ url: URL, root: URL? = nil, byteOffset: Int = 0, pageBytes: Int = 512 * 1024, fullReadThreshold: Int = PreviewLimits().fileBytes, cancellation: Cancellation = .init()) throws -> SourceSnapshot {
+        let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+        if size <= min(fullReadThreshold, PreviewLimits().fileBytes) && byteOffset == 0 { return try read(url, root: root, cancellation: cancellation) }
+        guard pageBytes >= 16, pageBytes <= PreviewLimits().fileBytes else { throw PreviewError.limit("文本分页大小") }
+        var limits = PreviewLimits(); limits.fileBytes = pageBytes
+        let raw = try readBytes(url, root: root, limits: limits, cancellation: cancellation, byteOffset: byteOffset, allowPartial: true)
+        let bom: Data
+        if raw.header.starts(with: [0xFF, 0xFE]) { bom = Data([0xFF, 0xFE]) }
+        else if raw.header.starts(with: [0xFE, 0xFF]) { bom = Data([0xFE, 0xFF]) }
+        else { bom = Data() }
+        let hasMore = byteOffset + raw.data.count < raw.totalBytes
+        for trim in 0...(hasMore ? 3 : 0) {
+            guard raw.data.count > trim else { continue }
+            let data = Data(raw.data.prefix(raw.data.count - trim))
+            let input = byteOffset > 0 ? bom + data : data
+            if let decoded = try? decode(input) {
+                return SourceSnapshot(text: decoded.0, encoding: decoded.1, byteCount: data.count, revision: raw.revision, totalBytes: raw.totalBytes, byteOffset: byteOffset)
+            }
+        }
+        // Re-run to preserve the meaningful binary/encoding error.
+        _ = try decode(byteOffset > 0 ? bom + raw.data : raw.data)
+        throw PreviewError.encoding
     }
     private static func openWithoutSymlinks(_ url: URL) throws -> Int32 {
         var parent = Darwin.open("/", O_SEARCH)
@@ -114,6 +151,26 @@ public enum AccessBroker {
         if data.starts(with: [0xEF, 0xBB, 0xBF]) { data.removeFirst(3); label = "UTF-8 BOM" }
         else if data.starts(with: [0xFF, 0xFE]) { data.removeFirst(2); encoding = .utf16LittleEndian; label = "UTF-16 LE" }
         else if data.starts(with: [0xFE, 0xFF]) { data.removeFirst(2); encoding = .utf16BigEndian; label = "UTF-16 BE" }
+        if encoding == .utf16LittleEndian || encoding == .utf16BigEndian {
+            // Foundation may repair or drop a dangling UTF-16 unit. Validate before
+            // decoding so paging never loses bytes or inserts replacement characters.
+            guard data.count % 2 == 0 else { throw PreviewError.encoding }
+            let bytes = [UInt8](data)
+            func unit(_ index: Int) -> UInt16 {
+                encoding == .utf16LittleEndian ? UInt16(bytes[index]) | (UInt16(bytes[index + 1]) << 8) : (UInt16(bytes[index]) << 8) | UInt16(bytes[index + 1])
+            }
+            var i = 0
+            while i < bytes.count {
+                let value = unit(i)
+                if value >= 0xD800 && value <= 0xDBFF {
+                    guard i + 3 < bytes.count, unit(i + 2) >= 0xDC00, unit(i + 2) <= 0xDFFF else { throw PreviewError.encoding }
+                    i += 4
+                } else {
+                    guard value < 0xDC00 || value > 0xDFFF else { throw PreviewError.encoding }
+                    i += 2
+                }
+            }
+        }
         guard let text = String(data: data, encoding: encoding) else { throw PreviewError.encoding }
         guard !text.utf16.contains(0) else { throw PreviewError.binary }
         return (text, label)
@@ -123,10 +180,10 @@ public enum AccessBroker {
 public enum PreviewFormat: String, Sendable {
     case markdown, json, csv, tsv, code, text, diff
     public static func detect(_ url: URL) -> Self {
-        if ["Makefile", "Dockerfile", "Gemfile"].contains(url.lastPathComponent) { return .code }
+        if ReadableFormat.isNamedText(url) && url.pathExtension.lowercased() != "json" { return .code }
         switch url.pathExtension.lowercased() {
         case "md", "markdown": return .markdown
-        case "json": return .json
+        case "json", "jsonc", "json5": return .json
         case "csv": return .csv
         case "tsv": return .tsv
         case "diff", "patch": return .diff

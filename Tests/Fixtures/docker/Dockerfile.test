@@ -1,0 +1,6 @@
+# .test 后缀变体：不会由预览器执行
+FROM node:22-alpine
+WORKDIR /app
+COPY app/ ./
+RUN node --check server.js
+CMD ["node", "--check", "server.js"]

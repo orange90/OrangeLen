@@ -1,0 +1,8 @@
+Component.vue	local.orangelen.developer-source	public.content,public.data,public.item,public.plain-text,public.source-code,public.text
+Component.svelte	local.orangelen.developer-source	public.content,public.data,public.item,public.plain-text,public.source-code,public.text
+Page.astro	local.orangelen.developer-source	public.content,public.data,public.item,public.plain-text,public.source-code,public.text
+settings.jsonc	local.orangelen.jsonc	public.content,public.data,public.item,public.plain-text,public.text
+config.json5	local.orangelen.json5	public.content,public.data,public.item,public.plain-text,public.text
+icon.svg	public.svg-image	public.content,public.data,public.image,public.item,public.text,public.xml
+app.log.gz	org.gnu.gnu-zip-archive	public.archive,public.data,public.item
+.env.local	dyn.ah62d4rv4ge80255dqf0a	public.data,public.item

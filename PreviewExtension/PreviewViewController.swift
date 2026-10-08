@@ -6,6 +6,7 @@ final class PreviewViewController: NSViewController, QLPreviewingController {
     let reader = ReaderController()
     let logger = Logger(subsystem: "local.OrangeLen", category: "QuickLook")
     override func loadView() {
+        reader.previewCategory = Bundle(for: PreviewViewController.self).object(forInfoDictionaryKey: "OrangeLenPreviewCategory") as? String
         addChild(reader)
         view = reader.view
         preferredContentSize = NSSize(width: 1000, height: 720)

@@ -1,0 +1,46 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[2/4] Write swift-version--58304C5D6DBC2206.txt
+[4/6] Compiling OrangeLenUI ReaderMemory.swift
+[5/6] Emitting module OrangeLenUI
+[6/9] Compiling OrangeLenUITests DeveloperFormatsIntegrationTests.swift
+[7/9] Emitting module OrangeLenUITests
+[7/9] Write Objects.LinkFileList
+[8/9] Linking OrangeLenPackageTests
+Build complete! (3.49s)
+Test Suite 'Selected tests' started at 2026-10-04 11:28:01.651.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-04 11:28:01.653.
+Test Suite 'DeveloperFormatsIntegrationTests' started at 2026-10-04 11:28:01.653.
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testGzipLogCSVTSVAndJSONLDispatch]' started.
+2026-10-04 11:28:02.170 xctest[38711:14367406] Warning: Column selection is not supported in view-based table and outline views (<NSTableView: 0xa5845a300>).
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testGzipLogCSVTSVAndJSONLDispatch]' passed (0.768 seconds).
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testSVGNativeImageSourceFallbackAndStaleLoad]' started.
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testSVGNativeImageSourceFallbackAndStaleLoad]' passed (1.393 seconds).
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testTextAndJSONDialectsReachRealReaderAndCopyOriginalValues]' started.
+Test Case '-[OrangeLenUITests.DeveloperFormatsIntegrationTests testTextAndJSONDialectsReachRealReaderAndCopyOriginalValues]' passed (0.207 seconds).
+Test Suite 'DeveloperFormatsIntegrationTests' passed at 2026-10-04 11:28:04.021.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 2.368 (2.368) seconds
+Test Suite 'DeveloperFormatsTests' started at 2026-10-04 11:28:04.021.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testConfigurationsAndSourceAreReadableWithoutSystemTypeFallback]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testConfigurationsAndSourceAreReadableWithoutSystemTypeFallback]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testGzipStreamsAreNotMistakenForTar]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testGzipStreamsAreNotMistakenForTar]' passed (0.003 seconds).
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSON5GrammarKeepsOriginalRangesAndDecodedPaths]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSON5GrammarKeepsOriginalRangesAndDecodedPaths]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSONCCommentsTrailingCommasAndSourceExactValues]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSONCCommentsTrailingCommasAndSourceExactValues]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSONDialectsRespectLimitsAndCancellation]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testJSONDialectsRespectLimitsAndCancellation]' passed (0.000 seconds).
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testSVGAllowlistRetainsShapesAndRemovesActiveContent]' started.
+Test Case '-[OrangeLenCoreTests.DeveloperFormatsTests testSVGAllowlistRetainsShapesAndRemovesActiveContent]' passed (0.001 seconds).
+Test Suite 'DeveloperFormatsTests' passed at 2026-10-04 11:28:04.029.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-04 11:28:04.029.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 2.376 (2.377) seconds
+Test Suite 'Selected tests' passed at 2026-10-04 11:28:04.030.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 2.376 (2.379) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

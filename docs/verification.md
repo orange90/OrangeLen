@@ -1,3 +1,15 @@
+# 2026-10-05 竞品补强验收
+
+85 项 XCTest / 0 失败，日志 [tests-81.log](evidence/improvements/tests-85.log)。覆盖语言高亮原文重建、Markdown 扩展、UTF 分页无损重组、SQLite 分页/原生类型排序、归档目录树/筛选、原子替换自动刷新、容器导航恢复、20 次快速取消切换、2101 项目录五批无重复、窄窗及真实 NSEvent 附件命中。本轮复制、授权共享与阅读位置保持调整后全套 85 项测试通过（2026-10-05 00:55:48；其后仅补无共享 group 时的授权说明，编译验证），Debug/通用 Release 编译通过。
+
+Finder 实测 Markdown 大纲/元数据/提示块/高亮，Mermaid 放大；SQLite 501–1000、1001–1002 与数字列全表升序；ZIP 目录树、嵌套 Swift 与完整路径筛选。宿主实测单文件本地图片目录授权、系统登记导入及 UTType 匹配；辅助功能识别缩放按钮并实际改变倍率；9.96 MB 文本第二页准确范围与中文/emoji。真实 Finder 2101 项五批到完成、Markdown/Swift/JSON/PNG 连续切换 20 次均状态匹配，无崩溃；最新安装后 Finder .swift 大文件分页已观察；同内容 .txt 仍由系统 TextEdit 预览，按既有用户取舍接受。
+
+2026-10-05 补验：真实 Finder 的 20 个 6–8 MB 合成 Swift/Markdown/JSON 文件前进切换后，连续 19 次返回（CUA 输入分派约 1.25 秒，仅输入，不是加载计时）。六个检查点标题/页内标记/格式匹配，最终返回首个 Swift；没有观察到崩溃。证据 [checks](evidence/improvements/finder-large-switch-checks.json)、[最终 Markdown](evidence/improvements/finder-large-switch-final.png)、[返回 Swift](evidence/improvements/finder-large-switch-return.png)。未覆盖每个中间文件完整渲染、长期内存及冷缓存。Finder 代码复制菜单可显示，但自动化菜单/键盘分派仍未证明完整 Finder 复制操作；不将其算作成功或确定的产品缺陷。
+
+安装器实测：明确停用 Data→更新当前应用→仍停用→恢复原启用状态。最新 Apple Development 安装 deep/strict 验签通过。通用 Release 主程序、七扩展与七 XPC 的 arm64/x86_64 slice 均验证通过；不是 Intel 运行证据。Developer ID、公证、Gatekeeper、外部 CI、其他 macOS/Intel、完整 VoiceOver/高对比/多屏以及同机竞品性能尚未验收。Finder 本地图片“宿主授权→加载→关闭撤销”真实观察通过；原地选目录仍需宿主。代码块 NSEvent 菜单实际 action/粘贴板测试覆盖空行、CRLF 和语言名碰撞。
+
+具体状态、截图和限制见 [清单](improvement-plan.md)、[交付说明](improvement-report.md)、[运行与发布验收](runtime-acceptance.md)。以下是按日期保留的历史验收，已被新实现替代的“无分页/无目录树”等不代表当前状态。
+
 # M1 补强与 M2 开发验证（2026-10-03，当前）
 
 - **应用内渲染**：43 项 XCTest 全部通过；新增 ZIP/TAR/gzip/路径/CRC/取消、EPUB 章节/内图/保护资源/UTF-16 DTD、SQLite 内存只读/WAL/大整数、JSONL 坏记录、Notebook 输出隔离、HAR/OpenAPI、章节状态修订失效、连续选择与窄窗测试。真实 Finder Notebook 长正文切短输出曾触发 TextKit 装饰 NSRange 越界；已清除旧装饰并约束绘制范围，回归及 Finder 再测通过。日志 m2-tests.log。
@@ -95,3 +107,36 @@ Markdown 测试曾临时将已安装 QLMarkdown 设置 ignore 以隔离竞争，
 `build/artifacts/OrangeLen-dev.zip` 是可重新构建的 ad-hoc 开发包；`OrangeLen-local-development.zip` 为本机证书签名快照，不是分发许可。打包脚本支持有证书条件下的 Developer ID/公证流程，但 **release、公证、staple 未执行**。
 
 其他系统/架构与真实云目录：未测试。M1 核心阻塞和下一步见 [已知限制](known-limitations.md)，格式逐项见 [支持矩阵](format-support.md)。
+
+## 2026-10-04 移除专注阅读
+
+用户取消专注阅读。工具栏、紧凑菜单、设置页与正文装饰逻辑均已移除；本文件此前相关截图和记录仅为历史验证。43 项 XCTest 通过，Xcode Debug 构建通过，Apple Development 本机安装及 deep/strict 验签通过。已更新 `~/Applications/OrangeLen.app`；本轮未重新进行 Finder 界面实测。
+
+## 2026-10-04 Notebook continuous preview
+- Notebook cells and stored outputs now share one scrolling reader with the entry sidebar hidden. Added an integration check for all fixture content appearing together.
+- 47 tests passed; Xcode Debug build and local development signing/install passed. Logs: `/tmp/orangelen-notebook-tests.log`, `/tmp/orangelen-notebook-xcode.log`, `/tmp/orangelen-notebook-install.log`. Finder visual verification was not repeated.
+
+## 2026-10-04 — Excalidraw
+
+- 完整测试 47 项通过（其中本次新增 Excalidraw 3 项）：有界输入、取消、资源清理、损坏源码降级、空画布、真实 WebKit 渲染、源码切换和后续文件不被旧异步结果覆盖。
+- Xcode Debug 构建通过，使用已有 Apple Development 身份安装到 `~/Applications/OrangeLen.app`，deep/strict 签名校验通过。
+- 真实 Finder 打开 `Tests/Fixtures/m2/sample.excalidraw` 并按空格：OrangeLen 画布显示中英文、手绘图形、箭头和 PNG；点击源码后显示原始 JSON。AX 显示 “Excalidraw 画布：sample.excalidraw，7 个元素” 和 “离线只读画布 · 可切换源码”。
+- 原始日志 `/tmp/orangelen-excalidraw-final-tests.log`、`/tmp/orangelen-excalidraw-build.log`、`/tmp/orangelen-excalidraw-install.log`；持久证据 `docs/evidence/excalidraw-tests.log`、`docs/evidence/excalidraw-canvas.png`。截图是共享渲染组件输出，Finder 观察依据为本次 CUA 返回截图与 AX，不混称截图来源。
+- npm audit：本次新增渲染依赖 0 漏洞，见 `Vendor/ExcalidrawRenderer/audit.json`；不是无漏洞承诺。未测试跨机器类型竞争、大型真实用户画布及所有元素组合；不支持 Obsidian Markdown 包装、编辑或自由缩放。
+
+## 2026-10-04 — 开发者常见格式
+
+- 完整 56 项 XCTest 通过（本轮增加 Core 6 项与 UI 集成 3 项）；最后消除 JSONL 坏行重复错误说明后，相关 9 项再次通过。证据 `evidence/developer-formats-tests.log`、`evidence/developer-formats-final-tests.log`。
+- Xcode Debug 构建通过；已有 Apple Development 本机安装到 `~/Applications/OrangeLen.app`，deep/strict 验签通过。构建日志 `/tmp/orangelen-developer-formats-build.log`，安装证据 `evidence/developer-formats-install.log`。本轮未提交或推送，也未执行发布公证。
+- 真实 Finder（CUA，Cmd-Y Quick Look）：JSONC 显示 4 个根键及原始大整数，切源码保留注释/尾逗号；JSON5 显示单引号、`0xdecaf`、`+.5`、`-Infinity`、`NaN`；Vue/Svelte 显示完整源码。
+- Finder `.log.gz` 显示两行中文日志；`.csv.gz` 显示 name/count 原生表格；`.jsonl.gz` 显示 3 条记录和完整解压源文，点击坏记录显示 `{bad}`，其余记录正常。TSV gzip、JSON5 gzip 已由集成测试覆盖，未逐项 Finder 实测。
+- SVG 单文件由系统 HTML 处理器接管（可见 OrangeLen 与 SVG 中文预览文字）；OrangeLen Finder **文件夹内**点选 `icon.svg` 显示有色形状/渐变/中英文图像，点击源码显示原始 SVG。随后点选 Dockerfile.dev 显示原生带行号正文。没有把系统单文件 SVG 预览当作 OrangeLen 单文件调用证据。
+- `.env.local` 等隐藏/文件名变体通过共享阅读器自动测试；Finder `.env.local` UTType 仍为动态 public.data 类型，没有注册通用类型强抢。其他新增后缀未逐格式实机测试。
+- 本轮类型查询证据 `evidence/developer-content-types.tsv`；`evidence/developer-svg.png` 为共享 WebKit 渲染组件输出，**不是 Finder 截图**。Finder 观察的原始截图和 AX 来源为本次 CUA 工具输出。
+- 普通 gzip 不再误按 TAR，静态 SVG 允许名单与回退边界、JSON 方言及解析限制见 [开发者格式](developer-formats.md)。连续不同大小表格触发旧行高回调越界，已修复并回归；JSONL 错误原因不再在同一个阅读器状态中重复追加。
+
+## 2026-10-04 — Dockerfile.dev 单文件预览纠正
+
+- 用户报告 `dockerfile.dev` 测试不通过；本机实际 Finder 单文件 Cmd-Y 复现仅图标与“Dockerfile.dev 39 bytes Last modified …”元数据，无 OrangeLen 工具栏或正文。原始观察来源：本次 CUA 返回 AX。
+- UTType 查询确认 `.dev` 为动态 public.data 子类型，Dockerfile/Containerfile/.dockerignore 为 public.data，compose.yaml 为 public.yaml；持久证据 `evidence/docker-content-types.tsv`，全为自行生成夹具。
+- 阅读器完整文件名匹配不等于 Finder 单文件注册。本轮修正矩阵/格式文档，保留此前文件夹内 Dockerfile.dev 正文通过的结论，明确单文件入口未支持。未改代码、安装或类型注册；不以清缓存或重装替代此原因。

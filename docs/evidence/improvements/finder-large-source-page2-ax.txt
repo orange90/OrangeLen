@@ -1,0 +1,76 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 button 查找
+	8 search text field (settable) 查找已加载内容（点击输入）
+		9 button Search
+	10 button 全选
+	11 button 复制选择
+	12 button 取消加载
+	13 button 上一页
+	14 button 下一页
+	15 text 字节 524289–1048574 / 9960000 · 查找、行号与复制针对本页
+	16 split group
+		17 splitter (disabled, settable, float) 0
+		18 splitter (disabled, settable, float) 0
+		19 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			20 text entry area Description: OrangeLen 只读正文, Value:  source remains exact.
+006317 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006318 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006319 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006320 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006321 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006322 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006323 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006324 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006325 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006326 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006327 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006328 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006329 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006330 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006331 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006332 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006333 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006334 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006335 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006336 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006337 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006338 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006339 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+006340 OrangeLen 大文件分页验收 — UTF-8 中文 🍊 source remains exact.
+
+			21 scroll bar (settable, float) 1
+				22 value indicator (settable, float) 1
+				23 increment arrow button
+				24 decrement arrow button
+				25 increment page button
+				26 decrement page button
+			27 scroll bar (settable, float) 0
+				28 value indicator (settable, float) 0
+				29 increment arrow button
+				30 decrement arrow button
+				31 increment page button
+				32 decrement page button
+			33 ruler
+	34 text OrangeLen-large-text.swift · UTF-8 · 524286 bytes · code · 分页源码片段 高亮限本页前 250,000 UTF-16 单元；本页源码完整。
+	35 close button close panel button
+	36 full screen button full screen window button
+	37 button Description: Share file, ID: QLControlShare
+	38 button Open with Xcode, Description: Open file, ID: QLControlOpen
+	39 text OrangeLen-large-text.swift
+40 menu bar
+	41 Finder
+	42 File
+	43 Edit
+	44 View
+	45 Go
+	46 Window
+	47 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

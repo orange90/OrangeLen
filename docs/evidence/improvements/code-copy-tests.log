@@ -1,0 +1,66 @@
+[0/1] Planning build
+Building for debugging...
+[0/5] Write sources
+[2/5] Write swift-version--58304C5D6DBC2206.txt
+[4/7] Emitting module OrangeLenCore
+[5/7] Compiling OrangeLenCore ImageDirectoryGrant.swift
+[6/35] Compiling OrangeLenCoreTests TextPagingTests.swift
+[7/35] Compiling OrangeLenCoreTests MarkdownExtrasTests.swift
+[8/35] Compiling OrangeLenCoreTests M2Tests.swift
+[9/35] Compiling OrangeLenCoreTests DatabasePagingTests.swift
+[10/35] Compiling OrangeLenCoreTests DeveloperFormatsTests.swift
+[11/35] Emitting module OrangeLenCoreTests
+[12/35] Compiling OrangeLenCoreTests CoreTests.swift
+[13/35] Compiling OrangeLenUI RichContentRenderer.swift
+[14/35] Compiling OrangeLenUI SyntaxHighlighter.swift
+[15/36] Compiling OrangeLenUI ReaderExcalidraw.swift
+[16/36] Compiling OrangeLenUI ReaderLocalImages.swift
+[17/36] Compiling OrangeLenUI ReaderSVG.swift
+[18/36] Compiling OrangeLenUI ReadingTextView.swift
+[19/36] Compiling OrangeLenUI ReaderMemory.swift
+[20/36] Compiling OrangeLenUI ReaderRichContent.swift
+[21/36] Compiling OrangeLenUI DataControllers.swift
+[22/36] Compiling OrangeLenUI DatabaseController.swift
+[23/36] Compiling OrangeLenUI RemoteImageLoader.swift
+[24/36] Compiling OrangeLenUI RemoteImageRequest.swift
+[25/36] Emitting module OrangeLenUI
+[26/36] Compiling OrangeLenUI ArchiveController.swift
+[27/36] Compiling OrangeLenUI CollectionController.swift
+[28/36] Compiling OrangeLenUI TextStyler.swift
+[29/36] Compiling OrangeLenUI ImagePreview.swift
+[30/36] Compiling OrangeLenUI MarkdownAssets.swift
+[31/36] Compiling OrangeLenUI MarkdownOutlineController.swift
+[32/36] Compiling OrangeLenUI ReaderController.swift
+[33/36] Compiling OrangeLenUI ExcalidrawPreview.swift
+[34/36] Compiling OrangeLenUI FolderController.swift
+[35/44] Compiling OrangeLenUITests LayoutTests.swift
+[36/44] Compiling OrangeLenUITests M2IntegrationTests.swift
+[37/44] Emitting module OrangeLenUITests
+[38/44] Compiling OrangeLenUITests DeveloperFormatsIntegrationTests.swift
+[39/44] Compiling OrangeLenUITests SyntaxHighlighterTests.swift
+[40/44] Compiling OrangeLenUITests ExcalidrawTests.swift
+[41/44] Compiling OrangeLenUITests RichContentTests.swift
+[42/44] Compiling OrangeLenUITests ImprovementIntegrationTests.swift
+[42/44] Write Objects.LinkFileList
+[43/44] Linking OrangeLenPackageTests
+Build complete! (5.85s)
+Test Suite 'Selected tests' started at 2026-10-05 00:45:01.717.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-05 00:45:01.718.
+Test Suite 'ImprovementIntegrationTests' started at 2026-10-05 00:45:01.718.
+Test Case '-[OrangeLenUITests.ImprovementIntegrationTests testCodeContextMenuDispatchesExactOriginalPayload]' started.
+Test Case '-[OrangeLenUITests.ImprovementIntegrationTests testCodeContextMenuDispatchesExactOriginalPayload]' passed (0.238 seconds).
+Test Suite 'ImprovementIntegrationTests' passed at 2026-10-05 00:45:01.956.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.238 (0.238) seconds
+Test Suite 'MarkdownExtrasTests' started at 2026-10-05 00:45:01.956.
+Test Case '-[OrangeLenCoreTests.MarkdownExtrasTests testFencedCodeCopyKeepsBlankLinesCRLFAndDoesNotMatchLanguageLabel]' started.
+Test Case '-[OrangeLenCoreTests.MarkdownExtrasTests testFencedCodeCopyKeepsBlankLinesCRLFAndDoesNotMatchLanguageLabel]' passed (0.001 seconds).
+Test Suite 'MarkdownExtrasTests' passed at 2026-10-05 00:45:01.957.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-05 00:45:01.957.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.239 (0.239) seconds
+Test Suite 'Selected tests' passed at 2026-10-05 00:45:01.957.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.239 (0.240) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

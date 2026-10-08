@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>OrangeLen Preview</string>
+	<string>OrangeLen · 代码</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -36,26 +36,8 @@
 				<string>public.c-source</string>
 				<string>public.c-plus-plus-source</string>
 				<string>public.shell-script</string>
-				<string>net.daringfireball.markdown</string>
-				<string>public.json</string>
-				<string>public.xml</string>
-				<string>public.yaml</string>
-				<string>public.toml</string>
 				<string>public.make-source</string>
-				<string>com.unknown.md</string>
-				<string>public.comma-separated-values-text</string>
-				<string>public.tab-separated-values-text</string>
-				<string>public.folder</string>
-				<string>org.idpf.epub-container</string>
-				<string>public.zip-archive</string>
-				<string>public.tar-archive</string>
-				<string>org.gnu.gnu-zip-archive</string>
-				<string>public.database</string>
-				<string>local.orangelen.jsonl</string>
-				<string>local.orangelen.diff</string>
-				<string>local.orangelen.notebook</string>
-				<string>local.orangelen.sqlite</string>
-				<string>local.orangelen.har</string>
+				<string>local.orangelen.developer-source</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>
@@ -65,5 +47,7 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).PreviewViewController</string>
 	</dict>
+	<key>OrangeLenPreviewCategory</key>
+	<string>Code</string>
 </dict>
 </plist>
