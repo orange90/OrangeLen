@@ -37,7 +37,12 @@ extension ReaderController {
         PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (TextModel?, JSONTree?, TableData?, String) in
             var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = section.warning
             do {
-                if section.markdown { markdown = try MarkdownModel.parse(section.text,cancellation:token) }
+                if ["srt", "vtt"].contains(URL(fileURLWithPath: section.id).pathExtension.lowercased()) {
+                    let subtitles = try SubtitleDocument.parse(section.text, webVTT: URL(fileURLWithPath: section.id).pathExtension.lowercased() == "vtt", cancellation: token)
+                    table = subtitles.table
+                    warning = L10n.text("字幕 \(subtitles.cues.count) 条 · 结束时间 \(SubtitleDocument.timestamp(subtitles.duration)) · 无效条目 \(subtitles.rejected)")
+                }
+                else if section.markdown { markdown = try MarkdownModel.parse(section.text,cancellation:token) }
                 else if detected == .json { tree = try JSONParser.parse(section.text,dialect:JSONDialect.detect(URL(fileURLWithPath:section.id)),cancellation:token) }
                 else if detected == .csv || detected == .tsv { table = try CSVParser.parse(section.text,separator:detected == .tsv ? 9 : 44,cancellation:token) }
                 try token.check()
@@ -54,6 +59,9 @@ extension ReaderController {
                 self.source = snapshot; self.markdownAssets = assets; self.jsonTree = tree; self.tableData = table; self.rendered = markdown; self.parseWarning = warning
                 if !section.markdown { self.prepareHTMLPreview(url: self.currentURL, snapshot: snapshot) }
                 self.mode.selectedSegment = 0; self.text.anchor = 0; self.present(); self.startRichRendering()
+                if ["mmd", "mermaid"].contains(URL(fileURLWithPath: section.id).pathExtension.lowercased()) {
+                    self.canvasLabel = "Mermaid"; self.startMermaidRendering(snapshot, id: current)
+                }
                 self.remoteBar.isHidden = true; self.remoteHeight.constant = 0
                 if let position, self.mode.isEnabled { self.mode.selectedSegment = position.mode; self.present() }
                 if let offset = position?.sourceOffset ?? SettingsStore.shared.restore(self.currentURL!,revision:snapshot.revision) {

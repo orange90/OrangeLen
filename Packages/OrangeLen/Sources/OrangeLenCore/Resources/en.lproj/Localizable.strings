@@ -603,3 +603,55 @@
 "本地资源已重新读取" = "Local resources reloaded";
 
 "本次本地资源授权已结束" = "Local resource access has ended";
+
+"开始" = "Start";
+
+"结束" = "End";
+
+"字幕正文" = "Caption text";
+
+"字幕字节预算" = "Subtitle byte limit";
+
+"缺少 WEBVTT 文件头" = "Missing WEBVTT header";
+
+"字幕最多 5,000 条" = "Subtitles: maximum 5,000 cues";
+
+"字幕最多 50,000 行" = "Subtitles: maximum 50,000 lines";
+
+"未找到有效字幕时间码" = "No valid subtitle timestamps found";
+
+"MCP 包缺少根目录 manifest.json" = "MCP bundle is missing manifest.json at the root";
+
+"MCP 清单最多 1 MiB" = "MCP manifest: maximum 1 MiB";
+
+"MCP 清单必须是 JSON 对象" = "MCP manifest must be a JSON object";
+
+"MCP 扩展包" = "MCP bundle";
+
+"名称" = "Name";
+
+"版本" = "Version";
+
+"运行类型" = "Runtime";
+
+"入口" = "Entry point";
+
+"清单原文" = "Original manifest";
+
+"包信息" = "Bundle info";
+
+"图表超出完整读取预算" = "Diagram exceeds the full-file reading limit";
+
+"图表渲染失败：{0} · 已降级源码" = "Diagram rendering failed: {0} · Showing source";
+
+"字幕超出完整读取预算" = "Subtitles exceed the full-file reading limit";
+
+"字幕 {0} 条 · 结束时间 {1} · 无效条目 {2}" = "{0} cues · End time {1} · Invalid entries {2}";
+
+"AI 图片生成参数" = "AI image generation parameters";
+
+"生成参数" = "Generation parameters";
+
+"参数概览" = "Parameter overview";
+
+"部分生成参数损坏或超过预算，图片仍可预览" = "Some generation parameters are damaged or exceed the limit; image preview remains available";

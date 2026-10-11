@@ -1,0 +1,76 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 toggle button Description: Show or hide directory tree, Value: on
+	3 button Select All
+	4 button Copy Selection
+	5 button Cancel Loading
+	6 split group
+		7 search text field (settable) Filter files
+			8 button Search
+		9 button Folder Overview, Description: move
+		10 text Files
+		11 scroll area Secondary Actions: Scroll Up, Scroll Down
+			12 outline Project directory tree
+				13 row (selectable, expanded) Value: ai-outputs, Secondary Actions: Collapse
+					14 disclosure triangle 1
+				15 row (selectable) captions.srt, Description: Preview captions.srt
+Preview captions.srt
+				16 row (selectable) captions.vtt, Description: Preview captions.vtt
+Preview captions.vtt
+				17 row (selectable) diagram.mermaid, Description: Preview diagram.mermaid
+Preview diagram.mermaid
+				18 row (selectable) diagram.mmd, Description: Preview diagram.mmd
+Preview diagram.mmd
+				19 row (selectable) generation-big-endian.webp, Description: Preview generation-big-endian.webp
+Preview generation-big-endian.webp
+				20 row (selectable) generation.png, Description: Preview generation.png
+Preview generation.png
+				21 row (selected) generation.webp, Description: Preview generation.webp
+Preview generation.webp
+				22 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				23 row (selectable) sample.dxt, Description: Preview sample.dxt
+Preview sample.dxt
+				24 row (selectable) sample.mcpb, Description: Preview sample.mcpb
+Preview sample.mcpb
+			25 scroll bar (settable, float) 0
+				26 value indicator (settable, float) 0
+				27 increment arrow button
+				28 decrement arrow button
+				29 increment page button
+				30 decrement page button
+		31 tickbox Show hidden & ignored, Value: 0
+		32 button Refresh Directory, Description: refresh
+		33 text Scanned 10 items in this directory (complete)
+		34 splitter (disabled, settable, float) 220
+		35 splitter (disabled, settable, float) 0
+		36 button −
+		37 button +
+		38 button Fit to Window
+		39 button 100%
+		40 button Back to Document
+		41 text 630% · Drag to pan
+		42 scroll area Secondary Actions: Scroll Up, Scroll Down
+			43 text entry area Description: AI image generation parameters, Value: AI image generation parameters
+
+workflow
+{"nodes":[{"id":3,"type":"KSampler"}],"links":[]}
+
+
+			44 scroll bar (disabled, settable, float) 0
+	45 text generation.webp · 64 × 64 pixels · 180 bytes · Fit to window (decoded to a maximum edge of 2048 pixels; animations show the first frame)
+	46 close button close panel button
+	47 full screen button full screen window button
+	48 button Description: Share file, ID: QLControlShare
+	49 text ai-outputs
+50 menu bar
+	51 Finder
+	52 File
+	53 Edit
+	54 View
+	55 Go
+	56 Window
+	57 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

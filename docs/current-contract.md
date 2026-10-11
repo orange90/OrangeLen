@@ -10,7 +10,10 @@
 | Notebook、HAR、JSONL、diff、普通 gzip | 对应类别声明匹配时 | 内容预览；Notebook 连续正文 | 同左 | 文本成员按源码/Markdown 显示 |
 | ZIP/TAR/TGZ、EPUB、SQLite | 对应类别声明匹配时 | 归档目录、书籍章节、SQLite 表格 | 同左 | 不执行嵌套容器/数据库 |
 | Excalidraw、SVG | 对应类别声明匹配时 | 离线图像及源码降级 | 同左 | SVG 为源码；不运行脚本 |
-| 栅格图片 | 保留系统处理 | ImageIO 有界解码 | 同左 | 有界栅格图片 |
+| Mermaid `.mmd` / `.mermaid` | 绘图类别声明匹配时 | 离线图像及源码降级 | 同左 | 文本成员共用 Mermaid 渲染器 |
+| MCPB/DXT | 归档类别声明匹配时 | 清单概览及归档目录 | 同左 | 不递归开启容器、不安装或执行 MCP |
+| SRT/VTT | 数据类别声明匹配时 | 字幕时间表格及源码 | 同左 | 文本成员共用字幕表格 |
+| 栅格图片 | 本机 PNG 保留系统处理；PNG/WebP 增加绘图声明但不保证接管 | ImageIO 有界解码；AI PNG/WebP 增加参数面板 | 同左 | 有界栅格图片，无参数面板 |
 | PDF | 保留系统处理 | PDFKit，只读 | 同左 | 不开启 PDF 解析器 |
 | DOC/DOCX/DOCM/DOT/DOTX、RTF、ODT | 保留系统处理 | 无网络 XPC 导入后显示文字/基本字体 | 同左 | 不调用系统导入器 |
 | XLSX/XLSM/PPTX/PPTM | 保留系统处理 | 内部 XML 的内容预览 | 同左 | 不开启 Office 内容解析器 |
@@ -20,6 +23,8 @@
 | 真实文件包 | 系统优先 | 不递归进入；按格式交接或提示 | 按格式交接 | 不视为本地 package |
 
 “对应类别”不保证 LaunchServices 最终选择 OrangeLen。任何不支持/损坏/超限内容都不能显示为前一文件的成功内容。未知格式提供默认应用和 Finder 出口。
+
+2026-10-11 新增产出的具体参数范围和预算见 [AI 产出预览](ai-output-previews.md)。
 
 ## 状态、恢复与保真
 

@@ -2,6 +2,8 @@
 
 # 格式支持矩阵
 
+2026-10-11 新增 Mermaid、MCPB/DXT、SRT/VTT 及 AI PNG/WebP 参数预览；本轮入口范围和最新实测见 [AI 产出预览](ai-output-previews.md) 与 [验收证据](evidence/ai-outputs/README.md)。下表保留旧日期，图片入口结果以新证据为准。
+
 更新于 2026-10-05；仅 macOS 26.6.2 / Apple M3 Pro / Xcode 26.5 SDK 26.5 实测。部署下限 14 不代表 14 已测试。下列 Finder“通过”仅表示调用与指定画面，不代表全部键盘交互验收。
 
 | 格式 | 共享渲染器 | 真实 Finder 结果 | 限制 |

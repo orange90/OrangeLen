@@ -62,6 +62,8 @@ Do not rename files, disable SIP, capture Space globally, or register `public.da
 
 ## Reading
 
+- AI output formats: standalone Mermaid (`.mmd`/`.mermaid`) diagram/source views, MCPB/DXT manifest summaries and archive browsing, SRT/VTT subtitle tables and source, plus A1111/ComfyUI generation metadata alongside PNG/WebP images. Image metadata is available in OrangeLen host/folder views; single-file PNG remains system-handled on the tested Mac. See [AI output previews](docs/ai-output-previews.md).
+
 - HTML: browser rendering and source toggle for HTML/HTM/XHTML, with JavaScript, external CSS/images and network resources enabled. Local relative resources use the authorized containing folder. Finder displays updating page snapshots; the app supports page interaction, with an Open in Browser action. Files over 1 MiB remain paged source. See [HTML preview](docs/html-preview.md).
 - Text/code: VS Code-inspired light/dark colors, monospaced typography, aligned line-number gutter, real selectable text, source-exact Copy, offline Highlight.js language coloring, line numbers, case-sensitive/insensitive search, previous/next result, source line navigation, wrapping, font size and light/dark/system appearance.
 - Markdown: mature CommonMark/GFM parser, native styled text, collapsible heading sidebar/menu, front matter, GitHub alerts, footnotes, code-block source copy, source/render switch, nested/ordered/task lists, quote and code blocks, safe links, and native wrapping/aligned tables. Authorized local inline images use bounded ImageIO decoding; remote images show placeholders until “加载远程图片” is clicked. KaTeX formulas and Mermaid fenced diagrams render offline into source-mapped native attachments. See [rich content and security](docs/markdown-rich-content.md).
@@ -76,7 +78,7 @@ In Finder, prefer the visible **查找 / 全选 / 复制选择** controls. Short
 
 ## M2 containers and documents
 
-EPUB chapter reading and positions, JSONL record isolation, diff coloring, stored Notebook cells/outputs, SQLite tables, ZIP/TAR/TGZ members reuse the native reader. HAR and OpenAPI JSON provide local structured browsing without requests. See [format boundaries](docs/m2-formats.md) and the actual [Finder matrix](docs/format-support.md). M3 MOBI/AZW3 and 7z/RAR remain unimplemented candidates.
+EPUB chapter reading and positions, JSONL record isolation, diff coloring, stored Notebook cells/outputs, SQLite tables, ZIP/TAR/TGZ/`.skill` members reuse the native reader. HAR and OpenAPI JSON provide local structured browsing without requests. See [format boundaries](docs/m2-formats.md) and the actual [Finder matrix](docs/format-support.md). M3 MOBI/AZW3 and 7z/RAR remain unimplemented candidates.
 
 ## Developer formats (2026-10-04)
 
@@ -153,3 +155,7 @@ Outputs go to `build/artifacts/`. **Developer ID signing, notarization and stapl
 Quit OrangeLen and close its Finder previews. Unregister each `.appex` under `~/Applications/OrangeLen.app/Contents/PlugIns` with `pluginkit -r`, then move `~/Applications/OrangeLen.app` to Trash. Optional settings/read-position data remains in the app containers and your configured OrangeLen group container; clear reading records in Settings first if desired. Do not remove other applications' containers or reset their extensions.
 
 For an issue report include macOS, Xcode, architecture, build/signing mode, actual UTType and a synthetic fixture. Do not attach private source content or signing material.
+
+### Skill 包预览
+
+支持 ZIP 打包的 `.skill` 文件：目录树浏览、Markdown/代码预览，优先打开最浅层的 `SKILL.md`。沿用归档大小、压缩比、CRC 与路径校验；不执行包内脚本、不解压到磁盘。Finder 类型归属已声明，实际接管取决于系统登记。测试示例：`Tests/Fixtures/m2/sample.skill`。

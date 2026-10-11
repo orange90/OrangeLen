@@ -8,6 +8,7 @@ struct ImagePreview {
     let width: Int
     let height: Int
     let bytes: Int
+    let metadata: AIImageMetadata
     static func supports(_ url: URL) -> Bool {
         guard let type = UTType(filenameExtension: url.pathExtension.lowercased()), type.conforms(to: .image) else { return false }
         return (CGImageSourceCopyTypeIdentifiers() as! [String]).contains(type.identifier)
@@ -34,6 +35,6 @@ struct ImagePreview {
             kCGImageSourceShouldCacheImmediately: true
         ] as CFDictionary) else { throw PreviewError.malformed(L10n.text("无法解码图片")) }
         try cancellation.check()
-        return Self(image: image, width: width, height: height, bytes: data.count)
+        return Self(image: image, width: width, height: height, bytes: data.count, metadata: try AIImageMetadata.parse(data, cancellation: cancellation))
     }
 }

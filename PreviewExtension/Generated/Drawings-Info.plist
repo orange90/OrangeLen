@@ -25,6 +25,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,6 +38,9 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>public.png</string>
+				<string>org.webmproject.webp</string>
+				<string>local.orangelen.mermaid</string>
 				<string>com.excalidraw.excalidraw</string>
 				<string>public.svg-image</string>
 			</array>
@@ -46,10 +54,5 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Drawings</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

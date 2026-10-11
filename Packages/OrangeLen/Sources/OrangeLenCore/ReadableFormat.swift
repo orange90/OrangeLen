@@ -9,12 +9,12 @@ public enum ReadableFormat {
         return names.contains(name) || [".env.","dockerfile.","containerfile.","makefile.",".prettierrc.",".eslintrc.",".babelrc."].contains(where: { name.hasPrefix($0) })
     }
     public static func isCollection(_ url: URL) -> Bool {
-        ["openapi.json","swagger.json"].contains(url.lastPathComponent.lowercased()) || ["har","epub","jsonl","ndjson","diff","patch","sqlite","sqlite3","db","zip","tar","tgz","gz","ipynb"].contains(url.pathExtension.lowercased())
+        ["openapi.json","swagger.json"].contains(url.lastPathComponent.lowercased()) || ["har","epub","jsonl","ndjson","diff","patch","sqlite","sqlite3","db","mcpb", "dxt", "skill", "zip","tar","tgz","gz","ipynb"].contains(url.pathExtension.lowercased())
     }
     public static func isText(_ url: URL) -> Bool {
         if isNamedText(url) { return true }
         let ext = url.pathExtension.lowercased()
-        if codeExtensions.contains(ext) || ["txt","md","markdown","json","jsonc","json5","yaml","yml","toml","xml","csv","tsv","log","ini","conf","config","properties","plist","svg","diff","patch"].contains(ext) { return true }
+        if codeExtensions.contains(ext) || ["mmd","mermaid","srt","vtt","txt","md","markdown","json","jsonc","json5","yaml","yml","toml","xml","csv","tsv","log","ini","conf","config","properties","plist","svg","diff","patch"].contains(ext) { return true }
         return UTType(filenameExtension:ext)?.conforms(to:.text) == true
     }
 }

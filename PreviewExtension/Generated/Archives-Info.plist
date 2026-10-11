@@ -25,6 +25,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,6 +38,9 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>local.orangelen.mcpb</string>
+				<string>com.openai.codex.skill</string>
+				<string>local.orangelen.skill</string>
 				<string>public.zip-archive</string>
 				<string>public.tar-archive</string>
 				<string>org.gnu.gnu-zip-archive</string>
@@ -47,10 +55,5 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Archives</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

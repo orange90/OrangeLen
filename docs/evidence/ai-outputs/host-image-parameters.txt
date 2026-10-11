@@ -1,0 +1,48 @@
+Window: "OrangeLen — Quick Look for Developers", App: OrangeLen.
+0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise
+	1 pop up button More Actions
+	2 button Select All
+	3 button Copy Selection
+	4 button Cancel Loading
+	5 split group
+		6 splitter (disabled, settable, float) 0
+		7 splitter (disabled, settable, float) 0
+		8 button −
+		9 button +
+		10 button Fit to Window
+		11 button 100%
+		12 button Back to Document
+		13 text 798% · Drag to pan
+		14 scroll area Secondary Actions: Scroll Up, Scroll Down
+			15 text entry area Description: AI image generation parameters, Value: AI image generation parameters
+
+Generation parameters
+an orange cat
+Negative prompt: blurry
+Steps: 20, Sampler: Euler, CFG scale: 7, Seed: 42, Model: example
+
+Parameter overview
+3.seed: 42
+3.steps: 20
+3.cfg: 7
+4.ckpt_name: example.safetensors
+6.text: 一只橘色小猫
+
+prompt
+{"3": {"class_type": "KSampler", "inputs": {"seed": 42, "steps": 20, "cfg": 7}}, "4": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "example.safetensors"}}, "6": {"class_type": "CLIPTextEncode", "inputs": {"text": "一只橘色小猫"}}}
+
+workflow
+{"nodes":[{"id":3,"type":"KSampler"}],"links":[]}
+
+
+			16 scroll bar (disabled, settable, float) 0
+	17 text generation.png · 64 × 64 pixels · 574 bytes · Fit to window (decoded to a maximum edge of 2048 pixels; animations show the first frame)
+	18 close button
+	19 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	20 minimize button
+	21 text OrangeLen — Quick Look for Developers
+22 menu bar
+	23 OrangeLen
+	24 Edit
+
+The focused UI element is 0 standard window OrangeLen — Quick Look for Developers, Secondary Actions: Raise

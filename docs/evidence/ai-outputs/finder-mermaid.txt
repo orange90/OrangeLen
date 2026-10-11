@@ -1,0 +1,75 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 toggle button Description: Show or hide directory tree, Value: on
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 search text field (settable) Filter files
+			15 button Search
+		16 button Folder Overview, Description: move
+		17 text Files
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline Project directory tree
+				20 row (selectable, expanded) Value: ai-outputs, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selectable) captions.srt, Description: Preview captions.srt
+Preview captions.srt
+				23 row (selectable) captions.vtt, Description: Preview captions.vtt
+Preview captions.vtt
+				24 row (selected) diagram.mermaid, Description: Preview diagram.mermaid
+Preview diagram.mermaid
+				25 row (selectable) diagram.mmd, Description: Preview diagram.mmd
+Preview diagram.mmd
+				26 row (selectable) generation-big-endian.webp, Description: Preview generation-big-endian.webp
+Preview generation-big-endian.webp
+				27 row (selectable) generation.png, Description: Preview generation.png
+Preview generation.png
+				28 row (selectable) generation.webp, Description: Preview generation.webp
+Preview generation.webp
+				29 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				30 row (selectable) sample.dxt, Description: Preview sample.dxt
+Preview sample.dxt
+				31 row (selectable) sample.mcpb, Description: Preview sample.mcpb
+Preview sample.mcpb
+			32 scroll bar (settable, float) 0
+				33 value indicator (settable, float) 0
+				34 increment arrow button
+				35 decrement arrow button
+				36 increment page button
+				37 decrement page button
+		38 tickbox Show hidden & ignored, Value: 0
+		39 button Refresh Directory, Description: refresh
+		40 text Scanned 10 items in this directory (complete)
+		41 splitter (disabled, settable, float) 220
+		42 splitter (disabled, settable, float) 0
+		43 button −
+		44 button +
+		45 button Fit to Window
+		46 button 100%
+		47 button Back to Document
+		48 text 156% · Drag to pan
+	49 text diagram.mermaid · Mermaid · Offline read-only canvas · Source view available
+	50 close button close panel button
+	51 full screen button full screen window button
+	52 button Description: Share file, ID: QLControlShare
+	53 text ai-outputs
+54 menu bar
+	55 Finder
+	56 File
+	57 Edit
+	58 View
+	59 Go
+	60 Window
+	61 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

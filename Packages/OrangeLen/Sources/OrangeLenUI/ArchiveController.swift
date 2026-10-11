@@ -26,6 +26,8 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         var size = 0
     }
     let outline = NSOutlineView(), reader = ReaderController(), filter = NSSearchField(), sort = NSPopUpButton()
+    let summaryButton = NSButton(title: L10n.text("包信息"), target: nil, action: nil)
+    var bundleSummary: String?
     let info = NSTextField(labelWithString: "")
     var roots: [Node] = [], archive: ArchiveDocument?, origin: URL?, revision = ""
     var token: Cancellation?, generation = UUID()
@@ -46,7 +48,8 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         outline.columnAutoresizingStyle = .firstColumnOnlyAutoresizingStyle; outline.autoresizingMask = [.width]
         outline.autoresizesOutlineColumn = false
         info.font = .systemFont(ofSize: 11); info.textColor = .secondaryLabelColor
-        for child in [filter, sort, scroll, info] { left.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: left.widthAnchor, constant: -20).isActive = true }
+        summaryButton.target = self; summaryButton.action = #selector(showBundleSummary); summaryButton.isHidden = true
+        for child in [filter, sort, summaryButton, scroll, info] { left.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: left.widthAnchor, constant: -20).isActive = true }
         split.addArrangedSubview(left); addChild(reader); reader.compactPreferred = true; split.addArrangedSubview(reader.view)
         let width = left.widthAnchor.constraint(equalToConstant: 320); width.priority = .defaultHigh; width.isActive = true
         left.widthAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
@@ -60,17 +63,29 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
             outline.tableColumns.first?.width = max(140, width - (width < 250 ? 0 : 85))
         }
     }
-    func open(_ archive: ArchiveDocument, origin: URL, revision: String, restoring state: ReadingState? = nil) throws {
+    func open(_ archive: ArchiveDocument, origin: URL, revision: String, restoring state: ReadingState? = nil, summary: String? = nil) throws {
         loadViewIfNeeded(); cancel(); reader.readingGeneration = SettingsStore.shared.readingGeneration; self.archive = archive; self.origin = origin; self.revision = revision
+        bundleSummary = summary; summaryButton.isHidden = summary == nil
         roots = try Self.tree(archive.entries); filter.stringValue = state?.filter ?? ""; sort.selectItem(at: state?.sort ?? 0); sortChanged()
         let size = archive.entries.filter { !$0.directory }.reduce(0) { $0 + $1.size }
         info.stringValue = L10n.text("\(archive.entries.count) 项 · \(ByteCountFormatter.string(fromByteCount: Int64(size), countStyle: .file)) · 不解压到磁盘")
         reader.showMessage(L10n.text("选择左侧文件，在此阅读归档内容。\n可筛选完整路径或按大小排序。"))
         outline.expandItem(nil, expandChildren: true)
         restoredPosition = state?.position
-        if let path = state?.path, let row = (0..<outline.numberOfRows).first(where: { (outline.item(atRow: $0) as? Node)?.path == path }) {
+        let initialPath = state?.path ?? (origin.pathExtension.lowercased() == "skill" ? archive.entries
+            .filter { !$0.directory && $0.blocked == nil && ($0.path as NSString).lastPathComponent == "SKILL.md" }
+            .sorted { lhs, rhs in
+                let left = lhs.path.split(separator: "/").count, right = rhs.path.split(separator: "/").count
+                return left == right ? lhs.path < rhs.path : left < right
+            }.first?.path : nil)
+        if let path = initialPath, let row = (0..<outline.numberOfRows).first(where: { (outline.item(atRow: $0) as? Node)?.path == path }) {
             outline.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
-        }
+        } else if summary != nil { showBundleSummary() }
+    }
+    @objc func showBundleSummary() {
+        guard let bundleSummary, let origin else { return }
+        token?.cancel(); generation = UUID(); outline.deselectAll(nil)
+        reader.openMemory(.init(id: "bundle-summary.txt", title: L10n.text("MCP 扩展包"), text: bundleSummary), origin: origin, revision: revision, assets: .init())
     }
     static func tree(_ entries: [ArchiveEntry]) throws -> [Node] {
         let root = Node(""); var paths: [String: Node] = ["": root]
@@ -164,5 +179,5 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
                 }
         })
     }
-    func cancel() { token?.cancel(); generation = UUID(); reader.close(); archive = nil; roots = [] }
+    func cancel() { token?.cancel(); generation = UUID(); reader.close(); archive = nil; roots = []; bundleSummary = nil; summaryButton.isHidden = true }
 }

@@ -35,6 +35,7 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
     let table = NSTableView()
     var data = TableData(rows: [], partial: false)
     var header = true
+    private var subtitles = false
     var loaded = 500
     let filter = NSSearchField(), countLabel = NSTextField(labelWithString: "")
     var rowOrder: [Int] = []
@@ -55,12 +56,13 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
         scroll.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -16).isActive = true
         view = root
     }
-    func show(_ data: TableData) {
-        loadViewIfNeeded(); self.data = data
+    func show(_ data: TableData, subtitles: Bool = false) {
+        loadViewIfNeeded(); self.data = data; self.subtitles = subtitles
         for column in table.tableColumns { table.removeTableColumn(column) }
         let count = min(256, data.rows.map(\.count).max() ?? 0)
         for index in 0..<count {
             let column = NSTableColumn(identifier: .init("\(index)")); column.width = 180
+            if subtitles { column.width = index < 2 ? 140 : 420 }
             column.title = header && (data.rows.first?.count ?? 0) > index ? data.rows[0][index].value : "\(index + 1)"
             column.sortDescriptorPrototype = NSSortDescriptor(key: String(index), ascending: true)
             table.addTableColumn(column)
@@ -99,8 +101,21 @@ final class TableController: NSViewController, NSTableViewDataSource, NSTableVie
         let index = rowOrder[row]
         guard data.rows.indices.contains(index) else { return 27 }
         let record = data.rows[index]
+        if subtitles, record.count > 2, table.tableColumns.count > 2 {
+            let width = max(40, table.tableColumns[2].width - 8)
+            let paragraph = NSMutableParagraphStyle(); paragraph.lineBreakMode = .byWordWrapping
+            // Bound measurement work for unusually long cues; the original
+            // value remains available for copying and in source mode.
+            let value = String(record[2].value.prefix(1024)) as NSString
+            let height = value.boundingRect(with: NSSize(width: width, height: 90), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [.font: NSFont.systemFont(ofSize: NSFont.systemFontSize), .paragraphStyle: paragraph]).height
+            return max(27, min(90, ceil(height)) + 9)
+        }
         let lines = record.map { min(5, $0.value.components(separatedBy: "\n").count) }.max() ?? 1
         return CGFloat(lines) * 18 + 9
+    }
+    func tableViewColumnDidResize(_ notification: Notification) {
+        guard subtitles else { return }
+        table.noteHeightOfRows(withIndexesChanged: IndexSet(integersIn: 0..<numberOfRows(in: table)))
     }
     func reveal(sourceRange: NSRange) {
         guard let row = data.rows.firstIndex(where: { $0.contains { NSIntersectionRange($0.sourceRange, sourceRange).length > 0 } }) else { return }

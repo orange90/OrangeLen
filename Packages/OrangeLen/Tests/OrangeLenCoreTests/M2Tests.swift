@@ -12,6 +12,16 @@ final class M2Tests: XCTestCase {
         XCTAssertEqual(lines.count,3); XCTAssertTrue(lines[0].warning.isEmpty); XCTAssertFalse(lines[1].warning.isEmpty); XCTAssertTrue(lines[2].warning.isEmpty)
         XCTAssertTrue(lines[0].text.contains("9007199254740993"))
     }
+    func testSkillArchiveRoutingAndValidation() throws {
+        let url = URL(fileURLWithPath: "/sample.SKILL")
+        XCTAssertTrue(ReadableFormat.isCollection(url))
+        XCTAssertEqual(PreviewCategory.detect(url), .archives)
+        let archive = try ArchiveDocument.parse(fixture("sample.skill"), name: url.lastPathComponent)
+        let entry = try XCTUnwrap(archive.entry("sample/SKILL.md"))
+        XCTAssertTrue(String(decoding: try archive.read(entry), as: UTF8.self).contains("# Skill 预览"))
+        XCTAssertThrowsError(try ArchiveDocument.parse(fixture("unsafe-path.zip"), name: "unsafe.skill"))
+        XCTAssertThrowsError(try ArchiveDocument.parse(Data("not a zip".utf8), name: "invalid.skill"))
+    }
     func testArchiveLazyReadCRCAndPathBudgets() throws {
         let data = try fixture("sample.zip"), archive = try ArchiveDocument.parse(data,name:"sample.zip")
         XCTAssertEqual(archive.entries.count,3)

@@ -85,6 +85,20 @@ import OrangeLenCore
         try await settle { database.page?.rows.first?[1] == "0" }
         XCTAssertEqual(database.offset, 0); XCTAssertTrue(database.metadata.stringValue.contains("INTEGER"))
     }
+    func testSkillOpensInstructionsAndPreviewsScript() async throws {
+        _ = NSApplication.shared
+        let reader = ReaderController(); reader.loadViewIfNeeded(); defer { reader.close() }
+        await open(reader, fixture("m2/sample.skill"))
+        let archive = try XCTUnwrap(reader.archiveController)
+        try await settle { archive.reader.text.string.contains("Skill 预览") }
+        XCTAssertEqual(archive.readingState.path, "sample/SKILL.md")
+        let row = try XCTUnwrap((0..<archive.outline.numberOfRows).first {
+            (archive.outline.item(atRow: $0) as? ArchiveController.Node)?.path == "sample/scripts/example.py"
+        })
+        archive.outline.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
+        try await settle { archive.reader.text.string.contains("print(") }
+        XCTAssertEqual(archive.reader.format, .code)
+    }
     func testArchiveTreeFiltersFullPathAndReadsNestedFile() async throws {
         _ = NSApplication.shared
         let reader = ReaderController(); reader.loadViewIfNeeded(); defer { reader.close() }

@@ -205,7 +205,7 @@ public enum PreviewFormat: String, Sendable {
         case "csv": return .csv
         case "tsv": return .tsv
         case "diff", "patch": return .diff
-        case "txt", "": return .text
+        case "txt", "srt", "vtt", "": return .text
         default: return .code
         }
     }

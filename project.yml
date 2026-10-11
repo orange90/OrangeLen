@@ -37,6 +37,26 @@ targets:
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: Copyright © 2026 OrangeLen contributors
         UTImportedTypeDeclarations:
+          - UTTypeIdentifier: local.orangelen.mermaid
+            UTTypeDescription: Mermaid Diagram
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [mmd, mermaid]
+          - UTTypeIdentifier: local.orangelen.subtitle
+            UTTypeDescription: Subtitle File
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [srt, vtt]
+          - UTTypeIdentifier: local.orangelen.mcpb
+            UTTypeDescription: MCP Bundle
+            UTTypeConformsTo: [public.zip-archive]
+            UTTypeTagSpecification:
+              public.filename-extension: [mcpb, dxt]
+          - UTTypeIdentifier: local.orangelen.skill
+            UTTypeDescription: Agent Skill Archive
+            UTTypeConformsTo: [public.zip-archive]
+            UTTypeTagSpecification:
+              public.filename-extension: [skill]
           - UTTypeIdentifier: local.orangelen.jsonc
             UTTypeDescription: JSON with Comments
             UTTypeConformsTo: [public.plain-text]
@@ -204,7 +224,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
+            QLSupportedContentTypes: [org.w3.webvtt, local.orangelen.subtitle, public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -280,7 +300,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
+            QLSupportedContentTypes: [local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -356,7 +376,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [com.excalidraw.excalidraw, public.svg-image]
+            QLSupportedContentTypes: [public.png, org.webmproject.webp, local.orangelen.mermaid, com.excalidraw.excalidraw, public.svg-image]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:

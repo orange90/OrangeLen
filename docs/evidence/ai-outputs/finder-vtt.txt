@@ -1,0 +1,104 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 toggle button Description: Show or hide directory tree, Value: on
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 search text field (settable) Filter files
+			15 button Search
+		16 button Folder Overview, Description: move
+		17 text Files
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline Project directory tree
+				20 row (selectable, expanded) Value: ai-outputs, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selectable) captions.srt, Description: Preview captions.srt
+Preview captions.srt
+				23 row (selected) captions.vtt, Description: Preview captions.vtt
+Preview captions.vtt
+				24 row (selectable) diagram.mermaid, Description: Preview diagram.mermaid
+Preview diagram.mermaid
+				25 row (selectable) diagram.mmd, Description: Preview diagram.mmd
+Preview diagram.mmd
+				26 row (selectable) generation-big-endian.webp, Description: Preview generation-big-endian.webp
+Preview generation-big-endian.webp
+				27 row (selectable) generation.png, Description: Preview generation.png
+Preview generation.png
+				28 row (selectable) generation.webp, Description: Preview generation.webp
+Preview generation.webp
+				29 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				30 row (selectable) sample.dxt, Description: Preview sample.dxt
+Preview sample.dxt
+				31 row (selectable) sample.mcpb, Description: Preview sample.mcpb
+Preview sample.mcpb
+			32 scroll bar (settable, float) 0
+				33 value indicator (settable, float) 0
+				34 increment arrow button
+				35 decrement arrow button
+				36 increment page button
+				37 decrement page button
+		38 tickbox Show hidden & ignored, Value: 0
+		39 button Refresh Directory, Description: refresh
+		40 text Scanned 10 items in this directory (complete)
+		41 splitter (disabled, settable, float) 220
+		42 splitter (disabled, settable, float) 0
+		43 search text field (settable) Filter parsed cells
+			44 button Search
+		45 text Showing 2 / 2 rows
+		46 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			47 table
+				48 row (selectable)
+					49 cell
+						50 text 00:00:00.000
+					51 cell
+						52 text 00:00:02.500
+					53 cell
+						54 text <v Orange>欢迎使用 OrangeLen
+第二行字幕
+				55 row (selectable)
+					56 cell
+						57 text 00:00:03.000
+					58 cell
+						59 text 00:00:05.000
+					60 cell
+						61 text 字幕时间码与正文可筛选。
+				62 column (selectable) 0
+				63 column (selectable) 1
+				64 column (selectable) 2
+				65 container
+					66 sort button Start
+					67 sort button End
+					68 sort button Caption text
+			69 scroll bar (settable, float) 0
+				70 value indicator (settable, float) 0
+				71 increment arrow button
+				72 decrement arrow button
+				73 increment page button
+				74 decrement page button
+			75 scroll bar (disabled, settable, float) 0
+	76 text captions.vtt · UTF-8 · 192 bytes · text · Full file
+2 cues · End time 00:00:05.000 · Invalid entries 0 Parsed 3 table rows; displayed in batches of 500. Load more in Display Settings.
+	77 close button close panel button
+	78 full screen button full screen window button
+	79 button Description: Share file, ID: QLControlShare
+	80 text ai-outputs
+81 menu bar
+	82 Finder
+	83 File
+	84 Edit
+	85 View
+	86 Go
+	87 Window
+	88 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise
