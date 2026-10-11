@@ -33,7 +33,7 @@ final class SyntaxHighlighter {
             if name == "cmakelists.txt" { return "cmake" }
             if name == ".env" || name.hasPrefix(".env.") { return "ini" }
             if ["cargo.lock", "poetry.lock", "uv.lock", "pyproject.toml"].contains(name) { return "toml" }
-            let aliases = ["py":"python","js":"javascript","mjs":"javascript","cjs":"javascript","jsx":"javascript","ts":"typescript","mts":"typescript","cts":"typescript","tsx":"typescript","h":"c","hpp":"cpp","rs":"rust","sh":"bash","zsh":"bash","rb":"ruby","kt":"kotlin","cs":"csharp","ps1":"powershell","r":"r","vue":"xml","svelte":"xml","astro":"xml","html":"xml","svg":"xml","plist":"xml","yml":"yaml","jsonc":"json","json5":"javascript","tf":"hcl","tfvars":"hcl","gql":"graphql"]
+            let aliases = ["py":"python","js":"javascript","mjs":"javascript","cjs":"javascript","jsx":"javascript","ts":"typescript","mts":"typescript","cts":"typescript","tsx":"typescript","h":"c","hpp":"cpp","rs":"rust","sh":"bash","zsh":"bash","rb":"ruby","kt":"kotlin","cs":"csharp","ps1":"powershell","r":"r","vue":"xml","svelte":"xml","astro":"xml","html":"xml","htm":"xml","xhtml":"xml","svg":"xml","plist":"xml","yml":"yaml","jsonc":"json","json5":"javascript","tf":"hcl","tfvars":"hcl","gql":"graphql"]
             if let alias = aliases[ext] { return alias }
             if !ext.isEmpty { return ext }
         }
@@ -83,15 +83,7 @@ final class SyntaxHighlighter {
     }
     func apply(_ tokens: [Token], to text: NSMutableAttributedString, offset: Int = 0) {
         for token in tokens {
-            let scope = token.scope
-            let color: NSColor
-            if scope.contains("comment") || scope.contains("quote") { color = .secondaryLabelColor }
-            else if scope.contains("string") || scope.contains("regexp") { color = .systemRed }
-            else if scope.contains("number") || scope.contains("literal") { color = .systemOrange }
-            else if scope.contains("keyword") || scope.contains("meta") { color = .systemPurple }
-            else if scope.contains("title") || scope.contains("type") || scope.contains("built_in") { color = .systemTeal }
-            else if scope.contains("attr") || scope.contains("variable") { color = .systemBlue }
-            else { color = .textColor }
+            let color = CodePalette.token(token.scope)
             text.addAttribute(.foregroundColor, value: color, range: NSRange(location: offset + token.range.location, length: token.range.length))
         }
     }

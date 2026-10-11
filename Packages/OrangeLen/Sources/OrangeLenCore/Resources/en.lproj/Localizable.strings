@@ -573,3 +573,33 @@
 "（部分）" = " (partial)";
 "；仅已保存结果]" = "; saved result only]";
 "文档目录" = "Contents";
+
+"HTML 页面效果" = "HTML page preview";
+
+"效果" = "Preview";
+
+"HTML 效果载入失败，已显示源码" = "HTML preview failed; showing source";
+
+"HTML 静态预览 · 脚本与外部资源未加载" = "HTML static preview · Scripts and external resources are not loaded";
+
+"页面过长，仅显示前 8000 点；源码完整保留" = "Page is too long; showing the first 8000 points. Full source is preserved.";
+
+"允许本地资源…" = "Allow Local Resources…";
+
+"在浏览器打开" = "Open in Browser";
+
+"HTML · JavaScript 与外部资源已启用 · 页面快照" = "HTML · JavaScript and external resources enabled · Page snapshot";
+
+"HTML · JavaScript 与外部资源已启用" = "HTML · JavaScript and external resources enabled";
+
+"允许 HTML 的本地资源" = "Allow Local HTML Resources";
+
+"在 OrangeLen 中打开此 HTML，点击“允许本地资源…”并选择文档所在目录。保持文档打开，Finder 会使用本次授权加载 CSS、JavaScript 和图片。也可以直接预览所在文件夹。" = "Open this HTML in OrangeLen, click “Allow Local Resources…” and select its containing folder. Keep the document open so Finder can load CSS, JavaScript and images with this temporary access. You can also preview the containing folder directly.";
+
+"选择 HTML 所在目录，用于读取页面引用的 CSS、JavaScript 和图片。授权仅用于当前文档及它的 Finder 预览，关闭文档后结束。" = "Select the HTML file’s containing folder to load its CSS, JavaScript and images. Access applies only to this document and its Finder preview and ends when the document closes.";
+
+"请选择 HTML 所在目录" = "Please select the HTML file’s containing folder";
+
+"本地资源已重新读取" = "Local resources reloaded";
+
+"本次本地资源授权已结束" = "Local resource access has ended";

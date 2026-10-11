@@ -18,7 +18,7 @@ public enum FolderFileKind: String, CaseIterable, Sendable {
     public static func detect(_ url: URL) -> Self {
         let ext = url.pathExtension.lowercased(), name = url.lastPathComponent.lowercased()
         if ["md", "markdown", "txt", "pdf", "doc", "docx", "rtf", "odt", "epub"].contains(ext) { return .documents }
-        if ["swift", "py", "js", "jsx", "ts", "tsx", "rs", "go", "c", "h", "cpp", "hpp", "java", "kt", "rb", "sh", "zsh", "html", "css", "scss", "vue", "svelte", "sql"].contains(ext) || ["makefile", "dockerfile", "containerfile"].contains(name) { return .code }
+        if ["swift", "py", "js", "jsx", "ts", "tsx", "rs", "go", "c", "h", "cpp", "hpp", "java", "kt", "rb", "sh", "zsh", "html", "htm", "xhtml", "css", "scss", "vue", "svelte", "sql"].contains(ext) || ["makefile", "dockerfile", "containerfile"].contains(name) { return .code }
         if ["json", "jsonc", "json5", "jsonl", "csv", "tsv", "toml", "yaml", "yml", "xml", "ini", "conf", "env", "sqlite", "db", "xlsx", "xls", "ipynb"].contains(ext) || name.hasPrefix(".env") { return .data }
         if ["png", "jpg", "jpeg", "gif", "webp", "heic", "tiff", "tif", "bmp", "svg", "avif", "excalidraw"].contains(ext) { return .images }
         if ["mp4", "mov", "m4v", "mkv", "mp3", "m4a", "wav", "aac", "flac", "aiff"].contains(ext) { return .media }

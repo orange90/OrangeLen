@@ -2,7 +2,7 @@ import Foundation
 import UniformTypeIdentifiers
 
 public enum ReadableFormat {
-    public static let codeExtensions: Set<String> = ["swift","py","js","ts","tsx","jsx","mjs","cjs","mts","cts","vue","svelte","astro","c","h","cpp","hpp","rs","go","sh","zsh","bash","rb","java","kt","css","scss","sass","less","html","sql","cs","php","dart","lua","r","scala","ps1","proto","graphql","gql","tf","tfvars","hcl"]
+    public static let codeExtensions: Set<String> = ["swift","py","js","ts","tsx","jsx","mjs","cjs","mts","cts","vue","svelte","astro","c","h","cpp","hpp","rs","go","sh","zsh","bash","rb","java","kt","css","scss","sass","less","html","htm","xhtml","sql","cs","php","dart","lua","r","scala","ps1","proto","graphql","gql","tf","tfvars","hcl"]
     public static func isNamedText(_ url: URL) -> Bool {
         let name = url.lastPathComponent.lowercased()
         let names: Set<String> = ["makefile","gnumakefile","dockerfile","containerfile","gemfile","rakefile","justfile","license","readme",".gitignore",".gitattributes",".gitmodules",".env",".dockerignore",".editorconfig",".npmrc",".yarnrc",".prettierrc",".eslintrc",".babelrc",".nvmrc",".python-version",".ruby-version","cargo.lock","yarn.lock","poetry.lock","uv.lock","pipfile","pipfile.lock","gemfile.lock","go.mod","go.sum","cmakelists.txt","procfile","brewfile","jenkinsfile"]

@@ -45,5 +45,10 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Folders</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

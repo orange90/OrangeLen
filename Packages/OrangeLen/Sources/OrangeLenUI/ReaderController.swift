@@ -69,6 +69,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     var readingGeneration = SettingsStore.shared.readingGeneration
     var source: SourceSnapshot?
     var markdownAssets = MarkdownAssets()
+    var htmlPreview: HTMLPreview?
     var canvasImage: NSImage?
     var canvasLabel = "Excalidraw"
     var richTask: Task<Void, Never>?
@@ -77,6 +78,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     var remoteLoader: RemoteImageRequest?
     var remoteAttempts = 0
     var remoteBytes = 0
+    let browserButton = NSButton(title: L10n.text("在浏览器打开"), target: nil, action: nil)
     let remoteBar = NSStackView()
     let remoteButton = NSButton(title: L10n.text("加载远程图片"), target: nil, action: nil)
     let remoteStatus = NSTextField(labelWithString: L10n.text("远程图片尚未加载"))
@@ -220,6 +222,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         pageBar.setClippingResistancePriority(.defaultLow, for: .horizontal)
         localImagesButton.target = self; localImagesButton.action = #selector(authorizeLocalImages)
         if Bundle.main.bundleURL.pathExtension == "appex" { localImagesButton.title = L10n.text("本地图片授权说明") }
+        browserButton.target = self; browserButton.action = #selector(openHTMLInBrowser); browserButton.isHidden = true
+        remoteBar.addArrangedSubview(browserButton)
         remoteBar.addArrangedSubview(localImagesButton); remoteBar.addArrangedSubview(remoteButton); remoteBar.addArrangedSubview(remoteStatus)
         remoteHeight = remoteBar.heightAnchor.constraint(equalToConstant: 0); remoteHeight.isActive = true
         remoteBar.isHidden = true
@@ -518,6 +522,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 case .success(let loaded):
                     if loaded.0.byteOffset == 0 { self.pageHistory = [] }
                     self.source = loaded.0; self.rendered = loaded.1; self.jsonTree = loaded.2; self.tableData = loaded.3; self.parseWarning = loaded.4; self.markdownAssets = loaded.5
+                    if enhanced { self.prepareHTMLPreview(url: url, snapshot: loaded.0) }
                     self.mode.selectedSegment = 0; self.present(); self.startRichRendering()
                     self.scroll.contentView.scroll(to: .zero); self.scroll.reflectScrolledClipView(self.scroll.contentView)
                     if let offset = SettingsStore.shared.restore(url, revision: loaded.0.revision, byteOffset: loaded.0.byteOffset) {
@@ -585,7 +590,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             NSAccessibility.post(element: self.view, notification: .announcementRequested, userInfo: [.announcement: message, .priority: NSAccessibilityPriorityLevel.medium.rawValue])
         }
     }
-    func cancelPending() { highlightToken?.cancel(); highlightToken = nil; closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
+    func cancelPending() { htmlPreview?.cancel(); htmlPreview = nil; mode.setLabel(L10n.text("阅读"), forSegment: 0); highlightToken?.cancel(); highlightToken = nil; closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
     public func close() {
         pageBar.isHidden = true; pageHeight?.constant = 0
         savePosition(); pageHistory = []; releaseImageDirectory()
@@ -656,14 +661,20 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let markdown = format == .markdown && renderedMode && rendered != nil
         let model = markdown ? rendered! : (renderedMode && tableData != nil ? tableData!.textModel(source: source.text) : TextModel.plain(source.text, code: format != .text))
         let hasRemote = !virtualDocument && markdown && model.images.contains { ["http", "https"].contains(URL(string: $0.destination)?.scheme?.lowercased() ?? "") }
-        let hasLocalFailures = !virtualDocument && markdown && model.images.contains { image in
+        let hasLocalFailures = (!virtualDocument && htmlPreview != nil && rootURL == nil && imageRootURL == nil) || (!virtualDocument && markdown && model.images.contains { image in
             guard let components = URLComponents(string: image.destination), components.scheme == nil else { return false }
             return markdownAssets.images[image.range.location] == nil
-        }
+        })
+        localImagesButton.title = htmlPreview != nil ? L10n.text("允许本地资源…") : (Bundle.main.bundleURL.pathExtension == "appex" ? L10n.text("本地图片授权说明") : L10n.text("允许本地图片…"))
         localImagesButton.isHidden = !hasLocalFailures
         remoteButton.isHidden = !hasRemote; remoteStatus.isHidden = !hasRemote
-        remoteBar.isHidden = !hasRemote && !hasLocalFailures; remoteHeight.constant = remoteBar.isHidden ? 0 : 28
+        browserButton.isHidden = htmlPreview == nil || virtualDocument || Bundle.main.bundleURL.pathExtension == "appex"
+        remoteBar.isHidden = !hasRemote && !hasLocalFailures && browserButton.isHidden; remoteHeight.constant = remoteBar.isHidden ? 0 : 28
         text.isRichText = markdown
+        text.codeAppearance = !markdown && format != .text
+        text.backgroundColor = text.codeAppearance ? CodePalette.background : .textBackgroundColor
+        scroll.backgroundColor = text.backgroundColor
+        text.selectedTextAttributes = [.backgroundColor: text.codeAppearance ? CodePalette.selection : NSColor.selectedTextBackgroundColor]
         text.model = model
         renderedWidth = max(100, scroll.contentSize.width - 44)
         text.textStorage?.setAttributedString(TextStyler.attributed(model, markdown: markdown, settings: settings, assets: markdownAssets, width: renderedWidth, language: SyntaxHighlighter.language(url: currentURL, source: source.text), highlight: !source.partial))
@@ -671,7 +682,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         scheduleHighlight(model: model, partial: source.partial, markdown: markdown)
         text.setAnchor(at: min(text.anchor, model.display.utf16.count))
         scroll.rulersVisible = !markdown && settings.lineNumbers
-        text.textContainerInset = NSSize(width: scroll.rulersVisible ? 74 : 22, height: 18)
+        text.textContainerInset = NSSize(width: scroll.rulersVisible ? lineRuler.ruleThickness + 12 : 22, height: 20)
         lineRuler.update(model.display)
         let wrap = markdown || settings.wrapCode
         text.isHorizontallyResizable = !wrap; text.autoresizingMask = wrap ? [.width] : []
@@ -694,13 +705,17 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         if !outlineSidebar.view.isHidden { documentSplit.setPosition(220, ofDividerAt: 0) }
         while overflow.numberOfItems > 9 { overflow.removeItem(at:9) }
         for item in headings.itemTitles.dropFirst() { overflow.addItem(withTitle:L10n.text("标题：")+item) }
-        if renderedMode, let canvasImage { picture.image = canvasImage; showContent(picture) }
+        htmlPreview?.setPresented(renderedMode)
+        if renderedMode, let htmlPreview { showContent(htmlPreview) }
+        else if renderedMode, let canvasImage { picture.image = canvasImage; showContent(picture) }
         else if renderedMode, let jsonTree { json.show(jsonTree, source: source.text); showContent(json.view) }
         else if renderedMode, let tableData { table.show(tableData); showContent(table.view) }
         else { showContent(scroll) }
-        mode.isEnabled = canvasImage != nil || rendered != nil || jsonTree != nil || tableData != nil
+        mode.setLabel(htmlPreview != nil ? L10n.text("效果") : L10n.text("阅读"), forSegment: 0)
+        mode.isEnabled = htmlPreview != nil || canvasImage != nil || rendered != nil || jsonTree != nil || tableData != nil
         status.stringValue = "\(virtualDocument ? virtualTitle : currentURL?.lastPathComponent ?? "") · \(source.encoding) · \(source.byteCount) bytes · \(format.rawValue) · \(virtualDocument ? L10n.text("已加载条目（有界）") : source.partial ? L10n.text("分页源码片段") : tableData?.partial == true ? L10n.text("前 5,000 行，部分内容") : L10n.text("完整文件"))"
         if canvasImage != nil { status.stringValue = L10n.text("\(currentURL?.lastPathComponent ?? "") · \(canvasLabel) · 离线只读画布 · 可切换源码") }
+        if htmlPreview != nil { status.stringValue += " · " + (Bundle.main.bundleURL.pathExtension == "appex" ? L10n.text("HTML · JavaScript 与外部资源已启用 · 页面快照") : L10n.text("HTML · JavaScript 与外部资源已启用")) }
         let notices = [
             parseWarning,
             jsonTree?.duplicateKeys == true ? L10n.text("重复键已保留为独立节点。") : "",
@@ -790,7 +805,11 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     }
     @objc func smaller() { resize(-1) }
     @objc func larger() { resize(1) }
-    func resize(_ delta: Double) { if format == .markdown && mode.selectedSegment == 0 { settings.documentSize = min(36, max(10, settings.documentSize + delta)) } else { settings.codeSize = min(32, max(10, settings.codeSize + delta)) }; saveSettings() }
+    func resize(_ delta: Double) {
+        if let htmlPreview, currentContent === htmlPreview {
+            htmlPreview.webView.pageZoom = min(3, max(0.5, htmlPreview.webView.pageZoom + delta * 0.1)); htmlPreview.refreshSnapshot(); return
+        }
+        if format == .markdown && mode.selectedSegment == 0 { settings.documentSize = min(36, max(10, settings.documentSize + delta)) } else { settings.codeSize = min(32, max(10, settings.codeSize + delta)) }; saveSettings() }
     @objc func focusSearch() {
         let accepted = view.window?.makeFirstResponder(search) ?? false
         search.selectText(nil)
@@ -868,7 +887,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let range = matches[matchIndex]
         let indexToRestore = matchIndex
         if currentContent === table.view { table.reveal(sourceRange: text.model.sourceRange(for: range) ?? range) }
-        else { if currentContent === json.view || (canvasImage != nil && currentContent === picture) { mode.selectedSegment = 1; present() }; jump(range) }
+        else { if currentContent === htmlPreview || currentContent === json.view || (canvasImage != nil && currentContent === picture) { mode.selectedSegment = 1; present() }; jump(range) }
         matchIndex = indexToRestore
         resultLabel.stringValue = "\(matchIndex + 1)/\(matches.count)"
     }

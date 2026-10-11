@@ -5,10 +5,11 @@ enum TextStyler {
     static func attributed(_ model: TextModel, markdown: Bool, settings: ReaderSettings, assets: MarkdownAssets = .init(), width: CGFloat = 760, language: String? = nil, highlight: Bool = true) -> NSAttributedString {
         let size = markdown ? settings.documentSize : settings.codeSize
         let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = markdown ? size * 0.30 : 3
+        paragraph.lineSpacing = markdown ? size * 0.30 : size * 0.35
         paragraph.paragraphSpacing = markdown ? size * 0.7 : 0
-        paragraph.defaultTabInterval = size * 9
-        let color = NSColor.textColor
+        paragraph.defaultTabInterval = markdown ? size * 9 : NSFont.monospacedSystemFont(ofSize: size, weight: .regular).maximumAdvancement.width * 4
+        if !markdown { paragraph.tabStops = [] }
+        let color = markdown ? NSColor.textColor : CodePalette.foreground
         let result = NSMutableAttributedString(string: model.display, attributes: [.font: markdown ? NSFont.systemFont(ofSize: size) : NSFont.monospacedSystemFont(ofSize: size, weight: .regular), .foregroundColor: color, .paragraphStyle: paragraph])
         for span in model.styles {
             var font = span.style.contains(.code) ? NSFont.monospacedSystemFont(ofSize: size * 0.9, weight: .regular) : NSFont.systemFont(ofSize: size)

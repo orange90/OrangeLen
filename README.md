@@ -62,7 +62,8 @@ Do not rename files, disable SIP, capture Space globally, or register `public.da
 
 ## Reading
 
-- Text/code: real selectable text, source-exact Copy, offline Highlight.js language coloring, line numbers, case-sensitive/insensitive search, previous/next result, source line navigation, wrapping, font size and light/dark/system appearance.
+- HTML: browser rendering and source toggle for HTML/HTM/XHTML, with JavaScript, external CSS/images and network resources enabled. Local relative resources use the authorized containing folder. Finder displays updating page snapshots; the app supports page interaction, with an Open in Browser action. Files over 1 MiB remain paged source. See [HTML preview](docs/html-preview.md).
+- Text/code: VS Code-inspired light/dark colors, monospaced typography, aligned line-number gutter, real selectable text, source-exact Copy, offline Highlight.js language coloring, line numbers, case-sensitive/insensitive search, previous/next result, source line navigation, wrapping, font size and light/dark/system appearance.
 - Markdown: mature CommonMark/GFM parser, native styled text, collapsible heading sidebar/menu, front matter, GitHub alerts, footnotes, code-block source copy, source/render switch, nested/ordered/task lists, quote and code blocks, safe links, and native wrapping/aligned tables. Authorized local inline images use bounded ImageIO decoding; remote images show placeholders until “加载远程图片” is clicked. KaTeX formulas and Mermaid fenced diagrams render offline into source-mapped native attachments. See [rich content and security](docs/markdown-rich-content.md).
 - Rendered Markdown Copy maps selections back to original Markdown source. Entity selections copy original entity spelling; a selection spanning formatting may include Markdown delimiters. Source mode provides exact arbitrary source selection.
 - Folder reader: expand on demand, select code/Markdown/data in the same right pane; 500 directory entries per batch, hidden/ignored toggle, filename filter for loaded items, continue-loading row. Symlinks and packages are not automatically descended in the tree. A persistent footer reports bounded recursive metadata totals (including hidden files), with partial totals clearly marked. File buttons preserve the native selected row.
@@ -117,7 +118,7 @@ Reading records are opt-in, local, revision-checked, salted identifiers, capped 
 
 ### 图片、安全和资源预算
 
-- **远程图片有意限制兼容性**：仅点击后加载公共 HTTPS/443 栅格图片，拒绝私网、URL 账号、任何重定向、HTML/SVG、压缩传输，不发送 Cookie/认证/Referer。因此部分 CDN 跳转、内网图床和登录图片不会显示。这样限制是为了减小注入、内网探测及资源耗尽风险；不是“系统完全无法加载”。系统配置的代理可能承载请求，不能承诺绕过代理。服务器仍会看到用户主动发起的图片请求。
+- **Markdown 远程图片有意限制兼容性**：仅点击后加载公共 HTTPS/443 栅格图片，拒绝私网、URL 账号、任何重定向、HTML/SVG、压缩传输，不发送 Cookie/认证/Referer。因此部分 CDN 跳转、内网图床和登录图片不会显示。这样限制是为了减小注入、内网探测及资源耗尽风险；不是“系统完全无法加载”。系统配置的代理可能承载请求，不能承诺绕过代理。服务器仍会看到用户主动发起的图片请求。
 - **远程下载有上限**：每张 5 MiB/15 秒，每文档最多 8 次尝试、20 MiB 输入；源图最多 2500 万像素，解码最长边 1200，图片累计 800 万像素。失败重试也消耗尝试预算，重新打开不自动联网、不复用此前同意，不缓存到磁盘。
 - **Finder 直接 DNS 曾被沙盒拒绝，但该链路已解决**：内嵌、独立沙盒的窄接口 XPC 图片服务已在真实 Finder 验证成功；此历史问题不再列为当前远程加载阻塞。服务没有用户文件权限。
 - **本地独立图片不是无损全功能看图器**：输入 25 MiB、源图 1 亿像素、最长边 2048，动图只显示首帧。PNG 已测，其余列举格式未逐一实测；不自动读取越界路径、符号链接或未下载的云内容。

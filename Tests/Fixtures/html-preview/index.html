@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orange Studio · HTML Preview</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 48px;
+      background: light-dark(#f6f4ef, #17191e);
+      color: light-dark(#242830, #e8e9ed);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    main { max-width: 800px; margin: auto; }
+    nav { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      display: grid; place-items: center; width: 40px; height: 40px;
+      background: #f07835; color: white; border-radius: 12px;
+      font-size: 24px; font-weight: 700;
+    }
+    .brand { font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+    .eyebrow { color: #bf652e; font-size: 11px; letter-spacing: 3px; margin-top: 48px; }
+    h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.16; letter-spacing: -2px; margin: 16px 0; }
+    .intro { color: light-dark(#6b7078, #a4aab6); font-size: 15px; line-height: 1.8; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    article {
+      padding: 24px; border-radius: 16px;
+      background: light-dark(#ffffff, #22262e);
+      border: 1px solid light-dark(#e8e5df, #343a44);
+    }
+    .number { font-size: 11px; color: #a1a4aa; letter-spacing: 2px; }
+    h2 { font-size: 17px; margin-top: 24px; }
+    article p { color: light-dark(#7a7e86, #a4aab6); font-size: 12px; line-height: 1.7; }
+    footer { margin-top: 36px; font-size: 11px; color: #9398a0; }
+    @media (max-width: 560px) {
+      body { padding: 24px; }
+      .cards { grid-template-columns: 1fr; }
+      .eyebrow { margin-top: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav><span class="mark">O</span><span class="brand">ORANGE STUDIO</span></nav>
+    <p class="eyebrow">FROM SOURCE TO SCREEN</p>
+    <h1>从代码，到眼前。</h1>
+    <p class="intro">一个页面，两种视角。<br>在顶部切换「效果」与「源码」，查看排版与实现。</p>
+    <section class="cards">
+      <article><span class="number">01 / PREVIEW</span><h2>看见设计</h2><p>字体、颜色、布局与留白，直接在预览中呈现。</p></article>
+      <article><span class="number">02 / SOURCE</span><h2>读懂代码</h2><p>清晰的语法配色与行号，让源码也赏心悦目。</p></article>
+      <article><span class="number">03 / LOCAL</span><h2>离线浏览</h2><p>本示例仅使用内联 CSS，不依赖网络或脚本。</p></article>
+    </section>
+    <footer>ORANGELEN · HTML & CSS · STATIC PREVIEW</footer>
+  </main>
+</body>
+</html>

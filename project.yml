@@ -29,6 +29,8 @@ targets:
       path: App/Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -116,6 +118,8 @@ targets:
       path: PreviewExtension/Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · Code
         OrangeLenPreviewCategory: Code
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -152,6 +156,8 @@ targets:
       path: PreviewExtension/Generated/Markdown-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · Markdown & Notebooks
         OrangeLenPreviewCategory: Markdown
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -188,6 +194,8 @@ targets:
       path: PreviewExtension/Generated/Data-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · Structured Data
         OrangeLenPreviewCategory: Data
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -224,6 +232,8 @@ targets:
       path: PreviewExtension/Generated/Folders-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · Folders
         OrangeLenPreviewCategory: Folders
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -260,6 +270,8 @@ targets:
       path: PreviewExtension/Generated/Archives-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · Archives & Compressed Text
         OrangeLenPreviewCategory: Archives
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -296,6 +308,8 @@ targets:
       path: PreviewExtension/Generated/Books-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · EPUB Books
         OrangeLenPreviewCategory: Books
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -332,6 +346,8 @@ targets:
       path: PreviewExtension/Generated/Drawings-Info.plist
       properties:
         CFBundleLocalizations: [en, zh-Hans]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen · SVG & Excalidraw
         OrangeLenPreviewCategory: Drawings
         CFBundleShortVersionString: $(MARKETING_VERSION)

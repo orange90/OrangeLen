@@ -6,10 +6,13 @@ extension ReaderController {
         guard !virtualDocument, let document = currentURL else { return }
         if Bundle.main.bundleURL.pathExtension == "appex" {
             let alert = NSAlert()
-            alert.messageText = L10n.text("允许此文档的本地图片")
+            alert.messageText = HTMLPreview.supports(document) ? L10n.text("允许 HTML 的本地资源") : L10n.text("允许此文档的本地图片")
             alert.informativeText = ImageDirectoryGrant.shared.available
                 ? L10n.text("在 OrangeLen 中用 ⌘O 打开此文档，点击“允许本地图片…”并选择图片目录。保持文档打开，返回 Finder 即可重新加载图片。关闭宿主文档后，本次共享授权结束。\n\n\(document.path)")
                 : L10n.text("当前构建没有可用的共享 app group。可在 OrangeLen 中用 ⌘O 打开此文档，再点“允许本地图片…”在宿主阅读图片；此构建不能将授权共享给 Finder。\n\n\(document.path)")
+            if HTMLPreview.supports(document) {
+                alert.informativeText = L10n.text("在 OrangeLen 中打开此 HTML，点击“允许本地资源…”并选择文档所在目录。保持文档打开，Finder 会使用本次授权加载 CSS、JavaScript 和图片。也可以直接预览所在文件夹。")
+            }
             alert.addButton(withTitle: L10n.text("知道了"))
             if let window = view.window { alert.beginSheetModal(for: window) }
             return
@@ -20,11 +23,18 @@ extension ReaderController {
         panel.message = ImageDirectoryGrant.shared.available
             ? L10n.text("选择文档目录或图片子目录，用于当前文档及它的 Finder 预览。关闭宿主文档后结束共享；不保存长期授权。")
             : L10n.text("选择文档目录或图片子目录，仅用于当前宿主文档。此构建没有可用的 Finder 授权共享；不保存长期授权。")
+        if HTMLPreview.supports(document) {
+            panel.title = L10n.text("允许 HTML 的本地资源")
+            panel.message = L10n.text("选择 HTML 所在目录，用于读取页面引用的 CSS、JavaScript 和图片。授权仅用于当前文档及它的 Finder 预览，关闭文档后结束。")
+        }
         panel.prompt = L10n.text("允许本次读取"); panel.directoryURL = document.deletingLastPathComponent()
         panel.begin { [weak self] result in
             guard result == .OK, let directory = panel.url, let self, self.currentURL == document, self.generation == authorizationRequest else { return }
             let base = document.deletingLastPathComponent().standardizedFileURL.pathComponents
             guard directory.standardizedFileURL.pathComponents.starts(with: base) else { self.showCopyNotice(L10n.text("请选择文档目录或它的图片子目录")); return }
+            if HTMLPreview.supports(document), directory.standardizedFileURL.pathComponents != base {
+                self.showCopyNotice(L10n.text("请选择 HTML 所在目录")); return
+            }
             self.useImageDirectory(directory, for: document)
         }
     }
@@ -33,7 +43,7 @@ extension ReaderController {
         if imageRootScope { imageRootURL?.stopAccessingSecurityScopedResource() }
         imageRootURL = directory; imageDocumentURL = document; imageRootScope = directory.startAccessingSecurityScopedResource()
         if Bundle.main.bundleURL.pathExtension != "appex" { imageGrantOwner = UUID(); imageGrantPublished = .distantPast; publishImageDirectory() }
-        reloadPreservingPosition(document, notice: L10n.text("本地图片已重新读取"))
+        reloadPreservingPosition(document, notice: HTMLPreview.supports(document) ? L10n.text("本地资源已重新读取") : L10n.text("本地图片已重新读取"))
     }
     func releaseImageDirectory() {
         if Bundle.main.bundleURL.pathExtension != "appex", let owner = imageGrantOwner, let document = imageDocumentURL { ImageDirectoryGrant.shared.remove(document: document, owner: owner) }
@@ -47,17 +57,19 @@ extension ReaderController {
     }
     func syncImageDirectory() {
         guard Bundle.main.bundleURL.pathExtension == "appex" else { publishImageDirectory(); return }
-        guard !virtualDocument, completion == nil, !autoReload, let document = currentURL, format == .markdown, let revision = Self.fileRevision(document) else { return }
+        guard !virtualDocument, completion == nil, !autoReload, let document = currentURL, (format == .markdown || HTMLPreview.supports(document)), let revision = Self.fileRevision(document) else { return }
         let grant = ImageDirectoryGrant.shared.resolve(document: document, revision: revision)
         guard grant?.owner != imageGrantOwner else { return }
         releaseImageDirectory()
         if let grant {
             imageRootURL = grant.directory; imageDocumentURL = document; imageRootScope = grant.directory.startAccessingSecurityScopedResource(); imageGrantOwner = grant.owner
         }
-        reloadPreservingPosition(document, notice: grant == nil ? L10n.text("本次图片授权已结束") : L10n.text("已使用宿主授权重新读取本地图片"))
+        reloadPreservingPosition(document, notice: HTMLPreview.supports(document)
+            ? (grant == nil ? L10n.text("本次本地资源授权已结束") : L10n.text("本地资源已重新读取"))
+            : (grant == nil ? L10n.text("本次图片授权已结束") : L10n.text("已使用宿主授权重新读取本地图片")))
     }
     func adoptImageDirectory(_ document: URL) {
-        guard Bundle.main.bundleURL.pathExtension == "appex", imageGrantOwner == nil, PreviewFormat.detect(document) == .markdown, let revision = Self.fileRevision(document), let grant = ImageDirectoryGrant.shared.resolve(document: document, revision: revision) else { return }
+        guard Bundle.main.bundleURL.pathExtension == "appex", imageGrantOwner == nil, (PreviewFormat.detect(document) == .markdown || HTMLPreview.supports(document)), let revision = Self.fileRevision(document), let grant = ImageDirectoryGrant.shared.resolve(document: document, revision: revision) else { return }
         imageRootURL = grant.directory; imageDocumentURL = document; imageRootScope = grant.directory.startAccessingSecurityScopedResource(); imageGrantOwner = grant.owner
     }
 }

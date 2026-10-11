@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 48px; font-family: -apple-system, sans-serif; color: light-dark(#242830,#e8e9ed); background: light-dark(#f6f4ef,#17191e); }
+main { max-width: 760px; margin: auto; }
+.eyebrow { margin-top: 32px; font-size: 11px; letter-spacing: 3px; color: #d27a42; }
+h1 { font-size: clamp(28px,5vw,48px); letter-spacing: -1px; }
+p { line-height: 1.7; }
+section { margin: 32px 0; padding: 24px; border-radius: 16px; background: light-dark(white,#242932); line-height: 1.8; }
+button { padding: 14px 24px; border: 0; border-radius: 10px; color: white; background: #ce602a; font-size: 14px; cursor: pointer; }
+footer { margin-top: 32px; color: #888e99; font-size: 12px; }

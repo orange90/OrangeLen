@@ -3,6 +3,7 @@ import os
 import OrangeLenCore
 
 public final class ReadingTextView: NSTextView {
+    var codeAppearance = false
     public var model = TextModel.plain("")
     public var anchor = 0
     public var copyFeedback: ((String) -> Void)?
@@ -76,7 +77,9 @@ final class LineRuler: NSRulerView {
     func update(_ string: String) { starts = [0]; for (index, c) in string.utf16.enumerated() where c == 10 { starts.append(index + 1) }; needsDisplay = true }
     override func drawHashMarksAndLabels(in rect: NSRect) {
         guard let text, let layout = text.layoutManager, let container = text.textContainer else { return }
-        NSColor.windowBackgroundColor.setFill(); bounds.intersection(rect).fill()
+        let code = (text as? ReadingTextView)?.codeAppearance == true
+        (code ? CodePalette.gutter : NSColor.windowBackgroundColor).setFill(); bounds.intersection(rect).fill()
+        if code { CodePalette.separator.setFill(); NSRect(x: bounds.maxX - 1, y: bounds.minY, width: 1, height: bounds.height).fill() }
         let visible = text.visibleRect.offsetBy(dx: -text.textContainerOrigin.x, dy: -text.textContainerOrigin.y)
         let glyphs = layout.glyphRange(forBoundingRect: visible, in: container)
         layout.enumerateLineFragments(forGlyphRange: glyphs) { line, _, _, range, _ in
@@ -87,7 +90,9 @@ final class LineRuler: NSRulerView {
             guard self.starts[index] == character else { return }
             let p = self.convert(NSPoint(x: 0, y: line.minY + text.textContainerOrigin.y), from: text)
             let value = "\(index + 1)" as NSString
-            value.draw(at: NSPoint(x: 8, y: p.y), withAttributes: [.font: NSFont.monospacedDigitSystemFont(ofSize: 11, weight: .regular), .foregroundColor: NSColor.secondaryLabelColor])
+            let attributes: [NSAttributedString.Key: Any] = [.font: NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular), .foregroundColor: code ? CodePalette.lineNumber : NSColor.secondaryLabelColor]
+            let size = value.size(withAttributes: attributes)
+            value.draw(at: NSPoint(x: self.ruleThickness - size.width - 12, y: p.y + max(0, (text.font?.pointSize ?? 14) - 12) / 2), withAttributes: attributes)
         }
     }
 }

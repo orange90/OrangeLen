@@ -19,12 +19,12 @@ import OrangeLenCore
             XCTAssertNil(error)
             XCTAssertTrue(reader.source?.partial == true)
             XCTAssertLessThanOrEqual(reader.source?.byteCount ?? Int.max, 65536)
-            XCTAssertEqual(reader.text.textStorage?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? NSColor, NSColor.textColor)
+            XCTAssertEqual(reader.text.textStorage?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? NSColor, CodePalette.foreground)
             print("FAST_PREVIEW_READY_MS", (ProcessInfo.processInfo.systemUptime - started) * 1000)
             ready.fulfill()
         }
         await fulfillment(of: [ready], timeout: 10)
-        try await settle { reader.text.textStorage?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? NSColor == NSColor.systemPurple }
+        try await settle { reader.text.textStorage?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? NSColor == CodePalette.keyword }
         let selected = NSRange(location: 4, length: 6)
         reader.text.setSelectedRange(selected)
         reader.schedulePageHighlight(try XCTUnwrap(reader.source))

@@ -52,6 +52,7 @@ extension ReaderController {
                 guard case .success(let content) = result else { if case .failure(let error) = result { self.showMessage(error.localizedDescription) }; return }
                 let (markdown, tree, table, warning) = content
                 self.source = snapshot; self.markdownAssets = assets; self.jsonTree = tree; self.tableData = table; self.rendered = markdown; self.parseWarning = warning
+                if !section.markdown { self.prepareHTMLPreview(url: self.currentURL, snapshot: snapshot) }
                 self.mode.selectedSegment = 0; self.text.anchor = 0; self.present(); self.startRichRendering()
                 self.remoteBar.isHidden = true; self.remoteHeight.constant = 0
                 if let position, self.mode.isEnabled { self.mode.selectedSegment = position.mode; self.present() }
