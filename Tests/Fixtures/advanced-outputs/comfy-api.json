@@ -1,0 +1,1 @@
+{"1": {"class_type": "CLIPTextEncode", "inputs": {"text": "orange cat"}}, "2": {"class_type": "KSampler", "inputs": {"positive": ["1", 0], "seed": 42, "steps": 20}}}

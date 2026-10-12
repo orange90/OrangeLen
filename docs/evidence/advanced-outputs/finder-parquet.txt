@@ -1,0 +1,139 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 toggle button Description: Show or hide directory tree, Value: on
+	3 button Select All
+	4 button Copy Selection
+	5 button Cancel Loading
+	6 split group
+		7 search text field (settable) Filter files
+			8 button Search
+		9 button Folder Overview, Description: move
+		10 text Files
+		11 scroll area Secondary Actions: Scroll Up, Scroll Down
+			12 outline Project directory tree
+				13 row (selectable, expanded) Value: advanced-outputs, Secondary Actions: Collapse
+					14 disclosure triangle 1
+				15 row (selectable) array.npy, Description: Preview array.npy
+Preview array.npy
+				16 row (selectable) arrays.npz, Description: Preview arrays.npz
+Preview arrays.npz
+				17 row (selectable) board.canvas, Description: Preview board.canvas
+Preview board.canvas
+				18 row (selectable) card.md, Description: Preview card.md
+Preview card.md
+				19 row (selectable) comfy-api.json, Description: Preview comfy-api.json
+Preview comfy-api.json
+				20 row (selectable) comfy.json, Description: Preview comfy.json
+Preview comfy.json
+				21 row (selectable) component.jsx, Description: Preview component.jsx
+Preview component.jsx
+				22 row (selectable) component.tsx, Description: Preview component.tsx
+Preview component.tsx
+				23 row (selectable) credentials.c2pa, Description: Preview credentials.c2pa
+Preview credentials.c2pa
+				24 row (selectable) diagram.drawio, Description: Preview diagram.drawio
+Preview diagram.drawio
+				25 row (selectable) dify.yml, Description: Preview dify.yml
+Preview dify.yml
+				26 row (selectable) document.mdx, Description: Preview document.mdx
+Preview document.mdx
+				27 row (selectable) document.tex, Description: Preview document.tex
+Preview document.tex
+				28 row (selectable) document.typ, Description: Preview document.typ
+Preview document.typ
+				29 row (selectable) fortran.npy, Description: Preview fortran.npy
+Preview fortran.npy
+				30 row (selectable) generation.jpg, Description: Preview generation.jpg
+Preview generation.jpg
+				31 row (selectable) generation.jpg.json, Description: Preview generation.jpg.json
+Preview generation.jpg.json
+				32 row (selectable) generation.xmp, Description: Preview generation.xmp
+Preview generation.xmp
+				33 row (selectable) mesh.glb, Description: Preview mesh.glb
+Preview mesh.glb
+				34 row (selectable) mesh.gltf, Description: Preview mesh.gltf
+Preview mesh.gltf
+				35 row (selectable) mesh.obj, Description: Preview mesh.obj
+Preview mesh.obj
+				36 row (selectable) mesh.stl, Description: Preview mesh.stl
+Preview mesh.stl
+				37 row (selectable) model.gguf, Description: Preview model.gguf
+Preview model.gguf
+				38 row (selectable) n8n.json, Description: Preview n8n.json
+Preview n8n.json
+				39 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				40 row (selectable) sample.latent, Description: Preview sample.latent
+Preview sample.latent
+				41 row (selected) table.parquet, Description: Preview table.parquet
+Preview table.parquet
+				42 row (selectable) weights.safetensors, Description: Preview weights.safetensors
+Preview weights.safetensors
+				43 row (selectable) workflows.n8np, Description: Preview workflows.n8np
+Preview workflows.n8np
+			44 scroll bar (settable, float) 1
+				45 value indicator (settable, float) 1
+				46 increment arrow button
+				47 decrement arrow button
+				48 increment page button
+				49 decrement page button
+		50 tickbox Show hidden & ignored, Value: 0
+		51 button Refresh Directory, Description: refresh
+		52 text Scanned 29 items in this directory (complete)
+		53 splitter (disabled, settable, float) 220
+		54 splitter (disabled, settable, float) 0
+		55 scroll area Secondary Actions: Scroll Up, Scroll Down
+			56 text entry area 3 rows · 1 row groups · 3 columns
+Sample: first 3 rows (maximum 500) · read-only, offline Arrow decoder
+			57 scroll bar (disabled, settable, float) 0
+		58 search text field (settable) Filter parsed cells
+			59 button Search
+		60 text Showing 3 / 3 rows
+		61 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			62 table
+				63 row (selectable)
+					64 cell
+						65 text Orange
+					66 cell
+						67 text 1
+					68 cell
+						69 text true
+				70 row (selectable)
+					71 cell
+						72 text Len
+					73 cell
+						74 text 2
+					75 cell
+						76 text false
+				77 row (selectable)
+					78 cell
+						79 text Preview
+					80 cell
+						81 text 3
+					82 cell
+						83 text true
+				84 column (selectable) 0
+				85 column (selectable) 1
+				86 column (selectable) 2
+				87 container
+					88 sort button name (Dictionary<Int32, Utf8>)
+					89 sort button value (Float64)
+					90 sort button enabled (Bool)
+			91 scroll bar (disabled, settable, float) 0
+			92 scroll bar (disabled, settable, float) 0
+	93 text table.parquet · Parquet first 500 rows
+	94 close button close panel button
+	95 full screen button full screen window button
+	96 button Description: Share file, ID: QLControlShare
+	97 text advanced-outputs
+98 menu bar
+	99 Finder
+	100 File
+	101 Edit
+	102 View
+	103 Go
+	104 Window
+	105 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

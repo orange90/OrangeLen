@@ -25,6 +25,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,6 +38,7 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>local.orangelen.typesetting</string>
 				<string>net.daringfireball.markdown</string>
 				<string>com.unknown.md</string>
 				<string>local.orangelen.notebook</string>
@@ -47,10 +53,5 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Markdown</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

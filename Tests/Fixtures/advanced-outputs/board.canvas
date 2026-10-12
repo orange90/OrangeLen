@@ -1,0 +1,1 @@
+{"nodes": [{"id": "a", "type": "text", "x": 0, "y": 0, "width": 280, "height": 180, "text": "# 输入\nAI 生成的内容", "color": "2"}, {"id": "b", "type": "file", "x": 400, "y": 0, "width": 280, "height": 180, "file": "card.md"}], "edges": [{"id": "e", "fromNode": "a", "toNode": "b", "label": "读取"}]}

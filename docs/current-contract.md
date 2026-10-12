@@ -26,6 +26,8 @@
 
 2026-10-11 新增产出的具体参数范围和预算见 [AI 产出预览](ai-output-previews.md)。
 
+2026-10-12 新增 Draw.io/Canvas/工作流、React/MDX、LaTeX/Typst、Parquet/NumPy、3D、模型元数据、n8n 包及图片凭证结构；入口与专用预算以 [高级 AI 产出预览](advanced-output-previews.md) 为准。
+
 ## 状态、恢复与保真
 
 - 新请求立即显示当前文件/条目的加载态。成功/部分/空/失败/取消都保留可见状态；失败正文不保留旧文档；数据库失败后清空并禁用表格、复制及旧页操作。

@@ -1,0 +1,124 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 toggle button Description: Show or hide directory tree, Value: on
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 search text field (settable) Filter files
+			15 button Search
+		16 button Folder Overview, Description: move
+		17 text Files
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline Project directory tree
+				20 row (selectable, expanded) Value: advanced-outputs, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selectable) array.npy, Description: Preview array.npy
+Preview array.npy
+				23 row (selectable) arrays.npz, Description: Preview arrays.npz
+Preview arrays.npz
+				24 row (selectable) board.canvas, Description: Preview board.canvas
+Preview board.canvas
+				25 row (selectable) card.md, Description: Preview card.md
+Preview card.md
+				26 row (selectable) comfy-api.json, Description: Preview comfy-api.json
+Preview comfy-api.json
+				27 row (selectable) comfy.json, Description: Preview comfy.json
+Preview comfy.json
+				28 row (selectable) component.jsx, Description: Preview component.jsx
+Preview component.jsx
+				29 row (selectable) component.tsx, Description: Preview component.tsx
+Preview component.tsx
+				30 row (selectable) credentials.c2pa, Description: Preview credentials.c2pa
+Preview credentials.c2pa
+				31 row (selectable) diagram.drawio, Description: Preview diagram.drawio
+Preview diagram.drawio
+				32 row (selectable) dify.yml, Description: Preview dify.yml
+Preview dify.yml
+				33 row (selectable) document.mdx, Description: Preview document.mdx
+Preview document.mdx
+				34 row (selectable) document.tex, Description: Preview document.tex
+Preview document.tex
+				35 row (selected) document.typ, Description: Preview document.typ
+Preview document.typ
+				36 row (selectable) fortran.npy, Description: Preview fortran.npy
+Preview fortran.npy
+				37 row (selectable) generation.jpg, Description: Preview generation.jpg
+Preview generation.jpg
+				38 row (selectable) generation.jpg.json, Description: Preview generation.jpg.json
+Preview generation.jpg.json
+				39 row (selectable) generation.xmp, Description: Preview generation.xmp
+Preview generation.xmp
+				40 row (selectable) mesh.glb, Description: Preview mesh.glb
+Preview mesh.glb
+				41 row (selectable) mesh.gltf, Description: Preview mesh.gltf
+Preview mesh.gltf
+				42 row (selectable) mesh.obj, Description: Preview mesh.obj
+Preview mesh.obj
+				43 row (selectable) mesh.stl, Description: Preview mesh.stl
+Preview mesh.stl
+				44 row (selectable) model.gguf, Description: Preview model.gguf
+Preview model.gguf
+				45 row (selectable) n8n.json, Description: Preview n8n.json
+Preview n8n.json
+				46 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				47 row (selectable) sample.latent, Description: Preview sample.latent
+Preview sample.latent
+				48 row (selectable) table.parquet, Description: Preview table.parquet
+Preview table.parquet
+				49 row (selectable) weights.safetensors, Description: Preview weights.safetensors
+Preview weights.safetensors
+				50 row (selectable) workflows.n8np, Description: Preview workflows.n8np
+Preview workflows.n8np
+			51 scroll bar (settable, float) 0.4747894035759179
+				52 value indicator (settable, float) 0.4747894035759179
+				53 increment arrow button
+				54 decrement arrow button
+				55 increment page button
+				56 decrement page button
+		57 tickbox Show hidden & ignored, Value: 0
+		58 button Refresh Directory, Description: refresh
+		59 text Scanned 29 items in this directory (complete)
+		60 splitter (disabled, settable, float) 220
+		61 splitter (disabled, settable, float) 0
+		62 scroll area Secondary Actions: Scroll Up, Scroll Down
+			63 container document
+				64 Page (disabled)
+					65 container
+						66 heading (disabled) Typst 预览, Value: 1
+							67 text Typst 预览
+						68 text 这是一份离线排版文档。 𝐸 = 𝑚 𝑐 2
+						69 content list (disabled)
+							70 text • 数学公式
+							71 text • 列表与文字
+			72 scroll bar (settable, float) 0.0008428415080666829
+				73 value indicator (settable, float) 0.0008428415080666829
+				74 increment arrow button
+				75 decrement arrow button
+				76 increment page button
+				77 decrement page button
+	78 text document.typ · UTF-8 · 99 bytes · code · Full file
+Offline single-file Typst compilation; external files and packages are not loaded
+	79 close button close panel button
+	80 full screen button full screen window button
+	81 button Description: Share file, ID: QLControlShare
+	82 text advanced-outputs
+83 menu bar
+	84 Finder
+	85 File
+	86 Edit
+	87 View
+	88 Go
+	89 Window
+	90 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

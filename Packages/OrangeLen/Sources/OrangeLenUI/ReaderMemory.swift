@@ -34,9 +34,10 @@ extension ReaderController {
         source = nil; rendered = nil
         let token = Cancellation(); cancellation = token; let current = generation; let detected = format
         text.string = L10n.text("正在解析选中内容…"); showContent(scroll)
-        PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (TextModel?, JSONTree?, TableData?, String) in
-            var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = section.warning
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (TextModel?, JSONTree?, TableData?, String, DiagramDocument?) in
+            var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = section.warning; var graph: DiagramDocument?
             do {
+                graph = try DiagramDocument.parseIfKnown(section.text,name:section.id,cancellation:token)
                 if ["srt", "vtt"].contains(URL(fileURLWithPath: section.id).pathExtension.lowercased()) {
                     let subtitles = try SubtitleDocument.parse(section.text, webVTT: URL(fileURLWithPath: section.id).pathExtension.lowercased() == "vtt", cancellation: token)
                     table = subtitles.table
@@ -51,12 +52,13 @@ extension ReaderController {
                 let reason = error.localizedDescription
                 if !warning.contains(reason) { warning = [warning,reason].filter { !$0.isEmpty }.joined(separator:" · ") }
             }
-            return (markdown, tree, table, warning)
+            return (markdown, tree, table, warning, graph)
         }, completion: { [weak self] result in
                 guard let self, self.generation == current else { return }
                 guard case .success(let content) = result else { if case .failure(let error) = result { self.showMessage(error.localizedDescription) }; return }
-                let (markdown, tree, table, warning) = content
+                let (markdown, tree, table, warning, graph) = content
                 self.source = snapshot; self.markdownAssets = assets; self.jsonTree = tree; self.tableData = table; self.rendered = markdown; self.parseWarning = warning
+                if let graph { self.advancedView = DiagramPreview(graph) }
                 if !section.markdown { self.prepareHTMLPreview(url: self.currentURL, snapshot: snapshot) }
                 self.mode.selectedSegment = 0; self.text.anchor = 0; self.present(); self.startRichRendering()
                 if ["mmd", "mermaid"].contains(URL(fileURLWithPath: section.id).pathExtension.lowercased()) {

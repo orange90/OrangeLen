@@ -8,7 +8,7 @@ struct ImagePreview {
     let width: Int
     let height: Int
     let bytes: Int
-    let metadata: AIImageMetadata
+    var metadata: AIImageMetadata
     static func supports(_ url: URL) -> Bool {
         guard let type = UTType(filenameExtension: url.pathExtension.lowercased()), type.conforms(to: .image) else { return false }
         return (CGImageSourceCopyTypeIdentifiers() as! [String]).contains(type.identifier)
@@ -16,7 +16,19 @@ struct ImagePreview {
     static func load(_ url: URL, root: URL?, cancellation: Cancellation, maxBytes: Int = 25 * 1024 * 1024, maxPixelSize: Int = 2048) throws -> Self {
         var limits = PreviewLimits(); limits.fileBytes = maxBytes
         let raw = try AccessBroker.readBytes(url, root: root, limits: limits, cancellation: cancellation)
-        return try decode(raw.data, cancellation: cancellation, maxPixelSize: maxPixelSize)
+        var decoded = try decode(raw.data, cancellation: cancellation, maxPixelSize: maxPixelSize)
+        if let root {
+            limits.fileBytes = 1024 * 1024
+            let base = url.deletingPathExtension()
+            for sidecar in [base.appendingPathExtension("c2pa"),url.appendingPathExtension("json"),base.appendingPathExtension("json"),base.appendingPathExtension("xmp"),base.appendingPathExtension("txt")] where FileManager.default.fileExists(atPath:sidecar.path) {
+                do {
+                    let bytes = try AccessBroker.readBytes(sidecar,root:root,limits:limits,cancellation:cancellation).data
+                    if sidecar.pathExtension.lowercased() == "c2pa" { decoded.metadata = try decoded.metadata.addingProvenance(bytes,cancellation:cancellation) }
+                    else { decoded.metadata = decoded.metadata.merging(try AIImageMetadata.parse(bytes,cancellation:cancellation)) }
+                } catch is CancellationError { throw CancellationError() } catch { /* Optional metadata cannot block the image. */ }
+            }
+        }
+        return decoded
     }
     static func decode(_ data: Data, cancellation: Cancellation, maxPixelSize: Int = 1200, maxSourcePixels: Int = 100_000_000) throws -> Self {
         try cancellation.check()

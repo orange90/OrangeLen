@@ -78,14 +78,15 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
                 let left = lhs.path.split(separator: "/").count, right = rhs.path.split(separator: "/").count
                 return left == right ? lhs.path < rhs.path : left < right
             }.first?.path : nil)
-        if let path = initialPath, let row = (0..<outline.numberOfRows).first(where: { (outline.item(atRow: $0) as? Node)?.path == path }) {
+        let selectedPath = initialPath ?? (origin.pathExtension.lowercased() == "npz" ? archive.entries.first { !$0.directory && $0.path.hasSuffix(".npy") }?.path : nil)
+        if let path = selectedPath, let row = (0..<outline.numberOfRows).first(where: { (outline.item(atRow: $0) as? Node)?.path == path }) {
             outline.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
         } else if summary != nil { showBundleSummary() }
     }
     @objc func showBundleSummary() {
         guard let bundleSummary, let origin else { return }
         token?.cancel(); generation = UUID(); outline.deselectAll(nil)
-        reader.openMemory(.init(id: "bundle-summary.txt", title: L10n.text("MCP 扩展包"), text: bundleSummary), origin: origin, revision: revision, assets: .init())
+        reader.openMemory(.init(id: "bundle-summary.txt", title: origin.pathExtension.lowercased() == "n8np" ? "n8n package" : L10n.text("MCP 扩展包"), text: bundleSummary), origin: origin, revision: revision, assets: .init())
     }
     static func tree(_ entries: [ArchiveEntry]) throws -> [Node] {
         let root = Node(""); var paths: [String: Node] = ["": root]
@@ -163,9 +164,14 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
         reader.cancelPending(); reader.showMessage(L10n.text("加载 \(entry.path)…"))
         PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (DocumentSection, MarkdownAssets) in
                 let data = try archive.read(entry, cancellation: token), fake = URL(fileURLWithPath: entry.path)
+                if ScientificDocument.supports(fake) {
+                    let value = try ScientificDocument.parse(data,name:entry.path,cancellation:token)
+                    return (.init(id:entry.path + ".txt",title:entry.path,text:value.text),.init())
+                }
                 if ImagePreview.supports(fake) {
                     var assets = MarkdownAssets(); assets.images[0] = try ImagePreview.decode(data, cancellation: token).image
-                    return (.init(id: entry.path, title: entry.path, text: L10n.text("![归档图片](image.png)"), markdown: true), assets)
+                    let metadata = try ImagePreview.decode(data,cancellation:token).metadata
+                    return (.init(id:entry.path,title:entry.path,text:L10n.text("![归档图片](image.png)") + (metadata.fields.isEmpty ? "" : "\n\n## " + L10n.text("AI 图片生成参数") + "\n\n" + metadata.text),markdown:true),assets)
                 }
                 guard ReadableFormat.isText(fake) else { return (.init(id: entry.path, title: entry.path, text: L10n.text("此格式尚不支持正文预览 · \(entry.size) bytes")), .init()) }
                 let source = try AccessBroker.decode(data).0, markdown = PreviewFormat.detect(fake) == .markdown

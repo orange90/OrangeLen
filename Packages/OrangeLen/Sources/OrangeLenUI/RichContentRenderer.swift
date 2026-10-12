@@ -8,6 +8,7 @@ import OrangeLenCore
 @MainActor final class RichContentRenderer: NSObject, WKNavigationDelegate {
     private let resourceName: String
     init(resourceName: String = "RichRenderer") { self.resourceName = resourceName; super.init() }
+    private let embedded = EmbeddedResourceHandler()
     private var web: WKWebView?
     private var ready: CheckedContinuation<Void, Error>?
     private var evaluation: CheckedContinuation<Any?, Error>?
@@ -16,7 +17,7 @@ import OrangeLenCore
     private var deadline: Task<Void, Never>?
     private var budget: Task<Void, Never>?
     func cancel() {
-        stopped = true; deadline?.cancel(); budget?.cancel()
+        stopped = true; embedded.input = nil; deadline?.cancel(); budget?.cancel()
         ready?.resume(throwing: CancellationError()); ready = nil
         evaluation?.resume(throwing: CancellationError()); evaluation = nil
         snapshotResult?.resume(throwing: CancellationError()); snapshotResult = nil
@@ -27,8 +28,9 @@ import OrangeLenCore
         guard !stopped else { throw CancellationError() }
         let config = WKWebViewConfiguration()
         config.websiteDataStore = .nonPersistent()
+        config.setURLSchemeHandler(embedded,forURLScheme:"orangelen-resource")
         config.preferences.javaScriptCanOpenWindowsAutomatically = false
-        let rules = #"[{"trigger":{"url-filter":".*"},"action":{"type":"block"}}]"#
+        let rules = #"[{"trigger":{"url-filter":".*"},"action":{"type":"block"}},{"trigger":{"url-filter":"^orangelen-resource:"},"action":{"type":"ignore-previous-rules"}}]"#
         let list = try await WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "OrangeLenOfflineRenderer-v1", encodedContentRuleList: rules)
         if let list { config.userContentController.add(list) }
         try Task.checkCancellation(); guard !stopped else { throw CancellationError() }
@@ -57,7 +59,59 @@ import OrangeLenCore
     func renderSVG(_ document: SVGDocument, in parent: NSView) async throws -> NSImage {
         try await renderSource(document.xml, kind: "svg", in: parent)
     }
-    private func renderSource(_ source: String, kind: String, in parent: NSView) async throws -> NSImage {
+    func readParquet(_ data: Data, in parent: NSView) async throws -> ScientificDocument {
+        let header = try ParquetHeader.parse(data)
+        try await boot(in: parent)
+        guard let web, !stopped, let url = Bundle.module.url(forResource: "parquet", withExtension: "wasm") else { throw PreviewError.unavailable }
+        _ = url; embedded.input = data
+        budget = Task { [weak self] in try? await Task.sleep(nanoseconds:10_000_000_000); if !Task.isCancelled { self?.cancel() } }
+        defer { budget?.cancel() }
+        let result: Any? = try await withCheckedThrowingContinuation { continuation in
+            evaluation = continuation
+            web.callAsyncJavaScript("return await window.orangeParquet(wasm, bytes)", arguments:["wasm":"orangelen-resource://assets/parquet.wasm","bytes":"orangelen-resource://assets/input.parquet"], in:nil,in:.page) { [weak self] result in
+                self?.evaluation?.resume(with:result.map { Optional($0) }); self?.evaluation = nil
+            }
+        }
+        try Task.checkCancellation()
+        guard !stopped, let object = result as? [String:Any], let columns = object["columns"] as? [String], columns.count <= 256, let rows = object["rows"] as? [[String]], rows.count <= 500,
+              rows.allSatisfy({ $0.count <= 256 && $0.allSatisfy({ $0.utf8.count <= 65536 }) }) else { throw PreviewError.limit("Parquet result") }
+        return .init(title:"Parquet",summary:"\(header.rows) rows · \(header.rowGroups) row groups · \(header.columns) columns\nSample: first \(rows.count) rows (maximum 500) · read-only, offline Arrow decoder",columns:columns,rows:rows)
+    }
+    func compileDocument(_ source: String, typst: Bool, in parent: NSView) async throws -> Data {
+        guard source.utf8.count <= 65536 else { throw PreviewError.limit("Typesetting source 64 KiB") }
+        try await boot(in:parent)
+        guard let web, !stopped else { throw CancellationError() }
+        budget = Task { [weak self] in try? await Task.sleep(nanoseconds:15_000_000_000); if !Task.isCancelled { self?.cancel() } }
+        defer { budget?.cancel() }
+        var arguments: [String:Any] = ["source":source]
+        let script: String
+        if typst {
+            guard let wasmURL = Bundle.module.url(forResource:"typst",withExtension:"wasm") else { throw PreviewError.unavailable }
+            _ = wasmURL; arguments["wasm"] = "orangelen-resource://assets/typst.wasm"
+            arguments["fonts"] = try ["LibertinusSerif-Regular", "NewCMMath-Book", "NotoSerifCJKsc-Regular"].map { name -> String in
+                guard let url = Bundle.module.url(forResource:name,withExtension:"otf") else { throw PreviewError.unavailable }; _ = url; return "orangelen-resource://assets/" + name + ".otf"
+            }
+            script = "return await window.orangeTypst(wasm,fonts,source)"
+        } else { script = "return await window.orangeRender('tex',source)" }
+        let result: Any? = try await withCheckedThrowingContinuation { continuation in
+            evaluation = continuation
+            web.callAsyncJavaScript(script,arguments:arguments,in:nil,in:.page) { [weak self] result in
+                self?.evaluation?.resume(with:result.map {Optional($0)}); self?.evaluation = nil
+            }
+        }
+        try Task.checkCancellation(); guard !stopped else { throw CancellationError() }
+        let data: Data
+        if typst {
+            guard let value = result as? String, value.utf8.count <= 36 * 1024 * 1024, let decoded = Data(base64Encoded:value) else { throw PreviewError.malformed("Typst PDF result") }; data = decoded
+        } else {
+            guard let size = result as? [String:NSNumber], let height = size["height"]?.doubleValue, height.isFinite, height > 0, height <= 20000 else { throw PreviewError.limit("LaTeX HTML height 20,000 pt") }
+            web.setFrameSize(NSSize(width:800,height:height))
+            let config = WKPDFConfiguration(); config.rect = NSRect(x:0,y:0,width:780,height:height)
+            data = try await web.pdf(configuration:config)
+        }
+        guard data.count <= 25 * 1024 * 1024 else { throw PreviewError.limit("Compiled PDF 25 MiB") }; return data
+    }
+    func renderSource(_ source: String, kind: String, in parent: NSView) async throws -> NSImage {
         try await boot(in: parent)
         try Task.checkCancellation()
         guard let web, !stopped else { throw CancellationError() }

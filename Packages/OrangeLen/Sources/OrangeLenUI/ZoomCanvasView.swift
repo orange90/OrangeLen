@@ -3,6 +3,7 @@ import AppKit
 
 /// Native zoom/pan surface shared by drawings, SVG and enlarged Markdown attachments.
 final class ZoomCanvasView: NSImageView {
+    override var intrinsicContentSize: NSSize { NSSize(width:NSView.noIntrinsicMetric,height:NSView.noIntrinsicMetric) }
     var zoom: CGFloat = 1, pan = NSPoint.zero
     var onDismiss: (() -> Void)? { didSet { back.isHidden = onDismiss == nil } }
     private let label = NSTextField(labelWithString: L10n.text("适合窗口")), back = NSButton(title: L10n.text("返回正文"), target: nil, action: nil)

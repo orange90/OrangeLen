@@ -1,0 +1,1 @@
+{"name": "Preview workflow", "nodes": [{"id": "1", "name": "开始", "type": "n8n-nodes-base.manualTrigger", "position": [0, 0]}, {"id": "2", "name": "整理", "type": "n8n-nodes-base.set", "position": [350, 0], "parameters": {"value": "example"}}], "connections": {"开始": {"main": [[{"node": "整理", "type": "main", "index": 0}]]}}}

@@ -25,6 +25,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,6 +38,7 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>local.orangelen.component</string>
 				<string>public.plain-text</string>
 				<string>public.source-code</string>
 				<string>public.swift-source</string>
@@ -54,10 +60,5 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Code</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

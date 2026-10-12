@@ -1,5 +1,15 @@
 # 变更日志
 
+## 2026-10-12 — 后续 AI 产出格式
+
+- Draw.io 多页/压缩页、JSON Canvas 与 ComfyUI/n8n/Dify 工作流节点图，源码保留，目录内有界文件卡片。
+- React/TSX/MDX 离线组件快照，LaTeX 基础排版 PDF 与 Typst 单文件 WASM 编译 PDF。
+- Parquet 原生样本表格、NumPy dtype/shape/存储样本与 NPZ 多数组；Safetensors/GGUF/latent 仅读头部和张量目录。
+- OBJ/STL/GLTF/GLB 静态 SceneKit 旋转预览，n8np TAR/GZIP 清单及成员阅读。
+- JPEG EXIF、JPEG/WebP XMP、授权 sidecar、归档图片参数，C2PA JUMBF/JSON/CBOR 结构明确标为未验证。
+- 补齐类型声明、离线依赖及许可证、合成夹具、畸形输入/授权/资源释放及真实渲染测试。详细支持边界见 [扩展预览](docs/advanced-output-previews.md)。
+- 完整回归 167 登记、165 通过、2 专用 XPC 宿主跳过；最终连线调整后相关 16 项通过。Debug 构建、开发签名安装与 deep/strict 验签通过；Finder 文件夹实测 Draw.io、TSX、Typst、Parquet 和 GLB。修复图像撑宽窗口与 Base64 资源临时副本问题，保留原内存预算；日志及现场截图见 [验收记录](docs/evidence/advanced-outputs/README.md)。
+
 ## 2026-10-11 — AI 产出文件预览
 
 - ZIP 型 `.skill` 增加目录与成员预览，默认打开最浅层 `SKILL.md`，补齐实际系统类型和归档扩展声明。

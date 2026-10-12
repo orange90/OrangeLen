@@ -1,0 +1,17 @@
+kind: app
+workflow:
+  graph:
+    nodes:
+      - id: start
+        data:
+          title: 开始
+          type: start
+        position: {x: 0, y: 0}
+      - id: llm
+        data:
+          title: 模型回答
+          type: llm
+        position: {x: 350, y: 0}
+    edges:
+      - source: start
+        target: llm

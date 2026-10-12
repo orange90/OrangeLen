@@ -1,0 +1,39 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Compiling OrangeLenUITests AdvancedPreviewTests.swift
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:55:49: warning: weak variable 'mesh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+53 |         let ready = expectation(description:"fallback"); reader.open(file) { error in XCTAssertNil(error); ready.fulfill() }; await fulfillment(of:[ready],timeout:10)
+54 |         XCTAssertEqual(reader.text.string,"<mxfile>broken"); XCTAssertTrue(reader.parseWarning.contains("source") || reader.parseWarning.contains("源码"))
+55 |         await open(reader,"mesh.glb"); weak var mesh = reader.advancedView as? MeshPreview; reader.close(); XCTAssertNil(mesh?.renderer.scene); try await Task.sleep(nanoseconds:50_000_000); XCTAssertNil(mesh)
+   |                                                 `- warning: weak variable 'mesh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+56 |     }
+57 |     func testAdvancedViewsFitFolderWindowAfterResize() async throws {
+
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>
+[4/5] Emitting module OrangeLenUITests
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (3.14s)
+Test Suite 'Selected tests' started at 2026-10-12 11:47:29.206.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-12 11:47:29.207.
+Test Suite 'AdvancedPreviewTests' started at 2026-10-12 11:47:29.207.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize]' started.
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1182.0") is not equal to ("1120.0") +/- ("1.0") - diagram.drawio
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1182.0") is not equal to ("760.0") +/- ("1.0") - diagram.drawio
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1182.0") is not equal to ("900.0") +/- ("1.0") - diagram.drawio
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1422.0") is not equal to ("1120.0") +/- ("1.0") - mesh.glb
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1422.0") is not equal to ("760.0") +/- ("1.0") - mesh.glb
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:67: error: -[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize] : XCTAssertEqualWithAccuracy failed: ("1422.0") is not equal to ("900.0") +/- ("1.0") - mesh.glb
+2026-10-12 11:47:30.379 xctest[33841:30592213] Warning: Column selection is not supported in view-based table and outline views (<NSTableView: 0x7e64fa800>).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize]' failed (1.286 seconds).
+Test Suite 'AdvancedPreviewTests' failed at 2026-10-12 11:47:30.493.
+	 Executed 1 test, with 6 failures (0 unexpected) in 1.286 (1.286) seconds
+Test Suite 'OrangeLenPackageTests.xctest' failed at 2026-10-12 11:47:30.493.
+	 Executed 1 test, with 6 failures (0 unexpected) in 1.286 (1.287) seconds
+Test Suite 'Selected tests' failed at 2026-10-12 11:47:30.493.
+	 Executed 1 test, with 6 failures (0 unexpected) in 1.286 (1.287) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

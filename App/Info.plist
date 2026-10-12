@@ -39,6 +39,154 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>XMP Metadata</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.xmp</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>xmp</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Draw.io and JSON Canvas</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.diagram</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>drawio</string>
+					<string>canvas</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>React Component</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.component</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>jsx</string>
+					<string>tsx</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>MDX and Typesetting Document</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.typesetting</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mdx</string>
+					<string>tex</string>
+					<string>typ</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Scientific Data and Model Metadata</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.scientific</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>c2pa</string>
+					<string>npy</string>
+					<string>parquet</string>
+					<string>safetensors</string>
+					<string>gguf</string>
+					<string>latent</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>3D Model</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.mesh</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>obj</string>
+					<string>stl</string>
+					<string>gltf</string>
+					<string>glb</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.zip-archive</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>NumPy Array Archive</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.numpy-archive</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>npz</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.archive</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>n8n Package</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.n8n-package</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>n8np</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
 				<string>public.plain-text</string>
 			</array>
 			<key>UTTypeDescription</key>

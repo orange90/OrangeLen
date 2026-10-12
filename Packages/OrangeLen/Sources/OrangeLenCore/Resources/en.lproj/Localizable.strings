@@ -655,3 +655,11 @@
 "参数概览" = "Parameter overview";
 
 "部分生成参数损坏或超过预算，图片仍可预览" = "Some generation parameters are damaged or exceed the limit; image preview remains available";
+
+// Advanced AI output previews
+"3D 只读预览" = "Read-only 3D preview";
+"只读结构与样本" = "Read-only structure and samples";
+"Parquet 前 500 行" = "Parquet first 500 rows";
+"LaTeX 基础排版；外部宏包与文件不加载" = "LaTeX basic typesetting; external packages and files are not loaded";
+"Typst 离线单文件编译；外部文件与包不加载" = "Offline single-file Typst compilation; external files and packages are not loaded";
+"离线组件快照；仅内置 React，外部依赖与网络不可用" = "Offline component snapshot; bundled React only, external dependencies and network are unavailable";

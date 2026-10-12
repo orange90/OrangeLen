@@ -2,7 +2,7 @@
 
 日期：2026-10-11。以下保留调研时的源码缺口、入口契约与官方格式依据；建议排序为工程判断，没有用户使用频率统计。
 
-后续用户已选定第一批全部四类，已实现独立 Mermaid、MCPB/DXT、SRT/VTT 及 AI PNG/WebP 参数。当前范围与 Finder 实测结果见 [AI 产出预览](ai-output-previews.md)。其余候选仍未进入本轮开发范围。
+后续用户已选定第一批全部四类，已实现独立 Mermaid、MCPB/DXT、SRT/VTT 及 AI PNG/WebP 参数。当前范围与 Finder 实测结果见 [AI 产出预览](ai-output-previews.md)。2026-10-12 用户进一步要求其余所有格式接入；实现范围见 [扩展预览](advanced-output-previews.md)，下表的缺口保留为调研时状态。
 
 ## 已覆盖与判断标准
 

@@ -38,6 +38,8 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>local.orangelen.diagram</string>
+				<string>local.orangelen.mesh</string>
 				<string>public.png</string>
 				<string>org.webmproject.webp</string>
 				<string>local.orangelen.mermaid</string>

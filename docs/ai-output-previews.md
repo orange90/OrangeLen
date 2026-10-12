@@ -1,5 +1,7 @@
 # AI 产出文件预览（2026-10-11）
 
+2026-10-12 图片扩展及其他产出格式新增范围见 [扩展预览](advanced-output-previews.md)。以下保留第一批交付状态。
+
 本轮落实 [格式调研](ai-output-format-research.md) 中用户选定的四类高优先级产出。共享阅读器用于主应用和 Finder 文件夹预览；单文件是否调用 OrangeLen 仍取决于系统 Quick Look 分派。
 
 | 产出 | 预览内容 | 入口与边界 |

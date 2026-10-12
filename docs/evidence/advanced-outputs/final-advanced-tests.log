@@ -1,0 +1,57 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Compiling OrangeLenUI DiagramPreview.swift
+[4/5] Emitting module OrangeLenUI
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (4.65s)
+Test Suite 'Selected tests' started at 2026-10-12 12:03:57.413.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-12 12:03:57.416.
+Test Suite 'AdvancedOutputTests' started at 2026-10-12 12:03:57.416.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testAllMeshFormatsAndMalformedBounds]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testAllMeshFormatsAndMalformedBounds]' passed (0.005 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testCanvasAndAllWorkflowSchemas]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testCanvasAndAllWorkflowSchemas]' passed (0.006 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testDrawioCompressedPagesAndInvalidIdentities]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testDrawioCompressedPagesAndInvalidIdentities]' passed (0.002 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testImageExifXMPRecipesAndC2PABounds]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testImageExifXMPRecipesAndC2PABounds]' passed (0.007 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testMultiGigabyteModelReadsOnlyBoundedHeader]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testMultiGigabyteModelReadsOnlyBoundedHeader]' passed (0.017 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testN8NPackageIsTarGzipWithManifest]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testN8NPackageIsTarGzipWithManifest]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testNumPyValuesFortranAndObjectHeaderOnly]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testNumPyValuesFortranAndObjectHeaderOnly]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testParquetFooterAndInvalidLength]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testParquetFooterAndInvalidLength]' passed (0.001 seconds).
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testTensorCatalogAndGGUFWithoutWeights]' started.
+Test Case '-[OrangeLenCoreTests.AdvancedOutputTests testTensorCatalogAndGGUFWithoutWeights]' passed (0.002 seconds).
+Test Suite 'AdvancedOutputTests' passed at 2026-10-12 12:03:57.459.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.042 (0.043) seconds
+Test Suite 'AdvancedPreviewTests' started at 2026-10-12 12:03:57.459.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize]' started.
+2026-10-12 12:03:59.975 xctest[39349:30635624] Warning: Column selection is not supported in view-based table and outline views (<NSTableView: 0x9fe51e800>).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testAdvancedViewsFitFolderWindowAfterResize]' passed (2.687 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testGraphPagesWorkflowsAndSource]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testGraphPagesWorkflowsAndSource]' passed (0.373 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testImageAuthorizedSidecarsAndCanvasFileCards]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testImageAuthorizedSidecarsAndCanvasFileCards]' passed (0.032 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testMalformedGraphRetainsSourceAndCloseReleasesMesh]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testMalformedGraphRetainsSourceAndCloseReleasesMesh]' passed (0.174 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testModelAndArrayNativeViewsAndSwitch]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testModelAndArrayNativeViewsAndSwitch]' passed (0.510 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testParquetArrowDecoderAndNpzN8nContainers]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testParquetArrowDecoderAndNpzN8nContainers]' passed (2.324 seconds).
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' passed (4.086 seconds).
+Test Suite 'AdvancedPreviewTests' passed at 2026-10-12 12:04:07.646.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 10.186 (10.187) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-12 12:04:07.646.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 10.228 (10.230) seconds
+Test Suite 'Selected tests' passed at 2026-10-12 12:04:07.646.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 10.228 (10.233) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

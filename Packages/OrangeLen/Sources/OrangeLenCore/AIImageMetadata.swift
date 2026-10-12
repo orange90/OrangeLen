@@ -60,6 +60,24 @@ public struct AIImageMetadata: Sendable {
                 }
             } else if text.contains("Steps:") && text.contains("Seed:") { add(L10n.text("生成参数"), text) }
         }
+        func acceptXMP(_ payload: Data) throws {
+            guard payload.count <= maximum else { warn(); return }
+            guard let xml = String(data:payload,encoding:.utf8) else { return }
+            let root = try BoundedXML.parse(xml,token:cancellation)
+            func visit(_ node: BoundedXML.Node) throws {
+                try cancellation.check()
+                let name = node.name.components(separatedBy:":").last ?? node.name
+                let text = node.text + node.descendants("rdf:li").map(\.text).joined(separator:"\n")
+                if ["parameters","prompt","workflow"].contains(name) { try accept(name,Data(text.utf8)) }
+                else if ["description","Description","UserComment","Comment"].contains(name) { try accept("Description",Data(text.utf8)) }
+                for (key,value) in node.attributes {
+                    let name = key.components(separatedBy:":").last ?? key
+                    if ["parameters","prompt","workflow"].contains(name) { try accept(name,Data(value.utf8)) }
+                }
+                for child in node.children { try visit(child) }
+            }
+            try visit(root)
+        }
         func big(_ offset: Int) -> Int { (0..<4).reduce(0) { ($0 << 8) | Int(b[offset + $1]) } }
         func little(_ offset: Int) -> Int { (0..<4).reduce(0) { $0 | Int(b[offset + $1]) << (8 * $1) } }
         if b.starts(with: [137,80,78,71,13,10,26,10]) {
@@ -122,10 +140,46 @@ public struct AIImageMetadata: Sendable {
                         }
                     }
                 }
+                if String(bytes:b[cursor..<(cursor + 4)],encoding:.ascii) == "XMP " {
+                    do { try acceptXMP(Data(b[start..<(start + length)])) } catch is CancellationError { throw CancellationError() } catch { warn() }
+                }
                 cursor = start + length + length % 2
             }
         }
+        if b.count >= 4, b[0] == 255, b[1] == 216 {
+            var cursor = 2, segments = 0
+            while cursor + 4 <= b.count {
+                try cancellation.check(); segments += 1; guard segments <= 10000 else { warn(); break }
+                guard b[cursor] == 255 else { break }; let marker = b[cursor + 1]
+                if marker == 218 || marker == 217 { break }
+                if marker == 255 { cursor += 1; continue }
+                if marker == 1 || (208...215).contains(marker) { cursor += 2; continue }
+                let length = Int(b[cursor + 2]) * 256 + Int(b[cursor + 3])
+                guard length >= 2, length <= b.count - cursor - 2 else { warn(); break }
+                let payload = Data(b[(cursor + 4)..<(cursor + 2 + length)])
+                if marker == 225 {
+                    do {
+                        if payload.starts(with:[69,120,105,102,0,0]) { for value in exifComments(payload) { try accept("UserComment",Data(value.utf8)) } }
+                        else if payload.starts(with:Data("http://ns.adobe.com/xap/1.0/\0".utf8)) { try acceptXMP(Data(payload.dropFirst(29))) }
+                    } catch is CancellationError { throw CancellationError() } catch { warn() }
+                }
+                if marker == 235, String(decoding:payload,as:UTF8.self).contains("c2pa") { add("C2PA", "Embedded provenance container present; cryptographic authenticity is not verified.") }
+                cursor += 2 + length
+            }
+        }
+        if data.first == 123 { try accept("Description",data) }
+        else if data.first != 60, let text = String(data:data,encoding:.utf8), text.contains("Steps:"), text.contains("Seed:") { try accept("parameters",data) }
+        if data.first == 60 { do { try acceptXMP(data) } catch is CancellationError { throw CancellationError() } catch { warn() } }
         return .init(fields: fields, warnings: warnings)
+    }
+    public func addingProvenance(_ data: Data, cancellation: Cancellation) throws -> Self {
+        let document = try ProvenanceDocument.parse(data,cancellation:cancellation)
+        return merging(.init(fields:[.init(name:"C2PA · unverified",value:document.text)],warnings:[]))
+    }
+    public func merging(_ other: Self) -> Self {
+        var result = fields, bytes = fields.reduce(0,{$0 + $1.value.utf8.count})
+        for field in other.fields where result.count < 32 { guard field.value.utf8.count <= 1024 * 1024 - bytes else { break }; bytes += field.value.utf8.count; result.append(field) }
+        return .init(fields:result,warnings:Array(Set(warnings + other.warnings)).sorted())
     }
     /// Bounded TIFF reader for EXIF ImageDescription and ExifIFD.UserComment only.
     static func exifComments(_ raw: Data) -> [String] {

@@ -1,0 +1,11 @@
+{
+  "typst.wasm": "1fc968438a672366dfec39c96c842c26ed29caff4eb1bcaab19a6c60867de5fd",
+  "NewCMMath-Book.otf": "b2e655d5cae5ab9569fa6f5d94e929156fe70bd3548d916b4b23d1a1c1a55693",
+  "TypstCompiler.html": "5c10d006739bed6b60870d3f26cbc2bed5e052c2d25b15b0b11b123a491e341f",
+  "NotoSerifCJKsc-Regular.otf": "9ccb922287f4b4a941ace82321ee6e1ff6340eb53f1c13b0e6285a117d1b0057",
+  "ParquetRenderer.html": "593efbbba5bfd268ca3036cd80c38d70815eec5fe5e7c9f3e8e894e3aaf7539b",
+  "parquet.wasm": "4714c978d78da8cb7bb61bfb86d603abf28fff6dfa46eb4490d0fad7df2482fb",
+  "LaTeXRenderer.html": "4253387f5457157c7b2f0f108034111354dcea51656aa911ccdf14f7115f2286",
+  "LibertinusSerif-Regular.otf": "fcf06307a77367394fcb0ccb241e59eea70dba3d732be309647611224679c733",
+  "ComponentRenderer.html": "922bbe4760eac2a98564d37166473e6c911f4df5068452a0d74737e1ce794800"
+}

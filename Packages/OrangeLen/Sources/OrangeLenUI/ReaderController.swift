@@ -70,6 +70,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
     var source: SourceSnapshot?
     var markdownAssets = MarkdownAssets()
     var htmlPreview: HTMLPreview?
+    var advancedView: NSView?
     var imageDetails: NSView?
     var imageMetadataText: NSTextView?
     var canvasImage: NSImage?
@@ -311,6 +312,10 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let compact = compactPreferred || width < 1280
         for (index,control) in mainControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![4].contains(index) : compact && ![0,1,4].contains(index) }
         for (index,control) in findControls.enumerated() { control.isHidden = compactPreferred || width < 600 ? ![0,1,9].contains(index) : compact && ![0,1,8,9,10].contains(index) }
+        if advancedView != nil && source == nil {
+            for control in mainControls { control.isHidden = true }
+            for (index, control) in findControls.enumerated() { control.isHidden = !(advancedView is ScientificPreview && [8,9,10].contains(index)) }
+        }
         if imageDetails != nil {
             for control in mainControls { control.isHidden = true }
             for (index, control) in findControls.enumerated() { control.isHidden = ![8,9,10].contains(index) }
@@ -397,6 +402,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         let loadStarted = ProcessInfo.processInfo.systemUptime
         let root = rootURL, imageRoot = imageRootURL ?? rootURL; let detected = PreviewFormat.detect(url); format = detected
         let enhanced = previewCategory == nil || previewCategory == PreviewCategory.folders.rawValue || previewCategory == PreviewCategory.detect(url).rawValue
+        if enhanced && loadAdvanced(url, root: root, id: id, token: token) { return }
         if enhanced && ["mmd", "mermaid"].contains(url.pathExtension.lowercased()) {
             loadMermaid(url, root: root, id: id, token: token); return
         }
@@ -429,7 +435,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        if enhanced && ["mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
+        if enhanced && ["n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
             if archiveController == nil { let child = ArchiveController(); addChild(child); archiveController = child }
             showContent(archiveController!.view)
             PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (ArchiveDocument, String, String?) in
@@ -437,8 +443,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                     let snapshot = try AccessBroker.readBytes(url, root: root, limits: limits, cancellation: token)
                     let archive = try ArchiveDocument.parse(snapshot.data, name: url.lastPathComponent, cancellation: token)
                     let summary: String?
-                    if ["mcpb", "dxt"].contains(url.pathExtension.lowercased()) {
-                        do { summary = try MCPBundle.summary(archive, cancellation: token) }
+                    if ["n8np", "mcpb", "dxt"].contains(url.pathExtension.lowercased()) {
+                        do { summary = try MCPBundle.summary(archive, name:url.lastPathComponent, cancellation: token) }
                         catch is CancellationError { throw CancellationError() }
                         catch { summary = error.localizedDescription }
                     } else { summary = nil }
@@ -502,7 +508,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets) in
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets, DiagramDocument?) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
                 var snapshot: SourceSnapshot
@@ -520,8 +526,9 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 }
                 self?.logger.notice("preview read_ms=\((ProcessInfo.processInfo.systemUptime - loadStarted) * 1000, privacy: .public) bytes=\(snapshot.byteCount, privacy: .public)")
                 var assets = MarkdownAssets()
-                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice
+                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice; var graph: DiagramDocument?
                 do {
+                    if !snapshot.partial && enhanced { graph = try DiagramDocument.parseIfKnown(snapshot.text, name:url.lastPathComponent, cancellation:token)?.resolvingCards(document:url,root:root,cancellation:token) }
                     switch (snapshot.partial || !enhanced) ? PreviewFormat.code : detected {
                     case .markdown:
                         markdown = try MarkdownModel.parse(snapshot.text, cancellation: token)
@@ -534,13 +541,14 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 catch { warning = error.localizedDescription + L10n.text(" · 已降级源码") }
                 try token.check()
                 try token.check()
-                return (snapshot, markdown, tree, table, warning, assets)
+                return (snapshot, markdown, tree, table, warning, assets, graph)
         }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 switch result {
                 case .success(let loaded):
                     if loaded.0.byteOffset == 0 { self.pageHistory = [] }
                     self.source = loaded.0; self.rendered = loaded.1; self.jsonTree = loaded.2; self.tableData = loaded.3; self.parseWarning = loaded.4; self.markdownAssets = loaded.5
+                    if let graph = loaded.6 { self.advancedView = DiagramPreview(graph) }
                     if enhanced { self.prepareHTMLPreview(url: url, snapshot: loaded.0) }
                     self.mode.selectedSegment = 0; self.present(); self.startRichRendering()
                     self.scroll.contentView.scroll(to: .zero); self.scroll.reflectScrolledClipView(self.scroll.contentView)
@@ -609,7 +617,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             NSAccessibility.post(element: self.view, notification: .announcementRequested, userInfo: [.announcement: message, .priority: NSAccessibilityPriorityLevel.medium.rawValue])
         }
     }
-    func cancelPending() { imageDetails = nil; imageMetadataText = nil; htmlPreview?.cancel(); htmlPreview = nil; mode.setLabel(L10n.text("阅读"), forSegment: 0); highlightToken?.cancel(); highlightToken = nil; closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
+    func cancelPending() { (advancedView as? MeshPreview)?.cancel(); advancedView = nil; imageDetails = nil; imageMetadataText = nil; htmlPreview?.cancel(); htmlPreview = nil; mode.setLabel(L10n.text("阅读"), forSegment: 0); highlightToken?.cancel(); highlightToken = nil; closeSystemPreview(); richTask?.cancel(); richTask = nil; richRenderer?.cancel(); richRenderer = nil; remoteTask?.cancel(); remoteTask = nil; remoteLoader?.cancel(); remoteLoader = nil; remoteButton.isEnabled = true; cancellation?.cancel(); cancellation = nil; generation = UUID(); finish(CancellationError()) }
     public func close() {
         pageBar.isHidden = true; pageHeight?.constant = 0
         savePosition(); pageHistory = []; releaseImageDirectory()
@@ -619,7 +627,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         json.tree = nil; json.source = ""; json.outline.reloadData()
         table.data = .init(rows: [], partial: false); table.rowOrder = []; table.table.reloadData()
         preparedHighlights = nil; markdownAssets = .init(); canvasImage = nil; picture.image = nil; matches = []
-        text.model = .plain(""); text.string = ""
+        text.model = .plain(""); text.string = ""; showContent(scroll)
         logger.notice("closed / pending work cancelled")
     }
     @objc func cancelLoad() {
@@ -726,6 +734,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         for item in headings.itemTitles.dropFirst() { overflow.addItem(withTitle:L10n.text("标题：")+item) }
         htmlPreview?.setPresented(renderedMode)
         if renderedMode, let htmlPreview { showContent(htmlPreview) }
+        else if renderedMode, let advancedView { showContent(advancedView) }
         else if renderedMode, let canvasImage { picture.image = canvasImage; showContent(picture) }
         else if renderedMode, let jsonTree { json.show(jsonTree, source: source.text); showContent(json.view) }
         else if renderedMode, let tableData {
@@ -734,7 +743,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         }
         else { showContent(scroll) }
         mode.setLabel(htmlPreview != nil ? L10n.text("效果") : L10n.text("阅读"), forSegment: 0)
-        mode.isEnabled = htmlPreview != nil || canvasImage != nil || rendered != nil || jsonTree != nil || tableData != nil
+        mode.isEnabled = advancedView != nil || htmlPreview != nil || canvasImage != nil || rendered != nil || jsonTree != nil || tableData != nil
         status.stringValue = "\(virtualDocument ? virtualTitle : currentURL?.lastPathComponent ?? "") · \(source.encoding) · \(source.byteCount) bytes · \(format.rawValue) · \(virtualDocument ? L10n.text("已加载条目（有界）") : source.partial ? L10n.text("分页源码片段") : tableData?.partial == true ? L10n.text("前 5,000 行，部分内容") : L10n.text("完整文件"))"
         if canvasImage != nil { status.stringValue = L10n.text("\(currentURL?.lastPathComponent ?? "") · \(canvasLabel) · 离线只读画布 · 可切换源码") }
         if htmlPreview != nil { status.stringValue += " · " + (Bundle.main.bundleURL.pathExtension == "appex" ? L10n.text("HTML · JavaScript 与外部资源已启用 · 页面快照") : L10n.text("HTML · JavaScript 与外部资源已启用")) }
@@ -838,11 +847,12 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         logger.notice("explicit search focus accepted=\(accepted, privacy: .public)")
     }
     @objc func selectBody() {
-        let content = (nativeDocumentPreview?.documentView as? NSTextView) ?? imageMetadataText ?? text
+        let content = (nativeDocumentPreview?.documentView as? NSTextView) ?? (advancedView as? ScientificPreview)?.summary ?? imageMetadataText ?? text
         view.window?.makeFirstResponder(content); content.selectAll(nil)
     }
     @objc func copySelection() {
         if let content = nativeDocumentPreview?.documentView as? NSTextView { content.copy(nil) }
+        else if let scientific = advancedView as? ScientificPreview { scientific.summary.copy(nil) }
         else if let imageMetadataText { imageMetadataText.copy(nil) }
         else if currentContent === table.view { table.copyCell() }
         else if currentContent === json.view { json.copyValue() }
