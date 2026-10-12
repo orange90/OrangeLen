@@ -141,7 +141,11 @@ final class CollectionController: NSViewController, NSTableViewDataSource, NSTab
                     if continuousNotebook {
                         do {
                             let content = try loaded.2(0,cancellation)
-                            self.reader.openMemory(content.0,origin:url,revision:loaded.0,assets:content.1,restoring:state?.position)
+                            if url.pathExtension.lowercased() == "ipynb", content.0.text.isEmpty {
+                                self.reader.showMessage(url.lastPathComponent + L10n.text(" · 没有可预览条目"))
+                            } else {
+                                self.reader.openMemory(content.0,origin:url,revision:loaded.0,assets:content.1,restoring:state?.position)
+                            }
                         } catch { completion(error); return }
                     } else if !self.titles.isEmpty {
                         let selected = (state?.section ?? SettingsStore.shared.restoreSection(url,revision:loaded.0)).flatMap { self.entryIDs.firstIndex(of:$0) } ?? 0

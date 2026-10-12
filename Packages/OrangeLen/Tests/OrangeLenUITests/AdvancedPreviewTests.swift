@@ -5,7 +5,13 @@ import OrangeLenCore
 @testable import OrangeLenUI
 
 @MainActor final class AdvancedPreviewTests: XCTestCase {
-    func fixture(_ name: String) -> URL { URL(fileURLWithPath:#filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Tests/Fixtures/advanced-outputs/" + name) }
+    func fixture(_ name: String) -> URL {
+        #if SWIFT_PACKAGE
+        return URL(fileURLWithPath:#filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Tests/Fixtures/advanced-outputs/" + name)
+        #else
+        return Bundle(for:AdvancedPreviewTests.self).resourceURL!.appendingPathComponent("advanced-outputs/" + name)
+        #endif
+    }
     func open(_ reader: ReaderController,_ name: String) async {
         let ready = expectation(description:name); reader.open(fixture(name)) { error in XCTAssertNil(error,name); ready.fulfill() }; await fulfillment(of:[ready],timeout:40)
     }
@@ -73,6 +79,13 @@ import OrangeLenCore
     func testReactMDXAndTypesetDocumentsActuallyRender() async throws {
         _ = NSApplication.shared; let reader = ReaderController(); reader.loadViewIfNeeded(); defer {reader.close()}
         for file in ["component.jsx","component.tsx","document.mdx"] { await open(reader,file); XCTAssertNotNil(reader.canvasImage,reader.parseWarning) }
-        for file in ["document.tex","document.typ"] { await open(reader,file); XCTAssertNotNil(reader.pdf.document,reader.parseWarning); XCTAssertTrue(reader.advancedView === reader.pdf,reader.parseWarning) }
+        for file in ["document.tex","document.typ"] {
+            await open(reader,file); XCTAssertNotNil(reader.pdf.document,reader.parseWarning); XCTAssertTrue(reader.advancedView === reader.pdf,reader.parseWarning)
+            if file == "document.tex" {
+                let text = try XCTUnwrap(reader.pdf.document?.string)
+                XCTAssertTrue(text.contains("E"),text)
+                XCTAssertTrue(text.contains("m") && text.contains("c"),text)
+            }
+        }
     }
 }

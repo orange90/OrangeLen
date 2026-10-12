@@ -1,10 +1,47 @@
 # OrangeLen
 
-**Quick Look for Developers**
+**为开发者设计，面向 AI 时代各种产出的 macOS 快速预览工具。**
 
-Native macOS host app + modern view-controller Quick Look Preview Extension, with shared SwiftPM Core/UI modules. This is a working **M1 + M2 development build; acceptance is still incomplete**.
+*Quick Look for Developers. Built for the outputs of the AI era.*
 
-On the tested M3 Pro / macOS 26.6.2 machine, Finder invokes OrangeLen for Swift, Markdown (with a competing extension isolated), JSON, YAML, TOML, XML, TSV and Makefile fixtures. **M0 native feasibility exit criteria are met; M1 is not fully accepted yet. Folder invocation, enumeration and selected Makefile reading have been observed. By the user’s updated scope, Finder keyboard search is optional and existing system previews may handle their formats.** Folder browsing in the host is a supplementary entry point, not fulfillment of Finder folder preview. See [support matrix](docs/format-support.md) and [verification](docs/verification.md) before relying on a format.
+AI 写完了，先看一眼。
+
+一轮 AI 协作，可能留下代码、Markdown 报告、Mermaid 图、React 组件、数据表、生成图片，甚至一个 3D 模型。检查这些产出，往往要在编辑器、浏览器和各种专用工具之间来回切换。
+
+OrangeLen 把这一步放进 macOS 的预览流程：**在 Finder 选中文件、按下空格；或预览整个文件夹，在同一窗口里逐个检查产出。** 从代码高亮到组件效果，从工作流连线到图片生成参数，让文件里的内容更容易看懂。
+
+## 从源码到效果，从文件到上下文
+
+OrangeLen 围绕开发者检查产出的方式设计：代码要读得清，结构化数据要能展开，图表要看见连线，生成内容要能查看已有参数。支持效果预览的格式还可以切回源码，方便核对 AI 到底写了什么。
+
+| 你要检查的产出 | OrangeLen 帮你看什么 |
+| --- | --- |
+| 代码与配置 | 离线语法高亮、行号、查找和原文复制；JSON / JSONC / JSON5 可展开结构与复制路径 |
+| 文档与研究结果 | Markdown 大纲、公式与 Mermaid；Notebook 连续阅读已保存的内容和输出；LaTeX 基础排版与单文件 Typst PDF |
+| 图表与自动化工作流 | Mermaid、Excalidraw、Draw.io、JSON Canvas，以及 ComfyUI / n8n / Dify 的节点和连线 |
+| 前端组件与页面 | 单文件 JSX / TSX / MDX 的离线效果快照与源码切换；HTML 页面预览与源码查看 |
+| 数据与实验文件 | CSV / TSV 表格、JSONL 记录、SQLite 表；Parquet 列信息与样本、NumPy 数组的形状与样本值 |
+| AI 图片与视频配套文件 | 图片旁的已有 prompt、seed、模型等生成参数；SRT / VTT 字幕的时间、文本与源码 |
+| 模型、3D 与交付包 | OBJ / STL / GLTF / GLB 静态模型；Safetensors / GGUF 张量目录与元数据；`.skill`、MCPB / DXT、n8n 包的清单和成员 |
+
+这些能力也适用于手写代码和已有文件。**开发者工作流与 AI 产出预览，是 OrangeLen 的两个设计重点。** 各格式的完整范围见 [开发者格式](docs/developer-formats.md)、[AI 产出预览](docs/ai-output-previews.md) 和 [高级 AI 产出预览](docs/advanced-output-previews.md)。
+
+## 适合放进你的工作流
+
+- **AI 交付后，快速检查结果。** 看报告里的公式和图，检查组件快照，展开数据结构，再切回源码核对细节。
+- **接手项目时，先浏览目录。** 在文件夹预览中展开目录、点选代码和文档，在同一右侧阅读区了解项目。
+- **安装或导入前，先看包里有什么。** 查看 Skill、MCP 扩展包和归档的清单、目录与成员内容。
+- **整理实验产出时，连同参数一起看。** 查看图片已有的生成参数、数组形状和模型张量目录，帮助辨认文件。
+
+原生 macOS 主应用与七类 Quick Look 扩展共用阅读组件，支持简体中文与英文。多数专用渲染器随应用打包，可离线预览；HTML 页面支持脚本和网络资源，Markdown 远程图片则需手动点击加载。具体行为见下文。
+
+## 开始使用与当前状态
+
+当前提供可构建、可安装的开发版本，尚未完成正式分发签名、公证与跨机器验收。构建安装步骤见 [Build and run](#build-and-run)，Finder 使用步骤见 [Finder](#finder)。
+
+**Finder 单文件预览是否由 OrangeLen 接管，取决于 macOS 的文件类型分派。** 部分格式需要从 OrangeLen 主应用或 Finder 文件夹预览打开，例如本机 TSX 组件效果和图片生成参数。专用预览有各自的格式与资源边界；组件效果是单文件快照，模型文件展示元数据，C2PA 结构预览不验证真实性。
+
+已记录的现场验证主要来自 Apple M3 Pro / macOS 26.6.2；通用 Release 构建不代表 Intel 实机已验收。请结合 [支持矩阵](docs/format-support.md)、[当前入口与边界](docs/current-contract.md)、[验证记录](docs/verification.md) 和 [共享资源 Release 验收](docs/resource-packaging.md) 判断具体格式与入口。
 
 ## 当前边界契约（2026-10-08）
 
@@ -33,7 +70,7 @@ Requirements: Xcode 26.5 was used (macOS 26.5 SDK, Swift); deployment target mac
 ./scripts/install-dev.sh
 ```
 
-The first build fetches pinned swift-markdown 0.8.0 / swift-cmark 0.9.0 dependencies. Runtime rendering is offline; remote images use the network only after an explicit user click. The committed Xcode project builds directly; XcodeGen is needed only after editing `project.yml`:
+The first build fetches pinned swift-markdown 0.8.0 / swift-cmark 0.9.0 dependencies. Bundled specialist renderers work offline; HTML previews allow network resources, while Markdown remote images load only after an explicit user click. The committed Xcode project builds directly; XcodeGen is needed only after editing `project.yml`:
 
 ```sh
 xcodegen generate

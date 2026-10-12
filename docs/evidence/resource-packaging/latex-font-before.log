@@ -1,0 +1,39 @@
+Building for production...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/4] Compiling OrangeLenUITests AIOutputPreviewTests.swift
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:61:49: warning: weak variable 'mesh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+59 |         let ready = expectation(description:"fallback"); reader.open(file) { error in XCTAssertNil(error); ready.fulfill() }; await fulfillment(of:[ready],timeout:10)
+60 |         XCTAssertEqual(reader.text.string,"<mxfile>broken"); XCTAssertTrue(reader.parseWarning.contains("source") || reader.parseWarning.contains("源码"))
+61 |         await open(reader,"mesh.glb"); weak var mesh = reader.advancedView as? MeshPreview; reader.close(); XCTAssertNil(mesh?.renderer.scene); try await Task.sleep(nanoseconds:50_000_000); XCTAssertNil(mesh)
+   |                                                 `- warning: weak variable 'mesh' was never mutated; consider changing to 'let' constant [#WeakMutability]
+62 |     }
+63 |     func testAdvancedViewsFitFolderWindowAfterResize() async throws {
+
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>
+[4/6] Compiling OrangeLenPackageTests runner.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking OrangeLenPackageTests
+Build complete! (9.43s)
+Test Suite 'Selected tests' started at 2026-10-12 13:50:15.454.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-12 13:50:15.455.
+Test Suite 'AdvancedPreviewTests' started at 2026-10-12 13:50:15.455.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' started.
+/Users/huangzhe/Documents/GitHub/OrangeLen/Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift:86: error: -[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender] : XCTAssertTrue failed - 1 LaTeX Preview
+= 2
+A typeset document with math: .
+•
+•
+First item
+Second item
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' failed (2.765 seconds).
+Test Suite 'AdvancedPreviewTests' failed at 2026-10-12 13:50:18.220.
+	 Executed 1 test, with 1 failure (0 unexpected) in 2.765 (2.765) seconds
+Test Suite 'OrangeLenPackageTests.xctest' failed at 2026-10-12 13:50:18.220.
+	 Executed 1 test, with 1 failure (0 unexpected) in 2.765 (2.765) seconds
+Test Suite 'Selected tests' failed at 2026-10-12 13:50:18.220.
+	 Executed 1 test, with 1 failure (0 unexpected) in 2.765 (2.766) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

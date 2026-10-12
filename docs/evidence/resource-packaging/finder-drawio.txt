@@ -1,0 +1,115 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 toggle button Description: Show or hide directory tree, Value: on
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 search text field (settable) Filter files
+			15 button Search
+		16 button Folder Overview, Description: move
+		17 text Files
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline Project directory tree
+				20 row (selectable, expanded) Value: advanced-outputs, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selectable) array.npy, Description: Preview array.npy
+Preview array.npy
+				23 row (selectable) arrays.npz, Description: Preview arrays.npz
+Preview arrays.npz
+				24 row (selectable) board.canvas, Description: Preview board.canvas
+Preview board.canvas
+				25 row (selectable) card.md, Description: Preview card.md
+Preview card.md
+				26 row (selectable) comfy-api.json, Description: Preview comfy-api.json
+Preview comfy-api.json
+				27 row (selectable) comfy.json, Description: Preview comfy.json
+Preview comfy.json
+				28 row (selectable) component.jsx, Description: Preview component.jsx
+Preview component.jsx
+				29 row (selectable) component.tsx, Description: Preview component.tsx
+Preview component.tsx
+				30 row (selectable) credentials.c2pa, Description: Preview credentials.c2pa
+Preview credentials.c2pa
+				31 row (selected) diagram.drawio, Description: Preview diagram.drawio
+Preview diagram.drawio
+				32 row (selectable) dify.yml, Description: Preview dify.yml
+Preview dify.yml
+				33 row (selectable) document.mdx, Description: Preview document.mdx
+Preview document.mdx
+				34 row (selectable) document.tex, Description: Preview document.tex
+Preview document.tex
+				35 row (selectable) document.typ, Description: Preview document.typ
+Preview document.typ
+				36 row (selectable) fortran.npy, Description: Preview fortran.npy
+Preview fortran.npy
+				37 row (selectable) generation.jpg, Description: Preview generation.jpg
+Preview generation.jpg
+				38 row (selectable) generation.jpg.json, Description: Preview generation.jpg.json
+Preview generation.jpg.json
+				39 row (selectable) generation.xmp, Description: Preview generation.xmp
+Preview generation.xmp
+				40 row (selectable) mesh.glb, Description: Preview mesh.glb
+Preview mesh.glb
+				41 row (selectable) mesh.gltf, Description: Preview mesh.gltf
+Preview mesh.gltf
+				42 row (selectable) mesh.obj, Description: Preview mesh.obj
+Preview mesh.obj
+				43 row (selectable) mesh.stl, Description: Preview mesh.stl
+Preview mesh.stl
+				44 row (selectable) model.gguf, Description: Preview model.gguf
+Preview model.gguf
+				45 row (selectable) n8n.json, Description: Preview n8n.json
+Preview n8n.json
+				46 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				47 row (selectable) sample.latent, Description: Preview sample.latent
+Preview sample.latent
+				48 row (selectable) table.parquet, Description: Preview table.parquet
+Preview table.parquet
+				49 row (selectable) weights.safetensors, Description: Preview weights.safetensors
+Preview weights.safetensors
+				50 row (selectable) workflows.n8np, Description: Preview workflows.n8np
+Preview workflows.n8np
+			51 scroll bar (settable, float) 0.2810500741074276
+				52 value indicator (settable, float) 0.2810500741074276
+				53 increment arrow button
+				54 decrement arrow button
+				55 increment page button
+				56 decrement page button
+		57 tickbox Show hidden & ignored, Value: 0
+		58 button Refresh Directory, Description: refresh
+		59 text Scanned 29 items in this directory (complete)
+		60 splitter (disabled, settable, float) 220
+		61 splitter (disabled, settable, float) 0
+		62 pop-up button 原始页
+		63 text Draw.io · Basic shapes, labels and connections · custom stencils/images/styles may be simplified · source retained
+		64 button −
+		65 button +
+		66 button Fit to Window
+		67 button 100%
+		68 button Back to Document
+		69 text 79% · Drag to pan
+	70 text diagram.drawio · UTF-8 · 898 bytes · code · Full file
+	71 close button close panel button
+	72 full screen button full screen window button
+	73 button Description: Share file, ID: QLControlShare
+	74 text advanced-outputs
+75 menu bar
+	76 Finder
+	77 File
+	78 Edit
+	79 View
+	80 Go
+	81 Window
+	82 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

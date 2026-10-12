@@ -1,0 +1,41 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 split group
+		3 splitter (disabled, settable, float) 0
+		4 splitter (disabled, settable, float) 0
+		5 pop-up button demo table
+		6 button (disabled) Previous Page
+		7 button (disabled) Next Page
+		8 text Rows 1–1 · End of data
+		9 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+			10 table SQLite paginated data table
+				11 row (selectable)
+					12 cell
+						13 text Help: TEXT：中文 👩🏽‍💻, Value: 中文 👩🏽‍💻
+					14 cell
+						15 text Help: Number：9007199254740993, Value: 9007199254740993
+					16 cell
+						17 text Help: BLOB：[BLOB 3 bytes], Value: [BLOB 3 bytes]
+				18 container
+					19 sort button name
+					20 sort button value
+					21 sort button payload
+			22 scroll bar (disabled, settable, float) 0
+			23 scroll bar (disabled, settable, float) 0
+		24 text name: TEXT   |   value: INTEGER   |   payload: BLOB
+	25 text SQLite · Read-only snapshot · Click column headers to sort · 500 rows per page
+	26 close button close panel button
+	27 full screen button full screen window button
+	28 button Description: Share file, ID: QLControlShare
+	29 text sample.sqlite
+30 menu bar
+	31 Finder
+	32 File
+	33 Edit
+	34 View
+	35 Go
+	36 Window
+	37 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

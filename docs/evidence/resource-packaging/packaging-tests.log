@@ -1,0 +1,10 @@
+testConsolidatesWithoutChangingAnyResourceAndIsIdempotent (test_resource_packaging.ResourcePackagingTests) ... ok
+testMismatchRefusesAllRemovals (test_resource_packaging.ResourcePackagingTests) ... ok
+testMissingSharedResourceAndSymlinkRefused (test_resource_packaging.ResourcePackagingTests) ... ok
+testUnrelatedAppRefused (test_resource_packaging.ResourcePackagingTests) ... ok
+testVerificationNeverModifiesProduct (test_resource_packaging.ResourcePackagingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.352s
+
+OK

@@ -1,0 +1,21 @@
+Building for production...
+[0/3] Copying LaTeXRenderer.html
+[1/5] Copying typst.wasm
+[1/5] Copying TypstCompiler.html
+[3/5] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.24s)
+Test Suite 'Selected tests' started at 2026-10-12 13:51:03.431.
+Test Suite 'OrangeLenPackageTests.xctest' started at 2026-10-12 13:51:03.432.
+Test Suite 'AdvancedPreviewTests' started at 2026-10-12 13:51:03.432.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' started.
+Test Case '-[OrangeLenUITests.AdvancedPreviewTests testReactMDXAndTypesetDocumentsActuallyRender]' passed (2.691 seconds).
+Test Suite 'AdvancedPreviewTests' passed at 2026-10-12 13:51:06.123.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.691 (2.691) seconds
+Test Suite 'OrangeLenPackageTests.xctest' passed at 2026-10-12 13:51:06.123.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.691 (2.691) seconds
+Test Suite 'Selected tests' passed at 2026-10-12 13:51:06.123.
+	 Executed 1 test, with 0 failures (0 unexpected) in 2.691 (2.692) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

@@ -12,10 +12,11 @@ public enum L10n {
 
     private static func resourceBundle(language: String) -> Bundle {
         let selected = supportedLanguages.contains(language) ? language : "en"
+        let package = PackageResources.bundle(.core, fallback: Bundle.module) ?? Bundle.main
         // SwiftPM normalizes localization directory names (zh-Hans → zh-hans).
-        let directory = Bundle.module.localizations.first { $0.caseInsensitiveCompare(selected) == .orderedSame } ?? selected
-        guard let url = Bundle.module.resourceURL?.appendingPathComponent(directory + ".lproj"),
-              let bundle = Bundle(url: url) else { return Bundle.module }
+        let directory = package.localizations.first { $0.caseInsensitiveCompare(selected) == .orderedSame } ?? selected
+        guard let url = package.resourceURL?.appendingPathComponent(directory + ".lproj"),
+              let bundle = Bundle(url: url) else { return package }
         return bundle
     }
 

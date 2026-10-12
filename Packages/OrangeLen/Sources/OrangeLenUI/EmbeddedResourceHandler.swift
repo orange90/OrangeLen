@@ -13,7 +13,7 @@ final class EmbeddedResourceHandler: NSObject, WKURLSchemeHandler {
             let data: Data
             if name == "input.parquet", let input { data = input }
             else {
-                guard names.contains(name), let file = Bundle.module.url(forResource:(name as NSString).deletingPathExtension,withExtension:(name as NSString).pathExtension) else { throw URLError(.resourceUnavailable) }
+                guard names.contains(name), let file = UIResources.url(forResource:(name as NSString).deletingPathExtension,withExtension:(name as NSString).pathExtension) else { throw URLError(.resourceUnavailable) }
                 data = try Data(contentsOf:file,options:.mappedIfSafe)
             }
             let response = HTTPURLResponse(url:url,statusCode:200,httpVersion:"HTTP/1.1",headerFields:["Content-Type":name.hasSuffix("wasm") ? "application/wasm" : "application/octet-stream","Content-Length":String(data.count),"Access-Control-Allow-Origin":"*"])!

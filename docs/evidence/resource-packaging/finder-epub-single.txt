@@ -1,0 +1,52 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 split group
+		3 splitter (disabled, settable, float) 0
+		4 splitter (disabled, settable, float) 0
+		5 split group
+			6 text 2 items · Scripts and CSS are not executed; external links are not requested.
+			7 scroll area Secondary Actions: Scroll Up, Scroll Down
+				8 table Container entry list
+					9 row (selected)
+						10 cell (selected)
+							11 button 第一章
+					12 row (selectable)
+						13 cell
+							14 button 第二章
+					15 sort button Chapters / Entries / Tables / Cells
+				16 scroll bar (disabled, settable, float) 0
+			17 splitter (disabled, settable, float) 240
+			18 pop-up button Display Settings
+			19 pop-up button More Actions
+			20 button Find
+			21 search text field (settable) Search loaded content (click to type)
+				22 button Search
+			23 button Copy Selection
+			24 splitter (disabled, settable, float) 0
+			25 split group
+				26 splitter (disabled, settable, float) 0
+				27 scroll area
+					28 text entry area Description: OrangeLen read-only content, Value: **第一章**
+中文阅读第一句。English second sentence. Emoji 👩🏽‍💻。
+[attached image: 棋盘] 棋盘
+
+						29 attached image 棋盘
+			30 text 第一章 · Container memory · 121 bytes · markdown · Loaded entries (bounded)
+Scripts and CSS are not executed; external links are not requested.
+	31 text sample.epub · Container preview · Local, read-only
+	32 close button close panel button
+	33 full screen button full screen window button
+	34 button Description: Share file, ID: QLControlShare
+	35 button Open with Books, Description: Open file, ID: QLControlOpen
+	36 text sample.epub
+37 menu bar
+	38 Finder
+	39 File
+	40 Edit
+	41 View
+	42 Go
+	43 Window
+	44 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

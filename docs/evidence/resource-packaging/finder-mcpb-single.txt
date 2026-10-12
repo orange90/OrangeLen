@@ -1,0 +1,109 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 split group
+		3 splitter (disabled, settable, float) 0
+		4 splitter (disabled, settable, float) 0
+		5 split group
+			6 search text field (settable) Filter full archive paths
+				7 button Search
+			8 pop-up button Name A–Z
+			9 button Bundle info
+			10 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+				11 outline Archive directory tree
+					12 row (selectable, expanded) Secondary Actions: Collapse, Value: server
+44 bytes
+						13 disclosure triangle 1
+					14 row (selectable) index.js, Value: 44 bytes, Description: Preview archive member server/index.js
+Preview archive member server/index.js
+					15 row (selectable) manifest.json, Value: 486 bytes, Description: Preview archive member manifest.json
+Preview archive member manifest.json
+					16 row (selectable) README.md, Value: 54 bytes, Description: Preview archive member README.md
+Preview archive member README.md
+					17 container
+						18 sort button Archive Directory
+						19 sort button Expanded Size
+				20 scroll bar (settable, float) 0
+					21 value indicator (settable, float) 0
+					22 increment arrow button
+					23 decrement arrow button
+					24 increment page button
+					25 decrement page button
+				26 scroll bar (disabled, settable, float) 0
+			27 text 3 items · 584 bytes · No extraction to disk
+			28 splitter (disabled, settable, float) 320
+			29 pop-up button Display Settings
+			30 pop-up button More Actions
+			31 button Find
+			32 search text field (settable) Search loaded content (click to type)
+				33 button Search
+			34 button Copy Selection
+			35 splitter (disabled, settable, float) 0
+			36 split group
+				37 splitter (disabled, settable, float) 0
+				38 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+					39 text entry area Description: OrangeLen read-only content, Value: MCP bundle
+
+Name: preview-example
+Version: 1.0.0
+Note: MCP 包预览示例
+Runtime: node
+Entry point: server/index.js
+
+Original manifest
+{
+  "manifest_version": "0.3",
+  "name": "preview-example",
+  "version": "1.0.0",
+  "description": "MCP 包预览示例",
+  "author": {
+    "name": "OrangeLen"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ]
+    }
+  },
+  "user_config": {
+    "workspace": {
+      "type": "directory",
+      "title": "工作目录",
+      "required": true
+    }
+  }
+}
+					40 scroll bar (settable, float) 0.5
+						41 value indicator (settable, float) 0.5
+						42 increment arrow button
+						43 decrement arrow button
+						44 increment page button
+						45 decrement page button
+					46 scroll bar (settable, float) 0.04010025062656641
+						47 value indicator (settable, float) 0.04010025062656641
+						48 increment arrow button
+						49 decrement arrow button
+						50 increment page button
+						51 decrement page button
+					52 ruler
+			53 text MCP bundle · Container memory · 623 bytes · text · Loaded entries (bounded)
+	54 text Archive · Directory tree / Full-path filter / Size sorting · Members loaded on demand
+	55 close button close panel button
+	56 full screen button full screen window button
+	57 button Description: Share file, ID: QLControlShare
+	58 button Open with Claude, Description: Open file, ID: QLControlOpen
+	59 text sample.mcpb
+60 menu bar
+	61 Finder
+	62 File
+	63 Edit
+	64 View
+	65 Go
+	66 Window
+	67 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

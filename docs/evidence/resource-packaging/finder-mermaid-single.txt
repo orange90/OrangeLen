@@ -1,0 +1,38 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 button Find
+	7 search text field (settable) Search loaded content (click to type)
+		8 button Search
+	9 button Select All
+	10 button Copy Selection
+	11 button Cancel Loading
+	12 split group
+		13 splitter (disabled, settable, float) 0
+		14 splitter (disabled, settable, float) 0
+		15 button −
+		16 button +
+		17 button Fit to Window
+		18 button 100%
+		19 button Back to Document
+		20 text 126% · Drag to pan
+	21 text diagram.mmd · Mermaid · Offline read-only canvas · Source view available
+	22 close button close panel button
+	23 full screen button full screen window button
+	24 button Description: Share file, ID: QLControlShare
+	25 button Open with Typora, Description: Open file, ID: QLControlOpen
+	26 text diagram.mmd
+27 menu bar
+	28 Finder
+	29 File
+	30 Edit
+	31 View
+	32 Go
+	33 Window
+	34 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

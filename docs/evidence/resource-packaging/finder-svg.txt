@@ -1,0 +1,85 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 radio button Description: Reading, Value: 1
+	2 radio button Description: Source, Value: 0
+	3 pop-up button (disabled) Contents
+	4 pop-up button Display Settings
+	5 pop-up button More Actions
+	6 toggle button Description: Show or hide directory tree, Value: on
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 search text field (settable) Filter files
+			15 button Search
+		16 button Folder Overview, Description: move
+		17 text Files
+		18 scroll area Secondary Actions: Scroll Up, Scroll Down
+			19 outline Project directory tree
+				20 row (selectable, expanded) Value: developer-formats, Secondary Actions: Collapse
+					21 disclosure triangle 1
+				22 row (selectable) app.log.gz, Description: Preview app.log.gz
+Preview app.log.gz
+				23 row (selectable) binary.log.gz, Description: Preview binary.log.gz
+Preview binary.log.gz
+				24 row (selectable) bomb.log.gz, Description: Preview bomb.log.gz
+Preview bomb.log.gz
+				25 row (selectable) Component.svelte, Description: Preview Component.svelte
+Preview Component.svelte
+				26 row (selectable) Component.vue, Description: Preview Component.vue
+Preview Component.vue
+				27 row (selectable) config.json5, Description: Preview config.json5
+Preview config.json5
+				28 row (selectable) config.json5.gz, Description: Preview config.json5.gz
+Preview config.json5.gz
+				29 row (selectable) Dockerfile.dev, Description: Preview Dockerfile.dev
+Preview Dockerfile.dev
+				30 row (selected) icon.svg, Description: Preview icon.svg
+Preview icon.svg
+				31 row (selectable) Page.astro, Description: Preview Page.astro
+Preview Page.astro
+				32 row (selectable) records.jsonl.gz, Description: Preview records.jsonl.gz
+Preview records.jsonl.gz
+				33 row (selectable) settings.jsonc, Description: Preview settings.jsonc
+Preview settings.jsonc
+				34 row (selectable) table.csv.gz, Description: Preview table.csv.gz
+Preview table.csv.gz
+				35 row (selectable) table.tsv.gz, Description: Preview table.tsv.gz
+Preview table.tsv.gz
+				36 row (selectable) unsafe.svg, Description: Preview unsafe.svg
+Preview unsafe.svg
+			37 scroll bar (settable, float) 0
+				38 value indicator (settable, float) 0
+				39 increment arrow button
+				40 decrement arrow button
+				41 increment page button
+				42 decrement page button
+		43 tickbox Show hidden & ignored, Value: 0
+		44 button Refresh Directory, Description: refresh
+		45 text Scanned 18 items in this directory (complete)
+		46 splitter (disabled, settable, float) 220
+		47 splitter (disabled, settable, float) 0
+		48 button −
+		49 button +
+		50 button Fit to Window
+		51 button 100%
+		52 button Back to Document
+		53 text 157% · Drag to pan
+	54 text icon.svg · SVG · Offline read-only canvas · Source view available
+	55 close button close panel button
+	56 full screen button full screen window button
+	57 button Description: Share file, ID: QLControlShare
+	58 text developer-formats
+59 menu bar
+	60 Finder
+	61 File
+	62 Edit
+	63 View
+	64 Go
+	65 Window
+	66 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

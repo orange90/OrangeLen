@@ -1,0 +1,58 @@
+{
+  "product": {
+    "logicalBytes": 281519549,
+    "legacyBundleCopies": {
+      "OrangeLen_OrangeLenCore.bundle": 0,
+      "OrangeLen_OrangeLenUI.bundle": 0
+    },
+    "sharedFrameworkCopies": 1,
+    "sharedResourceBytes": 59587678,
+    "payload": {
+      "ComponentRenderer.html": "922bbe4760eac2a98564d37166473e6c911f4df5068452a0d74737e1ce794800",
+      "ExcalidrawRenderer.html": "a0ed3b703a24806757117d6e95e28f466eb5d795367c99e5abbf6ccfb19b1281",
+      "Highlight.js": "2ecfdb6cad7af4cb2aca3103353da2a8eda4a7049a6dc9f378fc9c5e2b4b9661",
+      "LaTeXRenderer.html": "9fbe0e5c8836a921d2262ab9b88626d9b61dc7628c13eb50839e39d8069d6af1",
+      "LibertinusSerif-Regular.otf": "fcf06307a77367394fcb0ccb241e59eea70dba3d732be309647611224679c733",
+      "NewCMMath-Book.otf": "b2e655d5cae5ab9569fa6f5d94e929156fe70bd3548d916b4b23d1a1c1a55693",
+      "NotoSerifCJKsc-Regular.otf": "9ccb922287f4b4a941ace82321ee6e1ff6340eb53f1c13b0e6285a117d1b0057",
+      "ParquetRenderer.html": "593efbbba5bfd268ca3036cd80c38d70815eec5fe5e7c9f3e8e894e3aaf7539b",
+      "RichRenderer.html": "2432686ae7ea2d56575bcd4a5949981a67233d1c6fe9789c0033a6989d0bb36b",
+      "SVGRenderer.html": "08eae19c0802a7a2408c27394b574ad17d6cb7c04089b1b398de0dce453a0fad",
+      "TypstCompiler.html": "5c10d006739bed6b60870d3f26cbc2bed5e052c2d25b15b0b11b123a491e341f",
+      "en.lproj/Localizable.strings": "3bededa111517f6a48cc8a15df9c5d6279585cc0a81066fa3a0f499328813a46",
+      "parquet.wasm": "4714c978d78da8cb7bb61bfb86d603abf28fff6dfa46eb4490d0fad7df2482fb",
+      "typst.wasm": "1fc968438a672366dfec39c96c842c26ed29caff4eb1bcaab19a6c60867de5fd",
+      "zh-hans.lproj/Localizable.strings": "52aea721b2a3dec2ab365393b281d0055a109b00103ae698d96a845c9071cb8e"
+    }
+  },
+  "baseline": {
+    "logicalBytes": 699308507,
+    "legacyBundleCopies": {
+      "OrangeLen_OrangeLenCore.bundle": 23,
+      "OrangeLen_OrangeLenUI.bundle": 8
+    },
+    "sharedFrameworkCopies": 0,
+    "sharedResourceBytes": 0,
+    "payload": {
+      "en.lproj/Localizable.strings": "3bededa111517f6a48cc8a15df9c5d6279585cc0a81066fa3a0f499328813a46",
+      "zh-hans.lproj/Localizable.strings": "52aea721b2a3dec2ab365393b281d0055a109b00103ae698d96a845c9071cb8e",
+      "ComponentRenderer.html": "922bbe4760eac2a98564d37166473e6c911f4df5068452a0d74737e1ce794800",
+      "ExcalidrawRenderer.html": "a0ed3b703a24806757117d6e95e28f466eb5d795367c99e5abbf6ccfb19b1281",
+      "Highlight.js": "2ecfdb6cad7af4cb2aca3103353da2a8eda4a7049a6dc9f378fc9c5e2b4b9661",
+      "LaTeXRenderer.html": "4253387f5457157c7b2f0f108034111354dcea51656aa911ccdf14f7115f2286",
+      "LibertinusSerif-Regular.otf": "fcf06307a77367394fcb0ccb241e59eea70dba3d732be309647611224679c733",
+      "NewCMMath-Book.otf": "b2e655d5cae5ab9569fa6f5d94e929156fe70bd3548d916b4b23d1a1c1a55693",
+      "NotoSerifCJKsc-Regular.otf": "9ccb922287f4b4a941ace82321ee6e1ff6340eb53f1c13b0e6285a117d1b0057",
+      "ParquetRenderer.html": "593efbbba5bfd268ca3036cd80c38d70815eec5fe5e7c9f3e8e894e3aaf7539b",
+      "RichRenderer.html": "2432686ae7ea2d56575bcd4a5949981a67233d1c6fe9789c0033a6989d0bb36b",
+      "SVGRenderer.html": "08eae19c0802a7a2408c27394b574ad17d6cb7c04089b1b398de0dce453a0fad",
+      "TypstCompiler.html": "5c10d006739bed6b60870d3f26cbc2bed5e052c2d25b15b0b11b123a491e341f",
+      "parquet.wasm": "4714c978d78da8cb7bb61bfb86d603abf28fff6dfa46eb4490d0fad7df2482fb",
+      "typst.wasm": "1fc968438a672366dfec39c96c842c26ed29caff4eb1bcaab19a6c60867de5fd"
+    }
+  },
+  "intentionallyUpdatedResources": [
+    "LaTeXRenderer.html"
+  ],
+  "savedBytes": 417788958
+}

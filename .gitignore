@@ -6,4 +6,5 @@ DerivedData/
 xcuserdata/
 
 node_modules/
+__pycache__/
 Vendor/MarkdownRenderer/install.log

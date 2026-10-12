@@ -17,11 +17,40 @@ settings:
     MACOSX_DEPLOYMENT_TARGET: '14.0'
     CURRENT_PROJECT_VERSION: '1'
     MARKETING_VERSION: '0.1.0'
+targetTemplates:
+  SharedResourceConsumer:
+    sources: [SharedResourcesBootstrap.m]
+    settings:
+      base:
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@loader_path/../Frameworks", "@loader_path/../../../../Frameworks", "@loader_path/../../../../../../../Frameworks"]
 targets:
+  OrangeLenResources:
+    type: framework
+    platform: macOS
+    sources:
+      - path: SharedResources
+      - path: Packages/OrangeLen/Sources/OrangeLenCore/Resources
+        buildPhase: resources
+      - path: Packages/OrangeLen/Sources/OrangeLenUI/Resources
+        buildPhase: resources
+    info:
+      path: SharedResources/Info.plist
+      properties:
+        CFBundleLocalizations: [en, zh-Hans]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.Resources
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
   OrangeLen:
+    templates: [SharedResourceConsumer]
     type: application
     platform: macOS
     sources: [App]
+    postBuildScripts:
+      - name: Share read-only package resources
+        script: /usr/bin/python3 "$SRCROOT/scripts/deduplicate-resources.py" "$TARGET_BUILD_DIR/$WRAPPER_NAME"
+        basedOnDependencyAnalysis: false
     resources:
       - path: docs/licenses
         type: folder
@@ -148,6 +177,9 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen
         CODE_SIGN_ENTITLEMENTS: App/OrangeLen.entitlements
     dependencies:
+      - target: OrangeLenResources
+        embed: true
+        codeSign: true
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenPreview
@@ -168,6 +200,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreview:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -197,6 +230,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -206,6 +241,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewMarkdown:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -235,6 +271,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -244,6 +282,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewData:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -273,6 +312,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -282,6 +323,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewFolders:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -311,6 +353,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -320,6 +364,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewArchives:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -349,6 +394,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -358,6 +405,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewBooks:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -387,6 +435,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -396,6 +446,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenPreviewDrawings:
+    templates: [SharedResourceConsumer]
     type: app-extension
     platform: macOS
     sources:
@@ -425,6 +476,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: PreviewExtension/OrangeLenPreview.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenUI
       - target: OrangeLenImageBroker
@@ -434,6 +487,7 @@ targets:
         embed: true
         codeSign: true
   OrangeLenImageBroker:
+    templates: [SharedResourceConsumer]
     type: xpc-service
     platform: macOS
     sources:
@@ -452,10 +506,13 @@ targets:
         CODE_SIGN_ENTITLEMENTS: ImageBroker/ImageBroker.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenCore
 
   OrangeLenDocumentBroker:
+    templates: [SharedResourceConsumer]
     type: xpc-service
     platform: macOS
     sources: [DocumentBroker]
@@ -472,10 +529,13 @@ targets:
         CODE_SIGN_ENTITLEMENTS: DocumentBroker/DocumentBroker.entitlements
         SKIP_INSTALL: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: false
       - package: OrangeLen
         product: OrangeLenCore
 
   OrangeLenTestHost:
+    templates: [SharedResourceConsumer]
     type: application
     platform: macOS
     sources: [Tests/Host]
@@ -484,6 +544,9 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.TestHost
         GENERATE_INFOPLIST_FILE: YES
     dependencies:
+      - target: OrangeLenResources
+        embed: true
+        codeSign: true
       - target: OrangeLenDocumentBroker
         embed: true
         codeSign: true
@@ -492,6 +555,10 @@ targets:
     platform: macOS
     sources:
       - Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift
+      - Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift
+      - path: Tests/Fixtures/advanced-outputs
+        type: folder
+        buildPhase: resources
       - path: Tests/Fixtures/system-preview
         type: folder
         buildPhase: resources

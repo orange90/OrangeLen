@@ -37,7 +37,7 @@ Office（DOCX/PPTX/XLSX 等）延续既有内容预览；完整 PPTX/XLSX 视觉
 
 WASM/字体通过每个渲染器私有的白名单资源 handler 读取，Parquet 输入也是该渲染器的独立字节快照，减少 Base64 临时副本；不是任意文件接口。
 
-离线引擎和字体随应用打包，预览时不安装依赖或下载字体。当前 Debug 应用约 616 MiB（包含七个扩展重复资源）；未做资源共享和体积优化，也未做 GPU/内存压力全覆盖。版本、许可证、构建脚本见 [renderer 构建说明](../scripts/advanced-renderers/README.md)，资源 SHA-256 在 [advanced-renderer-sha256.json](advanced-renderer-sha256.json)。
+离线引擎和字体随应用打包，预览时不安装依赖或下载字体。格式接入时的 Debug 基线约 616 MiB；后续已用共享 framework 去掉资源副本，Apple Silicon Release 约 160 MiB、通用版约 268.5 MiB，见 [资源打包](resource-packaging.md)。未做 GPU/内存压力全覆盖。版本、许可证、构建脚本见 [renderer 构建说明](../scripts/advanced-renderers/README.md)，资源 SHA-256 在 [advanced-renderer-sha256.json](advanced-renderer-sha256.json)。
 
 ## 验证
 

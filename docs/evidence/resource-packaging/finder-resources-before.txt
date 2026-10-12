@@ -1,0 +1,119 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: 阅读, Value: 1
+		3 radio button (disabled) Description: 源码, Value: 0
+	4 pop-up button (disabled) 文档目录
+	5 pop-up button 显示设置
+	6 pop-up button 更多操作
+	7 toggle button Description: 显示或隐藏目录树, Value: on
+	8 button 查找
+	9 search text field (settable) 查找已加载内容（点击输入）
+		10 button Search
+	11 button 全选
+	12 button 复制选择
+	13 button 取消加载
+	14 split group
+		15 search text field (settable) 筛选文件
+			16 button Search
+		17 button 文件夹概览, Description: move
+		18 text 文件
+		19 scroll area Secondary Actions: Scroll Up, Scroll Down
+			20 outline 项目目录树
+				21 row (selectable, expanded) Value: advanced-outputs, Secondary Actions: Collapse
+					22 disclosure triangle 1
+				23 row (selectable) array.npy, Description: 预览 array.npy
+预览 array.npy
+				24 row (selectable) arrays.npz, Description: 预览 arrays.npz
+预览 arrays.npz
+				25 row (selectable) board.canvas, Description: 预览 board.canvas
+预览 board.canvas
+				26 row (selectable) card.md, Description: 预览 card.md
+预览 card.md
+				27 row (selectable) comfy-api.json, Description: 预览 comfy-api.json
+预览 comfy-api.json
+				28 row (selectable) comfy.json, Description: 预览 comfy.json
+预览 comfy.json
+				29 row (selectable) component.jsx, Description: 预览 component.jsx
+预览 component.jsx
+				30 row (selected) component.tsx, Description: 预览 component.tsx
+预览 component.tsx
+				31 row (selectable) credentials.c2pa, Description: 预览 credentials.c2pa
+预览 credentials.c2pa
+				32 row (selectable) diagram.drawio, Description: 预览 diagram.drawio
+预览 diagram.drawio
+				33 row (selectable) dify.yml, Description: 预览 dify.yml
+预览 dify.yml
+				34 row (selectable) document.mdx, Description: 预览 document.mdx
+预览 document.mdx
+				35 row (selectable) document.tex, Description: 预览 document.tex
+预览 document.tex
+				36 row (selectable) document.typ, Description: 预览 document.typ
+预览 document.typ
+				37 row (selectable) fortran.npy, Description: 预览 fortran.npy
+预览 fortran.npy
+				38 row (selectable) generation.jpg, Description: 预览 generation.jpg
+预览 generation.jpg
+				39 row (selectable) generation.jpg.json, Description: 预览 generation.jpg.json
+预览 generation.jpg.json
+				40 row (selectable) generation.xmp, Description: 预览 generation.xmp
+预览 generation.xmp
+				41 row (selectable) mesh.glb, Description: 预览 mesh.glb
+预览 mesh.glb
+				42 row (selectable) mesh.gltf, Description: 预览 mesh.gltf
+预览 mesh.gltf
+				43 row (selectable) mesh.obj, Description: 预览 mesh.obj
+预览 mesh.obj
+				44 row (selectable) mesh.stl, Description: 预览 mesh.stl
+预览 mesh.stl
+				45 row (selectable) model.gguf, Description: 预览 model.gguf
+预览 model.gguf
+				46 row (selectable) n8n.json, Description: 预览 n8n.json
+预览 n8n.json
+				47 row (selectable) README.md, Description: 预览 README.md
+预览 README.md
+				48 row (selectable) sample.latent, Description: 预览 sample.latent
+预览 sample.latent
+				49 row (selectable) table.parquet, Description: 预览 table.parquet
+预览 table.parquet
+				50 row (selectable) weights.safetensors, Description: 预览 weights.safetensors
+预览 weights.safetensors
+				51 row (selectable) workflows.n8np, Description: 预览 workflows.n8np
+预览 workflows.n8np
+			52 scroll bar (settable, float) 0
+				53 value indicator (settable, float) 0
+				54 increment arrow button
+				55 decrement arrow button
+				56 increment page button
+				57 decrement page button
+		58 tickbox 显示隐藏与忽略项, Value: 0
+		59 button 刷新目录, Description: refresh
+		60 text 当前目录已扫描 29 项（完成）
+		61 splitter (disabled, settable, float) 220
+		62 splitter (disabled, settable, float) 0
+		63 scroll area Secondary Actions: Scroll Left, Scroll Right
+			64 text entry area Description: OrangeLen 只读正文, Value: import React from "react";
+export default function Preview(){const count:number=42;return <main style={{padding:24,background:"#fff1de"}}><h1>React 预览</h1><p>种子：{count}</p></main>}
+			65 scroll bar (settable, float) 1
+				66 value indicator (settable, float) 1
+				67 increment arrow button
+				68 decrement arrow button
+				69 increment page button
+				70 decrement page button
+			71 ruler
+	72 text component.tsx · UTF-8 · 190 bytes · code · 完整文件
+格式损坏：缺少离线渲染资源 · 已降级源码
+	73 close button close panel button
+	74 full screen button full screen window button
+	75 button Description: Share file, ID: QLControlShare
+	76 text advanced-outputs
+77 menu bar
+	78 Finder
+	79 File
+	80 Edit
+	81 View
+	82 Go
+	83 Window
+	84 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

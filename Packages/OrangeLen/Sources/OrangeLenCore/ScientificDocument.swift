@@ -78,7 +78,7 @@ public struct ScientificDocument: Sendable {
                 try token.check(); let valueData = try c.bytes(width); var v = BinaryCursor(data:valueData,token:token); let value: String
                 if ["i","u","b","f"].contains(kind), [1,2,4,8].contains(width) {
                     let bits = try v.uint(width,big:big)
-                    if kind == "f" && width == 2 { value = String(Float(Float16(bitPattern:UInt16(bits)))) }
+                    if kind == "f" && width == 2 { value = String(HalfPrecision.float(bitPattern:UInt16(bits))) }
                     else if kind == "f" && width == 4 { value = String(Float(bitPattern:UInt32(bits))) }
                     else if kind == "f" && width == 8 { value = String(Double(bitPattern:bits)) }
                     else if kind == "b" { value = bits == 0 ? "false" : "true" }

@@ -30,7 +30,9 @@ import OrangeLenCore
         config.websiteDataStore = .nonPersistent()
         config.setURLSchemeHandler(embedded,forURLScheme:"orangelen-resource")
         config.preferences.javaScriptCanOpenWindowsAutomatically = false
-        let rules = #"[{"trigger":{"url-filter":".*"},"action":{"type":"block"}},{"trigger":{"url-filter":"^orangelen-resource:"},"action":{"type":"ignore-previous-rules"}}]"#
+        // Embedded KaTeX/LaTeX fonts are data URLs in the bundled HTML. Keep
+        // external/file URLs blocked while retaining those offline font faces.
+        let rules = #"[{"trigger":{"url-filter":".*"},"action":{"type":"block"}},{"trigger":{"url-filter":"^orangelen-resource:"},"action":{"type":"ignore-previous-rules"}},{"trigger":{"url-filter":"^data:font/"},"action":{"type":"ignore-previous-rules"}}]"#
         let list = try await WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "OrangeLenOfflineRenderer-v1", encodedContentRuleList: rules)
         if let list { config.userContentController.add(list) }
         try Task.checkCancellation(); guard !stopped else { throw CancellationError() }
@@ -38,7 +40,7 @@ import OrangeLenCore
         self.web = web; web.navigationDelegate = self
         // Keep attached for reliable macOS layout/snapshots, outside the visible clip.
         parent.addSubview(web)
-        guard let url = Bundle.module.url(forResource: resourceName, withExtension: "html") else { throw PreviewError.malformed(L10n.text("缺少离线渲染资源")) }
+        guard let url = UIResources.url(forResource: resourceName, withExtension: "html") else { throw PreviewError.malformed(L10n.text("缺少离线渲染资源")) }
         let html = try String(contentsOf: url, encoding: .utf8)
         try await withCheckedThrowingContinuation { continuation in
             ready = continuation
@@ -62,7 +64,7 @@ import OrangeLenCore
     func readParquet(_ data: Data, in parent: NSView) async throws -> ScientificDocument {
         let header = try ParquetHeader.parse(data)
         try await boot(in: parent)
-        guard let web, !stopped, let url = Bundle.module.url(forResource: "parquet", withExtension: "wasm") else { throw PreviewError.unavailable }
+        guard let web, !stopped, let url = UIResources.url(forResource: "parquet", withExtension: "wasm") else { throw PreviewError.unavailable }
         _ = url; embedded.input = data
         budget = Task { [weak self] in try? await Task.sleep(nanoseconds:10_000_000_000); if !Task.isCancelled { self?.cancel() } }
         defer { budget?.cancel() }
@@ -86,10 +88,10 @@ import OrangeLenCore
         var arguments: [String:Any] = ["source":source]
         let script: String
         if typst {
-            guard let wasmURL = Bundle.module.url(forResource:"typst",withExtension:"wasm") else { throw PreviewError.unavailable }
+            guard let wasmURL = UIResources.url(forResource:"typst",withExtension:"wasm") else { throw PreviewError.unavailable }
             _ = wasmURL; arguments["wasm"] = "orangelen-resource://assets/typst.wasm"
             arguments["fonts"] = try ["LibertinusSerif-Regular", "NewCMMath-Book", "NotoSerifCJKsc-Regular"].map { name -> String in
-                guard let url = Bundle.module.url(forResource:name,withExtension:"otf") else { throw PreviewError.unavailable }; _ = url; return "orangelen-resource://assets/" + name + ".otf"
+                guard let url = UIResources.url(forResource:name,withExtension:"otf") else { throw PreviewError.unavailable }; _ = url; return "orangelen-resource://assets/" + name + ".otf"
             }
             script = "return await window.orangeTypst(wasm,fonts,source)"
         } else { script = "return await window.orangeRender('tex',source)" }

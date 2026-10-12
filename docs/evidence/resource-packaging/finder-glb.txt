@@ -1,0 +1,106 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 toggle button Description: Show or hide directory tree, Value: on
+	3 split group
+		4 search text field (settable) Filter files
+			5 button Search
+		6 button Folder Overview, Description: move
+		7 text Files
+		8 scroll area Secondary Actions: Scroll Up, Scroll Down
+			9 outline Project directory tree
+				10 row (selectable, expanded) Value: advanced-outputs, Secondary Actions: Collapse
+					11 disclosure triangle 1
+				12 row (selectable) array.npy, Description: Preview array.npy
+Preview array.npy
+				13 row (selectable) arrays.npz, Description: Preview arrays.npz
+Preview arrays.npz
+				14 row (selectable) board.canvas, Description: Preview board.canvas
+Preview board.canvas
+				15 row (selectable) card.md, Description: Preview card.md
+Preview card.md
+				16 row (selectable) comfy-api.json, Description: Preview comfy-api.json
+Preview comfy-api.json
+				17 row (selectable) comfy.json, Description: Preview comfy.json
+Preview comfy.json
+				18 row (selectable) component.jsx, Description: Preview component.jsx
+Preview component.jsx
+				19 row (selectable) component.tsx, Description: Preview component.tsx
+Preview component.tsx
+				20 row (selectable) credentials.c2pa, Description: Preview credentials.c2pa
+Preview credentials.c2pa
+				21 row (selectable) diagram.drawio, Description: Preview diagram.drawio
+Preview diagram.drawio
+				22 row (selectable) dify.yml, Description: Preview dify.yml
+Preview dify.yml
+				23 row (selectable) document.mdx, Description: Preview document.mdx
+Preview document.mdx
+				24 row (selectable) document.tex, Description: Preview document.tex
+Preview document.tex
+				25 row (selectable) document.typ, Description: Preview document.typ
+Preview document.typ
+				26 row (selectable) fortran.npy, Description: Preview fortran.npy
+Preview fortran.npy
+				27 row (selectable) generation.jpg, Description: Preview generation.jpg
+Preview generation.jpg
+				28 row (selectable) generation.jpg.json, Description: Preview generation.jpg.json
+Preview generation.jpg.json
+				29 row (selectable) generation.xmp, Description: Preview generation.xmp
+Preview generation.xmp
+				30 row (selected) mesh.glb, Description: Preview mesh.glb
+Preview mesh.glb
+				31 row (selectable) mesh.gltf, Description: Preview mesh.gltf
+Preview mesh.gltf
+				32 row (selectable) mesh.obj, Description: Preview mesh.obj
+Preview mesh.obj
+				33 row (selectable) mesh.stl, Description: Preview mesh.stl
+Preview mesh.stl
+				34 row (selectable) model.gguf, Description: Preview model.gguf
+Preview model.gguf
+				35 row (selectable) n8n.json, Description: Preview n8n.json
+Preview n8n.json
+				36 row (selectable) README.md, Description: Preview README.md
+Preview README.md
+				37 row (selectable) sample.latent, Description: Preview sample.latent
+Preview sample.latent
+				38 row (selectable) table.parquet, Description: Preview table.parquet
+Preview table.parquet
+				39 row (selectable) weights.safetensors, Description: Preview weights.safetensors
+Preview weights.safetensors
+				40 row (selectable) workflows.n8np, Description: Preview workflows.n8np
+Preview workflows.n8np
+			41 scroll bar (settable, float) 0.7198879945967243
+				42 value indicator (settable, float) 0.7198879945967243
+				43 increment arrow button
+				44 decrement arrow button
+				45 increment page button
+				46 decrement page button
+		47 tickbox Show hidden & ignored, Value: 0
+		48 button Refresh Directory, Description: refresh
+		49 text Scanned 29 items in this directory (complete)
+		50 splitter (disabled, settable, float) 220
+		51 splitter (disabled, settable, float) 0
+		52 button ←
+		53 button →
+		54 button ↑
+		55 button ↓
+		56 button −
+		57 button +
+		58 button Fit to Window
+		59 text 1 triangles · glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted
+		60 image 3D mesh · 1 triangles · glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted
+	61 text mesh.glb · Read-only 3D preview
+	62 close button close panel button
+	63 full screen button full screen window button
+	64 button Description: Share file, ID: QLControlShare
+	65 text advanced-outputs
+66 menu bar
+	67 Finder
+	68 File
+	69 Edit
+	70 View
+	71 Go
+	72 Window
+	73 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

@@ -56,7 +56,7 @@ public enum ProvenanceDocument {
             case 6: return try read(depth + 1)
             case 7:
                 if info == 20 { return false }; if info == 21 { return true }; if info == 22 || info == 23 { return NSNull() }
-                if info == 25 { let v = Float(Float16(bitPattern:UInt16(raw))); return v.isFinite ? String(v) : "non-finite" }
+                if info == 25 { let v = HalfPrecision.float(bitPattern:UInt16(raw)); return v.isFinite ? String(v) : "non-finite" }
                 if info == 26 { let v = Float(bitPattern:UInt32(raw)); return v.isFinite ? String(v) : "non-finite" }
                 if info == 27 { let v = Double(bitPattern:raw); return v.isFinite ? String(v) : "non-finite" }; return "simple \(raw)"
             default: throw PreviewError.malformed("CBOR")

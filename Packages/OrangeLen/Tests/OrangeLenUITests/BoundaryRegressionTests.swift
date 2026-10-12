@@ -169,8 +169,12 @@ import OrangeLenCore
         let url = try temporary("empty.ipynb")
         try #"{"cells":[],"nbformat":4}"#.write(to: url, atomically: true, encoding: .utf8)
         let reader = ReaderController(); defer { reader.close() }
+        let previous = try temporary("previous.ipynb")
+        try #"{"cells":[{"cell_type":"markdown","source":["Previous body"],"metadata":{}}],"nbformat":4}"#.write(to:previous,atomically:true,encoding:.utf8)
+        let previousError = await open(reader,previous); XCTAssertNil(previousError)
+        try await settle { reader.collection?.reader.text.string.contains("Previous body") == true }
         let error = await open(reader, url); XCTAssertNil(error)
-        try await settle { reader.collection?.reader.text.string != "" }
+        try await settle { reader.collection?.reader.text.string == "empty.ipynb" + L10n.text(" · 没有可预览条目") }
         XCTAssertFalse(reader.status.isHidden)
         XCTAssertNil(reader.collection?.reader.source)
     }

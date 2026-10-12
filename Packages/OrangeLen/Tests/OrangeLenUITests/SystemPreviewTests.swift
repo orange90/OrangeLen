@@ -17,6 +17,22 @@ import OrangeLenCore
     func requireBrokerHost() throws {
         try XCTSkipIf(Bundle.main.bundleURL.lastPathComponent != "OrangeLenTestHost.app", "Run scripts/test-native.sh for real sandboxed XPC + media integration")
     }
+    func testSharedFrameworkRetainsRenderersFontsAndLocalization() throws {
+        try requireBrokerHost()
+        let shared = try XCTUnwrap(PackageResources.bundle(.ui,fallback:Bundle.main))
+        XCTAssertEqual(shared.bundleIdentifier,"local.OrangeLen.Resources")
+        for name in ["ComponentRenderer.html","ExcalidrawRenderer.html","RichRenderer.html","SVGRenderer.html",
+                     "LaTeXRenderer.html","TypstCompiler.html","ParquetRenderer.html","Highlight.js",
+                     "typst.wasm","parquet.wasm","LibertinusSerif-Regular.otf","NewCMMath-Book.otf","NotoSerifCJKsc-Regular.otf"] {
+            let url = try XCTUnwrap(shared.url(forResource:(name as NSString).deletingPathExtension,withExtension:(name as NSString).pathExtension),name)
+            XCTAssertGreaterThan(try Data(contentsOf:url,options:.mappedIfSafe).count,100,name)
+        }
+        let english = try XCTUnwrap(shared.url(forResource:"Localizable",withExtension:"strings",subdirectory:nil,localization:"en"))
+        let values = try XCTUnwrap(PropertyListSerialization.propertyList(from:Data(contentsOf:english),format:nil) as? [String:String])
+        XCTAssertEqual(values["文件夹概览"],"Folder Overview")
+        XCTAssertGreaterThan(values.count,570)
+        XCTAssertGreaterThan(SyntaxHighlighter.shared.languageCount,100)
+    }
     func testFolderHandoffSwitchAndClose() async throws {
         try requireBrokerHost()
         _ = NSApplication.shared

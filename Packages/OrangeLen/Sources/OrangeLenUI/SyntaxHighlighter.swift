@@ -19,7 +19,7 @@ final class SyntaxHighlighter {
     private func prepareEngine() {
         guard !initialized else { return }; initialized = true
         context = JSContext()
-        if let url = Bundle.module.url(forResource: "Highlight", withExtension: "js"), let script = try? String(contentsOf: url, encoding: .utf8) { context?.evaluateScript(script) }
+        if let url = UIResources.url(forResource: "Highlight", withExtension: "js"), let script = try? String(contentsOf: url, encoding: .utf8) { context?.evaluateScript(script) }
     }
     var languageCount: Int {
         engineLock.lock(); defer { engineLock.unlock() }; prepareEngine()

@@ -1,0 +1,11 @@
+Timestamp               Ty Process[PID:TID]
+2026-10-12 13:57:49.317 Df OrangeLenPreviewFolders[74889:1d82e69] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-12 13:57:54.101 Df OrangeLenPreviewFolders[74889:1d82e69] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-12 14:00:19.500 Df OrangeLenPreviewFolders[81535:1d90669] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-12 14:04:51.890 Df OrangeLenPreviewDrawings[83014:1d93a95] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=mmd
+2026-10-12 14:05:43.829 Df OrangeLenPreviewArchives[83166:1d941c8] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=mcpb
+2026-10-12 14:06:27.567 Df OrangeLenPreviewBooks[83565:1d94de4] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=epub
+2026-10-12 14:07:06.193 Df OrangeLenPreviewDrawings[83014:1d93a95] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=excalidraw
+2026-10-12 14:07:38.038 Df OrangeLenPreviewFolders[81535:1d90669] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=
+2026-10-12 14:09:09.703 Df OrangeLenPreview[84117:1d96add] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=swift
+2026-10-12 14:09:33.743 Df OrangeLenPreviewData[84173:1d96d9f] [local.OrangeLen:QuickLook] prepare received extension=OrangeLen type=sqlite
