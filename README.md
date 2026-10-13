@@ -8,7 +8,9 @@
 
 [快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
 
-[观看 OrangeLen 宣传视频（中文版，2 分 01 秒）](videos/orangelen-launch/renders/OrangeLen-Promo-ZH-v4.mp4)
+## 产品演示（中文配音与字幕）
+
+https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
 
 ![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/evidence/folder-redesign/overview-light.png)
 

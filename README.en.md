@@ -8,7 +8,9 @@ A macOS Quick Look tool for developers. **106 explicitly supported file extensio
 
 [Quick start](#quick-start) · [Supported formats](#supported-formats) · [Compared with system Quick Look](#compared-with-system-quick-look) · [Developer guide](docs/development-guide.md) · [Changelog](CHANGELOG.md)
 
-[Watch the OrangeLen promo video (English, 2 min 01 sec)](videos/orangelen-launch/renders/OrangeLen-Promo-EN-v4.mp4)
+## Product demo (English voiceover and subtitles)
+
+https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
 
 ![OrangeLen folder overview with a file tree, project statistics and README preview](docs/evidence/folder-redesign/overview-light.png)
 
