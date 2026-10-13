@@ -6,7 +6,7 @@
 
 中文 · [English](README.en.md)
 
-[快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
+[下载安装](#下载) · [快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
 
 ## 产品演示（中文配音与字幕）
 
@@ -15,6 +15,14 @@ https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
 ![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/evidence/folder-redesign/overview-light.png)
 
 *真实应用截图：选中整个文件夹，从项目概览进入代码、文档和数据。*
+
+## 下载
+
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.1/OrangeLen-0.1.0-preview.1-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.1)
+
+适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
+
+当前为 **0.1.0 预览版，使用 ad-hoc 签名，尚未通过 Apple 公证**。若系统阻止打开，先尝试启动一次，再到“系统设置 → 隐私与安全性”选择“仍要打开”（若系统提供此选项）。Intel 实机与其他 macOS 版本尚未完整验收。
 
 ## AI 写完了，先看一眼
 
@@ -86,7 +94,7 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 ## 快速开始
 
-目前提供源码构建的开发版。最低部署目标为 **macOS 14**，已记录的主要实测环境为 Apple M3 Pro / macOS 26.6.2，构建使用 Xcode 26.5。其他系统和 Intel 实机尚未完整验收；正式分发签名与公证尚未完成。
+可直接使用上方[安装包](#下载)，也可从源码构建。最低部署目标为 **macOS 14**，已记录的主要实测环境为 Apple M3 Pro / macOS 26.6.2，构建使用 Xcode 26.5。其他系统和 Intel 实机尚未完整验收；正式分发签名与公证尚未完成。
 
 在仓库根目录运行（需安装 Xcode）：
 

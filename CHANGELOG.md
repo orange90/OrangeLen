@@ -1,5 +1,12 @@
 # 变更日志
 
+## 0.1.0-preview.1 — 2026-10-13
+
+- 首个 GitHub 预览版安装包：macOS 14+，Apple Silicon / Intel 通用 Release 构建，DMG 拖入 Applications 安装。
+- 包含应用图标、完整共享预览资源与第三方许可证；提供 SHA-256 校验值。
+- 使用 ad-hoc 签名，未完成 Developer ID 发布签名与 Apple 公证；Intel 实机和其他 macOS 版本尚未完整验收。
+- 中英文 README 在产品演示后提供安装包下载与安装说明。
+
 ## 2026-10-12 — README 产品定位
 
 - 突出“为开发者设计，面向 AI 时代各种产出”，增加按产出分类的能力概览和检查交付、浏览项目、查看包、整理实验场景。

@@ -23,6 +23,12 @@ case "$mode" in
     ;;
   *) echo 'Usage: scripts/package.sh dev|release' >&2; exit 2;;
 esac
+# Keep the application icon in every development and release archive.
+icon=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconFile' "$input/Contents/Info.plist")
+if [[ "$icon" != OrangeLen.icns || ! -s "$input/Contents/Resources/$icon" ]]; then
+  echo 'Application icon is missing; rebuild the project with its icon resource.' >&2
+  exit 1
+fi
 stage=$(mktemp -d "$PWD/build/package.XXXXXX")
 trap 'rm -rf "$stage"' EXIT
 ditto "$input" "$stage/OrangeLen.app"

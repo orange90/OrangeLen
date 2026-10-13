@@ -6,7 +6,7 @@ A macOS Quick Look tool for developers. **106 explicitly supported file extensio
 
 [中文](README.md) · English
 
-[Quick start](#quick-start) · [Supported formats](#supported-formats) · [Compared with system Quick Look](#compared-with-system-quick-look) · [Developer guide](docs/development-guide.md) · [Changelog](CHANGELOG.md)
+[Download](#download) · [Quick start](#quick-start) · [Supported formats](#supported-formats) · [Compared with system Quick Look](#compared-with-system-quick-look) · [Developer guide](docs/development-guide.md) · [Changelog](CHANGELOG.md)
 
 ## Product demo (English voiceover and subtitles)
 
@@ -15,6 +15,14 @@ https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
 ![OrangeLen folder overview with a file tree, project statistics and README preview](docs/evidence/folder-redesign/overview-light.png)
 
 *Actual app screenshot: open a whole folder, then explore its code, documents and data. The interface also supports English.*
+
+## Download
+
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.1/OrangeLen-0.1.0-preview.1-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.1)
+
+Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
+
+This is the **0.1.0 preview, ad-hoc signed and not Apple-notarized**. If macOS blocks opening, try launching once, then use “System Settings → Privacy & Security → Open Anyway”, if offered. Intel hardware and other macOS versions are not fully verified.
 
 ## AI finished writing. Take a look.
 
@@ -86,7 +94,7 @@ See the [auditable inventory](docs/format-count.md), [advanced preview limits](d
 
 ## Quick start
 
-OrangeLen currently ships as a source-build development version. Deployment target: **macOS 14**. Recorded testing primarily uses Apple M3 Pro / macOS 26.6.2; builds use Xcode 26.5. Other OS versions and Intel hardware are not fully verified. Distribution signing and notarization are not yet complete.
+Use the [installer above](#download), or build from source. Deployment target: **macOS 14**. Recorded testing primarily uses Apple M3 Pro / macOS 26.6.2; builds use Xcode 26.5. Other OS versions and Intel hardware are not fully verified. Distribution signing and notarization are not yet complete.
 
 From the repository root, with Xcode installed:
 

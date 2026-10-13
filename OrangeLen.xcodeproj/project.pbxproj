@@ -74,6 +74,7 @@
 		95B6F50EEF70C863329CB804 /* OrangeLenResources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; };
 		993092AB92ECCF5AB6651BFC /* OrangeLenResources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99331880947BB0F09D046706 /* OrangeLenPreviewFolders.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8AB48C5DA4CFEF654C8AC3A2 /* OrangeLenPreviewFolders.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9CF4B6CF185B0EE58E9E1945 /* OrangeLen.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0ECFCFAFE8845491612F89C5 /* OrangeLen.icns */; };
 		A1B25F8579E077B264B2B39D /* SharedResourcesBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */; };
 		A3EBA937467EBBCA83816904 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E6E41E0C7DAC86E3CDD0EC /* InfoPlist.strings */; };
 		B0D61F8DCADE33B60D202C7F /* LibertinusSerif-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6DC95253B17E322C2F7B4C /* LibertinusSerif-Regular.otf */; };
@@ -497,6 +498,7 @@
 
 /* Begin PBXFileReference section */
 		010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedResourcesBootstrap.m; sourceTree = "<group>"; };
+		0ECFCFAFE8845491612F89C5 /* OrangeLen.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = OrangeLen.icns; sourceTree = "<group>"; };
 		1259A8978DC27852DF3EE688 /* AdvancedPreviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreviewTests.swift; sourceTree = "<group>"; };
 		1462345BBF84F2085AE5662C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPreviewTests.swift; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 				1462345BBF84F2085AE5662C /* Info.plist */,
 				79B2A6052B4399CD829B2B61 /* OrangeLen.entitlements */,
 				3C6C80D93133D02E9E0D26EA /* SettingsView.swift */,
+				A49336ED2C1C2C72E6D88CDF /* Resources */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -888,6 +891,14 @@
 			);
 			name = Books;
 			path = PreviewExtension/Localization/Books;
+			sourceTree = "<group>";
+		};
+		A49336ED2C1C2C72E6D88CDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0ECFCFAFE8845491612F89C5 /* OrangeLen.icns */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EB7F74407E9DD0816B51A6B8 /* Folders */ = {
@@ -1087,6 +1098,7 @@
 			buildConfigurationList = ABDF0277DAFB225301E77802 /* Build configuration list for PBXNativeTarget "OrangeLen" */;
 			buildPhases = (
 				6DD2C0148DF7120DB34A5882 /* Sources */,
+				6B3D456C9FCEA16AB3928994 /* Resources */,
 				603152C3996BE30B5B6A096B /* CopyFiles */,
 				2F8DEC43B8C83A198B0303A5 /* Frameworks */,
 				D9F2C7CAEA38C95C550A9578 /* Embed Foundation Extensions */,
@@ -1295,6 +1307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1F73514119A4F8E9A3473C2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B3D456C9FCEA16AB3928994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF4B6CF185B0EE58E9E1945 /* OrangeLen.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
