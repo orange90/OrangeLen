@@ -1,200 +1,123 @@
 # OrangeLen
 
-**为开发者设计，面向 AI 时代各种产出的 macOS 快速预览工具。**
+**按下空格，看懂整个项目与 AI 产出。**
 
-*Quick Look for Developers. Built for the outputs of the AI era.*
+为开发者设计的 macOS 快速预览工具。**106 种明确支持的文件后缀、36 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。
 
-AI 写完了，先看一眼。
+中文 · [English](README.en.md)
 
-一轮 AI 协作，可能留下代码、Markdown 报告、Mermaid 图、React 组件、数据表、生成图片，甚至一个 3D 模型。检查这些产出，往往要在编辑器、浏览器和各种专用工具之间来回切换。
+[快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
 
-OrangeLen 把这一步放进 macOS 的预览流程：**在 Finder 选中文件、按下空格；或预览整个文件夹，在同一窗口里逐个检查产出。** 从代码高亮到组件效果，从工作流连线到图片生成参数，让文件里的内容更容易看懂。
+[观看 OrangeLen 宣传视频（中文版，2 分 01 秒）](videos/orangelen-launch/renders/OrangeLen-Promo-ZH-v4.mp4)
 
-## 从源码到效果，从文件到上下文
+![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/evidence/folder-redesign/overview-light.png)
 
-OrangeLen 围绕开发者检查产出的方式设计：代码要读得清，结构化数据要能展开，图表要看见连线，生成内容要能查看已有参数。支持效果预览的格式还可以切回源码，方便核对 AI 到底写了什么。
+*真实应用截图：选中整个文件夹，从项目概览进入代码、文档和数据。*
 
-| 你要检查的产出 | OrangeLen 帮你看什么 |
+## AI 写完了，先看一眼
+
+一轮 AI 协作，可能留下一个项目目录、一份研究报告、一个 Skill、一张工作流图和一个 3D 模型。OrangeLen 把检查这些文件的过程放进熟悉的空格预览：展开目录，点选文件，看效果，再切回源码核对。
+
+| 亮点 | 你可以直接做什么 |
 | --- | --- |
-| 代码与配置 | 离线语法高亮、行号、查找和原文复制；JSON / JSONC / JSON5 可展开结构与复制路径 |
-| 文档与研究结果 | Markdown 大纲、公式与 Mermaid；Notebook 连续阅读已保存的内容和输出；LaTeX 基础排版与单文件 Typst PDF |
-| 图表与自动化工作流 | Mermaid、Excalidraw、Draw.io、JSON Canvas，以及 ComfyUI / n8n / Dify 的节点和连线 |
-| 前端组件与页面 | 单文件 JSX / TSX / MDX 的离线效果快照与源码切换；HTML 页面预览与源码查看 |
-| 数据与实验文件 | CSV / TSV 表格、JSONL 记录、SQLite 表；Parquet 列信息与样本、NumPy 数组的形状与样本值 |
-| AI 图片与视频配套文件 | 图片旁的已有 prompt、seed、模型等生成参数；SRT / VTT 字幕的时间、文本与源码 |
-| 模型、3D 与交付包 | OBJ / STL / GLTF / GLB 静态模型；Safetensors / GGUF 张量目录与元数据；`.skill`、MCPB / DXT、n8n 包的清单和成员 |
+| **整个文件夹都能预览** | 展开多层目录，在同一窗口连续查看文件；看 README、项目声明线索、文件数量与大小 |
+| **代码与文档一起读** | 源码高亮、行号、查找与复制；Markdown 大纲、公式、Mermaid 图；JSON 可展开结构 |
+| **Skill / MCP 包先看后用** | `.skill` 优先打开 `SKILL.md`；MCPB / DXT 查看清单与成员；无需解压到磁盘 |
+| **AI 工作流直接看连线** | 查看 ComfyUI、n8n、Dify 的节点图，以及 Draw.io、Excalidraw 和 JSON Canvas |
+| **组件与模型看得到效果** | JSX / TSX / MDX 单文件组件快照；OBJ / STL / GLTF / GLB 静态 3D 预览、旋转与缩放 |
+| **生成结果连同参数一起看** | 图片里已有的 prompt、seed、模型参数；Parquet / NumPy 样本；Safetensors / GGUF 张量目录 |
 
-这些能力也适用于手写代码和已有文件。**开发者工作流与 AI 产出预览，是 OrangeLen 的两个设计重点。** 各格式的完整范围见 [开发者格式](docs/developer-formats.md)、[AI 产出预览](docs/ai-output-previews.md) 和 [高级 AI 产出预览](docs/advanced-output-previews.md)。
+原生 macOS 界面，支持简体中文与英文、浅色与深色外观。专用渲染引擎随应用打包；HTML 允许脚本与网络资源，Markdown 远程图片点击后加载。
 
-## 适合放进你的工作流
+<details>
+<summary>查看 AI 图片参数预览截图</summary>
 
-- **AI 交付后，快速检查结果。** 看报告里的公式和图，检查组件快照，展开数据结构，再切回源码核对细节。
-- **接手项目时，先浏览目录。** 在文件夹预览中展开目录、点选代码和文档，在同一右侧阅读区了解项目。
-- **安装或导入前，先看包里有什么。** 查看 Skill、MCP 扩展包和归档的清单、目录与成员内容。
-- **整理实验产出时，连同参数一起看。** 查看图片已有的生成参数、数组形状和模型张量目录，帮助辨认文件。
+![Finder 文件夹内查看图片与已有的 AI 生成参数](docs/evidence/ai-outputs/finder-image-parameters.png)
 
-原生 macOS 主应用与七类 Quick Look 扩展共用阅读组件，支持简体中文与英文。多数专用渲染器随应用打包，可离线预览；HTML 页面支持脚本和网络资源，Markdown 远程图片则需手动点击加载。具体行为见下文。
+*合成测试图片，用于展示参数面板。只读取文件已有的参数，不推断缺失信息。*
 
-## 开始使用与当前状态
+</details>
 
-当前提供可构建、可安装的开发版本，尚未完成正式分发签名、公证与跨机器验收。构建安装步骤见 [Build and run](#build-and-run)，Finder 使用步骤见 [Finder](#finder)。
+## 与系统预览对比
 
-**Finder 单文件预览是否由 OrangeLen 接管，取决于 macOS 的文件类型分派。** 部分格式需要从 OrangeLen 主应用或 Finder 文件夹预览打开，例如本机 TSX 组件效果和图片生成参数。专用预览有各自的格式与资源边界；组件效果是单文件快照，模型文件展示元数据，C2PA 结构预览不验证真实性。
+OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件检查。系统预览本身很适合 PDF、照片和音视频；OrangeLen 的增量在于目录浏览和文件内容的专用展示。
 
-已记录的现场验证主要来自 Apple M3 Pro / macOS 26.6.2；通用 Release 构建不代表 Intel 实机已验收。请结合 [支持矩阵](docs/format-support.md)、[当前入口与边界](docs/current-contract.md)、[验证记录](docs/verification.md) 和 [共享资源 Release 验收](docs/resource-packaging.md) 判断具体格式与入口。
+| 场景 | 系统 Quick Look（未安装相关第三方扩展） | OrangeLen 增加的能力 |
+| --- | --- | --- |
+| 整个项目目录 | 通常显示文件夹基本信息 | 可展开的目录树、项目概览、同窗阅读文件 |
+| 源码与配置 | 可识别文本的基础预览，随类型而异 | 离线语法高亮、行号、查找、原文复制与配置文件名识别 |
+| Markdown 报告 | 显示取决于系统版本和类型处理器 | 大纲、GFM 表格、公式、Mermaid 与源码切换 |
+| JSON / CSV / SQLite | 文本或系统自带展示，缺少统一的结构浏览 | JSON 树与路径复制、表格筛选排序、SQLite 分页 |
+| Skill / MCP / 工作流 | 没有这些格式的专用包清单或工作流节点视图 | 包内文件浏览、清单概览、ComfyUI / n8n / Dify 连线图 |
+| React 组件 | 没有 JSX / TSX 组件效果运行环境 | 单文件离线效果快照与源码切换 |
+| AI 图片与模型文件 | 图片画面或文件基本信息，取决于类型 | 已保存的生成参数、模型张量目录与数组样本 |
+| 3D 文件 | 支持部分系统 3D 类型，依格式而定 | 明确提供 OBJ / STL / GLTF / GLB 静态场景预览 |
+| PDF、照片、音视频 | 成熟的原生预览，部分格式可标记或剪辑 | 在文件夹阅读流程中整合原生查看；不以编辑为目标 |
 
-## 当前边界契约（2026-10-08）
+系统基线参考 [Apple Quick Look 使用说明](https://support.apple.com/en-sg/guide/mac-help/-mh14119/mac)。具体展示受 macOS 版本、文件类型和已装扩展影响；本表不是对所有系统版本的逐格式测试。**Finder 单文件由系统决定调用哪个预览器；OrangeLen 主应用和文件夹预览是更完整的功能入口。**
 
-本轮修复审查中 12 项 P1/P2，并收紧队列、系统文档导入、媒体访问、目录续页、设置与授权生命周期。当前支持与限制统一见 [入口和状态契约](docs/current-contract.md)，实际验证结果见 [修复验收状态](docs/boundary-fix-status.md)；下面的历史阶段描述不替代当前验收。
+## 支持格式
 
-## 竞品补强（2026-10-04）
+**当前明确列出 106 个不重复的文件扩展名**，详见下表；这是后缀计数，不是 106 种编程语言，也不代表所有格式都完整渲染。`.md` / `.markdown` 等别名分别计数；同一个后缀的多个用途只计一次。
 
-本轮新增离线语言高亮、Markdown 大纲/元数据/提示块/脚注、图像画布缩放、大文本分页、压缩包目录树/排序/筛选、SQLite 原生排序/分页/列信息、保存后自动刷新，以及七类独立 Quick Look 扩展。代码、Markdown、数据、目录、归档、电子书、绘图可分别在系统扩展设置启停；开发安装保留用户明确停用的选项。代码类的纯文本声明仍可能提供其他停用类别的基础源码预览。
+| 类别 | 数量 | 扩展名 | 预览内容 |
+| --- | ---: | --- | --- |
+| 代码与网页 | 46 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl` | 源码高亮；HTML 页面；JSX/TSX 单文件组件快照 |
+| 文本与配置 | 11 | `.txt`, `.log`, `.ini`, `.conf`, `.config`, `.properties`, `.plist`, `.yaml`, `.yml`, `.toml`, `.xml` | 原文阅读与查找 |
+| 文档与排版 | 8 | `.md`, `.markdown`, `.mdx`, `.tex`, `.typ`, `.ipynb`, `.epub`, `.pdf` | Markdown 公式与图表、Notebook 已存输出、电子书、PDF；LaTeX 基础子集与单文件 Typst |
+| 结构化数据 | 11 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har` | 结构树、记录、表格或请求记录；不执行 SQL 或网络请求 |
+| 图表与画布 | 6 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg` | 图形与源码；复杂格式采用受支持的子集 |
+| Skill、MCP 与归档 | 8 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz` | 包清单、目录树、按需查看成员；不安装或执行 |
+| 3D 模型 | 4 | `.obj`, `.stl`, `.gltf`, `.glb` | 静态网格与场景、旋转、缩放 |
+| 科学数据与模型目录 | 6 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent` | 列信息、数组样本或张量元数据；不运行模型 |
+| 字幕、差异与来源结构 | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` | 字幕表、增删行、参数源码、未验证的 C2PA 结构 |
+| **合计** | **106** | **不重复后缀** | **源码、结构或效果预览，依格式而定** |
 
-宿主的 **Quick Look 诊断…（⌘D）** 检查真实 UTType、声明匹配、可用宿主入口。系统登记受沙盒限制，提供固定查询命令复制与结果导入；类型候选不等于 Finder 已选中。完整交付与未验收项目见 [补强清单](docs/improvement-plan.md)。通用 Release 编译通过只证明构建，不能证明 Intel 或其他 macOS 已运行。
+此外还支持：
 
-## 界面语言 / Interface language
+- **36 个特殊文件名与 7 组前缀规则**：如 `Dockerfile`、`Makefile`、`.env`、`.gitignore`、`.editorconfig`、`Cargo.lock`、`yarn.lock` 等依赖锁文件，以及 `.env.local`、`Dockerfile.dev` 等。完整名单见 [统计口径](docs/format-count.md)。
+- **整个文件夹 / 项目目录**：目录树、项目概览、按需阅读；不计入文件后缀总数。
+- **AI 工作流内容识别**：ComfyUI / n8n JSON、Dify YAML、OpenAPI JSON，复用已有 JSON / YAML 后缀，不重复加数。
+- **系统格式整合**：ImageIO 图片、AVKit 音视频、Word / RTF / ODT、XLSX / PPTX 内容预览。能力依赖系统和具体文件，未计入上述固定总数；详见 [系统格式范围](docs/system-preview.md)。
 
-主应用、七类 Finder Quick Look 扩展和辅助服务支持简体中文与英文，按 macOS 首选语言顺序选择可用翻译，没有匹配时回退英文。更改系统语言后，请退出并重新打开 OrangeLen，并关闭后重新打开 Finder 预览；不实时替换已经显示的界面。文件正文、文件名、路径与代码不会被翻译。
+统计依据见 [可复核的格式清单](docs/format-count.md)。专用预览的限制见 [高级 AI 产出](docs/advanced-output-previews.md)；实际 Finder 验证见 [支持矩阵](docs/format-support.md)。
 
-The app, seven Quick Look extensions, and helper services support Simplified Chinese and English, selected from the macOS preferred language list with English as fallback. Quit and reopen OrangeLen and close/reopen Finder previews after changing language. Document contents, file names, paths, and code are preserved. See [localization implementation and checks](docs/localization.md).
+## 快速开始
 
-## Build and run
+目前提供源码构建的开发版。最低部署目标为 **macOS 14**，已记录的主要实测环境为 Apple M3 Pro / macOS 26.6.2，构建使用 Xcode 26.5。其他系统和 Intel 实机尚未完整验收；正式分发签名与公证尚未完成。
 
-Requirements: Xcode 26.5 was used (macOS 26.5 SDK, Swift); deployment target macOS 14. Other versions are untested. The build selects Xcode through `DEVELOPER_DIR` without changing global `xcode-select`.
+在仓库根目录运行（需安装 Xcode）：
+
+```sh
+./scripts/install-dev.sh
+open ~/Applications/OrangeLen.app
+```
+
+安装脚本会先构建，再安装到 `~/Applications`。首次构建需联网获取固定版本的 Swift 依赖。
+
+1. 在 Finder 选中文件或文件夹，按 **空格**。
+2. 预览文件夹时，展开左侧目录并点选文件，在右侧查看内容。
+3. 也可在 OrangeLen 中按 **⌘O** 打开文件或目录，用 **⌘,** 调整设置。
+
+未出现 OrangeLen 时，检查系统设置中的 Quick Look 扩展，并关闭后重新打开预览。部分类型仍由系统处理，可从主应用或文件夹入口查看。详细步骤见 [Finder 配置](docs/development-guide.md#finder)。
+
+## 使用边界
+
+- 组件效果是单文件快照；3D 为静态场景；Office 内容预览不保证版式保真。
+- 预览不安装 Skill / MCP 包、不执行工作流、不启动 Notebook kernel、不加载模型推理。React 组件在隔离、禁网的 WebKit 环境中求值。
+- 文件只读；大型文本按页加载，结构、归档和媒体各有资源上限。C2PA 只展示结构，不验证真实性。
+- Markdown 本地图片及关联资源需要目录权限；HTML 预览允许脚本和网络资源。
+
+详见 [当前入口与边界](docs/current-contract.md) 和 [安全与资源限制](docs/development-guide.md#safety-and-limits)。
+
+## 开发与反馈
 
 ```sh
 ./scripts/build.sh
 ./scripts/test.sh
-./scripts/test-native.sh # real sandboxed document XPC + media integration
-./scripts/install-dev.sh
+./scripts/test-native.sh
 ```
 
-The first build fetches pinned swift-markdown 0.8.0 / swift-cmark 0.9.0 dependencies. Bundled specialist renderers work offline; HTML previews allow network resources, while Markdown remote images load only after an explicit user click. The committed Xcode project builds directly; XcodeGen is needed only after editing `project.yml`:
+欢迎提供可复现的问题、合成示例和改进建议。报告问题时请注明 macOS、芯片架构、文件后缀，以及使用的是 Finder 单文件、文件夹还是主应用入口；请勿附带私人文件或签名材料。
 
-```sh
-xcodegen generate
-```
-
-Open `~/Applications/OrangeLen.app`. Choose **Open… (⌘O)** for a file or a directory. Read and change host settings through **Settings… (⌘,)**. The current host and extension both use AppKit text, outline and table views; settings use SwiftUI.
-
-Optional development signing and shared settings, using an existing matching certificate in your own keychain:
-
-```sh
-ORANGELEN_SIGN_IDENTITY='Apple Development' \
-ORANGELEN_TEAM_ID='YOUR_TEAM_ID' ./scripts/install-dev.sh
-```
-
-The script signs nested libraries, the image XPC service and the extension before the app, enables Hardened Runtime for certificate builds, then verifies signatures. It uses Apple's macOS `<team ID>.<group name>` convention for a new app group. It never exports keys or creates certificates. Unsigned-team/ad-hoc builds explicitly fall back to independent settings containers.
-
-## Finder
-
-1. Install the app using the script above; registration and enablement use `pluginkit`.
-2. If needed, check **System Settings → General → Login Items & Extensions → Quick Look** for OrangeLen. Exact labels vary by system; this settings path was not separately UI-tested; script registration was tested.
-3. In Finder select a fixture under `Tests/Fixtures`, press Space, and check that the OrangeLen toolbar appears. Registration alone does not prove selection by Finder.
-4. If another Markdown previewer wins, temporarily disable that previewer through its extension setting and retest. No installer disables another application's extension. Testing originally restored the machine's QLMarkdown selection state; the user subsequently reported uninstalling QLMarkdown.
-5. Closing and reopening Quick Look is necessary after a new build; an already open preview may retain the old process.
-
-Do not rename files, disable SIP, capture Space globally, or register `public.data` to force type matching. See `docs/evidence/content-types.tsv` for actual machine UTTypes.
-
-## Reading
-
-- Advanced AI outputs: Draw.io/JSON Canvas/workflow diagrams, offline React/MDX snapshots, LaTeX basic typesetting and Typst PDF, Parquet/NumPy samples, static OBJ/STL/GLTF/GLB views, Safetensors/GGUF/latent catalogues, n8n packages, JPEG/XMP/sidecars and unverified C2PA structure. See [exact scope and limits](docs/advanced-output-previews.md).
-
-- AI output formats: standalone Mermaid (`.mmd`/`.mermaid`) diagram/source views, MCPB/DXT manifest summaries and archive browsing, SRT/VTT subtitle tables and source, plus A1111/ComfyUI generation metadata alongside PNG/WebP images. Image metadata is available in OrangeLen host/folder views; single-file PNG remains system-handled on the tested Mac. See [AI output previews](docs/ai-output-previews.md).
-
-- HTML: browser rendering and source toggle for HTML/HTM/XHTML, with JavaScript, external CSS/images and network resources enabled. Local relative resources use the authorized containing folder. Finder displays updating page snapshots; the app supports page interaction, with an Open in Browser action. Files over 1 MiB remain paged source. See [HTML preview](docs/html-preview.md).
-- Text/code: VS Code-inspired light/dark colors, monospaced typography, aligned line-number gutter, real selectable text, source-exact Copy, offline Highlight.js language coloring, line numbers, case-sensitive/insensitive search, previous/next result, source line navigation, wrapping, font size and light/dark/system appearance.
-- Markdown: mature CommonMark/GFM parser, native styled text, collapsible heading sidebar/menu, front matter, GitHub alerts, footnotes, code-block source copy, source/render switch, nested/ordered/task lists, quote and code blocks, safe links, and native wrapping/aligned tables. Authorized local inline images use bounded ImageIO decoding; remote images show placeholders until “加载远程图片” is clicked. KaTeX formulas and Mermaid fenced diagrams render offline into source-mapped native attachments. See [rich content and security](docs/markdown-rich-content.md).
-- Rendered Markdown Copy maps selections back to original Markdown source. Entity selections copy original entity spelling; a selection spanning formatting may include Markdown delimiters. Source mode provides exact arbitrary source selection.
-- Folder reader: expand on demand, select code/Markdown/data in the same right pane; 500 directory entries per batch, hidden/ignored toggle, filename filter for loaded items, continue-loading row. Symlinks and packages are not automatically descended in the tree. A persistent footer reports bounded recursive metadata totals (including hidden files), with partial totals clearly marked. File buttons preserve the native selected row.
-- Standalone images: PNG/JPEG/GIF/TIFF/HEIC/WebP/BMP/ICO route to ImageIO + NSImageView instead of text decoding; PNG tested. Input 25 MiB, source at most 100 million pixels, decoded longest edge 2048, animated images use the first frame. Finder PNG selection keeps its existing system handler; this renderer is used in OrangeLen folder/host views.
-- Excalidraw: `.excalidraw` JSON opens as an offline, read-only canvas with a source toggle, using bundled Excalidraw 0.18.1. Shapes, arrows, freehand strokes, text and embedded raster images are supported; malformed scenes fall back to source. Finder canvas/source switching tested on this Mac. Web embeds, external images, embedded SVG and Obsidian `.excalidraw.md` wrappers are unsupported. Preview adds zoom, pan, pinch and fit controls over a bounded raster snapshot; this is not an editor or an unlimited-resolution zoom surface. See [format boundaries](docs/excalidraw.md).
-- JSON: native collapsible tree and source view, raw numeric lexemes and duplicate keys retained; contextual Copy Path / Copy Value.
-- CSV/TSV: native virtualized rows, column sorting and cell filtering, quoted multiline fields, header toggle, 500-row display batches, first 5,000 parsed rows, contextual cell/row copying. Search covers parsed cells in table mode; source mode covers the bounded complete text.
-
-In Finder, prefer the visible **查找 / 全选 / 复制选择** controls. Shortcut forwarding is system/focus dependent; see the recorded results. The app supports ⌘F/⌘C normally. Neither interface intercepts Space or Escape globally.
-
-## M2 containers and documents
-
-EPUB chapter reading and positions, JSONL record isolation, diff coloring, stored Notebook cells/outputs, SQLite tables, ZIP/TAR/TGZ/`.skill` members reuse the native reader. HAR and OpenAPI JSON provide local structured browsing without requests. See [format boundaries](docs/m2-formats.md) and the actual [Finder matrix](docs/format-support.md). M3 MOBI/AZW3 and 7z/RAR remain unimplemented candidates.
-
-## Developer formats (2026-10-04)
-
-Named configuration files and variants (`.env.local`, `.editorconfig`, `.dockerignore`, `Dockerfile.dev`, lockfiles), Vue/Svelte/Astro and common source extensions now have explicit text recognition. JSONC/JSON5 provide source-preserving trees; selected VS Code and TypeScript configuration files automatically use JSONC. Static SVG has a filtered offline image/source view. Ordinary `.log.gz`, `.csv.gz`, `.tsv.gz`, JSON/JSONC/JSON5 and JSONL gzip streams are decoded in memory instead of being mistaken for TAR. See [developer format boundaries](docs/developer-formats.md) for exact scope, limits and Finder dispatch caveats.
-
-## Safety and limits
-
-Source files are read locally and read-only. General source views do not run code. React/MDX effect previews evaluate single-file components in a separate, network-blocked WebKit environment with bundled dependencies and no native message bridge. Typst evaluates only its in-memory document; LaTeX uses a bounded HTML typesetting subset. Document previews invoke no shell, compiler, package manager or notebook kernel. The separate diagnostics page copies a fixed pluginkit metadata-query command for manual execution and imports its text result; document text never becomes a command. SQLite performs only built-in, bounded read queries against a read-only in-memory snapshot; previewed SQL is never executed. A private, network-blocked WebKit renderer runs bundled KaTeX/Mermaid only, using document text as structured data. XML is styled source, so entities are never resolved. Remote images are fetched only after an explicit user click through a bounded HTTPS raster-image client. Local inline images are loaded only within the authorized root and resource budgets; single-file access may not authorize adjacent images; the host app’s “允许本地图片…” lets the user select a directory for the current document without a persistent security-scoped bookmark. A short-lived implicit-scope bookmark is shared through the signed app group for the same document/revision; the host renews a 30-second lease and removes it when closing or switching documents. Finder loading and revocation were verified on this system. Finder shows instructions for the host entry because its preview process cannot present a usable directory panel on the tested system. Standalone images selected in the folder tree use bounded ImageIO decoding. The sandbox has only user-selected **read-only** file access and an optional private app group; network-client permission for the offline WebKit infrastructure and explicit image requests. The Finder download broker is separately sandboxed and has no user-file entitlement.
-
-Limits live in `PreviewLimits`: 5 MiB complete file, 64 structure depth, 20,000 structure nodes, 5,000 CSV rows, 256 columns, 500 directory entries/batch, 20,000 scanned entries and 3 seconds per directory traversal round. Syntax coloring is bounded to the first 250,000 UTF-16 units; loaded source remains exact. The file reader switches text over 1 MiB to 64 KiB pages with exact byte ranges and UTF scalar boundaries. Paged source appears before background coloring (first 16,384 UTF-16 units per page); structured text over 1 MiB falls back to paged source; search, copy and line numbers apply to the loaded page. Unsupported encodings and oversized structured containers are refused.
-
-Reading records are opt-in, local, revision-checked, salted identifiers, capped at 200 entries/30 days, and clearable. No body text is persisted. App Group settings refresh while a preview is active. No fixture comes from a private project.
-
-## 当前不完善之处、原因与影响（2026-10-03）
-
-**M0 原生可行性验证完成，M1 已开发但未完整验收。** 以下区分系统边界、主动取舍、实现缺口和未测试项；未测试不等于故障，也不等于已支持。当前实测环境仅为 macOS 26.6.2 / Apple M3 Pro / Xcode 26.5。本节是当前状态；[验证记录](docs/verification.md) 中较早的失败或缺口须结合后续修复阅读。
-
-### Finder 与文件访问
-
-| 不完善之处 | 原因或限制 | 当前影响与后续方向 |
-|---|---|---|
-| 单独预览 Markdown 时，邻接本地图片需要授权 | **权限边界，已添加显式目录选择**：系统授予所选文件的权限不等于授予其所在目录。本机已出现不可读占位；不能通过拼接路径自行扩大授权 | 有权限的本地图片直接渲染；宿主授权目录已通过。宿主入口只是补充，不能替代 Finder 验收。新增“允许本地图片…”只用于当前文档；宿主授权→Finder 读取→关闭撤销已实测，原地选目录仍需宿主 |
-| Finder 中查找输入、⌘F/⌘C、部分导航键不可靠 | **系统事件传递 + 未完整验证**：外层 Quick Look 窗口由系统管理，测试中键入流向 Finder，⌘F 可打开 Finder 搜索。AX 注入查询成功只证明搜索算法 | 可用查找结果按钮、全选和复制按钮；正常键盘搜索仍未解决。按用户决定不再阻塞验收，不使用全局监听或私有 API 强抢键盘 |
-| 类型分派不完全由 OrangeLen 决定 | **系统选择与缓存**：按 UTType 匹配，其他扩展、系统处理器及旧进程可影响选择；本机 `.ts` 被识别为视频，CSV/TXT 可由系统接管 | 按用户决定保留系统原生预览，不抢占通用类型。QLMarkdown 已卸载为用户报告，过去竞争不再算当前故障；跨机器注册可靠性尚未证明 |
-| 文件夹内系统格式预览 | **已补原生路径，仍有边界**：音视频用 AVKit，Word/RTF/ODT 用系统文档导入器，图片按 ImageIO 实际能力识别；XLSX/XLSM/PPTX/PPTM 提供有界内容预览 | Finder 扩展内嵌套 Quick Look 实测服务调用失败，不能承诺所有系统格式无损预览。旧 XLS/PPT、iWork、RTFD、3D 等仍需 Finder 单文件预览；Office 复杂版式可能简化。见 [目录系统格式](docs/system-preview.md) |
-| 文件夹阅读的实机回归仍不充分 | **验证缺口**：Finder 文件夹调用、枚举、Makefile 同窗正文及选中背景已通过；PNG 共享组件和宿主已通过，Finder 自动化点选 PNG/Markdown 未稳定命中目标 | 不能把自动化未命中直接判定为功能失败，也不能宣称通过。还需两种代码与 Markdown 连续切换、PNG、“已复制”提示、任意拖选的 Finder 回归 |
-| 窄窗口工具栏拥挤、部分控件可能被裁切 | **已补自适应，仍需更多窗口回归**：较窄时折叠到“更多操作”，容器右侧使用紧凑工具栏；Finder 窗口大小由系统与用户共同决定 | 窄窗口组件测试通过；多屏、辅助功能和所有窗口尺寸组合未验收 |
-
-### 渲染完整性与阅读体验
-
-| 不完善之处 | 原因或限制 | 当前影响与后续方向 |
-|---|---|---|
-| Markdown 不等同完整网页或 Obsidian | **安全取舍 + 实现范围**：CommonMark/GFM 原生排版已实现；不执行原始 HTML、脚本或文档样式，Obsidian 扩展语法未实现 | 原始 HTML 作为文本；布局不承诺与浏览器逐像素一致。可逐项补充安全的静态语法，而非执行文档 HTML |
-| 渲染态复制含 Markdown 符号，个别范围映射较粗 | **原文复制设计 + 映射限制**：选区映射回源文；少量 AST 转换只能采用整节点映射 | 粗体、实体、表格等复制可能带原始标记；需要精细选择时切源码。不能宣称所有富文本子选区都精确一一对应 |
-| 公式与 Mermaid 是图像附件 | **当前架构取舍**：离线库在隔离 WebKit 中渲染后转入 TextKit，保持正文原生选择和布局 | 可选整个附件复制 TeX/围栏源码，搜索源文定位附件；无法逐字选择图内文字，图内内容也不支持逐字逐行定位。放大是图像缩放；细节和无障碍仍可改进 |
-| 数学与图表并非无限兼容 | **库能力 + 安全预算**：KaTeX 不是完整 TeX；Mermaid 禁止交互、外部资源、危险 HTML 和文档配置。Finder 测过流程图、时序图；类图继承有自动测试，其他图型未逐一验收 | 单段 16 KiB、最多生成 32 项、每项 5 秒、文档循环 30 秒软预算、累计 800 万物理像素；复杂内容会降级占位并保留源码入口。可调预算，不应直接取消边界 |
-| 高亮及结构视图有限 | **当前实现范围**：高亮使用离线 Highlight.js 语言语法，前 250,000 UTF-16 单元有界；YAML/TOML/XML 目前仅源码，JSON 有树，CSV/TSV 有表格 | 不提供完整语言解析、语义校验或 YAML/TOML/XML 树；EPUB、ZIP/TAR、Notebook、SQLite 已有 M2 基础实现，范围见 [M2 格式边界](docs/m2-formats.md)；MOBI/AZW3、7z/RAR 尚未实现 |
-| 链接与部分鼠标交互尚未完整验收 | **验证缺口**：文内导航委托有测试，但外部浏览器真实点击、单张远程图片占位的鼠标链路尚未独立验证 | 顶部“加载远程图片”按钮已在 Finder 走通；不能据此宣称所有链接交互已通过 |
-
-### 图片、安全和资源预算
-
-- **Markdown 远程图片有意限制兼容性**：仅点击后加载公共 HTTPS/443 栅格图片，拒绝私网、URL 账号、任何重定向、HTML/SVG、压缩传输，不发送 Cookie/认证/Referer。因此部分 CDN 跳转、内网图床和登录图片不会显示。这样限制是为了减小注入、内网探测及资源耗尽风险；不是“系统完全无法加载”。系统配置的代理可能承载请求，不能承诺绕过代理。服务器仍会看到用户主动发起的图片请求。
-- **远程下载有上限**：每张 5 MiB/15 秒，每文档最多 8 次尝试、20 MiB 输入；源图最多 2500 万像素，解码最长边 1200，图片累计 800 万像素。失败重试也消耗尝试预算，重新打开不自动联网、不复用此前同意，不缓存到磁盘。
-- **Finder 直接 DNS 曾被沙盒拒绝，但该链路已解决**：内嵌、独立沙盒的窄接口 XPC 图片服务已在真实 Finder 验证成功；此历史问题不再列为当前远程加载阻塞。服务没有用户文件权限。
-- **本地独立图片不是无损全功能看图器**：输入 25 MiB、源图 1 亿像素、最长边 2048，动图只显示首帧。PNG 已测，其余列举格式未逐一实测；不自动读取越界路径、符号链接或未下载的云内容。
-- **文本与结构有界**：普通文件阅读入口的文本 ≤1 MiB 完整读取，更大文本以 64 KiB 页读取（核心读取器及容器仍保留各自安全预算），仅接受严格 UTF-8 或带 BOM 的 UTF-16；其他编码拒绝。页边界保留完整 Unicode 标量，查找与复制限当前页，超大结构文档降级分页源码。完整文本高亮仅前 250,000 UTF-16 单元；分页正文先显示，后台高亮限每页前 16,384 UTF-16 单元。当前仍需按钮翻页，尚未实现连续滚动与按视口高亮；结构深度 64、节点 20,000；CSV/TSV 前 5,000 行、256 列。极长正文的全部焦点导航未覆盖，表格可切源码查看大小界限内完整文本。
-- **目录统计不是磁盘占用或实时监控**：目录树每批 500 项、单轮扫描最多 20,000 项/3 秒；递归总量统计独立在后台持续到结束，约每 0.2 秒更新数量和大小，关闭或切换目录会取消。显示逻辑文件大小，包含隐藏项，遇权限、云占位等跳过项会标为部分结果。符号链接单列不跟随，包不自动展开；内容变化后需重新打开根目录。过滤只针对已加载文件名，没有全项目内容搜索；项目摘要已读取 README 与 package.json/pyproject.toml/Cargo.toml/go.mod 的有界声明线索，不能判断项目可运行性。
-- **取消不是所有底层调用都能瞬时中断**：协调读取、cmark C 调用及系统 DNS 等同步操作可能先完成，再丢弃已取消结果；WebKit 进程回收和瞬时内存也没有硬实时保证。当前预算和取消测试不能代替恶意输入压力测试。
-- **安全措施不是无漏洞保证**：有注入、循环宏、私网地址、HTTP 解析和预算测试；坏证书测试站点在本机超时，证书错误分支尚未实测。未来仍需跟踪第三方库安全更新并扩充边界测试。
-
-### 稳定性、兼容与发布尚欠的验证
-
-本轮 85 项 XCTest 已通过（较早验收记录的 43 项是历史数据）；应用内渲染、真实 Finder 调用、签名构建的证据分别保存。仍未完整测试：真实云提供商“不下载”行为、外置盘、权限变化/删除、真实 Finder 大型内容/并发切换压力、阅读位置恢复全流程、跨进程设置并发、首启盐值竞争、崩溃恢复、VoiceOver/高对比/多屏，以及 macOS 14/15/其他 26 版本和 Intel。测试中的约 1 MiB/20 次热加载指标是进程内数据，不能当作 Finder 冷启动或稳定内存承诺。
-
-现有 Apple Development 签名仅确认本机开发版可运行；**Developer ID 发布签名、公证、staple 和发布版 Gatekeeper 验收未执行**。没有对应外部条件时保留未执行状态，不把开发 ZIP 当作已公证发行版。无 Team 的 ad-hoc 构建使用独立设置容器，不能保证宿主与扩展共享设置。
-
-详细证据见 [格式矩阵](docs/format-support.md)、[验证记录](docs/verification.md)、[富内容安全边界](docs/markdown-rich-content.md)。后续优先补齐 Finder 目录内阅读回归、本地图片授权、窄窗回归与稳定性；用户已接受的键盘搜索和系统格式接管不重新列为阻塞。
-
-## Package
-
-```sh
-./scripts/package.sh dev
-# Only with your existing Developer ID certificate:
-ORANGELEN_SIGN_IDENTITY='Developer ID Application: …' \
-ORANGELEN_TEAM_ID='YOUR_TEAM_ID' \
-ORANGELEN_NOTARY_PROFILE='YOUR_EXISTING_PROFILE' ./scripts/package.sh release
-# Release packaging requires that profile, both architectures and Gatekeeper acceptance.
-```
-
-Outputs go to `build/artifacts/`. **Developer ID signing, notarization and stapling have not been executed in this environment.** Apple Development signing is not a distribution approval. Build and test logs are in `build/`; selected reproducible evidence is in `docs/evidence/`.
-
-## Uninstall
-
-Quit OrangeLen and close its Finder previews. Unregister each `.appex` under `~/Applications/OrangeLen.app/Contents/PlugIns` with `pluginkit -r`, then move `~/Applications/OrangeLen.app` to Trash. Optional settings/read-position data remains in the app containers and your configured OrangeLen group container; clear reading records in Settings first if desired. Do not remove other applications' containers or reset their extensions.
-
-For an issue report include macOS, Xcode, architecture, build/signing mode, actual UTType and a synthetic fixture. Do not attach private source content or signing material.
-
-### Skill 包预览
-
-支持 ZIP 打包的 `.skill` 文件：目录树浏览、Markdown/代码预览，优先打开最浅层的 `SKILL.md`。沿用归档大小、压缩比、CRC 与路径校验；不执行包内脚本、不解压到磁盘。Finder 类型归属已声明，实际接管取决于系统登记。测试示例：`Tests/Fixtures/m2/sample.skill`。
+[架构](docs/architecture.md) · [构建、签名与卸载](docs/development-guide.md) · [验证记录](docs/verification.md) · [依赖与许可证说明](docs/dependencies.md) · [更新日志](CHANGELOG.md)
