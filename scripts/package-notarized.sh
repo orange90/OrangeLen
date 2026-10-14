@@ -38,12 +38,17 @@ if [[ "${1:-prepare}" == prepare ]]; then
   while IFS= read -r -d '' executable; do lipo "$executable" -verify_arch arm64 x86_64; done < <(find "$app/Contents" -type f -perm -111 -path '*/MacOS/*' -print0)
   codesign --verify --deep --strict "$app"
   echo "Prepared: $app"
-elif [[ "${1:-}" == notarize ]]; then
+elif [[ "${1:-}" == notarize || "${1:-}" == resume ]]; then
   : "${ORANGELEN_NOTARY_PROFILE:?Configured notarytool profile required}"
   codesign --verify --deep --strict "$app"
   test "$(codesign -dv "$app" 2>&1 | sed -n 's/^TeamIdentifier=//p')" = "$ORANGELEN_TEAM_ID"
-  ditto -c -k --keepParent "$app" "$stage/submission.zip"
-  xcrun notarytool submit "$stage/submission.zip" --keychain-profile "$ORANGELEN_NOTARY_PROFILE" --wait --output-format json > "$stage/app-notary.json"
+  if [[ "${1:-}" == resume ]]; then
+    : "${ORANGELEN_NOTARY_SUBMISSION:?Existing Apple submission ID required}"
+    xcrun notarytool wait "$ORANGELEN_NOTARY_SUBMISSION" --keychain-profile "$ORANGELEN_NOTARY_PROFILE" --output-format json > "$stage/app-notary.json"
+  else
+    ditto -c -k --keepParent "$app" "$stage/submission.zip"
+    xcrun notarytool submit "$stage/submission.zip" --keychain-profile "$ORANGELEN_NOTARY_PROFILE" --wait --output-format json > "$stage/app-notary.json"
+  fi
   python3 -c 'import json,sys; assert json.load(open(sys.argv[1]))["status"] == "Accepted"' "$stage/app-notary.json"
   xcrun stapler staple "$app"
   xcrun stapler validate "$app"
@@ -76,5 +81,5 @@ EOF
   ditto "$dmg" "build/artifacts/$(basename "$dmg")"
   (cd build/artifacts && shasum -a 256 "$(basename "$dmg")" > OrangeLen-0.1.0-preview.2-SHA256SUMS.txt)
 else
-  echo 'Usage: scripts/package-notarized.sh prepare|notarize' >&2; exit 2
+  echo 'Usage: scripts/package-notarized.sh prepare|notarize|resume' >&2; exit 2
 fi
