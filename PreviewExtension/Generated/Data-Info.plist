@@ -38,6 +38,8 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>public.ndjson</string>
+				<string>org.xmind.openformat.xmp</string>
 				<string>local.orangelen.xmp</string>
 				<string>local.orangelen.scientific</string>
 				<string>org.w3.webvtt</string>

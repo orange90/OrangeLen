@@ -1,0 +1,107 @@
+extension	actual_uti	matching_extensions	declared_types
+swift	public.swift-source	OrangeLenPreview.appex	public.plain-text,public.source-code,public.swift-source
+py	public.python-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.python-script,public.shell-script
+js	com.netscape.javascript-source	OrangeLenPreview.appex	public.plain-text,public.source-code
+ts	public.mpeg-2-transport-stream		
+tsx	com.microsoft.typescript	OrangeLenPreview.appex	public.plain-text,public.source-code
+jsx	local.orangelen.component	OrangeLenPreview.appex	local.orangelen.component,public.plain-text,public.source-code
+mjs	com.netscape.javascript-source	OrangeLenPreview.appex	public.plain-text,public.source-code
+cjs	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+mts	public.avchd-mpeg-2-transport-stream		
+cts	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+vue	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+svelte	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+astro	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+c	public.c-source	OrangeLenPreview.appex	public.plain-text,public.source-code,public.c-source
+h	public.c-header	OrangeLenPreview.appex	public.plain-text,public.source-code
+cpp	public.c-plus-plus-source	OrangeLenPreview.appex	public.plain-text,public.source-code,public.c-plus-plus-source
+hpp	public.c-plus-plus-header	OrangeLenPreview.appex	public.plain-text,public.source-code
+rs	dyn.ah62d4rv4ge81e62		
+go	dyn.ah62d4rv4ge80s52		
+sh	public.shell-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.shell-script
+zsh	public.zsh-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.shell-script
+bash	public.bash-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.shell-script
+rb	public.ruby-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.shell-script
+java	com.sun.java-source	OrangeLenPreview.appex	public.plain-text,public.source-code
+kt	dyn.ah62d4rv4ge8007a		
+css	public.css		
+scss	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+sass	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+less	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+html	public.html		
+htm	public.html		
+xhtml	public.xhtml	OrangeLenPreviewData.appex	public.xml
+sql	org.iso.sql	OrangeLenPreview.appex	public.plain-text,public.source-code
+cs	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+php	public.php-script	OrangeLenPreview.appex	public.plain-text,public.source-code,public.shell-script
+dart	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+lua	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+r	com.apple.rez-source	OrangeLenPreview.appex	public.plain-text,public.source-code
+scala	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+ps1	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+proto	public.protobuf-source	OrangeLenPreview.appex	public.plain-text,public.source-code
+graphql	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+gql	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+tf	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+tfvars	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+hcl	local.orangelen.developer-source	OrangeLenPreview.appex	public.plain-text,public.source-code,local.orangelen.developer-source
+txt	public.plain-text	OrangeLenPreview.appex	public.plain-text
+log	com.apple.log	OrangeLenPreview.appex	public.plain-text
+ini	com.microsoft.ini		
+conf	dyn.ah62d4rv4ge80g55sq2		
+config	public.toml	OrangeLenPreviewData.appex	public.toml
+properties	dyn.ah62d4rv4ge81a6xtsbw1e7dmqz3u		
+plist	com.apple.property-list		
+yaml	public.yaml	OrangeLenPreviewData.appex	public.yaml
+yml	public.yaml	OrangeLenPreviewData.appex	public.yaml
+toml	public.toml	OrangeLenPreviewData.appex	public.toml
+xml	public.xml	OrangeLenPreviewData.appex	public.xml
+md	net.daringfireball.markdown	OrangeLenPreviewMarkdown.appex	net.daringfireball.markdown
+markdown	net.daringfireball.markdown	OrangeLenPreviewMarkdown.appex	net.daringfireball.markdown
+mdx	local.orangelen.typesetting	OrangeLenPreview.appex,OrangeLenPreviewMarkdown.appex	public.plain-text,local.orangelen.typesetting
+tex	local.orangelen.typesetting	OrangeLenPreview.appex,OrangeLenPreviewMarkdown.appex	public.plain-text,local.orangelen.typesetting
+typ	local.orangelen.typesetting	OrangeLenPreview.appex,OrangeLenPreviewMarkdown.appex	public.plain-text,local.orangelen.typesetting
+ipynb	local.orangelen.notebook	OrangeLenPreviewData.appex,OrangeLenPreviewMarkdown.appex	public.json,local.orangelen.notebook
+epub	org.idpf.epub-container	OrangeLenPreviewBooks.appex	org.idpf.epub-container
+pdf	com.adobe.pdf		
+json	public.json	OrangeLenPreviewData.appex	public.json
+jsonc	local.orangelen.jsonc	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,local.orangelen.jsonc
+json5	local.orangelen.json5	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,local.orangelen.json5
+jsonl	local.orangelen.jsonl	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,local.orangelen.jsonl
+ndjson	public.ndjson		
+csv	public.comma-separated-values-text	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,public.comma-separated-values-text
+tsv	public.tab-separated-values-text	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,public.tab-separated-values-text
+sqlite	local.orangelen.sqlite	OrangeLenPreviewData.appex	local.orangelen.sqlite
+sqlite3	local.orangelen.sqlite	OrangeLenPreviewData.appex	local.orangelen.sqlite
+db	local.orangelen.sqlite	OrangeLenPreviewData.appex	local.orangelen.sqlite
+har	local.orangelen.har	OrangeLenPreviewData.appex	public.json,local.orangelen.har
+mmd	local.orangelen.mermaid	OrangeLenPreview.appex,OrangeLenPreviewDrawings.appex	public.plain-text,local.orangelen.mermaid
+mermaid	local.orangelen.mermaid	OrangeLenPreview.appex,OrangeLenPreviewDrawings.appex	public.plain-text,local.orangelen.mermaid
+excalidraw	com.excalidraw.excalidraw	OrangeLenPreviewData.appex,OrangeLenPreviewDrawings.appex	public.json,com.excalidraw.excalidraw
+drawio	local.orangelen.diagram	OrangeLenPreview.appex,OrangeLenPreviewDrawings.appex	public.plain-text,local.orangelen.diagram
+canvas	local.orangelen.diagram	OrangeLenPreview.appex,OrangeLenPreviewDrawings.appex	public.plain-text,local.orangelen.diagram
+svg	public.svg-image	OrangeLenPreviewData.appex,OrangeLenPreviewDrawings.appex	public.xml,public.svg-image
+skill	com.openai.codex.skill	OrangeLenPreviewArchives.appex	com.openai.codex.skill
+mcpb	local.orangelen.mcpb	OrangeLenPreviewArchives.appex	local.orangelen.mcpb,public.zip-archive
+dxt	local.orangelen.mcpb	OrangeLenPreviewArchives.appex	local.orangelen.mcpb,public.zip-archive
+n8np	dyn.ah62d4rv4ge806sdssa		
+zip	public.zip-archive	OrangeLenPreviewArchives.appex	public.zip-archive
+tar	public.tar-archive	OrangeLenPreviewArchives.appex	public.tar-archive
+tgz	org.gnu.gnu-zip-tar-archive	OrangeLenPreviewArchives.appex	org.gnu.gnu-zip-archive
+gz	org.gnu.gnu-zip-archive	OrangeLenPreviewArchives.appex	org.gnu.gnu-zip-archive
+obj	public.geometry-definition-format		
+stl	public.standard-tesselated-geometry-format		
+gltf	org.khronos.gltf	OrangeLenPreviewData.appex	public.json
+glb	org.khronos.glb		
+parquet	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific
+npy	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific
+npz	local.orangelen.numpy-archive	OrangeLenPreviewArchives.appex	local.orangelen.numpy-archive,public.zip-archive
+safetensors	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific
+gguf	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific
+latent	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific
+srt	local.orangelen.subtitle	OrangeLenPreview.appex,OrangeLenPreviewData.appex	public.plain-text,local.orangelen.subtitle
+vtt	org.w3.webvtt	OrangeLenPreviewData.appex	org.w3.webvtt
+diff	public.patch-file	OrangeLenPreview.appex	public.plain-text
+patch	public.patch-file	OrangeLenPreview.appex	public.plain-text
+xmp	org.xmind.openformat.xmp		
+c2pa	local.orangelen.scientific	OrangeLenPreviewData.appex	local.orangelen.scientific

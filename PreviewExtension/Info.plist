@@ -38,6 +38,13 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>public.css</string>
+				<string>public.html</string>
+				<string>com.microsoft.typescript</string>
+				<string>com.microsoft.ini</string>
+				<string>com.apple.property-list</string>
+				<string>public.mpeg-2-transport-stream</string>
+				<string>public.avchd-mpeg-2-transport-stream</string>
 				<string>local.orangelen.component</string>
 				<string>public.plain-text</string>
 				<string>public.source-code</string>

@@ -46,7 +46,10 @@ targets:
     templates: [SharedResourceConsumer]
     type: application
     platform: macOS
-    sources: [App]
+    sources:
+      - path: App
+      - path: scripts/prefer-mesh-preview.sh
+        buildPhase: resources
     postBuildScripts:
       - name: Share read-only package resources
         script: /usr/bin/python3 "$SRCROOT/scripts/deduplicate-resources.py" "$TARGET_BUILD_DIR/$WRAPPER_NAME"
@@ -66,7 +69,7 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSApplicationCategoryType: public.app-category.developer-tools
         NSHumanReadableCopyright: Copyright © 2026 OrangeLen contributors
-        UTImportedTypeDeclarations:
+        UTExportedTypeDeclarations:
           - UTTypeIdentifier: local.orangelen.xmp
             UTTypeDescription: XMP Metadata
             UTTypeConformsTo: [public.xml]
@@ -104,7 +107,7 @@ targets:
               public.filename-extension: [npz]
           - UTTypeIdentifier: local.orangelen.n8n-package
             UTTypeDescription: n8n Package
-            UTTypeConformsTo: [public.archive]
+            UTTypeConformsTo: [public.data, public.archive, public.content]
             UTTypeTagSpecification:
               public.filename-extension: [n8np]
           - UTTypeIdentifier: local.orangelen.mermaid
@@ -141,12 +144,7 @@ targets:
             UTTypeDescription: Developer Source and Configuration
             UTTypeConformsTo: [public.source-code]
             UTTypeTagSpecification:
-              public.filename-extension: [vue, svelte, astro, mjs, cjs, mts, cts, scss, sass, less, cs, php, dart, lua, r, scala, ps1, proto, graphql, gql, tf, tfvars, hcl]
-          - UTTypeIdentifier: com.excalidraw.excalidraw
-            UTTypeDescription: Excalidraw Drawing
-            UTTypeConformsTo: [public.json]
-            UTTypeTagSpecification:
-              public.filename-extension: [excalidraw]
+              public.filename-extension: [rs, go, kt, conf, properties, vue, svelte, astro, mjs, cjs, mts, cts, scss, sass, less, cs, php, dart, lua, r, scala, ps1, proto, graphql, gql, tf, tfvars, hcl]
           - UTTypeIdentifier: local.orangelen.har
             UTTypeDescription: HTTP Archive
             UTTypeConformsTo: [public.json]
@@ -172,6 +170,12 @@ targets:
             UTTypeConformsTo: [public.data]
             UTTypeTagSpecification:
               public.filename-extension: [sqlite, sqlite3, db]
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.excalidraw.excalidraw
+            UTTypeDescription: Excalidraw Drawing
+            UTTypeConformsTo: [public.json]
+            UTTypeTagSpecification:
+              public.filename-extension: [excalidraw]
 
     settings:
       base:
@@ -222,7 +226,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [local.orangelen.component, public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, public.make-source, local.orangelen.developer-source]
+            QLSupportedContentTypes: [public.css, public.html, com.microsoft.typescript, com.microsoft.ini, com.apple.property-list, public.mpeg-2-transport-stream, public.avchd-mpeg-2-transport-stream, local.orangelen.component, public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, public.make-source, local.orangelen.developer-source]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -304,7 +308,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [local.orangelen.xmp, local.orangelen.scientific, org.w3.webvtt, local.orangelen.subtitle, public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
+            QLSupportedContentTypes: [public.ndjson, org.xmind.openformat.xmp, local.orangelen.xmp, local.orangelen.scientific, org.w3.webvtt, local.orangelen.subtitle, public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -386,7 +390,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
+            QLSupportedContentTypes: [org.gnu.gnu-zip-tar-archive, local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -427,7 +431,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [org.idpf.epub-container]
+            QLSupportedContentTypes: [org.idpf.epub-container, com.adobe.pdf]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -468,7 +472,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [local.orangelen.diagram, local.orangelen.mesh, public.png, org.webmproject.webp, local.orangelen.mermaid, com.excalidraw.excalidraw, public.svg-image]
+            QLSupportedContentTypes: [org.khronos.glb, org.khronos.gltf, public.geometry-definition-format, public.standard-tesselated-geometry-format, local.orangelen.diagram, local.orangelen.mesh, public.png, org.webmproject.webp, local.orangelen.mermaid, com.excalidraw.excalidraw, public.svg-image]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:

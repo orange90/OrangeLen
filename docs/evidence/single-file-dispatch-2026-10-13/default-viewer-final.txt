@@ -1,0 +1,2 @@
+public.mpeg-2-transport-stream Optional(com.mac.utility.media.player)
+public.avchd-mpeg-2-transport-stream Optional(com.mac.utility.media.player)

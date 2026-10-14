@@ -1,0 +1,3 @@
+qlmanage: resetting quicklookd
+Restored the previous Hydra election. Close and reopen Quick Look.
+     com.apple.HydraQLPreviewExtension(1.0)

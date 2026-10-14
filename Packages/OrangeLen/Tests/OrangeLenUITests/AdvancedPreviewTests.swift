@@ -59,6 +59,15 @@ import OrangeLenCore
         let ready = expectation(description:"fallback"); reader.open(file) { error in XCTAssertNil(error); ready.fulfill() }; await fulfillment(of:[ready],timeout:10)
         XCTAssertEqual(reader.text.string,"<mxfile>broken"); XCTAssertTrue(reader.parseWarning.contains("source") || reader.parseWarning.contains("源码"))
         await open(reader,"mesh.glb"); weak var mesh = reader.advancedView as? MeshPreview; reader.close(); XCTAssertNil(mesh?.renderer.scene); try await Task.sleep(nanoseconds:50_000_000); XCTAssertNil(mesh)
+        let brokenMesh = file.deletingPathExtension().appendingPathExtension("glb")
+        defer { try? FileManager.default.removeItem(at:brokenMesh) }
+        try Data("glTF".utf8).write(to:brokenMesh)
+        let failed = expectation(description:"invalid mesh finishes with a visible error")
+        reader.open(brokenMesh) { error in XCTAssertNotNil(error); failed.fulfill() }
+        await fulfillment(of:[failed],timeout:10)
+        XCTAssertNil(reader.advancedView)
+        XCTAssertFalse(reader.text.string.isEmpty)
+        XCTAssertEqual(reader.status.stringValue,L10n.text("预览未完成 · 可重载或选择其他文件"))
     }
     func testAdvancedViewsFitFolderWindowAfterResize() async throws {
         _ = NSApplication.shared; let reader = ReaderController()

@@ -401,25 +401,26 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
         text.string = L10n.text("正在读取…"); status.stringValue = L10n.text("OrangeLen · 本地、只读 · 正在载入 \(url.lastPathComponent)"); showContent(scroll)
         let loadStarted = ProcessInfo.processInfo.systemUptime
         let root = rootURL, imageRoot = imageRootURL ?? rootURL; let detected = PreviewFormat.detect(url); format = detected
-        let enhanced = previewCategory == nil || previewCategory == PreviewCategory.folders.rawValue || previewCategory == PreviewCategory.detect(url).rawValue
-        if enhanced && loadAdvanced(url, root: root, id: id, token: token) { return }
-        if enhanced && ["mmd", "mermaid"].contains(url.pathExtension.lowercased()) {
+        // Quick Look may select any of our overlapping UTI candidates.
+        // Bundle category controls registration, not the renderer of a received file.
+        if loadAdvanced(url, root: root, id: id, token: token) { return }
+        if ["mmd", "mermaid"].contains(url.pathExtension.lowercased()) {
             loadMermaid(url, root: root, id: id, token: token); return
         }
-        if enhanced && ["srt", "vtt"].contains(url.pathExtension.lowercased()) {
+        if ["srt", "vtt"].contains(url.pathExtension.lowercased()) {
             loadSubtitles(url, root: root, id: id, token: token); return
         }
-        if enhanced && url.pathExtension.lowercased() == "excalidraw" {
+        if url.pathExtension.lowercased() == "excalidraw" {
             canvasLabel = "Excalidraw"
             loadExcalidraw(url, root: root, id: id, token: token)
             return
         }
-        if enhanced && url.pathExtension.lowercased() == "svg" {
+        if url.pathExtension.lowercased() == "svg" {
             canvasLabel = "SVG"
             loadSVG(url, root: root, id: id, token: token)
             return
         }
-        if enhanced && ["sqlite", "sqlite3", "db"].contains(url.pathExtension.lowercased()) {
+        if ["sqlite", "sqlite3", "db"].contains(url.pathExtension.lowercased()) {
             if databaseController == nil { let child = DatabaseController(); addChild(child); databaseController = child }
             showContent(databaseController!.view)
             databaseController?.copyFeedback = { [weak self] in self?.showCopyNotice($0) }
@@ -435,7 +436,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        if enhanced && ["n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
+        if ["n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
             if archiveController == nil { let child = ArchiveController(); addChild(child); archiveController = child }
             showContent(archiveController!.view)
             PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (ArchiveDocument, String, String?) in
@@ -460,7 +461,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        if enhanced && ReadableFormat.isCollection(url) {
+        if ReadableFormat.isCollection(url) {
             if collection == nil { let child = CollectionController(); addChild(child); collection = child }
             showContent(collection!.view)
             collection!.open(url, root: root, restoring: collectionState) { [weak self] error in guard let self, self.generation == id else { return }; self.status.stringValue = url.lastPathComponent + (error == nil ? L10n.text(" · 容器预览 · 本地、只读") : L10n.text(" · 读取失败 · 可重载或选择其他文件")); self.finish(error) }
@@ -481,7 +482,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             loadSystemPreview(url, root: root)
             return
         }
-        if enhanced && !ImagePreview.supports(url) && !ReadableFormat.isText(url) {
+        if !ImagePreview.supports(url) && !ReadableFormat.isText(url) {
             let size = (try? url.resourceValues(forKeys:[.fileSizeKey]).fileSize) ?? 0
             showMessage(L10n.text("暂不支持此格式：\(url.pathExtension.isEmpty ? L10n.text("无后缀") : url.pathExtension)\n\(ByteCountFormatter.string(fromByteCount:Int64(size),countStyle:.file))\n可在“更多操作”中用默认应用打开或在 Finder 中显示。\n预览不会执行此文件或强制二进制解码。"))
             status.stringValue = L10n.text("不支持的格式 · 明确降级"); finish(nil); return
@@ -528,8 +529,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 var assets = MarkdownAssets()
                 var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice; var graph: DiagramDocument?
                 do {
-                    if !snapshot.partial && enhanced { graph = try DiagramDocument.parseIfKnown(snapshot.text, name:url.lastPathComponent, cancellation:token)?.resolvingCards(document:url,root:root,cancellation:token) }
-                    switch (snapshot.partial || !enhanced) ? PreviewFormat.code : detected {
+                    if !snapshot.partial { graph = try DiagramDocument.parseIfKnown(snapshot.text, name:url.lastPathComponent, cancellation:token)?.resolvingCards(document:url,root:root,cancellation:token) }
+                    switch snapshot.partial ? PreviewFormat.code : detected {
                     case .markdown:
                         markdown = try MarkdownModel.parse(snapshot.text, cancellation: token)
                         if let markdown { assets = try MarkdownAssets.load(markdown, document: url, root: imageRoot, cancellation: token) }
@@ -549,7 +550,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                     if loaded.0.byteOffset == 0 { self.pageHistory = [] }
                     self.source = loaded.0; self.rendered = loaded.1; self.jsonTree = loaded.2; self.tableData = loaded.3; self.parseWarning = loaded.4; self.markdownAssets = loaded.5
                     if let graph = loaded.6 { self.advancedView = DiagramPreview(graph) }
-                    if enhanced { self.prepareHTMLPreview(url: url, snapshot: loaded.0) }
+                    self.prepareHTMLPreview(url: url, snapshot: loaded.0)
                     self.mode.selectedSegment = 0; self.present(); self.startRichRendering()
                     self.scroll.contentView.scroll(to: .zero); self.scroll.reflectScrolledClipView(self.scroll.contentView)
                     if let offset = SettingsStore.shared.restore(url, revision: loaded.0.revision, byteOffset: loaded.0.byteOffset) {
@@ -560,6 +561,18 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                     self.logger.notice("preview ready_ms=\((ProcessInfo.processInfo.systemUptime - loadStarted) * 1000, privacy: .public)")
                     self.finish(nil)
                 case .failure(let error):
+                    // .ts/.mts are also MPEG transport streams in Launch Services.
+                    // Once registered for those concrete UTIs, keep binary media on
+                    // the AVKit path instead of forcing it through the code reader.
+                    if ["ts", "mts"].contains(url.pathExtension.lowercased()),
+                       let readError = error as? PreviewError {
+                        switch readError {
+                        case .binary, .encoding:
+                            self.loadSystemPreview(url, root: root)
+                            return
+                        default: break
+                        }
+                    }
                     self.text.string = error is CancellationError ? L10n.text("已取消") : error.localizedDescription
                     self.status.stringValue = L10n.text("预览未完成 · 可重载或选择其他文件")
                     self.logger.notice("load failed code=\((error as NSError).code, privacy: .public)"); self.finish(error)

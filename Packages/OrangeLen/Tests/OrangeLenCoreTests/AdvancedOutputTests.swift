@@ -40,6 +40,32 @@ final class AdvancedOutputTests: XCTestCase {
         let changed = try text("mesh.gltf").replacingOccurrences(of:"\"count\": 3",with:"\"count\": 300")
         XCTAssertThrowsError(try MeshDocument.parse(Data(changed.utf8),name:"bad.gltf"))
     }
+    func testLargeIndexedMeshSamplesWholeTrianglesWithoutRaisingGeometryBudget() throws {
+        let positions: [Float] = [-1,0,0,1,0,0,0,1,0]
+        var bytes = positions.withUnsafeBytes { Data($0) }
+        let indexCount = 600003
+        for i in 0..<indexCount {
+            var index = UInt32(i % 3).littleEndian
+            withUnsafeBytes(of: &index) { bytes.append(contentsOf: $0) }
+        }
+        var object: [String:Any] = ["asset":["version":"2.0"],
+            "buffers":[["byteLength":bytes.count,"uri":"data:application/octet-stream;base64," + bytes.base64EncodedString()]],
+            "bufferViews":[["buffer":0,"byteLength":36],["buffer":0,"byteOffset":36,"byteLength":indexCount * 4]],
+            "accessors":[["bufferView":0,"componentType":5126,"count":3,"type":"VEC3"],["bufferView":1,"componentType":5125,"count":indexCount,"type":"SCALAR"]],
+            "meshes":[["primitives":[["attributes":["POSITION":0],"indices":1]]]]]
+        let mesh = try MeshDocument.parse(JSONSerialization.data(withJSONObject:object),name:"large.gltf")
+        XCTAssertEqual(mesh.triangles,100001)
+        XCTAssertTrue(mesh.notice.contains("sampled"))
+        XCTAssertLessThanOrEqual(mesh.parts.reduce(0) { $0 + $1.indices.count },600000)
+        XCTAssertEqual(Array(mesh.parts[0].indices.prefix(6)),[0,1,2,0,1,2])
+        var accessors = object["accessors"] as! [[String:Any]]
+        accessors[1]["count"] = indexCount + 3; object["accessors"] = accessors
+        XCTAssertThrowsError(try MeshDocument.parse(JSONSerialization.data(withJSONObject:object),name:"out-of-bounds.gltf"))
+        accessors[1]["count"] = indexCount - 1; object["accessors"] = accessors
+        XCTAssertThrowsError(try MeshDocument.parse(JSONSerialization.data(withJSONObject:object),name:"incomplete-triangle.gltf"))
+        let token = Cancellation(); token.cancel()
+        XCTAssertThrowsError(try MeshDocument.parse(JSONSerialization.data(withJSONObject:object),name:"cancelled.gltf",cancellation:token))
+    }
     func testParquetFooterAndInvalidLength() throws {
         let data = try fixture("table.parquet"), metadata = try ParquetHeader.parse(data)
         XCTAssertEqual(metadata.rows,3); XCTAssertEqual(metadata.columns,3)

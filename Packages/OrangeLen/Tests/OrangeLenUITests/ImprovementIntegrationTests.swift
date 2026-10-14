@@ -183,13 +183,13 @@ import OrangeLenCore
         XCTAssertEqual(archive.filter.stringValue, "src/demo.swift")
         XCTAssertEqual(archive.readingState.path, "src/demo.swift")
     }
-    func testCategoryFallbackAndNarrowOutlineKeepSourceReadable() async throws {
+    func testOverlappingCategoryKeepsMarkdownAndNarrowOutlineReadable() async throws {
         _ = NSApplication.shared
         let reader = ReaderController(); reader.loadViewIfNeeded(); defer { reader.close() }
         reader.previewCategory = PreviewCategory.code.rawValue
         await open(reader, fixture("improvements/reading.md"))
-        XCTAssertNil(reader.rendered); XCTAssertFalse(reader.mode.isEnabled)
-        XCTAssertEqual(reader.text.string, reader.source?.text)
+        XCTAssertNotNil(reader.rendered); XCTAssertTrue(reader.mode.isEnabled)
+        XCTAssertEqual(reader.text.string, reader.rendered?.display)
         reader.previewCategory = nil
         await open(reader, fixture("improvements/reading.md"))
         reader.settings.markdownOutline = true; reader.present()

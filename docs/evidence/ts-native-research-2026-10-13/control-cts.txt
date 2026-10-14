@@ -1,0 +1,18 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 text Value: audit.cts 64 bytes Last modified on 13 Oct 2026 at 12:42:35 PM , ID: QLAXImageAndText_Text
+	2 image Description: Preview, ID: QLAXImageAndText_Image
+	3 close button close panel button
+	4 full screen button full screen window button
+	5 button Description: Share file, ID: QLControlShare
+	6 button Open with TextEdit, Description: Open file, ID: QLControlOpen
+7 menu bar
+	8 Finder
+	9 File
+	10 Edit
+	11 View
+	12 Go
+	13 Window
+	14 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

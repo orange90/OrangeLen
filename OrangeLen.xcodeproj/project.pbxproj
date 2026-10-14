@@ -60,6 +60,7 @@
 		725011E5452FA98438BAF813 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 42C5F839A6EC25E572872E32 /* OrangeLenUI */; };
 		726CCD118D2A26F4CD06F5CE /* SharedResourcesBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */; };
 		7988D6BBAF6C52D9D30DC664 /* OrangeLenPreviewDrawings.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 34C12098DA5CCF0139297252 /* OrangeLenPreviewDrawings.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7A5201A98A36693A73938975 /* prefer-mesh-preview.sh in Resources */ = {isa = PBXBuildFile; fileRef = 98B48F4CE6155FB3554AD790 /* prefer-mesh-preview.sh */; };
 		7BB541DF9B481FC8EDE53914 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		8706C8A8963730F54D8D3E11 /* OrangeLenPreviewArchives.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BFBC55AC094975A1FAB8CB1 /* Highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */; };
@@ -541,6 +542,7 @@
 		8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Highlight.js; sourceTree = "<group>"; };
 		917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OrangeLenDocumentBroker.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		967CFBFDED884385CAEC68F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		98B48F4CE6155FB3554AD790 /* prefer-mesh-preview.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "prefer-mesh-preview.sh"; sourceTree = "<group>"; };
 		9981EDC498A386CD75DC631F /* OrangeLenPreviewMarkdown.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewMarkdown.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68A39276A70A7B78B4BC305 /* typst.wasm */ = {isa = PBXFileReference; path = typst.wasm; sourceTree = "<group>"; };
 		A7CFE2CE31C8A844C064A360 /* DiagnosticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsController.swift; sourceTree = "<group>"; };
@@ -752,6 +754,14 @@
 			path = PreviewExtension/Localization/Code;
 			sourceTree = "<group>";
 		};
+		41F03AB1FA8EDF3C0AD797EE /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				98B48F4CE6155FB3554AD790 /* prefer-mesh-preview.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		54EF8AC4F19016681FE6D494 /* PreviewExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -813,6 +823,7 @@
 				54EF8AC4F19016681FE6D494 /* PreviewExtension */,
 				075CFD2774A67F314BC232CB /* Resources */,
 				5EF7882D15AA87DC06242728 /* Resources */,
+				41F03AB1FA8EDF3C0AD797EE /* scripts */,
 				93EBD4B9C62FBC8675C3563E /* SharedResources */,
 				7A2E9D2B52DA92C50938D2CC /* Products */,
 			);
@@ -1315,6 +1326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF4B6CF185B0EE58E9E1945 /* OrangeLen.icns in Resources */,
+				7A5201A98A36693A73938975 /* prefer-mesh-preview.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

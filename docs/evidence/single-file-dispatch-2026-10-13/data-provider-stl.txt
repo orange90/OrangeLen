@@ -1,0 +1,18 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 image Preview
+	2 close button close panel button
+	3 full screen button full screen window button
+	4 button Description: Share file, ID: QLControlShare
+	5 button Open with Xcode, Description: Open file, ID: QLControlOpen
+	6 text audit.stl
+7 menu bar
+	8 Finder
+	9 File
+	10 Edit
+	11 View
+	12 Go
+	13 Window
+	14 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

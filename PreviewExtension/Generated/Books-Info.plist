@@ -25,6 +25,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -34,6 +39,7 @@
 			<key>QLSupportedContentTypes</key>
 			<array>
 				<string>org.idpf.epub-container</string>
+				<string>com.adobe.pdf</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>
@@ -45,10 +51,5 @@
 	</dict>
 	<key>OrangeLenPreviewCategory</key>
 	<string>Books</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

@@ -1,0 +1,7 @@
+{
+  // 保留注释与数字原文
+  "url": "https://example.invalid/a//b",
+  "editor.fontSize": 14,
+  "large": 9007199254740993,
+  "items": [1, 2,],
+}

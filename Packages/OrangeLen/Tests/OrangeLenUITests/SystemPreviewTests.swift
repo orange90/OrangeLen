@@ -17,6 +17,37 @@ import OrangeLenCore
     func requireBrokerHost() throws {
         try XCTSkipIf(Bundle.main.bundleURL.lastPathComponent != "OrangeLenTestHost.app", "Run scripts/test-native.sh for real sandboxed XPC + media integration")
     }
+    func testTransportStreamSuffixesKeepTextAndBinaryRoutesSeparate() async throws {
+        _ = NSApplication.shared
+        let root = FileManager.default.temporaryDirectory.resolvingSymlinksInPath().appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let reader = ReaderController(); reader.loadViewIfNeeded()
+        defer { reader.close() }
+        for ext in ["ts", "mts"] {
+            let file = root.appendingPathComponent("sample." + ext)
+            let code = "export const message: string = '中文';\n"
+            try Data(code.utf8).write(to: file)
+            let textReady = expectation(description: ext + " text")
+            reader.open(file) { XCTAssertNil($0); textReady.fulfill() }
+            await fulfillment(of: [textReady], timeout: 10)
+            XCTAssertEqual(reader.source?.text, code)
+            XCTAssertNil(reader.mediaPreview)
+            // MPEG packets are binary. Routing to AVKit does not promise that
+            // every transport-stream codec can be decoded by the host OS.
+            var packets = Data(repeating: 0, count: 188 * 4)
+            for offset in stride(from: 0, to: packets.count, by: 188) { packets[offset] = 0x47 }
+            try packets.write(to: file)
+            let mediaReady = expectation(description: ext + " binary")
+            reader.open(file) { XCTAssertNil($0); mediaReady.fulfill() }
+            await fulfillment(of: [mediaReady], timeout: 10)
+            XCTAssertNil(reader.source)
+            let preview = try XCTUnwrap(reader.mediaPreview)
+            reader.close()
+            XCTAssertNil(preview.player)
+            XCTAssertNil(reader.mediaResource)
+        }
+    }
     func testSharedFrameworkRetainsRenderersFontsAndLocalization() throws {
         try requireBrokerHost()
         let shared = try XCTUnwrap(PackageResources.bundle(.ui,fallback:Bundle.main))

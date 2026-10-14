@@ -36,7 +36,7 @@
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026 OrangeLen contributors</string>
-	<key>UTImportedTypeDeclarations</key>
+	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
@@ -172,7 +172,9 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.data</string>
 				<string>public.archive</string>
+				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>n8n Package</string>
@@ -304,6 +306,11 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
+					<string>rs</string>
+					<string>go</string>
+					<string>kt</string>
+					<string>conf</string>
+					<string>properties</string>
 					<string>vue</string>
 					<string>svelte</string>
 					<string>astro</string>
@@ -327,23 +334,6 @@
 					<string>tf</string>
 					<string>tfvars</string>
 					<string>hcl</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.json</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Excalidraw Drawing</string>
-			<key>UTTypeIdentifier</key>
-			<string>com.excalidraw.excalidraw</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>excalidraw</string>
 				</array>
 			</dict>
 		</dict>
@@ -433,6 +423,26 @@
 					<string>sqlite</string>
 					<string>sqlite3</string>
 					<string>db</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Excalidraw Drawing</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.excalidraw.excalidraw</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>excalidraw</string>
 				</array>
 			</dict>
 		</dict>

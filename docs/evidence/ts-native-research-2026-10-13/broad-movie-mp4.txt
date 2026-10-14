@@ -1,0 +1,20 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 image Movie preview
+	2 close button close panel button
+	3 full screen button full screen window button
+	4 button Description: Trim, ID: QLControlTrim
+	5 button Description: rotate image left, ID: QLControlRotateleft
+	6 button Description: Share file, ID: QLControlShare
+	7 button Open with QuickTime Player, Description: Open file, ID: QLControlOpen
+	8 text sample.mp4
+9 menu bar
+	10 Finder
+	11 File
+	12 Edit
+	13 View
+	14 Go
+	15 Window
+	16 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

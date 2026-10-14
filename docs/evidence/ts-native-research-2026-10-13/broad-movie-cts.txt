@@ -1,0 +1,17 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 busy indicator on
+	2 image
+	3 close button close panel button
+	4 full screen button full screen window button
+	5 text audit.cts
+6 menu bar
+	7 Finder
+	8 File
+	9 Edit
+	10 View
+	11 Go
+	12 Window
+	13 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

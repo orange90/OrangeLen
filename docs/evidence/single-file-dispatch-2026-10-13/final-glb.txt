@@ -1,0 +1,31 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 pop-up button More Actions
+	2 split group
+		3 splitter (disabled, settable, float) 0
+		4 splitter (disabled, settable, float) 0
+		5 button ←
+		6 button →
+		7 button ↑
+		8 button ↓
+		9 button −
+		10 button +
+		11 button Fit to Window
+		12 text 1 triangles · glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted
+		13 image 3D mesh · 1 triangles · glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted
+	14 text audit.glb · Read-only 3D preview
+	15 close button close panel button
+	16 full screen button full screen window button
+	17 button Description: Share file, ID: QLControlShare
+	18 button Open with Preview, Description: Open file, ID: QLControlOpen
+	19 text audit.glb
+20 menu bar
+	21 Finder
+	22 File
+	23 Edit
+	24 View
+	25 Go
+	26 Window
+	27 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

@@ -15,13 +15,16 @@ final class DiagnosticsController: NSViewController {
         for (title, action) in [(L10n.text("选择文件检查"), #selector(choose)), (L10n.text("重新检查"), #selector(refresh)), (L10n.text("复制系统查询"), #selector(readSystemRegistration)), (L10n.text("导入登记结果…"), #selector(importReport)), (L10n.text("打开扩展设置"), #selector(settings)), (L10n.text("在 OrangeLen 阅读"), #selector(read))] {
             controls.addArrangedSubview(NSButton(title: title, target: self, action: action))
         }
+        let meshControls = NSStackView(); meshControls.spacing = 8
+        meshControls.addArrangedSubview(NSButton(title: L10n.text("复制 STL/OBJ 修复命令"), target: self, action: #selector(copyMeshEnable)))
+        meshControls.addArrangedSubview(NSButton(title: L10n.text("复制 3D 系统预览恢复命令"), target: self, action: #selector(copyMeshRestore)))
         fileLabel.lineBreakMode = .byTruncatingMiddle
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.documentView = report
         report.isEditable = false; report.isSelectable = true; report.font = .monospacedSystemFont(ofSize: 12, weight: .regular)
         report.isVerticallyResizable = true; report.autoresizingMask = [.width]; report.textContainer?.widthTracksTextView = true
         report.textContainerInset = NSSize(width: 12, height: 12)
         report.setAccessibilityLabel(L10n.text("Quick Look 诊断结果"))
-        for child in [controls, fileLabel, scroll] { root.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -32).isActive = true }
+        for child in [controls, meshControls, fileLabel, scroll] { root.addArrangedSubview(child); child.widthAnchor.constraint(equalTo: root.widthAnchor, constant: -32).isActive = true }
         root.frame = NSRect(x: 0, y: 0, width: 880, height: 600); view = root; refresh()
     }
     @objc func choose() {
@@ -36,6 +39,15 @@ final class DiagnosticsController: NSViewController {
         let command = #"/usr/bin/pluginkit -m -A -D -v -p com.apple.quicklook.preview > "$HOME/Desktop/OrangeLen-diagnostics.txt""#
         NSPasteboard.general.clearContents(); NSPasteboard.general.setString(command, forType: .string)
         report.string = L10n.text("已复制固定的系统登记查询。\n\n在终端运行后，点击“导入登记结果…”选择桌面的 OrangeLen-diagnostics.txt。\n此查询只读取扩展元数据，不修改启用状态。应用沙盒不能自行读取系统登记，也不能保证能启动 Terminal。")
+    }
+    @objc func copyMeshEnable() { copyMeshCommand("enable") }
+    @objc func copyMeshRestore() { copyMeshCommand("restore") }
+    private func copyMeshCommand(_ mode: String) {
+        guard let script = Bundle.main.url(forResource: "prefer-mesh-preview", withExtension: "sh") else { return }
+        let quotedPath = "'" + script.path.replacingOccurrences(of: "'", with: "'\\''") + "'"
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.setString("/bin/bash " + quotedPath + " " + mode, forType: .string)
+        report.string = L10n.text("已复制 3D 预览设置命令。\n\n在终端运行后，关闭并重新打开 Quick Look。修复命令保存并停用当前用户的 Hydra 扩展，让 OrangeLen 预览 STL/OBJ；恢复命令还原先前设置。\n\n此设置同时影响 Hydra 的 PLY、USD、MaterialX、Alembic 预览，系统回退效果可能不同。不会修改系统文件或默认打开应用。应用沙盒不能直接修改这项登记。")
     }
     @objc func importReport() {
         let panel = NSOpenPanel(); panel.message = L10n.text("选择固定 pluginkit 查询产生的纯文本结果；最多 1 MiB。")

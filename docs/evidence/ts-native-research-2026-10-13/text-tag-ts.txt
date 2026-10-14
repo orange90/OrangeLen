@@ -1,0 +1,17 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 text Value: plain-text-tag.ts 122 bytes Last modified on 13 Oct 2026 at 11:30:10 PM , ID: QLAXImageAndText_Text
+	2 image Description: Preview, ID: QLAXImageAndText_Image
+	3 close button close panel button
+	4 full screen button full screen window button
+	5 button Description: Share file, ID: QLControlShare
+6 menu bar
+	7 Finder
+	8 File
+	9 Edit
+	10 View
+	11 Go
+	12 Window
+	13 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

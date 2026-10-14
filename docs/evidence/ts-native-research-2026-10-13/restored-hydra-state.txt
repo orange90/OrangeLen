@@ -1,0 +1,2 @@
+-    com.apple.HydraQLPreviewExtension(1.0)
+Previous election saved for restore.

@@ -1,0 +1,11 @@
+qlmanage: resetting quicklookd
+OrangeLen can now preview STL/OBJ. Close and reopen Quick Look.
+Hydra also handles PLY, USD, MaterialX and Alembic; their system fallback may differ.
+qlmanage: resetting quicklookd
+OrangeLen can now preview STL/OBJ. Close and reopen Quick Look.
+Hydra also handles PLY, USD, MaterialX and Alembic; their system fallback may differ.
+-    com.apple.HydraQLPreviewExtension(1.0)
+Previous election saved for restore.
+qlmanage: resetting quicklookd
+OrangeLen can now preview STL/OBJ. Close and reopen Quick Look.
+Hydra also handles PLY, USD, MaterialX and Alembic; their system fallback may differ.

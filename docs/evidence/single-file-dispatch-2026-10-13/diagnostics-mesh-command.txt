@@ -1,0 +1,31 @@
+Window: "OrangeLen · Quick Look Diagnostics", App: OrangeLen.
+0 standard window OrangeLen · Quick Look Diagnostics, Secondary Actions: Raise
+	1 button Choose File to Inspect
+	2 button Check Again
+	3 button Copy System Query
+	4 button Import Registration Results…
+	5 button Open Extension Settings
+	6 button Read in OrangeLen
+	7 button Copy STL/OBJ fix command
+	8 button Copy system 3D preview restore command
+	9 text Choose a file to check Finder type matching and available preview options.
+	10 scroll area Secondary Actions: Scroll Up, Scroll Down
+		11 text entry area Description: Quick Look diagnostic results, Value: 3D preview setting command copied.
+
+Run it in Terminal, then close and reopen Quick Look. The fix command saves and disables this user’s Hydra extension so OrangeLen can preview STL/OBJ; the restore command reinstates the previous setting.
+
+This also affects Hydra previews for PLY, USD, MaterialX and Alembic; system fallback may differ. It changes neither system files nor default opening apps. The app sandbox cannot change this registration directly.
+		12 scroll bar (disabled, settable, float) 0
+	13 close button
+	14 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	15 minimize button
+	16 text OrangeLen · Quick Look Diagnostics
+17 menu bar
+	18 OrangeLen
+	19 Edit
+
+The focused UI element is 11 text entry area Description: Quick Look diagnostic results, Value: 3D preview setting command copied.
+
+Run it in Terminal, then close and reopen Quick Look. The fix command saves and disables this user’s Hydra extension so OrangeLen can preview STL/OBJ; the restore command reinstates the previous setting.
+
+This also affects Hydra previews for PLY, USD, MaterialX and Alembic; system fallback may differ. It changes neither system files nor default opening apps. The app sandbox cannot change this registration directly.

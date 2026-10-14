@@ -1,0 +1,426 @@
+[
+  {
+    "extension": "swift",
+    "file": "audit.swift"
+  },
+  {
+    "extension": "py",
+    "file": "audit.py"
+  },
+  {
+    "extension": "js",
+    "file": "audit.js"
+  },
+  {
+    "extension": "ts",
+    "file": "audit.ts"
+  },
+  {
+    "extension": "tsx",
+    "file": "audit.tsx"
+  },
+  {
+    "extension": "jsx",
+    "file": "audit.jsx"
+  },
+  {
+    "extension": "mjs",
+    "file": "audit.mjs"
+  },
+  {
+    "extension": "cjs",
+    "file": "audit.cjs"
+  },
+  {
+    "extension": "mts",
+    "file": "audit.mts"
+  },
+  {
+    "extension": "cts",
+    "file": "audit.cts"
+  },
+  {
+    "extension": "vue",
+    "file": "audit.vue"
+  },
+  {
+    "extension": "svelte",
+    "file": "audit.svelte"
+  },
+  {
+    "extension": "astro",
+    "file": "audit.astro"
+  },
+  {
+    "extension": "c",
+    "file": "audit.c"
+  },
+  {
+    "extension": "h",
+    "file": "audit.h"
+  },
+  {
+    "extension": "cpp",
+    "file": "audit.cpp"
+  },
+  {
+    "extension": "hpp",
+    "file": "audit.hpp"
+  },
+  {
+    "extension": "rs",
+    "file": "audit.rs"
+  },
+  {
+    "extension": "go",
+    "file": "audit.go"
+  },
+  {
+    "extension": "sh",
+    "file": "audit.sh"
+  },
+  {
+    "extension": "zsh",
+    "file": "audit.zsh"
+  },
+  {
+    "extension": "bash",
+    "file": "audit.bash"
+  },
+  {
+    "extension": "rb",
+    "file": "audit.rb"
+  },
+  {
+    "extension": "java",
+    "file": "audit.java"
+  },
+  {
+    "extension": "kt",
+    "file": "audit.kt"
+  },
+  {
+    "extension": "css",
+    "file": "audit.css"
+  },
+  {
+    "extension": "scss",
+    "file": "audit.scss"
+  },
+  {
+    "extension": "sass",
+    "file": "audit.sass"
+  },
+  {
+    "extension": "less",
+    "file": "audit.less"
+  },
+  {
+    "extension": "html",
+    "file": "audit.html"
+  },
+  {
+    "extension": "htm",
+    "file": "audit.htm"
+  },
+  {
+    "extension": "xhtml",
+    "file": "audit.xhtml"
+  },
+  {
+    "extension": "sql",
+    "file": "audit.sql"
+  },
+  {
+    "extension": "cs",
+    "file": "audit.cs"
+  },
+  {
+    "extension": "php",
+    "file": "audit.php"
+  },
+  {
+    "extension": "dart",
+    "file": "audit.dart"
+  },
+  {
+    "extension": "lua",
+    "file": "audit.lua"
+  },
+  {
+    "extension": "r",
+    "file": "audit.r"
+  },
+  {
+    "extension": "scala",
+    "file": "audit.scala"
+  },
+  {
+    "extension": "ps1",
+    "file": "audit.ps1"
+  },
+  {
+    "extension": "proto",
+    "file": "audit.proto"
+  },
+  {
+    "extension": "graphql",
+    "file": "audit.graphql"
+  },
+  {
+    "extension": "gql",
+    "file": "audit.gql"
+  },
+  {
+    "extension": "tf",
+    "file": "audit.tf"
+  },
+  {
+    "extension": "tfvars",
+    "file": "audit.tfvars"
+  },
+  {
+    "extension": "hcl",
+    "file": "audit.hcl"
+  },
+  {
+    "extension": "txt",
+    "file": "audit.txt"
+  },
+  {
+    "extension": "log",
+    "file": "audit.log"
+  },
+  {
+    "extension": "ini",
+    "file": "audit.ini"
+  },
+  {
+    "extension": "conf",
+    "file": "audit.conf"
+  },
+  {
+    "extension": "config",
+    "file": "audit.config"
+  },
+  {
+    "extension": "properties",
+    "file": "audit.properties"
+  },
+  {
+    "extension": "plist",
+    "file": "audit.plist"
+  },
+  {
+    "extension": "yaml",
+    "file": "audit.yaml"
+  },
+  {
+    "extension": "yml",
+    "file": "audit.yml"
+  },
+  {
+    "extension": "toml",
+    "file": "audit.toml"
+  },
+  {
+    "extension": "xml",
+    "file": "audit.xml"
+  },
+  {
+    "extension": "md",
+    "file": "audit.md"
+  },
+  {
+    "extension": "markdown",
+    "file": "audit.markdown"
+  },
+  {
+    "extension": "mdx",
+    "file": "audit.mdx"
+  },
+  {
+    "extension": "tex",
+    "file": "audit.tex"
+  },
+  {
+    "extension": "typ",
+    "file": "audit.typ"
+  },
+  {
+    "extension": "ipynb",
+    "file": "audit.ipynb"
+  },
+  {
+    "extension": "epub",
+    "file": "audit.epub"
+  },
+  {
+    "extension": "pdf",
+    "file": "audit.pdf"
+  },
+  {
+    "extension": "json",
+    "file": "audit.json"
+  },
+  {
+    "extension": "jsonc",
+    "file": "audit.jsonc"
+  },
+  {
+    "extension": "json5",
+    "file": "audit.json5"
+  },
+  {
+    "extension": "jsonl",
+    "file": "audit.jsonl"
+  },
+  {
+    "extension": "ndjson",
+    "file": "audit.ndjson"
+  },
+  {
+    "extension": "csv",
+    "file": "audit.csv"
+  },
+  {
+    "extension": "tsv",
+    "file": "audit.tsv"
+  },
+  {
+    "extension": "sqlite",
+    "file": "audit.sqlite"
+  },
+  {
+    "extension": "sqlite3",
+    "file": "audit.sqlite3"
+  },
+  {
+    "extension": "db",
+    "file": "audit.db"
+  },
+  {
+    "extension": "har",
+    "file": "audit.har"
+  },
+  {
+    "extension": "mmd",
+    "file": "audit.mmd"
+  },
+  {
+    "extension": "mermaid",
+    "file": "audit.mermaid"
+  },
+  {
+    "extension": "excalidraw",
+    "file": "audit.excalidraw"
+  },
+  {
+    "extension": "drawio",
+    "file": "audit.drawio"
+  },
+  {
+    "extension": "canvas",
+    "file": "audit.canvas"
+  },
+  {
+    "extension": "svg",
+    "file": "audit.svg"
+  },
+  {
+    "extension": "skill",
+    "file": "audit.skill"
+  },
+  {
+    "extension": "mcpb",
+    "file": "audit.mcpb"
+  },
+  {
+    "extension": "dxt",
+    "file": "audit.dxt"
+  },
+  {
+    "extension": "n8np",
+    "file": "audit.n8np"
+  },
+  {
+    "extension": "zip",
+    "file": "audit.zip"
+  },
+  {
+    "extension": "tar",
+    "file": "audit.tar"
+  },
+  {
+    "extension": "tgz",
+    "file": "audit.tgz"
+  },
+  {
+    "extension": "gz",
+    "file": "audit.log.gz"
+  },
+  {
+    "extension": "obj",
+    "file": "audit.obj"
+  },
+  {
+    "extension": "stl",
+    "file": "audit.stl"
+  },
+  {
+    "extension": "gltf",
+    "file": "audit.gltf"
+  },
+  {
+    "extension": "glb",
+    "file": "audit.glb"
+  },
+  {
+    "extension": "parquet",
+    "file": "audit.parquet"
+  },
+  {
+    "extension": "npy",
+    "file": "audit.npy"
+  },
+  {
+    "extension": "npz",
+    "file": "audit.npz"
+  },
+  {
+    "extension": "safetensors",
+    "file": "audit.safetensors"
+  },
+  {
+    "extension": "gguf",
+    "file": "audit.gguf"
+  },
+  {
+    "extension": "latent",
+    "file": "audit.latent"
+  },
+  {
+    "extension": "srt",
+    "file": "audit.srt"
+  },
+  {
+    "extension": "vtt",
+    "file": "audit.vtt"
+  },
+  {
+    "extension": "diff",
+    "file": "audit.diff"
+  },
+  {
+    "extension": "patch",
+    "file": "audit.patch"
+  },
+  {
+    "extension": "xmp",
+    "file": "audit.xmp"
+  },
+  {
+    "extension": "c2pa",
+    "file": "audit.c2pa"
+  }
+]

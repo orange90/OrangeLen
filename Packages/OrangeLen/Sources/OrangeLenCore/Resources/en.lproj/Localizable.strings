@@ -663,3 +663,6 @@
 "LaTeX 基础排版；外部宏包与文件不加载" = "LaTeX basic typesetting; external packages and files are not loaded";
 "Typst 离线单文件编译；外部文件与包不加载" = "Offline single-file Typst compilation; external files and packages are not loaded";
 "离线组件快照；仅内置 React，外部依赖与网络不可用" = "Offline component snapshot; bundled React only, external dependencies and network are unavailable";
+"复制 STL/OBJ 修复命令" = "Copy STL/OBJ fix command";
+"复制 3D 系统预览恢复命令" = "Copy system 3D preview restore command";
+"已复制 3D 预览设置命令。\n\n在终端运行后，关闭并重新打开 Quick Look。修复命令保存并停用当前用户的 Hydra 扩展，让 OrangeLen 预览 STL/OBJ；恢复命令还原先前设置。\n\n此设置同时影响 Hydra 的 PLY、USD、MaterialX、Alembic 预览，系统回退效果可能不同。不会修改系统文件或默认打开应用。应用沙盒不能直接修改这项登记。" = "3D preview setting command copied.\n\nRun it in Terminal, then close and reopen Quick Look. The fix command saves and disables this user’s Hydra extension so OrangeLen can preview STL/OBJ; the restore command reinstates the previous setting.\n\nThis also affects Hydra previews for PLY, USD, MaterialX and Alembic; system fallback may differ. It changes neither system files nor default opening apps. The app sandbox cannot change this registration directly.";

@@ -1,0 +1,8 @@
+Handler entries: 73
+["LSHandlerRoleViewer": local.orangelen, "LSHandlerContentType": public.avchd-mpeg-2-transport-stream, "LSHandlerModificationDate": 813597248, "LSHandlerPreferredVersions": {
+    LSHandlerRoleViewer = "-";
+}]
+["LSHandlerPreferredVersions": {
+    LSHandlerRoleViewer = "-";
+}, "LSHandlerRoleViewer": local.orangelen, "LSHandlerContentType": public.mpeg-2-transport-stream, "LSHandlerModificationDate": 813597250]
+Removed exactly two experimental Viewer overrides; other entries preserved.

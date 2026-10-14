@@ -1,0 +1,2 @@
+-    com.apple.HydraQLPreviewExtension(1.0)	5B634F64-BB31-58A5-B53B-612DD78CFEBB	2026-08-28 02:54:33 +0000	/System/Library/PrivateFrameworks/Hydra.framework/Plugins/HydraQLPreviewExtension.appex
+ (1 plug-in)

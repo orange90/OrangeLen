@@ -103,17 +103,27 @@ public struct MeshDocument: Sendable {
             guard let length = spec["byteLength"] as? Int, length >= 0, buffer.count >= length, buffer.count <= 25 * 1024 * 1024 - total else { throw PreviewError.limit("glTF buffer length") }
             total += buffer.count; buffers.append(buffer)
         }
-        func accessor(_ id: Int) throws -> ([Double],Int) {
+        var sampledTriangles = false
+        func accessor(_ id: Int, samplingTriangles: Bool = false) throws -> ([Double],Int) {
             guard accessors.indices.contains(id) else { throw PreviewError.malformed("glTF accessor") }
-            let a = accessors[id]; guard a["sparse"] == nil, let vID = a["bufferView"] as? Int, views.indices.contains(vID), let count = a["count"] as? Int, count >= 0, count <= 600000 else { throw PreviewError.malformed("glTF sparse/count") }
+            let a = accessors[id]; guard a["sparse"] == nil, let vID = a["bufferView"] as? Int, views.indices.contains(vID), let count = a["count"] as? Int, count >= 0, count <= (samplingTriangles ? 25 * 1024 * 1024 : 600000) else { throw PreviewError.malformed("glTF sparse/count") }
             let view = views[vID]; guard let bufferID = view["buffer"] as? Int, buffers.indices.contains(bufferID), let length = view["byteLength"] as? Int, let component = a["componentType"] as? Int, let width = [5120:1,5121:1,5122:2,5123:2,5125:4,5126:4][component], let components = ["SCALAR":1,"VEC2":2,"VEC3":3,"VEC4":4][a["type"] as? String ?? ""] else { throw PreviewError.malformed("glTF buffer view") }
             let base = view["byteOffset"] as? Int ?? 0, extra = a["byteOffset"] as? Int ?? 0, stride = view["byteStride"] as? Int ?? width * components, buffer = buffers[bufferID]
             guard base >= 0, length >= 0, length <= buffer.count, base <= buffer.count - length, extra >= 0, stride >= width * components, stride <= 256, extra <= length, count == 0 || (count - 1) <= (length - extra - min(length - extra,width * components)) / stride else { throw PreviewError.malformed("glTF accessor bounds") }
             guard count == 0 || width * components <= length - extra - (count - 1) * stride else { throw PreviewError.malformed("glTF accessor length") }
-            var values: [Double] = []; values.reserveCapacity(count * components)
-            for i in 0..<count {
-                var c = BinaryCursor(data:buffer,offset:base + extra + i * stride,token:token)
-                for _ in 0..<components { let bits = try c.uint(width); values.append(component == 5126 ? Double(Float(bitPattern:UInt32(bits))) : Double(bits)) }
+            guard !samplingTriangles || (components == 1 && count % 3 == 0) else { throw PreviewError.malformed("glTF triangle indices") }
+            // Bound decoded indices by the existing 200k triangle budget. The
+            // full buffer range was checked above; skipped faces are never
+            // allocated. Keep complete triangles, not individual vertex indices.
+            let triangleStep = samplingTriangles ? max(1, (count / 3 + 199999) / 200000) : 1
+            if triangleStep > 1 { sampledTriangles = true }
+            var values: [Double] = []; values.reserveCapacity(min(count,600000) * components)
+            for start in Swift.stride(from:0,to:count,by:samplingTriangles ? 3 * triangleStep : 1) {
+                try token.check()
+                for i in start..<min(count,start + (samplingTriangles ? 3 : 1)) {
+                    var c = BinaryCursor(data:buffer,offset:base + extra + i * stride,token:token)
+                    for _ in 0..<components { let bits = try c.uint(width); values.append(component == 5126 ? Double(Float(bitPattern:UInt32(bits))) : Double(bits)) }
+                }
             }
             return (values,components)
         }
@@ -126,7 +136,7 @@ public struct MeshDocument: Sendable {
                 guard accessors.indices.contains(pos), accessors[pos]["componentType"] as? Int == 5126 else { throw PreviewError.malformed("glTF FLOAT positions") }; let (values,components) = try accessor(pos); guard components == 3, values.count <= 600000 else { throw PreviewError.limit("glTF vertices") }
                 var vertices: [SIMD3<Float>] = []; for i in stride(from:0,to:values.count,by:3) { vertices.append(.init(Float(values[i]),Float(values[i + 1]),Float(values[i + 2]))) }
                 var indices = vertices.indices.map {UInt32($0)}
-                if let id = primitive["indices"] as? Int { guard accessors.indices.contains(id), [5121,5123,5125].contains(accessors[id]["componentType"] as? Int ?? 0) else { throw PreviewError.malformed("glTF unsigned indices") }; let (values,components) = try accessor(id); guard components == 1, values.allSatisfy({$0 >= 0 && $0 < Double(vertices.count) && $0.rounded() == $0}) else { throw PreviewError.malformed("glTF indices") }; indices = values.map {UInt32($0)} }
+                if let id = primitive["indices"] as? Int { guard accessors.indices.contains(id), [5121,5123,5125].contains(accessors[id]["componentType"] as? Int ?? 0) else { throw PreviewError.malformed("glTF unsigned indices") }; let (values,components) = try accessor(id,samplingTriangles:true); guard components == 1, values.allSatisfy({$0 >= 0 && $0 < Double(vertices.count) && $0.rounded() == $0}) else { throw PreviewError.malformed("glTF indices") }; indices = values.map {UInt32($0)} }
                 var color = SIMD4<Float>(0.7,0.75,0.9,1)
                 if let id = primitive["material"] as? Int, materials.indices.contains(id), let rgba = (materials[id]["pbrMetallicRoughness"] as? [String:Any])?["baseColorFactor"] as? [Float], rgba.count == 4, rgba.allSatisfy({$0.isFinite && $0 >= 0 && $0 <= 1}) { color = .init(rgba[0],rgba[1],rgba[2],rgba[3]) }
                 parts.append(.init(vertices:vertices,indices:indices,color:color,transform:matrix_identity_float4x4))
@@ -154,6 +164,6 @@ public struct MeshDocument: Sendable {
         else if !nodes.isEmpty { let children = Set(nodes.flatMap {$0["children"] as? [Int] ?? []}); for i in nodes.indices where !children.contains(i) { try visit(i,matrix_identity_float4x4,0) } }
         else { parts = meshParts.flatMap {$0} }
         try validate(parts)
-        return .init(parts:parts,notice:"glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted")
+        return .init(parts:parts,notice:(sampledTriangles ? "Large mesh: sampled whole triangles within the 200k budget; geometry is simplified · " : "") + "glTF 2.0 static triangle scene · base colors and node transforms · textures, skins, morphs and animation are omitted")
     }
 }

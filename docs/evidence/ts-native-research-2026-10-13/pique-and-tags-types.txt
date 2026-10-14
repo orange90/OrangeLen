@@ -1,0 +1,4 @@
+audit.ts public.mpeg-2-transport-stream
+audit.mts public.avchd-mpeg-2-transport-stream
+plain-text-tag.ts public.mpeg-2-transport-stream
+plain-text-tag.mts public.avchd-mpeg-2-transport-stream

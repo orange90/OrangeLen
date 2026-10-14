@@ -38,6 +38,10 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>org.khronos.glb</string>
+				<string>org.khronos.gltf</string>
+				<string>public.geometry-definition-format</string>
+				<string>public.standard-tesselated-geometry-format</string>
 				<string>local.orangelen.diagram</string>
 				<string>local.orangelen.mesh</string>
 				<string>public.png</string>

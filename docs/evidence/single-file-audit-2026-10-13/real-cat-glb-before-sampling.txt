@@ -1,0 +1,35 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: Reading, Value: 1
+		3 radio button (disabled) Description: Source, Value: 0
+	4 pop-up button (disabled) Contents
+	5 pop-up button Display Settings
+	6 pop-up button More Actions
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 splitter (disabled, settable, float) 0
+		15 splitter (disabled, settable, float) 0
+		16 scroll area
+			17 text entry area Description: OrangeLen read-only content, Value: Invalid format: glTF sparse/count
+	18 text OrangeLen · Local, read-only · Loading 猫咪3d模型.glb
+	19 close button close panel button
+	20 full screen button full screen window button
+	21 button Description: Share file, ID: QLControlShare
+	22 button Open with Preview, Description: Open file, ID: QLControlOpen
+	23 text 猫咪3d模型.glb
+24 menu bar
+	25 Finder
+	26 File
+	27 Edit
+	28 View
+	29 Go
+	30 Window
+	31 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

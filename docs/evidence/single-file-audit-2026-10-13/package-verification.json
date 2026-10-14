@@ -1,0 +1,33 @@
+{
+  "identicalToInstalled": true,
+  "filesCompared": 105,
+  "zipBytes": 95374517,
+  "zipSHA256": "b9706cf9d72bc749d4be35dfb54eaff109a6409fd37513c0e4a800aae91e4382",
+  "universalMachOFiles": [
+    "Contents/MacOS/OrangeLen",
+    "Contents/Frameworks/OrangeLenResources.framework/OrangeLenResources",
+    "Contents/Frameworks/OrangeLenResources.framework/Versions/A/OrangeLenResources",
+    "Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/MacOS/OrangeLenPreviewDrawings",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/MacOS/OrangeLenPreviewData",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/MacOS/OrangeLenPreviewMarkdown",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/MacOS/OrangeLenPreviewBooks",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/MacOS/OrangeLenPreviewFolders",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker"
+  ]
+}

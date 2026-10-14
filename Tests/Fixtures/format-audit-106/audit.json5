@@ -1,0 +1,10 @@
+{
+  // JSON5 原文预览
+  name: 'OrangeLen',
+  'quoted-key': '中文',
+  hex: 0xdecaf,
+  fraction: +.5,
+  infinity: -Infinity,
+  nan: NaN,
+  items: [1, 2,],
+}

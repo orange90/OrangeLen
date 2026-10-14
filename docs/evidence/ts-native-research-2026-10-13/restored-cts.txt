@@ -1,0 +1,44 @@
+Window: "", App: Finder.
+0 window Quick Look, Secondary Actions: Raise
+	1 (disabled)
+		2 radio button (disabled) Description: Reading, Value: 1
+		3 radio button (disabled) Description: Source, Value: 0
+	4 pop-up button (disabled) Contents
+	5 pop-up button Display Settings
+	6 pop-up button More Actions
+	7 button Find
+	8 search text field (settable) Search loaded content (click to type)
+		9 button Search
+	10 button Select All
+	11 button Copy Selection
+	12 button Cancel Loading
+	13 split group
+		14 splitter (disabled, settable, float) 0
+		15 splitter (disabled, settable, float) 0
+		16 scroll area Secondary Actions: Scroll Left, Scroll Right
+			17 text entry area Description: OrangeLen read-only content, Value: const message = "OrangeLen 中文 audit";
+console.log(message);
+
+			18 scroll bar (settable, float) 0
+				19 value indicator (settable, float) 0
+				20 increment arrow button
+				21 decrement arrow button
+				22 increment page button
+				23 decrement page button
+			24 ruler
+	25 text audit.cts · UTF-8 · 64 bytes · code · Full file
+	26 close button close panel button
+	27 full screen button full screen window button
+	28 button Description: Share file, ID: QLControlShare
+	29 button Open with TextEdit, Description: Open file, ID: QLControlOpen
+	30 text audit.cts
+31 menu bar
+	32 Finder
+	33 File
+	34 Edit
+	35 View
+	36 Go
+	37 Window
+	38 Help
+
+The focused UI element is 0 window Quick Look, Secondary Actions: Raise

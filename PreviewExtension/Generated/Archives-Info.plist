@@ -38,6 +38,7 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>org.gnu.gnu-zip-tar-archive</string>
 				<string>local.orangelen.numpy-archive</string>
 				<string>local.orangelen.n8n-package</string>
 				<string>local.orangelen.mcpb</string>

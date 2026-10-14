@@ -10,7 +10,7 @@ extension ReaderController {
             PreviewWorkQueue.parsing.submit(cancellation:token,work:{try MeshDocument.load(url,root:root,cancellation:token)},completion:{ [weak self] result in
                 guard let self, self.generation == id else { return }
                 do { self.advancedView = MeshPreview(try result.get()); self.showContent(self.advancedView!); self.status.stringValue = url.lastPathComponent + " · " + L10n.text("3D 只读预览"); self.finish(nil) }
-                catch { self.showMessage(error.localizedDescription); self.finish(error) }
+                catch { self.showMessage(error.localizedDescription); self.status.stringValue = L10n.text("预览未完成 · 可重载或选择其他文件"); self.finish(error) }
             }); return true
         }
         if ScientificDocument.supports(url) {
