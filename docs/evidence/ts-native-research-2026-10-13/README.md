@@ -22,12 +22,12 @@ Pique、dotViewer、PluginKits 的源码只下载和阅读，未运行其脚本�
 
 | 尝试 | 实际类型与 Finder 结果 | 证据 |
 | --- | --- | --- |
-| 参考 Pique：在扩展导入 TypeScript UTI、补 Apple TypeScript 类型和 `QLFileExtensions` | TS/MTS 仍是 MPEG/AVCHD，Space 仅基本信息 | [配置](pique-attributes-extension.plist)、[类型](pique-and-tags-types.txt)、[TS](pique-attributes-ts.png)、[MTS](pique-attributes-mts.png) |
-| 将 Code 扩展候选扩大到 `public.movie` / `public.audiovisual-content` | TS/MTS 仍基本信息，MP4 仍显示系统 Movie preview | [配置](broad-movie-extension.plist)、[TS](broad-movie-ts.png)、[MTS](broad-movie-mts.png)、[MP4](broad-movie-mp4.png) |
-| 在两个新建源码副本设置传统 `TEXT` 文件类型标签 | 原后缀仍判定为 MPEG/AVCHD，Space 仍基本信息 | [类型](pique-and-tags-types.txt)、[TS](text-tag-ts.png)、[MTS](text-tag-mts.png) |
-| 宿主导出独立源码类型、文档类型 `LSHandlerRank=Owner`，设置 TS/MTS 后缀的默认应用偏好并重载当前用户 Launch Services | 类型未改变；TS/MTS 仍基本信息。同一稳定安装的 CTS 控制文件可见 OrangeLen 源码 | [配置](owner-tag-app.plist)、[类型](owner-tag-types.txt)、[设置](owner-tag-set.txt)、[TS](owner-tag-ts.png)、[MTS](owner-tag-mts.png)、[CTS](owner-tag-control-cts.png) |
+| 参考 Pique：在扩展导入 TypeScript UTI、补 Apple TypeScript 类型和 `QLFileExtensions` | TS/MTS 仍是 MPEG/AVCHD，Space 仅基本信息 | [配置](pique-attributes-extension.plist)、[类型](pique-and-tags-types.txt)、TS（本机留档：`pique-attributes-ts.png`）、MTS（本机留档：`pique-attributes-mts.png`） |
+| 将 Code 扩展候选扩大到 `public.movie` / `public.audiovisual-content` | TS/MTS 仍基本信息，MP4 仍显示系统 Movie preview | [配置](broad-movie-extension.plist)、TS（本机留档：`broad-movie-ts.png`）、MTS（本机留档：`broad-movie-mts.png`）、MP4（本机留档：`broad-movie-mp4.png`） |
+| 在两个新建源码副本设置传统 `TEXT` 文件类型标签 | 原后缀仍判定为 MPEG/AVCHD，Space 仍基本信息 | [类型](pique-and-tags-types.txt)、TS（本机留档：`text-tag-ts.png`）、MTS（本机留档：`text-tag-mts.png`） |
+| 宿主导出独立源码类型、文档类型 `LSHandlerRank=Owner`，设置 TS/MTS 后缀的默认应用偏好并重载当前用户 Launch Services | 类型未改变；TS/MTS 仍基本信息。同一稳定安装的 CTS 控制文件可见 OrangeLen 源码 | [配置](owner-tag-app.plist)、[类型](owner-tag-types.txt)、[设置](owner-tag-set.txt)、TS（本机留档：`owner-tag-ts.png`）、MTS（本机留档：`owner-tag-mts.png`）、CTS（本机留档：`owner-tag-control-cts.png`） |
 
-CTS 第一次打开处于冷启动加载中；一次安装替换打断了旧预览连接，出现扩展失败画面（`control-cts.png`）。该画面保留为原始记录，不计为通过。安装稳定后重新打开并等待，`owner-tag-control-cts.{png,txt}` 显示实际源码；随后再复测 TS/MTS，两者仍失败。这能区分“所有扩展都没运行”和“只有视频类型入口未进入”的情况。运行日志见 [trial-runtime.log](trial-runtime.log)。
+CTS 第一次打开处于冷启动加载中；一次安装替换打断了旧预览连接，出现扩展失败画面（`control-cts.png`）。该画面保留为原始记录，不计为通过。安装稳定后重新打开并等待，`owner-tag-control-cts.{png,txt}` 显示实际源码；随后再复测 TS/MTS，两者仍失败。这能区分“所有扩展都没运行”和“只有视频类型入口未进入”的情况。运行日志见 trial-runtime.log（本机留档：`trial-runtime.log`）。
 
 TEXT 标签只写入 `build/ts-native-research/fixtures/` 中新建的副本；106 项原始样例及用户文件未改写。按后缀的偏好实验保存原记录，清理时仅还原 TS/MTS 的这两项偏好；未把整个 Launch Services 设置重置。
 
@@ -46,7 +46,7 @@ TEXT 标签只写入 `build/ts-native-research/fixtures/` 中新建的副本；1
 - 试验前保存完整签名应用；已恢复 `~/Applications/OrangeLen.app`，[105 个普通文件逐字节与备份一致](restore-file-verification.txt)，deep/strict 验签通过。三个试验应用已取消登记并移入废纸篓，避免以后再次被发现。
 - 试验追加的源码 UTI、`QLFileExtensions` 和泛用 movie 候选不在最终包中；[106 类型候选检查](restored-dispatch-106.tsv)仍通过，但不计为内容成功。
 - TS/MTS 默认打开关联已恢复，[最终查询](restored-default-apps.txt)与此前一致；[后缀偏好恢复](owner-tag-restore.txt)保留其他用户设置。
-- [Hydra election](restored-hydra-state.txt)仍为 ignore，保留前一轮已验证的 STL 原生修复与恢复备份。清理试验副本后有一次登记身份失效；重新登记最终安装路径下的七个扩展后，[STL 网格](restored-stl.png)及 [CTS 源码](restored-cts.png)均重新通过，[TS](restored-ts.png) / [MTS](restored-mts.png)仍仅基础信息。登记状态见 [final-registry.txt](final-registry.txt)，故障日志见 `restore-runtime.log`。
+- [Hydra election](restored-hydra-state.txt)仍为 ignore，保留前一轮已验证的 STL 原生修复与恢复备份。清理试验副本后有一次登记身份失效；重新登记最终安装路径下的七个扩展后，STL 网格（本机留档：`restored-stl.png`）及 CTS 源码（本机留档：`restored-cts.png`）均重新通过，TS（本机留档：`restored-ts.png`） / MTS（本机留档：`restored-mts.png`）仍仅基础信息。登记状态见 [final-registry.txt](final-registry.txt)，故障日志见 `restore-runtime.log`。
 - 本轮没有修改解析器或发布安装包的新功能，不重复运行同一代码的 212 项阅读器测试；前轮 [104/106 合并清单](../single-file-dispatch-2026-10-13/README.md)仍适用。没有把本轮研究计作 106 项全量复测或 TS/MTS 通过。
 
 后续可按[复现记录](reproduction.md)检查同一失败；本轮没有向 Apple 或竞品作者发送消息。

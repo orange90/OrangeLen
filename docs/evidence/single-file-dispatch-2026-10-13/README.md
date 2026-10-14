@@ -25,14 +25,14 @@
 
 | 样例 | 原生单文件 Space 结果 | 证据 |
 | --- | --- | --- |
-| audit.stl，1 个三角形 | OrangeLen 网格可见 | [截图](final-stl.png)、[AX](final-stl.txt) |
-| secondary-stl-cube.stl，二进制 | 12 三角立方体可见 | [截图](stl-binary-cube.png)、[AX](stl-binary-cube.txt) |
-| secondary-stl-ascii.stl，ASCII | 12 三角立方体可见，旋转有效 | [截图](stl-ascii-cube.png)、[旋转后](stl-ascii-rotated.png) |
-| audit.obj | OrangeLen 四面体可见 | [截图](final-obj.png)、[AX](final-obj.txt) |
-| audit.gltf | OrangeLen 三角网格可见 | [截图](final-gltf.png)、[AX](final-gltf.txt) |
-| audit.glb | OrangeLen 三角网格可见 | [截图](final-glb.png)、[AX](final-glb.txt) |
-| audit.ts | 系统仅基本信息，失败 | [截图](final-ts.png)、[AX](final-ts.txt) |
-| audit.mts | 系统仅基本信息，失败 | [截图](final-mts.png)、[AX](final-mts.txt) |
+| audit.stl，1 个三角形 | OrangeLen 网格可见 | 截图（本机留档：`final-stl.png`）、[AX](final-stl.txt) |
+| secondary-stl-cube.stl，二进制 | 12 三角立方体可见 | 截图（本机留档：`stl-binary-cube.png`）、[AX](stl-binary-cube.txt) |
+| secondary-stl-ascii.stl，ASCII | 12 三角立方体可见，旋转有效 | 截图（本机留档：`stl-ascii-cube.png`）、旋转后（本机留档：`stl-ascii-rotated.png`） |
+| audit.obj | OrangeLen 四面体可见 | 截图（本机留档：`final-obj.png`）、[AX](final-obj.txt) |
+| audit.gltf | OrangeLen 三角网格可见 | 截图（本机留档：`final-gltf.png`）、[AX](final-gltf.txt) |
+| audit.glb | OrangeLen 三角网格可见 | 截图（本机留档：`final-glb.png`）、[AX](final-glb.txt) |
+| audit.ts | 系统仅基本信息，失败 | 截图（本机留档：`final-ts.png`）、[AX](final-ts.txt) |
+| audit.mts | 系统仅基本信息，失败 | 截图（本机留档：`final-mts.png`）、[AX](final-mts.txt) |
 
 [合并 106 项记录](finder-results.json) 含 82 项 OrangeLen 内容、22 项系统内容、2 项失败。六个后缀本轮复测，其余 100 项引用[前一阶段完整 Finder 实测](../single-file-audit-2026-10-13/README.md)，`evidence_source` 标明来源；没有把旧截图当作本轮全量复测。共享解析器和渲染器未在本轮修改。
 
@@ -40,8 +40,8 @@
 
 本机实际类型分别是 `public.mpeg-2-transport-stream` 与 `public.avchd-mpeg-2-transport-stream`。纯 TypeScript 样例也被归到视频类型。
 
-1. 独立导出 TypeScript UTI，声明 `.ts` / `.mts`，增加宿主 Viewer 文档类型与扩展候选：实际文件类型仍是系统 MPEG/AVCHD，Space 仅基本信息。见 [声明](custom-types-app.plist)、[类型](custom-types-dispatch.tsv)、[现场](custom-types-ts.png)。
-2. 使用 Apple 的数据式 `QLPreviewProvider` / `QLPreviewReply` API：控制样例 `.cts` 的请求进入原型 provider（[运行日志](data-provider-runtime.log)）；`.ts` / `.mts` 未进入，仍仅基本信息，STL 仍被 Hydra 接管。控制样例首次截图仍为加载中，未将其记为内容通过。见 `data-provider-{ts,mts,stl}.{png,txt}`。
+1. 独立导出 TypeScript UTI，声明 `.ts` / `.mts`，增加宿主 Viewer 文档类型与扩展候选：实际文件类型仍是系统 MPEG/AVCHD，Space 仅基本信息。见 [声明](custom-types-app.plist)、[类型](custom-types-dispatch.tsv)、现场（本机留档：`custom-types-ts.png`）。
+2. 使用 Apple 的数据式 `QLPreviewProvider` / `QLPreviewReply` API：控制样例 `.cts` 的请求进入原型 provider（运行日志（本机留档：`data-provider-runtime.log`））；`.ts` / `.mts` 未进入，仍仅基本信息，STL 仍被 Hydra 接管。控制样例首次截图仍为加载中，未将其记为内容通过。见 `data-provider-{ts,mts,stl}.{png,txt}`。
 3. 临时将两种系统视频类型的 Viewer 默认应用设为 OrangeLen：两项 Space 仍失败。已恢复原应用关联，见 `default-viewer-{set,restore}.txt` 与 `default-viewer-final.txt`。清理时移除两条试验生成的 Viewer override，并重载当前用户 Launch Services；其他关联保留，最终查询与试验前一致（`default-viewer-cleanup.txt`）；现场见 `default-viewer-{ts,mts}.png`。
 
 原型已经回退，最终安装包仍是 view-based 原生扩展，没有自定义冲突 UTI 或默认应用关联改动。CLI 强制 contentType、主应用读取、文件夹内读取不能替代用户要求的原后缀单文件 Space 通过。
@@ -50,9 +50,9 @@
 
 ## 验证与边界
 
-- [7 项相关回归](targeted-tests.log)全部通过：TS/MTS/STL 三后缀两入口内容检查及 4 项本地化测试。完整 212 项阅读器检查沿用前一阶段记录，不重算为本轮测试。
+- 7 项相关回归（本机留档：`targeted-tests.log`）全部通过：TS/MTS/STL 三后缀两入口内容检查及 4 项本地化测试。完整 212 项阅读器检查沿用前一阶段记录，不重算为本轮测试。
 - 设置脚本实际执行重复启用、状态检查、恢复再启用；原 default election 被恢复，最后再启用修复。见 `mesh-{enable,restore}.txt`、`hydra-final-election.txt`。未改动 SceneKit 或其他 Quick Look 扩展。
-- [通用 Release 构建](final-build.log)、[安装](final-install.log)、[106 实际类型候选检查](final-dispatch.tsv)通过，后者不代表内容通过。
+- 通用 Release 构建（本机留档：`final-build.log`）、安装（本机留档：`final-install.log`）、[106 实际类型候选检查](final-dispatch.tsv)通过，后者不代表内容通过。
 - 调试安装替换过程中有一次旧扩展身份失效的基础信息画面，安装完成、重置 Quick Look、重新打开后完成上述最终验收；首次冷启动加载中截图也已用最终内容截图更新。
 - 几何、纹理、动画及大模型抽样限制沿用[高级预览范围](../../advanced-output-previews.md)。其他 macOS 版本、Intel 实机、106 后缀的全部格式变体不在已完成验收范围。
 
