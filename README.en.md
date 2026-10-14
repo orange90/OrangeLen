@@ -2,7 +2,7 @@
 
 **Press Space. Explore your project and AI-generated files.**
 
-A macOS Quick Look tool for developers. **106 explicitly supported file extensions, 36 special filenames, and whole-folder previews** — spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models.
+A macOS Quick Look tool for developers. **The reader covers 106 file extensions, 36 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. On the tested Mac, the current development build shows content for 104/106 individual Finder Space samples with the STL/OBJ setting enabled; TS/MTS still fail. See the [native entry-point audit](docs/evidence/single-file-dispatch-2026-10-13/README.md).
 
 [中文](README.md) · English
 
@@ -18,11 +18,11 @@ https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
 
 ## Download
 
-**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.1/OrangeLen-0.1.0-preview.1-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.1)
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.2/OrangeLen-0.1.0-preview.2-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.2)
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
-This is the **0.1.0 preview, ad-hoc signed and not Apple-notarized**. If macOS blocks opening, try launching once, then use “System Settings → Privacy & Security → Open Anyway”, if offered. Intel hardware and other macOS versions are not fully verified.
+This **0.1.0-preview.2 preview is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. The signing developer is **Zhe Huang**. Intel hardware and other macOS versions have not been fully verified.
 
 ## AI finished writing. Take a look.
 
@@ -92,9 +92,11 @@ Also supported:
 
 See the [auditable inventory](docs/format-count.md), [advanced preview limits](docs/advanced-output-previews.md) and [Finder verification matrix](docs/format-support.md). Detailed engineering documents currently include Chinese content.
 
+The local development fix passes 212 reader checks across all 106 extensions in standalone and folder paths. All 106 Finder Space checks have been performed: 104 primary samples show content with the reversible STL/OBJ native preview setting enabled; `.ts` / `.mts` still show basic information only. Minimal, binary and ASCII STL samples pass. See the [latest native fix and limits](docs/evidence/single-file-dispatch-2026-10-13/README.md) and [full per-format audit](docs/evidence/single-file-audit-2026-10-13/README.md). The downloadable `preview.1` does not include this unpublished fix.
+
 ## Quick start
 
-Use the [installer above](#download), or build from source. Deployment target: **macOS 14**. Recorded testing primarily uses Apple M3 Pro / macOS 26.6.2; builds use Xcode 26.5. Other OS versions and Intel hardware are not fully verified. Distribution signing and notarization are not yet complete.
+Use the [installer above](#download), or build from source. Deployment target: **macOS 14**. Recorded testing primarily uses Apple M3 Pro / macOS 26.6.2; builds use Xcode 26.5. Other OS versions and Intel hardware are not fully verified.
 
 From the repository root, with Xcode installed:
 

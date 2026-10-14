@@ -2,7 +2,7 @@
 
 **按下空格，看懂整个项目与 AI 产出。**
 
-为开发者设计的 macOS 快速预览工具。**106 种明确支持的文件后缀、36 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。
+为开发者设计的 macOS 快速预览工具。**阅读器覆盖 106 种文件后缀、36 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。当前开发版在本机启用 STL/OBJ 预览设置后，Finder 单文件 Space 已验证 104/106 项；TS/MTS 仍未通过，详见 [原生入口实测](docs/evidence/single-file-dispatch-2026-10-13/README.md)。
 
 中文 · [English](README.en.md)
 
@@ -18,11 +18,11 @@ https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
 
 ## 下载
 
-**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.1/OrangeLen-0.1.0-preview.1-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.1)
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.2/OrangeLen-0.1.0-preview.2-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.2)
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
-当前为 **0.1.0 预览版，使用 ad-hoc 签名，尚未通过 Apple 公证**。若系统阻止打开，先尝试启动一次，再到“系统设置 → 隐私与安全性”选择“仍要打开”（若系统提供此选项）。Intel 实机与其他 macOS 版本尚未完整验收。
+当前为 **0.1.0-preview.2 预览版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。签名开发者显示为 **Zhe Huang**。Intel 实机与其他 macOS 版本尚未完整验收。
 
 ## AI 写完了，先看一眼
 
@@ -92,9 +92,11 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 统计依据见 [可复核的格式清单](docs/format-count.md)。专用预览的限制见 [高级 AI 产出](docs/advanced-output-previews.md)；实际 Finder 验证见 [支持矩阵](docs/format-support.md)。
 
+本地开发修复已完成 106 种后缀的单文件与文件夹阅读器共 212 次检查，均通过；106 项 Finder Space 现场操作已完成：启用可恢复的 STL/OBJ 原生预览设置后，104 项主样例显示内容，`.ts` / `.mts` 仍仅基本信息。STL 的单三角、二进制及 ASCII 模型已通过。详见 [最新原生修复与限制](docs/evidence/single-file-dispatch-2026-10-13/README.md)及 [106 项完整实测清单](docs/evidence/single-file-audit-2026-10-13/README.md)。上述下载的 `preview.1` 不含本次未发布修复。
+
 ## 快速开始
 
-可直接使用上方[安装包](#下载)，也可从源码构建。最低部署目标为 **macOS 14**，已记录的主要实测环境为 Apple M3 Pro / macOS 26.6.2，构建使用 Xcode 26.5。其他系统和 Intel 实机尚未完整验收；正式分发签名与公证尚未完成。
+可直接使用上方[安装包](#下载)，也可从源码构建。最低部署目标为 **macOS 14**，已记录的主要实测环境为 Apple M3 Pro / macOS 26.6.2，构建使用 Xcode 26.5。其他系统和 Intel 实机尚未完整验收。
 
 在仓库根目录运行（需安装 Xcode）：
 

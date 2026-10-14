@@ -1,5 +1,16 @@
 # 变更日志
 
+## 0.1.0-preview.2 — 2026-10-14
+
+- 主应用、Quick Look 扩展、XPC 与共享框架使用 Developer ID 签名；应用和 DMG 均通过 Apple 公证、附加票据并通过 Gatekeeper 校验。
+- 更新中英文 README 安装包链接，提供通用 DMG 与 SHA-256 校验值。
+
+- 补齐真实系统 UTI 候选与缺失后缀声明，修复 GLB/TGZ 单文件未进入扩展、n8np 类型仍为动态类型等问题。
+- 大型索引 glTF/GLB 在原有 200k 三角预算内进行完整三角抽样；真实 9.8 MB 猫模型已显示简化网格并验证旋转/缩放，纹理和动画仍省略。
+- 收到文件后统一按格式选择渲染器，避免重叠类别将 glTF、Notebook、图表等降级；二进制 TS/MTS 转 AVKit。
+- 106 个后缀的单文件/文件夹共 212 次内容回归通过；106 项实际 UTI 均有候选。106 项 Finder 实测完成；启用 STL/OBJ 原生设置后合并记录为 104 项主样例可见内容，TS/MTS 冲突仍未解决。详见 [完整清单](docs/evidence/single-file-audit-2026-10-13/README.md)和 [原生续修](docs/evidence/single-file-dispatch-2026-10-13/README.md)。
+- 新增可恢复的当前用户 Hydra 扩展设置脚本与诊断复制命令入口；STL 单三角、二进制/ASCII 立方体、旋转及 OBJ/glTF/GLB 单文件回归已现场通过。正常安装不自动停用系统扩展；设置对 PLY/USD/MaterialX/Alembic 的影响已说明。
+
 ## 0.1.0-preview.1 — 2026-10-13
 
 - 首个 GitHub 预览版安装包：macOS 14+，Apple Silicon / Intel 通用 Release 构建，DMG 拖入 Applications 安装。
