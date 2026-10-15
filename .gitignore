@@ -8,3 +8,18 @@ xcuserdata/
 node_modules/
 __pycache__/
 Vendor/MarkdownRenderer/install.log
+
+# Local test screenshots and raw execution evidence.
+# Keep reports and structured results; required Tests/Fixtures remain versioned.
+/docs/evidence/**/*.png
+/docs/evidence/**/*.jpg
+/docs/evidence/**/*.jpeg
+/docs/evidence/**/*.webp
+/docs/evidence/**/*.log
+/docs/evidence/**/*-ax.txt
+/docs/evidence/**/*-ui.json
+/docs/evidence/**/screenshots/
+*.xcresult/
+
+# Local HyperFrames video projects: scripts, drafts, sources and generated media.
+/videos/
