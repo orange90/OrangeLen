@@ -1,0 +1,7 @@
+{
+  "QLSupportedContentTypes": [
+    "com.apple.shortcut",
+    "com.apple.shortcuts.workflow-file"
+  ],
+  "QLSupportsSearchableItems": false
+}

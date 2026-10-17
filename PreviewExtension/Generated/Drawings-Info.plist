@@ -38,6 +38,12 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>com.microsoft.word.dot</string>
+				<string>com.mindjet.mindmanager.mmap</string>
+				<string>net.sourceforge.freemind.mm</string>
+				<string>org.opml.opml</string>
+				<string>public.objective-c-plus-plus-source</string>
+				<string>org.xmind.openformat.xmind</string>
 				<string>org.khronos.glb</string>
 				<string>org.khronos.gltf</string>
 				<string>public.geometry-definition-format</string>

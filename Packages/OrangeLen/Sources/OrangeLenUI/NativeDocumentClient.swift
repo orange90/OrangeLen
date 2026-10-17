@@ -4,6 +4,12 @@ import OrangeLenCore
 /// Called only from the bounded parsing lane; never blocks the main thread.
 enum NativeDocumentClient {
     static func load(_ data: Data, type: NSAttributedString.DocumentType, cancellation: Cancellation, onReady: @escaping () -> Void = {}) throws -> NSAttributedString {
+        try attributed(payload(data, type: type.rawValue, cancellation: cancellation, onReady: onReady))
+    }
+    static func decompileAppleScript(_ data: Data, cancellation: Cancellation) throws -> String {
+        try payload(data, type: "local.orangelen.compiled-applescript", cancellation: cancellation).text
+    }
+    private static func payload(_ data: Data, type: String, cancellation: Cancellation, onReady: @escaping () -> Void = {}) throws -> NativeDocumentPayload {
         guard data.count <= 25 * 1024 * 1024 else { throw PreviewError.limit(L10n.text("文档输入最多 25 MiB")) }
         try cancellation.check()
         let connection = NSXPCConnection(serviceName: "local.OrangeLen.DocumentBroker")
@@ -25,7 +31,7 @@ enum NativeDocumentClient {
         lock.lock(); let startupResult = result; lock.unlock()
         if let startupResult { _ = try startupResult.get() }
         onReady()
-        broker.importDocument(data, type: type.rawValue) { output, error in
+        broker.importDocument(data, type: type) { output, error in
             if let output, output.count <= 8 * 1024 * 1024 { finish(.success(output)) }
             else { finish(.failure(PreviewError.malformed(error ?? L10n.text("文档导入无结果")))) }
         }
@@ -34,7 +40,8 @@ enum NativeDocumentClient {
         lock.lock(); let resolved = result; lock.unlock()
         let output = try resolved!.get()
         let payload = try JSONDecoder().decode(NativeDocumentPayload.self, from: output)
-        return try attributed(payload)
+        try payload.validate()
+        return payload
     }
     static func attributed(_ payload: NativeDocumentPayload) throws -> NSAttributedString {
         try payload.validate()

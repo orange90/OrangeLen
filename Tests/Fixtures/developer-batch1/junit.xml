@@ -1,0 +1,2 @@
+<?xml version="1.0"?><testsuites><testsuite name="Orange"><testcase classname="Preview" name="reads Chinese 🍊" time="0.02"/><testcase classname="Preview" name="missing model" time="0.12"><failure message="Expected model">AssertionError: model not found
+preview.swift:42</failure></testcase><testcase classname="Preview" name="optional GPU"><skipped message="No GPU required"/></testcase></testsuite></testsuites>

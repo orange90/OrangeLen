@@ -10,6 +10,8 @@ public struct DiagramDocument: Sendable {
     public static func parseIfKnown(_ source: String, name: String, cancellation: Cancellation = .init()) throws -> Self? {
         guard source.utf8.count <= 1024 * 1024 else { throw PreviewError.limit("Diagram 1 MiB") }
         let ext = (name as NSString).pathExtension.lowercased()
+        if ext == "opml" { return try OutlineDiagram.parse(source, kind: ext, cancellation: cancellation) }
+        if ext == "mm", source.range(of: #"<map(?:\s|/?>)"#, options: .regularExpression) != nil { return try OutlineDiagram.parse(source, kind: ext, cancellation: cancellation) }
         if ext == "drawio" || (ext == "xml" && (source.contains("<mxfile") || source.contains("<mxGraphModel"))) { return try drawio(source, token: cancellation) }
         guard ["canvas", "json", "yaml", "yml"].contains(ext) else { return nil }
         try cancellation.check()
@@ -173,7 +175,7 @@ public struct DiagramDocument: Sendable {
 
 /// XML without DTD/entity expansion, with shared depth/node/text budgets.
 enum BoundedXML {
-    final class Node { var name: String, attributes: [String: String], children: [Node] = [], text = "", wrapperLabel: String?, wrapperID: String?
+    final class Node { var name: String, attributes: [String: String], children: [Node] = [], text = "", richText = "", wrapperLabel: String?, wrapperID: String?
         init(_ name: String,_ attributes: [String: String]) { self.name = name; self.attributes = attributes }
         func descendants(_ name: String) -> [Node] { children.flatMap { ($0.name == name ? [$0] : []) + $0.descendants(name) } }
     }
@@ -187,12 +189,13 @@ enum BoundedXML {
         init(_ token: Cancellation) { self.token = token }
         func parser(_ p: XMLParser, didStartElement name: String, namespaceURI: String?, qualifiedName qName: String?, attributes a: [String: String]) {
             do { try token.check(); count += 1; guard count <= 20000, stack.count < 64 else { throw PreviewError.limit("XML tree") }
+                if ["p", "div", "br", "li"].contains(name), let rich = stack.first(where: { $0.name == "richcontent" }) { rich.richText += "\n" }
                 let node = Node(name,a); node.wrapperLabel = stack.last?.attributes["label"]; node.wrapperID = stack.last?.attributes["id"]
                 if let parent = stack.last { parent.children.append(node) } else { root = node }; stack.append(node)
             } catch { failure = error; p.abortParsing() }
         }
         func parser(_ p: XMLParser, didEndElement name: String, namespaceURI: String?, qualifiedName qName: String?) { if !stack.isEmpty { stack.removeLast() } }
-        func parser(_ p: XMLParser, foundCharacters value: String) { textBytes += value.utf8.count; if textBytes > 5 * 1024 * 1024 { failure = PreviewError.limit("XML text"); p.abortParsing() } else { stack.last?.text += value } }
+        func parser(_ p: XMLParser, foundCharacters value: String) { textBytes += value.utf8.count; if textBytes > 5 * 1024 * 1024 { failure = PreviewError.limit("XML text"); p.abortParsing() } else { stack.last?.text += value; stack.first(where: { $0.name == "richcontent" })?.richText += value } }
         func parser(_ p: XMLParser, foundCDATA value: Data) { parser(p,foundCharacters:String(decoding:value,as:UTF8.self)) }
     }
 }

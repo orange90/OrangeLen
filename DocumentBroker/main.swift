@@ -1,6 +1,7 @@
 import AppKit
 import OrangeLenCore
 import Darwin
+import OSAKit
 
 private let workerLock = NSLock()
 private var activeRequest: UUID?
@@ -14,7 +15,8 @@ final class DocumentBroker: NSObject, DocumentBrokerProtocol {
         guard !used, activeRequest == nil else { workerLock.unlock(); reply(nil, L10n.text("文档导入繁忙，请重载")); return }
         used = true; activeRequest = request; workerLock.unlock()
         let accepted: Set<String> = [NSAttributedString.DocumentType.docFormat.rawValue, NSAttributedString.DocumentType.officeOpenXML.rawValue, NSAttributedString.DocumentType.openDocument.rawValue, NSAttributedString.DocumentType.rtf.rawValue]
-        guard accepted.contains(type), data.count <= 25 * 1024 * 1024 else { release(); reply(nil, L10n.text("文档输入超出范围")); return }
+        let appleScript = type == "local.orangelen.compiled-applescript"
+        guard accepted.contains(type) || appleScript, data.count <= (appleScript ? 5 : 25) * 1024 * 1024 else { release(); reply(nil, L10n.text("文档输入超出范围")); return }
         let start = ImageDirectoryGrant.continuousTime()
         let watchdog = DispatchSource.makeTimerSource(queue: .global(qos: .userInitiated))
         watchdog.schedule(deadline: .now(), repeating: .milliseconds(50))
@@ -30,6 +32,16 @@ final class DocumentBroker: NSObject, DocumentBrokerProtocol {
             defer { watchdog.cancel(); release() }
             autoreleasepool {
                 do {
+                    if appleScript {
+                        // Deserialization and source retrieval only. Never call
+                        // compile, execute, executeAndReturnError or a handler.
+                        let script = try OSAScript(compiledData: data, from: nil, using: [.dontSetScriptLocation])
+                        let payload = NativeDocumentPayload(text: script.source, spans: [])
+                        try payload.validate()
+                        guard !payload.text.isEmpty else { throw PreviewError.malformed("AppleScript source unavailable (possibly run-only)") }
+                        reply(try JSONEncoder().encode(payload), nil)
+                        return
+                    }
                     let documentType = NSAttributedString.DocumentType(rawValue: type)
                     if documentType == .officeOpenXML || documentType == .openDocument {
                         try ArchiveDocument.parse(data, name: "document.zip").validateForNativeImport()

@@ -1,0 +1,1 @@
+digraph Orange { rankdir=LR; input [label="Input"]; model [label="ONNX model"]; output [label="Preview"]; input -> model -> output; }

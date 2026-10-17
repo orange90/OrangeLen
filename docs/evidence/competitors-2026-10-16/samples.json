@@ -1,0 +1,104 @@
+[
+  {
+    "name": "01-AGENTS.md",
+    "source": "Tests/Fixtures/advanced-outputs/card.md",
+    "bytes": 63,
+    "sha256": "838093686f5f3ba005d42d25e3fe8169e16459e67727690431ed1b21495a30e9"
+  },
+  {
+    "name": "02-rules.mdc",
+    "source": "Tests/Fixtures/developer-batch1/sample.mdc",
+    "bytes": 94,
+    "sha256": "f0790b186828a0991e5099338d07cc994525d6062199ce61164de8e2d320239a"
+  },
+  {
+    "name": "03-package.skill",
+    "source": "Tests/Fixtures/m2/sample.skill",
+    "bytes": 602,
+    "sha256": "195b524058bce25c02c699073efda9cfd231ed7494f76562c317c70ebe125ada"
+  },
+  {
+    "name": "04-server.mcpb",
+    "source": "Tests/Fixtures/ai-outputs/sample.mcpb",
+    "bytes": 710,
+    "sha256": "9c40c956c366bdf29de4d1bf8b9ea35a0700eb5abcd01a5e75f278aa3d5a5296"
+  },
+  {
+    "name": "05-comfy.json",
+    "source": "Tests/Fixtures/advanced-outputs/comfy.json",
+    "bytes": 155,
+    "sha256": "5ec50f3f7e7f7c846892f6ee5c69d0085589fe7b194a1ee1163cbffc7a4d49bd"
+  },
+  {
+    "name": "06-n8n.json",
+    "source": "Tests/Fixtures/advanced-outputs/n8n.json",
+    "bytes": 338,
+    "sha256": "ab61b2ba0aea49b98eb076e4d8100a52f0128b1e613e75fb9e04b49576b2f5c6"
+  },
+  {
+    "name": "07-dify.yml",
+    "source": "Tests/Fixtures/advanced-outputs/dify.yml",
+    "bytes": 315,
+    "sha256": "8868f23dd62c189b0e4b965d9667dba2e32f0819c2e3adbad3e4fd3414dfd63d"
+  },
+  {
+    "name": "08-generation.png",
+    "source": "Tests/Fixtures/ai-outputs/generation.png",
+    "bytes": 574,
+    "sha256": "a25ad9c5d191327299ecf2d91b8d18327ed7c1d3e46add338d86fdae4558946c"
+  },
+  {
+    "name": "09-weights.safetensors",
+    "source": "Tests/Fixtures/advanced-outputs/weights.safetensors",
+    "bytes": 152,
+    "sha256": "c6805f02b0a56f934fd6df07a0040a4dc8f000618d02372128e58330176c014b"
+  },
+  {
+    "name": "10-model.gguf",
+    "source": "Tests/Fixtures/advanced-outputs/model.gguf",
+    "bytes": 208,
+    "sha256": "ce52deada531241fd1cd8e4cc13f857f9bd9ab0102c20f2cfe431eaed23b35bc"
+  },
+  {
+    "name": "11-model.onnx",
+    "source": "Tests/Fixtures/developer-batch1/model.onnx",
+    "bytes": 138,
+    "sha256": "10d0fcfd628c14d295091d3fcd829e47efc142b27ff32aa8134501677340289a"
+  },
+  {
+    "name": "12-array.npy",
+    "source": "Tests/Fixtures/advanced-outputs/array.npy",
+    "bytes": 152,
+    "sha256": "6473b2fc232076b057581d730590edcbde48c5bb52f80553346cb0ce489e3325"
+  },
+  {
+    "name": "13-table.parquet",
+    "source": "Tests/Fixtures/advanced-outputs/table.parquet",
+    "bytes": 1088,
+    "sha256": "fa42b51fe1c0171f677d5362edf1cd6977b135283d9864c8f3a2cf91bb29f8b4"
+  },
+  {
+    "name": "14-dataset.arrow",
+    "source": "Tests/Fixtures/developer-batch1/dataset.arrow",
+    "bytes": 882,
+    "sha256": "5c5518eecd26915a2926b8970175eedd6b150bbb836c71ca4cb6bc4cc1dacce3"
+  },
+  {
+    "name": "15-component.tsx",
+    "source": "Tests/Fixtures/advanced-outputs/component.tsx",
+    "bytes": 190,
+    "sha256": "f33ad38c03492c69c45fb65e933136f6b3ff186e566e58b70e87a29580fcffa1"
+  },
+  {
+    "name": "16-notebook.ipynb",
+    "source": "Tests/Fixtures/m2/sample.ipynb",
+    "bytes": 546,
+    "sha256": "0cf318cb2493d19dfba654a75449714b6273e0cfcd53674d164c13492abc6cb6"
+  },
+  {
+    "name": "17-workflows.n8np",
+    "source": "Tests/Fixtures/advanced-outputs/workflows.n8np",
+    "bytes": 446,
+    "sha256": "86796079e20cc0970f37b5b3dbe4df5e762f3dbed1384f7de36cf3a12c1821a6"
+  }
+]

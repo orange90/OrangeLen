@@ -86,7 +86,7 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
     @objc func showBundleSummary() {
         guard let bundleSummary, let origin else { return }
         token?.cancel(); generation = UUID(); outline.deselectAll(nil)
-        reader.openMemory(.init(id: "bundle-summary.txt", title: origin.pathExtension.lowercased() == "n8np" ? "n8n package" : L10n.text("MCP 扩展包"), text: bundleSummary), origin: origin, revision: revision, assets: .init())
+        reader.openMemory(.init(id: "bundle-summary.txt", title: ["whl", "vsix"].contains(origin.pathExtension.lowercased()) ? "Package metadata" : origin.pathExtension.lowercased() == "n8np" ? "n8n package" : L10n.text("MCP 扩展包"), text: bundleSummary), origin: origin, revision: revision, assets: .init())
     }
     static func tree(_ entries: [ArchiveEntry]) throws -> [Node] {
         let root = Node(""); var paths: [String: Node] = ["": root]
@@ -174,7 +174,12 @@ final class ArchiveController: NSViewController, NSOutlineViewDataSource, NSOutl
                     return (.init(id:entry.path,title:entry.path,text:L10n.text("![归档图片](image.png)") + (metadata.fields.isEmpty ? "" : "\n\n## " + L10n.text("AI 图片生成参数") + "\n\n" + metadata.text),markdown:true),assets)
                 }
                 guard ReadableFormat.isText(fake) else { return (.init(id: entry.path, title: entry.path, text: L10n.text("此格式尚不支持正文预览 · \(entry.size) bytes")), .init()) }
-                let source = try AccessBroker.decode(data).0, markdown = PreviewFormat.detect(fake) == .markdown
+                let source: String
+                if let converted = try BinarySourcePreview.text(data, extension: fake.pathExtension.lowercased(), cancellation: token) { source = converted.text }
+                else if let decoded = try? AccessBroker.decode(data) { source = decoded.0 }
+                else if SourceCodeFormats.appleScriptExtensions.contains(fake.pathExtension.lowercased()) { source = try NativeDocumentClient.decompileAppleScript(data, cancellation: token) }
+                else { source = try AccessBroker.decode(data).0 }
+                let markdown = PreviewFormat.detect(fake) == .markdown
                 let assets = markdown ? try CollectionController.archiveAssets(MarkdownModel.parse(source, cancellation: token), archive: archive, base: entry.path, encrypted: [], token: token) : .init()
                 return (.init(id: entry.path, title: entry.path, text: source, markdown: markdown, warning: L10n.text("归档成员 · 只读内存")), assets)
         }, completion: { [weak self] result in

@@ -201,7 +201,7 @@ public enum PreviewFormat: String, Sendable {
         if ReadableFormat.isNamedText(url) && url.pathExtension.lowercased() != "json" { return .code }
         switch url.pathExtension.lowercased() {
         case "md", "markdown": return .markdown
-        case "json", "jsonc", "json5": return .json
+        case "sarif", "json", "jsonc", "json5", "code-workspace", "otio", "tfstate": return .json
         case "csv": return .csv
         case "tsv": return .tsv
         case "diff", "patch": return .diff

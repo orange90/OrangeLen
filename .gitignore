@@ -10,7 +10,7 @@ __pycache__/
 Vendor/MarkdownRenderer/install.log
 
 # Local test screenshots and raw execution evidence.
-# Keep reports and structured results; required Tests/Fixtures remain versioned.
+# Keep reports and structured verification results; required fixtures remain versioned.
 /docs/evidence/**/*.png
 /docs/evidence/**/*.jpg
 /docs/evidence/**/*.jpeg
@@ -23,3 +23,24 @@ Vendor/MarkdownRenderer/install.log
 
 # Local HyperFrames video projects: scripts, drafts, sources and generated media.
 /videos/
+
+# Rebuild with scripts/create-source-parity-finder-fixtures.py.
+# Keep the fixture generator under version control.
+/Tests/Fixtures/source-parity-finder/
+/Tests/Fixtures/source-parity-finder-fallback/
+
+# Local accessibility dumps and machine-specific installation/provider records.
+# Preserve Markdown reports, coverage, manifests and structured test results.
+/docs/evidence/**/*.txt
+/docs/evidence/**/installed.json
+/docs/evidence/**/install-backups.json
+/docs/evidence/**/uninstall-*.json
+
+# Local competitor experiment inputs and capture indexes; keep comparison reports.
+/docs/evidence/competitors-*/samples/
+/docs/evidence/competitors-*/capture-index.json
+/docs/evidence/competitors-*/runtime-content-types.tsv
+
+# Generated automatically by test scripts and SourceParity XCTest setup.
+/Tests/Fixtures/source-parity/
+/Tests/Fixtures/.source-parity-*/

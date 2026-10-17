@@ -79,6 +79,23 @@ import OrangeLenCore
               rows.allSatisfy({ $0.count <= 256 && $0.allSatisfy({ $0.utf8.count <= 65536 }) }) else { throw PreviewError.limit("Parquet result") }
         return .init(title:"Parquet",summary:"\(header.rows) rows · \(header.rowGroups) row groups · \(header.columns) columns\nSample: first \(rows.count) rows (maximum 500) · read-only, offline Arrow decoder",columns:columns,rows:rows)
     }
+    func readArrow(_ data: Data, in parent: NSView) async throws -> ScientificDocument {
+        try await boot(in: parent)
+        guard let web, !stopped else { throw PreviewError.unavailable }
+        embedded.input = data
+        budget = Task { [weak self] in try? await Task.sleep(nanoseconds:10_000_000_000); if !Task.isCancelled { self?.cancel() } }
+        defer { budget?.cancel() }
+        let result: Any? = try await withCheckedThrowingContinuation { continuation in
+            evaluation = continuation
+            web.callAsyncJavaScript("return await window.orangeArrow(bytes)", arguments:["wasm":"orangelen-resource://assets/parquet.wasm","bytes":"orangelen-resource://assets/input.parquet"], in:nil,in:.page) { [weak self] result in
+                self?.evaluation?.resume(with:result.map { Optional($0) }); self?.evaluation = nil
+            }
+        }
+        try Task.checkCancellation()
+        guard !stopped, let object = result as? [String:Any], let columns = object["columns"] as? [String], columns.count <= 256, let rows = object["rows"] as? [[String]], rows.count <= 500,
+              rows.allSatisfy({ $0.count <= 256 && $0.allSatisfy({ $0.utf8.count <= 65536 }) }) else { throw PreviewError.limit("Arrow result") }
+        return .init(title:"Arrow",summary:object["summary"] as? String ?? "Arrow IPC",columns:columns,rows:rows)
+    }
     func compileDocument(_ source: String, typst: Bool, in parent: NSView) async throws -> Data {
         guard source.utf8.count <= 65536 else { throw PreviewError.limit("Typesetting source 64 KiB") }
         try await boot(in:parent)

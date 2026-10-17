@@ -53,9 +53,45 @@
 				<string>public.javascript-source</string>
 				<string>public.c-source</string>
 				<string>public.c-plus-plus-source</string>
+				<string>public.c-header</string>
+				<string>public.c-plus-plus-header</string>
+				<string>public.c-plus-plus-inline-header</string>
 				<string>public.shell-script</string>
 				<string>public.make-source</string>
 				<string>local.orangelen.developer-source</string>
+				<string>com.adobe.edn</string>
+				<string>com.apple.applescript.script</string>
+				<string>com.apple.applescript.text</string>
+				<string>com.apple.applesingle-archive</string>
+				<string>com.apple.dt.document.scheme</string>
+				<string>com.apple.dt.interfacebuilder.document.storyboard</string>
+				<string>com.apple.interfacebuilder.document.cocoa</string>
+				<string>com.apple.mobileconfig</string>
+				<string>com.apple.shortcuts.workflow-file</string>
+				<string>com.apple.terminal.shell-script</string>
+				<string>com.apple.xcode.entitlements-property-list</string>
+				<string>com.apple.xcode.strings-dictionary</string>
+				<string>com.apple.xcode.strings-text</string>
+				<string>com.netscape.javascript-source</string>
+				<string>com.sun.java-class</string>
+				<string>com.sun.java-source</string>
+				<string>com.sun.java-web-start</string>
+				<string>com.topografix.gpx</string>
+				<string>org.khronos.glsl.fragment-shader</string>
+				<string>org.libreoffice.mspub-document</string>
+				<string>public.ada-source</string>
+				<string>public.csh-script</string>
+				<string>public.fortran-90-source</string>
+				<string>public.fortran-95-source</string>
+				<string>public.fortran-source</string>
+				<string>public.ksh-script</string>
+				<string>public.objective-c-source</string>
+				<string>public.pascal-source</string>
+				<string>public.perl-script</string>
+				<string>public.php-script</string>
+				<string>public.ruby-script</string>
+				<string>public.tcsh-script</string>
+				<string>public.toml</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>

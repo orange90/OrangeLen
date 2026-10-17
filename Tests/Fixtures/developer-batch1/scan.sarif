@@ -1,0 +1,1 @@
+{"version": "2.1.0", "runs": [{"tool": {"driver": {"name": "Fixture scanner"}}, "results": [{"ruleId": "ORANGE001", "level": "warning", "message": {"text": "示例：检查空值 🍊"}, "locations": [{"physicalLocation": {"artifactLocation": {"uri": "src/reader.py"}, "region": {"startLine": 42}}}]}]}]}

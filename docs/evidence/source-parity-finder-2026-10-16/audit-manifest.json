@@ -1,0 +1,1727 @@
+{
+  "created": "2026-10-16T16:53:16.707580+08:00",
+  "count": 215,
+  "fixtures": "/Users/huangzhe/Documents/GitHub/OrangeLen/Tests/Fixtures/source-parity-finder",
+  "cases": [
+    {
+      "index": 1,
+      "extension": "a3x",
+      "filename": "001-a3x.a3x",
+      "source": "Tests/Fixtures/source-parity/binary.a3x",
+      "sha256": "fbaeb48b5ba907d143b9597581cf5805a98bac845a89eacf38400568ea45d146",
+      "expected_marker": "AutoIt compiled script"
+    },
+    {
+      "index": 2,
+      "extension": "acf",
+      "filename": "002-acf.acf",
+      "source": "Tests/Fixtures/source-parity/sample.acf",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 3,
+      "extension": "ada",
+      "filename": "003-ada.ada",
+      "source": "Tests/Fixtures/source-parity/sample.ada",
+      "sha256": "b1b0dccf2828a5c71740bf3f19276fb979238ff6999a81baa312eb8bb08063c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 4,
+      "extension": "ado",
+      "filename": "004-ado.ado",
+      "source": "Tests/Fixtures/source-parity/sample.ado",
+      "sha256": "931eb47d0eb649962ac5c204a5adab7af8698c5c814e2b427e03333fdc0b5b70",
+      "expected_marker": ""
+    },
+    {
+      "index": 5,
+      "extension": "applescript",
+      "filename": "005-applescript.applescript",
+      "source": "Tests/Fixtures/source-parity/compiled.scpt",
+      "sha256": "ec64699f609024e502391707207009ef0e0e4c84fc37a9153e5d9003940eed66",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 6,
+      "extension": "as",
+      "filename": "006-as.as",
+      "source": "Tests/Fixtures/source-parity/sample.as",
+      "sha256": "fb86554380a44ec7b6bef6e3fa8ee0eb06d6f856952d145cea8ac97a81a4e89f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 7,
+      "extension": "ascr",
+      "filename": "007-ascr.ascr",
+      "source": "Tests/Fixtures/source-parity/compiled.scpt",
+      "sha256": "ec64699f609024e502391707207009ef0e0e4c84fc37a9153e5d9003940eed66",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 8,
+      "extension": "asd",
+      "filename": "008-asd.asd",
+      "source": "Tests/Fixtures/source-parity/sample.asd",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 9,
+      "extension": "asm",
+      "filename": "009-asm.asm",
+      "source": "Tests/Fixtures/source-parity/sample.asm",
+      "sha256": "6e66c61d973fa26ac248e78b938ba048a365a180beb2cce60414361d0da51077",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 10,
+      "extension": "asp",
+      "filename": "010-asp.asp",
+      "source": "Tests/Fixtures/source-parity/sample.asp",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 11,
+      "extension": "aspx",
+      "filename": "011-aspx.aspx",
+      "source": "Tests/Fixtures/source-parity/sample.aspx",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 12,
+      "extension": "atl",
+      "filename": "012-atl.atl",
+      "source": "Tests/Fixtures/source-parity/sample.atl",
+      "sha256": "fe0cd4d81bef7818c610ac6049b860db805b3908e301725fc858e73b4c401c63",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 13,
+      "extension": "au3",
+      "filename": "013-au3.au3",
+      "source": "Tests/Fixtures/source-parity/sample.au3",
+      "sha256": "cf7132b123c44f97e1b142455aec3d7266da225f032aec98021f6018ab6f5178",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 14,
+      "extension": "avt",
+      "filename": "014-avt.avt",
+      "source": "Tests/Fixtures/source-parity/sample.avt",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 15,
+      "extension": "awk",
+      "filename": "015-awk.awk",
+      "source": "Tests/Fixtures/source-parity/sample.awk",
+      "sha256": "63b1c96c7f0f3903a2a2015e5f88ac5e2b53d0fbd53135bb30f7f086a020c260",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 16,
+      "extension": "bas",
+      "filename": "016-bas.bas",
+      "source": "Tests/Fixtures/source-parity/sample.bas",
+      "sha256": "e1bad3c66b886edeb4c6e9c0425d8b108f40ffc97607207d210cb5d554779e8f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 17,
+      "extension": "bashrc",
+      "filename": "017-bashrc.bashrc",
+      "source": "Tests/Fixtures/source-parity/sample.bashrc",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 18,
+      "extension": "basic",
+      "filename": "018-basic.basic",
+      "source": "Tests/Fixtures/source-parity/sample.basic",
+      "sha256": "e1bad3c66b886edeb4c6e9c0425d8b108f40ffc97607207d210cb5d554779e8f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 19,
+      "extension": "bat",
+      "filename": "019-bat.bat",
+      "source": "Tests/Fixtures/source-parity/sample.bat",
+      "sha256": "80e99f982fde0a12618236b6452ea6fdbc03fd5617d7b790cbf082b2f6e9ff00",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 20,
+      "extension": "bb",
+      "filename": "020-bb.bb",
+      "source": "Tests/Fixtures/source-parity/sample.bb",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 21,
+      "extension": "bezel",
+      "filename": "021-bezel.bezel",
+      "source": "Tests/Fixtures/source-parity/sample.bezel",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 22,
+      "extension": "bib",
+      "filename": "022-bib.bib",
+      "source": "Tests/Fixtures/source-parity/sample.bib",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 23,
+      "extension": "c++",
+      "filename": "023-c++.c++",
+      "source": "Tests/Fixtures/source-parity/sample.c++",
+      "sha256": "facd8e09ae825785f17639800e5cb19a626b10a07585c8547af919f66e2b313c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 24,
+      "extension": "cfc",
+      "filename": "024-cfc.cfc",
+      "source": "Tests/Fixtures/source-parity/sample.cfc",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 25,
+      "extension": "cfg",
+      "filename": "025-cfg.cfg",
+      "source": "Tests/Fixtures/source-parity/sample.cfg",
+      "sha256": "82bdd17f108a9d66d3df37fab043269ac662d05c66b4afab26988b512468d137",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 26,
+      "extension": "cfm",
+      "filename": "026-cfm.cfm",
+      "source": "Tests/Fixtures/source-parity/sample.cfm",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 27,
+      "extension": "cfml",
+      "filename": "027-cfml.cfml",
+      "source": "Tests/Fixtures/source-parity/sample.cfml",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 28,
+      "extension": "class",
+      "filename": "028-class.class",
+      "source": "Tests/Fixtures/source-parity/sample.class",
+      "sha256": "5935e51d2e0bc9559b7498e9da51161604f17c108186a860612e91ac1841052e",
+      "expected_marker": "OrangeParity"
+    },
+    {
+      "index": 29,
+      "extension": "cli",
+      "filename": "029-cli.cli",
+      "source": "Tests/Fixtures/source-parity/sample.cli",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 30,
+      "extension": "clj",
+      "filename": "030-clj.clj",
+      "source": "Tests/Fixtures/source-parity/sample.clj",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 31,
+      "extension": "cljc",
+      "filename": "031-cljc.cljc",
+      "source": "Tests/Fixtures/source-parity/sample.cljc",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 32,
+      "extension": "cljs",
+      "filename": "032-cljs.cljs",
+      "source": "Tests/Fixtures/source-parity/sample.cljs",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 33,
+      "extension": "cls",
+      "filename": "033-cls.cls",
+      "source": "Tests/Fixtures/source-parity/sample.cls",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 34,
+      "extension": "cmd",
+      "filename": "034-cmd.cmd",
+      "source": "Tests/Fixtures/source-parity/sample.cmd",
+      "sha256": "80e99f982fde0a12618236b6452ea6fdbc03fd5617d7b790cbf082b2f6e9ff00",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 35,
+      "extension": "code-workspace",
+      "filename": "035-code-workspace.code-workspace",
+      "source": "Tests/Fixtures/source-parity/sample.code-workspace",
+      "sha256": "0103597375b94b075e54409a4c7416e10bc62a9dfb36cd2d99bcf9b795572f62",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 36,
+      "extension": "coffee",
+      "filename": "036-coffee.coffee",
+      "source": "Tests/Fixtures/source-parity/sample.coffee",
+      "sha256": "85fdcf8336663af4f846037407446dd9ac7c0f23705c57abbb855a868eec40e1",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 37,
+      "extension": "command",
+      "filename": "037-command.command",
+      "source": "Tests/Fixtures/source-parity/sample.command",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 38,
+      "extension": "con",
+      "filename": "038-con.con",
+      "source": "Tests/Fixtures/source-parity/sample.con",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 39,
+      "extension": "cp",
+      "filename": "039-cp.cp",
+      "source": "Tests/Fixtures/source-parity/sample.cp",
+      "sha256": "facd8e09ae825785f17639800e5cb19a626b10a07585c8547af919f66e2b313c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 40,
+      "extension": "cr",
+      "filename": "040-cr.cr",
+      "source": "Tests/Fixtures/source-parity/sample.cr",
+      "sha256": "cd4816265a023df1c8b798462932ce71e3fdcb47f4d746c7705c0daf86bb79e6",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 41,
+      "extension": "csh",
+      "filename": "041-csh.csh",
+      "source": "Tests/Fixtures/source-parity/sample.csh",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 42,
+      "extension": "cson",
+      "filename": "042-cson.cson",
+      "source": "Tests/Fixtures/source-parity/sample.cson",
+      "sha256": "85fdcf8336663af4f846037407446dd9ac7c0f23705c57abbb855a868eec40e1",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 43,
+      "extension": "csproj",
+      "filename": "043-csproj.csproj",
+      "source": "Tests/Fixtures/source-parity/sample.csproj",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 44,
+      "extension": "ctx",
+      "filename": "044-ctx.ctx",
+      "source": "Tests/Fixtures/source-parity/sample.ctx",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 45,
+      "extension": "d",
+      "filename": "045-d.d",
+      "source": "Tests/Fixtures/source-parity/sample.d",
+      "sha256": "e5a47c6fb0c4a7d298435d9540044c427730a6ca3cdf5d68d976807ecb37dd83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 46,
+      "extension": "designspace",
+      "filename": "046-designspace.designspace",
+      "source": "Tests/Fixtures/source-parity/sample.designspace",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 47,
+      "extension": "do",
+      "filename": "047-do.do",
+      "source": "Tests/Fixtures/source-parity/sample.do",
+      "sha256": "931eb47d0eb649962ac5c204a5adab7af8698c5c814e2b427e03333fdc0b5b70",
+      "expected_marker": ""
+    },
+    {
+      "index": 48,
+      "extension": "dockerfile",
+      "filename": "048-dockerfile.dockerfile",
+      "source": "Tests/Fixtures/source-parity/sample.dockerfile",
+      "sha256": "c054fe9daa3d9b43efe73aa7293fb29bb8d58d38bf1cd1677c655ad184bfcc38",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 49,
+      "extension": "dtd",
+      "filename": "049-dtd.dtd",
+      "source": "Tests/Fixtures/source-parity/sample.dtd",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 50,
+      "extension": "dylan",
+      "filename": "050-dylan.dylan",
+      "source": "Tests/Fixtures/source-parity/sample.dylan",
+      "sha256": "78c7d629c15b236afa4d420805274a9679b931ab86ebb321e7e095e357166abc",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 51,
+      "extension": "e",
+      "filename": "051-e.e",
+      "source": "Tests/Fixtures/source-parity/sample.e",
+      "sha256": "bca940f4673043b9c0cc21a380330cb72ac75fa0d1e70edc4e8c395625a7d4a2",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 52,
+      "extension": "ecf",
+      "filename": "052-ecf.ecf",
+      "source": "Tests/Fixtures/source-parity/sample.ecf",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 53,
+      "extension": "ecore",
+      "filename": "053-ecore.ecore",
+      "source": "Tests/Fixtures/source-parity/sample.ecore",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 54,
+      "extension": "edn",
+      "filename": "054-edn.edn",
+      "source": "Tests/Fixtures/source-parity/sample.edn",
+      "sha256": "9be5a946e41ca9b0ce07137a284aa73c3da39215a158d8e9ae38c94b4a93a636",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 55,
+      "extension": "el",
+      "filename": "055-el.el",
+      "source": "Tests/Fixtures/source-parity/sample.el",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 56,
+      "extension": "entitlements",
+      "filename": "056-entitlements.entitlements",
+      "source": "Tests/Fixtures/source-parity/binary.entitlements",
+      "sha256": "6b2de90fa2cd60646324f7a93364997ecc6705111587b7c7a2383ca4e80079e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 57,
+      "extension": "env",
+      "filename": "057-env.env",
+      "source": "Tests/Fixtures/source-parity/sample.env",
+      "sha256": "82bdd17f108a9d66d3df37fab043269ac662d05c66b4afab26988b512468d137",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 58,
+      "extension": "erb",
+      "filename": "058-erb.erb",
+      "source": "Tests/Fixtures/source-parity/sample.erb",
+      "sha256": "6694c2c0971f5c04ce41012b407eb80653024c748f295443b8560a23bcd30009",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 59,
+      "extension": "erl",
+      "filename": "059-erl.erl",
+      "source": "Tests/Fixtures/source-parity/sample.erl",
+      "sha256": "cfe31783b28bd70fe8f04382cb6554fa1cc212b439908c05bc464605621c4e1a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 60,
+      "extension": "ex",
+      "filename": "060-ex.ex",
+      "source": "Tests/Fixtures/source-parity/sample.ex",
+      "sha256": "f17b6649f1ba1fce258591c4a4411c7b010af477c18375b9790f677b08842910",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 61,
+      "extension": "exs",
+      "filename": "061-exs.exs",
+      "source": "Tests/Fixtures/source-parity/sample.exs",
+      "sha256": "f17b6649f1ba1fce258591c4a4411c7b010af477c18375b9790f677b08842910",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 62,
+      "extension": "f",
+      "filename": "062-f.f",
+      "source": "Tests/Fixtures/source-parity/sample.f",
+      "sha256": "64ee75fdde207aac856b21ced608daefbe27a678cb4ba0d0de0fbcb3dd3668da",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 63,
+      "extension": "f90",
+      "filename": "063-f90.f90",
+      "source": "Tests/Fixtures/source-parity/sample.f90",
+      "sha256": "64ee75fdde207aac856b21ced608daefbe27a678cb4ba0d0de0fbcb3dd3668da",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 64,
+      "extension": "f95",
+      "filename": "064-f95.f95",
+      "source": "Tests/Fixtures/source-parity/sample.f95",
+      "sha256": "64ee75fdde207aac856b21ced608daefbe27a678cb4ba0d0de0fbcb3dd3668da",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 65,
+      "extension": "fea",
+      "filename": "065-fea.fea",
+      "source": "Tests/Fixtures/source-parity/sample.fea",
+      "sha256": "699e587184fc2ff9b6acc9248b46fd658f1482dd7ba983e5a60ccb3099abd3e8",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 66,
+      "extension": "fish",
+      "filename": "066-fish.fish",
+      "source": "Tests/Fixtures/source-parity/sample.fish",
+      "sha256": "dc0adf6fc81de08a2b02c7d99d10caf7c6f169b7be61da7d64a205b08301d6d3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 67,
+      "extension": "flow",
+      "filename": "067-flow.flow",
+      "source": "Tests/Fixtures/source-parity/sample.flow",
+      "sha256": "b537de037a82302458259003d4245217634b09e93d3166a1798ad3d1961d2cd5",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 68,
+      "extension": "fnc",
+      "filename": "068-fnc.fnc",
+      "source": "Tests/Fixtures/source-parity/sample.fnc",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 69,
+      "extension": "for",
+      "filename": "069-for.for",
+      "source": "Tests/Fixtures/source-parity/sample.for",
+      "sha256": "64ee75fdde207aac856b21ced608daefbe27a678cb4ba0d0de0fbcb3dd3668da",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 70,
+      "extension": "fs",
+      "filename": "070-fs.fs",
+      "source": "Tests/Fixtures/source-parity/sample.fs",
+      "sha256": "de44b127251a1d0a8024a6df91204dc9c1bbc7758db5ee8fe4635b4efdc1aa0a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 71,
+      "extension": "fsx",
+      "filename": "071-fsx.fsx",
+      "source": "Tests/Fixtures/source-parity/sample.fsx",
+      "sha256": "de44b127251a1d0a8024a6df91204dc9c1bbc7758db5ee8fe4635b4efdc1aa0a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 72,
+      "extension": "fxml",
+      "filename": "072-fxml.fxml",
+      "source": "Tests/Fixtures/source-parity/sample.fxml",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 73,
+      "extension": "gd",
+      "filename": "073-gd.gd",
+      "source": "Tests/Fixtures/source-parity/sample.gd",
+      "sha256": "fe5c54305058baaf6e8b9ee74b380f06a7151156630c9ddb98a926c187cae121",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 74,
+      "extension": "gemfile",
+      "filename": "074-gemfile.gemfile",
+      "source": "Tests/Fixtures/source-parity/sample.gemfile",
+      "sha256": "c8ac85dc9b351fa49e4249a61360f21570ec89ab6518b3d552654e9df79b9196",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 75,
+      "extension": "gleam",
+      "filename": "075-gleam.gleam",
+      "source": "Tests/Fixtures/source-parity/sample.gleam",
+      "sha256": "57439023bf34afdad806b6d65e4054671ad89069e6782d67d3818d6a2552355c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 76,
+      "extension": "gpx",
+      "filename": "076-gpx.gpx",
+      "source": "Tests/Fixtures/source-parity/sample.gpx",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 77,
+      "extension": "haml",
+      "filename": "077-haml.haml",
+      "source": "Tests/Fixtures/source-parity/sample.haml",
+      "sha256": "2e18aac694048ee456b01b40d620d82dffc31ff9245bec59b8d8df1d1120a2f9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 78,
+      "extension": "heex",
+      "filename": "078-heex.heex",
+      "source": "Tests/Fixtures/source-parity/sample.heex",
+      "sha256": "f17b6649f1ba1fce258591c4a4411c7b010af477c18375b9790f677b08842910",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 79,
+      "extension": "hri",
+      "filename": "079-hri.hri",
+      "source": "Tests/Fixtures/source-parity/sample.hri",
+      "sha256": "cfe31783b28bd70fe8f04382cb6554fa1cc212b439908c05bc464605621c4e1a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 80,
+      "extension": "hrl",
+      "filename": "080-hrl.hrl",
+      "source": "Tests/Fixtures/source-parity/sample.hrl",
+      "sha256": "cfe31783b28bd70fe8f04382cb6554fa1cc212b439908c05bc464605621c4e1a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 81,
+      "extension": "hs",
+      "filename": "081-hs.hs",
+      "source": "Tests/Fixtures/source-parity/sample.hs",
+      "sha256": "7a18cee683ef774cd90b50b23cf319da31e783660691f56c7155758aecac1388",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 82,
+      "extension": "ily",
+      "filename": "082-ily.ily",
+      "source": "Tests/Fixtures/source-parity/sample.ily",
+      "sha256": "cb0c778cb6bbe10a09cdc6857c42c3f99ef8124b45401f6d930c9ce70894ac95",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 83,
+      "extension": "iml",
+      "filename": "083-iml.iml",
+      "source": "Tests/Fixtures/source-parity/sample.iml",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 84,
+      "extension": "inf",
+      "filename": "084-inf.inf",
+      "source": "Tests/Fixtures/source-parity/sample.inf",
+      "sha256": "82bdd17f108a9d66d3df37fab043269ac662d05c66b4afab26988b512468d137",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 85,
+      "extension": "ino",
+      "filename": "085-ino.ino",
+      "source": "Tests/Fixtures/source-parity/sample.ino",
+      "sha256": "392ba701d4e8d8a3ca8f3ce250ba439eeb3b8fe3272d4775f6093187f5d74b2d",
+      "expected_marker": ""
+    },
+    {
+      "index": 86,
+      "extension": "iss",
+      "filename": "086-iss.iss",
+      "source": "Tests/Fixtures/source-parity/sample.iss",
+      "sha256": "c09de8989c8bbfc067d37628e5d0170b225286e16abf89d8e4bd143e06938a4f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 87,
+      "extension": "jav",
+      "filename": "087-jav.jav",
+      "source": "Tests/Fixtures/source-parity/sample.jav",
+      "sha256": "eef35498c299128793ad9c6a185b8b6c94663b9ce7c5c5935bedcc2b38490203",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 88,
+      "extension": "javascript",
+      "filename": "088-javascript.javascript",
+      "source": "Tests/Fixtures/source-parity/sample.javascript",
+      "sha256": "a496c1f0db22d0c46bb06c91b1304050d2feb6467b3051a5143803117e615105",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 89,
+      "extension": "jl",
+      "filename": "089-jl.jl",
+      "source": "Tests/Fixtures/source-parity/sample.jl",
+      "sha256": "63f1629bfba61043c9ef9f9810cca1dd891fec2a87ea3a39cb871f6d96af55ca",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 90,
+      "extension": "jnlp",
+      "filename": "090-jnlp.jnlp",
+      "source": "Tests/Fixtures/source-parity/sample.jnlp",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 91,
+      "extension": "jscript",
+      "filename": "091-jscript.jscript",
+      "source": "Tests/Fixtures/source-parity/sample.jscript",
+      "sha256": "a496c1f0db22d0c46bb06c91b1304050d2feb6467b3051a5143803117e615105",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 92,
+      "extension": "jsm",
+      "filename": "092-jsm.jsm",
+      "source": "Tests/Fixtures/source-parity/sample.jsm",
+      "sha256": "a496c1f0db22d0c46bb06c91b1304050d2feb6467b3051a5143803117e615105",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 93,
+      "extension": "jsp",
+      "filename": "093-jsp.jsp",
+      "source": "Tests/Fixtures/source-parity/sample.jsp",
+      "sha256": "b57336384fd424a7afe28dd5736ab330db04315812446f2229e4b4f079f9f743",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 94,
+      "extension": "kml",
+      "filename": "094-kml.kml",
+      "source": "Tests/Fixtures/source-parity/sample.kml",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 95,
+      "extension": "kmt",
+      "filename": "095-kmt.kmt",
+      "source": "Tests/Fixtures/source-parity/sample.kmt",
+      "sha256": "362edd19fd3d247bd9328fed93fa631d043c11204598690eab505103c2f90027",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 96,
+      "extension": "ksh",
+      "filename": "096-ksh.ksh",
+      "source": "Tests/Fixtures/source-parity/sample.ksh",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 97,
+      "extension": "latex",
+      "filename": "097-latex.latex",
+      "source": "Tests/Fixtures/source-parity/sample.latex",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 98,
+      "extension": "lay",
+      "filename": "098-lay.lay",
+      "source": "Tests/Fixtures/source-parity/sample.lay",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 99,
+      "extension": "ld",
+      "filename": "099-ld.ld",
+      "source": "Tests/Fixtures/source-parity/sample.ld",
+      "sha256": "2e2527673f45959187059a69bf3b5b98a641c88602e392fc376147615e33f278",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 100,
+      "extension": "lhs",
+      "filename": "100-lhs.lhs",
+      "source": "Tests/Fixtures/source-parity/sample.lhs",
+      "sha256": "7a18cee683ef774cd90b50b23cf319da31e783660691f56c7155758aecac1388",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 101,
+      "extension": "lisp",
+      "filename": "101-lisp.lisp",
+      "source": "Tests/Fixtures/source-parity/sample.lisp",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 102,
+      "extension": "loctable",
+      "filename": "102-loctable.loctable",
+      "source": "Tests/Fixtures/source-parity/binary.loctable",
+      "sha256": "6b2de90fa2cd60646324f7a93364997ecc6705111587b7c7a2383ca4e80079e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 103,
+      "extension": "lsp",
+      "filename": "103-lsp.lsp",
+      "source": "Tests/Fixtures/source-parity/sample.lsp",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 104,
+      "extension": "ltx",
+      "filename": "104-ltx.ltx",
+      "source": "Tests/Fixtures/source-parity/sample.ltx",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 105,
+      "extension": "ly",
+      "filename": "105-ly.ly",
+      "source": "Tests/Fixtures/source-parity/sample.ly",
+      "sha256": "cb0c778cb6bbe10a09cdc6857c42c3f99ef8124b45401f6d930c9ce70894ac95",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 106,
+      "extension": "m",
+      "filename": "106-m.m",
+      "source": "Tests/Fixtures/source-parity/sample.m",
+      "sha256": "0d260f70a5e53362baaa27274837eec63b0fa6e8127f8ce0ed05636cc83d477d",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 107,
+      "extension": "mak",
+      "filename": "107-mak.mak",
+      "source": "Tests/Fixtures/source-parity/sample.mak",
+      "sha256": "33edad86ff5769aea120123a5d54d97f8739f91e4ce7616d43bfd52039b4bcfe",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 108,
+      "extension": "map",
+      "filename": "108-map.map",
+      "source": "Tests/Fixtures/source-parity/sample.map",
+      "sha256": "2e2527673f45959187059a69bf3b5b98a641c88602e392fc376147615e33f278",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 109,
+      "extension": "mf",
+      "filename": "109-mf.mf",
+      "source": "Tests/Fixtures/source-parity/sample.mf",
+      "sha256": "f0f2e5f08ae11b19a74aee56185cd4ae2708b0dac6e678282279c4db7c5f0c8a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 110,
+      "extension": "mill",
+      "filename": "110-mill.mill",
+      "source": "Tests/Fixtures/source-parity/sample.mill",
+      "sha256": "4d8bb75ffde0d9f3d0d16382229e173c21ce38343752e54f942c8a3dd06353de",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 111,
+      "extension": "ml",
+      "filename": "111-ml.ml",
+      "source": "Tests/Fixtures/source-parity/sample.ml",
+      "sha256": "1756f7b4033369bd050e0820cd1a35bc39f309f5684d9908479f5dd653ba3c89",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 112,
+      "extension": "mll",
+      "filename": "112-mll.mll",
+      "source": "Tests/Fixtures/source-parity/sample.mll",
+      "sha256": "1756f7b4033369bd050e0820cd1a35bc39f309f5684d9908479f5dd653ba3c89",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 113,
+      "extension": "mly",
+      "filename": "113-mly.mly",
+      "source": "Tests/Fixtures/source-parity/sample.mly",
+      "sha256": "1756f7b4033369bd050e0820cd1a35bc39f309f5684d9908479f5dd653ba3c89",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 114,
+      "extension": "mobileconfig",
+      "filename": "114-mobileconfig.mobileconfig",
+      "source": "Tests/Fixtures/source-parity/sample.mobileconfig",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 115,
+      "extension": "mpd",
+      "filename": "115-mpd.mpd",
+      "source": "Tests/Fixtures/source-parity/sample.mpd",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 116,
+      "extension": "mq4",
+      "filename": "116-mq4.mq4",
+      "source": "Tests/Fixtures/source-parity/sample.mq4",
+      "sha256": "facd8e09ae825785f17639800e5cb19a626b10a07585c8547af919f66e2b313c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 117,
+      "extension": "mq5",
+      "filename": "117-mq5.mq5",
+      "source": "Tests/Fixtures/source-parity/sample.mq5",
+      "sha256": "facd8e09ae825785f17639800e5cb19a626b10a07585c8547af919f66e2b313c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 118,
+      "extension": "ms",
+      "filename": "118-ms.ms",
+      "source": "Tests/Fixtures/source-parity/sample.ms",
+      "sha256": "620ea8803ac8cc986cb151214db54d1b885da894b0f6decddd8f75ca9ffcfcde",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 119,
+      "extension": "mvw",
+      "filename": "119-mvw.mvw",
+      "source": "Tests/Fixtures/source-parity/sample.mvw",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 120,
+      "extension": "mxml",
+      "filename": "120-mxml.mxml",
+      "source": "Tests/Fixtures/source-parity/sample.mxml",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 121,
+      "extension": "ncx",
+      "filename": "121-ncx.ncx",
+      "source": "Tests/Fixtures/source-parity/sample.ncx",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 122,
+      "extension": "nf",
+      "filename": "122-nf.nf",
+      "source": "Tests/Fixtures/source-parity/sample.nf",
+      "sha256": "7e99e5f01090f888d1b064e50bc581b16ace64546339971a0f5a4fa47411184c",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 123,
+      "extension": "nim",
+      "filename": "123-nim.nim",
+      "source": "Tests/Fixtures/source-parity/sample.nim",
+      "sha256": "d1f1a0751d4efc79d5bcc7c51b5892b7ce8eca7d44060a9aac10d42baa5d160e",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 124,
+      "extension": "nix",
+      "filename": "124-nix.nix",
+      "source": "Tests/Fixtures/source-parity/sample.nix",
+      "sha256": "a24770f2a18b03daebe91fa4a44a078beb8cc54bc1839b76bdfa371a09a620b0",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 125,
+      "extension": "opf",
+      "filename": "125-opf.opf",
+      "source": "Tests/Fixtures/source-parity/sample.opf",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 126,
+      "extension": "otio",
+      "filename": "126-otio.otio",
+      "source": "Tests/Fixtures/source-parity/sample.otio",
+      "sha256": "0103597375b94b075e54409a4c7416e10bc62a9dfb36cd2d99bcf9b795572f62",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 127,
+      "extension": "pas",
+      "filename": "127-pas.pas",
+      "source": "Tests/Fixtures/source-parity/sample.pas",
+      "sha256": "fc414fa45bc6ba485c683feeb9457657277c5457a0d8f3cfe3cf2dfb05a5ab3b",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 128,
+      "extension": "pck",
+      "filename": "128-pck.pck",
+      "source": "Tests/Fixtures/source-parity/sample.pck",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 129,
+      "extension": "pddl",
+      "filename": "129-pddl.pddl",
+      "source": "Tests/Fixtures/source-parity/sample.pddl",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 130,
+      "extension": "pde",
+      "filename": "130-pde.pde",
+      "source": "Tests/Fixtures/source-parity/sample.pde",
+      "sha256": "0c7c48c37d8043212edfe9f2c90d1262ff6f87edad55b2434764e8ce17f36145",
+      "expected_marker": ""
+    },
+    {
+      "index": 131,
+      "extension": "ph3",
+      "filename": "131-ph3.ph3",
+      "source": "Tests/Fixtures/source-parity/sample.ph3",
+      "sha256": "2c0797df3b05740c0444534420d1ecc830647f651d9eae69d60d219a095036cd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 132,
+      "extension": "ph4",
+      "filename": "132-ph4.ph4",
+      "source": "Tests/Fixtures/source-parity/sample.ph4",
+      "sha256": "2c0797df3b05740c0444534420d1ecc830647f651d9eae69d60d219a095036cd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 133,
+      "extension": "php3",
+      "filename": "133-php3.php3",
+      "source": "Tests/Fixtures/source-parity/sample.php3",
+      "sha256": "2c0797df3b05740c0444534420d1ecc830647f651d9eae69d60d219a095036cd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 134,
+      "extension": "php4",
+      "filename": "134-php4.php4",
+      "source": "Tests/Fixtures/source-parity/sample.php4",
+      "sha256": "2c0797df3b05740c0444534420d1ecc830647f651d9eae69d60d219a095036cd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 135,
+      "extension": "phtml",
+      "filename": "135-phtml.phtml",
+      "source": "Tests/Fixtures/source-parity/sample.phtml",
+      "sha256": "2c0797df3b05740c0444534420d1ecc830647f651d9eae69d60d219a095036cd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 136,
+      "extension": "pkb",
+      "filename": "136-pkb.pkb",
+      "source": "Tests/Fixtures/source-parity/sample.pkb",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 137,
+      "extension": "pks",
+      "filename": "137-pks.pks",
+      "source": "Tests/Fixtures/source-parity/sample.pks",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 138,
+      "extension": "pl",
+      "filename": "138-pl.pl",
+      "source": "Tests/Fixtures/source-parity/sample.pl",
+      "sha256": "b93a839311e166de94a2d8958717c07e3bca9a62504e6fc7a86fe6e00c8726f7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 139,
+      "extension": "pm",
+      "filename": "139-pm.pm",
+      "source": "Tests/Fixtures/source-parity/sample.pm",
+      "sha256": "b93a839311e166de94a2d8958717c07e3bca9a62504e6fc7a86fe6e00c8726f7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 140,
+      "extension": "podspec",
+      "filename": "140-podspec.podspec",
+      "source": "Tests/Fixtures/source-parity/sample.podspec",
+      "sha256": "c8ac85dc9b351fa49e4249a61360f21570ec89ab6518b3d552654e9df79b9196",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 141,
+      "extension": "pom",
+      "filename": "141-pom.pom",
+      "source": "Tests/Fixtures/source-parity/sample.pom",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 142,
+      "extension": "prc",
+      "filename": "142-prc.prc",
+      "source": "Tests/Fixtures/source-parity/sample.prc",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 143,
+      "extension": "pro",
+      "filename": "143-pro.pro",
+      "source": "Tests/Fixtures/source-parity/sample.pro",
+      "sha256": "402f301dfaf58ffc1a2f0ed4a0b95a6189024bb40009f149c622f3da12fedb6a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 144,
+      "extension": "psd1",
+      "filename": "144-psd1.psd1",
+      "source": "Tests/Fixtures/source-parity/sample.psd1",
+      "sha256": "7d4c86c799161641d3dcac8dad82fd562f29706c86250dc2fb24b0fe73ff3bc5",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 145,
+      "extension": "psjs",
+      "filename": "145-psjs.psjs",
+      "source": "Tests/Fixtures/source-parity/sample.psjs",
+      "sha256": "a496c1f0db22d0c46bb06c91b1304050d2feb6467b3051a5143803117e615105",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 146,
+      "extension": "psm1",
+      "filename": "146-psm1.psm1",
+      "source": "Tests/Fixtures/source-parity/sample.psm1",
+      "sha256": "7d4c86c799161641d3dcac8dad82fd562f29706c86250dc2fb24b0fe73ff3bc5",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 147,
+      "extension": "pub",
+      "filename": "147-pub.pub",
+      "source": "Tests/Fixtures/source-parity/sample.pub",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 148,
+      "extension": "py3",
+      "filename": "148-py3.py3",
+      "source": "Tests/Fixtures/source-parity/sample.py3",
+      "sha256": "9e082e7679639f9afeaf88deb65c904793608be2bb1f65beb64826c95ab159fa",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 149,
+      "extension": "raml",
+      "filename": "149-raml.raml",
+      "source": "Tests/Fixtures/source-parity/sample.raml",
+      "sha256": "b537de037a82302458259003d4245217634b09e93d3166a1798ad3d1961d2cd5",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 150,
+      "extension": "rbw",
+      "filename": "150-rbw.rbw",
+      "source": "Tests/Fixtures/source-parity/sample.rbw",
+      "sha256": "c8ac85dc9b351fa49e4249a61360f21570ec89ab6518b3d552654e9df79b9196",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 151,
+      "extension": "rdf",
+      "filename": "151-rdf.rdf",
+      "source": "Tests/Fixtures/source-parity/sample.rdf",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 152,
+      "extension": "readme",
+      "filename": "152-readme.readme",
+      "source": "Tests/Fixtures/source-parity/sample.readme",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 153,
+      "extension": "rex",
+      "filename": "153-rex.rex",
+      "source": "Tests/Fixtures/source-parity/sample.rex",
+      "sha256": "2819a8c8d290157331f72278d9e772ef6a1e22f2208fc43e41e7cb52b23b58e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 154,
+      "extension": "rexx",
+      "filename": "154-rexx.rexx",
+      "source": "Tests/Fixtures/source-parity/sample.rexx",
+      "sha256": "2819a8c8d290157331f72278d9e772ef6a1e22f2208fc43e41e7cb52b23b58e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 155,
+      "extension": "rhtml",
+      "filename": "155-rhtml.rhtml",
+      "source": "Tests/Fixtures/source-parity/sample.rhtml",
+      "sha256": "6694c2c0971f5c04ce41012b407eb80653024c748f295443b8560a23bcd30009",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 156,
+      "extension": "rjs",
+      "filename": "156-rjs.rjs",
+      "source": "Tests/Fixtures/source-parity/sample.rjs",
+      "sha256": "a496c1f0db22d0c46bb06c91b1304050d2feb6467b3051a5143803117e615105",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 157,
+      "extension": "rkt",
+      "filename": "157-rkt.rkt",
+      "source": "Tests/Fixtures/source-parity/sample.rkt",
+      "sha256": "919ebb81b556500d0e57f4bb8f506feaa66d193a7d1a30743fdb82d61b8c50c7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 158,
+      "extension": "robot",
+      "filename": "158-robot.robot",
+      "source": "Tests/Fixtures/source-parity/sample.robot",
+      "sha256": "9e082e7679639f9afeaf88deb65c904793608be2bb1f65beb64826c95ab159fa",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 159,
+      "extension": "s79",
+      "filename": "159-s79.s79",
+      "source": "Tests/Fixtures/source-parity/sample.s79",
+      "sha256": "6e66c61d973fa26ac248e78b938ba048a365a180beb2cce60414361d0da51077",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 160,
+      "extension": "sage",
+      "filename": "160-sage.sage",
+      "source": "Tests/Fixtures/source-parity/sample.sage",
+      "sha256": "9e082e7679639f9afeaf88deb65c904793608be2bb1f65beb64826c95ab159fa",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 161,
+      "extension": "sas",
+      "filename": "161-sas.sas",
+      "source": "Tests/Fixtures/source-parity/sample.sas",
+      "sha256": "a16cee40dc033302a521409ee0ce9bf28c15d6d29d4ed0b137aed34889daf9a4",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 162,
+      "extension": "sbt",
+      "filename": "162-sbt.sbt",
+      "source": "Tests/Fixtures/source-parity/sample.sbt",
+      "sha256": "4d8bb75ffde0d9f3d0d16382229e173c21ce38343752e54f942c8a3dd06353de",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 163,
+      "extension": "sc",
+      "filename": "163-sc.sc",
+      "source": "Tests/Fixtures/source-parity/sample.sc",
+      "sha256": "4d8bb75ffde0d9f3d0d16382229e173c21ce38343752e54f942c8a3dd06353de",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 164,
+      "extension": "scad",
+      "filename": "164-scad.scad",
+      "source": "Tests/Fixtures/source-parity/sample.scad",
+      "sha256": "6c1e3022d3f799d9dd45c21151cbb8d682f0ba03c7890872d8bc85c94f8bf0eb",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 165,
+      "extension": "sch",
+      "filename": "165-sch.sch",
+      "source": "Tests/Fixtures/source-parity/sample.sch",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 166,
+      "extension": "scl",
+      "filename": "166-scl.scl",
+      "source": "Tests/Fixtures/source-parity/sample.scl",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 167,
+      "extension": "scm",
+      "filename": "167-scm.scm",
+      "source": "Tests/Fixtures/source-parity/sample.scm",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 168,
+      "extension": "scpt",
+      "filename": "168-scpt.scpt",
+      "source": "Tests/Fixtures/source-parity/compiled.scpt",
+      "sha256": "ec64699f609024e502391707207009ef0e0e4c84fc37a9153e5d9003940eed66",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 169,
+      "extension": "sequ",
+      "filename": "169-sequ.sequ",
+      "source": "Tests/Fixtures/source-parity/sample.sequ",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 170,
+      "extension": "sld",
+      "filename": "170-sld.sld",
+      "source": "Tests/Fixtures/source-parity/sample.sld",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 171,
+      "extension": "sls",
+      "filename": "171-sls.sls",
+      "source": "Tests/Fixtures/source-parity/sample.sls",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 172,
+      "extension": "smali",
+      "filename": "172-smali.smali",
+      "source": "Tests/Fixtures/source-parity/sample.smali",
+      "sha256": "9fd7b243ec39de94d97870c1738a2989bb7ce083dc5c67f103905a38823e7da0",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 173,
+      "extension": "sol",
+      "filename": "173-sol.sol",
+      "source": "Tests/Fixtures/source-parity/sample.sol",
+      "sha256": "8ed02f75c5b6e22cff21252026ff6ace73f68086cc5391ace18ac001e017afdb",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 174,
+      "extension": "sps",
+      "filename": "174-sps.sps",
+      "source": "Tests/Fixtures/source-parity/sample.sps",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 175,
+      "extension": "sqs",
+      "filename": "175-sqs.sqs",
+      "source": "Tests/Fixtures/source-parity/sample.sqs",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 176,
+      "extension": "ss",
+      "filename": "176-ss.ss",
+      "source": "Tests/Fixtures/source-parity/sample.ss",
+      "sha256": "346113f02c45286401419c3a774882b643aa56a8e8c38f2f9d0fd36cc0c47576",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 177,
+      "extension": "storybard",
+      "filename": "177-storybard.storybard",
+      "source": "Tests/Fixtures/source-parity/sample.storybard",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 178,
+      "extension": "storyboard",
+      "filename": "178-storyboard.storyboard",
+      "source": "Tests/Fixtures/source-parity/sample.storyboard",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 179,
+      "extension": "strings",
+      "filename": "179-strings.strings",
+      "source": "Tests/Fixtures/source-parity/binary.strings",
+      "sha256": "6b2de90fa2cd60646324f7a93364997ecc6705111587b7c7a2383ca4e80079e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 180,
+      "extension": "stringsdict",
+      "filename": "180-stringsdict.stringsdict",
+      "source": "Tests/Fixtures/source-parity/binary.stringsdict",
+      "sha256": "6b2de90fa2cd60646324f7a93364997ecc6705111587b7c7a2383ca4e80079e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 181,
+      "extension": "sty",
+      "filename": "181-sty.sty",
+      "source": "Tests/Fixtures/source-parity/sample.sty",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 182,
+      "extension": "t",
+      "filename": "182-t.t",
+      "source": "Tests/Fixtures/source-parity/sample.t",
+      "sha256": "b93a839311e166de94a2d8958717c07e3bca9a62504e6fc7a86fe6e00c8726f7",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 183,
+      "extension": "tab",
+      "filename": "183-tab.tab",
+      "source": "Tests/Fixtures/source-parity/sample.tab",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 184,
+      "extension": "tcl",
+      "filename": "184-tcl.tcl",
+      "source": "Tests/Fixtures/source-parity/sample.tcl",
+      "sha256": "2141a91cc06f027fe4601977da729d9a825582191d0f53d8943e6c39280683f2",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 185,
+      "extension": "tcsh",
+      "filename": "185-tcsh.tcsh",
+      "source": "Tests/Fixtures/source-parity/sample.tcsh",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 186,
+      "extension": "texi",
+      "filename": "186-texi.texi",
+      "source": "Tests/Fixtures/source-parity/sample.texi",
+      "sha256": "1b4f70b39ec9df61b45e73ea3cfed2f7a7c00ffd2c7002a214dc08ee8fe49e83",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 187,
+      "extension": "text",
+      "filename": "187-text.text",
+      "source": "Tests/Fixtures/source-parity/sample.text",
+      "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 188,
+      "extension": "tfstate",
+      "filename": "188-tfstate.tfstate",
+      "source": "Tests/Fixtures/source-parity/sample.tfstate",
+      "sha256": "0103597375b94b075e54409a4c7416e10bc62a9dfb36cd2d99bcf9b795572f62",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 189,
+      "extension": "tpb",
+      "filename": "189-tpb.tpb",
+      "source": "Tests/Fixtures/source-parity/sample.tpb",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 190,
+      "extension": "tps",
+      "filename": "190-tps.tps",
+      "source": "Tests/Fixtures/source-parity/sample.tps",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 191,
+      "extension": "trg",
+      "filename": "191-trg.trg",
+      "source": "Tests/Fixtures/source-parity/sample.trg",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 192,
+      "extension": "ttx",
+      "filename": "192-ttx.ttx",
+      "source": "Tests/Fixtures/source-parity/sample.ttx",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 193,
+      "extension": "twig",
+      "filename": "193-twig.twig",
+      "source": "Tests/Fixtures/source-parity/sample.twig",
+      "sha256": "8ebd2cce2a652a8f4b3a0766d8dd4cae92ead15ce3af812ea4faba45bd70eb6a",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 194,
+      "extension": "unity",
+      "filename": "194-unity.unity",
+      "source": "Tests/Fixtures/source-parity/sample.unity",
+      "sha256": "b537de037a82302458259003d4245217634b09e93d3166a1798ad3d1961d2cd5",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 195,
+      "extension": "v",
+      "filename": "195-v.v",
+      "source": "Tests/Fixtures/source-parity/sample.v",
+      "sha256": "6ce6d53a2cdb2a8290768951923a11e491430a623c7ee70bdf719455de64b79f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 196,
+      "extension": "vb",
+      "filename": "196-vb.vb",
+      "source": "Tests/Fixtures/source-parity/sample.vb",
+      "sha256": "e1bad3c66b886edeb4c6e9c0425d8b108f40ffc97607207d210cb5d554779e8f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 197,
+      "extension": "vbs",
+      "filename": "197-vbs.vbs",
+      "source": "Tests/Fixtures/source-parity/sample.vbs",
+      "sha256": "acd1775957681581032f8f9144919b4378557d907488cde5d6cf917dd41e8e70",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 198,
+      "extension": "vhd",
+      "filename": "198-vhd.vhd",
+      "source": "Tests/Fixtures/source-parity/sample.vhd",
+      "sha256": "9c41a0436f6d30dcddd00481860d8ff84e234d6f0b2de249cab8736dfdd280a4",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 199,
+      "extension": "vhdl",
+      "filename": "199-vhdl.vhdl",
+      "source": "Tests/Fixtures/source-parity/sample.vhdl",
+      "sha256": "9c41a0436f6d30dcddd00481860d8ff84e234d6f0b2de249cab8736dfdd280a4",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 200,
+      "extension": "vim",
+      "filename": "200-vim.vim",
+      "source": "Tests/Fixtures/source-parity/sample.vim",
+      "sha256": "efe65b6e0ea1b8d42971649a3b7c2b383412ae470a0c233dd5834ca1efe5f89f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 201,
+      "extension": "vl",
+      "filename": "201-vl.vl",
+      "source": "Tests/Fixtures/source-parity/sample.vl",
+      "sha256": "6ce6d53a2cdb2a8290768951923a11e491430a623c7ee70bdf719455de64b79f",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 202,
+      "extension": "vw",
+      "filename": "202-vw.vw",
+      "source": "Tests/Fixtures/source-parity/sample.vw",
+      "sha256": "8fc6c9cdb2ea86c9620be3d95639145fd1024b785e104f09ff7f1f21299f5d08",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 203,
+      "extension": "wflow",
+      "filename": "203-wflow.wflow",
+      "source": "Tests/Fixtures/source-parity/binary.wflow",
+      "sha256": "6b2de90fa2cd60646324f7a93364997ecc6705111587b7c7a2383ca4e80079e3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 204,
+      "extension": "xaml",
+      "filename": "204-xaml.xaml",
+      "source": "Tests/Fixtures/source-parity/sample.xaml",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 205,
+      "extension": "xcscheme",
+      "filename": "205-xcscheme.xcscheme",
+      "source": "Tests/Fixtures/source-parity/sample.xcscheme",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 206,
+      "extension": "xib",
+      "filename": "206-xib.xib",
+      "source": "Tests/Fixtures/source-parity/sample.xib",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 207,
+      "extension": "xm",
+      "filename": "207-xm.xm",
+      "source": "Tests/Fixtures/source-parity/sample.xm",
+      "sha256": "0d260f70a5e53362baaa27274837eec63b0fa6e8127f8ce0ed05636cc83d477d",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 208,
+      "extension": "xq",
+      "filename": "208-xq.xq",
+      "source": "Tests/Fixtures/source-parity/sample.xq",
+      "sha256": "f2997ac9690e227db33e35d7a400348fdc7f45bd7135d9819c4d5851a3310ecd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 209,
+      "extension": "xquery",
+      "filename": "209-xquery.xquery",
+      "source": "Tests/Fixtures/source-parity/sample.xquery",
+      "sha256": "f2997ac9690e227db33e35d7a400348fdc7f45bd7135d9819c4d5851a3310ecd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 210,
+      "extension": "xsd",
+      "filename": "210-xsd.xsd",
+      "source": "Tests/Fixtures/source-parity/sample.xsd",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 211,
+      "extension": "xu",
+      "filename": "211-xu.xu",
+      "source": "Tests/Fixtures/source-parity/sample.xu",
+      "sha256": "f2997ac9690e227db33e35d7a400348fdc7f45bd7135d9819c4d5851a3310ecd",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 212,
+      "extension": "xul",
+      "filename": "212-xul.xul",
+      "source": "Tests/Fixtures/source-parity/sample.xul",
+      "sha256": "89b0ffd8fc7bba681caf35d2f453c0f89a4735d166791d57377244dd6f4958c9",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 213,
+      "extension": "zig",
+      "filename": "213-zig.zig",
+      "source": "Tests/Fixtures/source-parity/sample.zig",
+      "sha256": "fc500aa8d69f825a609b146b00b0c650ba26228eef9f9bbc8cd8c2b9557a10b3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 214,
+      "extension": "zon",
+      "filename": "214-zon.zon",
+      "source": "Tests/Fixtures/source-parity/sample.zon",
+      "sha256": "fc500aa8d69f825a609b146b00b0c650ba26228eef9f9bbc8cd8c2b9557a10b3",
+      "expected_marker": "OrangeLen"
+    },
+    {
+      "index": 215,
+      "extension": "zshrc",
+      "filename": "215-zshrc.zshrc",
+      "source": "Tests/Fixtures/source-parity/sample.zshrc",
+      "sha256": "3e8849002439d768cdb8c5e6a26981d8c80c7c43e4be2ef0a5a934ee72037855",
+      "expected_marker": "OrangeLen"
+    }
+  ]
+}

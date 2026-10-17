@@ -1,0 +1,183 @@
+[
+  {
+    "file": "dataset.arrow",
+    "pass": true
+  },
+  {
+    "file": "compressed.feather",
+    "pass": true
+  },
+  {
+    "file": "zstd.feather",
+    "pass": true
+  },
+  {
+    "file": "stream.ipc",
+    "pass": true
+  },
+  {
+    "file": "model.onnx",
+    "pass": true
+  },
+  {
+    "file": "scan.sarif",
+    "pass": true
+  },
+  {
+    "file": "orange_demo-1.0-py3-none-any.whl",
+    "pass": true
+  },
+  {
+    "file": "orange-demo.vsix",
+    "pass": true
+  },
+  {
+    "file": "api.yaml",
+    "pass": true
+  },
+  {
+    "file": "junit.xml",
+    "pass": true,
+    "note": "3 cases / 3 table rows; multiline stack retained"
+  },
+  {
+    "file": "architecture.gv",
+    "pass": true
+  },
+  {
+    "file": "sample.pyx",
+    "pass": true
+  },
+  {
+    "file": "sample.cu",
+    "pass": true
+  },
+  {
+    "file": "sample.cuh",
+    "pass": true
+  },
+  {
+    "file": "sample.pyi",
+    "pass": true
+  },
+  {
+    "file": "sample.pxd",
+    "pass": true
+  },
+  {
+    "file": "sample.pxi",
+    "pass": true
+  },
+  {
+    "file": "sample.cc",
+    "pass": true
+  },
+  {
+    "file": "sample.cxx",
+    "pass": true
+  },
+  {
+    "file": "sample.tpp",
+    "pass": true
+  },
+  {
+    "file": "sample.kts",
+    "pass": true
+  },
+  {
+    "file": "sample.gradle",
+    "pass": true
+  },
+  {
+    "file": "sample.groovy",
+    "pass": true
+  },
+  {
+    "file": "architecture.dot",
+    "pass": false
+  },
+  {
+    "file": "sample.hh",
+    "pass": true
+  },
+  {
+    "file": "sample.inl",
+    "pass": true
+  },
+  {
+    "file": "sample.hxx",
+    "pass": true
+  },
+  {
+    "file": "sample.ipp",
+    "pass": true
+  },
+  {
+    "file": "sample.cmake",
+    "pass": true
+  },
+  {
+    "file": "sample.mk",
+    "pass": true
+  },
+  {
+    "file": "sample.mdc",
+    "pass": true
+  },
+  {
+    "file": "sample.http",
+    "pass": true
+  },
+  {
+    "file": "sample.rest",
+    "pass": true
+  },
+  {
+    "file": "sample.j2",
+    "pass": true
+  },
+  {
+    "file": "sample.jinja",
+    "pass": true
+  },
+  {
+    "file": "sample.jinja2",
+    "pass": true
+  },
+  {
+    "file": "sample.tmpl",
+    "pass": true
+  },
+  {
+    "file": "sample.tpl",
+    "pass": true
+  },
+  {
+    "file": "sample.rst",
+    "pass": true
+  },
+  {
+    "file": "sample.adoc",
+    "pass": true
+  },
+  {
+    "file": "sample.asciidoc",
+    "pass": true
+  },
+  {
+    "file": ".cursorrules",
+    "pass": false
+  },
+  {
+    "file": "legacy.feather",
+    "kind": "negative",
+    "pass": true,
+    "note": "Explicit unsupported Feather V1; export Feather V2 / Arrow IPC"
+  },
+  {
+    "file": "broken.onnx",
+    "kind": "negative",
+    "pass": true,
+    "note": "Invalid format: ONNX varint"
+  }
+]

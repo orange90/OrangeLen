@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "@babel/standalone": "7.26.10",
+    "@hpcc-js/wasm": "2.35.3",
     "@mdx-js/mdx": "3.1.0",
     "@myriaddreamin/typst-ts-web-compiler": "0.7.0",
     "@myriaddreamin/typst.ts": "0.7.0",
-    "apache-arrow": "19.0.0",
+    "apache-arrow": "21.2.0",
     "esbuild": "0.25.0",
     "latex.js": "0.12.6",
+    "lz4js": "0.2.0",
     "parquet-wasm": "0.7.1",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -14,6 +16,6 @@
   "private": true,
   "name": "orangelen-advanced-renderer-build",
   "scripts": {
-    "build": "node components.mjs && node typesetting.mjs"
+    "build": "node components.mjs && node typesetting.mjs && node developer.mjs"
   }
 }

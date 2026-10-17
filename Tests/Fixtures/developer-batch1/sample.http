@@ -1,0 +1,3 @@
+### List models
+GET https://example.com/models
+Accept: application/json

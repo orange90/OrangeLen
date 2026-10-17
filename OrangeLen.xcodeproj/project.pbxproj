@@ -23,6 +23,7 @@
 		21E9094206A9554948B8CC69 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		269737E96DDAD99735224B29 /* ParquetRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = B0B9E7A92B2339C6EEAA211B /* ParquetRenderer.html */; };
 		28A1AF05720B32F6864B2E96 /* OrangeLenPreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 631148E1C638A5B37CD01B2C /* OrangeLenPreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		28A1CD9D04A10850F67FCE91 /* DotRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = 8AF27B8DD45B0A22C0969439 /* DotRenderer.html */; };
 		2BC9FA5C4EB4E5336C5DD1B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C80D93133D02E9E0D26EA /* SettingsView.swift */; };
 		2F20B7C9942AE2A85D15E69D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A7F21DE09B1A311246A83 /* main.swift */; };
 		2F21B6268BBC6B7BE61ABB03 /* DiagnosticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFE2CE31C8A844C064A360 /* DiagnosticsController.swift */; };
@@ -33,6 +34,7 @@
 		36503A0FFF3922E3F54E60CB /* LaTeXRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = 6805B36FC9E1EFDFEEF53FBA /* LaTeXRenderer.html */; };
 		3C3017379736E71063C01BE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 376638465D02AD59E096E000 /* InfoPlist.strings */; };
 		3CDB69EA4068751110275771 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F6E453F63D6F98F687ECF52 /* SourceParityPreviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF56EE756707912E4AD78B /* SourceParityPreviewTests.swift */; };
 		3FB37B3DDA4DEFF9F1EB39D1 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = CDECED808730D628044615F7 /* OrangeLenUI */; };
 		3FC658D6CC7D1C644A120A23 /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		409BD1FA4F31E3BE57FBFBC8 /* SharedResourcesBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */; };
@@ -63,6 +65,7 @@
 		7A5201A98A36693A73938975 /* prefer-mesh-preview.sh in Resources */ = {isa = PBXBuildFile; fileRef = 98B48F4CE6155FB3554AD790 /* prefer-mesh-preview.sh */; };
 		7BB541DF9B481FC8EDE53914 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		8706C8A8963730F54D8D3E11 /* OrangeLenPreviewArchives.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		886A3D883B2C2A4F5705E86A /* ArrowRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = F9DCEA76EAFEB9F80E6A26B2 /* ArrowRenderer.html */; };
 		8BFBC55AC094975A1FAB8CB1 /* Highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */; };
 		8C2AEB5EC185568577F8EAC7 /* OrangeLenResources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F4D5DCB9809FF86617C10D0 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -88,6 +91,7 @@
 		BE97C903A48D8FE15C41C89D /* OrangeLenResources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; };
 		BEE844A552A2C22D150AAAEC /* OrangeLenResources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; };
 		C215C10E9849437A05B1ABD7 /* RemoteImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E9E6773BC8553CEA9B9450 /* RemoteImageLoader.swift */; };
+		C49E47EDB2D8D305F1681DD9 /* SourceCodeFormats.json in Resources */ = {isa = PBXBuildFile; fileRef = 9018D250D389CF425E78B369 /* SourceCodeFormats.json */; };
 		C6C851933732575121AB67BF /* OrangeLenPreviewMarkdown.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9981EDC498A386CD75DC631F /* OrangeLenPreviewMarkdown.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7492083004FCD317FC48759 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 45EBDEFE651FB624FE12337A /* OrangeLenUI */; };
 		CA2FD75B4350EB7DFE285B35 /* OrangeLenPreviewData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E49AD9795C8113A4D5A8F91A /* OrangeLenPreviewData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -539,7 +543,9 @@
 		7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrangeLenResources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4A7F21DE09B1A311246A83 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8AB48C5DA4CFEF654C8AC3A2 /* OrangeLenPreviewFolders.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewFolders.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF27B8DD45B0A22C0969439 /* DotRenderer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = DotRenderer.html; sourceTree = "<group>"; };
 		8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Highlight.js; sourceTree = "<group>"; };
+		9018D250D389CF425E78B369 /* SourceCodeFormats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SourceCodeFormats.json; sourceTree = "<group>"; };
 		917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = OrangeLenDocumentBroker.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		967CFBFDED884385CAEC68F3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		98B48F4CE6155FB3554AD790 /* prefer-mesh-preview.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "prefer-mesh-preview.sh"; sourceTree = "<group>"; };
@@ -553,6 +559,7 @@
 		AFAB738D28A560325857B5B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B0B9E7A92B2339C6EEAA211B /* ParquetRenderer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ParquetRenderer.html; sourceTree = "<group>"; };
 		B20FCB7C331241A7EACA9600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BBAF56EE756707912E4AD78B /* SourceParityPreviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceParityPreviewTests.swift; sourceTree = "<group>"; };
 		BFB1F582925A5612DFE80912 /* TypstCompiler.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = TypstCompiler.html; sourceTree = "<group>"; };
 		C3959E3574F55C1BFC371E04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D07381576688B8402040C53E /* OrangeLenResourceAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeLenResourceAnchor.swift; sourceTree = "<group>"; };
@@ -563,6 +570,7 @@
 		ED1098ADDEE275285AE78DD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDE4C2F4C06C5DD265450F8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F378C758CAA9F2FC23488ADC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9DCEA76EAFEB9F80E6A26B2 /* ArrowRenderer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ArrowRenderer.html; sourceTree = "<group>"; };
 		FFD50AEE4082E38C47243334 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -688,6 +696,7 @@
 		075CFD2774A67F314BC232CB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9018D250D389CF425E78B369 /* SourceCodeFormats.json */,
 				B4703CA6321E09E558F3718A /* Localizable.strings */,
 			);
 			name = Resources;
@@ -739,6 +748,7 @@
 			isa = PBXGroup;
 			children = (
 				1259A8978DC27852DF3EE688 /* AdvancedPreviewTests.swift */,
+				BBAF56EE756707912E4AD78B /* SourceParityPreviewTests.swift */,
 				188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */,
 			);
 			name = OrangeLenUITests;
@@ -782,7 +792,9 @@
 		5EF7882D15AA87DC06242728 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F9DCEA76EAFEB9F80E6A26B2 /* ArrowRenderer.html */,
 				340EF60ED1FDD02DC050F066 /* ComponentRenderer.html */,
+				8AF27B8DD45B0A22C0969439 /* DotRenderer.html */,
 				E0586BE6A174D62CEE5A9D9E /* ExcalidrawRenderer.html */,
 				8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */,
 				6805B36FC9E1EFDFEEF53FBA /* LaTeXRenderer.html */,
@@ -1334,7 +1346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886A3D883B2C2A4F5705E86A /* ArrowRenderer.html in Resources */,
 				65522127CAB29E9E7C527A59 /* ComponentRenderer.html in Resources */,
+				28A1CD9D04A10850F67FCE91 /* DotRenderer.html in Resources */,
 				48CD16B9A757F3CAE480C81A /* ExcalidrawRenderer.html in Resources */,
 				8BFBC55AC094975A1FAB8CB1 /* Highlight.js in Resources */,
 				36503A0FFF3922E3F54E60CB /* LaTeXRenderer.html in Resources */,
@@ -1345,6 +1359,7 @@
 				269737E96DDAD99735224B29 /* ParquetRenderer.html in Resources */,
 				BD0F8058B6ACAFF289CAB1D4 /* RichRenderer.html in Resources */,
 				64675EE74FEFE0A112A20219 /* SVGRenderer.html in Resources */,
+				C49E47EDB2D8D305F1681DD9 /* SourceCodeFormats.json in Resources */,
 				FE34D0C5ED2CFB4751276942 /* TypstCompiler.html in Resources */,
 				F3A3111EB0B8E1BF057AA288 /* parquet.wasm in Resources */,
 				4198FCF63D3AC5E98AE5D5B7 /* typst.wasm in Resources */,
@@ -1521,6 +1536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A46FD4F6632DFEC487A89D /* AdvancedPreviewTests.swift in Sources */,
+				3F6E453F63D6F98F687ECF52 /* SourceParityPreviewTests.swift in Sources */,
 				0FB153AE8BBC5EAD24C99574 /* SystemPreviewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

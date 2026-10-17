@@ -1,0 +1,209 @@
+{
+  "researched_at_utc": "2026-10-16T08:16:03.727152+00:00",
+  "github_snapshot_time": "2026-10-16T07:58:29.126103+00:00",
+  "github_snapshot_file": "github-downloads.json",
+  "github_summary": {
+    "repo": "sbarex/QLMarkdown",
+    "stars": 3652,
+    "releases": 56,
+    "installer_asset_downloads": 401718,
+    "latest_tag": "1.5.7",
+    "latest_date": "2026-10-02T10:18:37Z",
+    "latest_assets": [
+      {
+        "release": "1.5.7",
+        "name": "QLMarkdown.zip",
+        "downloads": 23342,
+        "created": "2026-10-02T10:02:22Z",
+        "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.7/QLMarkdown.zip"
+      }
+    ]
+  },
+  "asset_creation_year_cohorts": {
+    "2026": 241937,
+    "2025": 31795,
+    "2024": 39463,
+    "2023": 31154,
+    "2022": 42802,
+    "2021": 14355,
+    "2020": 212
+  },
+  "cohort_caveat": "Grouped by asset creation year, not actual year of each download; not unique users. Homebrew and Sparkle point to the same GitHub assets: do not add these channels together.",
+  "homebrew_source": "https://formulae.brew.sh/api/cask/qlmarkdown.json",
+  "homebrew_response": {
+    "token": "qlmarkdown",
+    "full_token": "qlmarkdown",
+    "old_tokens": [],
+    "tap": "homebrew/cask",
+    "name": [
+      "sbarex QLMarkdown"
+    ],
+    "desc": "Quick Look generator for Markdown files",
+    "homepage": "https://github.com/sbarex/QLMarkdown",
+    "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.7/QLMarkdown.zip",
+    "url_specs": {},
+    "version": "1.5.7",
+    "autobump": true,
+    "no_autobump_message": null,
+    "skip_livecheck": false,
+    "installed": null,
+    "installed_time": null,
+    "bundle_version": null,
+    "bundle_short_version": null,
+    "pinned": false,
+    "pinned_version": null,
+    "outdated": false,
+    "sha256": "96cc95553ee63557f7ec58f41a568ff1fe5bca95b6bcd3883709fa8337c685d4",
+    "artifacts": [
+      {
+        "uninstall": [
+          {
+            "quit": "org.sbarex.QLMarkdown"
+          }
+        ]
+      },
+      {
+        "app": [
+          "QLMarkdown.app"
+        ],
+        "target": "/Applications/QLMarkdown.app"
+      },
+      {
+        "binary": [
+          "$APPDIR/QLMarkdown.app/Contents/Resources/qlmarkdown_cli"
+        ],
+        "target": "$HOMEBREW_PREFIX/bin/qlmarkdown_cli"
+      },
+      {
+        "zap": [
+          {
+            "trash": [
+              "~/Library/Application Scripts/group.org.sbarex.qlmarkdown",
+              "~/Library/Application Scripts/org.sbarex.QLMarkdown",
+              "~/Library/Application Scripts/org.sbarex.QLMarkdown.QLExtension",
+              "~/Library/Application Scripts/org.sbarex.QLMarkdown.Shortcut-Extension",
+              "~/Library/Application Support/QLMarkdown",
+              "~/Library/Containers/org.sbarex.QLMarkdown",
+              "~/Library/Containers/org.sbarex.QLMarkdown.QLExtension",
+              "~/Library/Containers/org.sbarex.QLMarkdown.Shortcut-Extension",
+              "~/Library/Group Containers/group.org.sbarex.qlmarkdown",
+              "~/Library/Group Containers/org.sbarex.QLMarkdown",
+              "~/Library/Group Containers/org.sbarex.qlmarkdown",
+              "~/Library/Preferences/org.sbarex.QLMarkdown.plist",
+              "~/Library/Preferences/org.sbarex.QLMarkdownXPCHelper.plist",
+              "~/Library/QuickLook/QLMarkdown.qlgenerator"
+            ]
+          }
+        ]
+      }
+    ],
+    "caveats": null,
+    "caveats_rosetta": null,
+    "depends_on": {
+      "macos": {
+        ">=": [
+          "12"
+        ]
+      }
+    },
+    "conflicts_with": null,
+    "container": null,
+    "rename": [],
+    "auto_updates": true,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "deprecation_replacement_formula": null,
+    "deprecation_replacement_cask": null,
+    "deprecate_args": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null,
+    "disable_replacement_formula": null,
+    "disable_replacement_cask": null,
+    "disable_args": null,
+    "tap_git_head": "db6a6c59d199ae07f8853827d4fa50c43e38afa0",
+    "languages": [],
+    "ruby_source_path": "Casks/q/qlmarkdown.rb",
+    "ruby_source_checksum": {
+      "sha256": "9c15228ffad2ecac24d2dcd79064fb2ecab76082f2fa8881f209a35df5e8d1da"
+    },
+    "variations": {},
+    "supported_platforms": [
+      "golden_gate",
+      "arm64_golden_gate",
+      "tahoe",
+      "arm64_tahoe",
+      "sequoia",
+      "arm64_sequoia",
+      "sonoma",
+      "arm64_sonoma",
+      "ventura",
+      "arm64_ventura",
+      "monterey",
+      "arm64_monterey"
+    ],
+    "analytics": {
+      "install": {
+        "30d": {
+          "qlmarkdown": 2815
+        },
+        "90d": {
+          "qlmarkdown": 8561
+        },
+        "365d": {
+          "qlmarkdown": 33363
+        }
+      }
+    },
+    "generated_date": "2026-10-16"
+  },
+  "appcast_source": "https://sbarex.github.io/QLMarkdown/appcast.xml",
+  "appcast_recent_entries": [
+    {
+      "title": "1.5.7",
+      "pubDate": "ven, 2 ott 2026 12:19:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.7/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.6",
+      "pubDate": "mer, 30 set 2026 16:34:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.6/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.5",
+      "pubDate": "mer, 23 set 2026 13:06:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.5/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.5",
+      "pubDate": "mer, 23 set 2026 13:06:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.5/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.4",
+      "pubDate": "ven, 18 set 2026 11:58:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.4/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.3",
+      "pubDate": "ven, 11 set 2026 11:25:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.3/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.2",
+      "pubDate": "mar, 30 giu 2026 12:00:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.2/QLMarkdown.zip"
+    },
+    {
+      "title": "1.5.1",
+      "pubDate": "lun, 4 mag 2026 18:05:00 +0100",
+      "asset_url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.1/QLMarkdown.zip"
+    }
+  ],
+  "limits": [
+    "No private traffic, acquisition attribution, unique user or revenue data.",
+    "No verified paid campaign or official Product Hunt launch found in targeted searches; absence of evidence does not prove none exists.",
+    "Some older QLMarkdown references refer to toland/qlmarkdown and were excluded."
+  ]
+}

@@ -2,7 +2,7 @@
 
 **Press Space. Explore your project and AI-generated files.**
 
-A macOS Quick Look tool for developers. **The reader covers 106 file extensions, 36 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. On the tested Mac, the current development build shows content for 104/106 individual Finder Space samples with the STL/OBJ setting enabled; TS/MTS still fail. See the [native entry-point audit](docs/evidence/single-file-dispatch-2026-10-13/README.md).
+A macOS Quick Look tool for developers. **The reader covers 363 file extensions, 49 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. All **215 newly added suffixes have been tested through Finder Space: 213 show OrangeLen content, while `.text` / `.wflow` use system providers**; both are also readable inside OrangeLen folder previews. See the [per-suffix audit](docs/evidence/source-parity-finder-2026-10-16/README.md) and the [earlier native-format limitations](docs/evidence/single-file-dispatch-2026-10-13/README.md).
 
 [中文](README.md) · English
 
@@ -68,24 +68,27 @@ Baseline: [Apple’s Quick Look guide](https://support.apple.com/en-sg/guide/mac
 
 ## Supported formats
 
-**106 distinct file extensions are explicitly listed below.** This counts extensions, not programming languages or fully implemented format specifications. Aliases such as `.md` and `.markdown` count separately; multiple uses of one extension count once.
+**363 distinct file extensions are explicitly listed below.** This counts extensions, not programming languages or fully implemented format specifications. Aliases such as `.md` and `.markdown` count separately; multiple uses of one extension count once.
 
 | Category | Count | Extensions | Preview |
 | --- | ---: | --- | --- |
-| Code & web | 46 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl` | Highlighted source; HTML pages; single-file JSX/TSX snapshots |
+| Code & web | 75 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl`, `.pyi`, `.pyx`, `.pxd`, `.pxi`, `.cu`, `.cuh`, `.cc`, `.cxx`, `.hh`, `.hxx`, `.ipp`, `.tpp`, `.inl`, `.kts`, `.gradle`, `.groovy`, `.cmake`, `.mk`, `.mdc`, `.http`, `.rest`, `.j2`, `.jinja`, `.jinja2`, `.tmpl`, `.tpl`, `.rst`, `.adoc`, `.asciidoc` | Highlighted source; HTML pages; single-file JSX/TSX snapshots |
 | Text & configuration | 11 | `.txt`, `.log`, `.ini`, `.conf`, `.config`, `.properties`, `.plist`, `.yaml`, `.yml`, `.toml`, `.xml` | Source reading and search |
 | Documents & typesetting | 8 | `.md`, `.markdown`, `.mdx`, `.tex`, `.typ`, `.ipynb`, `.epub`, `.pdf` | Markdown math and diagrams, saved notebook outputs, books and PDFs; basic LaTeX and single-file Typst |
-| Structured data | 11 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har` | Trees, records, tables or request logs; no user SQL or network requests |
-| Diagrams & canvases | 6 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg` | Visual and source views; supported subsets for complex formats |
-| Skills, MCP & archives | 8 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz` | Manifests, file trees and on-demand member previews; no installation or execution |
+| Structured data | 12 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har`, `.sarif` | Trees, records, tables or request logs; no user SQL or network requests |
+| Diagrams & canvases | 12 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg`, `.xmind`, `.mm`, `.opml`, `.mmap`, `.dot`, `.gv` | Visual and source views; supported subsets for complex formats |
+| Skills, MCP & archives | 10 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix` | Manifests, file trees and on-demand member previews; no installation or execution |
 | 3D models | 4 | `.obj`, `.stl`, `.gltf`, `.glb` | Static meshes and scenes, rotation and zoom |
-| Scientific data & model catalogs | 6 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent` | Schemas, array samples or tensor metadata; no model inference |
+| Scientific data & model catalogs | 10 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent`, `.arrow`, `.ipc`, `.feather`, `.onnx` | Schemas, array samples or tensor metadata; no model inference |
 | Subtitles, diffs & provenance | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` | Subtitle tables, changed lines, metadata source and unverified C2PA structure |
-| **Total** | **106** | **Distinct extensions** | **Source, structure or rendered views, depending on format** |
+| Additional developer sources, configs & compiled files | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | More source grammars; binary plist, Java class and AppleScript inspection; see scope below |
+| **Total** | **363** | **Distinct extensions** | **Source, structure or rendered views, depending on format** |
+
+XMind: modern `content.json` and legacy `content.xml` workbooks, sheet selection, topic trees and relationships. Automatic tree layout; original styles, images, attachments, notes and summaries are not rendered. Up to 50 sheets and 2,000 topics in total, subject to archive safety limits.
 
 Also supported:
 
-- **36 special filenames and 7 prefix rules**, including `Dockerfile`, `Makefile`, `.env`, `.gitignore`, `.editorconfig`, ecosystem lockfiles, `.env.local` and `Dockerfile.dev`. See the [full counting inventory](docs/format-count.md).
+- **49 special filenames and 7 prefix rules**, including `Dockerfile`, `Makefile`, `.env`, `.gitignore`, `.editorconfig`, ecosystem lockfiles, `.env.local` and `Dockerfile.dev`. See the [full counting inventory](docs/format-count.md).
 - **Whole folders / project directories** with a file tree, overview and on-demand reading; excluded from the extension count.
 - **Content-aware workflow detection** for ComfyUI / n8n JSON, Dify YAML and OpenAPI JSON; these reuse JSON / YAML extensions and are not counted again.
 - **System-format integration** for ImageIO images, AVKit media, Word / RTF / ODT and XLSX / PPTX content. Availability depends on the OS and file; these are excluded from the fixed count. See [system-format scope](docs/system-preview.md).
@@ -130,6 +133,18 @@ See the [current entry-point contract](docs/current-contract.md) and [security a
 ./scripts/test-native.sh
 ```
 
+Source suffix fixtures are generated before testing (requires Python 3 and macOS’s `osacompile`); `Tests/Fixtures/source-parity/` is not versioned. Direct SwiftPM and Xcode test runs also prepare these fixtures automatically.
+
 Reproducible issues, synthetic fixtures and improvement suggestions are welcome. Include your macOS version, architecture, file extension and entry point: individual Finder file, folder preview or app. Do not attach private files or signing material.
 
 [Architecture](docs/architecture.md) · [Build, signing and uninstall](docs/development-guide.md) · [Verification](docs/verification.md) · [Dependencies and license notes](docs/dependencies.md) · [Changelog](CHANGELOG.md)
+
+FreeMind / Freeplane `.mm` and OPML `.opml`: automatic topic trees, FreeMind relationship arrows and plain text from rich titles, with source switching. Styles, notes and attachments are omitted; links are never fetched. Up to 2,000 topics and 1 MiB input. Objective-C++ `.mm` files remain source text.
+
+MindManager `.mmap`: reads ZIP `Document.xml` topic trees and floating topics with automatic layout. Original styles, relationships, notes, tasks and attachments are omitted; encrypted maps and legacy `.mmp` are unsupported. Up to 2,000 topics, subject to shared ZIP/XML budgets.
+
+Developer batch 1 adds Python/Cython, CUDA/C++, build/template/rule source extensions; Arrow IPC/Feather V2 tables (LZ4/ZSTD), wheel/VSIX metadata and trees, JUnit/SARIF/OpenAPI summaries, ONNX graph/tensor catalogs, and offline DOT diagrams. See [scope and Finder verification](docs/evidence/developer-batch1-2026-10-15/README.md).
+
+Batch 1 direct Finder verification passed 40/42 valid samples; `.dot` and `.cursorrules` require the folder-preview route on the tested Mac. This is not a claim that all 363 extensions pass direct Finder dispatch.
+
+The current development build expands the Syntax Highlight suffix inventory. See [scope and verification](docs/syntax-highlight-parity.md) for compiled formats and Finder routing. The public preview.2 package predates these additions.

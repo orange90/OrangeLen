@@ -2,6 +2,7 @@ import Foundation
 public struct TableCell: Sendable {
     public let value: String
     public let sourceRange: NSRange
+    public init(value: String, sourceRange: NSRange) { self.value = value; self.sourceRange = sourceRange }
 }
 public struct TableData: Sendable {
     public let rows: [[TableCell]]

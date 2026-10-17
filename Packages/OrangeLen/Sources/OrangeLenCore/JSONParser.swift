@@ -36,7 +36,7 @@ public enum JSONDialect: Sendable {
     public static func detect(_ url: URL) -> Self {
         let name = url.lastPathComponent.lowercased()
         if url.pathExtension.lowercased() == "json5" { return .json5 }
-        if url.pathExtension.lowercased() == "jsonc" { return .jsonc }
+        if ["jsonc", "code-workspace"].contains(url.pathExtension.lowercased()) { return .jsonc }
         if name.hasSuffix(".json") && (name == "tsconfig.json" || name.hasPrefix("tsconfig.") || name == "jsconfig.json" || name.hasPrefix("jsconfig.")) { return .jsonc }
         if url.deletingLastPathComponent().lastPathComponent == ".vscode" && ["settings.json","tasks.json","launch.json","extensions.json"].contains(name) { return .jsonc }
         return .strict

@@ -1,0 +1,1457 @@
+{
+  "queried_at": "2026-10-16T07:58:29.126103+00:00",
+  "method": "GitHub REST GET /repos/{owner}/{repo}/releases with pagination, current public release assets; installer totals exclude checksum assets",
+  "caveat": "Not unique users, not sales; includes updates, bots and our testing downloads; excludes other channels and removed assets",
+  "repositories": [
+    {
+      "repo": "patebry/spacebar",
+      "stars": 0,
+      "releases": 14,
+      "all_asset_downloads": 103,
+      "latest_tag": "v0.5.0",
+      "latest_date": "2026-10-09T18:16:08Z",
+      "latest_assets": [
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.dmg",
+          "downloads": 19,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.dmg"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.zip",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.zip"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.zip.sha256",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.zip.sha256"
+        }
+      ],
+      "assets": [
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.dmg",
+          "downloads": 19,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.dmg"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.zip",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.zip"
+        },
+        {
+          "release": "v0.5.0",
+          "name": "spacebar.zip.sha256",
+          "downloads": 3,
+          "created": "2026-10-09T18:16:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.9",
+          "name": "spacebar.dmg",
+          "downloads": 2,
+          "created": "2026-10-07T18:11:01Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.9/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.9",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-07T18:11:01Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.9/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.9",
+          "name": "spacebar.zip",
+          "downloads": 0,
+          "created": "2026-10-07T18:11:01Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.9/spacebar.zip"
+        },
+        {
+          "release": "v0.4.9",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-07T18:11:01Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.9/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.8",
+          "name": "spacebar.dmg",
+          "downloads": 2,
+          "created": "2026-10-06T23:24:26Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.8/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.8",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-06T23:24:26Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.8/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.8",
+          "name": "spacebar.zip",
+          "downloads": 0,
+          "created": "2026-10-06T23:24:26Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.8/spacebar.zip"
+        },
+        {
+          "release": "v0.4.8",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-06T23:24:26Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.8/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.7",
+          "name": "spacebar.dmg",
+          "downloads": 3,
+          "created": "2026-10-06T17:07:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.7/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.7",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-06T17:07:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.7/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.7",
+          "name": "spacebar.zip",
+          "downloads": 0,
+          "created": "2026-10-06T17:07:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.7/spacebar.zip"
+        },
+        {
+          "release": "v0.4.7",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-06T17:07:02Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.7/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.6",
+          "name": "spacebar.dmg",
+          "downloads": 2,
+          "created": "2026-10-05T15:12:15Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.6/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.6",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-05T15:12:15Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.6/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.6",
+          "name": "spacebar.zip",
+          "downloads": 0,
+          "created": "2026-10-05T15:12:15Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.6/spacebar.zip"
+        },
+        {
+          "release": "v0.4.6",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-05T15:12:15Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.6/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.5",
+          "name": "spacebar.dmg",
+          "downloads": 5,
+          "created": "2026-10-05T02:54:58Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.5/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.5",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 2,
+          "created": "2026-10-05T02:54:58Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.5/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.5",
+          "name": "spacebar.zip",
+          "downloads": 0,
+          "created": "2026-10-05T02:54:58Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.5/spacebar.zip"
+        },
+        {
+          "release": "v0.4.5",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-05T02:54:58Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.5/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.4",
+          "name": "spacebar.dmg",
+          "downloads": 1,
+          "created": "2026-10-05T00:54:44Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.4/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.4",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-05T00:54:44Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.4/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.4",
+          "name": "spacebar.zip",
+          "downloads": 1,
+          "created": "2026-10-05T00:54:44Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.4/spacebar.zip"
+        },
+        {
+          "release": "v0.4.4",
+          "name": "spacebar.zip.sha256",
+          "downloads": 0,
+          "created": "2026-10-05T00:54:44Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.4/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.4.3",
+          "name": "spacebar.dmg",
+          "downloads": 3,
+          "created": "2026-10-04T22:01:14Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.3/spacebar.dmg"
+        },
+        {
+          "release": "v0.4.3",
+          "name": "spacebar.dmg.sha256",
+          "downloads": 1,
+          "created": "2026-10-04T22:01:14Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.3/spacebar.dmg.sha256"
+        },
+        {
+          "release": "v0.4.3",
+          "name": "spacebar.zip",
+          "downloads": 7,
+          "created": "2026-10-04T22:01:14Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.3/spacebar.zip"
+        },
+        {
+          "release": "v0.4.3",
+          "name": "spacebar.zip.sha256",
+          "downloads": 6,
+          "created": "2026-10-04T22:01:14Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.4.3/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.2.2",
+          "name": "spacebar.zip",
+          "downloads": 6,
+          "created": "2026-09-28T14:10:08Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.2.2/spacebar.zip"
+        },
+        {
+          "release": "v0.2.2",
+          "name": "spacebar.zip.sha256",
+          "downloads": 6,
+          "created": "2026-09-28T14:10:08Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.2.2/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.2.0",
+          "name": "spacebar.zip",
+          "downloads": 2,
+          "created": "2026-09-28T13:26:23Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.2.0/spacebar.zip"
+        },
+        {
+          "release": "v0.2.0",
+          "name": "spacebar.zip.sha256",
+          "downloads": 2,
+          "created": "2026-09-28T13:26:23Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.2.0/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.1.3",
+          "name": "spacebar.zip",
+          "downloads": 3,
+          "created": "2026-09-27T23:43:37Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.3/spacebar.zip"
+        },
+        {
+          "release": "v0.1.3",
+          "name": "spacebar.zip.sha256",
+          "downloads": 3,
+          "created": "2026-09-27T23:43:38Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.3/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.1.2",
+          "name": "spacebar.zip",
+          "downloads": 1,
+          "created": "2026-09-27T17:24:28Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.2/spacebar.zip"
+        },
+        {
+          "release": "v0.1.2",
+          "name": "spacebar.zip.sha256",
+          "downloads": 1,
+          "created": "2026-09-27T17:24:28Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.2/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.1.1",
+          "name": "spacebar.zip",
+          "downloads": 1,
+          "created": "2026-09-27T14:28:24Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.1/spacebar.zip"
+        },
+        {
+          "release": "v0.1.1",
+          "name": "spacebar.zip.sha256",
+          "downloads": 1,
+          "created": "2026-09-27T14:28:24Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.1/spacebar.zip.sha256"
+        },
+        {
+          "release": "v0.1.0",
+          "name": "spacebar.zip",
+          "downloads": 5,
+          "created": "2026-09-26T16:22:05Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.0/spacebar.zip"
+        },
+        {
+          "release": "v0.1.0",
+          "name": "spacebar.zip.sha256",
+          "downloads": 4,
+          "created": "2026-09-26T16:22:05Z",
+          "url": "https://github.com/patebry/spacebar/releases/download/v0.1.0/spacebar.zip.sha256"
+        }
+      ],
+      "installer_asset_downloads": 66
+    },
+    {
+      "repo": "chamburr/glance",
+      "stars": 830,
+      "releases": 14,
+      "all_asset_downloads": 36503,
+      "latest_tag": "v1.6.0",
+      "latest_date": "2026-09-08T02:56:13Z",
+      "latest_assets": [
+        {
+          "release": "v1.6.0",
+          "name": "Glance-1.6.0.dmg",
+          "downloads": 6438,
+          "created": "2026-09-08T02:52:30Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.6.0/Glance-1.6.0.dmg"
+        }
+      ],
+      "assets": [
+        {
+          "release": "v1.6.0",
+          "name": "Glance-1.6.0.dmg",
+          "downloads": 6438,
+          "created": "2026-09-08T02:52:30Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.6.0/Glance-1.6.0.dmg"
+        },
+        {
+          "release": "v1.5.4",
+          "name": "Glance-1.5.4.dmg",
+          "downloads": 12756,
+          "created": "2026-04-14T05:12:23Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.5.4/Glance-1.5.4.dmg"
+        },
+        {
+          "release": "v1.5.3",
+          "name": "Glance-1.5.3.dmg",
+          "downloads": 7145,
+          "created": "2026-02-18T01:57:19Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.5.3/Glance-1.5.3.dmg"
+        },
+        {
+          "release": "v1.5.2",
+          "name": "Glance-1.5.2.dmg",
+          "downloads": 3704,
+          "created": "2025-05-15T11:43:12Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.5.2/Glance-1.5.2.dmg"
+        },
+        {
+          "release": "v1.5.1",
+          "name": "Glance-1.5.1.dmg",
+          "downloads": 2710,
+          "created": "2024-01-20T14:37:16Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.5.1/Glance-1.5.1.dmg"
+        },
+        {
+          "release": "v1.5.0",
+          "name": "Glance-1.5.0.dmg",
+          "downloads": 1428,
+          "created": "2023-03-03T13:44:36Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.5.0/Glance-1.5.0.dmg"
+        },
+        {
+          "release": "v1.4.2",
+          "name": "Glance-1.4.2.dmg",
+          "downloads": 1256,
+          "created": "2022-06-02T01:19:35Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.4.2/Glance-1.4.2.dmg"
+        },
+        {
+          "release": "v1.4.1",
+          "name": "Glance-1.4.1.dmg",
+          "downloads": 437,
+          "created": "2022-02-06T09:21:02Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.4.1/Glance-1.4.1.dmg"
+        },
+        {
+          "release": "v1.4.0",
+          "name": "Glance-1.4.0.dmg",
+          "downloads": 235,
+          "created": "2021-10-12T07:35:24Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.4.0/Glance-1.4.0.dmg"
+        },
+        {
+          "release": "v1.3.1",
+          "name": "Glance-1.3.1.dmg",
+          "downloads": 157,
+          "created": "2021-06-22T04:05:56Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.3.1/Glance-1.3.1.dmg"
+        },
+        {
+          "release": "v1.3.0",
+          "name": "Glance-1.3.0.dmg",
+          "downloads": 102,
+          "created": "2021-04-11T03:15:43Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.3.0/Glance-1.3.0.dmg"
+        },
+        {
+          "release": "v1.2.0",
+          "name": "Glance-1.2.0.dmg",
+          "downloads": 59,
+          "created": "2021-04-10T08:59:46Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.2.0/Glance-1.2.0.dmg"
+        },
+        {
+          "release": "v1.1.0",
+          "name": "Glance-1.1.0.dmg",
+          "downloads": 40,
+          "created": "2021-04-10T08:56:18Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.1.0/Glance-1.1.0.dmg"
+        },
+        {
+          "release": "v1.0.0",
+          "name": "Glance-1.0.0.dmg",
+          "downloads": 36,
+          "created": "2021-04-10T08:55:35Z",
+          "url": "https://github.com/chamburr/glance/releases/download/v1.0.0/Glance-1.0.0.dmg"
+        }
+      ],
+      "installer_asset_downloads": 36503
+    },
+    {
+      "repo": "Oil3/Quicklook-Netron",
+      "stars": 3,
+      "releases": 1,
+      "all_asset_downloads": 41,
+      "latest_tag": "quicklook-netron-1.0",
+      "latest_date": "2025-03-26T03:06:59Z",
+      "latest_assets": [
+        {
+          "release": "quicklook-netron-1.0",
+          "name": "QLnetron.1.0.-.Universal.Binary.zip",
+          "downloads": 41,
+          "created": "2025-03-26T03:04:59Z",
+          "url": "https://github.com/Oil3/Quicklook-Netron/releases/download/quicklook-netron-1.0/QLnetron.1.0.-.Universal.Binary.zip"
+        }
+      ],
+      "assets": [
+        {
+          "release": "quicklook-netron-1.0",
+          "name": "QLnetron.1.0.-.Universal.Binary.zip",
+          "downloads": 41,
+          "created": "2025-03-26T03:04:59Z",
+          "url": "https://github.com/Oil3/Quicklook-Netron/releases/download/quicklook-netron-1.0/QLnetron.1.0.-.Universal.Binary.zip"
+        }
+      ],
+      "installer_asset_downloads": 41
+    },
+    {
+      "repo": "Invernomut0/QuickLookWithSteroids",
+      "stars": 1,
+      "releases": 3,
+      "all_asset_downloads": 35,
+      "latest_tag": "v0.3.6",
+      "latest_date": "2026-06-15T07:19:15Z",
+      "latest_assets": [
+        {
+          "release": "v0.3.6",
+          "name": "OmniPreview-macOS.dmg",
+          "downloads": 33,
+          "created": "2026-06-15T07:19:16Z",
+          "url": "https://github.com/Invernomut0/QuickLookWithSteroids/releases/download/v0.3.6/OmniPreview-macOS.dmg"
+        }
+      ],
+      "assets": [
+        {
+          "release": "v0.3.6",
+          "name": "OmniPreview-macOS.dmg",
+          "downloads": 33,
+          "created": "2026-06-15T07:19:16Z",
+          "url": "https://github.com/Invernomut0/QuickLookWithSteroids/releases/download/v0.3.6/OmniPreview-macOS.dmg"
+        },
+        {
+          "release": "v0.3.5",
+          "name": "OmniPreview-macOS.dmg",
+          "downloads": 0,
+          "created": "2026-06-16T11:44:59Z",
+          "url": "https://github.com/Invernomut0/QuickLookWithSteroids/releases/download/v0.3.5/OmniPreview-macOS.dmg"
+        },
+        {
+          "release": "v0.3.4",
+          "name": "OmniPreview-macOS.dmg",
+          "downloads": 2,
+          "created": "2026-06-11T08:44:07Z",
+          "url": "https://github.com/Invernomut0/QuickLookWithSteroids/releases/download/v0.3.4/OmniPreview-macOS.dmg"
+        }
+      ],
+      "installer_asset_downloads": 35
+    },
+    {
+      "repo": "sbarex/SourceCodeSyntaxHighlight",
+      "stars": 4306,
+      "releases": 70,
+      "all_asset_downloads": 175796,
+      "latest_tag": "2.1.32",
+      "latest_date": "2026-09-16T15:16:42Z",
+      "latest_assets": [
+        {
+          "release": "2.1.32",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 15847,
+          "created": "2026-09-16T15:16:19Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.32/Syntax.Highlight.zip"
+        }
+      ],
+      "assets": [
+        {
+          "release": "2.1.32",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 15847,
+          "created": "2026-09-16T15:16:19Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.32/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.31",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 2699,
+          "created": "2026-09-15T14:08:43Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.31/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.30",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 38592,
+          "created": "2026-04-14T18:26:10Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.30/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.28",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 6830,
+          "created": "2026-03-11T10:15:27Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.28/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.27",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 11763,
+          "created": "2025-11-30T22:11:39Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.27/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.26",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 11353,
+          "created": "2025-07-01T15:08:08Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.26/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.25",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 13234,
+          "created": "2024-12-31T17:20:07Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.25/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.24",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 11911,
+          "created": "2024-06-05T05:11:14Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.24/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.23",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 525,
+          "created": "2024-06-04T13:12:47Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.23/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.21",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 6781,
+          "created": "2024-02-19T15:35:45Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.21/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.20",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 8472,
+          "created": "2023-09-27T19:34:02Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.20/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.19",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 7426,
+          "created": "2023-05-16T06:33:21Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.19/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.18",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 3003,
+          "created": "2023-04-11T07:23:58Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.18/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.17",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 5763,
+          "created": "2023-01-09T21:18:45Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.17/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.16",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 2864,
+          "created": "2022-12-04T12:46:43Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.16/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.15",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 7299,
+          "created": "2022-07-05T06:59:06Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.15/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.14",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 957,
+          "created": "2022-06-24T15:00:22Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.14/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.13",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 1754,
+          "created": "2022-05-24T19:21:32Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.13/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.12",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 851,
+          "created": "2022-05-16T06:46:21Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.12/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.11",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 2232,
+          "created": "2022-04-02T17:36:54Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.11/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.10",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 1393,
+          "created": "2022-03-11T07:17:10Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.10/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.9",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 643,
+          "created": "2022-03-03T17:37:20Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.9/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.8",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 976,
+          "created": "2022-02-15T07:29:15Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.8/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.7",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 154,
+          "created": "2022-02-11T17:33:54Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.7/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.6",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 1622,
+          "created": "2021-12-31T15:47:36Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.6/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.5",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 862,
+          "created": "2021-12-08T19:40:36Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.5/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.4",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 203,
+          "created": "2021-12-07T08:54:01Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.4/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.3",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 564,
+          "created": "2021-11-23T16:57:02Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.3/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.2",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 363,
+          "created": "2021-11-19T17:58:22Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.2/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.1",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 325,
+          "created": "2021-11-14T17:46:05Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.1/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.1.0",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 53,
+          "created": "2021-11-14T11:55:35Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.1.0/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.12",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 1273,
+          "created": "2021-08-30T14:32:33Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.12/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.11",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 773,
+          "created": "2021-07-12T06:22:21Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.11/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.10",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 185,
+          "created": "2021-07-08T21:03:59Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.10/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.9",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 238,
+          "created": "2021-07-04T17:22:37Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.9/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.8",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 196,
+          "created": "2021-06-27T14:28:00Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.8/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.7",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 214,
+          "created": "2021-06-02T14:20:14Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.7/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.6",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 23,
+          "created": "2021-06-02T14:14:40Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.6/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.5",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 267,
+          "created": "2021-05-14T11:23:29Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.5/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.4",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 226,
+          "created": "2021-05-08T17:24:17Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.4/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.3",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 238,
+          "created": "2021-05-01T18:37:40Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.3/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.2",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 92,
+          "created": "2021-04-29T15:58:14Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.2/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.1",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 50,
+          "created": "2021-04-29T10:10:35Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.1/Syntax.Highlight.zip"
+        },
+        {
+          "release": "2.0.0",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 45,
+          "created": "2021-04-29T07:54:58Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/2.0.0/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b31",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 1130,
+          "created": "2021-01-01T11:37:57Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b31/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b30",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 345,
+          "created": "2020-12-06T10:16:13Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b30/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b29",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 142,
+          "created": "2020-12-05T18:12:47Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b29/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b28",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 256,
+          "created": "2020-11-24T18:20:10Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b28/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b27",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 316,
+          "created": "2020-10-27T06:56:28Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b27/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b26",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 496,
+          "created": "2020-07-28T11:14:15Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b26/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b25",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 149,
+          "created": "2020-07-15T18:48:56Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b25/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b24",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 283,
+          "created": "2020-06-05T07:05:00Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b24/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b23",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 120,
+          "created": "2020-05-29T15:57:57Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b23/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b22",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 230,
+          "created": "2020-05-22T15:02:37Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b22/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b21",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 23,
+          "created": "2020-05-22T06:10:48Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b21/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b20",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 76,
+          "created": "2020-05-21T15:07:13Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b20/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b19",
+          "name": "SyntaxHighlight.zip",
+          "downloads": 430,
+          "created": "2020-02-13T09:25:10Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b19/SyntaxHighlight.zip"
+        },
+        {
+          "release": "1.0.b18",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 130,
+          "created": "2020-01-09T21:56:15Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b18/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b17",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 78,
+          "created": "2019-12-23T19:48:00Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b17/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b16",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 92,
+          "created": "2019-11-29T22:23:05Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b16/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b15",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 49,
+          "created": "2019-11-26T15:41:25Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b15/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b14",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 30,
+          "created": "2019-11-25T13:12:47Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b14/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b13",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 18,
+          "created": "2019-11-25T10:24:18Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b13/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0.b12",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 55,
+          "created": "2019-11-17T19:40:39Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0.b12/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0b11",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 25,
+          "created": "2019-11-15T23:14:39Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b11/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0b10",
+          "name": "Syntax.Highlight.zip",
+          "downloads": 32,
+          "created": "2019-11-13T18:27:26Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b10/Syntax.Highlight.zip"
+        },
+        {
+          "release": "1.0b9",
+          "name": "SourceCodeSyntaxHighlight.zip",
+          "downloads": 26,
+          "created": "2019-11-11T13:14:24Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b9/SourceCodeSyntaxHighlight.zip"
+        },
+        {
+          "release": "1.0b8",
+          "name": "SourceCodeSyntaxHighlight.zip",
+          "downloads": 68,
+          "created": "2019-10-29T12:06:50Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b8/SourceCodeSyntaxHighlight.zip"
+        },
+        {
+          "release": "1.0b7",
+          "name": "SourceCodeSyntaxHighlight.zip",
+          "downloads": 31,
+          "created": "2019-10-28T16:20:32Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b7/SourceCodeSyntaxHighlight.zip"
+        },
+        {
+          "release": "1.0b6",
+          "name": "SourceCodeSyntaxHighlight.zip",
+          "downloads": 32,
+          "created": "2019-10-27T20:02:32Z",
+          "url": "https://github.com/sbarex/SourceCodeSyntaxHighlight/releases/download/1.0b6/SourceCodeSyntaxHighlight.zip"
+        }
+      ],
+      "installer_asset_downloads": 175796
+    },
+    {
+      "repo": "sbarex/QLMarkdown",
+      "stars": 3652,
+      "releases": 56,
+      "all_asset_downloads": 401718,
+      "latest_tag": "1.5.7",
+      "latest_date": "2026-10-02T10:18:37Z",
+      "latest_assets": [
+        {
+          "release": "1.5.7",
+          "name": "QLMarkdown.zip",
+          "downloads": 23342,
+          "created": "2026-10-02T10:02:22Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.7/QLMarkdown.zip"
+        }
+      ],
+      "assets": [
+        {
+          "release": "1.5.7",
+          "name": "QLMarkdown.zip",
+          "downloads": 23342,
+          "created": "2026-10-02T10:02:22Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.7/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.6",
+          "name": "QLMarkdown.zip",
+          "downloads": 6095,
+          "created": "2026-09-30T14:32:11Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.6/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.5",
+          "name": "QLMarkdown.zip",
+          "downloads": 16190,
+          "created": "2026-09-23T18:47:19Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.5/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.4",
+          "name": "QLMarkdown.zip",
+          "downloads": 12288,
+          "created": "2026-09-18T09:56:54Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.4/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.3",
+          "name": "QLMarkdown.zip",
+          "downloads": 15785,
+          "created": "2026-09-11T09:23:43Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.3/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.2",
+          "name": "QLMarkdown.zip",
+          "downloads": 70519,
+          "created": "2026-06-30T09:56:05Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.2/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.1",
+          "name": "QLMarkdown.zip",
+          "downloads": 50742,
+          "created": "2026-05-04T15:46:15Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.1/QLMarkdown.zip"
+        },
+        {
+          "release": "1.5.0",
+          "name": "QLMarkdown.zip",
+          "downloads": 21729,
+          "created": "2026-04-08T16:39:00Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.5.0/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.24",
+          "name": "QLMarkdown.zip",
+          "downloads": 25247,
+          "created": "2026-01-18T19:07:20Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.24/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.23beta",
+          "name": "QLMarkdown.zip",
+          "downloads": 614,
+          "created": "2025-05-23T14:04:08Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.23beta/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.23",
+          "name": "QLMarkdown.zip",
+          "downloads": 29051,
+          "created": "2025-05-26T19:36:11Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.23/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.22",
+          "name": "QLMarkdown.zip",
+          "downloads": 2130,
+          "created": "2025-05-22T12:48:13Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.22/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.21",
+          "name": "QLMarkdown.zip",
+          "downloads": 17477,
+          "created": "2024-12-31T17:35:04Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.21/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.20",
+          "name": "QLMarkdown.zip",
+          "downloads": 14466,
+          "created": "2024-08-05T14:25:56Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.20/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.19",
+          "name": "QLMarkdown.zip",
+          "downloads": 7115,
+          "created": "2024-06-05T04:55:20Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.19/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.18",
+          "name": "QLMarkdown.zip",
+          "downloads": 405,
+          "created": "2024-06-04T19:44:51Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.18/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.17",
+          "name": "QLMarkdown.zip",
+          "downloads": 28300,
+          "created": "2023-05-22T06:42:15Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.17/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.16",
+          "name": "QLMarkdown.zip",
+          "downloads": 2854,
+          "created": "2023-05-05T10:23:21Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.16/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.15",
+          "name": "QLMarkdown.zip",
+          "downloads": 32623,
+          "created": "2022-04-04T21:36:10Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.15/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.14",
+          "name": "QLMarkdown.zip",
+          "downloads": 5297,
+          "created": "2022-02-23T07:48:54Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.14/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.13",
+          "name": "QLMarkdown.zip",
+          "downloads": 2347,
+          "created": "2022-02-11T16:44:05Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.13/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.11",
+          "name": "QLMarkdown.zip",
+          "downloads": 2535,
+          "created": "2022-01-27T22:53:32Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.11/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.10",
+          "name": "QLMarkdown.zip",
+          "downloads": 3959,
+          "created": "2021-12-29T15:35:36Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.10/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.9",
+          "name": "QLMarkdown.zip",
+          "downloads": 729,
+          "created": "2021-12-27T11:17:18Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.9/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.8",
+          "name": "QLMarkdown.zip",
+          "downloads": 1654,
+          "created": "2021-12-17T19:28:50Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.8/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.7",
+          "name": "QLMarkdown.zip",
+          "downloads": 48,
+          "created": "2021-12-17T17:16:46Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.7/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.6",
+          "name": "QLMarkdown.zip",
+          "downloads": 3666,
+          "created": "2021-11-23T17:36:37Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.6/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.5",
+          "name": "QLMarkdown.zip",
+          "downloads": 1769,
+          "created": "2021-10-30T19:10:16Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.5/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.4",
+          "name": "QLMarkdown.zip",
+          "downloads": 36,
+          "created": "2021-10-30T17:09:20Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.4/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.3",
+          "name": "QLMarkdown.zip",
+          "downloads": 223,
+          "created": "2021-10-20T11:26:54Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.3/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.2",
+          "name": "QLMarkdown.zip",
+          "downloads": 310,
+          "created": "2021-09-22T12:54:46Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.2/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0.1",
+          "name": "QLMarkdown.zip",
+          "downloads": 793,
+          "created": "2021-06-02T14:31:51Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0.1/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b25",
+          "name": "QLMarkdown.zip",
+          "downloads": 451,
+          "created": "2021-04-16T08:39:16Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b25/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b24",
+          "name": "QLMarkdown.zip",
+          "downloads": 177,
+          "created": "2021-03-03T07:48:52Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b24/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b23",
+          "name": "QLMarkdown.zip",
+          "downloads": 77,
+          "created": "2021-02-21T17:09:12Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b23/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b22",
+          "name": "QLMarkdown.zip",
+          "downloads": 63,
+          "created": "2021-02-09T14:35:20Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b22/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b21",
+          "name": "QLMarkdown.zip",
+          "downloads": 49,
+          "created": "2021-02-04T23:03:50Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b21/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b20",
+          "name": "QLMarkdown.zip",
+          "downloads": 26,
+          "created": "2021-02-04T20:12:31Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b20/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b19",
+          "name": "QLMarkdown.zip",
+          "downloads": 44,
+          "created": "2021-02-01T22:40:21Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b19/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b18",
+          "name": "QLMarkdown.zip",
+          "downloads": 60,
+          "created": "2021-01-21T08:21:14Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b18/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b17",
+          "name": "QLMarkdown.zip",
+          "downloads": 29,
+          "created": "2021-01-20T19:14:49Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b17/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b16",
+          "name": "QLMarkdown.zip",
+          "downloads": 39,
+          "created": "2021-01-16T22:33:17Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b16/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b15",
+          "name": "QLMarkdown.zip",
+          "downloads": 67,
+          "created": "2021-01-04T13:55:56Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b15/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b14",
+          "name": "QLMarkdown.zip",
+          "downloads": 28,
+          "created": "2021-01-03T17:08:11Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b14/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b13",
+          "name": "QLMarkdown.zip",
+          "downloads": 34,
+          "created": "2021-01-02T18:25:11Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b13/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b12",
+          "name": "QLMarkdown.zip",
+          "downloads": 24,
+          "created": "2021-01-01T10:07:20Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b12/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b11",
+          "name": "QLMarkdown.zip",
+          "downloads": 21,
+          "created": "2020-12-30T18:36:55Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b11/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b10",
+          "name": "QLMarkdown.zip",
+          "downloads": 13,
+          "created": "2020-12-30T17:10:03Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b10/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b9",
+          "name": "QLMarkdown.zip",
+          "downloads": 22,
+          "created": "2020-12-29T20:49:09Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b9/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b8",
+          "name": "QLMarkdown.zip",
+          "downloads": 14,
+          "created": "2020-12-29T19:59:34Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b8/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b7",
+          "name": "QLMarkdown.zip",
+          "downloads": 15,
+          "created": "2020-12-29T18:54:27Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b7/QLMarkdown.zip"
+        },
+        {
+          "release": "1.0b6",
+          "name": "QLMardown.zip",
+          "downloads": 21,
+          "created": "2020-12-27T17:48:38Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b6/QLMardown.zip"
+        },
+        {
+          "release": "1.0b5",
+          "name": "QLMardown.zip",
+          "downloads": 20,
+          "created": "2020-12-27T13:50:23Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b5/QLMardown.zip"
+        },
+        {
+          "release": "1.0b4",
+          "name": "QLMardown.zip",
+          "downloads": 22,
+          "created": "2020-12-27T12:12:43Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b4/QLMardown.zip"
+        },
+        {
+          "release": "1.0b2",
+          "name": "QLMardown.zip",
+          "downloads": 64,
+          "created": "2020-12-26T21:58:47Z",
+          "url": "https://github.com/sbarex/QLMarkdown/releases/download/1.0b2/QLMardown.zip"
+        }
+      ],
+      "installer_asset_downloads": 401718
+    }
+  ]
+}

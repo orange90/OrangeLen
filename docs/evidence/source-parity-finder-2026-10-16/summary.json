@@ -1,0 +1,34 @@
+{
+  "completed_at": "2026-10-16T17:32:54.918110+08:00",
+  "new_suffixes_tested": 215,
+  "orangeLen_direct": 213,
+  "native_provider": 2,
+  "native_extensions": [
+    "text",
+    "wflow"
+  ],
+  "native_content_verified": [
+    "text",
+    "wflow"
+  ],
+  "folder_fallback_verified": [
+    "text",
+    "wflow"
+  ],
+  "wflow_with_shortcuts_provider_temporarily_disabled": "OrangeLen XML verified; system provider restored to default afterwards",
+  "product_code_changed": false,
+  "persistent_system_preferences_changed": false,
+  "first_capture_pending_then_verified": [
+    "as",
+    "f"
+  ],
+  "raw_attempts": 237,
+  "unique_suffixes": 215,
+  "fixture_hashes_verified": 215,
+  "scope": "Synthetic representative files; not all real-world variants, encodings or full format specifications; baseline counts exclude temporary-provider diagnostic runs.",
+  "user_preference": {
+    "confirmed_on": "2026-10-16",
+    "decision": "保留系统默认；通过 OrangeLen 文件夹预览查看源码",
+    "source": "Direct user reply to the wflow provider preference question"
+  }
+}

@@ -1,5 +1,34 @@
 # 变更日志
 
+## 2026-10-16 — 新增 215 后缀 Finder 全量验收
+
+- 完成新增 215 个后缀的真实 Finder 选择与空格预览；默认 213 项进入 OrangeLen，`.text` / `.wflow` 由系统提供器处理。两者系统正文和 OrangeLen 文件夹入口均有补充验证。
+- 定位 Shortcuts 提供器优先选择；临时停用诊断后已恢复系统默认。完善测试夹具与逐项报告，没有修改产品解析器或更新公开发行包。
+
+## 未发布 — Syntax Highlight 格式清单对齐（2026-10-16）
+
+- 新增 215 个源码、配置及编译文件后缀；固定口径为 363 后缀、49 特殊文件名、7 前缀规则。集中语言映射并同步 Quick Look 候选类型。
+- 补充词法高亮、二进制 plist 转 XML、Java class 声明/字节码及隔离 AppleScript 源码读取。编译 AutoIt 仅提供有限字节视图。
+- 处理 Oracle SQL/Typst 同名后缀，支持 Workspace JSONC；增加语言样例及二进制边界验证。
+- 范围及实际测试见 [对齐说明](docs/syntax-highlight-parity.md)；公开发行包尚未更新。
+
+## 未发布 — MindManager
+
+- 新增 `.mmap` 的 ZIP/Document.xml 主题树与浮动主题预览，接入 Drawings 扩展；格式清单增至110。
+- 自动布局，不还原原始样式、关系线、备注、任务与附件；加密及旧版.mmp不支持。
+
+## 未发布 — FreeMind / OPML
+
+- 新增 `.mm` / `.opml` 主题树预览及源码切换，支持 FreeMind 富文本标题与关系箭头、OPML 多根大纲。普通 Objective-C++ `.mm` 保持文本预览。
+- 格式计数更新为 109，沿用 XML 声明、深度、数量与输入大小限制。
+
+## 未发布 — XMind 预览
+
+- 新增 `.xmind` 新版 JSON / 旧版 XML 工作簿读取，支持多画布切换、主题树、浮动主题与关系连线；使用自动树状布局。
+- 接入 Drawings Quick Look 扩展及文件类型声明；格式清单增至 107 个后缀。
+- 沿用 ZIP CRC、路径、展开预算与取消检查，限制画布、主题及深度；原始样式、图片、附件、备注及概要暂不渲染。
+- 新增解析与阅读器测试夹具；未改变既有 106 项 Finder 实测结论。
+
 ## 2026-10-15 — 图标素材、分发检查与本地产物整理
 
 - 补齐应用图标原始 PNG、生成提示词和 `scripts/build-app-icon.sh`，支持从源图重新生成原生 ICNS。
@@ -223,3 +252,10 @@
 - 新增标准 `.excalidraw` 离线画布、原始 JSON 源码切换和 Quick Look 类型注册。使用 Excalidraw 0.18.1；内嵌栅格图片经本地解码，网页/外部图片不联网。
 - 增加有界解析、超时/取消、损坏场景源码降级及对应测试、合成夹具和依赖许可证。
 - 47 项 XCTest、Debug 构建、本机开发签名安装通过；Finder 实测画布和源码切换通过。Obsidian `.excalidraw.md`、编辑和自由缩放不在本次范围。
+
+## 2026-10-15 Developer formats batch 1
+
+- Added 38 explicit extensions and 7 exact filenames (148 / 43 total); source aliases and Finder type declarations.
+- Arrow IPC file/stream + Feather V2 including LZ4/ZSTD; wheel/VSIX manifests and package trees; bounded JUnit/SARIF/OpenAPI summaries; ONNX metadata without inference; offline Graphviz DOT/GV.
+- Preserve multiline structured cells; retain source views for reports and diagrams.
+- Details, limits and actual Finder Space evidence: `docs/evidence/developer-batch1-2026-10-15/README.md`.

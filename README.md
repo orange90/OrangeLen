@@ -2,7 +2,7 @@
 
 **按下空格，看懂整个项目与 AI 产出。**
 
-为开发者设计的 macOS 快速预览工具。**阅读器覆盖 106 种文件后缀、36 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。当前开发版在本机启用 STL/OBJ 预览设置后，Finder 单文件 Space 已验证 104/106 项；TS/MTS 仍未通过，详见 [原生入口实测](docs/evidence/single-file-dispatch-2026-10-13/README.md)。
+为开发者设计的 macOS 快速预览工具。**阅读器覆盖 363 种文件后缀、49 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。本轮新增的 **215 个后缀已逐项 Finder 空格实测：213 项由 OrangeLen 展示，`.text` / `.wflow` 由系统接管**，两者也可在 OrangeLen 文件夹预览中读取。详见 [215 项逐项结果](docs/evidence/source-parity-finder-2026-10-16/README.md)；既有 STL/OBJ、TS/MTS 等限制另见 [原生入口实测](docs/evidence/single-file-dispatch-2026-10-13/README.md)。
 
 中文 · [English](README.en.md)
 
@@ -68,24 +68,27 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 ## 支持格式
 
-**当前明确列出 106 个不重复的文件扩展名**，详见下表；这是后缀计数，不是 106 种编程语言，也不代表所有格式都完整渲染。`.md` / `.markdown` 等别名分别计数；同一个后缀的多个用途只计一次。
+**当前明确列出 363 个不重复的文件扩展名**，详见下表；这是后缀计数，不是 363 种编程语言，也不代表所有格式都完整渲染。`.md` / `.markdown` 等别名分别计数；同一个后缀的多个用途只计一次。
 
 | 类别 | 数量 | 扩展名 | 预览内容 |
 | --- | ---: | --- | --- |
-| 代码与网页 | 46 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl` | 源码高亮；HTML 页面；JSX/TSX 单文件组件快照 |
+| 代码与网页 | 75 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl`, `.pyi`, `.pyx`, `.pxd`, `.pxi`, `.cu`, `.cuh`, `.cc`, `.cxx`, `.hh`, `.hxx`, `.ipp`, `.tpp`, `.inl`, `.kts`, `.gradle`, `.groovy`, `.cmake`, `.mk`, `.mdc`, `.http`, `.rest`, `.j2`, `.jinja`, `.jinja2`, `.tmpl`, `.tpl`, `.rst`, `.adoc`, `.asciidoc` | 源码高亮；HTML 页面；JSX/TSX 单文件组件快照 |
 | 文本与配置 | 11 | `.txt`, `.log`, `.ini`, `.conf`, `.config`, `.properties`, `.plist`, `.yaml`, `.yml`, `.toml`, `.xml` | 原文阅读与查找 |
 | 文档与排版 | 8 | `.md`, `.markdown`, `.mdx`, `.tex`, `.typ`, `.ipynb`, `.epub`, `.pdf` | Markdown 公式与图表、Notebook 已存输出、电子书、PDF；LaTeX 基础子集与单文件 Typst |
-| 结构化数据 | 11 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har` | 结构树、记录、表格或请求记录；不执行 SQL 或网络请求 |
-| 图表与画布 | 6 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg` | 图形与源码；复杂格式采用受支持的子集 |
-| Skill、MCP 与归档 | 8 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz` | 包清单、目录树、按需查看成员；不安装或执行 |
+| 结构化数据 | 12 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har`, `.sarif` | 结构树、记录、表格或请求记录；不执行 SQL 或网络请求 |
+| 图表与画布 | 12 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg`, `.xmind`, `.mm`, `.opml`, `.mmap`, `.dot`, `.gv` | 图形与源码；复杂格式采用受支持的子集 |
+| Skill、MCP 与归档 | 10 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix` | 包清单、目录树、按需查看成员；不安装或执行 |
 | 3D 模型 | 4 | `.obj`, `.stl`, `.gltf`, `.glb` | 静态网格与场景、旋转、缩放 |
-| 科学数据与模型目录 | 6 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent` | 列信息、数组样本或张量元数据；不运行模型 |
+| 科学数据与模型目录 | 10 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent`, `.arrow`, `.ipc`, `.feather`, `.onnx` | 列信息、数组样本或张量元数据；不运行模型 |
 | 字幕、差异与来源结构 | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` | 字幕表、增删行、参数源码、未验证的 C2PA 结构 |
-| **合计** | **106** | **不重复后缀** | **源码、结构或效果预览，依格式而定** |
+| 新增开发者源码、配置与编译文件 | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | 更多语言源码；二进制 plist、Java class 与 AppleScript 内容检查，详见支持边界 |
+| **合计** | **363** | **不重复后缀** | **源码、结构或效果预览，依格式而定** |
+
+XMind：支持新版 `content.json` 和旧版 `content.xml` 工作簿，多画布切换、主题树与关系连线。使用自动树状布局，不还原原始样式、图片、附件、备注及概要。最多 50 张画布、总计 2000 个主题，沿用归档读取安全预算。
 
 此外还支持：
 
-- **36 个特殊文件名与 7 组前缀规则**：如 `Dockerfile`、`Makefile`、`.env`、`.gitignore`、`.editorconfig`、`Cargo.lock`、`yarn.lock` 等依赖锁文件，以及 `.env.local`、`Dockerfile.dev` 等。完整名单见 [统计口径](docs/format-count.md)。
+- **49 个特殊文件名与 7 组前缀规则**：如 `Dockerfile`、`Makefile`、`.env`、`.gitignore`、`.editorconfig`、`Cargo.lock`、`yarn.lock` 等依赖锁文件，以及 `.env.local`、`Dockerfile.dev` 等。完整名单见 [统计口径](docs/format-count.md)。
 - **整个文件夹 / 项目目录**：目录树、项目概览、按需阅读；不计入文件后缀总数。
 - **AI 工作流内容识别**：ComfyUI / n8n JSON、Dify YAML、OpenAPI JSON，复用已有 JSON / YAML 后缀，不重复加数。
 - **系统格式整合**：ImageIO 图片、AVKit 音视频、Word / RTF / ODT、XLSX / PPTX 内容预览。能力依赖系统和具体文件，未计入上述固定总数；详见 [系统格式范围](docs/system-preview.md)。
@@ -130,6 +133,18 @@ open ~/Applications/OrangeLen.app
 ./scripts/test-native.sh
 ```
 
+源码后缀测试样例会在测试前自动生成（需要 Python 3 和 macOS 自带的 `osacompile`），无需提交 `Tests/Fixtures/source-parity/`。直接运行 SwiftPM 或 Xcode 测试也会自动准备这些样例。
+
 欢迎提供可复现的问题、合成示例和改进建议。报告问题时请注明 macOS、芯片架构、文件后缀，以及使用的是 Finder 单文件、文件夹还是主应用入口；请勿附带私人文件或签名材料。
 
 [架构](docs/architecture.md) · [构建、签名与卸载](docs/development-guide.md) · [验证记录](docs/verification.md) · [依赖与许可证说明](docs/dependencies.md) · [更新日志](CHANGELOG.md)
+
+FreeMind / Freeplane `.mm` 与 OPML `.opml`：自动树状布局、主题层级、FreeMind 关系箭头与富文本标题的纯文本内容；可切换源码。原始样式、备注、附件不还原，链接不访问。最多 2000 个主题，输入限 1 MiB。普通 Objective-C++ `.mm` 源码仍显示为文本。
+
+MindManager `.mmap`：读取 ZIP 中的 `Document.xml`，预览主题层级和浮动主题。使用自动树状布局，不还原原始样式、关系线、备注、任务字段和附件；加密文件及旧版 `.mmp` 不支持。最多 2000 个主题，沿用 ZIP/XML 安全预算。
+
+开发者格式首批：新增 Python/Cython、CUDA/C++、构建脚本、模板及规则文件后缀；Arrow IPC/Feather V2 表格（含 LZ4/ZSTD）、wheel/VSIX 目录与元信息、JUnit/SARIF/OpenAPI 摘要、ONNX 图节点与张量目录、离线 DOT 图形。具体范围与 Finder 记录见 [首批验收](docs/evidence/developer-batch1-2026-10-15/README.md)。
+
+本批直接 Finder 验收 40/42 个正常样例通过；`.dot` 与 `.cursorrules` 需通过文件夹预览入口读取。此结果不等于全部 363 个后缀均直接 Finder 通过。
+
+本次开发版补齐 Syntax Highlight 格式清单；编译文件及 Finder 入口边界见 [支持与验证说明](docs/syntax-highlight-parity.md)。公开 preview.2 尚未包含这些新增功能。

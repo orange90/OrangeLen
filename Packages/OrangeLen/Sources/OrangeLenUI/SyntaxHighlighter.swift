@@ -33,8 +33,14 @@ final class SyntaxHighlighter {
             if name == "cmakelists.txt" { return "cmake" }
             if name == ".env" || name.hasPrefix(".env.") { return "ini" }
             if ["cargo.lock", "poetry.lock", "uv.lock", "pyproject.toml"].contains(name) { return "toml" }
-            let aliases = ["py":"python","js":"javascript","mjs":"javascript","cjs":"javascript","jsx":"javascript","ts":"typescript","mts":"typescript","cts":"typescript","tsx":"typescript","h":"c","hpp":"cpp","rs":"rust","sh":"bash","zsh":"bash","rb":"ruby","kt":"kotlin","cs":"csharp","ps1":"powershell","r":"r","vue":"xml","svelte":"xml","astro":"xml","html":"xml","htm":"xml","xhtml":"xml","svg":"xml","plist":"xml","yml":"yaml","jsonc":"json","json5":"javascript","tf":"hcl","tfvars":"hcl","gql":"graphql"]
+            if [".bashrc", ".bash_profile", ".zshrc", ".zprofile"].contains(name) { return "bash" }
+            if ext == "typ", SourceCodeFormats.isSQLTypeDefinition(source) { return "sql" }
+            let aliases = ["pyi":"python","pyx":"python","pxd":"python","pxi":"python","cu":"cpp","cuh":"cpp","cc":"cpp","cxx":"cpp","hh":"cpp","hxx":"cpp","ipp":"cpp","tpp":"cpp","inl":"cpp","kts":"kotlin","gradle":"groovy","mk":"makefile","mdc":"markdown","rest":"http","j2":"django","jinja":"django","jinja2":"django","py":"python","js":"javascript","mjs":"javascript","cjs":"javascript","jsx":"javascript","ts":"typescript","mts":"typescript","cts":"typescript","tsx":"typescript","h":"c","hpp":"cpp","rs":"rust","sh":"bash","zsh":"bash","rb":"ruby","kt":"kotlin","cs":"csharp","ps1":"powershell","r":"r","vue":"xml","svelte":"xml","astro":"xml","html":"xml","htm":"xml","xhtml":"xml","svg":"xml","plist":"xml","yml":"yaml","jsonc":"json","json5":"javascript","tf":"hcl","tfvars":"hcl","gql":"graphql"]
             if let alias = aliases[ext] { return alias }
+            if let language = SourceCodeFormats.language(forExtension: ext) {
+                if language == "plist" { return source.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("<") ? "xml" : "ini" }
+                return language
+            }
             if !ext.isEmpty { return ext }
         }
         if let first = source.split(separator: "\n", maxSplits: 1).first, first.hasPrefix("#!") {

@@ -3,4 +3,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"
 mkdir -p build
+python3 scripts/create-source-parity-fixtures.py
 xcrun swift test --package-path Packages/OrangeLen "$@" 2>&1 | tee build/tests.log

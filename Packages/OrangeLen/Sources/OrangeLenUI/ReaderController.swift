@@ -436,7 +436,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        if ["n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
+        if ["whl", "vsix", "n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
             if archiveController == nil { let child = ArchiveController(); addChild(child); archiveController = child }
             showContent(archiveController!.view)
             PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (ArchiveDocument, String, String?) in
@@ -448,6 +448,8 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                         do { summary = try MCPBundle.summary(archive, name:url.lastPathComponent, cancellation: token) }
                         catch is CancellationError { throw CancellationError() }
                         catch { summary = error.localizedDescription }
+                    } else if ["whl", "vsix"].contains(url.pathExtension.lowercased()) {
+                        summary = try DeveloperPackage.summary(archive, name: url.lastPathComponent, cancellation: token)
                     } else { summary = nil }
                     return (archive, snapshot.revision, summary)
             }, completion: { [weak self] result in
@@ -509,27 +511,27 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets, DiagramDocument?) in
+        PreviewWorkQueue.parsing.submit(cancellation: token, work: { [weak self] () -> (SourceSnapshot, TextModel?, JSONTree?, TableData?, String, MarkdownAssets, DiagramDocument?, ScientificDocument?) in
                 let scoped = root?.startAccessingSecurityScopedResource() ?? false
                 defer { if scoped { root?.stopAccessingSecurityScopedResource() } }
                 var snapshot: SourceSnapshot
                 var pagingNotice = ""
                 do {
-                    snapshot = try AccessBroker.readPreview(url, root: root, byteOffset: byteOffset, pageBytes: 64 * 1024, fullReadThreshold: 1024 * 1024, cancellation: token)
+                    snapshot = try SourceFileLoader.read(url, root: root, byteOffset: byteOffset, cancellation: token)
                     if byteOffset > 0, let previousEncoding, snapshot.encoding != previousEncoding { throw PreviewError.changed }
                 } catch let error as PreviewError where byteOffset > 0 {
                     switch error {
                     case .encoding, .binary, .changed, .limit:
-                        snapshot = try AccessBroker.readPreview(url, root: root, pageBytes: 64 * 1024, fullReadThreshold: 1024 * 1024, cancellation: token)
+                        snapshot = try SourceFileLoader.read(url, root: root, cancellation: token)
                         pagingNotice = L10n.text("文件已变化，旧分页位置失效，已返回开头。")
                     default: throw error
                     }
                 }
                 self?.logger.notice("preview read_ms=\((ProcessInfo.processInfo.systemUptime - loadStarted) * 1000, privacy: .public) bytes=\(snapshot.byteCount, privacy: .public)")
                 var assets = MarkdownAssets()
-                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice; var graph: DiagramDocument?
+                var markdown: TextModel?; var tree: JSONTree?; var table: TableData?; var warning = pagingNotice; var graph: DiagramDocument?; var report: ScientificDocument?
                 do {
-                    if !snapshot.partial { graph = try DiagramDocument.parseIfKnown(snapshot.text, name:url.lastPathComponent, cancellation:token)?.resolvingCards(document:url,root:root,cancellation:token) }
+                    if !snapshot.partial { report = try DeveloperReports.parse(snapshot.text, name: url.lastPathComponent, cancellation: token); graph = try DiagramDocument.parseIfKnown(snapshot.text, name:url.lastPathComponent, cancellation:token)?.resolvingCards(document:url,root:root,cancellation:token) }
                     switch snapshot.partial ? PreviewFormat.code : detected {
                     case .markdown:
                         markdown = try MarkdownModel.parse(snapshot.text, cancellation: token)
@@ -542,7 +544,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                 catch { warning = error.localizedDescription + L10n.text(" · 已降级源码") }
                 try token.check()
                 try token.check()
-                return (snapshot, markdown, tree, table, warning, assets, graph)
+                return (snapshot, markdown, tree, table, warning, assets, graph, report)
         }, completion: { [weak self] result in
                 guard let self, self.generation == id else { return }
                 switch result {
@@ -550,6 +552,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
                     if loaded.0.byteOffset == 0 { self.pageHistory = [] }
                     self.source = loaded.0; self.rendered = loaded.1; self.jsonTree = loaded.2; self.tableData = loaded.3; self.parseWarning = loaded.4; self.markdownAssets = loaded.5
                     if let graph = loaded.6 { self.advancedView = DiagramPreview(graph) }
+                    if let report = loaded.7 { self.advancedView = ScientificPreview(report) }
                     self.prepareHTMLPreview(url: url, snapshot: loaded.0)
                     self.mode.selectedSegment = 0; self.present(); self.startRichRendering()
                     self.scroll.contentView.scroll(to: .zero); self.scroll.reflectScrolledClipView(self.scroll.contentView)

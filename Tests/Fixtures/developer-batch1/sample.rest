@@ -1,0 +1,4 @@
+POST https://example.com/models
+Content-Type: application/json
+
+{"name":"orange"}

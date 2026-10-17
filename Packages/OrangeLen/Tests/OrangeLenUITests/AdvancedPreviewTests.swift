@@ -15,9 +15,28 @@ import OrangeLenCore
     func open(_ reader: ReaderController,_ name: String) async {
         let ready = expectation(description:name); reader.open(fixture(name)) { error in XCTAssertNil(error,name); ready.fulfill() }; await fulfillment(of:[ready],timeout:40)
     }
+    func testObjectiveCPlusPlusRemainsSource() async throws {
+        _ = NSApplication.shared; let reader = ReaderController(); reader.loadViewIfNeeded(); defer { reader.close() }
+        await open(reader, "objective.mm")
+        XCTAssertNil(reader.advancedView); XCTAssertTrue(reader.text.string.contains("#import"))
+    }
+    func testXMindPagesAndSwitchToText() async throws {
+        _ = NSApplication.shared; let reader = ReaderController(); reader.loadViewIfNeeded(); defer { reader.close() }
+        for file in ["project.mmap", "modern.xmind", "legacy.xmind"] {
+            await open(reader, file)
+            let graph = try XCTUnwrap(reader.advancedView as? DiagramPreview)
+            XCTAssertNotNil(graph.canvas.image)
+            XCTAssertFalse(reader.mode.isEnabled)
+            if file == "modern.xmind" {
+                graph.pages.selectItem(at: 1); graph.changePage()
+                XCTAssertTrue(graph.canvas.accessibilityLabel()?.contains("中文与 emoji") == true)
+            }
+        }
+        await open(reader, "card.md"); XCTAssertNil(reader.advancedView)
+    }
     func testGraphPagesWorkflowsAndSource() async throws {
         _ = NSApplication.shared; let reader = ReaderController(); reader.loadViewIfNeeded(); defer {reader.close()}
-        for file in ["diagram.drawio","board.canvas","comfy.json","comfy-api.json","n8n.json","dify.yml"] {
+        for file in ["mindmap.mm","outline.opml","diagram.drawio","board.canvas","comfy.json","comfy-api.json","n8n.json","dify.yml"] {
             await open(reader,file); let graph = try XCTUnwrap(reader.advancedView as? DiagramPreview,file); XCTAssertNotNil(graph.canvas.image)
             reader.mode.selectedSegment = 1; reader.present(); XCTAssertEqual(reader.text.string,try String(contentsOf:fixture(file),encoding:.utf8))
         }

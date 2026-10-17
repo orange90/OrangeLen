@@ -1,0 +1,58 @@
+[
+  {
+    "file": "sample.jl",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-julia-ax.txt",
+    "screenshot": "finder-julia.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "sample.class",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-java-class-ax.txt",
+    "screenshot": "finder-java-class.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "compiled.scpt",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-applescript-ax.txt",
+    "screenshot": "finder-applescript.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "binary.plist",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-binary-plist-ax.txt",
+    "screenshot": "finder-binary-plist.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "sample.gleam",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-gleam-ax.txt",
+    "screenshot": "finder-gleam.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "sample.as",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-actionscript-ax.txt",
+    "screenshot": "finder-actionscript.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  },
+  {
+    "file": "sample.edn",
+    "route": "Finder selection + Space via CUA",
+    "passed": true,
+    "ax": "finder-edn-ax.txt",
+    "screenshot": "finder-edn.png",
+    "scope": "Synthetic representative sample; not arbitrary real-world compatibility"
+  }
+]

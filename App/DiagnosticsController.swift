@@ -71,7 +71,7 @@ final class DiagnosticsController: NSViewController {
             if let url {
                 let scope = url.startAccessingSecurityScopedResource(); defer { if scope { url.stopAccessingSecurityScopedResource() } }
                 let type = (try? url.resourceValues(forKeys: [.contentTypeKey]).contentType) ?? UTType(filenameExtension: url.pathExtension)
-                lines += [L10n.text("文件：\(url.lastPathComponent)"), L10n.text("系统识别类型：\(type?.identifier ?? L10n.text("未知"))"), L10n.text("阅读器识别：\(ReadableFormat.isText(url) || ReadableFormat.isCollection(url) ? L10n.text("可读取") : ["svg", "excalidraw", "pdf"].contains(url.pathExtension.lowercased()) ? L10n.text("专用预览") : L10n.text("需实际读取检查"))"), ""]
+                lines += [L10n.text("文件：\(url.lastPathComponent)"), L10n.text("系统识别类型：\(type?.identifier ?? L10n.text("未知"))"), L10n.text("阅读器识别：\(ReadableFormat.isText(url) || ReadableFormat.isCollection(url) ? L10n.text("可读取") : ["mmap", "xmind", "svg", "excalidraw", "pdf"].contains(url.pathExtension.lowercased()) ? L10n.text("专用预览") : L10n.text("需实际读取检查"))"), ""]
                 let plugins = Bundle.main.bundleURL.appendingPathComponent("Contents/PlugIns")
                 let ownTypes = ((try? FileManager.default.contentsOfDirectory(at: plugins, includingPropertiesForKeys: nil)) ?? []).filter { $0.pathExtension == "appex" }.flatMap { Self.types($0) }
                 let matched = type.map { actual in ownTypes.filter { UTType($0).map { actual.conforms(to: $0) } ?? (actual.identifier == $0) } } ?? []

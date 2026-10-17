@@ -1,0 +1,30 @@
+[
+  {
+    "repo": "patebry/spacebar",
+    "tag": "v0.5.0",
+    "name": "spacebar.dmg",
+    "bytes": 24285560,
+    "url": "https://github.com/patebry/spacebar/releases/download/v0.5.0/spacebar.dmg"
+  },
+  {
+    "repo": "Invernomut0/QuickLookWithSteroids",
+    "tag": "v0.3.6",
+    "name": "OmniPreview-macOS.dmg",
+    "bytes": 2199529,
+    "url": "https://github.com/Invernomut0/QuickLookWithSteroids/releases/download/v0.3.6/OmniPreview-macOS.dmg"
+  },
+  {
+    "repo": "Oil3/Quicklook-Netron",
+    "tag": "quicklook-netron-1.0",
+    "name": "QLnetron.1.0.-.Universal.Binary.zip",
+    "bytes": 14402938,
+    "url": "https://github.com/Oil3/Quicklook-Netron/releases/download/quicklook-netron-1.0/QLnetron.1.0.-.Universal.Binary.zip"
+  },
+  {
+    "repo": "chamburr/glance",
+    "tag": "v1.6.0",
+    "name": "Glance-1.6.0.dmg",
+    "bytes": 11821568,
+    "url": "https://github.com/chamburr/glance/releases/download/v1.6.0/Glance-1.6.0.dmg"
+  }
+]

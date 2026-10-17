@@ -1,0 +1,12 @@
+openapi: 3.0.3
+info:
+  title: Orange API
+  version: 1.0.0
+paths:
+  /models:
+    get:
+      summary: List models 🍊
+      operationId: listModels
+      responses:
+        '200':
+          description: OK

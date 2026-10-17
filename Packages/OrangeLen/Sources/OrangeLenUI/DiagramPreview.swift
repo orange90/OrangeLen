@@ -68,8 +68,11 @@ import OrangeLenCore
         summary.isEditable = false; summary.isSelectable = true; summary.font = .monospacedSystemFont(ofSize:12,weight:.regular); summary.string = document.summary; summary.textContainerInset = NSSize(width:12,height:12)
         let scroll = NSScrollView(); scroll.hasVerticalScroller = true; scroll.documentView = summary
         summary.autoresizingMask = [.width]; summary.textContainer?.widthTracksTextView = true
-        let source = ([document.columns] + document.rows).map {$0.map {DatabaseDocument.tsvField($0)}.joined(separator:"\t")}.joined(separator:"\n")
-        if let data = try? CSVParser.parse(source,separator:9) { table.show(data) }
+        // Structured cells already have boundaries; keep embedded newlines and tabs intact.
+        let rows = ([document.columns] + document.rows).map { row in
+            row.map { TableCell(value: $0, sourceRange: NSRange(location: 0, length: 0)) }
+        }
+        table.show(TableData(rows: rows, partial: false))
         for child in [scroll,table.view] { addSubview(child); child.translatesAutoresizingMaskIntoConstraints = false }
         NSLayoutConstraint.activate([scroll.leadingAnchor.constraint(equalTo:leadingAnchor),scroll.trailingAnchor.constraint(equalTo:trailingAnchor),scroll.topAnchor.constraint(equalTo:topAnchor),scroll.heightAnchor.constraint(equalToConstant:180),table.view.leadingAnchor.constraint(equalTo:leadingAnchor),table.view.trailingAnchor.constraint(equalTo:trailingAnchor),table.view.topAnchor.constraint(equalTo:scroll.bottomAnchor),table.view.bottomAnchor.constraint(equalTo:bottomAnchor)])
     }

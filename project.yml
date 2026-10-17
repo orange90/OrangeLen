@@ -79,7 +79,7 @@ targets:
             UTTypeDescription: Draw.io and JSON Canvas
             UTTypeConformsTo: [public.plain-text]
             UTTypeTagSpecification:
-              public.filename-extension: [drawio, canvas]
+              public.filename-extension: [dot, gv, drawio, canvas]
           - UTTypeIdentifier: local.orangelen.component
             UTTypeDescription: React Component
             UTTypeConformsTo: [public.source-code]
@@ -94,7 +94,7 @@ targets:
             UTTypeDescription: Scientific Data and Model Metadata
             UTTypeConformsTo: [public.data]
             UTTypeTagSpecification:
-              public.filename-extension: [c2pa, npy, parquet, safetensors, gguf, latent]
+              public.filename-extension: [arrow, ipc, feather, onnx, c2pa, npy, parquet, safetensors, gguf, latent]
           - UTTypeIdentifier: local.orangelen.mesh
             UTTypeDescription: 3D Model
             UTTypeConformsTo: [public.data]
@@ -144,7 +144,17 @@ targets:
             UTTypeDescription: Developer Source and Configuration
             UTTypeConformsTo: [public.source-code]
             UTTypeTagSpecification:
-              public.filename-extension: [rs, go, kt, conf, properties, vue, svelte, astro, mjs, cjs, mts, cts, scss, sass, less, cs, php, dart, lua, r, scala, ps1, proto, graphql, gql, tf, tfvars, hcl]
+              public.filename-extension: ["a3x", "acf", "ada", "ado", "adoc", "applescript", "as", "asciidoc", "ascr", "asd", "asm", "asp", "aspx", "astro", "atl", "au3", "avt", "awk", "bas", "bashrc", "basic", "bat", "bb", "bezel", "bib", "c++", "cc", "cfc", "cfg", "cfm", "cfml", "cjs", "class", "cli", "clj", "cljc", "cljs", "cls", "cmake", "cmd", "code-workspace", "coffee", "command", "con", "conf", "cp", "cr", "cs", "csh", "cson", "csproj", "cts", "ctx", "cu", "cuh", "cxx", "d", "dart", "designspace", "do", "dockerfile", "dtd", "dylan", "e", "ecf", "ecore", "edn", "el", "entitlements", "env", "erb", "erl", "ex", "exs", "f", "f90", "f95", "fea", "fish", "flow", "fnc", "for", "fs", "fsx", "fxml", "gd", "gemfile", "gleam", "go", "gpx", "gql", "gradle", "graphql", "groovy", "haml", "hcl", "heex", "hh", "hri", "hrl", "hs", "http", "hxx", "ily", "iml", "inf", "inl", "ino", "ipp", "iss", "j2", "jav", "javascript", "jinja", "jinja2", "jl", "jnlp", "jscript", "jsm", "jsp", "kml", "kmt", "ksh", "kt", "kts", "latex", "lay", "ld", "less", "lhs", "lisp", "loctable", "lsp", "ltx", "lua", "ly", "m", "mak", "map", "mdc", "mf", "mill", "mjs", "mk", "ml", "mll", "mly", "mobileconfig", "mpd", "mq4", "mq5", "ms", "mts", "mvw", "mxml", "ncx", "nf", "nim", "nix", "opf", "otio", "pas", "pck", "pddl", "pde", "ph3", "ph4", "php", "php3", "php4", "phtml", "pkb", "pks", "pl", "plist", "pm", "podspec", "pom", "prc", "pro", "properties", "proto", "ps1", "psd1", "psjs", "psm1", "pub", "pxd", "pxi", "py3", "pyi", "pyx", "r", "raml", "rbw", "rdf", "readme", "rest", "rex", "rexx", "rhtml", "rjs", "rkt", "robot", "rs", "rst", "s79", "sage", "sas", "sass", "sbt", "sc", "scad", "scala", "sch", "scl", "scm", "scpt", "scss", "sequ", "sld", "sls", "smali", "sol", "sps", "sqs", "ss", "storybard", "storyboard", "strings", "stringsdict", "sty", "svelte", "t", "tab", "tcl", "tcsh", "texi", "text", "tf", "tfstate", "tfvars", "tmpl", "tpb", "tpl", "tpp", "tps", "trg", "ttx", "twig", "unity", "v", "vb", "vbs", "vhd", "vhdl", "vim", "vl", "vue", "vw", "wflow", "xaml", "xcscheme", "xib", "xm", "xq", "xquery", "xsd", "xu", "xul", "zig", "zon", "zshrc"]
+          - UTTypeIdentifier: local.orangelen.developer-package
+            UTTypeDescription: Developer Package
+            UTTypeConformsTo: [public.zip-archive]
+            UTTypeTagSpecification:
+              public.filename-extension: [whl, vsix]
+          - UTTypeIdentifier: local.orangelen.sarif
+            UTTypeDescription: SARIF Results
+            UTTypeConformsTo: [public.json]
+            UTTypeTagSpecification:
+              public.filename-extension: [sarif]
           - UTTypeIdentifier: local.orangelen.har
             UTTypeDescription: HTTP Archive
             UTTypeConformsTo: [public.json]
@@ -171,6 +181,27 @@ targets:
             UTTypeTagSpecification:
               public.filename-extension: [sqlite, sqlite3, db]
         UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.mindjet.mindmanager.mmap
+            UTTypeDescription: MindManager Map
+            UTTypeConformsTo: [com.pkware.zip-archive, public.composite-content]
+            UTTypeTagSpecification:
+              public.filename-extension: [mmap]
+          - UTTypeIdentifier: net.sourceforge.freemind.mm
+            UTTypeDescription: FreeMind Mind Map
+            UTTypeConformsTo: [public.xml]
+            UTTypeTagSpecification:
+              public.filename-extension: [mm]
+          - UTTypeIdentifier: org.opml.opml
+            UTTypeDescription: OPML Outline
+            UTTypeConformsTo: [public.xml]
+            UTTypeTagSpecification:
+              public.filename-extension: [opml]
+          - UTTypeIdentifier: org.xmind.openformat.xmind
+            UTTypeDescription: XMind Workbook
+            UTTypeConformsTo: [com.pkware.zip-archive, public.composite-content]
+            UTTypeTagSpecification:
+              public.filename-extension: [xmind]
+              public.mime-type: application/vnd.xmind.workbook
           - UTTypeIdentifier: com.excalidraw.excalidraw
             UTTypeDescription: Excalidraw Drawing
             UTTypeConformsTo: [public.json]
@@ -226,7 +257,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.css, public.html, com.microsoft.typescript, com.microsoft.ini, com.apple.property-list, public.mpeg-2-transport-stream, public.avchd-mpeg-2-transport-stream, local.orangelen.component, public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.shell-script, public.make-source, local.orangelen.developer-source]
+            QLSupportedContentTypes: [public.css, public.html, com.microsoft.typescript, com.microsoft.ini, com.apple.property-list, public.mpeg-2-transport-stream, public.avchd-mpeg-2-transport-stream, local.orangelen.component, public.plain-text, public.source-code, public.swift-source, public.python-script, public.javascript-source, public.c-source, public.c-plus-plus-source, public.c-header, public.c-plus-plus-header, public.c-plus-plus-inline-header, public.shell-script, public.make-source, local.orangelen.developer-source, com.adobe.edn, com.apple.applescript.script, com.apple.applescript.text, com.apple.applesingle-archive, com.apple.dt.document.scheme, com.apple.dt.interfacebuilder.document.storyboard, com.apple.interfacebuilder.document.cocoa, com.apple.mobileconfig, com.apple.shortcuts.workflow-file, com.apple.terminal.shell-script, com.apple.xcode.entitlements-property-list, com.apple.xcode.strings-dictionary, com.apple.xcode.strings-text, com.netscape.javascript-source, com.sun.java-class, com.sun.java-source, com.sun.java-web-start, com.topografix.gpx, org.khronos.glsl.fragment-shader, org.libreoffice.mspub-document, public.ada-source, public.csh-script, public.fortran-90-source, public.fortran-95-source, public.fortran-source, public.ksh-script, public.objective-c-source, public.pascal-source, public.perl-script, public.php-script, public.ruby-script, public.tcsh-script, public.toml]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -308,7 +339,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [public.ndjson, org.xmind.openformat.xmp, local.orangelen.xmp, local.orangelen.scientific, org.w3.webvtt, local.orangelen.subtitle, public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
+            QLSupportedContentTypes: [local.orangelen.sarif, public.ndjson, org.xmind.openformat.xmp, local.orangelen.xmp, local.orangelen.scientific, org.w3.webvtt, local.orangelen.subtitle, public.json, public.xml, public.yaml, public.toml, public.comma-separated-values-text, public.tab-separated-values-text, public.database, local.orangelen.jsonl, local.orangelen.diff, local.orangelen.sqlite, local.orangelen.har, local.orangelen.jsonc, local.orangelen.json5]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -390,7 +421,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [org.gnu.gnu-zip-tar-archive, local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
+            QLSupportedContentTypes: [local.orangelen.developer-package, org.gnu.gnu-zip-tar-archive, local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -472,7 +503,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [org.khronos.glb, org.khronos.gltf, public.geometry-definition-format, public.standard-tesselated-geometry-format, local.orangelen.diagram, local.orangelen.mesh, public.png, org.webmproject.webp, local.orangelen.mermaid, com.excalidraw.excalidraw, public.svg-image]
+            QLSupportedContentTypes: [com.microsoft.word.dot, com.mindjet.mindmanager.mmap, net.sourceforge.freemind.mm, org.opml.opml, public.objective-c-plus-plus-source, org.xmind.openformat.xmind, org.khronos.glb, org.khronos.gltf, public.geometry-definition-format, public.standard-tesselated-geometry-format, local.orangelen.diagram, local.orangelen.mesh, public.png, org.webmproject.webp, local.orangelen.mermaid, com.excalidraw.excalidraw, public.svg-image]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -561,6 +592,7 @@ targets:
     sources:
       - Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift
       - Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift
+      - Packages/OrangeLen/Tests/OrangeLenUITests/SourceParityPreviewTests.swift
       - path: Tests/Fixtures/advanced-outputs
         type: folder
         buildPhase: resources

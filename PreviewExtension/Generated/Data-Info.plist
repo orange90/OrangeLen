@@ -38,6 +38,7 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>local.orangelen.sarif</string>
 				<string>public.ndjson</string>
 				<string>org.xmind.openformat.xmp</string>
 				<string>local.orangelen.xmp</string>
