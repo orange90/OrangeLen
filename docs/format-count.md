@@ -4,7 +4,7 @@
 
 ## Count / 总数
 
-**363 unique extensions + 49 exact filenames + 7 filename prefixes + folder browsing.**
+**371 unique extensions + 49 exact filenames + 7 filename prefixes + folder browsing.**
 
 后缀按小写去重；别名分别计数。同一后缀只计一次，不将 ComfyUI/n8n/OpenAPI 等内容识别、`.tar.gz` 组合后缀或文件夹重复加数。此计数覆盖明确的源码、结构与效果预览，不表示完整格式兼容或逐一 Finder 实测。
 
@@ -21,12 +21,12 @@ ImageIO, AVKit and system document integration are excluded from this fixed inve
 | 文档与排版 / Documents & typesetting | 8 | `.md`, `.markdown`, `.mdx`, `.tex`, `.typ`, `.ipynb`, `.epub`, `.pdf` |
 | 结构化数据 / Structured data | 12 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har`, `.sarif` |
 | 图表与画布 / Diagrams & canvases | 12 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg`, `.xmind`, `.mm`, `.opml`, `.mmap`, `.dot`, `.gv` |
-| Skill、MCP 与归档 / Skills, MCP & archives | 10 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix` |
+| Skill、MCP 与归档 / Skills, MCP & archives | 18 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix`, `.7z`, `.rar`, `.xz`, `.bz2`, `.zst`, `.txz`, `.tbz2`, `.tzst` |
 | 3D 模型 / 3D models | 4 | `.obj`, `.stl`, `.gltf`, `.glb` |
 | 科学数据与模型目录 / Scientific data & model catalogs | 10 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent`, `.arrow`, `.ipc`, `.feather`, `.onnx` |
 | 字幕、差异与来源结构 / Subtitles, diffs & provenance | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` |
 | 新增开发者源码、配置与编译文件 / Additional developer sources, configs & compiled files | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` |
-| Total / 合计 | **363** | |
+| Total / 合计 | **371** | |
 
 ## Named files / 特殊文件名
 
@@ -54,4 +54,6 @@ The 215 added suffixes cover the pinned competitor inventory together with exist
 
 ## 新增后缀的 Finder 全量验收
 
-2026-10-16 后续：本轮新增 215 个后缀全部完成真实 Finder 空格测试，213 个默认进入 OrangeLen，`.text` / `.wflow` 由系统接管，OrangeLen 文件夹入口也已验证。见 [逐项结果](evidence/source-parity-finder-2026-10-16/README.md)。未将此结果扩大为全部 363 个后缀通过。
+2026-10-16 后续：本轮新增 215 个后缀全部完成真实 Finder 空格测试，213 个默认进入 OrangeLen，`.text` / `.wflow` 由系统接管，OrangeLen 文件夹入口也已验证。见 [逐项结果](evidence/source-parity-finder-2026-10-16/README.md)。未将此结果扩大为全部 371 个后缀通过。
+
+2026-10-17：新增8个归档末级后缀/别名（7z、rar、xz、bz2、zst、txz、tbz2、tzst），当前合计371。xz/bz2/zst仅承诺压缩TAR；完整复合文件名为tar.xz/tar.bz2/tar.zst，不能解释为任意单文件流支持。

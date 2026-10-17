@@ -1,5 +1,9 @@
 # 变更日志
 
+## 2026-10-17 — 归档格式扩展（开发版）
+
+- 新增 7z、RAR4/RAR5、tar.xz/tar.bz2/tar.zst 及 txz/tbz2/tzst 归档目录与成员只读预览；系统 libarchive 与内置 Zstandard 解码器，无命令行运行时依赖。
+
 ## 2026-10-16 — 新增 215 后缀 Finder 全量验收
 
 - 完成新增 215 个后缀的真实 Finder 选择与空格预览；默认 213 项进入 OrangeLen，`.text` / `.wflow` 由系统提供器处理。两者系统正文和 OrangeLen 文件夹入口均有补充验证。

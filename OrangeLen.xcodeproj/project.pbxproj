@@ -19,6 +19,7 @@
 		1A3F0BE9CE913CA59E44FF97 /* OrangeLenCore in Frameworks */ = {isa = PBXBuildFile; productRef = 72A62C92F98ADD9FC9E6A66A /* OrangeLenCore */; };
 		1BB5B64868FFB1CCE3D0F5C1 /* SharedResourcesBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */; };
 		1D1F8D02B1A3EEBDC1537A06 /* SharedResourcesBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E67EF9C669D5C0CAC092E /* SharedResourcesBootstrap.m */; };
+		1E0BA43796232A71A7437645 /* ExtendedArchivePreviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0F9AA5F05281777D3330C4 /* ExtendedArchivePreviewTests.swift */; };
 		1F6075BD796B19EBF0906791 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = FC4D73868231FF7143F14A2D /* OrangeLenUI */; };
 		21E9094206A9554948B8CC69 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		269737E96DDAD99735224B29 /* ParquetRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = B0B9E7A92B2339C6EEAA211B /* ParquetRenderer.html */; };
@@ -556,6 +557,7 @@
 		AAFBAD0D4096594E6DD5C4ED /* NotoSerifCJKsc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKsc-Regular.otf"; sourceTree = "<group>"; };
 		AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OrangeLenPreviewArchives.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9291507D62F0644F4A07D5 /* SVGRenderer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = SVGRenderer.html; sourceTree = "<group>"; };
+		AF0F9AA5F05281777D3330C4 /* ExtendedArchivePreviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedArchivePreviewTests.swift; sourceTree = "<group>"; };
 		AFAB738D28A560325857B5B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B0B9E7A92B2339C6EEAA211B /* ParquetRenderer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ParquetRenderer.html; sourceTree = "<group>"; };
 		B20FCB7C331241A7EACA9600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				1259A8978DC27852DF3EE688 /* AdvancedPreviewTests.swift */,
+				AF0F9AA5F05281777D3330C4 /* ExtendedArchivePreviewTests.swift */,
 				BBAF56EE756707912E4AD78B /* SourceParityPreviewTests.swift */,
 				188ADBC3AF60465B6FCEE1D3 /* SystemPreviewTests.swift */,
 			);
@@ -1536,6 +1539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A46FD4F6632DFEC487A89D /* AdvancedPreviewTests.swift in Sources */,
+				1E0BA43796232A71A7437645 /* ExtendedArchivePreviewTests.swift in Sources */,
 				3F6E453F63D6F98F687ECF52 /* SourceParityPreviewTests.swift in Sources */,
 				0FB153AE8BBC5EAD24C99574 /* SystemPreviewTests.swift in Sources */,
 			);

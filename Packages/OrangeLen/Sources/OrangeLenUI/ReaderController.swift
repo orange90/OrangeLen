@@ -436,7 +436,7 @@ public final class ReaderController: NSViewController, NSSearchFieldDelegate, NS
             })
             return
         }
-        if ["whl", "vsix", "n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
+        if ["7z", "rar", "xz", "bz2", "zst", "txz", "tbz2", "tzst", "whl", "vsix", "n8np", "npz", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(url.pathExtension.lowercased()) && !GzipDocument.isPlainStream(url) {
             if archiveController == nil { let child = ArchiveController(); addChild(child); archiveController = child }
             showContent(archiveController!.view)
             PreviewWorkQueue.parsing.submit(cancellation: token, work: { () -> (ArchiveDocument, String, String?) in

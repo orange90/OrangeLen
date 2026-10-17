@@ -2,11 +2,11 @@
 
 **Press Space. Explore your project and AI-generated files.**
 
-A macOS Quick Look tool for developers. **The reader covers 363 file extensions, 49 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. All **215 newly added suffixes have been tested through Finder Space: 213 show OrangeLen content, while `.text` / `.wflow` use system providers**; both are also readable inside OrangeLen folder previews. See the [per-suffix audit](docs/evidence/source-parity-finder-2026-10-16/README.md) and the [earlier native-format limitations](docs/evidence/single-file-dispatch-2026-10-13/README.md).
+A macOS Quick Look tool for developers. **The reader covers 371 file extensions, 49 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. All **215 newly added suffixes have been tested through Finder Space: 213 show OrangeLen content, while `.text` / `.wflow` use system providers**; both are also readable inside OrangeLen folder previews. See the [per-suffix audit](docs/evidence/source-parity-finder-2026-10-16/README.md) and the [earlier native-format limitations](docs/evidence/single-file-dispatch-2026-10-13/README.md).
 
 [中文](README.md) · English
 
-[Download](#download) · [Quick start](#quick-start) · [Supported formats](#supported-formats) · [Compared with system Quick Look](#compared-with-system-quick-look) · [Developer guide](docs/development-guide.md) · [Changelog](CHANGELOG.md)
+[Download](#download) · [Quick start](#quick-start) · [Supported formats](#supported-formats) · [Compared with system Quick Look](#compared-with-system-quick-look) · [Open-source alternatives](#compared-with-open-source-alternatives) · [Developer guide](docs/development-guide.md) · [Changelog](CHANGELOG.md)
 
 ## Product demo (English voiceover and subtitles)
 
@@ -66,9 +66,34 @@ OrangeLen extends Quick Look for development and AI file inspection. macOS alrea
 
 Baseline: [Apple’s Quick Look guide](https://support.apple.com/en-sg/guide/mac-help/-mh14119/mac). Behavior varies with macOS, file types and installed extensions; this is not an exhaustive cross-version test. **macOS selects the handler for individual Finder files. OrangeLen’s app and folder previews provide the more complete entry points.**
 
+## Compared with open-source alternatives
+
+**Browse a project, its code and its AI outputs in one window.** This iteration adds 215 source/configuration suffixes plus eight archive suffixes/aliases, bringing reader coverage to **371 explicit suffixes and 49 special filenames**, alongside workflow graphs, package members, data samples and model inventories.
+
+Reviewed **2026-10-17**, using the same three open-source alternatives as our previous comparison. OrangeLen refers to the current development tree, including the archive expansion; **the public preview.2 download above does not yet include this iteration**.
+
+| Capability | OrangeLen (development) | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0 (chamburr fork) |
+| --- | --- | --- | --- | --- |
+| Price | **Free (current version)** | Free | Free | Free |
+| Explicit suffixes / documented scope¹ | **371 + 49 special filenames** | 9+ document suffixes | 200+ source/configuration suffixes | No fixed total published |
+| Project folders | **Tree, overview and member reading in one window** | No dedicated feature listed | No dedicated feature listed | No dedicated feature listed |
+| Source highlighting | Offline highlighting, line numbers, search and copy | Fenced code blocks | **Broad language support; configurable LSP, VCS and preprocessors** | Multiple source languages |
+| Markdown / Notebook | Math, Mermaid; notebook cells and saved outputs | **Markdown specialist; math, Mermaid, MDX documents and `.mdc`** | Notebook as JSON source | Markdown and notebook rendering |
+| Skill / MCP / developer packages | **`.skill`, `.mcpb`, `.dxt`, wheel and VSIX inventories/members** | No dedicated parser listed | No dedicated parser listed | Generic archives; no dedicated package inventory listed |
+| ComfyUI / n8n / Dify | **Workflow nodes and connections** | No dedicated parser listed | Generic JSON/YAML source | Generic JSON/YAML source |
+| Parquet / Arrow / Feather V2 | **Columns and bounded data samples** | No dedicated parser listed | No dedicated parser listed | No dedicated parser listed |
+| NumPy / GGUF / Safetensors / ONNX | **Array samples, tensor inventories or graph-node metadata** | No dedicated parser listed | No dedicated parser listed | No dedicated parser listed |
+| JUnit / SARIF / OpenAPI | **Test, security and API summaries** | No dedicated parser listed | Generic XML/JSON/YAML source | Generic XML/JSON/YAML source |
+| Components / diagrams / 3D | **Single-file JSX/TSX/MDX snapshots, mind maps, DOT and static 3D** | Mermaid; MDX without JSX rendering | Corresponding source/text | Corresponding source; no dedicated renderer listed |
+| Generic archives | ZIP / 7z / RAR / TAR; gzip, XZ, BZIP2 and Zstandard TAR | TextBundle documents | No archive browser listed | **7z / ZIP / TAR and others** |
+
+¹ Suffix aliases count separately; these are not language counts or complete format implementations. Published counts use different methods and do not establish a “most formats” ranking. “No dedicated feature/parser listed” reflects official documentation and our earlier implementation review; generic text or system fallback may still work. All four are free, so price is not a unique advantage.
+
+**Verification:** all 215 new suffixes were checked in Finder: OrangeLen handled 213; the system handled `.text`/`.wflow`, whose native content and OrangeLen folder-reading paths were also verified. This is not exhaustive verification of all existing suffixes. Models are metadata-only; components, diagrams and 3D have subset limits. See the [full comparison, sources and limits](docs/competitor-comparison-public-2026-10-16.md).
+
 ## Supported formats
 
-**363 distinct file extensions are explicitly listed below.** This counts extensions, not programming languages or fully implemented format specifications. Aliases such as `.md` and `.markdown` count separately; multiple uses of one extension count once.
+**371 distinct file extensions are explicitly listed below.** This counts extensions, not programming languages or fully implemented format specifications. Aliases such as `.md` and `.markdown` count separately; multiple uses of one extension count once.
 
 | Category | Count | Extensions | Preview |
 | --- | ---: | --- | --- |
@@ -77,12 +102,12 @@ Baseline: [Apple’s Quick Look guide](https://support.apple.com/en-sg/guide/mac
 | Documents & typesetting | 8 | `.md`, `.markdown`, `.mdx`, `.tex`, `.typ`, `.ipynb`, `.epub`, `.pdf` | Markdown math and diagrams, saved notebook outputs, books and PDFs; basic LaTeX and single-file Typst |
 | Structured data | 12 | `.json`, `.jsonc`, `.json5`, `.jsonl`, `.ndjson`, `.csv`, `.tsv`, `.sqlite`, `.sqlite3`, `.db`, `.har`, `.sarif` | Trees, records, tables or request logs; no user SQL or network requests |
 | Diagrams & canvases | 12 | `.mmd`, `.mermaid`, `.excalidraw`, `.drawio`, `.canvas`, `.svg`, `.xmind`, `.mm`, `.opml`, `.mmap`, `.dot`, `.gv` | Visual and source views; supported subsets for complex formats |
-| Skills, MCP & archives | 10 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix` | Manifests, file trees and on-demand member previews; no installation or execution |
+| Skills, MCP & archives | 18 | `.skill`, `.mcpb`, `.dxt`, `.n8np`, `.zip`, `.tar`, `.tgz`, `.gz`, `.whl`, `.vsix`, `.7z`, `.rar`, `.xz`, `.bz2`, `.zst`, `.txz`, `.tbz2`, `.tzst` | Manifests, file trees and on-demand member previews; no installation or execution |
 | 3D models | 4 | `.obj`, `.stl`, `.gltf`, `.glb` | Static meshes and scenes, rotation and zoom |
 | Scientific data & model catalogs | 10 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent`, `.arrow`, `.ipc`, `.feather`, `.onnx` | Schemas, array samples or tensor metadata; no model inference |
 | Subtitles, diffs & provenance | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` | Subtitle tables, changed lines, metadata source and unverified C2PA structure |
 | Additional developer sources, configs & compiled files | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | More source grammars; binary plist, Java class and AppleScript inspection; see scope below |
-| **Total** | **363** | **Distinct extensions** | **Source, structure or rendered views, depending on format** |
+| **Total** | **371** | **Distinct extensions** | **Source, structure or rendered views, depending on format** |
 
 XMind: modern `content.json` and legacy `content.xml` workbooks, sheet selection, topic trees and relationships. Automatic tree layout; original styles, images, attachments, notes and summaries are not rendered. Up to 50 sheets and 2,000 topics in total, subject to archive safety limits.
 
@@ -145,6 +170,8 @@ MindManager `.mmap`: reads ZIP `Document.xml` topic trees and floating topics wi
 
 Developer batch 1 adds Python/Cython, CUDA/C++, build/template/rule source extensions; Arrow IPC/Feather V2 tables (LZ4/ZSTD), wheel/VSIX metadata and trees, JUnit/SARIF/OpenAPI summaries, ONNX graph/tensor catalogs, and offline DOT diagrams. See [scope and Finder verification](docs/evidence/developer-batch1-2026-10-15/README.md).
 
-Batch 1 direct Finder verification passed 40/42 valid samples; `.dot` and `.cursorrules` require the folder-preview route on the tested Mac. This is not a claim that all 363 extensions pass direct Finder dispatch.
+Batch 1 direct Finder verification passed 40/42 valid samples; `.dot` and `.cursorrules` require the folder-preview route on the tested Mac. This is not a claim that all 371 extensions pass direct Finder dispatch.
 
 The current development build expands the Syntax Highlight suffix inventory. See [scope and verification](docs/syntax-highlight-parity.md) for compiled formats and Finder routing. The public preview.2 package predates these additions.
+
+Archive expansion: 7z, RAR4/RAR5, `.tar.xz` / `.txz`, `.tar.bz2` / `.tbz2`, and `.tar.zst` / `.tzst`, with memory-only browsing of supported members. Counted `.xz` / `.bz2` / `.zst` suffixes represent compressed TAR, not arbitrary single-file streams. Encrypted, multi-volume and over-budget archives are unsupported. See [archive scope and verification](docs/archive-formats.md).

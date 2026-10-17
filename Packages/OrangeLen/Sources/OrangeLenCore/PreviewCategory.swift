@@ -8,7 +8,7 @@ public enum PreviewCategory: String, CaseIterable, Sendable {
         if ["dot", "gv", "mmap", "mm", "opml", "xmind", "drawio", "canvas", "obj", "stl", "gltf", "glb", "png", "webp", "mmd", "mermaid", "svg", "excalidraw"].contains(ext) { return .drawings }
         if ["mdx", "tex", "typ", "md", "markdown", "ipynb"].contains(ext) { return .markdown }
         if ext == "epub" { return .books }
-        if ["whl", "vsix", "npz", "n8np", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(ext) { return .archives }
+        if ["7z", "rar", "xz", "bz2", "zst", "txz", "tbz2", "tzst", "whl", "vsix", "npz", "n8np", "mcpb", "dxt", "skill", "zip", "tar", "tgz", "gz"].contains(ext) { return .archives }
         if ["arrow", "ipc", "feather", "onnx", "sarif", "xmp", "c2pa", "parquet", "npy", "safetensors", "gguf", "latent", "srt", "vtt", "json", "jsonc", "json5", "jsonl", "ndjson", "csv", "tsv", "xml", "yaml", "yml", "toml", "sqlite", "sqlite3", "db", "har", "diff", "patch"].contains(ext) { return .data }
         return .code
     }

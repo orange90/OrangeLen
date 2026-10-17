@@ -53,6 +53,11 @@ public struct ArchiveDocument: Sendable {
     public static func parse(_ data: Data, name: String, limits: PreviewLimits = .init(), cancellation: Cancellation = .init()) throws -> Self {
         guard data.count <= limits.containerBytes else { throw PreviewError.limit(L10n.text("容器输入 64 MiB")) }
         let lower = name.lowercased()
+        if [".7z", ".rar", ".tar.xz", ".txz", ".tar.bz2", ".tbz2", ".tar.zst", ".tzst"].contains(where: lower.hasSuffix) {
+            let decoded = try NativeArchiveDecoder.parse(data, name: name, limits: limits, token: cancellation)
+            try validateIdentities(decoded.entries)
+            return .init(entries: decoded.entries, kind: decoded.kind, bytes: decoded.bytes, limits: limits)
+        }
         if lower.hasSuffix(".whl") || lower.hasSuffix(".vsix") || lower.hasSuffix(".mmap") || lower.hasSuffix(".xmind") || lower.hasSuffix(".npz") || lower.hasSuffix(".mcpb") || lower.hasSuffix(".dxt") || lower.hasSuffix(".skill") || lower.hasSuffix(".zip") || lower.hasSuffix(".epub") { return try zip(data, limits: limits, token: cancellation) }
         let tarData = (lower.hasSuffix(".gz") || lower.hasSuffix(".tgz") || (lower.hasSuffix(".n8np") && data.starts(with:[31,139]))) ? try inflate(data, window: 31, maximum: limits.archiveExpandedBytes, token: cancellation) : data
         guard tarData.count <= max(1,data.count) * limits.archiveRatio else { throw PreviewError.limit(L10n.text("gzip 展开比例")) }

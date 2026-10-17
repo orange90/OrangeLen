@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-17",
+  "method": "CUA Finder selection + Space + clicking an archive member; not qlmanage preview generation",
+  "cases": [
+    {
+      "format": "7z",
+      "fixture": "sample.7z",
+      "sha256": "2c61d1cbea05f9f8d80ced406bdfff082f0d7fc71941a8bfd3e11b98e44df136",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "Archive preview 中文🍊",
+      "ax": "7z-ax.txt",
+      "screenshot": "7z.png"
+    },
+    {
+      "format": "RAR4",
+      "fixture": "sample-rar4.rar",
+      "sha256": "d421b86f6290aefad61b2a36737253b2b30fe27c156bd95abfc230f24fe0307e",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "test text document",
+      "ax": "rar4-ax.txt",
+      "screenshot": "rar4.png"
+    },
+    {
+      "format": "RAR5",
+      "fixture": "sample-rar5.rar",
+      "sha256": "35d75e315d164d2e329afc28f7d844f013271b4fcffd4ddd78efcdd114a383a7",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "hello libarchive test suite!",
+      "ax": "rar5-ax.txt",
+      "screenshot": "rar5.png"
+    },
+    {
+      "format": "TAR/XZ",
+      "fixture": "sample.tar.xz",
+      "sha256": "1551f31708692f82cab19de28e0b251cb388f73f1d83368af9eb9339aec59b4d",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "Archive preview 中文🍊",
+      "ax": "tar-xz-ax.txt",
+      "screenshot": "tar-xz.png"
+    },
+    {
+      "format": "TAR/BZIP2",
+      "fixture": "sample.tar.bz2",
+      "sha256": "8ba22f0151d904602473e4f36db1bc5f0774a1a04841c7bbfb6fab1592772177",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "Archive preview 中文🍊",
+      "ax": "tar-bz2-ax.txt",
+      "screenshot": "tar-bz2.png"
+    },
+    {
+      "format": "TAR/Zstandard",
+      "fixture": "sample.tar.zst",
+      "sha256": "32c3e18e802eeaf0c2365e2a88d8b48a453841d01ba76423bf042817e207cd62",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "Archive preview 中文🍊",
+      "ax": "tar-zst-ax.txt",
+      "screenshot": "tar-zst.png"
+    },
+    {
+      "format": "Compressed RAR4",
+      "fixture": "compressed-rar4.rar",
+      "sha256": "7d32e2ef511d0ade372345440838165df828197eff4d7816880dafde690cce03",
+      "finder_space": true,
+      "orangeLen_tree": true,
+      "member_body_verified": "test text document",
+      "ax": "rar4-compressed-ax.txt",
+      "screenshot": "rar4-compressed.png"
+    }
+  ],
+  "restricted_link_verified": true,
+  "resolved_issue": "Zstandard initially received native file-info fallback. Added public.data conformance to custom UTI, rebuilt, signed, installed and verified Finder member body.",
+  "scope": "Synthetic 7z/TAR samples and official libarchive RAR reference fixtures. Not all compression methods, solid variants, encodings, large or encrypted archives."
+}

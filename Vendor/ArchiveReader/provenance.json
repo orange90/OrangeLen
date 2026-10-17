@@ -1,0 +1,11 @@
+{
+  "libarchive_headers": "https://github.com/libarchive/libarchive/tree/v3.7.4/libarchive",
+  "libarchive_runtime": "macOS system libarchive; filters restricted to built-in none/xz/bzip2; no program fallback enabled",
+  "zstd": "https://github.com/facebook/zstd/releases/tag/v1.5.7",
+  "zstd_generation": "build/single_file_libs/create_single_file_decoder.sh, plus bounded OrangeLen wrapper; 64 MiB maximum window",
+  "sha256": {
+    "Packages/OrangeLen/Sources/CArchive/archive.h": "618cd16c8fa40ddabc44f2d3eb3a35860f6b1d1d856b62a7f4f035b7a319bdab",
+    "Packages/OrangeLen/Sources/CArchive/archive_entry.h": "3695eb0193741b16b99e06cf1fc5e6db427b68a9475696ef746c024ae0a6ae72",
+    "Packages/OrangeLen/Sources/CZstd/zstddeclib.c": "c4a0ba1def3d025e037324d7899c70c429837328fa75f4e788492bc409487c1e"
+  }
+}

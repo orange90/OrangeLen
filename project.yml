@@ -145,6 +145,11 @@ targets:
             UTTypeConformsTo: [public.source-code]
             UTTypeTagSpecification:
               public.filename-extension: ["a3x", "acf", "ada", "ado", "adoc", "applescript", "as", "asciidoc", "ascr", "asd", "asm", "asp", "aspx", "astro", "atl", "au3", "avt", "awk", "bas", "bashrc", "basic", "bat", "bb", "bezel", "bib", "c++", "cc", "cfc", "cfg", "cfm", "cfml", "cjs", "class", "cli", "clj", "cljc", "cljs", "cls", "cmake", "cmd", "code-workspace", "coffee", "command", "con", "conf", "cp", "cr", "cs", "csh", "cson", "csproj", "cts", "ctx", "cu", "cuh", "cxx", "d", "dart", "designspace", "do", "dockerfile", "dtd", "dylan", "e", "ecf", "ecore", "edn", "el", "entitlements", "env", "erb", "erl", "ex", "exs", "f", "f90", "f95", "fea", "fish", "flow", "fnc", "for", "fs", "fsx", "fxml", "gd", "gemfile", "gleam", "go", "gpx", "gql", "gradle", "graphql", "groovy", "haml", "hcl", "heex", "hh", "hri", "hrl", "hs", "http", "hxx", "ily", "iml", "inf", "inl", "ino", "ipp", "iss", "j2", "jav", "javascript", "jinja", "jinja2", "jl", "jnlp", "jscript", "jsm", "jsp", "kml", "kmt", "ksh", "kt", "kts", "latex", "lay", "ld", "less", "lhs", "lisp", "loctable", "lsp", "ltx", "lua", "ly", "m", "mak", "map", "mdc", "mf", "mill", "mjs", "mk", "ml", "mll", "mly", "mobileconfig", "mpd", "mq4", "mq5", "ms", "mts", "mvw", "mxml", "ncx", "nf", "nim", "nix", "opf", "otio", "pas", "pck", "pddl", "pde", "ph3", "ph4", "php", "php3", "php4", "phtml", "pkb", "pks", "pl", "plist", "pm", "podspec", "pom", "prc", "pro", "properties", "proto", "ps1", "psd1", "psjs", "psm1", "pub", "pxd", "pxi", "py3", "pyi", "pyx", "r", "raml", "rbw", "rdf", "readme", "rest", "rex", "rexx", "rhtml", "rjs", "rkt", "robot", "rs", "rst", "s79", "sage", "sas", "sass", "sbt", "sc", "scad", "scala", "sch", "scl", "scm", "scpt", "scss", "sequ", "sld", "sls", "smali", "sol", "sps", "sqs", "ss", "storybard", "storyboard", "strings", "stringsdict", "sty", "svelte", "t", "tab", "tcl", "tcsh", "texi", "text", "tf", "tfstate", "tfvars", "tmpl", "tpb", "tpl", "tpp", "tps", "trg", "ttx", "twig", "unity", "v", "vb", "vbs", "vhd", "vhdl", "vim", "vl", "vue", "vw", "wflow", "xaml", "xcscheme", "xib", "xm", "xq", "xquery", "xsd", "xu", "xul", "zig", "zon", "zshrc"]
+          - UTTypeIdentifier: local.orangelen.extended-archive
+            UTTypeDescription: Compressed Archive
+            UTTypeConformsTo: [public.data, public.archive]
+            UTTypeTagSpecification:
+              public.filename-extension: [7z, rar, xz, bz2, zst, txz, tbz2, tzst]
           - UTTypeIdentifier: local.orangelen.developer-package
             UTTypeDescription: Developer Package
             UTTypeConformsTo: [public.zip-archive]
@@ -421,7 +426,7 @@ targets:
           NSExtensionPointIdentifier: com.apple.quicklook.preview
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).PreviewViewController
           NSExtensionAttributes:
-            QLSupportedContentTypes: [local.orangelen.developer-package, org.gnu.gnu-zip-tar-archive, local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
+            QLSupportedContentTypes: [org.7-zip.7-zip-archive, com.rarlab.rar-archive, org.tukaani.xz-archive, public.bzip2-archive, local.orangelen.extended-archive, local.orangelen.developer-package, org.gnu.gnu-zip-tar-archive, local.orangelen.numpy-archive, local.orangelen.n8n-package, local.orangelen.mcpb, com.openai.codex.skill, local.orangelen.skill, public.zip-archive, public.tar-archive, org.gnu.gnu-zip-archive]
             QLSupportsSearchableItems: false
             QLIsDataBasedPreview: false
     settings:
@@ -593,6 +598,7 @@ targets:
       - Packages/OrangeLen/Tests/OrangeLenUITests/SystemPreviewTests.swift
       - Packages/OrangeLen/Tests/OrangeLenUITests/AdvancedPreviewTests.swift
       - Packages/OrangeLen/Tests/OrangeLenUITests/SourceParityPreviewTests.swift
+      - Packages/OrangeLen/Tests/OrangeLenUITests/ExtendedArchivePreviewTests.swift
       - path: Tests/Fixtures/advanced-outputs
         type: folder
         buildPhase: resources

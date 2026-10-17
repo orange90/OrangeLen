@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-17",
+  "requested_archive_families": [
+    "7z",
+    "RAR",
+    "tar.xz",
+    "tar.bz2",
+    "tar.zst"
+  ],
+  "finder_files_verified": 7,
+  "finder_member_bodies_verified": 7,
+  "restricted_link_ui_verified": true,
+  "RAR_versions": [
+    "RAR4",
+    "RAR5"
+  ],
+  "SwiftPM": {
+    "tests": 313,
+    "skipped": 4,
+    "failures": 0
+  },
+  "native_archive_test": {
+    "tests": 1,
+    "archive_cases": 7,
+    "failures": 0
+  },
+  "fixed": "Add public.data conformance to the extended archive UTI so zst/tzst resolve as data files and reach Finder extension.",
+  "installed": true,
+  "public_release_updated": false,
+  "suffix_count": 371,
+  "limitations": "Small representative fixtures; no encrypted/multi-volume support or exhaustive compression-variant verification."
+}

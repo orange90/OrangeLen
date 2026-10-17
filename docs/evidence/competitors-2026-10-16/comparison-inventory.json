@@ -1,8 +1,8 @@
 {
   "queried_on": "2026-10-16",
   "OrangeLen": {
-    "count": 363,
-    "basis": "docs/format-count.md, current local development build; 49 exact names and 7 prefixes excluded; expanded on 2026-10-16, see source-parity-2026-10-16/coverage.json",
+    "count": 371,
+    "basis": "Current development tree: previous 363 plus eight archive final-suffix/alias entries; xz/bz2/zst represent compressed TAR, not arbitrary streams. 49 exact names and seven prefixes excluded.",
     "pricing": "Current version free, explicitly confirmed by user in this chat on 2026-10-16"
   },
   "QLMarkdown": {
@@ -338,5 +338,16 @@
     "QLMarkdown": "f2faedbf1dfbd5958191ab8442adb8c458c0fda0",
     "SourceCodeSyntaxHighlight": "a8eb669d49c2d1a019b5dc7d11d1adb8ee34a162",
     "glance": "d17d47a30608ff5327bd7af3978f0b18128c9a55"
+  },
+  "last_review": {
+    "date": "2026-10-17",
+    "OrangeLen_commit": "2a25e1f",
+    "latest_release_versions": {
+      "sbarex/QLMarkdown": "1.5.7",
+      "sbarex/SourceCodeSyntaxHighlight": "2.1.32",
+      "chamburr/glance": "v1.6.0"
+    },
+    "method": "GitHub releases/latest API and official README review; no new competitor installations or Finder tests; historical download ranking not refreshed",
+    "archive_expansion": "7z/RAR/compressed TAR added after baseline commit; see archive-expansion-2026-10-17/finder-results.json"
   }
 }

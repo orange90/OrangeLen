@@ -38,6 +38,11 @@
 			<false/>
 			<key>QLSupportedContentTypes</key>
 			<array>
+				<string>org.7-zip.7-zip-archive</string>
+				<string>com.rarlab.rar-archive</string>
+				<string>org.tukaani.xz-archive</string>
+				<string>public.bzip2-archive</string>
+				<string>local.orangelen.extended-archive</string>
 				<string>local.orangelen.developer-package</string>
 				<string>org.gnu.gnu-zip-tar-archive</string>
 				<string>local.orangelen.numpy-archive</string>

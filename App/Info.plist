@@ -591,6 +591,31 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.data</string>
+				<string>public.archive</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Compressed Archive</string>
+			<key>UTTypeIdentifier</key>
+			<string>local.orangelen.extended-archive</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>7z</string>
+					<string>rar</string>
+					<string>xz</string>
+					<string>bz2</string>
+					<string>zst</string>
+					<string>txz</string>
+					<string>tbz2</string>
+					<string>tzst</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
 				<string>public.zip-archive</string>
 			</array>
 			<key>UTTypeDescription</key>

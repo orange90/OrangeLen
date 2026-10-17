@@ -9,7 +9,7 @@ public enum ReadableFormat {
         return names.contains(name) || [".bashrc", ".bash_profile", ".profile", ".zshrc", ".zprofile", ".zshenv"].contains(name) || [".env.","dockerfile.","containerfile.","makefile.",".prettierrc.",".eslintrc.",".babelrc."].contains(where: { name.hasPrefix($0) })
     }
     public static func isCollection(_ url: URL) -> Bool {
-        ["openapi.json","swagger.json"].contains(url.lastPathComponent.lowercased()) || ["whl","vsix","npz","n8np","har","epub","jsonl","ndjson","diff","patch","sqlite","sqlite3","db","mcpb", "dxt", "skill", "zip","tar","tgz","gz","ipynb"].contains(url.pathExtension.lowercased())
+        ["openapi.json","swagger.json"].contains(url.lastPathComponent.lowercased()) || ["7z","rar","xz","bz2","zst","txz","tbz2","tzst","whl","vsix","npz","n8np","har","epub","jsonl","ndjson","diff","patch","sqlite","sqlite3","db","mcpb", "dxt", "skill", "zip","tar","tgz","gz","ipynb"].contains(url.pathExtension.lowercased())
     }
     public static func isText(_ url: URL) -> Bool {
         if isNamedText(url) { return true }

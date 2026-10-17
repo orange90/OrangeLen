@@ -1,0 +1,5 @@
+sample.7z	org.7-zip.7-zip-archive	public.archive,public.data,public.item
+sample-rar4.rar	local.orangelen.extended-archive	public.archive,public.data,public.item
+sample.tar.xz	org.tukaani.xz-archive	public.archive,public.data,public.item
+sample.tar.bz2	public.bzip2-archive	public.archive,public.data,public.item
+sample.tar.zst	local.orangelen.extended-archive	public.archive,public.data,public.item

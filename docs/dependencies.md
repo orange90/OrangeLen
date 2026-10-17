@@ -16,3 +16,9 @@ Exact revisions are pinned in `Packages/OrangeLen/Package.resolved` and the Xcod
 Renderer dependency integrity is pinned in `Vendor/MarkdownRenderer/package-lock.json`; normal Xcode builds use the committed resource. `npm audit` on 2026-10-03 reported 0 known vulnerabilities (not a guarantee of absence), see `Vendor/MarkdownRenderer/audit.json`.
 
 M2 also links SDK-provided SQLite (public domain) and zlib (zlib license), via CSQLite/CZlib system modules. No new copied third-party parser or command-line extraction tool is bundled. PDFKit and Foundation XMLParser are Apple system frameworks. SQLite/zlib versions follow the installed OS, rather than a separately bundled pinned version.
+
+Archive expansion: the macOS system libarchive supplies 7z/RAR/RAR5/XZ/BZIP2 readers;
+only public headers are vendored. Zstandard 1.5.7 is compiled from its single-file
+decoder (BSD license option). See [provenance](../Vendor/ArchiveReader/provenance.json)
+and [libarchive notice](licenses/Libarchive-LICENSE.txt). No external archive tools
+are required at runtime.
