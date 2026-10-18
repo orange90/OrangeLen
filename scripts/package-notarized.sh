@@ -6,7 +6,9 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 : "${ORANGELEN_SIGN_IDENTITY:?Developer ID identity required}"
 : "${ORANGELEN_TEAM_ID:?Team ID required}"
 input="${ORANGELEN_INPUT_APP:-build/ReleasePreview/Build/Products/Release/OrangeLen.app}"
-stage="$PWD/build/notarized-preview.2"
+version="${ORANGELEN_RELEASE_VERSION:-0.1.0-preview.3}"
+[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+-preview\.[0-9]+$ ]] || { echo 'Invalid preview version.' >&2; exit 2; }
+stage="$PWD/build/notarized-$version"
 app="$stage/OrangeLen.app"
 if [[ "${1:-prepare}" == prepare ]]; then
   test ! -e "$app" || { echo 'Signed staging app already exists; inspect before replacing.' >&2; exit 1; }
@@ -56,8 +58,8 @@ elif [[ "${1:-}" == notarize || "${1:-}" == resume ]]; then
   mkdir -p "$stage/image"
   ditto "$app" "$stage/image/OrangeLen.app"
   ln -s /Applications "$stage/image/Applications"
-  cat > "$stage/image/INSTALL.txt" <<'EOF'
-OrangeLen 0.1.0 preview.2 · macOS 14+
+  cat > "$stage/image/INSTALL.txt" <<EOF
+OrangeLen $version · macOS 14+
 Drag OrangeLen.app to Applications, then open it.
 Developer ID signed and Apple notarized.
 Enable OrangeLen Quick Look extensions in System Settings if needed.
@@ -68,7 +70,7 @@ Universal binary: Apple Silicon and Intel. Intel hardware not fully verified.
 如 Finder 预览未生效，请检查系统设置中的 Quick Look 扩展。
 包含 Apple Silicon 与 Intel 架构；Intel 实机尚未完整验收。
 EOF
-  dmg="$stage/OrangeLen-0.1.0-preview.2-universal.dmg"
+  dmg="$stage/OrangeLen-$version-universal.dmg"
   hdiutil create -volname 'OrangeLen' -srcfolder "$stage/image" -format UDZO "$dmg"
   codesign --sign "$ORANGELEN_SIGN_IDENTITY" --timestamp "$dmg"
   xcrun notarytool submit "$dmg" --keychain-profile "$ORANGELEN_NOTARY_PROFILE" --wait --output-format json > "$stage/dmg-notary.json"
@@ -79,7 +81,7 @@ EOF
   hdiutil verify "$dmg"
   mkdir -p build/artifacts
   ditto "$dmg" "build/artifacts/$(basename "$dmg")"
-  (cd build/artifacts && shasum -a 256 "$(basename "$dmg")" > OrangeLen-0.1.0-preview.2-SHA256SUMS.txt)
+  (cd build/artifacts && shasum -a 256 "$(basename "$dmg")" > "OrangeLen-$version-SHA256SUMS.txt")
 else
   echo 'Usage: scripts/package-notarized.sh prepare|notarize|resume' >&2; exit 2
 fi
