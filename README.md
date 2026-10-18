@@ -6,7 +6,7 @@
 
 中文 · [English](README.en.md)
 
-[下载安装](#下载) · [快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开源竞品压缩包格式现在支持哪几种？为什么没有打败竞品？对比](#与开源竞品对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
+[下载安装](#下载) · [快速开始](#快速开始) · [支持格式](#支持格式) · [与系统预览对比](#与系统预览对比) · [开源竞品对比](#与开源竞品对比) · [开发文档](docs/development-guide.md) · [更新日志](CHANGELOG.md)
 
 ## 产品演示（中文配音与字幕）
 
@@ -18,11 +18,11 @@ https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
 
 ## 下载
 
-**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.2/OrangeLen-0.1.0-preview.2-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.2)
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.3/OrangeLen-0.1.0-preview.3-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.3)
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
-当前为 **0.1.0-preview.2 预览版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。签名开发者显示为 **Zhe Huang**。Intel 实机与其他 macOS 版本尚未完整验收。
+当前为 **0.1.0-preview.3 预览版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。签名开发者显示为 **Zhe Huang**。Intel 实机与其他 macOS 版本尚未完整验收。
 
 ## AI 写完了，先看一眼
 
@@ -70,9 +70,9 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 **一个窗口，连续检查项目目录、代码和 AI 产物。** 本轮补充 215 个源码及配置后缀，并扩展 7z、RAR 与压缩 TAR 支持，阅读器共覆盖 **371 个明确后缀、49 个特殊文件名**；除了阅读源码，还能查看工作流连线、包内成员、数据样本和模型目录。
 
-以下对比沿用此前选定的三款开源工具，核对日期为 **2026-10-17**。OrangeLen 列对应当前仓库开发版（含本轮归档扩展）；**上方公开下载的 preview.2 尚未包含本轮新增功能**。
+以下对比沿用此前选定的三款开源工具，核对日期为 **2026-10-17**。OrangeLen 列对应已发布的 **0.1.0-preview.3**，上方安装包包含本表列出的新增功能。
 
-| 对比项 | OrangeLen（当前开发版） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（chamburr 开源版） |
+| 对比项 | OrangeLen（preview.3） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（chamburr 开源版） |
 | --- | --- | --- | --- | --- |
 | 价格 | **免费（当前版本）** | 免费 | 免费 | 免费 |
 | 明确后缀 / 公开支持规模¹ | **371 个，另有 49 个特殊文件名** | 9+ 个文档后缀 | 200+ 个源码及配置后缀 | 未公布固定总数 |
@@ -120,7 +120,7 @@ XMind：支持新版 `content.json` 和旧版 `content.xml` 工作簿，多画�
 
 统计依据见 [可复核的格式清单](docs/format-count.md)。专用预览的限制见 [高级 AI 产出](docs/advanced-output-previews.md)；实际 Finder 验证见 [支持矩阵](docs/format-support.md)。
 
-本地开发修复已完成 106 种后缀的单文件与文件夹阅读器共 212 次检查，均通过；106 项 Finder Space 现场操作已完成：启用可恢复的 STL/OBJ 原生预览设置后，104 项主样例显示内容，`.ts` / `.mts` 仍仅基本信息。STL 的单三角、二进制及 ASCII 模型已通过。详见 [最新原生修复与限制](docs/evidence/single-file-dispatch-2026-10-13/README.md)及 [106 项完整实测清单](docs/evidence/single-file-audit-2026-10-13/README.md)。上述下载的 `preview.1` 不含本次未发布修复。
+2026-10-13 的基线修复完成了当时 106 种后缀的单文件与文件夹阅读器共 212 次检查，均通过；106 项 Finder Space 现场操作已完成：启用可恢复的 STL/OBJ 原生预览设置后，104 项主样例显示内容，`.ts` / `.mts` 仍仅基本信息。STL 的单三角、二进制及 ASCII 模型已通过。详见 [最新原生修复与限制](docs/evidence/single-file-dispatch-2026-10-13/README.md)及 [106 项完整实测清单](docs/evidence/single-file-audit-2026-10-13/README.md)。preview.3 已包含这些代码修复；上述历史实测不代表全部 371 个后缀均已直接 Finder 通过。
 
 ## 快速开始
 
@@ -172,6 +172,6 @@ MindManager `.mmap`：读取 ZIP 中的 `Document.xml`，预览主题层级和�
 
 本批直接 Finder 验收 40/42 个正常样例通过；`.dot` 与 `.cursorrules` 需通过文件夹预览入口读取。此结果不等于全部 371 个后缀均直接 Finder 通过。
 
-本次开发版补齐 Syntax Highlight 格式清单；编译文件及 Finder 入口边界见 [支持与验证说明](docs/syntax-highlight-parity.md)。公开 preview.2 尚未包含这些新增功能。
+preview.3 已包含源码后缀扩展；编译文件及 Finder 入口边界见 [支持与验证说明](docs/syntax-highlight-parity.md)。
 
 新增归档：7z、RAR4/RAR5、`.tar.xz` / `.txz`、`.tar.bz2` / `.tbz2`、`.tar.zst` / `.tzst`，目录与受支持成员均在内存中只读浏览。`.xz` / `.bz2` / `.zst` 在上述计数中代表压缩 TAR 的末级后缀，不承诺任意单文件压缩流。加密、分卷及超出预算的归档不支持。详见 [归档范围与验收](docs/archive-formats.md)。

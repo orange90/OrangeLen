@@ -18,11 +18,11 @@ https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
 
 ## Download
 
-**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.2/OrangeLen-0.1.0-preview.2-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.2)
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.3/OrangeLen-0.1.0-preview.3-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.3)
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
-This **0.1.0-preview.2 preview is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. The signing developer is **Zhe Huang**. Intel hardware and other macOS versions have not been fully verified.
+This **0.1.0-preview.3 preview is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. The signing developer is **Zhe Huang**. Intel hardware and other macOS versions have not been fully verified.
 
 ## AI finished writing. Take a look.
 
@@ -70,9 +70,9 @@ Baseline: [Apple’s Quick Look guide](https://support.apple.com/en-sg/guide/mac
 
 **Browse a project, its code and its AI outputs in one window.** This iteration adds 215 source/configuration suffixes plus eight archive suffixes/aliases, bringing reader coverage to **371 explicit suffixes and 49 special filenames**, alongside workflow graphs, package members, data samples and model inventories.
 
-Reviewed **2026-10-17**, using the same three open-source alternatives as our previous comparison. OrangeLen refers to the current development tree, including the archive expansion; **the public preview.2 download above does not yet include this iteration**.
+Reviewed **2026-10-17**, using the same three open-source alternatives as our previous comparison. OrangeLen refers to the published **0.1.0-preview.3** build; the download above includes the additions shown here.
 
-| Capability | OrangeLen (development) | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0 (chamburr fork) |
+| Capability | OrangeLen (preview.3) | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0 (chamburr fork) |
 | --- | --- | --- | --- | --- |
 | Price | **Free (current version)** | Free | Free | Free |
 | Explicit suffixes / documented scope¹ | **371 + 49 special filenames** | 9+ document suffixes | 200+ source/configuration suffixes | No fixed total published |
@@ -120,7 +120,7 @@ Also supported:
 
 See the [auditable inventory](docs/format-count.md), [advanced preview limits](docs/advanced-output-previews.md) and [Finder verification matrix](docs/format-support.md). Detailed engineering documents currently include Chinese content.
 
-The local development fix passes 212 reader checks across all 106 extensions in standalone and folder paths. All 106 Finder Space checks have been performed: 104 primary samples show content with the reversible STL/OBJ native preview setting enabled; `.ts` / `.mts` still show basic information only. Minimal, binary and ASCII STL samples pass. See the [latest native fix and limits](docs/evidence/single-file-dispatch-2026-10-13/README.md) and [full per-format audit](docs/evidence/single-file-audit-2026-10-13/README.md). The downloadable `preview.1` does not include this unpublished fix.
+The 2026-10-13 baseline fix passed 212 reader checks across its then-current 106 extensions in standalone and folder paths. All 106 Finder Space checks have been performed: 104 primary samples show content with the reversible STL/OBJ native preview setting enabled; `.ts` / `.mts` still show basic information only. Minimal, binary and ASCII STL samples pass. See the [latest native fix and limits](docs/evidence/single-file-dispatch-2026-10-13/README.md) and [full per-format audit](docs/evidence/single-file-audit-2026-10-13/README.md). Preview.3 includes these code fixes; this historical audit does not establish direct Finder success for all 371 suffixes.
 
 ## Quick start
 
@@ -172,6 +172,6 @@ Developer batch 1 adds Python/Cython, CUDA/C++, build/template/rule source exten
 
 Batch 1 direct Finder verification passed 40/42 valid samples; `.dot` and `.cursorrules` require the folder-preview route on the tested Mac. This is not a claim that all 371 extensions pass direct Finder dispatch.
 
-The current development build expands the Syntax Highlight suffix inventory. See [scope and verification](docs/syntax-highlight-parity.md) for compiled formats and Finder routing. The public preview.2 package predates these additions.
+Preview.3 includes the source suffix expansion. See [scope and verification](docs/syntax-highlight-parity.md) for compiled formats and Finder routing.
 
 Archive expansion: 7z, RAR4/RAR5, `.tar.xz` / `.txz`, `.tar.bz2` / `.tbz2`, and `.tar.zst` / `.tzst`, with memory-only browsing of supported members. Counted `.xz` / `.bz2` / `.zst` suffixes represent compressed TAR, not arbitrary single-file streams. Encrypted, multi-volume and over-budget archives are unsupported. See [archive scope and verification](docs/archive-formats.md).

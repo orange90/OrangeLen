@@ -2,8 +2,10 @@
   "queried_on": "2026-10-16",
   "OrangeLen": {
     "count": 371,
-    "basis": "Current development tree: previous 363 plus eight archive final-suffix/alias entries; xz/bz2/zst represent compressed TAR, not arbitrary streams. 49 exact names and seven prefixes excluded.",
-    "pricing": "Current version free, explicitly confirmed by user in this chat on 2026-10-16"
+    "basis": "Published preview.3: previous 363 plus eight archive final-suffix/alias entries; xz/bz2/zst represent compressed TAR, not arbitrary streams. 49 exact names and seven prefixes excluded.",
+    "pricing": "Current version free, explicitly confirmed by user in this chat on 2026-10-16",
+    "published_release": "v0.1.0-preview.3",
+    "published_on": "2026-10-18"
   },
   "QLMarkdown": {
     "version": "1.5.7",

@@ -1,5 +1,11 @@
 # 变更日志
 
+## 2026-10-18 — 0.1.0-preview.3 公证通用预览版
+
+- 发布包含 371 个明确后缀/49 个特殊文件名的新安装包：源码扩展、AI/开发产物专用视图、导图及 7z/RAR/压缩 TAR 归档。
+- Apple Silicon/Intel 通用构建；应用与 DMG 均使用 Developer ID 签名、通过 Apple 公证并附票据，Gatekeeper 验证通过。
+- 更新中英文 README 下载链接与版本边界。Intel 实机及其他 macOS 版本尚未完整验收，既有入口/格式限制保留。
+
 ## 2026-10-17 — 归档格式扩展（开发版）
 
 - 新增 7z、RAR4/RAR5、tar.xz/tar.bz2/tar.zst 及 txz/tbz2/tzst 归档目录与成员只读预览；系统 libarchive 与内置 Zstandard 解码器，无命令行运行时依赖。

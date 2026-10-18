@@ -1,6 +1,6 @@
 # Archive support
 
-Development tree, 2026-10-17. The public preview.2 installer predates this change.
+Implemented and tested on 2026-10-17; included in public preview.3, released 2026-10-18.
 
 | Input | Reading path |
 | --- | --- |

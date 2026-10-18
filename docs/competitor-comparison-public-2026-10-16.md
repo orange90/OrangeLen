@@ -2,13 +2,13 @@
 
 核对日期：2026-10-17。竞品选择范围是本聊天此前统计的开源项目，按 2026-10-16 统计的公开历史 Release 安装包累计下载次数选择前三：QLMarkdown、Syntax Highlight、chamburr/glance；不宣称这是所有 macOS Quick Look 产品的市场前三。
 
-OrangeLen 价格由用户于本聊天明确确认为“当前版本免费”。下面能力对应当前本地开发版；公开下载包仍为旧版本，正式对外投放前需使安装包与此表一致。
+OrangeLen 价格由用户于本聊天明确确认为“当前版本免费”。下面能力已包含于 2026-10-18 发布的 [0.1.0-preview.3 安装包](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.3)。竞品能力复核日期仍为 2026-10-17。
 
 ## 可用于宣传的对比表
 
 **OrangeLen：从代码文档到 AI 工作成果，预览文件的内容与结构。**
 
-| 对比项 | OrangeLen（当前开发版） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（开源版） |
+| 对比项 | OrangeLen（preview.3） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（开源版） |
 |---|---|---|---|---|
 | 价格 | **免费（当前版本）** | 免费 | 免费 | 免费 |
 | 主要覆盖 | **代码、文档、AI 包、工作流、模型、数据、图表与 3D** | Markdown 及相关文档 | 源码与配置文件高亮 | 源码、Markdown、归档、Notebook、TSV |
@@ -43,15 +43,15 @@ OrangeLen 价格由用户于本聊天明确确认为“当前版本免费”。�
 
 与 QLMarkdown 相比，差异在代码、包、模型、数据和整个项目的连续检查；与 Syntax Highlight 相比，差异在将部分文件呈现为工作流图、表格和目录，而它仍有外部 LSP、VCS、预处理器及主题定制的专长；与 Glance 相比，差异在 AI/开发格式的专门解析以及项目目录浏览，它仍有 Notebook 渲染及通用归档的既有实践。不能把“覆盖了某后缀”写成“高亮质量与完整解析能力全面领先”。
 
-建议对外主张：**“代码看得全，AI 产物看得懂，同一项目连续看。”** 免费为共同价格条件，不作为独占卖点。基础本地提交为 `2a25e1f`，本次归档扩展的范围与实测见 [归档验收报告](evidence/archive-expansion-2026-10-17/README.md)；公开 preview.2 仍未包含这一轮功能，README 表格已明确标注开发版边界。
+建议对外主张：**“代码看得全，AI 产物看得懂，同一项目连续看。”** 免费为共同价格条件，不作为独占卖点。基础本地提交为 `2a25e1f`，本次归档扩展的范围与实测见 [归档验收报告](evidence/archive-expansion-2026-10-17/README.md)；这些功能现已包含于公开 preview.3。
 
 本次重新查询 GitHub Releases/latest：QLMarkdown 1.5.7、Syntax Highlight 2.1.32、chamburr/glance v1.6.0，与此前锁定版本一致。本次是公开资料与仓库证据复核，未重新安装竞品或重跑 Finder 实测。此前“下载前三”只用于延续选样，不代表本次重新统计下载排名。
 
 ## 推荐宣传文字
 
-> OrangeLen 是一款面向开发者与 AI 创作者的免费 macOS 预览工具。当前开发版覆盖 371 个明确文件后缀和 49 个特殊文件名，可预览 Skill/MCP 包、AI 工作流、模型元数据与数据集样本，也能阅读代码、Markdown、Notebook、图表和受支持的 3D 文件。
+> OrangeLen 是一款面向开发者与 AI 创作者的免费 macOS 预览工具。preview.3 覆盖 371 个明确文件后缀和 49 个特殊文件名，可预览 Skill/MCP 包、AI 工作流、模型元数据与数据集样本，也能阅读代码、Markdown、Notebook、图表和受支持的 3D 文件。
 
-公开安装包更新后，可把上文“当前开发版”改成对应正式版本名称。现有下载包不含全部 371 后缀的新功能，当前不能省略版本边界。
+公开 preview.3 已包含上述新增功能；371 是明确后缀/别名数量，仍不代表所有真实文件或全部 Finder 入口均通过。
 
 ## 如何突出优势
 

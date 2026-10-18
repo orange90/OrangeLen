@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-18",
+  "version": "0.1.0-preview.3",
+  "bundle_version": "3",
+  "source_commit": "21ff51c448911f7e99b24cb42b7b7095d1cd27aa",
+  "tag": "v0.1.0-preview.3",
+  "minimum_macos": "14.0",
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "signing": "Developer ID Application: Zhe Huang (C7J9CK5X87)",
+  "app_notarization": {
+    "status": "Accepted",
+    "message": "Processing complete",
+    "id": "16b708d5-dfd4-4c7a-9e48-1eb4aea57c45"
+  },
+  "dmg_notarization": {
+    "id": "c6d937ef-d3d7-4408-9ace-c814959814b2",
+    "status": "Accepted",
+    "message": "Processing complete"
+  },
+  "stapler_validated": [
+    "app",
+    "dmg"
+  ],
+  "gatekeeper_accepted": [
+    "app",
+    "dmg"
+  ],
+  "artifact": "OrangeLen-0.1.0-preview.3-universal.dmg",
+  "bytes": 116108260,
+  "sha256": "fb9168c45fb3e5554936c90b87ebb5f7b76b179fdc9955c676ac0ed97db47d91",
+  "scope": "Intel cross-build verified; Intel hardware and other macOS versions not fully verified.",
+  "public_download_verified": {
+    "sha256_matches": true,
+    "mounted_app_strict_signature": true,
+    "app_and_dmg_tickets_valid": true,
+    "app_and_dmg_gatekeeper_accepted": true,
+    "app_and_seven_extensions_universal": true,
+    "bundle_version": "3",
+    "included_source_registry": true,
+    "included_archive_license": true
+  }
+}

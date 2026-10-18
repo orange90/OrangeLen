@@ -50,7 +50,7 @@ Update both README tables and this inventory together when format support change
 
 新增 215 个后缀，固定对照 Syntax Highlight 2.1.32 文档中的 282 个候选后缀，均有明确阅读路径；这不是 282 项 Finder 现场通过声明。`.class` 显示声明与原始字节码，编译 AppleScript 在隔离服务中取回可用源码，二进制 plist 转 XML；编译 AutoIt `.a3x` 仅显示有限十六进制字节。后缀歧义及完整验证见 [本轮支持说明](syntax-highlight-parity.md)。
 
-The 215 added suffixes cover the pinned competitor inventory together with existing readers. Compiled Java is inspected, not reconstructed into original source; compiled AutoIt has a bounded byte view only. Direct Finder dispatch remains host-dependent. The current public preview.2 package predates this development change.
+The 215 added suffixes cover the pinned competitor inventory together with existing readers. Compiled Java is inspected, not reconstructed into original source; compiled AutoIt has a bounded byte view only. Direct Finder dispatch remains host-dependent. The public preview.3 package includes these source and archive additions.
 
 ## 新增后缀的 Finder 全量验收
 
