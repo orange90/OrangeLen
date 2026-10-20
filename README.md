@@ -1,8 +1,8 @@
 # OrangeLen
 
-**按下空格，看懂整个项目与 AI 产出。**
+**按下空格预览一切**
 
-为开发者设计的 macOS 快速预览工具。**阅读器覆盖 371 种文件后缀、49 个特殊文件名、整个文件夹预览**，覆盖代码、Markdown、Skill / MCP 包、AI 工作流、数据集与 3D 模型。本轮新增的 **215 个后缀已逐项 Finder 空格实测：213 项由 OrangeLen 展示，`.text` / `.wflow` 由系统接管**，两者也可在 OrangeLen 文件夹预览中读取。详见 [215 项逐项结果](docs/evidence/source-parity-finder-2026-10-16/README.md)；既有 STL/OBJ、TS/MTS 等限制另见 [原生入口实测](docs/evidence/single-file-dispatch-2026-10-13/README.md)。
+为开发者打造的 macOS 预览工具，支持整个文件夹、代码、文档、AI 工作流、数据与 3D 模型。在 Finder 选中文件或文件夹，按下空格就能查看。
 
 中文 · [English](README.en.md)
 
@@ -12,41 +12,36 @@
 
 https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
 
-![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/evidence/folder-redesign/overview-light.png)
+![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/images/folder-overview.jpg)
 
-*真实应用截图：选中整个文件夹，从项目概览进入代码、文档和数据。*
+*Finder 空格预览实拍：目录树、文件统计与 README 概览。界面支持中英文。*
 
 ## 下载
 
-**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.3/OrangeLen-0.1.0-preview.3-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.3)
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/V1.0/OrangeLen-V1.0-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/V1.0)
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
-当前为 **0.1.0-preview.3 预览版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。签名开发者显示为 **Zhe Huang**。Intel 实机与其他 macOS 版本尚未完整验收。
+当前为 **V1.0 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
 
-## AI 写完了，先看一眼
+## AI 时代最适合的预览工具
 
-一轮 AI 协作，可能留下一个项目目录、一份研究报告、一个 Skill、一张工作流图和一个 3D 模型。OrangeLen 把检查这些文件的过程放进熟悉的空格预览：展开目录，点选文件，看效果，再切回源码核对。
+AI 写的代码、报告、网页和工作流，保存下来就能看。打开项目文件夹，在同一个窗口里读 README、翻代码、看页面效果，也能直接检查 Skill 和 MCP 包里的内容。
 
-| 亮点 | 你可以直接做什么 |
+| 想看什么 | OrangeLen 怎么展示 |
 | --- | --- |
-| **整个文件夹都能预览** | 展开多层目录，在同一窗口连续查看文件；看 README、项目声明线索、文件数量与大小 |
-| **代码与文档一起读** | 源码高亮、行号、查找与复制；Markdown 大纲、公式、Mermaid 图；JSON 可展开结构 |
-| **Skill / MCP 包先看后用** | `.skill` 优先打开 `SKILL.md`；MCPB / DXT 查看清单与成员；无需解压到磁盘 |
-| **AI 工作流直接看连线** | 查看 ComfyUI、n8n、Dify 的节点图，以及 Draw.io、Excalidraw 和 JSON Canvas |
-| **组件与模型看得到效果** | JSX / TSX / MDX 单文件组件快照；OBJ / STL / GLTF / GLB 静态 3D 预览、旋转与缩放 |
-| **生成结果连同参数一起看** | 图片里已有的 prompt、seed、模型参数；Parquet / NumPy 样本；Safetensors / GGUF 张量目录 |
+| **整个项目** | 展开目录树，连续查看文件；概览里看 README、文件类型分布、数量和大小 |
+| **代码与配置** | 离线语法高亮、行号、查找和原文复制；识别 Dockerfile、锁文件与常见配置文件名 |
+| **报告与笔记** | Markdown 大纲、公式、Mermaid、脚注和代码块复制；Notebook 连续阅读已有输出；EPUB 按章节阅读 |
+| **网页与组件** | HTML 页面效果与源码切换；JSX / TSX / MDX 单文件组件快照；基础 LaTeX 与单文件 Typst 排版预览 |
+| **Skill 与开发包** | `.skill` 默认打开 `SKILL.md`；MCPB / DXT、wheel / VSIX 查看清单和包内文件，无需解压到磁盘 |
+| **工作流与图表** | ComfyUI / n8n / Dify 节点与连线；Draw.io、Excalidraw、JSON Canvas、Mermaid 和 DOT 图形 |
+| **思维导图** | XMind 多画布、FreeMind / Freeplane、OPML 与 MindManager 主题树，使用自动布局 |
+| **数据与模型文件** | JSON 结构树、CSV / TSV 筛选排序、SQLite 分页；Parquet / Arrow / Feather V2 表格、NumPy 样本及 Safetensors / GGUF / ONNX 元数据 |
+| **测试与接口报告** | JUnit 测试结果、SARIF 安全报告、OpenAPI 接口摘要；HAR 请求记录、字幕时间表与 diff 增删行 |
+| **3D 与压缩包** | OBJ / STL / GLTF / GLB 静态模型旋转缩放；ZIP / 7z / RAR / TAR 及压缩 TAR 目录和成员浏览 |
 
-原生 macOS 界面，支持简体中文与英文、浅色与深色外观。专用渲染引擎随应用打包；HTML 允许脚本与网络资源，Markdown 远程图片点击后加载。
-
-<details>
-<summary>查看 AI 图片参数预览截图</summary>
-
-![Finder 文件夹内查看图片与已有的 AI 生成参数](docs/evidence/ai-outputs/finder-image-parameters.png)
-
-*合成测试图片，用于展示参数面板。只读取文件已有的参数，不推断缺失信息。*
-
-</details>
+支持简体中文与英文、浅色与深色外观。文件保存后自动刷新，可选记住阅读位置；大文本分页加载。图片、PDF、音视频和 Office 内容也能在文件夹里查看，具体范围见[系统格式说明](docs/system-preview.md)。
 
 ## 与系统预览对比
 
@@ -60,7 +55,7 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 | JSON / CSV / SQLite | 文本或系统自带展示，缺少统一的结构浏览 | JSON 树与路径复制、表格筛选排序、SQLite 分页 |
 | Skill / MCP / 工作流 | 没有这些格式的专用包清单或工作流节点视图 | 包内文件浏览、清单概览、ComfyUI / n8n / Dify 连线图 |
 | React 组件 | 没有 JSX / TSX 组件效果运行环境 | 单文件离线效果快照与源码切换 |
-| AI 图片与模型文件 | 图片画面或文件基本信息，取决于类型 | 已保存的生成参数、模型张量目录与数组样本 |
+| 科学数据与模型文件 | 文件基本信息或系统支持的内容，取决于类型 | 数据样本表格、数组形状、模型张量目录与 ONNX 图节点元数据 |
 | 3D 文件 | 支持部分系统 3D 类型，依格式而定 | 明确提供 OBJ / STL / GLTF / GLB 静态场景预览 |
 | PDF、照片、音视频 | 成熟的原生预览，部分格式可标记或剪辑 | 在文件夹阅读流程中整合原生查看；不以编辑为目标 |
 
@@ -68,11 +63,11 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 ## 与开源竞品对比
 
-**一个窗口，连续检查项目目录、代码和 AI 产物。** 本轮补充 215 个源码及配置后缀，并扩展 7z、RAR 与压缩 TAR 支持，阅读器共覆盖 **371 个明确后缀、49 个特殊文件名**；除了阅读源码，还能查看工作流连线、包内成员、数据样本和模型目录。
+阅读器覆盖 **371 个明确后缀、49 个特殊文件名**，支持目录浏览、源码阅读、工作流连线、包内文件、数据样本和模型目录。
 
-以下对比沿用此前选定的三款开源工具，核对日期为 **2026-10-17**。OrangeLen 列对应已发布的 **0.1.0-preview.3**，上方安装包包含本表列出的新增功能。
+以下对比的核对日期为 **2026-10-17**。OrangeLen 列对应已发布的 **V1.0**，上方安装包包含本表列出的功能。
 
-| 对比项 | OrangeLen（preview.3） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（chamburr 开源版） |
+| 对比项 | OrangeLen（V1.0） | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0（chamburr 开源版） |
 | --- | --- | --- | --- | --- |
 | 价格 | **免费（当前版本）** | 免费 | 免费 | 免费 |
 | 明确后缀 / 公开支持规模¹ | **371 个，另有 49 个特殊文件名** | 9+ 个文档后缀 | 200+ 个源码及配置后缀 | 未公布固定总数 |
@@ -106,10 +101,8 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 | 3D 模型 | 4 | `.obj`, `.stl`, `.gltf`, `.glb` | 静态网格与场景、旋转、缩放 |
 | 科学数据与模型目录 | 10 | `.parquet`, `.npy`, `.npz`, `.safetensors`, `.gguf`, `.latent`, `.arrow`, `.ipc`, `.feather`, `.onnx` | 列信息、数组样本或张量元数据；不运行模型 |
 | 字幕、差异与来源结构 | 6 | `.srt`, `.vtt`, `.diff`, `.patch`, `.xmp`, `.c2pa` | 字幕表、增删行、参数源码、未验证的 C2PA 结构 |
-| 新增开发者源码、配置与编译文件 | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | 更多语言源码；二进制 plist、Java class 与 AppleScript 内容检查，详见支持边界 |
+| 更多开发者源码、配置与编译文件 | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | 更多语言源码；二进制 plist、Java class 与 AppleScript 内容检查，详见支持边界 |
 | **合计** | **371** | **不重复后缀** | **源码、结构或效果预览，依格式而定** |
-
-XMind：支持新版 `content.json` 和旧版 `content.xml` 工作簿，多画布切换、主题树与关系连线。使用自动树状布局，不还原原始样式、图片、附件、备注及概要。最多 50 张画布、总计 2000 个主题，沿用归档读取安全预算。
 
 此外还支持：
 
@@ -120,7 +113,21 @@ XMind：支持新版 `content.json` 和旧版 `content.xml` 工作簿，多画�
 
 统计依据见 [可复核的格式清单](docs/format-count.md)。专用预览的限制见 [高级 AI 产出](docs/advanced-output-previews.md)；实际 Finder 验证见 [支持矩阵](docs/format-support.md)。
 
-2026-10-13 的基线修复完成了当时 106 种后缀的单文件与文件夹阅读器共 212 次检查，均通过；106 项 Finder Space 现场操作已完成：启用可恢复的 STL/OBJ 原生预览设置后，104 项主样例显示内容，`.ts` / `.mts` 仍仅基本信息。STL 的单三角、二进制及 ASCII 模型已通过。详见 [最新原生修复与限制](docs/evidence/single-file-dispatch-2026-10-13/README.md)及 [106 项完整实测清单](docs/evidence/single-file-audit-2026-10-13/README.md)。preview.3 已包含这些代码修复；上述历史实测不代表全部 371 个后缀均已直接 Finder 通过。
+### 专用格式与 Finder 入口
+
+- **思维导图**：XMind 支持新版 JSON / 旧版 XML 工作簿与多画布；FreeMind / OPML 支持主题层级；MindManager 读取 `.mmap` 中的主题和浮动主题。均使用自动布局，不完整还原原始样式、备注和附件。普通 Objective-C++ `.mm` 仍按源码显示，旧版 `.mmp` 不支持。详见 [XMind](docs/evidence/xmind-2026-10-15/README.md)、[FreeMind / OPML](docs/evidence/outline-2026-10-15/README.md) 与 [MindManager](docs/evidence/mmap-2026-10-15/README.md)。
+- **归档**：支持 7z、RAR4/RAR5、ZIP、TAR，以及 gzip / XZ / BZIP2 / Zstandard 压缩 TAR。`.xz` / `.bz2` / `.zst` 在清单中代表压缩 TAR，不代表任意单文件压缩流；加密、分卷及超预算归档不支持。详见[归档范围](docs/archive-formats.md)。
+- **编译文件**：支持二进制 plist 内容、Java class 声明与字节码、编译 AppleScript 源码读取；编译 AutoIt 仅显示有限字节。详见[源码及编译格式范围](docs/syntax-highlight-parity.md)。
+- **Finder 分派**：由 macOS 决定调用哪个预览器。已记录的 `.ts` / `.mts`、`.dot`、`.cursorrules` 等单文件入口仍有限制；`.text` / `.wflow` 保留系统预览，可通过 OrangeLen 文件夹入口读取。支持清单不代表全部后缀都由 OrangeLen 直接接管。
+
+<details>
+<summary>查看按批次记录的 Finder 验证结果</summary>
+
+新增 215 个源码及配置后缀已逐项实测，213 项由 OrangeLen 展示，`.text` / `.wflow` 由系统接管；两者的系统正文与 OrangeLen 文件夹入口均有验证。详见 [215 项结果](docs/evidence/source-parity-finder-2026-10-16/README.md)。
+
+既有 106 后缀基线在启用可恢复的 STL/OBJ 原生设置后，104 项主样例可见内容，`.ts` / `.mts` 仍仅基本信息；开发者首批样例直接 Finder 通过 40/42 项，`.dot` / `.cursorrules` 使用文件夹入口。各批次口径不同，不合并为全量通过率。详见[原生入口记录](docs/evidence/single-file-dispatch-2026-10-13/README.md)、[开发者格式验收](docs/evidence/developer-batch1-2026-10-15/README.md)与[归档验收](docs/archive-formats.md)。
+
+</details>
 
 ## 快速开始
 
@@ -146,7 +153,7 @@ open ~/Applications/OrangeLen.app
 - 组件效果是单文件快照；3D 为静态场景；Office 内容预览不保证版式保真。
 - 预览不安装 Skill / MCP 包、不执行工作流、不启动 Notebook kernel、不加载模型推理。React 组件在隔离、禁网的 WebKit 环境中求值。
 - 文件只读；大型文本按页加载，结构、归档和媒体各有资源上限。C2PA 只展示结构，不验证真实性。
-- Markdown 本地图片及关联资源需要目录权限；HTML 预览允许脚本和网络资源。
+- Markdown 本地图片及关联资源需要目录权限，远程图片点击后加载；HTML 预览允许脚本和网络资源。
 
 详见 [当前入口与边界](docs/current-contract.md) 和 [安全与资源限制](docs/development-guide.md#safety-and-limits)。
 
@@ -163,15 +170,3 @@ open ~/Applications/OrangeLen.app
 欢迎提供可复现的问题、合成示例和改进建议。报告问题时请注明 macOS、芯片架构、文件后缀，以及使用的是 Finder 单文件、文件夹还是主应用入口；请勿附带私人文件或签名材料。
 
 [架构](docs/architecture.md) · [构建、签名与卸载](docs/development-guide.md) · [验证记录](docs/verification.md) · [依赖与许可证说明](docs/dependencies.md) · [更新日志](CHANGELOG.md)
-
-FreeMind / Freeplane `.mm` 与 OPML `.opml`：自动树状布局、主题层级、FreeMind 关系箭头与富文本标题的纯文本内容；可切换源码。原始样式、备注、附件不还原，链接不访问。最多 2000 个主题，输入限 1 MiB。普通 Objective-C++ `.mm` 源码仍显示为文本。
-
-MindManager `.mmap`：读取 ZIP 中的 `Document.xml`，预览主题层级和浮动主题。使用自动树状布局，不还原原始样式、关系线、备注、任务字段和附件；加密文件及旧版 `.mmp` 不支持。最多 2000 个主题，沿用 ZIP/XML 安全预算。
-
-开发者格式首批：新增 Python/Cython、CUDA/C++、构建脚本、模板及规则文件后缀；Arrow IPC/Feather V2 表格（含 LZ4/ZSTD）、wheel/VSIX 目录与元信息、JUnit/SARIF/OpenAPI 摘要、ONNX 图节点与张量目录、离线 DOT 图形。具体范围与 Finder 记录见 [首批验收](docs/evidence/developer-batch1-2026-10-15/README.md)。
-
-本批直接 Finder 验收 40/42 个正常样例通过；`.dot` 与 `.cursorrules` 需通过文件夹预览入口读取。此结果不等于全部 371 个后缀均直接 Finder 通过。
-
-preview.3 已包含源码后缀扩展；编译文件及 Finder 入口边界见 [支持与验证说明](docs/syntax-highlight-parity.md)。
-
-新增归档：7z、RAR4/RAR5、`.tar.xz` / `.txz`、`.tar.bz2` / `.tbz2`、`.tar.zst` / `.tzst`，目录与受支持成员均在内存中只读浏览。`.xz` / `.bz2` / `.zst` 在上述计数中代表压缩 TAR 的末级后缀，不承诺任意单文件压缩流。加密、分卷及超出预算的归档不支持。详见 [归档范围与验收](docs/archive-formats.md)。

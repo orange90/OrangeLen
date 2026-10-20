@@ -1,8 +1,8 @@
 # OrangeLen
 
-**Press Space. Explore your project and AI-generated files.**
+**Press Space to preview everything.**
 
-A macOS Quick Look tool for developers. **The reader covers 371 file extensions, 49 special filenames, and whole-folder previews**, spanning source code, Markdown, Skill / MCP packages, AI workflows, datasets and 3D models. All **215 newly added suffixes have been tested through Finder Space: 213 show OrangeLen content, while `.text` / `.wflow` use system providers**; both are also readable inside OrangeLen folder previews. See the [per-suffix audit](docs/evidence/source-parity-finder-2026-10-16/README.md) and the [earlier native-format limitations](docs/evidence/single-file-dispatch-2026-10-13/README.md).
+A macOS preview tool for developers, covering whole folders, code, documents, AI workflows, data and 3D models. Select a file or folder in Finder and press Space to take a look.
 
 [中文](README.md) · English
 
@@ -12,41 +12,36 @@ A macOS Quick Look tool for developers. **The reader covers 371 file extensions,
 
 https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
 
-![OrangeLen folder overview with a file tree, project statistics and README preview](docs/evidence/folder-redesign/overview-light.png)
+![OrangeLen folder overview with a file tree, project statistics and README preview](docs/images/folder-overview.jpg)
 
-*Actual app screenshot: open a whole folder, then explore its code, documents and data. The interface also supports English.*
+*Captured in Finder Quick Look: a file tree, folder statistics and README overview. English and Simplified Chinese interfaces are supported.*
 
 ## Download
 
-**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/v0.1.0-preview.3/OrangeLen-0.1.0-preview.3-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/v0.1.0-preview.3)
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/V1.0/OrangeLen-V1.0-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/V1.0)
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
-This **0.1.0-preview.3 preview is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. The signing developer is **Zhe Huang**. Intel hardware and other macOS versions have not been fully verified.
+This **V1.0 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
 
-## AI finished writing. Take a look.
+## The best preview tool for the AI era
 
-One AI session can leave behind a project directory, a research report, a Skill, a workflow and a 3D model. OrangeLen brings inspection into the familiar Space-bar preview: expand a folder, select a file, inspect the result and switch back to source.
+Preview the code, reports, web pages and workflows your AI creates as soon as they are saved. Open a project folder to read its README, browse code, see rendered pages and inspect Skill or MCP package contents in one window.
 
-| Highlight | What you can do |
+| What you want to see | How OrangeLen shows it |
 | --- | --- |
-| **Preview entire folders** | Expand nested directories and read files in one window; inspect README content, project declarations, file counts and sizes |
-| **Read code and documents together** | Syntax highlighting, line numbers, search and copy; Markdown outlines, math and Mermaid; expandable JSON |
-| **Inspect Skill / MCP packages** | Open `SKILL.md` first in `.skill` packages; browse MCPB / DXT manifests and members without extracting to disk |
-| **See AI workflow connections** | Inspect ComfyUI, n8n and Dify node graphs, plus Draw.io, Excalidraw and JSON Canvas |
-| **Preview components and 3D models** | Offline single-file JSX / TSX / MDX snapshots; static OBJ / STL / GLTF / GLB scenes with rotation and zoom |
-| **Read the context behind generated files** | Existing image prompts, seeds and model parameters; Parquet / NumPy samples; Safetensors / GGUF tensor catalogs |
+| **Whole projects** | Expand the file tree and browse files in one window; see README content, file-type distribution, counts and sizes in the overview |
+| **Code and configuration** | Offline highlighting, line numbers, search and exact source copy; recognition of Dockerfiles, lockfiles and common configuration filenames |
+| **Reports and notes** | Markdown outlines, math, Mermaid, footnotes and code-block copying; continuous notebook reading with saved outputs; EPUB chapters |
+| **Web pages and components** | HTML page and source switching; single-file JSX / TSX / MDX component snapshots; basic LaTeX and single-file Typst typesetting previews |
+| **Skills and developer packages** | `.skill` opens `SKILL.md` first; inspect MCPB / DXT, wheel / VSIX manifests and members without extracting to disk |
+| **Workflows and diagrams** | ComfyUI / n8n / Dify nodes and connections; Draw.io, Excalidraw, JSON Canvas, Mermaid and DOT diagrams |
+| **Mind maps** | XMind sheets, FreeMind / Freeplane, OPML and MindManager topic trees with automatic layout |
+| **Data and model files** | JSON trees, CSV / TSV filtering and sorting, SQLite pages; Parquet / Arrow / Feather V2 tables, NumPy samples and Safetensors / GGUF / ONNX metadata |
+| **Test and API reports** | JUnit results, SARIF security reports and OpenAPI summaries; HAR request records, subtitle tables and diff views |
+| **3D and archives** | Rotate and zoom static OBJ / STL / GLTF / GLB models; browse ZIP / 7z / RAR / TAR and compressed TAR members |
 
-Native macOS UI with English, Simplified Chinese, light and dark appearances. Specialist rendering engines are bundled. HTML allows scripts and network resources; remote Markdown images load after a click.
-
-<details>
-<summary>See the AI image metadata preview</summary>
-
-![AI image and stored generation parameters inside a Finder folder preview](docs/evidence/ai-outputs/finder-image-parameters.png)
-
-*Synthetic fixture demonstrating the metadata panel. Only existing parameters are shown; missing information is not inferred.*
-
-</details>
+English and Simplified Chinese, with light and dark appearances. Files refresh after saving, reading positions can be remembered, and large text loads in pages. Images, PDFs, media and Office content also open within folder previews; see the [system-format scope](docs/system-preview.md).
 
 ## Compared with system Quick Look
 
@@ -60,7 +55,7 @@ OrangeLen extends Quick Look for development and AI file inspection. macOS alrea
 | JSON / CSV / SQLite | Text or built-in views, without a unified structured browser | JSON trees and path copying, table filtering/sorting and SQLite pagination |
 | Skills, MCP and workflows | No dedicated manifests or workflow node views for these formats | Package browsing, manifest summaries and ComfyUI / n8n / Dify graphs |
 | React components | No JSX / TSX component execution environment | Offline single-file component snapshots and source views |
-| AI images and model files | Image or basic file information, depending on type | Saved generation parameters, tensor catalogs and array samples |
+| Scientific data and model files | Basic information or system-supported content, depending on type | Data tables, array shapes, tensor catalogs and ONNX graph-node metadata |
 | 3D files | Some system 3D types; support depends on format | Explicit static OBJ / STL / GLTF / GLB previews |
 | PDFs, photos and media | Mature native previews; markup or trimming for some types | Native viewing integrated into folder browsing; focused on inspection |
 
@@ -68,11 +63,11 @@ Baseline: [Apple’s Quick Look guide](https://support.apple.com/en-sg/guide/mac
 
 ## Compared with open-source alternatives
 
-**Browse a project, its code and its AI outputs in one window.** This iteration adds 215 source/configuration suffixes plus eight archive suffixes/aliases, bringing reader coverage to **371 explicit suffixes and 49 special filenames**, alongside workflow graphs, package members, data samples and model inventories.
+The reader covers **371 explicit extensions and 49 special filenames**, with folder browsing, source views, workflow graphs, package members, data samples and model catalogs.
 
-Reviewed **2026-10-17**, using the same three open-source alternatives as our previous comparison. OrangeLen refers to the published **0.1.0-preview.3** build; the download above includes the additions shown here.
+Reviewed **2026-10-17**. OrangeLen refers to the published **V1.0** build; the download above includes the features shown here.
 
-| Capability | OrangeLen (preview.3) | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0 (chamburr fork) |
+| Capability | OrangeLen (V1.0) | QLMarkdown 1.5.7 | Syntax Highlight 2.1.32 | Glance 1.6.0 (chamburr fork) |
 | --- | --- | --- | --- | --- |
 | Price | **Free (current version)** | Free | Free | Free |
 | Explicit suffixes / documented scope¹ | **371 + 49 special filenames** | 9+ document suffixes | 200+ source/configuration suffixes | No fixed total published |
@@ -109,8 +104,6 @@ Reviewed **2026-10-17**, using the same three open-source alternatives as our pr
 | Additional developer sources, configs & compiled files | 215 | `.a3x`, `.acf`, `.ada`, `.ado`, `.applescript`, `.as`, `.ascr`, `.asd`, `.asm`, `.asp`, `.aspx`, `.atl`, `.au3`, `.avt`, `.awk`, `.bas`, `.bashrc`, `.basic`, `.bat`, `.bb`, `.bezel`, `.bib`, `.c++`, `.cfc`, `.cfg`, `.cfm`, `.cfml`, `.class`, `.cli`, `.clj`, `.cljc`, `.cljs`, `.cls`, `.cmd`, `.code-workspace`, `.coffee`, `.command`, `.con`, `.cp`, `.cr`, `.csh`, `.cson`, `.csproj`, `.ctx`, `.d`, `.designspace`, `.do`, `.dockerfile`, `.dtd`, `.dylan`, `.e`, `.ecf`, `.ecore`, `.edn`, `.el`, `.entitlements`, `.env`, `.erb`, `.erl`, `.ex`, `.exs`, `.f`, `.f90`, `.f95`, `.fea`, `.fish`, `.flow`, `.fnc`, `.for`, `.fs`, `.fsx`, `.fxml`, `.gd`, `.gemfile`, `.gleam`, `.gpx`, `.haml`, `.heex`, `.hri`, `.hrl`, `.hs`, `.ily`, `.iml`, `.inf`, `.ino`, `.iss`, `.jav`, `.javascript`, `.jl`, `.jnlp`, `.jscript`, `.jsm`, `.jsp`, `.kml`, `.kmt`, `.ksh`, `.latex`, `.lay`, `.ld`, `.lhs`, `.lisp`, `.loctable`, `.lsp`, `.ltx`, `.ly`, `.m`, `.mak`, `.map`, `.mf`, `.mill`, `.ml`, `.mll`, `.mly`, `.mobileconfig`, `.mpd`, `.mq4`, `.mq5`, `.ms`, `.mvw`, `.mxml`, `.ncx`, `.nf`, `.nim`, `.nix`, `.opf`, `.otio`, `.pas`, `.pck`, `.pddl`, `.pde`, `.ph3`, `.ph4`, `.php3`, `.php4`, `.phtml`, `.pkb`, `.pks`, `.pl`, `.pm`, `.podspec`, `.pom`, `.prc`, `.pro`, `.psd1`, `.psjs`, `.psm1`, `.pub`, `.py3`, `.raml`, `.rbw`, `.rdf`, `.readme`, `.rex`, `.rexx`, `.rhtml`, `.rjs`, `.rkt`, `.robot`, `.s79`, `.sage`, `.sas`, `.sbt`, `.sc`, `.scad`, `.sch`, `.scl`, `.scm`, `.scpt`, `.sequ`, `.sld`, `.sls`, `.smali`, `.sol`, `.sps`, `.sqs`, `.ss`, `.storybard`, `.storyboard`, `.strings`, `.stringsdict`, `.sty`, `.t`, `.tab`, `.tcl`, `.tcsh`, `.texi`, `.text`, `.tfstate`, `.tpb`, `.tps`, `.trg`, `.ttx`, `.twig`, `.unity`, `.v`, `.vb`, `.vbs`, `.vhd`, `.vhdl`, `.vim`, `.vl`, `.vw`, `.wflow`, `.xaml`, `.xcscheme`, `.xib`, `.xm`, `.xq`, `.xquery`, `.xsd`, `.xu`, `.xul`, `.zig`, `.zon`, `.zshrc` | More source grammars; binary plist, Java class and AppleScript inspection; see scope below |
 | **Total** | **371** | **Distinct extensions** | **Source, structure or rendered views, depending on format** |
 
-XMind: modern `content.json` and legacy `content.xml` workbooks, sheet selection, topic trees and relationships. Automatic tree layout; original styles, images, attachments, notes and summaries are not rendered. Up to 50 sheets and 2,000 topics in total, subject to archive safety limits.
-
 Also supported:
 
 - **49 special filenames and 7 prefix rules**, including `Dockerfile`, `Makefile`, `.env`, `.gitignore`, `.editorconfig`, ecosystem lockfiles, `.env.local` and `Dockerfile.dev`. See the [full counting inventory](docs/format-count.md).
@@ -120,7 +113,21 @@ Also supported:
 
 See the [auditable inventory](docs/format-count.md), [advanced preview limits](docs/advanced-output-previews.md) and [Finder verification matrix](docs/format-support.md). Detailed engineering documents currently include Chinese content.
 
-The 2026-10-13 baseline fix passed 212 reader checks across its then-current 106 extensions in standalone and folder paths. All 106 Finder Space checks have been performed: 104 primary samples show content with the reversible STL/OBJ native preview setting enabled; `.ts` / `.mts` still show basic information only. Minimal, binary and ASCII STL samples pass. See the [latest native fix and limits](docs/evidence/single-file-dispatch-2026-10-13/README.md) and [full per-format audit](docs/evidence/single-file-audit-2026-10-13/README.md). Preview.3 includes these code fixes; this historical audit does not establish direct Finder success for all 371 suffixes.
+### Specialized formats and Finder routing
+
+- **Mind maps:** XMind supports modern JSON and legacy XML workbooks with sheet selection; FreeMind / OPML show topic hierarchies; MindManager reads `.mmap` topics and floating topics. All use automatic layout rather than fully reproducing original styles, notes or attachments. Objective-C++ `.mm` remains source text; legacy `.mmp` is unsupported. See [XMind](docs/evidence/xmind-2026-10-15/README.md), [FreeMind / OPML](docs/evidence/outline-2026-10-15/README.md) and [MindManager](docs/evidence/mmap-2026-10-15/README.md).
+- **Archives:** 7z, RAR4/RAR5, ZIP, TAR and gzip / XZ / BZIP2 / Zstandard TAR. Counted `.xz` / `.bz2` / `.zst` suffixes refer to compressed TAR, not arbitrary single-file streams. Encrypted, multi-volume and over-budget archives are unsupported. See [archive scope](docs/archive-formats.md).
+- **Compiled files:** binary plist content, Java class declarations and bytecode, and compiled AppleScript source inspection. Compiled AutoIt has a limited byte view. See [source and compiled-format scope](docs/syntax-highlight-parity.md).
+- **Finder routing:** macOS chooses the preview provider. Recorded individual-file limitations remain for `.ts` / `.mts`, `.dot` and `.cursorrules`. `.text` / `.wflow` keep their system previews and are readable through OrangeLen folder previews. The format inventory does not mean OrangeLen directly handles every suffix in Finder.
+
+<details>
+<summary>Finder verification results by batch</summary>
+
+All 215 added source/configuration suffixes were individually checked: OrangeLen handled 213; system providers handled `.text` / `.wflow`. Their native content and OrangeLen folder routes were also verified. See the [215-suffix audit](docs/evidence/source-parity-finder-2026-10-16/README.md).
+
+For the earlier 106-suffix baseline, 104 primary samples showed content with the reversible STL/OBJ native setting enabled; `.ts` / `.mts` showed basic information only. The first developer batch passed 40/42 direct Finder samples; `.dot` / `.cursorrules` use folder previews. These batches have different scopes and are not combined into an overall pass rate. See [native routing results](docs/evidence/single-file-dispatch-2026-10-13/README.md), [developer-format verification](docs/evidence/developer-batch1-2026-10-15/README.md) and [archive verification](docs/archive-formats.md).
+
+</details>
 
 ## Quick start
 
@@ -146,7 +153,7 @@ If OrangeLen does not appear, check Quick Look extensions in System Settings, th
 - Components are single-file snapshots; 3D scenes are static; Office content previews do not promise layout fidelity.
 - Previews do not install Skill / MCP packages, execute workflows, start notebook kernels or run model inference. React components evaluate in an isolated, network-blocked WebKit environment.
 - Files are read-only. Large text uses pages; structures, archives and media have resource limits. C2PA views show structure without verifying authenticity.
-- Local Markdown images and related resources require directory access. HTML previews allow scripts and network resources.
+- Local Markdown images and related resources require directory access; remote images load after a click. HTML previews allow scripts and network resources.
 
 See the [current entry-point contract](docs/current-contract.md) and [security and resource limits](docs/development-guide.md#safety-and-limits).
 
@@ -163,15 +170,3 @@ Source suffix fixtures are generated before testing (requires Python 3 and macOS
 Reproducible issues, synthetic fixtures and improvement suggestions are welcome. Include your macOS version, architecture, file extension and entry point: individual Finder file, folder preview or app. Do not attach private files or signing material.
 
 [Architecture](docs/architecture.md) · [Build, signing and uninstall](docs/development-guide.md) · [Verification](docs/verification.md) · [Dependencies and license notes](docs/dependencies.md) · [Changelog](CHANGELOG.md)
-
-FreeMind / Freeplane `.mm` and OPML `.opml`: automatic topic trees, FreeMind relationship arrows and plain text from rich titles, with source switching. Styles, notes and attachments are omitted; links are never fetched. Up to 2,000 topics and 1 MiB input. Objective-C++ `.mm` files remain source text.
-
-MindManager `.mmap`: reads ZIP `Document.xml` topic trees and floating topics with automatic layout. Original styles, relationships, notes, tasks and attachments are omitted; encrypted maps and legacy `.mmp` are unsupported. Up to 2,000 topics, subject to shared ZIP/XML budgets.
-
-Developer batch 1 adds Python/Cython, CUDA/C++, build/template/rule source extensions; Arrow IPC/Feather V2 tables (LZ4/ZSTD), wheel/VSIX metadata and trees, JUnit/SARIF/OpenAPI summaries, ONNX graph/tensor catalogs, and offline DOT diagrams. See [scope and Finder verification](docs/evidence/developer-batch1-2026-10-15/README.md).
-
-Batch 1 direct Finder verification passed 40/42 valid samples; `.dot` and `.cursorrules` require the folder-preview route on the tested Mac. This is not a claim that all 371 extensions pass direct Finder dispatch.
-
-Preview.3 includes the source suffix expansion. See [scope and verification](docs/syntax-highlight-parity.md) for compiled formats and Finder routing.
-
-Archive expansion: 7z, RAR4/RAR5, `.tar.xz` / `.txz`, `.tar.bz2` / `.tbz2`, and `.tar.zst` / `.tzst`, with memory-only browsing of supported members. Counted `.xz` / `.bz2` / `.zst` suffixes represent compressed TAR, not arbitrary single-file streams. Encrypted, multi-volume and over-budget archives are unsupported. See [archive scope and verification](docs/archive-formats.md).
