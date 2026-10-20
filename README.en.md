@@ -10,7 +10,7 @@ A macOS preview tool for developers, covering whole folders, code, documents, AI
 
 ## Product demo (English voiceover and subtitles)
 
-https://github.com/user-attachments/assets/e0b0a87d-d08c-440a-b9d5-6f73a69ddd96
+https://github.com/user-attachments/assets/c76cafae-20ed-4d1b-a0db-7c53cbf72375
 
 ![OrangeLen folder overview with a file tree, project statistics and README preview](docs/images/folder-overview.jpg)
 

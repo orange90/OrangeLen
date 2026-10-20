@@ -10,7 +10,7 @@
 
 ## 产品演示（中文配音与字幕）
 
-https://github.com/user-attachments/assets/3421e382-f677-4088-9150-1a6428989489
+https://github.com/user-attachments/assets/96364063-0d92-4831-8b44-2c81a1a6c8a0
 
 ![OrangeLen 文件夹概览：目录树、项目统计与 README 阅读](docs/images/folder-overview.jpg)
 
