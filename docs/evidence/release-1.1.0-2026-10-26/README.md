@@ -28,3 +28,9 @@
 本次首发供旧用户手动安装，不宣称 V1.0.2 可自行升级到 V1.1.0。
 Intel 实机、跨系统、真实 Finder 全量及扩展换版尚未完整验收，TS/MTS/DOT 限制保留。
 未替换用户日常 Applications 安装。
+
+## 公开发布后核验
+
+[V1.1.0](https://github.com/orange90/OrangeLen/releases/tag/V1.1.0) 已发布并设为 latest 稳定版。无认证重新下载 116340140 字节 DMG，SHA-256 与本地、校验文件和 GitHub 资产摘要一致；固定 latest/download/appcast.xml 返回本版，feed 与 DMG 的 Ed25519 签名通过。公开包的票据、Gatekeeper 和完整性通过；只读挂载后，应用及七扩展版本、29 个通用 Mach-O、deep/strict 签名、应用公证票据和371后缀声明再次通过。详见 [public-download.json](public-download.json)。
+
+发布后 GitHub API 首次回读遇到 TLS 超时，确认已发布后仅重试读取与下载，没有重复创建或发布。此记录为发布后的独立提交，不移动 V1.1.0 标签。

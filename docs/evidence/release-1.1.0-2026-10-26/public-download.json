@@ -1,0 +1,17 @@
+{
+  "releaseURL": "https://github.com/orange90/OrangeLen/releases/tag/V1.1.0",
+  "version": "1.1.0",
+  "dmg": "OrangeLen-1.1.0-universal.dmg",
+  "bytes": 116340140,
+  "sha256": "6a4f1e1acc5f15aa6f5f3e25873cd73cb2b81630761f325997c01f3918a38249",
+  "githubDigestMatches": true,
+  "checksumFileMatches": true,
+  "publicFeedMatchesLocal": true,
+  "publicFeedSignatureVerified": true,
+  "publicArchiveSignatureVerified": true,
+  "dmgStapleGatekeeperAndIntegrityVerified": true,
+  "publicAppVersionAndAllArchitecturesVerified": true,
+  "publicAppStapleGatekeeperAndSignatureVerified": true,
+  "publicTypeRegistrationAuditPassed": true,
+  "latestReleaseConfirmed": true
+}
