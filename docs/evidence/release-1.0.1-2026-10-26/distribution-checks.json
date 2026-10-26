@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "command": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen.app"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "xcrun",
+        "stapler",
+        "validate",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen.app"
+      ],
+      "exit_code": 0,
+      "output": "Processing: /Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen.app\nThe validate action worked!\n"
+    },
+    {
+      "command": [
+        "xcrun",
+        "stapler",
+        "validate",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg"
+      ],
+      "exit_code": 0,
+      "output": "Processing: /Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg\nThe validate action worked!\n"
+    },
+    {
+      "command": [
+        "spctl",
+        "--assess",
+        "--type",
+        "execute",
+        "--verbose=2",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen.app"
+      ],
+      "exit_code": 0,
+      "output": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen.app: accepted\nsource=Notarized Developer ID\n"
+    },
+    {
+      "command": [
+        "spctl",
+        "--assess",
+        "--type",
+        "open",
+        "--context",
+        "context:primary-signature",
+        "--verbose=2",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg"
+      ],
+      "exit_code": 0,
+      "output": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg: accepted\nsource=Notarized Developer ID\n"
+    },
+    {
+      "command": [
+        "hdiutil",
+        "verify",
+        "/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg"
+      ],
+      "exit_code": 0,
+      "output": "Checksumming Protective Master Boot Record (MBR : 0)…\nProtective Master Boot Record (MBR :: verified CRC32 $FB6761D6\nChecksumming GPT Header (Primary GPT Header : 1)…\n GPT Header (Primary GPT Header : 1): verified CRC32 $D2F09646\nChecksumming GPT Partition Data (Primary GPT Table : 2)…\nGPT Partition Data (Primary GPT Tabl: verified CRC32 $9F4065A9\nChecksumming  (Apple_Free : 3)…\n                    (Apple_Free : 3): verified CRC32 $00000000\nChecksumming disk image (Apple_APFS : 4)…\n         disk image (Apple_APFS : 4): verified CRC32 $DBE9C2E5\nChecksumming GPT Partition Data (Backup GPT Table : 5)…\nGPT Partition Data (Backup GPT Table: verified CRC32 $9F4065A9\nChecksumming GPT Header (Backup GPT Header : 6)…\n  GPT Header (Backup GPT Header : 6): verified CRC32 $A4E13140\nverified CRC32 $7A557B35\nhdiutil: verify: checksum of \"/Users/huangzhe/Documents/GitHub/OrangeLen/build/notarized-1.0.1/OrangeLen-1.0.1-universal.dmg\" is VALID\n"
+    }
+  ],
+  "universal_macho_binaries": [
+    "Contents/MacOS/OrangeLen",
+    "Contents/Frameworks/OrangeLenResources.framework/Versions/A/OrangeLenResources",
+    "Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/MacOS/OrangeLenPreviewDrawings",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/MacOS/OrangeLenPreviewData",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/MacOS/OrangeLenPreviewMarkdown",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/MacOS/OrangeLenPreviewBooks",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/MacOS/OrangeLenPreviewFolders",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+    "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker"
+  ]
+}

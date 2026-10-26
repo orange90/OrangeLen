@@ -1,0 +1,29 @@
+{
+  "version": "1.0.1",
+  "build": "4",
+  "source_commit": "a5891200c822b0e675da14ade19f6206d0c35487",
+  "minimum_macos": "14.0",
+  "architectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "app_notary": {
+    "status": "Accepted",
+    "message": "Processing complete",
+    "id": "7c56ceac-ef03-4aa8-a471-dcfb889f1c01"
+  },
+  "dmg_notary": {
+    "message": "Processing complete",
+    "id": "260137b1-b6d3-46b1-8b50-f7c0cf97841f",
+    "status": "Accepted"
+  },
+  "artifact": "OrangeLen-1.0.1-universal.dmg",
+  "bytes": 115055437,
+  "sha256": "ad416ff08257d35fa7610e40acaf114fc86642c109a8005a3a91acbfad3c39b1",
+  "tests": {
+    "executed": 314,
+    "skipped": 4,
+    "failures": 0
+  },
+  "universal_macho_count": 24
+}

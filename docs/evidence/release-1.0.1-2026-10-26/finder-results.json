@@ -1,0 +1,315 @@
+[
+  {
+    "index": 0,
+    "extension": "sql",
+    "filename": "00-sql.sql",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/00-sql.sql",
+    "sha256": "cdb59a959a197f34abc5a31ca9d51af0d8d06cebf84f2772fbb3b37bde7de4b0",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:22:31.122Z",
+    "captured_at": "2026-10-26T06:23:11.080Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-00-sql-ax.txt",
+    "screenshot": "screenshots/finder-00-sql.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      3
+    ],
+    "success_event_ids": [
+      4
+    ],
+    "display_event_ids": [
+      2
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 1,
+    "extension": "ts",
+    "filename": "01-ts.ts",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/01-ts.ts",
+    "sha256": "ded3b6efe1b7c08b554af7d3acd1fb5d5d89289908bcf433c0df31b77ca29597",
+    "expect_orangelen": false,
+    "opened_at": "2026-10-26T06:24:48.475Z",
+    "captured_at": "2026-10-26T06:24:53.763Z",
+    "orangelen": false,
+    "metadata_only": true,
+    "ax": "finder-01-ts-ax.txt",
+    "screenshot": "screenshots/finder-01-ts.png",
+    "status": "系统基本信息，限制仍存在",
+    "received_event_ids": [],
+    "success_event_ids": [],
+    "display_event_ids": [
+      27
+    ],
+    "running_binary_uuid_verified": false
+  },
+  {
+    "index": 2,
+    "extension": "mts",
+    "filename": "02-mts.mts",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/02-mts.mts",
+    "sha256": "c32df47fa0f5ee334f618d161847da86b1eec6252a78060f840bb0e00a3e3cf6",
+    "expect_orangelen": false,
+    "opened_at": "2026-10-26T06:24:53.763Z",
+    "captured_at": "2026-10-26T06:24:57.020Z",
+    "orangelen": false,
+    "metadata_only": true,
+    "ax": "finder-02-mts-ax.txt",
+    "screenshot": "screenshots/finder-02-mts.png",
+    "status": "系统基本信息，限制仍存在",
+    "received_event_ids": [],
+    "success_event_ids": [],
+    "display_event_ids": [
+      28
+    ],
+    "running_binary_uuid_verified": false
+  },
+  {
+    "index": 3,
+    "extension": "dot",
+    "filename": "03-dot.dot",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/03-dot.dot",
+    "sha256": "2a1ae5f7311f44bc85de114b5b2a5128a75603c9eae1c6116cb7ce401ecf12a9",
+    "expect_orangelen": false,
+    "opened_at": "2026-10-26T06:24:57.021Z",
+    "captured_at": "2026-10-26T06:25:09.522Z",
+    "orangelen": false,
+    "metadata_only": true,
+    "ax": "finder-03-dot-ax.txt",
+    "screenshot": "screenshots/finder-03-dot.png",
+    "status": "系统基本信息，限制仍存在",
+    "received_event_ids": [],
+    "success_event_ids": [],
+    "display_event_ids": [
+      29
+    ],
+    "running_binary_uuid_verified": false
+  },
+  {
+    "index": 4,
+    "extension": "txz",
+    "filename": "04-txz.txz",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/04-txz.txz",
+    "sha256": "1551f31708692f82cab19de28e0b251cb388f73f1d83368af9eb9339aec59b4d",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:25:09.522Z",
+    "captured_at": "2026-10-26T06:25:12.404Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-04-txz-ax.txt",
+    "screenshot": "screenshots/finder-04-txz.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      31
+    ],
+    "success_event_ids": [
+      32
+    ],
+    "display_event_ids": [
+      30
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 5,
+    "extension": "tbz2",
+    "filename": "05-tbz2.tbz2",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/05-tbz2.tbz2",
+    "sha256": "8ba22f0151d904602473e4f36db1bc5f0774a1a04841c7bbfb6fab1592772177",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:25:56.032Z",
+    "captured_at": "2026-10-26T06:25:59.267Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-05-tbz2-ax.txt",
+    "screenshot": "screenshots/finder-05-tbz2.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      34
+    ],
+    "success_event_ids": [
+      35
+    ],
+    "display_event_ids": [
+      33
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 6,
+    "extension": "zsh",
+    "filename": "06-zsh.zsh",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/06-zsh.zsh",
+    "sha256": "13ebdf5dd9bc9e9df8e6a5a65efb524e96115297d4120e3932052690709fdaa6",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:04.861Z",
+    "captured_at": "2026-10-26T06:24:07.746Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-06-zsh-ax.txt",
+    "screenshot": "screenshots/finder-06-zsh.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      7
+    ],
+    "success_event_ids": [
+      8
+    ],
+    "display_event_ids": [
+      6
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 7,
+    "extension": "bash",
+    "filename": "07-bash.bash",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/07-bash.bash",
+    "sha256": "1ef58e7f5ee948c9e8812e2bef10ec4c32dcb460810aa13d5f9bbb9657221241",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:07.747Z",
+    "captured_at": "2026-10-26T06:24:10.494Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-07-bash-ax.txt",
+    "screenshot": "screenshots/finder-07-bash.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      10
+    ],
+    "success_event_ids": [
+      11
+    ],
+    "display_event_ids": [
+      9
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 11,
+    "extension": "r",
+    "filename": "11-r.r",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/11-r.r",
+    "sha256": "73209d04b605d4a8994098e1fe009d45e3d33d71923f5ef3b6e9b86a2e91a28a",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:10.495Z",
+    "captured_at": "2026-10-26T06:24:12.941Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-11-r-ax.txt",
+    "screenshot": "screenshots/finder-11-r.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      13
+    ],
+    "success_event_ids": [
+      14
+    ],
+    "display_event_ids": [
+      12
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 12,
+    "extension": "proto",
+    "filename": "12-proto.proto",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/12-proto.proto",
+    "sha256": "ba45ac846fbab689bfa1c12d5e98abb39743425df29ab1603b35ef3bcbfecd51",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:18.851Z",
+    "captured_at": "2026-10-26T06:24:22.269Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-12-proto-ax.txt",
+    "screenshot": "screenshots/finder-12-proto.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      16
+    ],
+    "success_event_ids": [
+      17
+    ],
+    "display_event_ids": [
+      15
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 14,
+    "extension": "log",
+    "filename": "14-log.log",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/14-log.log",
+    "sha256": "583a096e7fe66b5377685b5ba18eaa5b9da9ddc9e6e58bfb69c25a79da37ef31",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:22.270Z",
+    "captured_at": "2026-10-26T06:24:25.004Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-14-log-ax.txt",
+    "screenshot": "screenshots/finder-14-log.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      19
+    ],
+    "success_event_ids": [
+      20
+    ],
+    "display_event_ids": [
+      18
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 18,
+    "extension": "diff",
+    "filename": "18-diff.diff",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/18-diff.diff",
+    "sha256": "3b312712fafd038f55feeb9ac2a6ae683c12a86d7e610ff224618c9e2fe5a42e",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:25.004Z",
+    "captured_at": "2026-10-26T06:24:27.516Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-18-diff-ax.txt",
+    "screenshot": "screenshots/finder-18-diff.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      22
+    ],
+    "success_event_ids": [
+      23
+    ],
+    "display_event_ids": [
+      21
+    ],
+    "running_binary_uuid_verified": true
+  },
+  {
+    "index": 19,
+    "extension": "patch",
+    "filename": "19-patch.patch",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/release-1.0.1/fixtures/19-patch.patch",
+    "sha256": "3b312712fafd038f55feeb9ac2a6ae683c12a86d7e610ff224618c9e2fe5a42e",
+    "expect_orangelen": true,
+    "opened_at": "2026-10-26T06:24:29.923Z",
+    "captured_at": "2026-10-26T06:24:32.905Z",
+    "orangelen": true,
+    "metadata_only": false,
+    "ax": "finder-19-patch-ax.txt",
+    "screenshot": "screenshots/finder-19-patch.png",
+    "status": "OrangeLen 1.0.1 正文/归档目录",
+    "received_event_ids": [
+      25
+    ],
+    "success_event_ids": [
+      26
+    ],
+    "display_event_ids": [
+      24
+    ],
+    "running_binary_uuid_verified": true
+  }
+]

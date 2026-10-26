@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-10-26 14:17:09.997158+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-10-26 14:22:33.277316+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-10-26 14:22:34.052735+0800",
+    "message": "prepare received extension=OrangeLen type=sql",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-10-26 14:22:34.075955+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-10-26 14:23:37.228844+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 6,
+    "timestamp": "2026-10-26 14:24:06.863914+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 7,
+    "timestamp": "2026-10-26 14:24:07.068817+0800",
+    "message": "prepare received extension=OrangeLen type=zsh",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 8,
+    "timestamp": "2026-10-26 14:24:07.104072+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 9,
+    "timestamp": "2026-10-26 14:24:09.624949+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-10-26 14:24:09.822487+0800",
+    "message": "prepare received extension=OrangeLen type=bash",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-10-26 14:24:09.828187+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 12,
+    "timestamp": "2026-10-26 14:24:12.156775+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 13,
+    "timestamp": "2026-10-26 14:24:12.320471+0800",
+    "message": "prepare received extension=OrangeLen type=r",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 14,
+    "timestamp": "2026-10-26 14:24:12.340204+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 15,
+    "timestamp": "2026-10-26 14:24:21.062629+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 16,
+    "timestamp": "2026-10-26 14:24:21.278731+0800",
+    "message": "prepare received extension=OrangeLen type=proto",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 17,
+    "timestamp": "2026-10-26 14:24:21.285120+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 18,
+    "timestamp": "2026-10-26 14:24:24.123001+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 19,
+    "timestamp": "2026-10-26 14:24:24.335337+0800",
+    "message": "prepare received extension=OrangeLen type=log",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 20,
+    "timestamp": "2026-10-26 14:24:24.342427+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 21,
+    "timestamp": "2026-10-26 14:24:26.694811+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 22,
+    "timestamp": "2026-10-26 14:24:26.852890+0800",
+    "message": "prepare received extension=OrangeLen type=diff",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 23,
+    "timestamp": "2026-10-26 14:24:27.019725+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 24,
+    "timestamp": "2026-10-26 14:24:32.115623+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 25,
+    "timestamp": "2026-10-26 14:24:32.323936+0800",
+    "message": "prepare received extension=OrangeLen type=patch",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 26,
+    "timestamp": "2026-10-26 14:24:32.462820+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "process_id": 93038,
+    "process_uuid": "A8B724A6-264A-3F59-A7A9-8FC1EA691E39"
+  },
+  {
+    "id": 27,
+    "timestamp": "2026-10-26 14:24:51.580712+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 28,
+    "timestamp": "2026-10-26 14:24:55.801079+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 29,
+    "timestamp": "2026-10-26 14:24:59.582855+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 30,
+    "timestamp": "2026-10-26 14:25:11.453196+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 31,
+    "timestamp": "2026-10-26 14:25:11.683737+0800",
+    "message": "prepare received extension=OrangeLen type=txz",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "process_id": 93427,
+    "process_uuid": "80D539D3-5DB5-3FA1-B8AA-02E66B4D07C2"
+  },
+  {
+    "id": 32,
+    "timestamp": "2026-10-26 14:25:11.885250+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "process_id": 93427,
+    "process_uuid": "80D539D3-5DB5-3FA1-B8AA-02E66B4D07C2"
+  },
+  {
+    "id": 33,
+    "timestamp": "2026-10-26 14:25:58.065722+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "process_id": 1067,
+    "process_uuid": "FA70F8E6-62B3-361E-8628-F4882492C488"
+  },
+  {
+    "id": 34,
+    "timestamp": "2026-10-26 14:25:58.284450+0800",
+    "message": "prepare received extension=OrangeLen type=tbz2",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "process_id": 93427,
+    "process_uuid": "80D539D3-5DB5-3FA1-B8AA-02E66B4D07C2"
+  },
+  {
+    "id": 35,
+    "timestamp": "2026-10-26 14:25:58.431553+0800",
+    "message": "prepare completed success=true",
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+    "process_id": 93427,
+    "process_uuid": "80D539D3-5DB5-3FA1-B8AA-02E66B4D07C2"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.1",
+  "build": "4",
+  "finder_cases": 13,
+  "orangelen_verified": 10,
+  "system_metadata_only": [
+    "ts",
+    "mts",
+    "dot"
+  ],
+  "archive_member_bodies_verified": [
+    "txz",
+    "tbz2"
+  ],
+  "received_binary_uuids_match_release": true,
+  "all_371_rerun": false,
+  "installed_signing": "Developer ID, C7J9CK5X87",
+  "local_development_container_migration": "User manually approved Code and Archives OS prompts; no TCC bypass."
+}
