@@ -40,4 +40,4 @@
 - [样例与 SHA-256](manifest.json)、[摘要](summary.json)
 - [验证生成器](build-report.py)：使用本机保留的原始日志、AX、截图和安装元数据重新生成并断言。
 
-原始日志、截图、AX、安装备份和钥匙串配置均不入 Git。公证仅使用已有配置，不保存凭据。最终公共下载验证结果另记录于 `public-download.json`。
+原始日志、截图、AX、安装备份和钥匙串配置均不入 Git。公证仅使用已有配置，不保存凭据。[公共下载验证](public-download.json)已完成：从未认证公开地址重新下载 DMG，文件大小和 SHA-256 与本机公证包一致；GitHub 发布资产的 digest 同样匹配。
