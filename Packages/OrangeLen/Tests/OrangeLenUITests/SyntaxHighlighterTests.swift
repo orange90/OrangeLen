@@ -4,6 +4,24 @@ import AppKit
 import OrangeLenCore
 
 final class SyntaxHighlighterTests: XCTestCase {
+    func testSQLPreviewHighlightsKeywordsAndPreservesChineseStrings() throws {
+        let source = "-- 中文注释\nSELECT name FROM users WHERE name = 'SELECT 测试用户' AND id = 42;\n"
+        let language = SyntaxHighlighter.language(url: URL(fileURLWithPath: "/query.sql"), source: source)
+        XCTAssertEqual(language, "sql")
+        let tokens = SyntaxHighlighter.shared.tokens(source, language: language)
+        let value = source as NSString
+        let keywords = tokens.filter { $0.scope.contains("keyword") }.map { value.substring(with: $0.range) }
+        XCTAssertTrue(keywords.contains("SELECT"))
+        XCTAssertTrue(keywords.contains("WHERE"))
+        XCTAssertEqual(keywords.filter { $0 == "SELECT" }.count, 1)
+        XCTAssertTrue(tokens.contains { $0.scope.contains("string") && value.substring(with: $0.range).contains("测试用户") })
+        XCTAssertTrue(tokens.contains { $0.scope.contains("comment") })
+        let attributed = NSMutableAttributedString(string: source)
+        SyntaxHighlighter.shared.apply(tokens, to: attributed)
+        XCTAssertEqual(attributed.string, source)
+        XCTAssertNotEqual(attributed.attribute(.foregroundColor, at: source.range(of: "SELECT")!.lowerBound.utf16Offset(in: source), effectiveRange: nil) as? NSColor,
+                          attributed.attribute(.foregroundColor, at: source.range(of: "测试用户")!.lowerBound.utf16Offset(in: source), effectiveRange: nil) as? NSColor)
+    }
     func testLanguageGrammarsDoNotColorKeywordsInsideStringsAsKeywords() throws {
         XCTAssertGreaterThan(SyntaxHighlighter.shared.languageCount, 180)
         let source = "let value = \"class return 42 中文🍊\" // func\n"

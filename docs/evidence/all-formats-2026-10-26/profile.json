@@ -1,0 +1,12 @@
+{
+  "system": "macOS 26.6.2 (25G83)",
+  "architecture": "arm64",
+  "app_path": "/Applications/OrangeLen.app",
+  "app_bundle_version": "3",
+  "app_marketing_version": "0.1.0",
+  "includes_unpublished_sql_fix": true,
+  "hydra_election": "ignore (preexisting, unchanged)",
+  "default_open_app_associations_changed": false,
+  "provider_settings_changed_during_audit": false,
+  "process_path_for_shortcuts": "/System/Applications/Shortcuts.app/Contents/PlugIns/QuickLookExtension.appex/Contents/MacOS/QuickLookExtension"
+}

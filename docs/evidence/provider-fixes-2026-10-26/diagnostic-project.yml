@@ -1,0 +1,51 @@
+name: OrangeLenProviderProbe
+options:
+  deploymentTarget:
+    macOS: '14.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: '-'
+    ENABLE_DEBUG_DYLIB: NO
+targets:
+  ProbeApp:
+    type: application
+    platform: macOS
+    sources: [App.swift]
+    info:
+      path: App-Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleDisplayName: OrangeLen Provider Probe
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: local.orangelen.provider-probe
+            UTTypeDescription: OrangeLen provider control
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [orangeprobe]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.ProviderProbe
+    dependencies:
+      - target: ProbePreview
+        embed: true
+  ProbePreview:
+    type: app-extension
+    platform: macOS
+    sources: [Provider.swift]
+    info:
+      path: Preview-Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).Provider
+          NSExtensionAttributes:
+            QLIsDataBasedPreview: true
+            QLSupportsSearchableItems: false
+            QLSupportedContentTypes: [local.orangelen.provider-probe, public.mpeg-2-transport-stream, public.avchd-mpeg-2-transport-stream, com.microsoft.word.dot, public.html, public.xhtml, public.plain-text, com.adobe.pdf, public.comma-separated-values-text, public.svg-image, com.apple.shortcuts.workflow-file]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.ProviderProbe.Preview
+        CODE_SIGN_ENTITLEMENTS: Probe.entitlements
+        SKIP_INSTALL: YES

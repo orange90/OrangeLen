@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-26",
+  "machine": "macOS 26.6.2 (25G83), arm64",
+  "native_newly_fixed": 0,
+  "native_label_cases": 11,
+  "native_label_control_passed": true,
+  "remaining_metadata_only": [
+    "ts",
+    "mts",
+    "dot"
+  ],
+  "remaining_system_content": [
+    "html",
+    "htm",
+    "xhtml",
+    "txt",
+    "pdf",
+    "csv",
+    "svg",
+    "text"
+  ],
+  "resource_type_setter_succeeded_but_actual_types_unchanged": 3,
+  "spotlight_metadata_override_failed": 3,
+  "helper_build": "success",
+  "helper_manual_rendering_verified": [
+    "ts",
+    "mts",
+    "dot"
+  ],
+  "helper_space_enabled": false,
+  "finder_space_helper_verified": false,
+  "user_choice": "Native Quick Look extensions only; helper rejected, exited and unregistered",
+  "diagnostic_native_extension_unregistered": true,
+  "production_sql_control_passed": true,
+  "installed_product_changed": false,
+  "system_preferences_changed_this_turn": false,
+  "published_release_updated": false
+}

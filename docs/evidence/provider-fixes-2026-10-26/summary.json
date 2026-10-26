@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-26",
+  "machine": "macOS 26.6.2 (25G83), arm64",
+  "cases": 21,
+  "counts": {
+    "系统仅文件信息": 3,
+    "OrangeLen": 10,
+    "系统正文": 8
+  },
+  "fixed_extensions": [
+    "txz",
+    "tbz2",
+    "zsh",
+    "bash",
+    "r",
+    "proto",
+    "log",
+    "diff",
+    "patch",
+    "wflow"
+  ],
+  "unresolved_extensions": [
+    "ts",
+    "mts",
+    "dot",
+    "html",
+    "htm",
+    "xhtml",
+    "txt",
+    "pdf",
+    "csv",
+    "svg",
+    "text"
+  ],
+  "priority_five_fixed": [
+    "txz",
+    "tbz2"
+  ],
+  "priority_five_unresolved": [
+    "ts",
+    "mts",
+    "dot"
+  ],
+  "ui_callback_mismatches": 0,
+  "data_provider_control_passed": true,
+  "data_provider_blocked_cases": 12,
+  "tests_passed": 21,
+  "published_release_updated": false,
+  "workflow_preference": "Shortcuts QuickLookExtension ignored; prior default saved by scripts/prefer-workflow-preview.sh; affects .shortcut too",
+  "system_bridge_preference": "restored to default; ignore experiment had no effect on TS/TXT/CSV",
+  "diagnostic_extension": "unregistered after testing; not part of product",
+  "whole_371_rerun": false,
+  "inferred_371_overlay": {
+    "OrangeLen": 360,
+    "system_content": 8,
+    "metadata_only": 3
+  },
+  "scope": "One bounded fixture per suffix. All 21 individually opened using Finder Space and correlated with live logs. Other 350 retain earlier audit evidence; 360 is an overlay, not a fresh whole-suite run."
+}

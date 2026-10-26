@@ -91,6 +91,10 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 **当前明确列出 371 个不重复的文件扩展名**，详见下表；这是后缀计数，不是 371 种编程语言，也不代表所有格式都完整渲染。`.md` / `.markdown` 等别名分别计数；同一个后缀的多个用途只计一次。
 
+**2026-10-26 本机开发版分派审计：**371 项逐项 Finder 检查，350 项进入 OrangeLen，16 项由系统显示内容，5 项仅显示文件信息（`.ts`、`.mts`、`.dot`、`.txz`、`.tbz2`）。350 项均核对扩展回调日志；本机原有 Hydra 3D 扩展停用设置保留。此版本包含未发布的 SQL 修复，结果不等同公开安装包或完整格式兼容性，见[逐项列表与测试配置](docs/evidence/all-formats-2026-10-26/file-list.md)。
+
+**同日后续修复：**对上述剩余 21 项再次逐项 Finder 空格与调用日志验收，10 项已进入 OrangeLen（TXZ、TBZ2、ZSH、BASH、R、PROTO、LOG、DIFF、PATCH、WFLOW），11 项仍由系统处理，其中 TS/MTS/DOT 仍无正文。WFLOW 依赖可恢复的 Shortcuts 扩展偏好，会同时影响 `.shortcut` 系统动作卡片；公开安装包未更新。见[修复结果、逐项证据及恢复方法](docs/evidence/provider-fixes-2026-10-26/README.md)。
+
 | 类别 | 数量 | 扩展名 | 预览内容 |
 | --- | ---: | --- | --- |
 | 代码与网页 | 75 | `.swift`, `.py`, `.js`, `.ts`, `.tsx`, `.jsx`, `.mjs`, `.cjs`, `.mts`, `.cts`, `.vue`, `.svelte`, `.astro`, `.c`, `.h`, `.cpp`, `.hpp`, `.rs`, `.go`, `.sh`, `.zsh`, `.bash`, `.rb`, `.java`, `.kt`, `.css`, `.scss`, `.sass`, `.less`, `.html`, `.htm`, `.xhtml`, `.sql`, `.cs`, `.php`, `.dart`, `.lua`, `.r`, `.scala`, `.ps1`, `.proto`, `.graphql`, `.gql`, `.tf`, `.tfvars`, `.hcl`, `.pyi`, `.pyx`, `.pxd`, `.pxi`, `.cu`, `.cuh`, `.cc`, `.cxx`, `.hh`, `.hxx`, `.ipp`, `.tpp`, `.inl`, `.kts`, `.gradle`, `.groovy`, `.cmake`, `.mk`, `.mdc`, `.http`, `.rest`, `.j2`, `.jinja`, `.jinja2`, `.tmpl`, `.tpl`, `.rst`, `.adoc`, `.asciidoc` | 源码高亮；HTML 页面；JSX/TSX 单文件组件快照 |

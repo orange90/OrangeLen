@@ -1,0 +1,51 @@
+name: OrangeLenNativeLabelProbe
+options:
+  deploymentTarget:
+    macOS: '14.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    CODE_SIGN_IDENTITY: '-'
+    CODE_SIGN_STYLE: Manual
+    ENABLE_DEBUG_DYLIB: NO
+targets:
+  NativeLabelProbe:
+    type: application
+    platform: macOS
+    sources: [App.swift]
+    dependencies:
+      - target: LabelPreview
+        embed: true
+    info:
+      path: App-Info.plist
+      properties:
+        CFBundleIdentifier: local.OrangeLen.NativeLabelProbe
+        CFBundleSignature: OLen
+        LSUIElement: true
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: local.orangelen.native-source-label
+            UTTypeConformsTo: [public.source-code]
+            UTTypeDescription: OrangeLen Native Source Label
+            UTTypeTagSpecification:
+              com.apple.ostype: [OLSc]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.NativeLabelProbe
+  LabelPreview:
+    type: app-extension
+    platform: macOS
+    sources: [Provider.swift]
+    info:
+      path: Preview-Info.plist
+      properties:
+        CFBundleIdentifier: local.OrangeLen.NativeLabelProbe.Preview
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.quicklook.preview
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).Provider
+          NSExtensionAttributes:
+            QLIsDataBasedPreview: true
+            QLSupportedContentTypes: [local.orangelen.native-source-label]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.NativeLabelProbe.Preview
+        CODE_SIGN_ENTITLEMENTS: Probe.entitlements

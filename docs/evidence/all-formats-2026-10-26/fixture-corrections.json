@@ -1,0 +1,30 @@
+[
+  {
+    "extension": "xhtml",
+    "reason": "Old fixture contained generic plain text instead of valid XHTML",
+    "firstPass": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/fixtures/032-xhtml.xhtml",
+    "corrected": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/rechecks/032-xhtml.xhtml",
+    "sha256": "45feb4956bebfea39b0fea80cf98920223c86335c5d26a9a331f44736d536e27"
+  },
+  {
+    "extension": "xz",
+    "reason": "Advertised .xz/.bz2/.zst scope is compressed TAR, requiring .tar.xz/.tar.bz2/.tar.zst filenames",
+    "firstPass": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/fixtures/131-xz.xz",
+    "corrected": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/rechecks/131-xz.tar.xz",
+    "sha256": "1551f31708692f82cab19de28e0b251cb388f73f1d83368af9eb9339aec59b4d"
+  },
+  {
+    "extension": "bz2",
+    "reason": "Advertised .xz/.bz2/.zst scope is compressed TAR, requiring .tar.xz/.tar.bz2/.tar.zst filenames",
+    "firstPass": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/fixtures/132-bz2.bz2",
+    "corrected": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/rechecks/132-bz2.tar.bz2",
+    "sha256": "8ba22f0151d904602473e4f36db1bc5f0774a1a04841c7bbfb6fab1592772177"
+  },
+  {
+    "extension": "zst",
+    "reason": "Advertised .xz/.bz2/.zst scope is compressed TAR, requiring .tar.xz/.tar.bz2/.tar.zst filenames",
+    "firstPass": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/fixtures/133-zst.zst",
+    "corrected": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/audit371/rechecks/133-zst.tar.zst",
+    "sha256": "32c3e18e802eeaf0c2365e2a88d8b48a453841d01ba76423bf042817e207cd62"
+  }
+]

@@ -1,5 +1,21 @@
 # 变更日志
 
+## 未发布 — 剩余 21 后缀修复与复测（2026-10-26）
+
+- 补充 Code 与 Archives 的精确 UTI：ZSH/BASH/R/PROTO/LOG/DIFF/PATCH/TXZ/TBZ2 已通过本机 Finder 空格、OrangeLen 接收与成功回调验证。TXZ/TBZ2 同时打开成员正文。
+- 增加可恢复的 WFLOW 用户偏好脚本；启用后由 OrangeLen 显示 plist/XML，同时影响系统 `.shortcut` 动作卡片。已验证恢复及再次启用。
+- 21 项最终复测为 10 项 OrangeLen、8 项系统正文、3 项系统文件信息；TS/MTS/DOT 仍无正文，另 8 项接管未解决。独立数据式原生扩展和系统桥接诊断未解决这些分派；临时诊断设置已清理。见[完整结果](docs/evidence/provider-fixes-2026-10-26/README.md)。公开包未更新。
+
+## 2026-10-26 — 371 后缀本机 Finder 提供器审计
+
+- 对当前开发版逐项检查 371 个后缀及 30 项独立补测，以专属界面和实际调用日志区分：350 项 OrangeLen、16 项系统内容、5 项系统文件信息。明确本机既有 Hydra 设置及未发布 SQL 修复的影响，不将结果外推到公开安装包。
+- 记录 TXZ/TBZ2 的精确 UTI 声明遗漏及 TS/MTS/DOT 既有入口限制；提供完整 Markdown/CSV 列表、样例哈希和逐项日志索引。本轮未改产品分派设置，见[审计报告](docs/evidence/all-formats-2026-10-26/README.md)。
+
+## 未发布 — SQL 单文件预览修复（2026-10-26）
+
+- Code 扩展增加 `.sql` 的精确系统类型 `org.iso.sql`，修复本机 Finder 原先回退到系统纯文本预览的问题，复用已有 SQL 语法高亮。
+- 更新 SQL 样例并验证关键字、中文字符串及注释高亮；本机开发版已用真实 Finder 空格和扩展日志确认。见[验收记录](docs/evidence/sql-preview-2026-10-26/README.md)。
+
 ## V1.0 — 2026-10-20
 
 - 以 `V1.0` 正式发布标签重新发布现有已签名、公证的通用安装包，仅修改下载文件名；安装包内容及应用内部版本保持原样。

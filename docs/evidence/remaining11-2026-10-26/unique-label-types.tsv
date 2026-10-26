@@ -1,0 +1,12 @@
+00-control local.orangelen.native-source-label
+01-ts.ts public.mpeg-2-transport-stream
+02-mts.mts public.avchd-mpeg-2-transport-stream
+03-dot.dot com.microsoft.word.dot
+08-html.html public.html
+09-htm.htm public.html
+10-xhtml.xhtml public.xhtml
+13-txt.txt public.plain-text
+15-pdf.pdf com.adobe.pdf
+16-csv.csv public.comma-separated-values-text
+17-svg.svg public.svg-image
+20-text.text public.plain-text

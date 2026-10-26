@@ -1,0 +1,608 @@
+[
+  {
+    "index": 1,
+    "extension": "ts",
+    "filename": "01-ts.ts",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/01-ts.ts",
+    "sha256": "ded3b6efe1b7c08b554af7d3acd1fb5d5d89289908bcf433c0df31b77ca29597",
+    "before": "系统仅基本信息",
+    "before_uti": "public.mpeg-2-transport-stream",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:07.666Z",
+    "captured_at": "2026-10-26T02:56:09.829Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "final-01-ts-ax.txt",
+    "screenshot": "screenshots/final-01-ts.png",
+    "status": "系统仅文件信息",
+    "provider": "com.apple.qldisplay.Movie",
+    "content_check": "仍无正文，未修复",
+    "display_event_ids": [
+      69
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 2,
+    "extension": "mts",
+    "filename": "02-mts.mts",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/02-mts.mts",
+    "sha256": "c32df47fa0f5ee334f618d161847da86b1eec6252a78060f840bb0e00a3e3cf6",
+    "before": "系统仅基本信息",
+    "before_uti": "public.avchd-mpeg-2-transport-stream",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:09.829Z",
+    "captured_at": "2026-10-26T02:56:12.305Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "final-02-mts-ax.txt",
+    "screenshot": "screenshots/final-02-mts.png",
+    "status": "系统仅文件信息",
+    "provider": "com.apple.qldisplay.Movie",
+    "content_check": "仍无正文，未修复",
+    "display_event_ids": [
+      70
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 3,
+    "extension": "dot",
+    "filename": "03-dot.dot",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/03-dot.dot",
+    "sha256": "2a1ae5f7311f44bc85de114b5b2a5128a75603c9eae1c6116cb7ce401ecf12a9",
+    "before": "系统仅基本信息",
+    "before_uti": "com.microsoft.word.dot",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:12.305Z",
+    "captured_at": "2026-10-26T02:56:14.769Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "final-03-dot-ax.txt",
+    "screenshot": "screenshots/final-03-dot.png",
+    "status": "系统仅文件信息",
+    "provider": "com.apple.qldisplay.PDFKit",
+    "content_check": "仍无正文，未修复",
+    "display_event_ids": [
+      71
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 4,
+    "extension": "txz",
+    "filename": "04-txz.txz",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/04-txz.txz",
+    "sha256": "1551f31708692f82cab19de28e0b251cb388f73f1d83368af9eb9339aec59b4d",
+    "before": "系统仅基本信息",
+    "before_uti": "org.tukaani.tar-xz-archive",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:14.770Z",
+    "captured_at": "2026-10-26T02:56:17.928Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-04-txz-ax.txt",
+    "screenshot": "screenshots/final-04-txz.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "目录及 README.md 成员正文均已实际打开",
+    "display_event_ids": [
+      72
+    ],
+    "receive_event_ids": [
+      73
+    ],
+    "success_event_ids": [
+      74
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives"
+    ]
+  },
+  {
+    "index": 5,
+    "extension": "tbz2",
+    "filename": "05-tbz2.tbz2",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/05-tbz2.tbz2",
+    "sha256": "8ba22f0151d904602473e4f36db1bc5f0774a1a04841c7bbfb6fab1592772177",
+    "before": "系统仅基本信息",
+    "before_uti": "public.tar-bzip2-archive",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:20.465Z",
+    "captured_at": "2026-10-26T02:56:24.568Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-05-tbz2-ax.txt",
+    "screenshot": "screenshots/final-05-tbz2.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "目录及 README.md 成员正文均已实际打开",
+    "display_event_ids": [
+      75
+    ],
+    "receive_event_ids": [
+      76
+    ],
+    "success_event_ids": [
+      77
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives"
+    ]
+  },
+  {
+    "index": 6,
+    "extension": "zsh",
+    "filename": "06-zsh.zsh",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/06-zsh.zsh",
+    "sha256": "13ebdf5dd9bc9e9df8e6a5a65efb524e96115297d4120e3932052690709fdaa6",
+    "before": "系统内容预览",
+    "before_uti": "public.zsh-script",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:24.569Z",
+    "captured_at": "2026-10-26T02:56:27.473Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-06-zsh-ax.txt",
+    "screenshot": "screenshots/final-06-zsh.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      78
+    ],
+    "receive_event_ids": [
+      79
+    ],
+    "success_event_ids": [
+      80
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 7,
+    "extension": "bash",
+    "filename": "07-bash.bash",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/07-bash.bash",
+    "sha256": "1ef58e7f5ee948c9e8812e2bef10ec4c32dcb460810aa13d5f9bbb9657221241",
+    "before": "系统内容预览",
+    "before_uti": "public.bash-script",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:27.473Z",
+    "captured_at": "2026-10-26T02:56:30.248Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-07-bash-ax.txt",
+    "screenshot": "screenshots/final-07-bash.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      81
+    ],
+    "receive_event_ids": [
+      82
+    ],
+    "success_event_ids": [
+      83
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 8,
+    "extension": "html",
+    "filename": "08-html.html",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/08-html.html",
+    "sha256": "564d6c5cc5f6a5ff879dbb901b4cc89e62e0073ef3eec522ea08b4f4adac3224",
+    "before": "系统内容预览",
+    "before_uti": "public.html",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:30.249Z",
+    "captured_at": "2026-10-26T02:56:32.866Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-08-html-ax.txt",
+    "screenshot": "screenshots/final-08-html.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Web2",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      84
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 9,
+    "extension": "htm",
+    "filename": "09-htm.htm",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/09-htm.htm",
+    "sha256": "564d6c5cc5f6a5ff879dbb901b4cc89e62e0073ef3eec522ea08b4f4adac3224",
+    "before": "系统内容预览",
+    "before_uti": "public.html",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:35.016Z",
+    "captured_at": "2026-10-26T02:56:37.821Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-09-htm-ax.txt",
+    "screenshot": "screenshots/final-09-htm.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Web2",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      85
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 10,
+    "extension": "xhtml",
+    "filename": "10-xhtml.xhtml",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/10-xhtml.xhtml",
+    "sha256": "45feb4956bebfea39b0fea80cf98920223c86335c5d26a9a331f44736d536e27",
+    "before": "系统内容预览",
+    "before_uti": "public.xhtml",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:37.821Z",
+    "captured_at": "2026-10-26T02:56:40.554Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-10-xhtml-ax.txt",
+    "screenshot": "screenshots/final-10-xhtml.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Web2",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      86
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 11,
+    "extension": "r",
+    "filename": "11-r.r",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/11-r.r",
+    "sha256": "73209d04b605d4a8994098e1fe009d45e3d33d71923f5ef3b6e9b86a2e91a28a",
+    "before": "系统内容预览",
+    "before_uti": "com.apple.rez-source",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:40.554Z",
+    "captured_at": "2026-10-26T02:56:43.159Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-11-r-ax.txt",
+    "screenshot": "screenshots/final-11-r.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      87
+    ],
+    "receive_event_ids": [
+      88
+    ],
+    "success_event_ids": [
+      89
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 12,
+    "extension": "proto",
+    "filename": "12-proto.proto",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/12-proto.proto",
+    "sha256": "ba45ac846fbab689bfa1c12d5e98abb39743425df29ab1603b35ef3bcbfecd51",
+    "before": "系统内容预览",
+    "before_uti": "public.protobuf-source",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:43.159Z",
+    "captured_at": "2026-10-26T02:56:45.944Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-12-proto-ax.txt",
+    "screenshot": "screenshots/final-12-proto.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      90
+    ],
+    "receive_event_ids": [
+      91
+    ],
+    "success_event_ids": [
+      92
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 13,
+    "extension": "txt",
+    "filename": "13-txt.txt",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/13-txt.txt",
+    "sha256": "d2fdb14cda16960091e9113c37ba1d8f7de55b29f98863ec7cca13e4bfc72901",
+    "before": "系统内容预览",
+    "before_uti": "public.plain-text",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:53.394Z",
+    "captured_at": "2026-10-26T02:56:56.129Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-13-txt-ax.txt",
+    "screenshot": "screenshots/final-13-txt.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Text",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      93
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 14,
+    "extension": "log",
+    "filename": "14-log.log",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/14-log.log",
+    "sha256": "583a096e7fe66b5377685b5ba18eaa5b9da9ddc9e6e58bfb69c25a79da37ef31",
+    "before": "系统内容预览",
+    "before_uti": "com.apple.log",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:56.129Z",
+    "captured_at": "2026-10-26T02:56:58.981Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-14-log-ax.txt",
+    "screenshot": "screenshots/final-14-log.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      94
+    ],
+    "receive_event_ids": [
+      95
+    ],
+    "success_event_ids": [
+      96
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 15,
+    "extension": "pdf",
+    "filename": "15-pdf.pdf",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/15-pdf.pdf",
+    "sha256": "d7ad7bc01bb22f572fc97a0a723e5dea7abc2cbd560aa7c7e431680100f1c6a2",
+    "before": "系统内容预览",
+    "before_uti": "com.adobe.pdf",
+    "run": "final",
+    "opened_at": "2026-10-26T02:56:58.982Z",
+    "captured_at": "2026-10-26T02:57:01.617Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-15-pdf-ax.txt",
+    "screenshot": "screenshots/final-15-pdf.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.PDFKit",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      97
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 16,
+    "extension": "csv",
+    "filename": "16-csv.csv",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/16-csv.csv",
+    "sha256": "fefdc2ce6f86785516db7fdc1d1c78a952413e0805c9c0aa07fa8e34bb29086e",
+    "before": "系统内容预览",
+    "before_uti": "public.comma-separated-values-text",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:34.002Z",
+    "captured_at": "2026-10-26T02:57:37.228Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-16-csv-ax.txt",
+    "screenshot": "screenshots/final-16-csv.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Web2",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      99
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 17,
+    "extension": "svg",
+    "filename": "17-svg.svg",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/17-svg.svg",
+    "sha256": "fea3f74d19f9fd7fffd7c8665eff4fd6a8d6918026dd5982a2898c3bab7fe674",
+    "before": "系统内容预览",
+    "before_uti": "public.svg-image",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:37.230Z",
+    "captured_at": "2026-10-26T02:57:40.917Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-17-svg-ax.txt",
+    "screenshot": "screenshots/final-17-svg.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Web2",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      100
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 18,
+    "extension": "diff",
+    "filename": "18-diff.diff",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/18-diff.diff",
+    "sha256": "3b312712fafd038f55feeb9ac2a6ae683c12a86d7e610ff224618c9e2fe5a42e",
+    "before": "系统内容预览",
+    "before_uti": "public.patch-file",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:40.917Z",
+    "captured_at": "2026-10-26T02:57:47.742Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-18-diff-ax.txt",
+    "screenshot": "screenshots/final-18-diff.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      101
+    ],
+    "receive_event_ids": [
+      102
+    ],
+    "success_event_ids": [
+      103
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 19,
+    "extension": "patch",
+    "filename": "19-patch.patch",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/19-patch.patch",
+    "sha256": "3b312712fafd038f55feeb9ac2a6ae683c12a86d7e610ff224618c9e2fe5a42e",
+    "before": "系统内容预览",
+    "before_uti": "public.patch-file",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:50.381Z",
+    "captured_at": "2026-10-26T02:57:53.503Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-19-patch-ax.txt",
+    "screenshot": "screenshots/final-19-patch.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "OrangeLen 正文区域包含样例源码/日志/差异内容",
+    "display_event_ids": [
+      104
+    ],
+    "receive_event_ids": [
+      105
+    ],
+    "success_event_ids": [
+      106
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  },
+  {
+    "index": 20,
+    "extension": "text",
+    "filename": "20-text.text",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/20-text.text",
+    "sha256": "18ab8a512155e7c765d1cca6da00a3fd5230a24afd1d48dcd1844b5dbb64150f",
+    "before": "系统内容预览",
+    "before_uti": "public.plain-text",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:53.503Z",
+    "captured_at": "2026-10-26T02:57:56.418Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-20-text-ax.txt",
+    "screenshot": "screenshots/final-20-text.png",
+    "status": "系统正文",
+    "provider": "com.apple.qldisplay.Text",
+    "content_check": "正文由系统提供，OrangeLen 接管未解决",
+    "display_event_ids": [
+      107
+    ],
+    "receive_event_ids": [],
+    "success_event_ids": [],
+    "process_paths": []
+  },
+  {
+    "index": 21,
+    "extension": "wflow",
+    "filename": "21-wflow.wflow",
+    "path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/provider-fixes21/fixtures/21-wflow.wflow",
+    "sha256": "f842915936898fa3ee0c4c8f73e9da204ba05b2892f4367b52f2f9601ea8fe57",
+    "before": "系统内容预览",
+    "before_uti": "com.apple.shortcuts.workflow-file",
+    "run": "final",
+    "opened_at": "2026-10-26T02:57:56.418Z",
+    "captured_at": "2026-10-26T02:57:59.092Z",
+    "orangelen": true,
+    "probe": false,
+    "metadata_only": false,
+    "ax": "final-21-wflow-ax.txt",
+    "screenshot": "screenshots/final-21-wflow.png",
+    "status": "OrangeLen",
+    "provider": "com.apple.qldisplay.Extensions",
+    "content_check": "二进制 plist 转 XML，动作及中文正文可读；依赖 Shortcuts 偏好设置",
+    "display_event_ids": [
+      108
+    ],
+    "receive_event_ids": [
+      109
+    ],
+    "success_event_ids": [
+      110
+    ],
+    "process_paths": [
+      "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+    ]
+  }
+]

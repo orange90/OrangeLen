@@ -1,0 +1,47 @@
+[
+  {
+    "index": 1,
+    "extension": "ts",
+    "filename": "01-ts.ts",
+    "run": "metadata-override",
+    "opened_at": "2026-10-26T03:16:18.760Z",
+    "captured_at": "2026-10-26T03:16:20.289Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "metadata-override-01-ts-ax.txt",
+    "screenshot": "screenshots/metadata-override-01-ts.png",
+    "display_event_id": 6,
+    "display_provider": "com.apple.qldisplay.Movie"
+  },
+  {
+    "index": 2,
+    "extension": "mts",
+    "filename": "02-mts.mts",
+    "run": "metadata-override",
+    "opened_at": "2026-10-26T03:16:20.289Z",
+    "captured_at": "2026-10-26T03:16:22.645Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "metadata-override-02-mts-ax.txt",
+    "screenshot": "screenshots/metadata-override-02-mts.png",
+    "display_event_id": 7,
+    "display_provider": "com.apple.qldisplay.Movie"
+  },
+  {
+    "index": 3,
+    "extension": "dot",
+    "filename": "03-dot.dot",
+    "run": "metadata-override",
+    "opened_at": "2026-10-26T03:16:22.645Z",
+    "captured_at": "2026-10-26T03:16:34.247Z",
+    "orangelen": false,
+    "probe": false,
+    "metadata_only": true,
+    "ax": "metadata-override-03-dot-ax.txt",
+    "screenshot": "screenshots/metadata-override-03-dot.png",
+    "display_event_id": 8,
+    "display_provider": "com.apple.qldisplay.PDFKit"
+  }
+]

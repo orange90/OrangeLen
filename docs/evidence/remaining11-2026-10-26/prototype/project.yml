@@ -1,0 +1,31 @@
+name: OrangeLenFinderHelperPrototype
+options:
+  deploymentTarget:
+    macOS: '14.0'
+packages:
+  OrangeLen:
+    path: ../../../Packages/OrangeLen
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    CODE_SIGN_IDENTITY: '-'
+    CODE_SIGN_STYLE: Manual
+    ENABLE_DEBUG_DYLIB: NO
+targets:
+  FinderSpaceHelper:
+    type: application
+    platform: macOS
+    sources: [Helper.swift]
+    dependencies:
+      - package: OrangeLen
+        product: OrangeLenUI
+    info:
+      path: Info.plist
+      properties:
+        CFBundleIdentifier: local.OrangeLen.FinderSpaceHelperPrototype
+        CFBundleDisplayName: OrangeLen Finder Space Prototype
+        NSHighResolutionCapable: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen.FinderSpaceHelperPrototype
+        ENABLE_APP_SANDBOX: NO

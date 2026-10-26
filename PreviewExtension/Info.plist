@@ -92,6 +92,14 @@
 				<string>public.ruby-script</string>
 				<string>public.tcsh-script</string>
 				<string>public.toml</string>
+				<string>org.iso.sql</string>
+				<string>com.apple.log</string>
+				<string>com.apple.rez-source</string>
+				<string>public.bash-script</string>
+				<string>public.patch-file</string>
+				<string>public.protobuf-source</string>
+				<string>public.xhtml</string>
+				<string>public.zsh-script</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<false/>

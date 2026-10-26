@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-10-26 11:13:17.447596+0800",
+    "message": "helper received source=FinderSpaceHelper trigger=manual-demo type=ts file=01-ts.ts request=354BAC9C-64E2-4D25-93E3-59EED492FFE2",
+    "process_id": 98059,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-10-26 11:13:47.421227+0800",
+    "message": "helper completed source=FinderSpaceHelper success=true type=ts request=354BAC9C-64E2-4D25-93E3-59EED492FFE2",
+    "process_id": 98059,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-10-26 11:14:35.261373+0800",
+    "message": "helper received source=FinderSpaceHelper trigger=manual-demo type=mts file=02-mts.mts request=17533582-AD49-4152-B9E5-AF2484CA36E6",
+    "process_id": 98059,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-10-26 11:14:35.321984+0800",
+    "message": "helper completed source=FinderSpaceHelper success=true type=mts request=17533582-AD49-4152-B9E5-AF2484CA36E6",
+    "process_id": 98059,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-10-26 11:14:59.638801+0800",
+    "message": "helper stopped source=FinderSpaceHelper",
+    "process_id": 98059,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 6,
+    "timestamp": "2026-10-26 11:16:19.648709+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 7,
+    "timestamp": "2026-10-26 11:16:21.999843+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 8,
+    "timestamp": "2026-10-26 11:16:24.724541+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 9,
+    "timestamp": "2026-10-26 11:16:46.407125+0800",
+    "message": "helper received source=FinderSpaceHelper trigger=manual-demo type=mts file=02-mts.mts request=E5C6FC8C-2AE7-4D51-8BF6-9CFA32742BDA",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-10-26 11:16:48.485659+0800",
+    "message": "helper completed source=FinderSpaceHelper success=true type=mts request=E5C6FC8C-2AE7-4D51-8BF6-9CFA32742BDA",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-10-26 11:16:58.279592+0800",
+    "message": "helper received source=FinderSpaceHelper trigger=manual-demo type=dot file=03-dot.dot request=E8BF8EF4-93C2-41F4-8E14-1B3BEB0124FD",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 12,
+    "timestamp": "2026-10-26 11:16:58.967561+0800",
+    "message": "helper completed source=FinderSpaceHelper success=true type=dot request=E8BF8EF4-93C2-41F4-8E14-1B3BEB0124FD",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 13,
+    "timestamp": "2026-10-26 11:18:25.523630+0800",
+    "message": "helper received source=FinderSpaceHelper trigger=manual-demo type=ts file=01-ts.ts request=DA73CD8B-D779-4C18-BC23-2DDBDA1ACD59",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 14,
+    "timestamp": "2026-10-26 11:18:25.589391+0800",
+    "message": "helper completed source=FinderSpaceHelper success=true type=ts request=DA73CD8B-D779-4C18-BC23-2DDBDA1ACD59",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 15,
+    "timestamp": "2026-10-26 11:19:44.809360+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 16,
+    "timestamp": "2026-10-26 11:19:48.027554+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 17,
+    "timestamp": "2026-10-26 11:19:48.915341+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 18,
+    "timestamp": "2026-10-26 11:20:08.402583+0800",
+    "message": "helper stopped source=FinderSpaceHelper",
+    "process_id": 426,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper"
+  },
+  {
+    "id": 19,
+    "timestamp": "2026-10-26 11:23:02.328051+0800",
+    "message": "label-probe received file=00-control",
+    "process_id": 4857,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/native-label-probe/DerivedData/Build/Products/Debug/NativeLabelProbe.app/Contents/PlugIns/LabelPreview.appex/Contents/MacOS/LabelPreview"
+  },
+  {
+    "id": 20,
+    "timestamp": "2026-10-26 11:23:02.328431+0800",
+    "message": "label-probe completed success=true file=00-control",
+    "process_id": 4857,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/native-label-probe/DerivedData/Build/Products/Debug/NativeLabelProbe.app/Contents/PlugIns/LabelPreview.appex/Contents/MacOS/LabelPreview"
+  },
+  {
+    "id": 21,
+    "timestamp": "2026-10-26 11:23:02.328620+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 22,
+    "timestamp": "2026-10-26 11:23:15.562292+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 23,
+    "timestamp": "2026-10-26 11:23:18.057117+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 24,
+    "timestamp": "2026-10-26 11:23:20.921352+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 25,
+    "timestamp": "2026-10-26 11:23:27.819968+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 26,
+    "timestamp": "2026-10-26 11:24:04.489844+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 27,
+    "timestamp": "2026-10-26 11:24:10.809128+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 28,
+    "timestamp": "2026-10-26 11:24:13.532196+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 29,
+    "timestamp": "2026-10-26 11:24:16.210359+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 30,
+    "timestamp": "2026-10-26 11:24:21.795906+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 31,
+    "timestamp": "2026-10-26 11:24:28.813395+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 32,
+    "timestamp": "2026-10-26 11:24:34.686934+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 33,
+    "timestamp": "2026-10-26 11:25:21.596834+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+  },
+  {
+    "id": 34,
+    "timestamp": "2026-10-26 11:25:21.828481+0800",
+    "message": "prepare received extension=OrangeLen type=sql",
+    "process_id": 81305,
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+  },
+  {
+    "id": 35,
+    "timestamp": "2026-10-26 11:25:21.853486+0800",
+    "message": "prepare completed success=true",
+    "process_id": 81305,
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview"
+  }
+]

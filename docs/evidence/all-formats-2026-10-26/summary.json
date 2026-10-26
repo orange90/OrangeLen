@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-26",
+  "total_suffixes": 371,
+  "counts": {
+    "OrangeLen": 350,
+    "系统仅基本信息": 5,
+    "系统内容预览": 16
+  },
+  "first_pass_cases": 371,
+  "independent_rechecks": 30,
+  "orangelen_ui_without_callback": 0,
+  "orangelen_suffixes_with_successful_callback": 350,
+  "scope": "Finder single-file provider attribution using one bounded synthetic fixture per suffix; not full format compatibility",
+  "machine": "macOS 26.6.2 (25G83), arm64",
+  "installation": "/Applications/OrangeLen.app, local development build including the SQL fix",
+  "preexisting_setting": "com.apple.HydraQLPreviewExtension is disabled (-); unchanged during this audit; OBJ/STL results depend on this profile",
+  "published_release_retested": false,
+  "product_code_changed_by_this_audit": false,
+  "system_extensions": [
+    "zsh",
+    "bash",
+    "html",
+    "htm",
+    "xhtml",
+    "r",
+    "proto",
+    "txt",
+    "log",
+    "pdf",
+    "csv",
+    "svg",
+    "diff",
+    "patch",
+    "text",
+    "wflow"
+  ],
+  "metadata_only_extensions": [
+    "ts",
+    "mts",
+    "dot",
+    "txz",
+    "tbz2"
+  ]
+}

@@ -385,6 +385,8 @@
     ]
   },
   "contentTypes": [
+    "com.apple.log",
+    "com.apple.rez-source",
     "com.adobe.edn",
     "com.apple.applescript.script",
     "com.apple.applescript.text",
@@ -405,9 +407,11 @@
     "com.sun.java-web-start",
     "com.topografix.gpx",
     "local.orangelen.developer-source",
+    "org.iso.sql",
     "org.khronos.glsl.fragment-shader",
     "org.libreoffice.mspub-document",
     "public.ada-source",
+    "public.bash-script",
     "public.c-plus-plus-source",
     "public.csh-script",
     "public.fortran-90-source",
@@ -417,11 +421,15 @@
     "public.make-source",
     "public.objective-c-source",
     "public.pascal-source",
+    "public.patch-file",
     "public.perl-script",
     "public.php-script",
     "public.plain-text",
+    "public.protobuf-source",
     "public.ruby-script",
     "public.tcsh-script",
-    "public.toml"
+    "public.toml",
+    "public.xhtml",
+    "public.zsh-script"
   ]
 }

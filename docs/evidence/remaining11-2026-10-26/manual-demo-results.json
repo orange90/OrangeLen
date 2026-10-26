@@ -1,0 +1,41 @@
+[
+  {
+    "extension": "ts",
+    "trigger": "manual-demo",
+    "receive_event_id": 13,
+    "success_event_id": 14,
+    "request_id": "DA73CD8B-D779-4C18-BC23-2DDBDA1ACD59",
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper",
+    "ax": "manual-demo-ts-ax.txt",
+    "screenshot": "screenshots/manual-demo-ts.png",
+    "finder_space_verified": false,
+    "native_extension_verified": false,
+    "adopted": false
+  },
+  {
+    "extension": "mts",
+    "trigger": "manual-demo",
+    "receive_event_id": 9,
+    "success_event_id": 10,
+    "request_id": "E5C6FC8C-2AE7-4D51-8BF6-9CFA32742BDA",
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper",
+    "ax": "manual-demo-mts-ax.txt",
+    "screenshot": "screenshots/manual-demo-mts.png",
+    "finder_space_verified": false,
+    "native_extension_verified": false,
+    "adopted": false
+  },
+  {
+    "extension": "dot",
+    "trigger": "manual-demo",
+    "receive_event_id": 11,
+    "success_event_id": 12,
+    "request_id": "E8BF8EF4-93C2-41F4-8E14-1B3BEB0124FD",
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/remaining11-research/finder-helper/DerivedData/Build/Products/Debug/FinderSpaceHelper.app/Contents/MacOS/FinderSpaceHelper",
+    "ax": "manual-demo-dot-ax.txt",
+    "screenshot": "screenshots/manual-demo-dot.png",
+    "finder_space_verified": false,
+    "native_extension_verified": false,
+    "adopted": false
+  }
+]

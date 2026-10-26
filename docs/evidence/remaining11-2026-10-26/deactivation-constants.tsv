@@ -1,0 +1,3 @@
+deactivation_excluded_prefix	com.apple
+deactivation_preference_key	QLDeactivatedGenerators
+preference_suite	com.apple.quicklook
