@@ -1,5 +1,13 @@
 # 变更日志
 
+## V1.0.2 — 2026-10-26
+
+- 将 `.sql` 加入源码格式注册表，随主应用导出的 `local.orangelen.developer-source` 登记后缀及 `public.source-code` 继承关系；Code 扩展已支持该类型，干净系统无需其他应用提供 `org.iso.sql` 注册。
+- 保留 `org.iso.sql` 兼容声明，新增不依赖本机 UTType 注册状态的回归测试，检查主应用导出后缀与扩展支持类型的完整链路。支持格式总数仍为 371。
+- 更正此前将本机 `org.iso.sql` 注册结果视为系统类型的表述；V1.0.1 的本机 Finder 验收不能证明干净系统可用。
+- 扩展审计发现 `.ini`、`.config`、`.toml` 同样依赖 Xcode 提供登记；主应用补入 `com.microsoft.ini` 与 `public.toml` 声明。另为 `.md` / `.markdown` 补入 Markdown 类型声明，避免依赖 Notes 或其他编辑器提供登记。
+- 新增仅基于应用声明与系统 CoreTypes 的 371 后缀检查，接入本地测试与 CI 构建产物检查；检查后缀、类型继承及预览扩展候选，不将声明通过视为 Finder 实测通过。见[审计明细](docs/evidence/type-registration-2026-10-26/README.md)。
+
 ## V1.0.1 — 2026-10-26
 
 - 发布 SQL 精确类型与高亮修复，以及 ZSH/BASH/R/PROTO/LOG/DIFF/PATCH/TXZ/TBZ2 共 9 个后缀的 Finder 入口修复。
@@ -20,7 +28,7 @@
 
 ## 未发布 — SQL 单文件预览修复（2026-10-26）
 
-- Code 扩展增加 `.sql` 的精确系统类型 `org.iso.sql`，修复本机 Finder 原先回退到系统纯文本预览的问题，复用已有 SQL 语法高亮。
+- Code 扩展增加本机 `.sql` 对应的精确类型 `org.iso.sql`，修复本机 Finder 原先回退到系统纯文本预览的问题，复用已有 SQL 语法高亮；该类型并非所有系统均已注册，后续补全见 Issue #2。
 - 更新 SQL 样例并验证关键字、中文字符串及注释高亮；本机开发版已用真实 Finder 空格和扩展日志确认。见[验收记录](docs/evidence/sql-preview-2026-10-26/README.md)。
 
 ## V1.0 — 2026-10-20

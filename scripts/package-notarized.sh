@@ -6,12 +6,14 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 : "${ORANGELEN_SIGN_IDENTITY:?Developer ID identity required}"
 : "${ORANGELEN_TEAM_ID:?Team ID required}"
 input="${ORANGELEN_INPUT_APP:-build/ReleasePreview/Build/Products/Release/OrangeLen.app}"
-version="${ORANGELEN_RELEASE_VERSION:-1.0.1}"
+version="${ORANGELEN_RELEASE_VERSION:-1.0.2}"
 [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-preview\.[0-9]+)?$ ]] || { echo 'Invalid release version.' >&2; exit 2; }
 stage="$PWD/build/notarized-$version"
 app="$stage/OrangeLen.app"
 if [[ "${1:-prepare}" == prepare ]]; then
   test ! -e "$app" || { echo 'Signed staging app already exists; inspect before replacing.' >&2; exit 1; }
+  test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$input/Contents/Info.plist")" = "$version" || { echo 'Input app version does not match the requested release.' >&2; exit 1; }
+  python3 scripts/audit-type-registration.py --app "$input"
   python3 scripts/deduplicate-resources.py "$input" --verify-only
   mkdir -p "$stage"
   ditto "$input" "$app"

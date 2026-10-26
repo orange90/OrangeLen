@@ -259,6 +259,7 @@
       "fea"
     ],
     "sql": [
+      "sql",
       "fnc",
       "prc",
       "trg",

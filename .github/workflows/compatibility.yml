@@ -27,6 +27,8 @@ jobs:
         run: ./scripts/test-native.sh
       - name: Host and seven extension builds
         run: ./scripts/build.sh CODE_SIGNING_ALLOWED=NO
+      - name: Audit packaged file types without developer app registrations
+        run: python3 scripts/audit-type-registration.py --app build/DerivedData/Build/Products/Debug/OrangeLen.app --output build/type-registration.json
       - name: Save evidence, including failures
         if: always()
         uses: actions/upload-artifact@v4
@@ -36,4 +38,5 @@ jobs:
             build/tests.log
             build/build.log
             build/native-tests.log
+            build/type-registration.json
           if-no-files-found: warn

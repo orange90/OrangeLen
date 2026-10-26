@@ -1,0 +1,66 @@
+[
+  {
+    "type": "net.daringfireball.markdown",
+    "provider": "Notes",
+    "bundle": "0x3c8",
+    "flags": "inactive  apple-internal  imported  trusted (0000000000000044)",
+    "tags": ".md, .markdown, text/markdown",
+    "path": "/System/Applications/Notes.app"
+  },
+  {
+    "type": "org.iso.sql",
+    "provider": "Xcode",
+    "bundle": "0x5a4",
+    "flags": "active  apple-internal  imported  trusted (0000000000000045)",
+    "tags": ".sql",
+    "path": "/Applications/Xcode.app"
+  },
+  {
+    "type": "net.daringfireball.markdown",
+    "provider": "Xcode",
+    "bundle": "0x5a4",
+    "flags": "inactive  apple-internal  imported  trusted (0000000000000044)",
+    "tags": ".md, .mdown, .markdown, .text, text/markdown, text/x-markdown, text/x-web-markdown",
+    "path": "/Applications/Xcode.app"
+  },
+  {
+    "type": "com.microsoft.ini",
+    "provider": "Xcode",
+    "bundle": "0x5a4",
+    "flags": "active  apple-internal  imported  trusted (0000000000000045)",
+    "tags": ".ini",
+    "path": "/Applications/Xcode.app"
+  },
+  {
+    "type": "public.toml",
+    "provider": "Xcode",
+    "bundle": "0x5a4",
+    "flags": "active  public  apple-internal  imported  trusted (0000000000000047)",
+    "tags": ".cfg, .config, .toml",
+    "path": "/Applications/Xcode.app"
+  },
+  {
+    "type": "net.daringfireball.markdown",
+    "provider": "OmniFocus",
+    "bundle": "0x5ec",
+    "flags": "inactive  exported  trusted (0000000000000050)",
+    "tags": ".md, .mdown, .markdown, text/markdown, text/x-markdown, text/x-web-markdown",
+    "path": "/Applications/OmniFocus.app"
+  },
+  {
+    "type": "net.daringfireball.markdown",
+    "provider": "MacDown",
+    "bundle": "0x680",
+    "flags": "active  rel-icon-path  exported  trusted (0000000000000059)",
+    "tags": ".md, .markdown, text/x-markdown",
+    "path": "/Applications/MacDown.app"
+  },
+  {
+    "type": "net.daringfireball.markdown",
+    "provider": "Bear",
+    "bundle": "0x68c",
+    "flags": "inactive  imported  trusted (0000000000000040)",
+    "tags": ".md, .markdown, .mdown, .mmd, .multimarkdown, .mkdn, .mdwn, .mdtxt, .mdtext, .mdml, .note, .edit, .write",
+    "path": "/Applications/Bear.app"
+  }
+]

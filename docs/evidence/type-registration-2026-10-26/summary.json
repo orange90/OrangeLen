@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-26",
+  "macOS": "26.6.2",
+  "xcodeVersion": "26.5",
+  "inventoryCount": 371,
+  "inventoryAlsoDeclaredByXcode": 54,
+  "releaseBefore": {
+    "app": 333,
+    "core-types": 32,
+    "missing": 6
+  },
+  "productAfter": {
+    "app": 339,
+    "core-types": 32,
+    "missing": 0
+  },
+  "confirmedExternalRegistrationGaps": [
+    "sql",
+    "ini",
+    "config",
+    "toml"
+  ],
+  "newGapsBeyondSQL": [
+    "ini",
+    "config",
+    "toml"
+  ],
+  "systemAppDependencyHardened": [
+    "md",
+    "markdown"
+  ],
+  "missingExtensionsAfter": [],
+  "extensionsWithoutPreviewCandidateAfter": [],
+  "unresolvedProductParentsAfter": {},
+  "sourceAndBuiltDeclarationsAgree": true,
+  "pythonTestsPassed": 10,
+  "readerTestsPassed": 5,
+  "build": "Initial incremental resource consolidation failed; serial retry passed and resource verification passed.",
+  "finderVerifiedOnCleanOS": false,
+  "sha256": {
+    "/Applications/OrangeLen.app/Contents/Info.plist": "fd83068d9a9623217f585c68571f2dee47232c65d2fb6f722c29c340ea22677a",
+    "build/notarized-1.0.1/OrangeLen.app/Contents/Info.plist": "fd83068d9a9623217f585c68571f2dee47232c65d2fb6f722c29c340ea22677a",
+    "/Applications/Xcode.app/Contents/Info.plist": "aea95a01913a85b4f500668ce7fe9116434f2ec789ed0bb6bb091c55712a896e",
+    "/System/Applications/Notes.app/Contents/Info.plist": "e0cad1aa31b144bcefbf4965150211dc519fd469278d47b695013e02643834d2",
+    "build/DerivedData/Build/Products/Debug/OrangeLen.app/Contents/Info.plist": "7e4efc04e60315e4b2301c2c8c00e92e0604d225affc478c55ac7d17a2f757dc"
+  }
+}

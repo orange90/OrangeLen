@@ -23,8 +23,33 @@ final class SourceParityTests: XCTestCase {
     private var fixtures: URL {
         URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Tests/Fixtures/source-parity")
     }
+    func testSQLHasSelfContainedQuickLookRegistration() throws {
+        XCTAssertEqual(SourceCodeFormats.language(forExtension: "sql"), "sql")
+
+        // Inspect our declarations instead of UTType(filenameExtension:), which
+        // can pass because another installed app has registered org.iso.sql.
+        let root = fixtures.deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        func plist(_ path: String) throws -> [String: Any] {
+            try XCTUnwrap(PropertyListSerialization.propertyList(
+                from: Data(contentsOf: root.appendingPathComponent(path)), format: nil) as? [String: Any])
+        }
+        let app = try plist("App/Info.plist")
+        let declarations = try XCTUnwrap(app["UTExportedTypeDeclarations"] as? [[String: Any]])
+        let source = try XCTUnwrap(declarations.first { $0["UTTypeIdentifier"] as? String == "local.orangelen.developer-source" })
+        let tags = try XCTUnwrap(source["UTTypeTagSpecification"] as? [String: Any])
+        XCTAssertTrue((tags["public.filename-extension"] as? [String] ?? []).contains("sql"))
+        XCTAssertTrue((source["UTTypeConformsTo"] as? [String] ?? []).contains("public.source-code"))
+
+        let code = try plist("PreviewExtension/Info.plist")
+        let extensionInfo = try XCTUnwrap(code["NSExtension"] as? [String: Any])
+        let attributes = try XCTUnwrap(extensionInfo["NSExtensionAttributes"] as? [String: Any])
+        let supported = try XCTUnwrap(attributes["QLSupportedContentTypes"] as? [String])
+        XCTAssertTrue(supported.contains("local.orangelen.developer-source"))
+        // Keep compatibility with machines where another app supplies this alias.
+        XCTAssertTrue(supported.contains("org.iso.sql"))
+    }
     func testManifestIsUniqueAndEverySourceActuallyLoads() throws {
-        XCTAssertEqual(SourceCodeFormats.extensions.count, 219)
+        XCTAssertEqual(SourceCodeFormats.extensions.count, 220)
         XCTAssertEqual(SourceCodeFormats.groups.values.flatMap { $0 }.count, SourceCodeFormats.extensions.count)
         for ext in SourceCodeFormats.extensions where ext != "class" {
             let url = fixtures.appendingPathComponent("sample." + ext)
