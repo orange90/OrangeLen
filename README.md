@@ -19,15 +19,15 @@ https://github.com/user-attachments/assets/149b5c5c-ffb8-4004-8fe2-f28fc2297252
 
 ## 下载
 
-**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/V1.0.2/OrangeLen-1.0.2-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/V1.0.2)
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/V1.1.0/OrangeLen-1.1.0-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/V1.1.0)
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
 **安装或更新后，请先启动一次 OrangeLen**，以便系统注册 Quick Look 扩展，再回到 Finder 按空格预览文件。
 
-当前为 **V1.0.2 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
+当前为 **V1.1.0 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
 
-V1.0.2 补齐 SQL、INI、CONFIG、TOML 和 Markdown 的文件类型登记，减少对开发工具或编辑器安装环境的依赖。见[版本说明](docs/releases/V1.0.2.md)。
+**这次手动安装一次，以后就可以在应用内点击升级了。** V1.1.0 新增应用菜单「检查更新…」，后续可直接查看新版本、下载安装并重新启动。V1.0.2 及更早版本请先下载本版安装包。见[版本说明](docs/releases/V1.1.0.md)。
 
 ## AI 时代最适合的预览工具
 

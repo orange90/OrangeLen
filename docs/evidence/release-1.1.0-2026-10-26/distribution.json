@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "build": "6",
+  "sourceCommit": "07b6f4a",
+  "appNotary": {
+    "status": "Accepted",
+    "message": "Processing complete",
+    "id": "85d63886-6561-4a21-942f-a5570ee2942c"
+  },
+  "dmgNotary": {
+    "status": "Accepted",
+    "id": "1ccd492a-ef12-4bb2-92c4-551f0128b758",
+    "message": "Processing complete"
+  },
+  "dmg": "OrangeLen-1.1.0-universal.dmg",
+  "bytes": 116340140,
+  "sha256": "6a4f1e1acc5f15aa6f5f3e25873cd73cb2b81630761f325997c01f3918a38249"
+}
