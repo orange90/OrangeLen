@@ -6,8 +6,8 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 : "${ORANGELEN_SIGN_IDENTITY:?Developer ID identity required}"
 : "${ORANGELEN_TEAM_ID:?Team ID required}"
 input="${ORANGELEN_INPUT_APP:-build/ReleasePreview/Build/Products/Release/OrangeLen.app}"
-version="${ORANGELEN_RELEASE_VERSION:-0.1.0-preview.3}"
-[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+-preview\.[0-9]+$ ]] || { echo 'Invalid preview version.' >&2; exit 2; }
+version="${ORANGELEN_RELEASE_VERSION:-1.0.1}"
+[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-preview\.[0-9]+)?$ ]] || { echo 'Invalid release version.' >&2; exit 2; }
 stage="$PWD/build/notarized-$version"
 app="$stage/OrangeLen.app"
 if [[ "${1:-prepare}" == prepare ]]; then

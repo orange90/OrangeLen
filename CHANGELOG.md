@@ -1,5 +1,12 @@
 # 变更日志
 
+## V1.0.1 — 2026-10-26
+
+- 发布 SQL 精确类型与高亮修复，以及 ZSH/BASH/R/PROTO/LOG/DIFF/PATCH/TXZ/TBZ2 共 9 个后缀的 Finder 入口修复。
+- 新增可恢复的 WFLOW 用户偏好脚本，需主动运行；不改变默认安装行为，并说明对 `.shortcut` 系统动作卡片的影响。
+- 应用内部版本更新为 1.0.1（build 4），正式签名脚本支持稳定版版本号。构建新的通用包，应用和 DMG 分别公证并附票据后发布。
+- 保留 TS/MTS/DOT 及另外 8 项系统预览限制，公开 371 项历史审计、21 项复测和竞品原生对照的真实范围。详见[版本说明](docs/releases/V1.0.1.md)。
+
 ## 未发布 — 剩余 21 后缀修复与复测（2026-10-26）
 
 - 补充 Code 与 Archives 的精确 UTI：ZSH/BASH/R/PROTO/LOG/DIFF/PATCH/TXZ/TBZ2 已通过本机 Finder 空格、OrangeLen 接收与成功回调验证。TXZ/TBZ2 同时打开成员正文。

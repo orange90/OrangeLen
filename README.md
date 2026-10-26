@@ -19,11 +19,11 @@ https://github.com/user-attachments/assets/149b5c5c-ffb8-4004-8fe2-f28fc2297252
 
 ## 下载
 
-**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/V1.0/OrangeLen-V1.0-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/V1.0)
+**[下载 OrangeLen 安装包（DMG）](https://github.com/orange90/OrangeLen/releases/download/V1.0.1/OrangeLen-1.0.1-universal.dmg)** · [Release 说明与校验值](https://github.com/orange90/OrangeLen/releases/tag/V1.0.1)
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
-当前为 **V1.0 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
+当前为 **V1.0.1 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
 
 ## AI 时代最适合的预览工具
 
@@ -91,9 +91,9 @@ OrangeLen 扩展 macOS Quick Look，让空格预览更适合开发与 AI 文件�
 
 **当前明确列出 371 个不重复的文件扩展名**，详见下表；这是后缀计数，不是 371 种编程语言，也不代表所有格式都完整渲染。`.md` / `.markdown` 等别名分别计数；同一个后缀的多个用途只计一次。
 
-**2026-10-26 本机开发版分派审计：**371 项逐项 Finder 检查，350 项进入 OrangeLen，16 项由系统显示内容，5 项仅显示文件信息（`.ts`、`.mts`、`.dot`、`.txz`、`.tbz2`）。350 项均核对扩展回调日志；本机原有 Hydra 3D 扩展停用设置保留。此版本包含未发布的 SQL 修复，结果不等同公开安装包或完整格式兼容性，见[逐项列表与测试配置](docs/evidence/all-formats-2026-10-26/file-list.md)。
+**2026-10-26 本机开发版分派审计：**371 项逐项 Finder 检查，350 项进入 OrangeLen，16 项由系统显示内容，5 项仅显示文件信息（`.ts`、`.mts`、`.dot`、`.txz`、`.tbz2`）。350 项均核对扩展回调日志；本机原有 Hydra 3D 扩展停用设置保留。审计时使用包含 SQL 修复的开发版，结果不等同新包的全量重跑或完整格式兼容性，见[逐项列表与测试配置](docs/evidence/all-formats-2026-10-26/file-list.md)。
 
-**同日后续修复：**对上述剩余 21 项再次逐项 Finder 空格与调用日志验收，10 项已进入 OrangeLen（TXZ、TBZ2、ZSH、BASH、R、PROTO、LOG、DIFF、PATCH、WFLOW），11 项仍由系统处理，其中 TS/MTS/DOT 仍无正文。WFLOW 依赖可恢复的 Shortcuts 扩展偏好，会同时影响 `.shortcut` 系统动作卡片；公开安装包未更新。见[修复结果、逐项证据及恢复方法](docs/evidence/provider-fixes-2026-10-26/README.md)。
+**同日后续修复：**对上述剩余 21 项再次逐项 Finder 空格与调用日志验收，10 项已进入 OrangeLen（TXZ、TBZ2、ZSH、BASH、R、PROTO、LOG、DIFF、PATCH、WFLOW），11 项仍由系统处理，其中 TS/MTS/DOT 仍无正文。WFLOW 依赖可恢复的 Shortcuts 扩展偏好，会同时影响 `.shortcut` 系统动作卡片。SQL 与 9 项精确类型修复现已包含于 V1.0.1；WFLOW 偏好需主动启用，安装不自动应用。见[修复结果、逐项证据及恢复方法](docs/evidence/provider-fixes-2026-10-26/README.md)。
 
 | 类别 | 数量 | 扩展名 | 预览内容 |
 | --- | ---: | --- | --- |

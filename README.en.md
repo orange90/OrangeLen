@@ -18,11 +18,11 @@ https://github.com/user-attachments/assets/40021fc3-a691-45a7-ac52-3543c6601d5b
 
 ## Download
 
-**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/V1.0/OrangeLen-V1.0-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/V1.0)
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/V1.0.1/OrangeLen-1.0.1-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/V1.0.1)
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
-This **V1.0 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
+This **V1.0.1 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
 
 ## The best preview tool for the AI era
 
@@ -90,9 +90,9 @@ Reviewed **2026-10-17**. OrangeLen refers to the published **V1.0** build; the d
 
 **371 distinct file extensions are explicitly listed below.** This counts extensions, not programming languages or fully implemented format specifications. Aliases such as `.md` and `.markdown` count separately; multiple uses of one extension count once.
 
-**2026-10-26 local development build audit:** all 371 suffixes were checked in Finder: 350 reached OrangeLen, 16 displayed system-provided content, and 5 displayed file metadata only (`.ts`, `.mts`, `.dot`, `.txz`, `.tbz2`). Extension callback logs corroborated all 350 OrangeLen cases. The machine's existing disabled Hydra 3D extension setting was retained. This build includes the unpublished SQL fix; these results do not certify the public download or full format compatibility. See the [per-suffix results and test profile](docs/evidence/all-formats-2026-10-26/file-list.md).
+**2026-10-26 local development build audit:** all 371 suffixes were checked in Finder: 350 reached OrangeLen, 16 displayed system-provided content, and 5 displayed file metadata only (`.ts`, `.mts`, `.dot`, `.txz`, `.tbz2`). Extension callback logs corroborated all 350 OrangeLen cases. The machine's existing disabled Hydra 3D extension setting was retained. That audit used a development build with the SQL fix; it is not a full rerun of the new release or a claim of complete format compatibility. See the [per-suffix results and test profile](docs/evidence/all-formats-2026-10-26/file-list.md).
 
-**Follow-up fixes on the same day:** the remaining 21 suffixes were individually retested with Finder Space and callback logs. Ten now reach OrangeLen (TXZ, TBZ2, ZSH, BASH, R, PROTO, LOG, DIFF, PATCH, WFLOW); eleven still use system providers, including metadata-only TS/MTS/DOT. WFLOW requires a reversible Shortcuts extension preference that also affects system action cards for `.shortcut`. The public download has not been updated. See [results, per-file evidence and restoration](docs/evidence/provider-fixes-2026-10-26/README.md).
+**Follow-up fixes on the same day:** the remaining 21 suffixes were individually retested with Finder Space and callback logs. Ten now reach OrangeLen (TXZ, TBZ2, ZSH, BASH, R, PROTO, LOG, DIFF, PATCH, WFLOW); eleven still use system providers, including metadata-only TS/MTS/DOT. WFLOW requires a reversible Shortcuts extension preference that also affects system action cards for `.shortcut`. SQL and the nine exact-type fixes are now included in V1.0.1; WFLOW remains opt-in and is not enabled by installation. See [results, per-file evidence and restoration](docs/evidence/provider-fixes-2026-10-26/README.md).
 
 | Category | Count | Extensions | Preview |
 | --- | ---: | --- | --- |
