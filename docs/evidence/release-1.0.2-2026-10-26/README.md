@@ -22,7 +22,9 @@
 
 应用和 DMG 均获 Apple 公证 `Accepted`，均附加并验证票据，Gatekeeper 返回 `Notarized Developer ID`；DMG 内部校验通过。文件大小、SHA-256 与两次提交 ID 见 [distribution.json](distribution.json)。
 
-发布资产：`OrangeLen-1.0.2-universal.dmg` 和 `OrangeLen-1.0.2-SHA256SUMS.txt`。公开下载验证在发布后另行记录，不以本地产物校验替代。
+发布资产：`OrangeLen-1.0.2-universal.dmg` 和 `OrangeLen-1.0.2-SHA256SUMS.txt`，已在 [V1.0.2](https://github.com/orange90/OrangeLen/releases/tag/V1.0.2) 公开发布。
+
+发布后以不带认证的 curl 从公开链接重新下载：文件大小、SHA-256、GitHub 资产摘要和校验文件全部一致。对下载的 DMG 重新验证票据、Gatekeeper 和完整性，并只读挂载，确认包内应用与 7 个扩展版本、deep/strict 签名、应用公证票据、Gatekeeper 及全部 371 后缀声明均通过。见 [public-download.json](public-download.json)。本记录在发布后追加，不移动已发布标签。
 
 ## 范围
 

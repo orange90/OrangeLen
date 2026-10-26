@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-10-26T07:36:07.169643+00:00",
+  "releaseURL": "https://github.com/orange90/OrangeLen/releases/tag/V1.0.2",
+  "tag": "V1.0.2",
+  "publishedAt": "2026-10-26T07:35:00Z",
+  "downloadURL": "https://github.com/orange90/OrangeLen/releases/download/V1.0.2/OrangeLen-1.0.2-universal.dmg",
+  "downloadMethod": "Unauthenticated curl from the public GitHub release asset URL",
+  "bytes": 115985878,
+  "sha256": "21b710574e0a1007763aff8ccc2346972841e05a7bcdc4b516d4a1166fb00a91",
+  "githubAssetDigestMatched": true,
+  "publishedChecksumFileMatched": true,
+  "checksPassed": [
+    "dmg-ticket",
+    "dmg-gatekeeper",
+    "dmg-integrity",
+    "readonly-mount",
+    "app-and-seven-extensions-version-1.0.2-build-5",
+    "app-signature",
+    "app-ticket",
+    "app-gatekeeper",
+    "all-371-type-declarations",
+    "detach"
+  ],
+  "typeRegistrationCounts": {
+    "app": 339,
+    "core-types": 32,
+    "missing": 0
+  },
+  "cleanOSFinderVerified": false
+}
