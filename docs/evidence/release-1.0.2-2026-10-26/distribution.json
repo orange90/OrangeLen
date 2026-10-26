@@ -1,0 +1,20 @@
+{
+  "version": "1.0.2",
+  "build": "5",
+  "sourceCommit": "3827fa5d34a1887ed8240770a0a31f1a6a5e2d49",
+  "file": "OrangeLen-1.0.2-universal.dmg",
+  "bytes": 115985878,
+  "sha256": "21b710574e0a1007763aff8ccc2346972841e05a7bcdc4b516d4a1166fb00a91",
+  "appNotarization": {
+    "status": "Accepted",
+    "id": "de11ce90-2590-421f-86e8-4f20153c5b47"
+  },
+  "dmgNotarization": {
+    "status": "Accepted",
+    "id": "4f6dc55a-e299-4f86-bf1b-fe438a6a20af"
+  },
+  "appAndDMGTicketsValidated": true,
+  "appAndDMGGatekeeperAccepted": true,
+  "dmgIntegrityVerified": true,
+  "cleanOSFinderVerified": false
+}

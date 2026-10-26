@@ -1,0 +1,4254 @@
+{
+  "scope": "Product declarations plus this OS CoreTypes; excludes Xcode and other apps, including Notes.",
+  "finderVerified": false,
+  "counts": {
+    "app": 339,
+    "core-types": 32,
+    "missing": 0
+  },
+  "missingExtensions": [],
+  "extensionsWithoutPreviewCandidate": [],
+  "unresolvedProductParents": {},
+  "rows": [
+    {
+      "extension": "7z",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [
+        "org.7-zip.7-zip-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "a3x",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "acf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ada",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.ada-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ado",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "adoc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "applescript",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.applescript.text"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "arrow",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "as",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.applesingle-archive"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "asciidoc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ascr",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "asd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "asm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "asp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "aspx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "astro",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "atl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "au3",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "avt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "awk",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bas",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bash",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.bash-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bashrc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "basic",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bat",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bezel",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bib",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "bz2",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [
+        "public.bzip2-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "c",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.c-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "c++",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "c2pa",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "canvas",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diagram"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "cc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cfc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cfg",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source",
+        "public.toml"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "cfm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cfml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cjs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "class",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.sun.java-class"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cli",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "clj",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cljc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cljs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cls",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cmake",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cmd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "code-workspace",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "coffee",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "command",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "con",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "conf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "config",
+      "coverage": "app",
+      "appTypes": [
+        "public.toml"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "cp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cpp",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cr",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "csh",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.csh-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cson",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "csproj",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "css",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.css"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "csv",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.comma-separated-values-text"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "cts",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ctx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cu",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cuh",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "cxx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "d",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "dart",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "db",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.sqlite"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "designspace",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "diff",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diff"
+      ],
+      "coreTypes": [
+        "public.patch-file"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "do",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "dockerfile",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "dot",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diagram"
+      ],
+      "coreTypes": [
+        "com.microsoft.word.dot"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "drawio",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diagram"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "dtd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "dxt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mcpb"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "dylan",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "e",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ecf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ecore",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "edn",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.adobe.edn"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "el",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "entitlements",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "env",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "epub",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "org.idpf.epub-container"
+      ],
+      "previewCandidates": [
+        "Books"
+      ]
+    },
+    {
+      "extension": "erb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "erl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ex",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "excalidraw",
+      "coverage": "app",
+      "appTypes": [
+        "com.excalidraw.excalidraw"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "exs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "f",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.fortran-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "f90",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.fortran-90-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "f95",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.fortran-95-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "fea",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "feather",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "fish",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "flow",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "fnc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "for",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.fortran-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "fs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.file-system-plug-in"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "fsx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "fxml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gemfile",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gguf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "glb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mesh"
+      ],
+      "coreTypes": [
+        "org.khronos.glb"
+      ],
+      "previewCandidates": [
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "gleam",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gltf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mesh"
+      ],
+      "coreTypes": [
+        "org.khronos.gltf"
+      ],
+      "previewCandidates": [
+        "Data",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "go",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gpx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gql",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gradle",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "graphql",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "groovy",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "gv",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diagram"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "gz",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "org.gnu.gnu-zip-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "h",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.c-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "haml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "har",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.har"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "hcl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "heex",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hh",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hpp",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.c-plus-plus-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hri",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hrl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "htm",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.html"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "html",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.html"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "http",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "hxx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ily",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "iml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "inf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ini",
+      "coverage": "app",
+      "appTypes": [
+        "com.microsoft.ini"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "inl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-inline-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ino",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ipc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "ipp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.c-plus-plus-header"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ipynb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.notebook"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "iss",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "j2",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jav",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.sun.java-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "java",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "com.sun.java-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "javascript",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.netscape.javascript-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jinja",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jinja2",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jnlp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.sun.java-web-start"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "js",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "com.netscape.javascript-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jscript",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.netscape.javascript-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jsm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "json",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.json"
+      ],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "json5",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.json5"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "jsonc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.jsonc"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "jsonl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.jsonl"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "jsp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "jsx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.component"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "kml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "kmt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ksh",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.ksh-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "kt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "kts",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "latent",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "latex",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "lay",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ld",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "less",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "lhs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "lisp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "loctable",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "log",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "com.apple.log"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "lsp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ltx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "lua",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ly",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "m",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.objective-c-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mak",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.make-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "map",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "markdown",
+      "coverage": "app",
+      "appTypes": [
+        "net.daringfireball.markdown"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "mcpb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mcpb"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "md",
+      "coverage": "app",
+      "appTypes": [
+        "net.daringfireball.markdown"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "mdc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mdx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.typesetting"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "mermaid",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mermaid"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "mf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mill",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mjs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.netscape.javascript-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mk",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.make-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mll",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mly",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mm",
+      "coverage": "app",
+      "appTypes": [
+        "net.sourceforge.freemind.mm"
+      ],
+      "coreTypes": [
+        "public.objective-c-plus-plus-source"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "mmap",
+      "coverage": "app",
+      "appTypes": [
+        "com.mindjet.mindmanager.mmap"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "mmd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mermaid"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "mobileconfig",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.mobileconfig"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "mpd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mq4",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mq5",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ms",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mts",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mvw",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "mxml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "n8np",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.n8n-package"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "ncx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ndjson",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.jsonl"
+      ],
+      "coreTypes": [
+        "public.ndjson"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "nf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "nim",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "nix",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "npy",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "npz",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.numpy-archive"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "obj",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mesh"
+      ],
+      "coreTypes": [
+        "public.geometry-definition-format"
+      ],
+      "previewCandidates": [
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "onnx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "opf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "opml",
+      "coverage": "app",
+      "appTypes": [
+        "org.opml.opml"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "otio",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "parquet",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "pas",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.pascal-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "patch",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.diff"
+      ],
+      "coreTypes": [
+        "public.patch-file"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "pck",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pddl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pde",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pdf",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "com.adobe.pdf"
+      ],
+      "previewCandidates": [
+        "Books"
+      ]
+    },
+    {
+      "extension": "ph3",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ph4",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "php",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "php3",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "php4",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "phtml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.php-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pkb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pks",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.perl-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "plist",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.ascii-property-list",
+        "com.apple.binary-property-list",
+        "com.apple.property-list",
+        "com.apple.xml-property-list"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "pm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.perl-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "podspec",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pom",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "prc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pro",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "properties",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "proto",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ps1",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "psd1",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "psjs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "psm1",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pub",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pxd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pxi",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "py",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.python-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "py3",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pyi",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "pyx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "r",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.rez-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "raml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rar",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "rb",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.ruby-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rbw",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.ruby-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rdf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "readme",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rest",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rex",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rexx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rhtml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rjs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rkt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "robot",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "rst",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "s79",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "safetensors",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.scientific"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "sage",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sarif",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.sarif"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "sas",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sass",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sbt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scad",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scala",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sch",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scpt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "com.apple.applescript.script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "scss",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sequ",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sh",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.shell-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "skill",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.skill"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "sld",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sls",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "smali",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sol",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sps",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sql",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sqlite",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.sqlite"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "sqlite3",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.sqlite"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "sqs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "srt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.subtitle"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "ss",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "stl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.mesh"
+      ],
+      "coreTypes": [
+        "public.standard-tesselated-geometry-format"
+      ],
+      "previewCandidates": [
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "storybard",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "storyboard",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "strings",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "stringsdict",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "sty",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "svelte",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "svg",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.svg-image"
+      ],
+      "previewCandidates": [
+        "Data",
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "swift",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.swift-source"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "t",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tab",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tar",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.tar-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "tbz2",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [
+        "public.tar-bzip2-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "tcl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tcsh",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.tcsh-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tex",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.typesetting"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "texi",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "text",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [
+        "public.plain-text"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tf",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tfstate",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tfvars",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tgz",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "org.gnu.gnu-zip-tar-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "tmpl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "toml",
+      "coverage": "app",
+      "appTypes": [
+        "public.toml"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "tpb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tpl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tpp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tps",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "trg",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ts",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.mpeg-2-transport-stream"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "tsv",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.tab-separated-values-text"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "tsx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.component"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "ttx",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "twig",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "txt",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.plain-text"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "txz",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [
+        "org.tukaani.tar-xz-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "typ",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.typesetting"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code",
+        "Markdown"
+      ]
+    },
+    {
+      "extension": "tzst",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "unity",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "v",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vb",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vbs",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vhd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vhdl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vim",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vsix",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-package"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "vtt",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.subtitle"
+      ],
+      "coreTypes": [
+        "org.w3.webvtt"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "vue",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "vw",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "wflow",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "whl",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-package"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "xaml",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xcscheme",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xhtml",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.xhtml"
+      ],
+      "previewCandidates": [
+        "Code",
+        "Data"
+      ]
+    },
+    {
+      "extension": "xib",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xm",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xmind",
+      "coverage": "app",
+      "appTypes": [
+        "org.xmind.openformat.xmind"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Drawings"
+      ]
+    },
+    {
+      "extension": "xml",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "com.microsoft.word.wordml",
+        "public.xml"
+      ],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "xmp",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.xmp"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "xq",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xquery",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xsd",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xu",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xul",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "xz",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [
+        "org.tukaani.xz-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "yaml",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.yaml"
+      ],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "yml",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.yaml"
+      ],
+      "previewCandidates": [
+        "Data"
+      ]
+    },
+    {
+      "extension": "zig",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "zip",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.zip-archive"
+      ],
+      "previewCandidates": [
+        "Archives"
+      ]
+    },
+    {
+      "extension": "zon",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "zsh",
+      "coverage": "core-types",
+      "appTypes": [],
+      "coreTypes": [
+        "public.zsh-script"
+      ],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "zshrc",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.developer-source"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Code"
+      ]
+    },
+    {
+      "extension": "zst",
+      "coverage": "app",
+      "appTypes": [
+        "local.orangelen.extended-archive"
+      ],
+      "coreTypes": [],
+      "previewCandidates": [
+        "Archives"
+      ]
+    }
+  ],
+  "appInfo": "build/notarized-1.0.2/OrangeLen.app/Contents/Info.plist"
+}

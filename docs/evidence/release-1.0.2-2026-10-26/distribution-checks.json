@@ -1,0 +1,228 @@
+{
+  "sourceCommit": "3827fa5d34a1887ed8240770a0a31f1a6a5e2d49",
+  "version": "1.0.2",
+  "build": "5",
+  "versions": [
+    {
+      "path": "Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreview.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/Info.plist",
+      "version": "1.0.2",
+      "build": "5"
+    }
+  ],
+  "machO": [
+    {
+      "path": "Contents/Frameworks/OrangeLenResources.framework/Versions/A/OrangeLenResources",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/MacOS/OrangeLen",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreview.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/MacOS/OrangeLenPreviewArchives",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewArchives.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/MacOS/OrangeLenPreviewBooks",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewBooks.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/MacOS/OrangeLenPreviewData",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewData.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/MacOS/OrangeLenPreviewDrawings",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewDrawings.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/MacOS/OrangeLenPreviewFolders",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewFolders.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/MacOS/OrangeLenPreviewMarkdown",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/PlugIns/OrangeLenPreviewMarkdown.appex/Contents/XPCServices/OrangeLenImageBroker.xpc/Contents/MacOS/OrangeLenImageBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    {
+      "path": "Contents/XPCServices/OrangeLenDocumentBroker.xpc/Contents/MacOS/OrangeLenDocumentBroker",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    }
+  ],
+  "strictSignatureVerified": true,
+  "signingTeam": "C7J9CK5X87",
+  "swiftTests": {
+    "executed": 315,
+    "skipped": 4,
+    "failures": 0
+  },
+  "pythonTests": {
+    "executed": 10,
+    "failures": 0
+  }
+}

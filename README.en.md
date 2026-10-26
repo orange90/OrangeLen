@@ -18,11 +18,13 @@ https://github.com/user-attachments/assets/40021fc3-a691-45a7-ac52-3543c6601d5b
 
 ## Download
 
-**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/V1.0.1/OrangeLen-1.0.1-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/V1.0.1)
+**[Download OrangeLen installer (DMG)](https://github.com/orange90/OrangeLen/releases/download/V1.0.2/OrangeLen-1.0.2-universal.dmg)** · [Release notes and checksum](https://github.com/orange90/OrangeLen/releases/tag/V1.0.2)
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
-This **V1.0.1 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
+This **V1.0.2 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
+
+V1.0.2 adds missing SQL, INI, CONFIG, TOML and Markdown type declarations, reducing reliance on installed developer tools or editors. See the [release notes](docs/releases/V1.0.2.md).
 
 ## The best preview tool for the AI era
 
