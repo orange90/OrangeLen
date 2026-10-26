@@ -6,7 +6,7 @@ export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Develope
 : "${ORANGELEN_SIGN_IDENTITY:?Developer ID identity required}"
 : "${ORANGELEN_TEAM_ID:?Team ID required}"
 input="${ORANGELEN_INPUT_APP:-build/ReleasePreview/Build/Products/Release/OrangeLen.app}"
-version="${ORANGELEN_RELEASE_VERSION:-1.0.2}"
+version="${ORANGELEN_RELEASE_VERSION:-1.1.0}"
 [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-preview\.[0-9]+)?$ ]] || { echo 'Invalid release version.' >&2; exit 2; }
 stage="$PWD/build/notarized-$version"
 app="$stage/OrangeLen.app"
@@ -27,10 +27,11 @@ if [[ "${1:-prepare}" == prepare ]]; then
   done
   while IFS= read -r -d "" info; do
     /usr/libexec/PlistBuddy -c "Add :OrangeLenAppGroup string $group" "$info"
-  done < <(find "$app/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -print0)
+  done < <(find "$app/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -not -path "*/Sparkle.framework/*" -print0)
   while IFS= read -r -d '' library; do codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp "$library"; done < <(find "$app/Contents" -name '*.dylib' -print0)
+  bash scripts/sign-sparkle.sh "$app" "$ORANGELEN_SIGN_IDENTITY" --timestamp
   while IFS= read -r -d '' framework; do codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp "$framework"; done < <(find "$app/Contents" -name '*.framework' -print0)
-  while IFS= read -r -d '' service; do service_entitlements=ImageBroker/ImageBroker.entitlements; if [[ "$service" == *OrangeLenDocumentBroker.xpc ]]; then service_entitlements=DocumentBroker/DocumentBroker.entitlements; fi; codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements "$service_entitlements" "$service"; done < <(find "$app/Contents" -name '*.xpc' -print0)
+  while IFS= read -r -d '' service; do service_entitlements=ImageBroker/ImageBroker.entitlements; if [[ "$service" == *OrangeLenDocumentBroker.xpc ]]; then service_entitlements=DocumentBroker/DocumentBroker.entitlements; fi; codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements "$service_entitlements" "$service"; done < <(find "$app/Contents" -name '*.xpc' -not -path '*/Sparkle.framework/*' -print0)
   while IFS= read -r -d "" preview; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --timestamp --entitlements "$stage/preview.plist" "$preview"
   done < <(find "$app/Contents/PlugIns" -name "*.appex" -print0)
@@ -63,11 +64,13 @@ elif [[ "${1:-}" == notarize || "${1:-}" == resume ]]; then
   cat > "$stage/image/INSTALL.txt" <<EOF
 OrangeLen $version · macOS 14+
 Drag OrangeLen.app to Applications, then open it.
+After every install or update, launch OrangeLen once to register Quick Look extensions.
 Developer ID signed and Apple notarized.
 Enable OrangeLen Quick Look extensions in System Settings if needed.
 Universal binary: Apple Silicon and Intel. Intel hardware not fully verified.
 
 将 OrangeLen.app 拖入 Applications 后打开。
+每次安装或更新后，请先启动一次 OrangeLen，以便系统注册 Quick Look 扩展。
 已使用 Developer ID 签名并通过 Apple 公证。
 如 Finder 预览未生效，请检查系统设置中的 Quick Look 扩展。
 包含 Apple Silicon 与 Intel 架构；Intel 实机尚未完整验收。
@@ -84,6 +87,9 @@ EOF
   mkdir -p build/artifacts
   ditto "$dmg" "build/artifacts/$(basename "$dmg")"
   (cd build/artifacts && shasum -a 256 "$(basename "$dmg")" > "OrangeLen-$version-SHA256SUMS.txt")
+  if [[ "$version" != *-preview.* ]]; then
+    bash scripts/generate-update-feed.sh "$version"
+  fi
 else
   echo 'Usage: scripts/package-notarized.sh prepare|notarize|resume' >&2; exit 2
 fi

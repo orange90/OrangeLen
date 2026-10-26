@@ -22,6 +22,8 @@ https://github.com/user-attachments/assets/40021fc3-a691-45a7-ac52-3543c6601d5b
 
 Requires **macOS 14 or later**. The universal installer includes Apple Silicon and Intel architectures. Open the DMG, drag `OrangeLen.app` into `Applications`, then launch it.
 
+**After installing or updating, launch OrangeLen once** so macOS can register its Quick Look extensions, then return to Finder and press Space to preview files.
+
 This **V1.0.2 release is Developer ID signed and Apple notarized**. Both the app and DMG have stapled notarization tickets and pass Gatekeeper verification. Intel hardware and other macOS versions have not been fully verified.
 
 V1.0.2 adds missing SQL, INI, CONFIG, TOML and Markdown type declarations, reducing reliance on installed developer tools or editors. See the [release notes](docs/releases/V1.0.2.md).

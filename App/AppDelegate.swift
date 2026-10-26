@@ -2,6 +2,7 @@ import OrangeLenCore
 import AppKit
 import OrangeLenUI
 import SwiftUI
+import Sparkle
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     static func main() {
@@ -15,12 +16,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     let reader = ReaderController()
     var settingsWindow: NSWindow?
     var diagnosticsWindow: NSWindow?
+    private let updaterController = SPUStandardUpdaterController(startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
     func applicationDidFinishLaunching(_ notification: Notification) {
         let menu = NSMenu()
         let appItem = NSMenuItem(); menu.addItem(appItem)
         let appMenu = NSMenu(); appItem.submenu = appMenu
         appMenu.addItem(withTitle: L10n.text("打开…"), action: #selector(openFile), keyEquivalent: "o")
         appMenu.addItem(withTitle: L10n.text("设置…"), action: #selector(showSettings), keyEquivalent: ",")
+        let updateItem = appMenu.addItem(withTitle: L10n.text("检查更新…"), action: #selector(SPUStandardUpdaterController.checkForUpdates(_:)), keyEquivalent: "")
+        updateItem.target = updaterController
         appMenu.addItem(withTitle: L10n.text("Quick Look 诊断…"), action: #selector(showDiagnostics), keyEquivalent: "d")
         appMenu.addItem(withTitle: L10n.text("关闭"), action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")
         appMenu.addItem(withTitle: L10n.text("退出 OrangeLen"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
@@ -28,6 +32,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         editItem.submenu?.addItem(withTitle: L10n.text("复制"), action: #selector(NSText.copy(_:)), keyEquivalent: "c")
         editItem.submenu?.addItem(withTitle: L10n.text("全选"), action: #selector(NSText.selectAll(_:)), keyEquivalent: "a")
         NSApp.mainMenu = menu
+        updaterController.startUpdater()
         window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1000, height: 720), styleMask: [.titled, .closable, .resizable, .miniaturizable], backing: .buffered, defer: false)
         window.title = "OrangeLen — Quick Look for Developers"
         window.contentViewController = reader

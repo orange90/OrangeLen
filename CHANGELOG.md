@@ -1,5 +1,11 @@
 # 变更日志
 
+## V1.1.0 — 2026-10-26
+
+- 主应用菜单增加「检查更新…」，通过 Sparkle 2.9.6 下载、验证和安装完整 App，并重新启动；当前仅手动检查。
+- 稳定更新清单与安装包托管在 GitHub Releases；签名和公证流程增加 Sparkle 内嵌工具签名及 appcast 生成、校验。见[更新与发布流程](docs/app-updates.md)。
+- 中英文安装说明提醒安装或更新后先启动一次 App，以便系统注册 Quick Look 扩展。
+
 ## V1.0.2 — 2026-10-26
 
 - 将 `.sql` 加入源码格式注册表，随主应用导出的 `local.orangelen.developer-source` 登记后缀及 `public.source-code` 继承关系；Code 扩展已支持该类型，干净系统无需其他应用提供 `org.iso.sql` 注册。

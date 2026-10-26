@@ -23,6 +23,8 @@ https://github.com/user-attachments/assets/149b5c5c-ffb8-4004-8fe2-f28fc2297252
 
 适用于 **macOS 14 及以上**，通用安装包包含 Apple Silicon 与 Intel 架构。打开 DMG，将 `OrangeLen.app` 拖入 `Applications`，再启动应用。
 
+**安装或更新后，请先启动一次 OrangeLen**，以便系统注册 Quick Look 扩展，再回到 Finder 按空格预览文件。
+
 当前为 **V1.0.2 正式版，已使用 Developer ID 签名并通过 Apple 公证**。应用与 DMG 均附有公证票据，并通过 Gatekeeper 校验。Intel 实机与其他 macOS 版本尚未完整验收。
 
 V1.0.2 补齐 SQL、INI、CONFIG、TOML 和 Markdown 的文件类型登记，减少对开发工具或编辑器安装环境的依赖。见[版本说明](docs/releases/V1.0.2.md)。

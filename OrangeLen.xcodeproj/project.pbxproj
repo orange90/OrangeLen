@@ -42,7 +42,7 @@
 		4138217934135F0465D00B00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4703CA6321E09E558F3718A /* Localizable.strings */; };
 		4198FCF63D3AC5E98AE5D5B7 /* typst.wasm in Resources */ = {isa = PBXBuildFile; fileRef = A68A39276A70A7B78B4BC305 /* typst.wasm */; };
 		4268976FE62529925996941D /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		44AFA5C73E7CF5D3227A86E7 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61C00F684C7EE5F46DB43F64 /* OrangeLenUI */; };
+		44AFA5C73E7CF5D3227A86E7 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 95FB7473813CAD155C8C5FEE /* Sparkle */; };
 		4625850AEB18620DC57A8249 /* OrangeLenResources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; };
 		4777E9A5085648C95743833E /* OrangeLenDocumentBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 917452DD098A21DFE494EEBE /* OrangeLenDocumentBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48CD16B9A757F3CAE480C81A /* ExcalidrawRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = E0586BE6A174D62CEE5A9D9E /* ExcalidrawRenderer.html */; };
@@ -67,6 +67,7 @@
 		7BB541DF9B481FC8EDE53914 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46850D4CAFD9853701455F26 /* PreviewViewController.swift */; };
 		8706C8A8963730F54D8D3E11 /* OrangeLenPreviewArchives.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD4640A95742B9EB4F366FF3 /* OrangeLenPreviewArchives.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		886A3D883B2C2A4F5705E86A /* ArrowRenderer.html in Resources */ = {isa = PBXBuildFile; fileRef = F9DCEA76EAFEB9F80E6A26B2 /* ArrowRenderer.html */; };
+		8991BD6BAF948D23842AE9D1 /* OrangeLenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 61C00F684C7EE5F46DB43F64 /* OrangeLenUI */; };
 		8BFBC55AC094975A1FAB8CB1 /* Highlight.js in Resources */ = {isa = PBXBuildFile; fileRef = 8F6395C7C3E38B68DA0DC8F3 /* Highlight.js */; };
 		8C2AEB5EC185568577F8EAC7 /* OrangeLenResources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6AAC5DF5DDAD512EA9095A /* OrangeLenResources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F4D5DCB9809FF86617C10D0 /* OrangeLenImageBroker.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE15E970B05A653E744B264 /* OrangeLenImageBroker.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -590,8 +591,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AFA5C73E7CF5D3227A86E7 /* Sparkle in Frameworks */,
 				8F9D3475F7DDE848970E52E3 /* OrangeLenResources.framework in Frameworks */,
-				44AFA5C73E7CF5D3227A86E7 /* OrangeLenUI in Frameworks */,
+				8991BD6BAF948D23842AE9D1 /* OrangeLenUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,6 +1148,7 @@
 			);
 			name = OrangeLen;
 			packageProductDependencies = (
+				95FB7473813CAD155C8C5FEE /* Sparkle */,
 				61C00F684C7EE5F46DB43F64 /* OrangeLenUI */,
 			);
 			productName = OrangeLen;
@@ -1303,6 +1306,7 @@
 			mainGroup = 698B04F06E147C5279F1DF06;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				09A17E93700143F60A747F60 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				9E4743E201A963E85F77E24C /* XCLocalSwiftPackageReference "Packages/OrangeLen" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -1881,7 +1885,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_DEBUG_DYLIB = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1896,7 +1900,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1997,7 +2001,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_DEBUG_DYLIB = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -2018,7 +2022,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2573,6 +2577,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		09A17E93700143F60A747F60 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.9.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2241A87AFA321FA146A5A54A /* OrangeLenUI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2601,6 +2616,11 @@
 		769FE336D3C1796ABA6EFD1C /* OrangeLenUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OrangeLenUI;
+		};
+		95FB7473813CAD155C8C5FEE /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A17E93700143F60A747F60 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		98A78709DAF88A62C1BBE8CC /* OrangeLenUI */ = {
 			isa = XCSwiftPackageProductDependency;

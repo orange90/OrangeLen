@@ -24,11 +24,12 @@ if [[ -n "${ORANGELEN_SIGN_IDENTITY:-}" ]]; then
     done
     while IFS= read -r -d "" info; do
       /usr/libexec/PlistBuddy -c "Add :OrangeLenAppGroup string $group" "$info"
-    done < <(find "$destination/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -print0)
+    done < <(find "$destination/Contents" -name Info.plist -not -path "*/XPCServices/*" -not -path "*/Resources/*" -not -path "*/Sparkle.framework/*" -print0)
   fi
   while IFS= read -r -d '' library; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime "$library"
   done < <(find "$destination/Contents" -name '*.dylib' -print0)
+  bash scripts/sign-sparkle.sh "$destination" "$ORANGELEN_SIGN_IDENTITY"
   while IFS= read -r -d '' framework; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime "$framework"
   done < <(find "$destination/Contents" -name '*.framework' -print0)
@@ -36,7 +37,7 @@ if [[ -n "${ORANGELEN_SIGN_IDENTITY:-}" ]]; then
     service_entitlements=ImageBroker/ImageBroker.entitlements
     if [[ "$service" == *OrangeLenDocumentBroker.xpc ]]; then service_entitlements=DocumentBroker/DocumentBroker.entitlements; fi
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements "$service_entitlements" "$service"
-  done < <(find "$destination/Contents" -name '*.xpc' -print0)
+  done < <(find "$destination/Contents" -name '*.xpc' -not -path '*/Sparkle.framework/*' -print0)
   while IFS= read -r -d "" preview; do
     codesign --force --sign "$ORANGELEN_SIGN_IDENTITY" --options runtime --entitlements build/signing/preview.plist "$preview"
   done < <(find "$destination/Contents/PlugIns" -name "*.appex" -print0)

@@ -5,6 +5,9 @@ options:
   deploymentTarget:
     macOS: '14.0'
 packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.9.6
   OrangeLen:
     path: Packages/OrangeLen
 settings:
@@ -15,8 +18,8 @@ settings:
     ENABLE_HARDENED_RUNTIME: YES
     ENABLE_DEBUG_DYLIB: NO
     MACOSX_DEPLOYMENT_TARGET: '14.0'
-    CURRENT_PROJECT_VERSION: '5'
-    MARKETING_VERSION: '1.0.2'
+    CURRENT_PROJECT_VERSION: '6'
+    MARKETING_VERSION: '1.1.0'
 targetTemplates:
   SharedResourceConsumer:
     sources: [SharedResourcesBootstrap.m]
@@ -64,6 +67,15 @@ targets:
         NSAppTransportSecurity:
           NSAllowsArbitraryLoadsInWebContent: true
         CFBundleDisplayName: OrangeLen
+        SUFeedURL: https://github.com/orange90/OrangeLen/releases/latest/download/appcast.xml
+        SUPublicEDKey: TvB8fglokRU8FwCuwbjSBlnkOwdvMl5fglK8Fb6weVc=
+        SURequireSignedFeed: true
+        SUEnableInstallerLauncherService: true
+        SUEnableAutomaticChecks: false
+        SUAutomaticallyUpdate: false
+        SUAllowsAutomaticUpdates: false
+        SUEnableSystemProfiling: false
+        SUVerifyUpdateBeforeExtraction: true
         CFBundleIconFile: OrangeLen.icns
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -234,6 +246,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: local.OrangeLen
         CODE_SIGN_ENTITLEMENTS: App/OrangeLen.entitlements
     dependencies:
+      - package: Sparkle
       - target: OrangeLenResources
         embed: true
         codeSign: true

@@ -1,0 +1,31 @@
+{
+  "appBuildPassed": true,
+  "swiftTests": 315,
+  "swiftSkipped": 4,
+  "swiftFailures": 0,
+  "pythonTests": 16,
+  "pythonFailures": 0,
+  "previewExtensions": 7,
+  "sparkleOnlyInMainApp": true,
+  "publicKeyMatchesKeychain": true,
+  "feed": "https://github.com/orange90/OrangeLen/releases/latest/download/appcast.xml",
+  "signedFeedRequired": true,
+  "verifyBeforeExtraction": true,
+  "automaticChecks": false,
+  "automaticInstall": false,
+  "signatureTamperTestsPassed": true,
+  "isolatedUpdate": {
+    "from": "1.0.2 (5)",
+    "to": "1.0.3 (6)",
+    "bundleID": "local.OrangeLen.UpdaterSmoke",
+    "source": "local HTTP test feed; signed feed and archive",
+    "package": "ZIP, Developer ID signed; not notarized",
+    "quickLookExtensionsIncluded": false,
+    "installedVersionVerified": true,
+    "relaunchedProcessVerified": true,
+    "updatedCodeSignatureVerified": true
+  },
+  "publicReleasePublished": false,
+  "publicDMGUpdateTested": false,
+  "finderExtensionUpdateTested": false
+}

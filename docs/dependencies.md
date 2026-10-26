@@ -4,6 +4,7 @@ Runtime is native Swift / AppKit / SwiftUI / Foundation / NaturalLanguage / Cryp
 
 | Dependency | Resolved version | Purpose | License |
 |---|---|---|---|
+| [Sparkle](https://github.com/sparkle-project/Sparkle/releases/tag/2.9.6) | 2.9.6 | Main-app update checking, signature validation, installation and relaunch; not linked by previews | MIT and bundled third-party notices; `licenses/Sparkle-LICENSE.txt` |
 | [swift-markdown](https://github.com/swiftlang/swift-markdown/releases/tag/0.8.0) | 0.8.0 | CommonMark / GFM AST and UTF-8 source positions | Apache 2.0 with Swift exception, see `licenses/` |
 | [swift-cmark](https://github.com/swiftlang/swift-cmark) | 0.9.0 | swift-markdown's C parser | BSD-style + bundled notices, see `licenses/swift-cmark-COPYING.txt` |
 | [KaTeX](https://katex.org/) | 0.19.0 | Offline TeX math layout | MIT; bundled license collection |
