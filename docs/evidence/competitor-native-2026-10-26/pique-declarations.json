@@ -1,0 +1,216 @@
+{
+  "CFBundleIdentifier": "io.macadmins.pique.PiquePreview",
+  "CFBundleShortVersionString": "1.0.0",
+  "NSExtension": {
+    "NSExtensionAttributes": {
+      "QLFileExtensions": [
+        "json",
+        "ndjson",
+        "jsonl",
+        "yaml",
+        "yml",
+        "toml",
+        "lock",
+        "xml",
+        "mobileconfig",
+        "plist",
+        "sh",
+        "bash",
+        "zsh",
+        "rc",
+        "command",
+        "ps1",
+        "psm1",
+        "py",
+        "pyw",
+        "pyi",
+        "rb",
+        "go",
+        "rs",
+        "js",
+        "jsx",
+        "ts",
+        "d.ts",
+        "tsx",
+        "md",
+        "markdown",
+        "mdx",
+        "adoc",
+        "tf",
+        "tfvars",
+        "hcl",
+        "recipe",
+        "vpptoken",
+        "env",
+        "example",
+        "conf"
+      ],
+      "QLIsDataBasedPreview": false,
+      "QLPreviewHeight": 768.0,
+      "QLPreviewWidth": 1024.0,
+      "QLSupportedContentTypes": [
+        "public.json",
+        "io.macadmins.pique.ndjson",
+        "public.yaml",
+        "public.xml",
+        "public.toml",
+        "com.apple.mobileconfig",
+        "com.apple.property-list",
+        "public.shell-script",
+        "public.zsh-script",
+        "com.microsoft.powershell-script",
+        "public.python-script",
+        "public.ruby-script",
+        "org.golang.go-source",
+        "org.rust-lang.rust-source",
+        "com.netscape.javascript-source",
+        "public.javascript-source",
+        "com.apple.dt.typescript",
+        "io.macadmins.pique.typescript",
+        "io.macadmins.pique.asciidoc",
+        "net.daringfireball.markdown",
+        "io.macadmins.pique.mdx",
+        "net.ia.markdown",
+        "io.macadmins.pique.hcl",
+        "io.macadmins.pique.recipe",
+        "io.macadmins.pique.vpptoken",
+        "com.apple.terminal.shell-script",
+        "io.macadmins.pique.env",
+        "io.macadmins.pique.conf",
+        "com.coderunnerapp.config-file",
+        "public.data"
+      ]
+    },
+    "NSExtensionPointIdentifier": "com.apple.quicklook.preview",
+    "NSExtensionPrincipalClass": "PiquePreview.PreviewProvider"
+  },
+  "UTImportedTypeDeclarations": [
+    {
+      "UTTypeConformsTo": [
+        "public.script"
+      ],
+      "UTTypeDescription": "PowerShell Script",
+      "UTTypeIdentifier": "com.microsoft.powershell-script",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "ps1",
+          "psm1",
+          "psd1"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.source-code"
+      ],
+      "UTTypeDescription": "TypeScript Source",
+      "UTTypeIdentifier": "io.macadmins.pique.typescript",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "ts",
+          "tsx"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "AsciiDoc Document",
+      "UTTypeIdentifier": "io.macadmins.pique.asciidoc",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "adoc"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "MDX Document",
+      "UTTypeIdentifier": "io.macadmins.pique.mdx",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "mdx"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "HCL / Terraform Configuration",
+      "UTTypeIdentifier": "io.macadmins.pique.hcl",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "tf",
+          "tfvars",
+          "hcl"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.xml"
+      ],
+      "UTTypeDescription": "AutoPkg Recipe",
+      "UTTypeIdentifier": "io.macadmins.pique.recipe",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "recipe"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "Newline Delimited JSON",
+      "UTTypeIdentifier": "io.macadmins.pique.ndjson",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "ndjson",
+          "jsonl"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.data"
+      ],
+      "UTTypeDescription": "Apple VPP / Apps and Books Token",
+      "UTTypeIdentifier": "io.macadmins.pique.vpptoken",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "vpptoken"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "Environment Variables File",
+      "UTTypeIdentifier": "io.macadmins.pique.env",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "env",
+          "example"
+        ]
+      }
+    },
+    {
+      "UTTypeConformsTo": [
+        "public.plain-text"
+      ],
+      "UTTypeDescription": "Configuration File",
+      "UTTypeIdentifier": "io.macadmins.pique.conf",
+      "UTTypeTagSpecification": {
+        "public.filename-extension": [
+          "conf"
+        ]
+      }
+    }
+  ]
+}

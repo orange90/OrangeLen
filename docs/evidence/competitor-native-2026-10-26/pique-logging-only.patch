@@ -1,0 +1,12 @@
+--- a/PiquePreview/PreviewProvider.swift
++++ b/PiquePreview/PreviewProvider.swift
+@@ -34,0 +35 @@
++        logger.notice("audit received plugin=Pique file=\(url.lastPathComponent, privacy: .public)")
+@@ -111 +112,2 @@
+-                handler(nil)
++                logger.notice("audit completed plugin=Pique success=true file=\(url.lastPathComponent, privacy: .public)")
++            handler(nil)
+@@ -151,0 +154 @@
++            logger.notice("audit completed plugin=Pique success=true file=\(url.lastPathComponent, privacy: .public)")
+@@ -154,0 +158 @@
++            logger.notice("audit completed plugin=Pique success=false file=\(url.lastPathComponent, privacy: .public)")

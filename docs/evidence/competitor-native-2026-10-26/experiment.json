@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "macOS": "26.6.2 (25G83)",
+  "architecture": "arm64",
+  "baseline_commit": "cf2a2beecafbcfff0c3472fabbe9d25ce449dafa",
+  "pique": {
+    "source_revision": "8931c8a4f6fa94e1e1cff2e5e5a7b5e761141b0c",
+    "source_url": "https://github.com/macadmins/pique",
+    "test_build": "Debug, local Apple Development signing, preview sandbox and user-selected read-only entitlements; no App Group entitlement",
+    "source_changes": "logging only, see pique-logging-only.patch",
+    "official_release_binary_tested": false
+  },
+  "dotviewer": {
+    "source_main_revision": "ee1ac83ea031917ed598ea863f0b0e0aabc14b6e",
+    "release": "v1.5.8",
+    "release_published_at": "2026-09-23T07:42:08Z",
+    "release_url": "https://github.com/Stianlars1/dotViewer/releases/tag/v1.5.8",
+    "dmg_sha256": "1e3dbc6314036a1eaff4cebfd659335251b6041f55efca96e9147837352bdaa3",
+    "official_release_binary_tested": true,
+    "binary_changes": "none",
+    "signer_team_id": "7F5ZSQFCQ4",
+    "deep_strict_signature_verified": true,
+    "host_application_launched": false
+  }
+}

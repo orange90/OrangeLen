@@ -1,0 +1,258 @@
+[
+  {
+    "timestamp": "2026-10-26 11:50:05.376866+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 1
+  },
+  {
+    "timestamp": "2026-10-26 11:50:06.658139+0800",
+    "message": "audit received plugin=Pique file=00-control.vpptoken",
+    "subsystem": "io.macadmins.pique",
+    "process_id": 14708,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/competitor-native-20261026/PiqueDerivedData/Build/Products/Debug/Pique.app/Contents/PlugIns/PiquePreview.appex/Contents/MacOS/PiquePreview",
+    "id": 2
+  },
+  {
+    "timestamp": "2026-10-26 11:50:07.137222+0800",
+    "message": "audit completed plugin=Pique success=true file=00-control.vpptoken",
+    "subsystem": "io.macadmins.pique",
+    "process_id": 14708,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/competitor-native-20261026/PiqueDerivedData/Build/Products/Debug/Pique.app/Contents/PlugIns/PiquePreview.appex/Contents/MacOS/PiquePreview",
+    "id": 3
+  },
+  {
+    "timestamp": "2026-10-26 11:50:27.116602+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 4
+  },
+  {
+    "timestamp": "2026-10-26 11:50:29.560309+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 5
+  },
+  {
+    "timestamp": "2026-10-26 11:50:32.005107+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 6
+  },
+  {
+    "timestamp": "2026-10-26 11:51:19.534963+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 7
+  },
+  {
+    "timestamp": "2026-10-26 11:51:22.509080+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 8
+  },
+  {
+    "timestamp": "2026-10-26 11:51:25.372780+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 9
+  },
+  {
+    "timestamp": "2026-10-26 11:51:48.204187+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 10
+  },
+  {
+    "timestamp": "2026-10-26 11:51:50.858586+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 11
+  },
+  {
+    "timestamp": "2026-10-26 11:51:53.571463+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 12
+  },
+  {
+    "timestamp": "2026-10-26 11:51:59.876919+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 13
+  },
+  {
+    "timestamp": "2026-10-26 11:52:02.376466+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 14
+  },
+  {
+    "timestamp": "2026-10-26 11:54:46.309350+0800",
+    "message": "Preview request: 00-control.mud ext=mud key=mud",
+    "subsystem": "com.stianlars1.dotViewer",
+    "process_id": 15968,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/competitor-native-20261026/dotViewer.app/Contents/PlugIns/QuickLookExtension.appex/Contents/MacOS/QuickLookExtension",
+    "id": 15
+  },
+  {
+    "timestamp": "2026-10-26 11:54:48.212528+0800",
+    "message": "Highlight succeeded for request 906CAB99-C6D1-4D7F-9F9D-11ECDA807DC0 size=143",
+    "subsystem": "com.stianlars1.dotViewer",
+    "process_id": 15968,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/competitor-native-20261026/dotViewer.app/Contents/PlugIns/QuickLookExtension.appex/Contents/MacOS/QuickLookExtension",
+    "id": 16
+  },
+  {
+    "timestamp": "2026-10-26 11:54:48.215108+0800",
+    "message": "HTML built for 00-control.mud",
+    "subsystem": "com.stianlars1.dotViewer",
+    "process_id": 15968,
+    "process_path": "/Users/huangzhe/Documents/GitHub/OrangeLen/build/competitor-native-20261026/dotViewer.app/Contents/PlugIns/QuickLookExtension.appex/Contents/MacOS/QuickLookExtension",
+    "id": 17
+  },
+  {
+    "timestamp": "2026-10-26 11:54:48.218115+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 18
+  },
+  {
+    "timestamp": "2026-10-26 11:54:55.904382+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 19
+  },
+  {
+    "timestamp": "2026-10-26 11:54:58.441462+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Movie for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 20
+  },
+  {
+    "timestamp": "2026-10-26 11:55:00.991170+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 21
+  },
+  {
+    "timestamp": "2026-10-26 11:55:14.764608+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 22
+  },
+  {
+    "timestamp": "2026-10-26 11:55:17.883234+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 23
+  },
+  {
+    "timestamp": "2026-10-26 11:55:20.448616+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 24
+  },
+  {
+    "timestamp": "2026-10-26 11:55:24.986380+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 25
+  },
+  {
+    "timestamp": "2026-10-26 11:55:27.326612+0800",
+    "message": "got displayBundleID com.apple.qldisplay.PDFKit for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 26
+  },
+  {
+    "timestamp": "2026-10-26 11:55:29.743565+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 27
+  },
+  {
+    "timestamp": "2026-10-26 11:55:37.369341+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Web2 for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 28
+  },
+  {
+    "timestamp": "2026-10-26 11:55:39.906450+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Text for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 29
+  },
+  {
+    "timestamp": "2026-10-26 11:56:38.905621+0800",
+    "message": "got displayBundleID com.apple.qldisplay.Extensions for <private>",
+    "subsystem": "com.apple.quicklook",
+    "process_id": 1067,
+    "process_path": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+    "id": 30
+  },
+  {
+    "timestamp": "2026-10-26 11:56:39.087125+0800",
+    "message": "prepare received extension=OrangeLen type=sql",
+    "subsystem": "local.OrangeLen",
+    "process_id": 81305,
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "id": 31
+  },
+  {
+    "timestamp": "2026-10-26 11:56:39.103131+0800",
+    "message": "prepare completed success=true",
+    "subsystem": "local.OrangeLen",
+    "process_id": 81305,
+    "process_path": "/Applications/OrangeLen.app/Contents/PlugIns/OrangeLenPreview.appex/Contents/MacOS/OrangeLenPreview",
+    "id": 32
+  }
+]

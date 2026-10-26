@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-26",
+  "baseline_commit": "cf2a2beecafbcfff0c3472fabbe9d25ce449dafa",
+  "machine": "macOS 26.6.2 (25G83), arm64",
+  "real_finder_target_cases": 22,
+  "native_competitor_controls_passed": 2,
+  "production_sql_control_passed": true,
+  "original_suffixes_repaired": 0,
+  "target_provider_requests": 0,
+  "remaining_metadata_only": [
+    "ts",
+    "mts",
+    "dot"
+  ],
+  "remaining_system_content": [
+    "html",
+    "htm",
+    "xhtml",
+    "txt",
+    "pdf",
+    "csv",
+    "svg",
+    "text"
+  ],
+  "registry_elections_unchanged": true,
+  "comparison_extensions_unregistered": true,
+  "helper_enabled": false,
+  "product_code_changed": false,
+  "scope": "Two comparison builds on this Mac; not an impossibility proof for all native approaches."
+}
