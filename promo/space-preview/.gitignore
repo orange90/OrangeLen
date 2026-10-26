@@ -1,0 +1,6 @@
+
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+node_modules/
+chrome-headless-shell/

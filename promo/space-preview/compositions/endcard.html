@@ -1,0 +1,114 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "WenQuanYi Micro Hei";
+      src: url("assets/fonts/wqy-microhei.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--color-ground);
+      font-family: var(--font-display), "WenQuanYi Micro Hei", sans-serif;
+      color: var(--color-ink);
+    }
+    .lock {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+    }
+    .iconwrap {
+      width: 156px;
+      height: 156px;
+      flex: none;
+    }
+    .iconwrap img {
+      width: 156px;
+      height: 156px;
+      display: block;
+    }
+    .words {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .wordmark {
+      font-family: Inter, sans-serif;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+    .meta,
+    .url {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      margin-top: 16px;
+      color: #3f3a34;
+    }
+    .url {
+      margin-top: 6px;
+    }
+  </style>
+  <div data-hf-id="hf-32ii" id="root" data-composition-id="endcard" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ht78"
+      id="end-lockup"
+      class="clip lock"
+      data-start="0.12"
+      data-duration="3.48"
+      data-track-index="1"
+      data-hold="read"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-z7zq" id="end-icon" class="iconwrap">
+        <img data-hf-id="hf-qnzl" src="assets/ui/icon.png" alt="" />
+      </div>
+      <div data-hf-id="hf-m60b" class="words">
+        <div data-hf-id="hf-y8w4" id="end-word" class="wordmark" data-var-text="end-name">OrangeLen</div>
+        <div data-hf-id="hf-8vob" id="end-meta" class="meta" data-var-text="end-meta">V1.0.1 · 当前版本免费 · macOS 14+</div>
+        <div data-hf-id="hf-58pw" id="end-url" class="url" data-var-text="end-url">github.com/orange90/OrangeLen</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(
+      "#end-icon",
+      { y: 72, scale: 0.84 },
+      { y: 0, scale: 1, duration: 0.48, ease: "power4.out" },
+      0.12,
+    );
+    tl.fromTo(
+      "#end-word",
+      { clipPath: "inset(0 100% 0 0)" },
+      { clipPath: "inset(0 0% 0 0)", duration: 0.42, ease: "power4.out" },
+      0.5,
+    );
+    tl.fromTo(
+      "#end-meta",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      0.95,
+    );
+    tl.fromTo(
+      "#end-url",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      1.12,
+    );
+    window.__timelines = window.__timelines || {};
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>
