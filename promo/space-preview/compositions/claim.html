@@ -1,0 +1,99 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "WenQuanYi Micro Hei";
+      src: url("assets/fonts/wqy-microhei.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--color-ground);
+      font-family: var(--font-display), "WenQuanYi Micro Hei", sans-serif;
+      color: var(--color-ink);
+    }
+    .claim {
+      position: absolute;
+      left: 180px;
+      top: 300px;
+      z-index: 2;
+    }
+    .row {
+      display: flex;
+      align-items: flex-end;
+      gap: 28px;
+    }
+    .num {
+      font-family: Inter, sans-serif;
+      font-weight: 700;
+      font-size: 280px;
+      line-height: 0.78;
+      letter-spacing: -0.06em;
+      color: var(--color-accent);
+    }
+    .unit {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      padding-bottom: 18px;
+    }
+    .line {
+      margin-top: 28px;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .rule {
+      margin-top: 28px;
+      width: 280px;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--color-accent);
+      transform-origin: left center;
+    }
+  </style>
+  <div data-hf-id="hf-dc55" id="root" data-composition-id="claim" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-rdbu" id="claim-block" class="clip claim" data-start="0" data-duration="2.8" data-track-index="1" data-hold="read">
+      <div data-hf-id="hf-thy4" class="row">
+        <div data-hf-id="hf-y5q6" id="claim-num" class="num" data-var-text="claim-num">371</div>
+        <div data-hf-id="hf-nmkb" id="claim-unit" class="unit" data-var-text="claim-unit">个后缀</div>
+      </div>
+      <div data-hf-id="hf-okx5" id="claim-line" class="line" data-var-text="claim-line">一个空格</div>
+      <div data-hf-id="hf-4ptz" id="claim-rule" class="rule"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(
+      "#claim-num",
+      { opacity: 0, filter: "blur(12px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.out" },
+      0.08,
+    );
+    tl.fromTo(
+      "#claim-unit",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      0.24,
+    );
+    tl.fromTo(
+      "#claim-line",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      0.4,
+    );
+    tl.fromTo(
+      "#claim-rule",
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.35, ease: "power3.out" },
+      0.48,
+    );
+    window.__timelines = window.__timelines || {};
+    window.__timelines["claim"] = tl;
+  </script>
+</template>

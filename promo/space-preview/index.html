@@ -1,0 +1,181 @@
+<!doctype html>
+<html
+  lang="zh-CN"
+  data-composition-variables='[
+    {"id":"color-ground","type":"color","label":"桌面","default":"#E7E3DA"},
+    {"id":"color-ink","type":"color","label":"文字","default":"#1C1C1C"},
+    {"id":"color-accent","type":"color","label":"橙色","default":"#F25C08"},
+    {"id":"font-display","type":"string","label":"西文","default":"Inter"},
+    {"id":"hook","type":"string","label":"开场","default":"只有基本信息"},
+    {"id":"cap-folder","type":"string","label":"项目","default":"整个项目"},
+    {"id":"cap-code","type":"string","label":"代码","default":"代码与配置"},
+    {"id":"cap-mcp","type":"string","label":"压缩包","default":"包内文件"},
+    {"id":"cap-flow","type":"string","label":"图表","default":"工作流与图表"},
+    {"id":"claim-num","type":"string","label":"数字","default":"371"},
+    {"id":"claim-unit","type":"string","label":"单位","default":"个后缀"},
+    {"id":"claim-line","type":"string","label":"主张","default":"一个空格"},
+    {"id":"end-name","type":"string","label":"产品名","default":"OrangeLen"},
+    {"id":"end-meta","type":"string","label":"版本","default":"V1.0.1 · 当前版本免费 · macOS 14+"},
+    {"id":"end-url","type":"string","label":"地址","default":"github.com/orange90/OrangeLen"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "WenQuanYi Micro Hei";
+        src: url("assets/fonts/wqy-microhei.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: block;
+      }
+      :root {
+        --color-ground: #e7e3da;
+        --color-ink: #1c1c1c;
+        --color-accent: #f25c08;
+        --font-display: Inter;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--color-ground);
+        font-family: var(--font-display), "WenQuanYi Micro Hei", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+      }
+      #ground {
+        position: absolute;
+        inset: 0;
+        background: var(--color-ground);
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-0xju"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="31"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div data-hf-id="hf-7hg0" id="ground"></div>
+
+      <audio data-hf-id="hf-l2e8"
+        id="sfx-key"
+        class="clip"
+        src="assets/audio/key-press.mp3"
+        data-start="5.5"
+        data-duration="0.4"
+        data-track-index="8"
+        data-volume="0.45"
+      ></audio>
+      <audio data-hf-id="hf-h31p"
+        id="sfx-reveal"
+        class="clip"
+        src="assets/audio/whoosh.mp3"
+        data-start="6.32"
+        data-duration="0.57"
+        data-track-index="9"
+        data-volume="0.38"
+      ></audio>
+      <audio data-hf-id="hf-p4ql"
+        id="sfx-code"
+        class="clip"
+        src="assets/audio/whoosh-short.mp3"
+        data-start="11.16"
+        data-duration="0.57"
+        data-track-index="10"
+        data-volume="0.34"
+      ></audio>
+      <audio data-hf-id="hf-iuz7"
+        id="sfx-mcp"
+        class="clip"
+        src="assets/audio/click-soft.mp3"
+        data-start="15.62"
+        data-duration="0.37"
+        data-track-index="11"
+        data-volume="0.36"
+      ></audio>
+      <audio data-hf-id="hf-drlc"
+        id="sfx-flow"
+        class="clip"
+        src="assets/audio/whoosh.mp3"
+        data-start="19.52"
+        data-duration="0.57"
+        data-track-index="12"
+        data-volume="0.36"
+      ></audio>
+      <audio data-hf-id="hf-zori"
+        id="sfx-impact"
+        class="clip"
+        src="assets/audio/impact.mp3"
+        data-start="24.66"
+        data-duration="2.12"
+        data-track-index="13"
+        data-volume="0.32"
+      ></audio>
+      <audio data-hf-id="hf-re0i"
+        id="sfx-mark"
+        class="clip"
+        src="assets/audio/pop.mp3"
+        data-start="27.58"
+        data-duration="0.72"
+        data-track-index="14"
+        data-volume="0.36"
+      ></audio>
+
+      <div data-hf-id="hf-p4u8"
+        id="desk"
+        data-composition-id="desk"
+        data-composition-src="compositions/desk.html"
+        data-start="0"
+        data-duration="24.6"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div data-hf-id="hf-vkye"
+        id="claim"
+        data-composition-id="claim"
+        data-composition-src="compositions/claim.html"
+        data-start="24.6"
+        data-duration="2.8"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div data-hf-id="hf-jgvy"
+        id="endcard"
+        data-composition-id="endcard"
+        data-composition-src="compositions/endcard.html"
+        data-start="27.4"
+        data-duration="3.6"
+        data-track-index="3"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
