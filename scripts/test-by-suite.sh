@@ -17,7 +17,7 @@ while IFS= read -r suite; do
   echo "=== SUITE $suite start $(date -u '+%FT%TZ')" | tee -a build/tests.log
   start=$SECONDS
   pattern=$(printf '%s' "$suite" | sed 's/\./[.]/g')
-  xcrun swift test --package-path Packages/OrangeLen --skip-build --filter "^${pattern}/" 2>&1 | tee -a build/tests.log
+  python3 scripts/test-suite-watchdog.py "$suite" xcrun swift test --package-path Packages/OrangeLen --skip-build --filter "^${pattern}/" 2>&1 | tee -a build/tests.log
   status=("${PIPESTATUS[@]}")
   rc=${status[0]}
   [ "${status[1]}" -eq 0 ] || rc=1

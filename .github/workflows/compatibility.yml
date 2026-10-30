@@ -79,6 +79,9 @@ jobs:
         with:
           name: compatibility-${{ matrix.runner }}
           path: |
+            build/sample-*.txt
+            build/test-suite-summary.tsv
+            build/test-suites.txt
             build/tests.log
             build/build.log
             build/native-tests.log
