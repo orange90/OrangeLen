@@ -186,7 +186,12 @@ public enum AccessBroker {
         else {
             let bytes = [UInt8](data)
             let units: [UInt16] = stride(from: 0, to: bytes.count, by: 2).map { i in
-                encoding == .utf16LittleEndian ? UInt16(bytes[i]) | (UInt16(bytes[i + 1]) << 8) : (UInt16(bytes[i]) << 8) | UInt16(bytes[i + 1])
+                let first: UInt16 = UInt16(bytes[i])
+                let second: UInt16 = UInt16(bytes[i + 1])
+                if encoding == .utf16LittleEndian {
+                    return first | (second << 8)
+                }
+                return (first << 8) | second
             }
             text = String(decoding: units, as: UTF16.self)
         }

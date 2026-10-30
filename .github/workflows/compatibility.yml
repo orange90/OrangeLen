@@ -1,42 +1,90 @@
 name: macOS compatibility
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: compat-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   native:
     strategy:
       fail-fast: false
       matrix:
-        runner: [macos-15, macos-15-intel, macos-26, macos-26-intel]
+        include:
+          # runner-images: macos-15 / macos-15-intel default Xcode 16.4 (Swift 6.1) -> must pin Xcode 26.x
+          - { runner: macos-15,       xcode: '26.3' }
+          - { runner: macos-15-intel, xcode: '26.3' }
+          # macos-26 / macos-26-intel default 26.6; pin 26.5 to match docs/development-guide.md:25
+          - { runner: macos-26,       xcode: '26.5' }
+          - { runner: macos-26-intel, xcode: '26.5' }
     runs-on: ${{ matrix.runner }}
-    timeout-minutes: 30
+    timeout-minutes: 90
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
       - name: Verify selected Xcode and native runtime
         run: |
-          printf 'DEVELOPER_DIR=%s\n' "$(xcode-select -p)" >> "$GITHUB_ENV"
+          if [ ! -d "$DEVELOPER_DIR" ]; then
+            echo "::error::Xcode ${{ matrix.xcode }} not installed on ${{ matrix.runner }}"
+            ls -d /Applications/Xcode*.app
+            exit 1
+          fi
           sw_vers
           uname -m
           xcodebuild -version
           xcrun swift --version
+          swift_version=$(xcrun swift --version 2>&1 | sed -nE 's/.*Swift version ([0-9]+)\.([0-9]+).*/\1 \2/p' | head -n 1)
+          read -r major minor <<< "$swift_version"
+          if [ "${major:-0}" -lt 6 ] || { [ "$major" -eq 6 ] && [ "${minor:-0}" -lt 2 ]; }; then
+            echo "::error::swift-markdown 0.8.0 needs swift-tools-version 6.2; got ${swift_version}"
+            exit 1
+          fi
       - name: Native tests
-        run: ./scripts/test.sh
+        id: swift_tests
+        timeout-minutes: 70
+        run: ./scripts/test-by-suite.sh
       - name: Isolated document and media integration
+        id: native_tests
+        if: ${{ !cancelled() }}
         run: ./scripts/test-native.sh
       - name: Host and seven extension builds
+        id: build
+        if: ${{ !cancelled() }}
         run: ./scripts/build.sh CODE_SIGNING_ALLOWED=NO
       - name: Audit packaged file types without developer app registrations
+        id: audit
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: python3 scripts/audit-type-registration.py --app build/DerivedData/Build/Products/Debug/OrangeLen.app --output build/type-registration.json
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### ${{ matrix.runner }}"
+            echo "- macOS: $(sw_vers -productVersion) ($(uname -m))"
+            echo "- Xcode: $(xcodebuild -version | tr '\n' ' ')"
+            echo "- Image: ${ImageVersion:-unknown}"
+            echo "- swift test: ${{ steps.swift_tests.outcome }}"
+            echo "- native tests: ${{ steps.native_tests.outcome }}"
+            echo "- build: ${{ steps.build.outcome }}"
+            echo "- type audit: ${{ steps.audit.outcome }}"
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Save evidence, including failures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: compatibility-${{ matrix.runner }}
           path: |
+            build/sample-*.txt
+            build/test-suite-summary.tsv
+            build/test-suites.txt
             build/tests.log
             build/build.log
             build/native-tests.log
             build/type-registration.json
+            build/DerivedData/Logs/Test/*.xcresult
           if-no-files-found: warn
